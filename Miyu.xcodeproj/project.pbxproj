@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		49A6D7EE201E86E500B994A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D7ED201E86E500B994A2 /* AppDelegate.swift */; };
-		49A6D7F0201E86E500B994A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D7EF201E86E500B994A2 /* ViewController.swift */; };
 		49A6D7F3201E86E500B994A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49A6D7F1201E86E500B994A2 /* Main.storyboard */; };
 		49A6D7F5201E86E500B994A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A6D7F4201E86E500B994A2 /* Assets.xcassets */; };
 		49A6D7F8201E86E500B994A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49A6D7F6201E86E500B994A2 /* LaunchScreen.storyboard */; };
 		49A6D803201E86E500B994A2 /* MiyuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D802201E86E500B994A2 /* MiyuTests.swift */; };
 		49A6D80E201E86E500B994A2 /* MiyuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D80D201E86E500B994A2 /* MiyuUITests.swift */; };
+		49A6D81D201FB22600B994A2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D81C201FB22600B994A2 /* LoginViewController.swift */; };
+		49A6D822201FB2A100B994A2 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D820201FB2A100B994A2 /* HomepageViewController.swift */; };
+		49A6D829201FB55D00B994A2 /* HomepageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49A6D828201FB55D00B994A2 /* HomepageViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +37,7 @@
 
 /* Begin PBXFileReference section */
 		49A6D7EA201E86E500B994A2 /* Miyu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Miyu.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		49A6D7ED201E86E500B994A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		49A6D7EF201E86E500B994A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		49A6D7ED201E86E500B994A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Miyu/Supporting Files/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		49A6D7F2201E86E500B994A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49A6D7F4201E86E500B994A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49A6D7F7201E86E500B994A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +48,9 @@
 		49A6D809201E86E500B994A2 /* MiyuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiyuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A6D80D201E86E500B994A2 /* MiyuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiyuUITests.swift; sourceTree = "<group>"; };
 		49A6D80F201E86E500B994A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49A6D81C201FB22600B994A2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		49A6D820201FB2A100B994A2 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
+		49A6D828201FB55D00B994A2 /* HomepageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomepageViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +101,9 @@
 		49A6D7EC201E86E500B994A2 /* Miyu */ = {
 			isa = PBXGroup;
 			children = (
-				49A6D7ED201E86E500B994A2 /* AppDelegate.swift */,
-				49A6D7EF201E86E500B994A2 /* ViewController.swift */,
 				49A6D7F1201E86E500B994A2 /* Main.storyboard */,
-				49A6D7F4201E86E500B994A2 /* Assets.xcassets */,
-				49A6D7F6201E86E500B994A2 /* LaunchScreen.storyboard */,
-				49A6D7F9201E86E500B994A2 /* Info.plist */,
+				49A6D82A201FB62400B994A2 /* Feature */,
+				49A6D81B201E871200B994A2 /* Supporting Files */,
 			);
 			path = Miyu;
 			sourceTree = "<group>";
@@ -123,6 +124,43 @@
 				49A6D80F201E86E500B994A2 /* Info.plist */,
 			);
 			path = MiyuUITests;
+			sourceTree = "<group>";
+		};
+		49A6D81B201E871200B994A2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49A6D7ED201E86E500B994A2 /* AppDelegate.swift */,
+				49A6D7F4201E86E500B994A2 /* Assets.xcassets */,
+				49A6D7F6201E86E500B994A2 /* LaunchScreen.storyboard */,
+				49A6D7F9201E86E500B994A2 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49A6D824201FB2F200B994A2 /* Homepage */ = {
+			isa = PBXGroup;
+			children = (
+				49A6D820201FB2A100B994A2 /* HomepageViewController.swift */,
+				49A6D828201FB55D00B994A2 /* HomepageViewController.storyboard */,
+			);
+			path = Homepage;
+			sourceTree = "<group>";
+		};
+		49A6D825201FB30300B994A2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				49A6D81C201FB22600B994A2 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		49A6D82A201FB62400B994A2 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				49A6D825201FB30300B994A2 /* Login */,
+				49A6D824201FB2F200B994A2 /* Homepage */,
+			);
+			path = Feature;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +273,7 @@
 				49A6D7F8201E86E500B994A2 /* LaunchScreen.storyboard in Resources */,
 				49A6D7F5201E86E500B994A2 /* Assets.xcassets in Resources */,
 				49A6D7F3201E86E500B994A2 /* Main.storyboard in Resources */,
+				49A6D829201FB55D00B994A2 /* HomepageViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +298,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49A6D7F0201E86E500B994A2 /* ViewController.swift in Sources */,
+				49A6D81D201FB22600B994A2 /* LoginViewController.swift in Sources */,
 				49A6D7EE201E86E500B994A2 /* AppDelegate.swift in Sources */,
+				49A6D822201FB2A100B994A2 /* HomepageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,7 +468,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9QMWUGNK5F;
-				INFOPLIST_FILE = Miyu/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Miyu/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.miraes.me.Miyu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -443,7 +483,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9QMWUGNK5F;
-				INFOPLIST_FILE = Miyu/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Miyu/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.miraes.me.Miyu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
