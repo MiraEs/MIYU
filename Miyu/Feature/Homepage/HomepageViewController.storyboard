@@ -13,17 +13,61 @@
         <!--Homepage View Controller-->
         <scene sceneID="WPe-C7-Xsm">
             <objects>
-                <viewController storyboardIdentifier="HomepageViewController" id="Ogx-fG-Vhg" customClass="HomepageViewController" customModule="Miyu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomepageViewController" id="Ogx-fG-Vhg" customClass="HomepageViewController" customModule="Simi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pef-7k-UEp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hO9-oR-hhu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="FEED" id="dlY-CB-epR">
+                                        <barButtonItem key="leftBarButtonItem" title="burger" id="6gk-bS-j24">
+                                            <connections>
+                                                <action selector="burgerMenutapped:" destination="Ogx-fG-Vhg" id="y5t-Mg-y2e"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dYD-l5-zH8">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="homepageCell" id="JdL-pE-Qnw" customClass="HomepageTableViewCell" customModule="Simi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JdL-pE-Qnw" id="mfe-a1-KiS">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ogx-fG-Vhg" id="EQJ-z3-UuD"/>
+                                    <outlet property="delegate" destination="Ogx-fG-Vhg" id="v3Q-kB-Nvm"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="0.85252730139704891" green="1" blue="0.73520657969411896" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="dYD-l5-zH8" firstAttribute="top" secondItem="hO9-oR-hhu" secondAttribute="bottom" id="GQd-BS-bSz"/>
+                            <constraint firstItem="229-3b-bvJ" firstAttribute="trailing" secondItem="hO9-oR-hhu" secondAttribute="trailing" id="JWc-Mx-VAX"/>
+                            <constraint firstItem="hO9-oR-hhu" firstAttribute="leading" secondItem="229-3b-bvJ" secondAttribute="leading" id="V3W-B9-QH5"/>
+                            <constraint firstItem="dYD-l5-zH8" firstAttribute="leading" secondItem="229-3b-bvJ" secondAttribute="leading" id="awC-4U-NkX"/>
+                            <constraint firstItem="229-3b-bvJ" firstAttribute="trailing" secondItem="dYD-l5-zH8" secondAttribute="trailing" id="esu-0n-cOW"/>
+                            <constraint firstItem="229-3b-bvJ" firstAttribute="top" secondItem="hO9-oR-hhu" secondAttribute="top" constant="20" id="gwN-QJ-Egm"/>
+                            <constraint firstItem="229-3b-bvJ" firstAttribute="bottom" secondItem="dYD-l5-zH8" secondAttribute="bottom" id="oKD-CE-uMr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="229-3b-bvJ"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="dYD-l5-zH8" id="6fh-TX-hQG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0d-RZ-kgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-322" y="37"/>
+            <point key="canvasLocation" x="-322.39999999999998" y="36.431784107946029"/>
         </scene>
     </scenes>
 </document>

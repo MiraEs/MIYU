@@ -16,6 +16,10 @@
 		49A6D81D201FB22600B994A2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D81C201FB22600B994A2 /* LoginViewController.swift */; };
 		49A6D822201FB2A100B994A2 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D820201FB2A100B994A2 /* HomepageViewController.swift */; };
 		49A6D829201FB55D00B994A2 /* HomepageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49A6D828201FB55D00B994A2 /* HomepageViewController.storyboard */; };
+		49A6D82C202100FD00B994A2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D82B202100FD00B994A2 /* Extensions.swift */; };
+		49A6D830202104D300B994A2 /* HomepageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D82E202104D300B994A2 /* HomepageTableViewCell.swift */; };
+		49A6D831202104D300B994A2 /* HomepageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A6D82F202104D300B994A2 /* HomepageTableViewCell.xib */; };
+		49A6D833202104E800B994A2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D832202104E800B994A2 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		49A6D7EA201E86E500B994A2 /* Miyu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Miyu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49A6D7EA201E86E500B994A2 /* Simi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Simi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A6D7ED201E86E500B994A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Miyu/Supporting Files/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		49A6D7F2201E86E500B994A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49A6D7F4201E86E500B994A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +55,10 @@
 		49A6D81C201FB22600B994A2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		49A6D820201FB2A100B994A2 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		49A6D828201FB55D00B994A2 /* HomepageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomepageViewController.storyboard; sourceTree = "<group>"; };
+		49A6D82B202100FD00B994A2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		49A6D82E202104D300B994A2 /* HomepageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageTableViewCell.swift; sourceTree = "<group>"; };
+		49A6D82F202104D300B994A2 /* HomepageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomepageTableViewCell.xib; sourceTree = "<group>"; };
+		49A6D832202104E800B994A2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +99,7 @@
 		49A6D7EB201E86E500B994A2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				49A6D7EA201E86E500B994A2 /* Miyu.app */,
+				49A6D7EA201E86E500B994A2 /* Simi.app */,
 				49A6D7FE201E86E500B994A2 /* MiyuTests.xctest */,
 				49A6D809201E86E500B994A2 /* MiyuUITests.xctest */,
 			);
@@ -103,6 +111,7 @@
 			children = (
 				49A6D7F1201E86E500B994A2 /* Main.storyboard */,
 				49A6D82A201FB62400B994A2 /* Feature */,
+				49A6D82D2021042C00B994A2 /* Utility */,
 				49A6D81B201E871200B994A2 /* Supporting Files */,
 			);
 			path = Miyu;
@@ -140,6 +149,7 @@
 		49A6D824201FB2F200B994A2 /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
+				49A6D8342021051D00B994A2 /* HomepageCell */,
 				49A6D820201FB2A100B994A2 /* HomepageViewController.swift */,
 				49A6D828201FB55D00B994A2 /* HomepageViewController.storyboard */,
 			);
@@ -163,12 +173,30 @@
 			path = Feature;
 			sourceTree = "<group>";
 		};
+		49A6D82D2021042C00B994A2 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				49A6D82B202100FD00B994A2 /* Extensions.swift */,
+				49A6D832202104E800B994A2 /* Constants.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		49A6D8342021051D00B994A2 /* HomepageCell */ = {
+			isa = PBXGroup;
+			children = (
+				49A6D82E202104D300B994A2 /* HomepageTableViewCell.swift */,
+				49A6D82F202104D300B994A2 /* HomepageTableViewCell.xib */,
+			);
+			path = HomepageCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		49A6D7E9201E86E500B994A2 /* Miyu */ = {
+		49A6D7E9201E86E500B994A2 /* Simi */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 49A6D812201E86E500B994A2 /* Build configuration list for PBXNativeTarget "Miyu" */;
+			buildConfigurationList = 49A6D812201E86E500B994A2 /* Build configuration list for PBXNativeTarget "Simi" */;
 			buildPhases = (
 				49A6D7E6201E86E500B994A2 /* Sources */,
 				49A6D7E7201E86E500B994A2 /* Frameworks */,
@@ -178,9 +206,9 @@
 			);
 			dependencies = (
 			);
-			name = Miyu;
+			name = Simi;
 			productName = Miyu;
-			productReference = 49A6D7EA201E86E500B994A2 /* Miyu.app */;
+			productReference = 49A6D7EA201E86E500B994A2 /* Simi.app */;
 			productType = "com.apple.product-type.application";
 		};
 		49A6D7FD201E86E500B994A2 /* MiyuTests */ = {
@@ -258,7 +286,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				49A6D7E9201E86E500B994A2 /* Miyu */,
+				49A6D7E9201E86E500B994A2 /* Simi */,
 				49A6D7FD201E86E500B994A2 /* MiyuTests */,
 				49A6D808201E86E500B994A2 /* MiyuUITests */,
 			);
@@ -272,6 +300,7 @@
 			files = (
 				49A6D7F8201E86E500B994A2 /* LaunchScreen.storyboard in Resources */,
 				49A6D7F5201E86E500B994A2 /* Assets.xcassets in Resources */,
+				49A6D831202104D300B994A2 /* HomepageTableViewCell.xib in Resources */,
 				49A6D7F3201E86E500B994A2 /* Main.storyboard in Resources */,
 				49A6D829201FB55D00B994A2 /* HomepageViewController.storyboard in Resources */,
 			);
@@ -301,6 +330,9 @@
 				49A6D81D201FB22600B994A2 /* LoginViewController.swift in Sources */,
 				49A6D7EE201E86E500B994A2 /* AppDelegate.swift in Sources */,
 				49A6D822201FB2A100B994A2 /* HomepageViewController.swift in Sources */,
+				49A6D830202104D300B994A2 /* HomepageTableViewCell.swift in Sources */,
+				49A6D82C202100FD00B994A2 /* Extensions.swift in Sources */,
+				49A6D833202104E800B994A2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,12 +357,12 @@
 /* Begin PBXTargetDependency section */
 		49A6D800201E86E500B994A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 49A6D7E9201E86E500B994A2 /* Miyu */;
+			target = 49A6D7E9201E86E500B994A2 /* Simi */;
 			targetProxy = 49A6D7FF201E86E500B994A2 /* PBXContainerItemProxy */;
 		};
 		49A6D80B201E86E500B994A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 49A6D7E9201E86E500B994A2 /* Miyu */;
+			target = 49A6D7E9201E86E500B994A2 /* Simi */;
 			targetProxy = 49A6D80A201E86E500B994A2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -470,7 +502,7 @@
 				DEVELOPMENT_TEAM = 9QMWUGNK5F;
 				INFOPLIST_FILE = "$(SRCROOT)/Miyu/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.miraes.me.Miyu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.miraes.me.Simi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -485,7 +517,7 @@
 				DEVELOPMENT_TEAM = 9QMWUGNK5F;
 				INFOPLIST_FILE = "$(SRCROOT)/Miyu/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.miraes.me.Miyu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.miraes.me.Simi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -570,7 +602,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		49A6D812201E86E500B994A2 /* Build configuration list for PBXNativeTarget "Miyu" */ = {
+		49A6D812201E86E500B994A2 /* Build configuration list for PBXNativeTarget "Simi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				49A6D813201E86E500B994A2 /* Debug */,
