@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
     
     var homeVC: UIViewController {
         return HomepageViewController.instantiate(fromAppStoryboard: .HomepageViewController)
@@ -18,8 +18,14 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     
+        setup()
+    }
+    
+    // MARK: SETUP
+    
+    private func setup() {
+        self.view.backgroundColor = UIColor(red:0.92, green:0.74, blue:0.74, alpha:1.0)
     }
 
     @IBAction func loginDidTap(_ sender: Any) {

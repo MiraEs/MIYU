@@ -20,6 +20,7 @@
 		49A6D830202104D300B994A2 /* HomepageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D82E202104D300B994A2 /* HomepageTableViewCell.swift */; };
 		49A6D831202104D300B994A2 /* HomepageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A6D82F202104D300B994A2 /* HomepageTableViewCell.xib */; };
 		49A6D833202104E800B994A2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D832202104E800B994A2 /* Constants.swift */; };
+		49A6D83620210C1400B994A2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D83520210C1400B994A2 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		49A6D82E202104D300B994A2 /* HomepageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageTableViewCell.swift; sourceTree = "<group>"; };
 		49A6D82F202104D300B994A2 /* HomepageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomepageTableViewCell.xib; sourceTree = "<group>"; };
 		49A6D832202104E800B994A2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		49A6D83520210C1400B994A2 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 			children = (
 				49A6D82B202100FD00B994A2 /* Extensions.swift */,
 				49A6D832202104E800B994A2 /* Constants.swift */,
+				49A6D83720210CB500B994A2 /* Helper Classes */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -189,6 +192,14 @@
 				49A6D82F202104D300B994A2 /* HomepageTableViewCell.xib */,
 			);
 			path = HomepageCell;
+			sourceTree = "<group>";
+		};
+		49A6D83720210CB500B994A2 /* Helper Classes */ = {
+			isa = PBXGroup;
+			children = (
+				49A6D83520210C1400B994A2 /* BaseViewController.swift */,
+			);
+			path = "Helper Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +343,7 @@
 				49A6D822201FB2A100B994A2 /* HomepageViewController.swift in Sources */,
 				49A6D830202104D300B994A2 /* HomepageTableViewCell.swift in Sources */,
 				49A6D82C202100FD00B994A2 /* Extensions.swift in Sources */,
+				49A6D83620210C1400B994A2 /* BaseViewController.swift in Sources */,
 				49A6D833202104E800B994A2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomepageViewController: UIViewController {
+class HomepageViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -26,6 +26,7 @@ class HomepageViewController: UIViewController {
     private func setup() {
         tableView.register(UINib(nibName: Constants.homeXib, bundle: nil),
                            forCellReuseIdentifier: Constants.homeCell)
+        self.view.backgroundColor = UIColor(red:0.92, green:0.74, blue:0.74, alpha:1.0)
     }
 }
 
