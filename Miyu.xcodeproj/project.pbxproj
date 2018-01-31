@@ -22,6 +22,10 @@
 		49A6D833202104E800B994A2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D832202104E800B994A2 /* Constants.swift */; };
 		49A6D83620210C1400B994A2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D83520210C1400B994A2 /* BaseViewController.swift */; };
 		49DC302020225F4700E7F05F /* PostModel.json in Resources */ = {isa = PBXBuildFile; fileRef = 49DC301F20225F4700E7F05F /* PostModel.json */; };
+		49DC302320227CA600E7F05F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC302220227CA600E7F05F /* ProfileViewController.swift */; };
+		49DC302720227D1000E7F05F /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC302520227D1000E7F05F /* ProfileTableViewCell.swift */; };
+		49DC302820227D1000E7F05F /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49DC302620227D1000E7F05F /* ProfileTableViewCell.xib */; };
+		49DC302F20227DA500E7F05F /* ProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DC302E20227DA500E7F05F /* ProfileViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,10 @@
 		49A6D832202104E800B994A2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		49A6D83520210C1400B994A2 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		49DC301F20225F4700E7F05F /* PostModel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PostModel.json; sourceTree = "<group>"; };
+		49DC302220227CA600E7F05F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		49DC302520227D1000E7F05F /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		49DC302620227D1000E7F05F /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		49DC302E20227DA500E7F05F /* ProfileViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +182,7 @@
 			children = (
 				49A6D825201FB30300B994A2 /* Login */,
 				49A6D824201FB2F200B994A2 /* Homepage */,
+				49DC302420227CB500E7F05F /* Profile */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -211,6 +220,25 @@
 				49DC301F20225F4700E7F05F /* PostModel.json */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		49DC302420227CB500E7F05F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				49DC302920227D1600E7F05F /* Profile Cell */,
+				49DC302220227CA600E7F05F /* ProfileViewController.swift */,
+				49DC302E20227DA500E7F05F /* ProfileViewController.storyboard */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		49DC302920227D1600E7F05F /* Profile Cell */ = {
+			isa = PBXGroup;
+			children = (
+				49DC302520227D1000E7F05F /* ProfileTableViewCell.swift */,
+				49DC302620227D1000E7F05F /* ProfileTableViewCell.xib */,
+			);
+			path = "Profile Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,8 +351,10 @@
 				49A6D7F8201E86E500B994A2 /* LaunchScreen.storyboard in Resources */,
 				49A6D7F5201E86E500B994A2 /* Assets.xcassets in Resources */,
 				49A6D831202104D300B994A2 /* HomepageTableViewCell.xib in Resources */,
+				49DC302820227D1000E7F05F /* ProfileTableViewCell.xib in Resources */,
 				49A6D7F3201E86E500B994A2 /* Main.storyboard in Resources */,
 				49A6D829201FB55D00B994A2 /* HomepageViewController.storyboard in Resources */,
+				49DC302F20227DA500E7F05F /* ProfileViewController.storyboard in Resources */,
 				49DC302020225F4700E7F05F /* PostModel.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,9 +383,11 @@
 				49A6D81D201FB22600B994A2 /* LoginViewController.swift in Sources */,
 				49A6D7EE201E86E500B994A2 /* AppDelegate.swift in Sources */,
 				49A6D822201FB2A100B994A2 /* HomepageViewController.swift in Sources */,
+				49DC302720227D1000E7F05F /* ProfileTableViewCell.swift in Sources */,
 				49A6D830202104D300B994A2 /* HomepageTableViewCell.swift in Sources */,
 				49A6D82C202100FD00B994A2 /* Extensions.swift in Sources */,
 				49A6D83620210C1400B994A2 /* BaseViewController.swift in Sources */,
+				49DC302320227CA600E7F05F /* ProfileViewController.swift in Sources */,
 				49A6D833202104E800B994A2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
