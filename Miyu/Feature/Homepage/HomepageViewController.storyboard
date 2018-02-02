@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vwB-rI-hIq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="WPe-C7-Xsm">
             <objects>
                 <viewController storyboardIdentifier="HomepageViewController" id="Ogx-fG-Vhg" customClass="HomepageViewController" customModule="Simi" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dYD-l5-zH8">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="homepageCell" id="JdL-pE-Qnw" customClass="HomepageTableViewCell" customModule="Simi" customModuleProvider="target">
@@ -61,7 +61,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="229-3b-bvJ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="vgF-jc-kax"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="vgF-jc-kax"/>
                     <navigationItem key="navigationItem" id="Sdh-jL-21w"/>
                     <connections>
                         <outlet property="tableView" destination="dYD-l5-zH8" id="6fh-TX-hQG"/>
@@ -69,35 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0d-RZ-kgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="652" y="-85"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="90e-ps-7Fu">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="vwB-rI-hIq" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qq5-2I-0zg">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="Ogx-fG-Vhg" kind="relationship" relationship="viewControllers" id="C6n-I7-Uf5"/>
-                        <segue destination="hQP-Bm-EMY" kind="relationship" relationship="viewControllers" id="kiU-VK-TY7"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9iA-zI-m8A" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-142.40000000000001" y="35.082458770614693"/>
-        </scene>
-        <!--ProfileViewController-->
-        <scene sceneID="Gcs-r7-T9e">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ProfileViewController" id="hQP-Bm-EMY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="LxV-Qa-yt3"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LBG-Qo-Wtq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="652" y="603"/>
+            <point key="canvasLocation" x="628" y="-193"/>
         </scene>
     </scenes>
 </document>

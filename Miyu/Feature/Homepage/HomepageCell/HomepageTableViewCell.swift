@@ -26,7 +26,11 @@ class HomepageTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        setup()
+    }
+    
+    private func setup() {
+        // Round image
     }
 
     

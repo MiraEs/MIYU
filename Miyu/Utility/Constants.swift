@@ -16,5 +16,6 @@ internal final class Constants {
     
     // MARK: PROFILE TABLE VIEW CELL
     static let profileCell = "profileCell"
+    static let profileXib = "ProfileTableViewCell"
     
 }
