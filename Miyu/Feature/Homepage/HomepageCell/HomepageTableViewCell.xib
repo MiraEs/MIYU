@@ -41,22 +41,22 @@
                         </constraints>
                     </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="xqg-D0-BRD" userLabel="Caption Photo">
-                        <rect key="frame" x="46" y="128" width="493" height="301"/>
+                        <rect key="frame" x="46" y="128" width="493" height="313"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Picture description and other good stuff caption stuff and stuff here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUD-j2-8Nf">
-                                <rect key="frame" x="0.0" y="0.0" width="493" height="20.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="493" height="32.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog" translatesAutoresizingMaskIntoConstraints="NO" id="JSI-uK-gow">
-                                <rect key="frame" x="0.0" y="20.5" width="493" height="260"/>
+                                <rect key="frame" x="0.0" y="32.5" width="493" height="260"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="JSI-uK-gow" secondAttribute="height" multiplier="112:59" id="LPO-5K-Xnz"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* 1000 people rated this" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZH-B9-b1W">
-                                <rect key="frame" x="0.0" y="280.5" width="184" height="20.5"/>
+                                <rect key="frame" x="0.0" y="292.5" width="184" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -64,7 +64,7 @@
                         </subviews>
                     </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="eJm-zm-8pP" userLabel="Comments">
-                        <rect key="frame" x="46" y="459" width="493" height="20.5"/>
+                        <rect key="frame" x="46" y="471" width="493" height="20.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Comments(25)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcK-cd-6Bg">
                                 <rect key="frame" x="0.0" y="0.0" width="343.5" height="20.5"/>
@@ -89,7 +89,7 @@
                         </constraints>
                     </imageView>
                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="rC0-b4-6Qh" customClass="CosmosView" customModule="Cosmos">
-                        <rect key="frame" x="59" y="529" width="470" height="102"/>
+                        <rect key="frame" x="59" y="541" width="470" height="90"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
