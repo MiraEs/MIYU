@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4933BEC92023FA35004307E4 /* ProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4933BEC82023FA35004307E4 /* ProfileViewController.storyboard */; };
+		4933BECB2023FD27004307E4 /* HomepageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4933BECA2023FD27004307E4 /* HomepageViewController.storyboard */; };
 		49A6D7EE201E86E500B994A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D7ED201E86E500B994A2 /* AppDelegate.swift */; };
 		49A6D7F3201E86E500B994A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49A6D7F1201E86E500B994A2 /* Main.storyboard */; };
 		49A6D7F5201E86E500B994A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A6D7F4201E86E500B994A2 /* Assets.xcassets */; };
@@ -15,12 +17,17 @@
 		49A6D80E201E86E500B994A2 /* MiyuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D80D201E86E500B994A2 /* MiyuUITests.swift */; };
 		49A6D81D201FB22600B994A2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D81C201FB22600B994A2 /* LoginViewController.swift */; };
 		49A6D822201FB2A100B994A2 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D820201FB2A100B994A2 /* HomepageViewController.swift */; };
-		49A6D829201FB55D00B994A2 /* HomepageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49A6D828201FB55D00B994A2 /* HomepageViewController.storyboard */; };
+		49A6D829201FB55D00B994A2 /* MainTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49A6D828201FB55D00B994A2 /* MainTab.storyboard */; };
 		49A6D82C202100FD00B994A2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D82B202100FD00B994A2 /* Extensions.swift */; };
 		49A6D830202104D300B994A2 /* HomepageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D82E202104D300B994A2 /* HomepageTableViewCell.swift */; };
 		49A6D831202104D300B994A2 /* HomepageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A6D82F202104D300B994A2 /* HomepageTableViewCell.xib */; };
 		49A6D833202104E800B994A2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D832202104E800B994A2 /* Constants.swift */; };
 		49A6D83620210C1400B994A2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D83520210C1400B994A2 /* BaseViewController.swift */; };
+		49DC302020225F4700E7F05F /* PostModel.json in Resources */ = {isa = PBXBuildFile; fileRef = 49DC301F20225F4700E7F05F /* PostModel.json */; };
+		49DC302320227CA600E7F05F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC302220227CA600E7F05F /* ProfileViewController.swift */; };
+		49DC302720227D1000E7F05F /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC302520227D1000E7F05F /* ProfileTableViewCell.swift */; };
+		49DC302820227D1000E7F05F /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49DC302620227D1000E7F05F /* ProfileTableViewCell.xib */; };
+		A6D229098CC879BBB8FBA887 /* Pods_Simi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF52E51E0A2A05252F8FD2C /* Pods_Simi.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4933BEC82023FA35004307E4 /* ProfileViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileViewController.storyboard; sourceTree = "<group>"; };
+		4933BECA2023FD27004307E4 /* HomepageViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomepageViewController.storyboard; sourceTree = "<group>"; };
 		49A6D7EA201E86E500B994A2 /* Simi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Simi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A6D7ED201E86E500B994A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Miyu/Supporting Files/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		49A6D7F2201E86E500B994A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,12 +64,19 @@
 		49A6D80F201E86E500B994A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49A6D81C201FB22600B994A2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		49A6D820201FB2A100B994A2 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
-		49A6D828201FB55D00B994A2 /* HomepageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomepageViewController.storyboard; sourceTree = "<group>"; };
+		49A6D828201FB55D00B994A2 /* MainTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTab.storyboard; sourceTree = "<group>"; };
 		49A6D82B202100FD00B994A2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		49A6D82E202104D300B994A2 /* HomepageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageTableViewCell.swift; sourceTree = "<group>"; };
 		49A6D82F202104D300B994A2 /* HomepageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomepageTableViewCell.xib; sourceTree = "<group>"; };
 		49A6D832202104E800B994A2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		49A6D83520210C1400B994A2 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		49DC301F20225F4700E7F05F /* PostModel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PostModel.json; sourceTree = "<group>"; };
+		49DC302220227CA600E7F05F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		49DC302520227D1000E7F05F /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		49DC302620227D1000E7F05F /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		B9C03D3DD35F9854ACCA326C /* Pods-Simi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Simi/Pods-Simi.release.xcconfig"; sourceTree = "<group>"; };
+		EAF52E51E0A2A05252F8FD2C /* Pods_Simi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE61667080C8BFC78ADF8420 /* Pods-Simi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Simi/Pods-Simi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6D229098CC879BBB8FBA887 /* Pods_Simi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +105,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		191EDA54E8567AF4CA3232E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAF52E51E0A2A05252F8FD2C /* Pods_Simi.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		49A6D7E1201E86E500B994A2 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +120,8 @@
 				49A6D801201E86E500B994A2 /* MiyuTests */,
 				49A6D80C201E86E500B994A2 /* MiyuUITests */,
 				49A6D7EB201E86E500B994A2 /* Products */,
+				A27C01E12F24364B7EC12480 /* Pods */,
+				191EDA54E8567AF4CA3232E6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				49A6D7F1201E86E500B994A2 /* Main.storyboard */,
+				49A6D828201FB55D00B994A2 /* MainTab.storyboard */,
+				49DC302120225F5000E7F05F /* Model */,
 				49A6D82A201FB62400B994A2 /* Feature */,
 				49A6D82D2021042C00B994A2 /* Utility */,
 				49A6D81B201E871200B994A2 /* Supporting Files */,
@@ -153,7 +182,7 @@
 			children = (
 				49A6D8342021051D00B994A2 /* HomepageCell */,
 				49A6D820201FB2A100B994A2 /* HomepageViewController.swift */,
-				49A6D828201FB55D00B994A2 /* HomepageViewController.storyboard */,
+				4933BECA2023FD27004307E4 /* HomepageViewController.storyboard */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -171,6 +200,7 @@
 			children = (
 				49A6D825201FB30300B994A2 /* Login */,
 				49A6D824201FB2F200B994A2 /* Homepage */,
+				49DC302420227CB500E7F05F /* Profile */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -202,6 +232,42 @@
 			path = "Helper Classes";
 			sourceTree = "<group>";
 		};
+		49DC302120225F5000E7F05F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49DC301F20225F4700E7F05F /* PostModel.json */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		49DC302420227CB500E7F05F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				49DC302920227D1600E7F05F /* Profile Cell */,
+				49DC302220227CA600E7F05F /* ProfileViewController.swift */,
+				4933BEC82023FA35004307E4 /* ProfileViewController.storyboard */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		49DC302920227D1600E7F05F /* Profile Cell */ = {
+			isa = PBXGroup;
+			children = (
+				49DC302520227D1000E7F05F /* ProfileTableViewCell.swift */,
+				49DC302620227D1000E7F05F /* ProfileTableViewCell.xib */,
+			);
+			path = "Profile Cell";
+			sourceTree = "<group>";
+		};
+		A27C01E12F24364B7EC12480 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EE61667080C8BFC78ADF8420 /* Pods-Simi.debug.xcconfig */,
+				B9C03D3DD35F9854ACCA326C /* Pods-Simi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -209,9 +275,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49A6D812201E86E500B994A2 /* Build configuration list for PBXNativeTarget "Simi" */;
 			buildPhases = (
+				7E83368FE8084FD606F39663 /* [CP] Check Pods Manifest.lock */,
 				49A6D7E6201E86E500B994A2 /* Sources */,
 				49A6D7E7201E86E500B994A2 /* Frameworks */,
 				49A6D7E8201E86E500B994A2 /* Resources */,
+				ED92C30B5AF2C8E4F7CAB276 /* [CP] Embed Pods Frameworks */,
+				5B440E520A2F0A11783B8BA5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -312,8 +381,12 @@
 				49A6D7F8201E86E500B994A2 /* LaunchScreen.storyboard in Resources */,
 				49A6D7F5201E86E500B994A2 /* Assets.xcassets in Resources */,
 				49A6D831202104D300B994A2 /* HomepageTableViewCell.xib in Resources */,
+				4933BECB2023FD27004307E4 /* HomepageViewController.storyboard in Resources */,
+				49DC302820227D1000E7F05F /* ProfileTableViewCell.xib in Resources */,
 				49A6D7F3201E86E500B994A2 /* Main.storyboard in Resources */,
-				49A6D829201FB55D00B994A2 /* HomepageViewController.storyboard in Resources */,
+				4933BEC92023FA35004307E4 /* ProfileViewController.storyboard in Resources */,
+				49A6D829201FB55D00B994A2 /* MainTab.storyboard in Resources */,
+				49DC302020225F4700E7F05F /* PostModel.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +406,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5B440E520A2F0A11783B8BA5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Simi/Pods-Simi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E83368FE8084FD606F39663 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Simi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED92C30B5AF2C8E4F7CAB276 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Simi/Pods-Simi-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Simi/Pods-Simi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		49A6D7E6201E86E500B994A2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -341,9 +468,11 @@
 				49A6D81D201FB22600B994A2 /* LoginViewController.swift in Sources */,
 				49A6D7EE201E86E500B994A2 /* AppDelegate.swift in Sources */,
 				49A6D822201FB2A100B994A2 /* HomepageViewController.swift in Sources */,
+				49DC302720227D1000E7F05F /* ProfileTableViewCell.swift in Sources */,
 				49A6D830202104D300B994A2 /* HomepageTableViewCell.swift in Sources */,
 				49A6D82C202100FD00B994A2 /* Extensions.swift in Sources */,
 				49A6D83620210C1400B994A2 /* BaseViewController.swift in Sources */,
+				49DC302320227CA600E7F05F /* ProfileViewController.swift in Sources */,
 				49A6D833202104E800B994A2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,6 +637,7 @@
 		};
 		49A6D813201E86E500B994A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE61667080C8BFC78ADF8420 /* Pods-Simi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -523,6 +653,7 @@
 		};
 		49A6D814201E86E500B994A2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9C03D3DD35F9854ACCA326C /* Pods-Simi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

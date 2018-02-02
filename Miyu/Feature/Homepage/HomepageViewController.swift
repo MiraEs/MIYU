@@ -18,15 +18,11 @@ class HomepageViewController: BaseViewController {
         setup()
     }
     
-    @IBAction func burgerMenutapped(_ sender: Any) {
-        print("burger menu tapped")
-    }
-    
     // MARK: SETUP
     private func setup() {
+        // Tableview setup
         tableView.register(UINib(nibName: Constants.homeXib, bundle: nil),
                            forCellReuseIdentifier: Constants.homeCell)
-        self.view.backgroundColor = UIColor(red:0.92, green:0.74, blue:0.74, alpha:1.0)
     }
 }
 
@@ -39,5 +35,11 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.homeCell, for: indexPath) as! HomepageTableViewCell
         return cell
+    }
+}
+
+extension HomepageViewController: UIBarPositioningDelegate {
+    func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
+        return .topAttached
     }
 }
