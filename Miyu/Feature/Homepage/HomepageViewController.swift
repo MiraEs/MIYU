@@ -24,12 +24,6 @@ class HomepageViewController: BaseViewController {
         tableView.register(UINib(nibName: Constants.homeXib, bundle: nil),
                            forCellReuseIdentifier: Constants.homeCell)
     }
-    
-    // MARK: BURGER MENU FUNCTIONALITY
-    // TODO: Change this for new design / basic functionality persists
-    @IBAction func menuTapped(_ sender: Any) {
-        print("popup menu?")
-    }
 }
 
 extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
