@@ -14,4 +14,7 @@ internal final class Constants {
     static let homeCell = "homepageCell"
     static let homeXib = "HomepageTableViewCell"
     
+    // MARK: PROFILE TABLE VIEW CELL
+    static let profileCell = "profileCell"
+    
 }

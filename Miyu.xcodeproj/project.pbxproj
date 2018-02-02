@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4933BEC92023FA35004307E4 /* ProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4933BEC82023FA35004307E4 /* ProfileViewController.storyboard */; };
 		49A6D7EE201E86E500B994A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D7ED201E86E500B994A2 /* AppDelegate.swift */; };
 		49A6D7F3201E86E500B994A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49A6D7F1201E86E500B994A2 /* Main.storyboard */; };
 		49A6D7F5201E86E500B994A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A6D7F4201E86E500B994A2 /* Assets.xcassets */; };
@@ -25,7 +26,6 @@
 		49DC302320227CA600E7F05F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC302220227CA600E7F05F /* ProfileViewController.swift */; };
 		49DC302720227D1000E7F05F /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC302520227D1000E7F05F /* ProfileTableViewCell.swift */; };
 		49DC302820227D1000E7F05F /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49DC302620227D1000E7F05F /* ProfileTableViewCell.xib */; };
-		49DC302F20227DA500E7F05F /* ProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DC302E20227DA500E7F05F /* ProfileViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4933BEC82023FA35004307E4 /* ProfileViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileViewController.storyboard; sourceTree = "<group>"; };
 		49A6D7EA201E86E500B994A2 /* Simi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Simi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A6D7ED201E86E500B994A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Miyu/Supporting Files/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		49A6D7F2201E86E500B994A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -70,7 +71,6 @@
 		49DC302220227CA600E7F05F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		49DC302520227D1000E7F05F /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		49DC302620227D1000E7F05F /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
-		49DC302E20227DA500E7F05F /* ProfileViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,7 +227,7 @@
 			children = (
 				49DC302920227D1600E7F05F /* Profile Cell */,
 				49DC302220227CA600E7F05F /* ProfileViewController.swift */,
-				49DC302E20227DA500E7F05F /* ProfileViewController.storyboard */,
+				4933BEC82023FA35004307E4 /* ProfileViewController.storyboard */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -353,8 +353,8 @@
 				49A6D831202104D300B994A2 /* HomepageTableViewCell.xib in Resources */,
 				49DC302820227D1000E7F05F /* ProfileTableViewCell.xib in Resources */,
 				49A6D7F3201E86E500B994A2 /* Main.storyboard in Resources */,
+				4933BEC92023FA35004307E4 /* ProfileViewController.storyboard in Resources */,
 				49A6D829201FB55D00B994A2 /* HomepageViewController.storyboard in Resources */,
-				49DC302F20227DA500E7F05F /* ProfileViewController.storyboard in Resources */,
 				49DC302020225F4700E7F05F /* PostModel.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
