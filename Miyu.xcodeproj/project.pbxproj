@@ -13,6 +13,9 @@
 		4937FAEF2025733F006E991B /* UploadViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4937FAEE2025733F006E991B /* UploadViewController.storyboard */; };
 		4937FAF220257564006E991B /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4937FAF120257564006E991B /* ExploreViewController.swift */; };
 		4937FAF420257573006E991B /* ExploreViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4937FAF320257573006E991B /* ExploreViewController.storyboard */; };
+		4937FAF720263C77006E991B /* RegisterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4937FAF620263C77006E991B /* RegisterViewController.storyboard */; };
+		4937FAFA20263CD5006E991B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4937FAF920263CD5006E991B /* RegisterViewController.swift */; };
+		4937FAFC20263D88006E991B /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4937FAFB20263D88006E991B /* LoginViewController.storyboard */; };
 		49A6D7EE201E86E500B994A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D7ED201E86E500B994A2 /* AppDelegate.swift */; };
 		49A6D7F3201E86E500B994A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49A6D7F1201E86E500B994A2 /* Main.storyboard */; };
 		49A6D7F5201E86E500B994A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A6D7F4201E86E500B994A2 /* Assets.xcassets */; };
@@ -57,6 +60,9 @@
 		4937FAEE2025733F006E991B /* UploadViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UploadViewController.storyboard; sourceTree = "<group>"; };
 		4937FAF120257564006E991B /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		4937FAF320257573006E991B /* ExploreViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ExploreViewController.storyboard; sourceTree = "<group>"; };
+		4937FAF620263C77006E991B /* RegisterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterViewController.storyboard; sourceTree = "<group>"; };
+		4937FAF920263CD5006E991B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		4937FAFB20263D88006E991B /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
 		49A6D7EA201E86E500B994A2 /* Simi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Simi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A6D7ED201E86E500B994A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Miyu/Supporting Files/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		49A6D7F2201E86E500B994A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -137,6 +143,15 @@
 			path = Explore;
 			sourceTree = "<group>";
 		};
+		4937FAF820263C7D006E991B /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				4937FAF620263C77006E991B /* RegisterViewController.storyboard */,
+				4937FAF920263CD5006E991B /* RegisterViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 		49A6D7E1201E86E500B994A2 = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				49A6D81C201FB22600B994A2 /* LoginViewController.swift */,
+				4937FAFB20263D88006E991B /* LoginViewController.storyboard */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -222,6 +238,7 @@
 		49A6D82A201FB62400B994A2 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				4937FAF820263C7D006E991B /* Register */,
 				49A6D825201FB30300B994A2 /* Login */,
 				49A6D824201FB2F200B994A2 /* Homepage */,
 				49DC302420227CB500E7F05F /* Profile */,
@@ -411,6 +428,8 @@
 				49DC302820227D1000E7F05F /* ProfileTableViewCell.xib in Resources */,
 				49A6D7F3201E86E500B994A2 /* Main.storyboard in Resources */,
 				4933BEC92023FA35004307E4 /* ProfileViewController.storyboard in Resources */,
+				4937FAF720263C77006E991B /* RegisterViewController.storyboard in Resources */,
+				4937FAFC20263D88006E991B /* LoginViewController.storyboard in Resources */,
 				4937FAF420257573006E991B /* ExploreViewController.storyboard in Resources */,
 				49A6D829201FB55D00B994A2 /* MainTab.storyboard in Resources */,
 			);
@@ -494,6 +513,7 @@
 				49A6D81D201FB22600B994A2 /* LoginViewController.swift in Sources */,
 				4937FAED2025732A006E991B /* UploadViewController.swift in Sources */,
 				49A6D7EE201E86E500B994A2 /* AppDelegate.swift in Sources */,
+				4937FAFA20263CD5006E991B /* RegisterViewController.swift in Sources */,
 				49A6D822201FB2A100B994A2 /* HomepageViewController.swift in Sources */,
 				49DC302720227D1000E7F05F /* ProfileTableViewCell.swift in Sources */,
 				49A6D830202104D300B994A2 /* HomepageTableViewCell.swift in Sources */,
