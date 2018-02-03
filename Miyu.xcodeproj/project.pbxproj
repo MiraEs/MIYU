@@ -16,8 +16,10 @@
 		4937FAF720263C77006E991B /* RegisterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4937FAF620263C77006E991B /* RegisterViewController.storyboard */; };
 		4937FAFA20263CD5006E991B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4937FAF920263CD5006E991B /* RegisterViewController.swift */; };
 		4937FAFC20263D88006E991B /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4937FAFB20263D88006E991B /* LoginViewController.storyboard */; };
+		4937FAFE20264A33006E991B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4937FAFD20264A33006E991B /* GoogleService-Info.plist */; };
+		4937FAFF20264A33006E991B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4937FAFD20264A33006E991B /* GoogleService-Info.plist */; };
+		4937FB0020264A33006E991B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4937FAFD20264A33006E991B /* GoogleService-Info.plist */; };
 		49A6D7EE201E86E500B994A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D7ED201E86E500B994A2 /* AppDelegate.swift */; };
-		49A6D7F3201E86E500B994A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49A6D7F1201E86E500B994A2 /* Main.storyboard */; };
 		49A6D7F5201E86E500B994A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A6D7F4201E86E500B994A2 /* Assets.xcassets */; };
 		49A6D7F8201E86E500B994A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49A6D7F6201E86E500B994A2 /* LaunchScreen.storyboard */; };
 		49A6D803201E86E500B994A2 /* MiyuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D802201E86E500B994A2 /* MiyuTests.swift */; };
@@ -33,7 +35,7 @@
 		49DC302320227CA600E7F05F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC302220227CA600E7F05F /* ProfileViewController.swift */; };
 		49DC302720227D1000E7F05F /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC302520227D1000E7F05F /* ProfileTableViewCell.swift */; };
 		49DC302820227D1000E7F05F /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49DC302620227D1000E7F05F /* ProfileTableViewCell.xib */; };
-		A6D229098CC879BBB8FBA887 /* Pods_Simi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF52E51E0A2A05252F8FD2C /* Pods_Simi.framework */; };
+		8736BCB40BCE784B2B71E8F5 /* Pods_Miyu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8711C96527BBB4952E43A15B /* Pods_Miyu.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,9 +65,9 @@
 		4937FAF620263C77006E991B /* RegisterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterViewController.storyboard; sourceTree = "<group>"; };
 		4937FAF920263CD5006E991B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4937FAFB20263D88006E991B /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
-		49A6D7EA201E86E500B994A2 /* Simi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Simi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4937FAFD20264A33006E991B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		49A6D7EA201E86E500B994A2 /* Miyu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Miyu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A6D7ED201E86E500B994A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Miyu/Supporting Files/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
-		49A6D7F2201E86E500B994A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49A6D7F4201E86E500B994A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49A6D7F7201E86E500B994A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49A6D7F9201E86E500B994A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -86,9 +88,9 @@
 		49DC302220227CA600E7F05F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		49DC302520227D1000E7F05F /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		49DC302620227D1000E7F05F /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
-		B9C03D3DD35F9854ACCA326C /* Pods-Simi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Simi/Pods-Simi.release.xcconfig"; sourceTree = "<group>"; };
-		EAF52E51E0A2A05252F8FD2C /* Pods_Simi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE61667080C8BFC78ADF8420 /* Pods-Simi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Simi/Pods-Simi.debug.xcconfig"; sourceTree = "<group>"; };
+		8711C96527BBB4952E43A15B /* Pods_Miyu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Miyu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A81E4928A6D84A33072D6897 /* Pods-Miyu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Miyu.release.xcconfig"; path = "Pods/Target Support Files/Pods-Miyu/Pods-Miyu.release.xcconfig"; sourceTree = "<group>"; };
+		CCC9F6D602AA27277E5E0FB5 /* Pods-Miyu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Miyu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Miyu/Pods-Miyu.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6D229098CC879BBB8FBA887 /* Pods_Simi.framework in Frameworks */,
+				8736BCB40BCE784B2B71E8F5 /* Pods_Miyu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +122,7 @@
 		191EDA54E8567AF4CA3232E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EAF52E51E0A2A05252F8FD2C /* Pods_Simi.framework */,
+				8711C96527BBB4952E43A15B /* Pods_Miyu.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,8 +148,8 @@
 		4937FAF820263C7D006E991B /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				4937FAF620263C77006E991B /* RegisterViewController.storyboard */,
 				4937FAF920263CD5006E991B /* RegisterViewController.swift */,
+				4937FAF620263C77006E991B /* RegisterViewController.storyboard */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -167,7 +169,7 @@
 		49A6D7EB201E86E500B994A2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				49A6D7EA201E86E500B994A2 /* Simi.app */,
+				49A6D7EA201E86E500B994A2 /* Miyu.app */,
 				49A6D7FE201E86E500B994A2 /* MiyuTests.xctest */,
 				49A6D809201E86E500B994A2 /* MiyuUITests.xctest */,
 			);
@@ -177,7 +179,6 @@
 		49A6D7EC201E86E500B994A2 /* Miyu */ = {
 			isa = PBXGroup;
 			children = (
-				49A6D7F1201E86E500B994A2 /* Main.storyboard */,
 				49A6D828201FB55D00B994A2 /* MainTab.storyboard */,
 				49DC302120225F5000E7F05F /* Model */,
 				49A6D82A201FB62400B994A2 /* Feature */,
@@ -212,6 +213,7 @@
 				49A6D7F4201E86E500B994A2 /* Assets.xcassets */,
 				49A6D7F6201E86E500B994A2 /* LaunchScreen.storyboard */,
 				49A6D7F9201E86E500B994A2 /* Info.plist */,
+				4937FAFD20264A33006E991B /* GoogleService-Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -238,8 +240,8 @@
 		49A6D82A201FB62400B994A2 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				4937FAF820263C7D006E991B /* Register */,
 				49A6D825201FB30300B994A2 /* Login */,
+				4937FAF820263C7D006E991B /* Register */,
 				49A6D824201FB2F200B994A2 /* Homepage */,
 				49DC302420227CB500E7F05F /* Profile */,
 				4937FAF52025758B006E991B /* Explore */,
@@ -304,8 +306,8 @@
 		A27C01E12F24364B7EC12480 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EE61667080C8BFC78ADF8420 /* Pods-Simi.debug.xcconfig */,
-				B9C03D3DD35F9854ACCA326C /* Pods-Simi.release.xcconfig */,
+				CCC9F6D602AA27277E5E0FB5 /* Pods-Miyu.debug.xcconfig */,
+				A81E4928A6D84A33072D6897 /* Pods-Miyu.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -313,9 +315,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		49A6D7E9201E86E500B994A2 /* Simi */ = {
+		49A6D7E9201E86E500B994A2 /* Miyu */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 49A6D812201E86E500B994A2 /* Build configuration list for PBXNativeTarget "Simi" */;
+			buildConfigurationList = 49A6D812201E86E500B994A2 /* Build configuration list for PBXNativeTarget "Miyu" */;
 			buildPhases = (
 				7E83368FE8084FD606F39663 /* [CP] Check Pods Manifest.lock */,
 				49A6D7E6201E86E500B994A2 /* Sources */,
@@ -328,9 +330,9 @@
 			);
 			dependencies = (
 			);
-			name = Simi;
+			name = Miyu;
 			productName = Miyu;
-			productReference = 49A6D7EA201E86E500B994A2 /* Simi.app */;
+			productReference = 49A6D7EA201E86E500B994A2 /* Miyu.app */;
 			productType = "com.apple.product-type.application";
 		};
 		49A6D7FD201E86E500B994A2 /* MiyuTests */ = {
@@ -408,7 +410,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				49A6D7E9201E86E500B994A2 /* Simi */,
+				49A6D7E9201E86E500B994A2 /* Miyu */,
 				49A6D7FD201E86E500B994A2 /* MiyuTests */,
 				49A6D808201E86E500B994A2 /* MiyuUITests */,
 			);
@@ -425,8 +427,8 @@
 				4937FAEF2025733F006E991B /* UploadViewController.storyboard in Resources */,
 				49A6D831202104D300B994A2 /* HomepageTableViewCell.xib in Resources */,
 				4933BECB2023FD27004307E4 /* HomepageViewController.storyboard in Resources */,
+				4937FAFE20264A33006E991B /* GoogleService-Info.plist in Resources */,
 				49DC302820227D1000E7F05F /* ProfileTableViewCell.xib in Resources */,
-				49A6D7F3201E86E500B994A2 /* Main.storyboard in Resources */,
 				4933BEC92023FA35004307E4 /* ProfileViewController.storyboard in Resources */,
 				4937FAF720263C77006E991B /* RegisterViewController.storyboard in Resources */,
 				4937FAFC20263D88006E991B /* LoginViewController.storyboard in Resources */,
@@ -439,6 +441,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4937FAFF20264A33006E991B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +449,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4937FB0020264A33006E991B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,7 +468,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Simi/Pods-Simi-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Miyu/Pods-Miyu-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7E83368FE8084FD606F39663 /* [CP] Check Pods Manifest.lock */ = {
@@ -478,7 +482,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Simi-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Miyu-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -491,16 +495,22 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Simi/Pods-Simi-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Miyu/Pods-Miyu-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Simi/Pods-Simi-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Miyu/Pods-Miyu-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -546,25 +556,17 @@
 /* Begin PBXTargetDependency section */
 		49A6D800201E86E500B994A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 49A6D7E9201E86E500B994A2 /* Simi */;
+			target = 49A6D7E9201E86E500B994A2 /* Miyu */;
 			targetProxy = 49A6D7FF201E86E500B994A2 /* PBXContainerItemProxy */;
 		};
 		49A6D80B201E86E500B994A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 49A6D7E9201E86E500B994A2 /* Simi */;
+			target = 49A6D7E9201E86E500B994A2 /* Miyu */;
 			targetProxy = 49A6D80A201E86E500B994A2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		49A6D7F1201E86E500B994A2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				49A6D7F2201E86E500B994A2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		49A6D7F6201E86E500B994A2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -685,14 +687,14 @@
 		};
 		49A6D813201E86E500B994A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE61667080C8BFC78ADF8420 /* Pods-Simi.debug.xcconfig */;
+			baseConfigurationReference = CCC9F6D602AA27277E5E0FB5 /* Pods-Miyu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9QMWUGNK5F;
 				INFOPLIST_FILE = "$(SRCROOT)/Miyu/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.miraes.me.Simi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.miraes.Miyu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -701,14 +703,14 @@
 		};
 		49A6D814201E86E500B994A2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9C03D3DD35F9854ACCA326C /* Pods-Simi.release.xcconfig */;
+			baseConfigurationReference = A81E4928A6D84A33072D6897 /* Pods-Miyu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9QMWUGNK5F;
 				INFOPLIST_FILE = "$(SRCROOT)/Miyu/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.miraes.me.Simi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.miraes.Miyu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -793,7 +795,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		49A6D812201E86E500B994A2 /* Build configuration list for PBXNativeTarget "Simi" */ = {
+		49A6D812201E86E500B994A2 /* Build configuration list for PBXNativeTarget "Miyu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				49A6D813201E86E500B994A2 /* Debug */,

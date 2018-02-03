@@ -15,11 +15,23 @@ class LoginViewController: BaseViewController {
     var homeVC: UIViewController {
         return HomepageViewController.instantiate(fromAppStoryboard: .HomepageViewController)
     }
-
+    
+    var registerVC: UIViewController {
+        return RegisterViewController.instantiate(fromAppStoryboard: .RegisterViewController)
+    }
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
         setup()
+    }
+    
+    // TODO: TESTING
+    private func testing() {
+        
     }
     
     // MARK: SETUP
@@ -27,9 +39,28 @@ class LoginViewController: BaseViewController {
     private func setup() {
         self.view.backgroundColor = UIColor(red:0.92, green:0.74, blue:0.74, alpha:1.0)
     }
-
-    @IBAction func loginDidTap(_ sender: Any) {
-        present(homeVC, animated: true, completion: nil)
+    //MARK: REGISTER
+    @IBAction func registerTapped(_ sender: Any) {
+        present(registerVC, animated: true, completion: nil)
     }
     
+    // MARK: LOGIN
+    @IBAction func didLoginTapped(_ sender: Any) {
+        
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        //validate text here?
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print(textField.text ?? "")
+    }
+    
+    
+
 }

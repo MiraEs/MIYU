@@ -11,7 +11,7 @@ import UIKit
 
 enum AppStoryboard: String {
     
-    case HomepageViewController
+    case HomepageViewController, RegisterViewController
     
     var instance: UIStoryboard {
         

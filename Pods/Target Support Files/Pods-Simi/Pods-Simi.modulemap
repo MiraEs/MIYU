@@ -1,6 +1,0 @@
-framework module Pods_Simi {
-  umbrella header "Pods-Simi-umbrella.h"
-
-  export *
-  module * { export * }
-}
