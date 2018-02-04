@@ -7,21 +7,23 @@
 //
 
 import UIKit
+import Firebase
 
-
-
-class LoginViewController: BaseViewController {
+internal final class LoginViewController: BaseViewController {
     
-    var homeVC: UIViewController {
+    
+    private weak var homeVC: UIViewController? {
         return HomepageViewController.instantiate(fromAppStoryboard: .HomepageViewController)
     }
     
-    var registerVC: UIViewController {
+    private weak var registerVC: UIViewController? {
         return RegisterViewController.instantiate(fromAppStoryboard: .RegisterViewController)
     }
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    private var isValidUser = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +32,8 @@ class LoginViewController: BaseViewController {
     }
     
     // TODO: TESTING
-    private func testing() {
-        
+    private func testing(_ email: String) {
+        Auth.auth().createUser(withEmail: email, password: "chesse", completion: nil)
     }
     
     // MARK: SETUP
@@ -41,26 +43,19 @@ class LoginViewController: BaseViewController {
     }
     //MARK: REGISTER
     @IBAction func registerTapped(_ sender: Any) {
-        present(registerVC, animated: true, completion: nil)
+        present(registerVC!, animated: true, completion: nil)
     }
     
     // MARK: LOGIN
     @IBAction func didLoginTapped(_ sender: Any) {
+        guard let email = emailTextField.text,
+            let password = passwordTextField.text else {
+                return
+        }
         
+        if isValidUser {
+            Auth.auth().createUser(withEmail: email, password: password, completion: nil)
+            present(homeVC!, animated: true, completion: nil)
+        }
     }
-}
-
-extension LoginViewController: UITextFieldDelegate {
-    
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        //validate text here?
-        return true
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        print(textField.text ?? "")
-    }
-    
-    
-
 }
