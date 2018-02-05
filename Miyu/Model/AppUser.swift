@@ -8,7 +8,7 @@
 
 import Foundation
 
-class User {
+class AppUser {
     let email: String?
     let password: String?
     

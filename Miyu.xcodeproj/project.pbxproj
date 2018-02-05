@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		49108EBD2027D7200031314B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49108EBC2027D7200031314B /* User.swift */; };
+		49108EBD2027D7200031314B /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49108EBC2027D7200031314B /* AppUser.swift */; };
 		49108EBF2027D76A0031314B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49108EBE2027D76A0031314B /* LoginViewModel.swift */; };
 		4933BEC92023FA35004307E4 /* ProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4933BEC82023FA35004307E4 /* ProfileViewController.storyboard */; };
 		4933BECB2023FD27004307E4 /* HomepageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4933BECA2023FD27004307E4 /* HomepageViewController.storyboard */; };
@@ -59,7 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		49108EBC2027D7200031314B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		49108EBC2027D7200031314B /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		49108EBE2027D76A0031314B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		4933BEC82023FA35004307E4 /* ProfileViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileViewController.storyboard; sourceTree = "<group>"; };
 		4933BECA2023FD27004307E4 /* HomepageViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomepageViewController.storyboard; sourceTree = "<group>"; };
@@ -288,7 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				49D76EAB2027908B00881F15 /* FirebaseUserManager.swift */,
-				49108EBC2027D7200031314B /* User.swift */,
+				49108EBC2027D7200031314B /* AppUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -537,7 +537,7 @@
 				49A6D822201FB2A100B994A2 /* HomepageViewController.swift in Sources */,
 				49D76EAC2027908B00881F15 /* FirebaseUserManager.swift in Sources */,
 				49DC302720227D1000E7F05F /* ProfileTableViewCell.swift in Sources */,
-				49108EBD2027D7200031314B /* User.swift in Sources */,
+				49108EBD2027D7200031314B /* AppUser.swift in Sources */,
 				49A6D830202104D300B994A2 /* HomepageTableViewCell.swift in Sources */,
 				49A6D82C202100FD00B994A2 /* Extensions.swift in Sources */,
 				49A6D83620210C1400B994A2 /* BaseViewController.swift in Sources */,

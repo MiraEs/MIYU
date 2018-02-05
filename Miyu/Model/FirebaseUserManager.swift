@@ -12,9 +12,17 @@ import Firebase
 internal final class FirebaseUserManager {
     
     static let manager = FirebaseUserManager()
+    //let currentUser = Auth.auth().currentUser
+    
+    var currentUser: AppUser {
+        get {
+            return Auth.auth().currentUser
+        }
+    }
+    
     private init() {}
     
-    func createUser(user: User, handler: (() -> ())? = nil) {
+    func createUser(user: AppUser, handler: (() -> ())? = nil) {
         guard let email = user.email,
             let password = user.password else {
                 return
@@ -25,12 +33,13 @@ internal final class FirebaseUserManager {
                 print("successful user added \(email)")
                 handler?()
             } else {
+                // TODO: Create error alert class
                 print(error?.localizedDescription ?? "Unknown error")
             }
         })
     }
     
-    func login(user: User, handler: (()->())? = nil) {
+    func login(user: AppUser, handler: (()->())? = nil) {
         guard let email = user.email,
             let password = user.password else {
                 return
@@ -41,6 +50,7 @@ internal final class FirebaseUserManager {
                 handler?()
                 print(email)
             } else {
+                // TODO: create error alert class
                 print(error.debugDescription)
             }
         }
@@ -48,7 +58,7 @@ internal final class FirebaseUserManager {
 
     func signOut() {
         do {
-            print("signing out \(String(describing: Auth.auth().currentUser?.email))")
+            print("signing out \(String(describing: currentUser?.email))")
             try Auth.auth().signOut()
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)
