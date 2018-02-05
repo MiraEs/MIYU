@@ -13,27 +13,15 @@ internal final class LoginViewController: BaseViewController {
     
     var fbManager = FirebaseUserManager.manager
     
-    private weak var homeVC: UIViewController? {
-        return HomepageViewController.instantiate(fromAppStoryboard: .HomepageViewController)
-    }
-    
-    private weak var registerVC: UIViewController? {
-        return RegisterViewController.instantiate(fromAppStoryboard: .RegisterViewController)
+    private weak var viewModel: LoginViewModel! {
+        return LoginViewModel(presentingVC: self)
     }
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    private var isValidUser = true
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
-    }
-    // MARK: SETUP
-    
-    private func setup() {
-        self.view.backgroundColor = UIColor(red:0.92, green:0.74, blue:0.74, alpha:1.0)
     }
     
     private func resetTextfields() {
@@ -42,8 +30,8 @@ internal final class LoginViewController: BaseViewController {
     }
   
     @IBAction func registerTapped(_ sender: Any) {
-        fbManager.createUser(user: User(email: emailTextField.text!, password: passwordTextField.text!))
-        //present(registerVC!, animated: true, completion: nil)
+        //fbManager.createUser(user: User(email: emailTextField.text!, password: passwordTextField.text!))
+        viewModel.presentVC(vc: .homeVC)
     }
     
     @IBAction func signOutTapped(_ sender: Any) {
@@ -53,5 +41,6 @@ internal final class LoginViewController: BaseViewController {
     // MARK: LOGIN
     @IBAction func didLoginTapped(_ sender: Any) {
         fbManager.login(user: User(email: emailTextField.text!, password: passwordTextField.text!))
+        viewModel.presentVC(vc: .registerVC)
     }
 }
