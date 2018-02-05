@@ -9,44 +9,12 @@
 import Foundation
 import Firebase
 
-class User {
-    let email: String?
-    let password: String?
-    
-    init(email: String, password: String) {
-        self.email = email
-        self.password = password
-    }
-    
-    func createUser() {
-        
-    }
-}
-
-enum FirebaseActionManager {
-    case register, login, signout
-}
-
 internal final class FirebaseUserManager {
     
-    static let manage = FirebaseUserManager()
+    static let manager = FirebaseUserManager()
     private init() {}
     
-    func doAction(firebase action: FirebaseActionManager, user: User?) {
-        guard let user = user else { return }
-        
-        switch action {
-        case .login:
-            login(user: user)
-        case .register:
-            createUser(user: user)
-        case .signout:
-            print("signout")
-        default: break
-        }
-    }
-    
-    private func createUser(user: User) {
+    func createUser(user: User) {
         guard let email = user.email,
             let password = user.password else {
                 return
@@ -61,7 +29,7 @@ internal final class FirebaseUserManager {
         })
     }
     
-    private func login(user: User) {
+    func login(user: User) {
         guard let email = user.email,
             let password = user.password else {
                 return
@@ -73,6 +41,15 @@ internal final class FirebaseUserManager {
             } else {
                 print(error.debugDescription)
             }
+        }
+    }
+
+    func signOut() {
+        do {
+            print("signing out \(String(describing: Auth.auth().currentUser?.email))")
+            try Auth.auth().signOut()
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
         }
     }
 }

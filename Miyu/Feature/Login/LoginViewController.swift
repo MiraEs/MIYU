@@ -11,7 +11,7 @@ import Firebase
 
 internal final class LoginViewController: BaseViewController {
     
-    let firebaseManager = FirebaseUserManager.manage
+    var fbManager = FirebaseUserManager.manager
     
     private weak var homeVC: UIViewController? {
         return HomepageViewController.instantiate(fromAppStoryboard: .HomepageViewController)
@@ -28,7 +28,6 @@ internal final class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         setup()
     }
     // MARK: SETUP
@@ -41,66 +40,18 @@ internal final class LoginViewController: BaseViewController {
         emailTextField.text = ""
         passwordTextField.text = ""
     }
-    
-    // TODO: TESTING
-    private func createUser() {
-        guard let email = emailTextField.text,
-            let password = passwordTextField.text else {
-                return
-        }
-        
-        if isValidUser {
-            Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
-                if user != nil {
-                    self.resetTextfields()
-                } else {
-                    print(error?.localizedDescription ?? "Unknown error")
-                }
-            })
-            //present(homeVC!, animated: true, completion: nil)
-        }
-    }
-    
-    private func signIn() {
-        guard let email = emailTextField.text,
-            let password = passwordTextField.text else {
-                return
-        }
-        
-        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-            if user != nil {
-                print(user?.email)
-            } else {
-                print(error.debugDescription)
-            }
-        }
-    }
-    
-    private func signOut() {
-        do {
-            print("signing out \(String(describing: Auth.auth().currentUser?.email))")
-            try Auth.auth().signOut()
-        } catch let signOutError as NSError {
-            print("Error signing out: %@", signOutError)
-        }
-    }
   
     @IBAction func registerTapped(_ sender: Any) {
-        print("register tapped")
-        //createUser()
-        firebaseManager.doAction(firebase: .register, user: User(email: emailTextField.text!, password: passwordTextField.text))
+        fbManager.createUser(user: User(email: emailTextField.text!, password: passwordTextField.text!))
         //present(registerVC!, animated: true, completion: nil)
     }
     
     @IBAction func signOutTapped(_ sender: Any) {
-        print("signout tapped")
-        firebaseManager.doAction(firebase: .signout, user: Auth.auth().currentUser)
-        //signOut()
+        fbManager.signOut()
     }
     
     // MARK: LOGIN
     @IBAction func didLoginTapped(_ sender: Any) {
-        print("login tapped")
-        //signIn()
+        fbManager.login(user: User(email: emailTextField.text!, password: passwordTextField.text!))
     }
 }
