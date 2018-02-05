@@ -13,7 +13,7 @@
         <!--Register View Controller-->
         <scene sceneID="9pA-73-tqN">
             <objects>
-                <viewController id="XFn-ID-2np" customClass="RegisterViewController" customModule="Simi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewController" id="XFn-ID-2np" customClass="RegisterViewController" customModule="Miyu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="87L-bZ-y0H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

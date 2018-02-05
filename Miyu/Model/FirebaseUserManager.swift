@@ -12,9 +12,8 @@ import Firebase
 internal final class FirebaseUserManager {
     
     static let manager = FirebaseUserManager()
-    //let currentUser = Auth.auth().currentUser
     
-    var currentUser: AppUser {
+    var currentUser: User? {
         get {
             return Auth.auth().currentUser
         }
