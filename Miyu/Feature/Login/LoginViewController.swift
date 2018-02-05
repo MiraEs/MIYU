@@ -30,8 +30,7 @@ internal final class LoginViewController: BaseViewController {
     }
   
     @IBAction func registerTapped(_ sender: Any) {
-        //fbManager.createUser(user: User(email: emailTextField.text!, password: passwordTextField.text!))
-        viewModel.presentVC(vc: .homeVC)
+       viewModel.presentVC(vc: .registerVC)
     }
     
     @IBAction func signOutTapped(_ sender: Any) {
@@ -40,7 +39,10 @@ internal final class LoginViewController: BaseViewController {
     
     // MARK: LOGIN
     @IBAction func didLoginTapped(_ sender: Any) {
-        fbManager.login(user: User(email: emailTextField.text!, password: passwordTextField.text!))
-        viewModel.presentVC(vc: .registerVC)
+        let user = User(email: emailTextField.text!, password: passwordTextField.text!)
+        
+        fbManager.login(user: user) { [weak self] in
+            self?.viewModel.presentVC(vc: .homeVC)
+        }
     }
 }

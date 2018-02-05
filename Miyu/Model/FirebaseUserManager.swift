@@ -14,7 +14,7 @@ internal final class FirebaseUserManager {
     static let manager = FirebaseUserManager()
     private init() {}
     
-    func createUser(user: User) {
+    func createUser(user: User, handler: (() -> ())? = nil) {
         guard let email = user.email,
             let password = user.password else {
                 return
@@ -22,14 +22,15 @@ internal final class FirebaseUserManager {
         
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
             if user != nil {
-                print("successful user added \(user?.email!)")
+                print("successful user added \(email)")
+                handler?()
             } else {
                 print(error?.localizedDescription ?? "Unknown error")
             }
         })
     }
     
-    func login(user: User) {
+    func login(user: User, handler: (()->())? = nil) {
         guard let email = user.email,
             let password = user.password else {
                 return
@@ -37,7 +38,8 @@ internal final class FirebaseUserManager {
         
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if user != nil {
-                print(user?.email)
+                handler?()
+                print(email)
             } else {
                 print(error.debugDescription)
             }
