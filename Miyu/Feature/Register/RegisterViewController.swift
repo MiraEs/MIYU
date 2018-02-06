@@ -8,7 +8,8 @@
 
 import UIKit
 
-class RegisterViewController: BaseViewController {
+/// RegisterViewController initial build of User's profile before main home page.
+internal final class RegisterViewController: BaseViewController {
     
     private var fbManager = FirebaseUserManager.manager
     private var viewModel: RegisterViewModel!
@@ -29,7 +30,6 @@ class RegisterViewController: BaseViewController {
     }
     
     @IBAction func finishButtonTapped(_ sender: Any) {
-        print("finish button tapped - create user")
         guard let email = emailLabel.text,
             let password = passwordLabel.text else {
                 return
@@ -37,7 +37,6 @@ class RegisterViewController: BaseViewController {
         
         let user = AppUser(email: email, password: password)
         fbManager.createUser(user: user) { [weak self] in
-            
             self?.viewModel?.presentRootController()
         }
     }
