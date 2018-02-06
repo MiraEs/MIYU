@@ -19,8 +19,8 @@ internal final class AppUser {
     }
     
     //
-    func createUser() -> AppUser {
-        let user = AppUser.init(email: email, password: password)
-        return user
-    }
+//    func createUser() -> AppUser {
+//        let user = AppUser.init(email: email, password: password)
+//        return user
+//    }
 }

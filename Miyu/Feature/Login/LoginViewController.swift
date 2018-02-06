@@ -22,6 +22,8 @@ internal final class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fbManager?.getCurrentUserData()
     }
     
     
