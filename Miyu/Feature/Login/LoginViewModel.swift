@@ -15,10 +15,6 @@ enum PresentVC {
 
 internal final class LoginViewModel {
     
-    private weak var mainVC: UIViewController? {
-        return HomepageViewController.instantiate(fromAppStoryboard: .HomepageViewController)
-    }
-    
     private weak var homeVC: UIViewController? {
         return HomepageViewController.instantiate(fromAppStoryboard: .HomepageViewController)
     }

@@ -1,8 +1,8 @@
 //
-//  Extensions.swift
+//  InitializeViewControllerManager.swift
 //  Miyu
 //
-//  Created by Mira Estil on 1/30/18.
+//  Created by Mira Estil on 2/5/18.
 //  Copyright © 2018 ME. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import UIKit
 
 enum AppStoryboard: String {
     
-    case HomepageViewController, RegisterViewController
+    case HomepageViewController, RegisterViewController, ProfileViewController
     
     var instance: UIStoryboard {
         

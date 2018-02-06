@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vwB-rI-hIq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="WPe-C7-Xsm">
             <objects>
-                <viewController storyboardIdentifier="HomepageViewController" id="Ogx-fG-Vhg" customClass="HomepageViewController" customModule="Simi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomepageViewController" id="Ogx-fG-Vhg" customClass="HomepageViewController" customModule="Miyu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pef-7k-UEp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,10 +22,10 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="homepageCell" id="JdL-pE-Qnw" customClass="HomepageTableViewCell" customModule="Simi" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="homepageCell" id="JdL-pE-Qnw" customClass="HomepageTableViewCell" customModule="Miyu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JdL-pE-Qnw" id="mfe-a1-KiS">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JdL-pE-Qnw" id="mfe-a1-KiS">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
@@ -61,7 +61,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="229-3b-bvJ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="vgF-jc-kax"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="vgF-jc-kax"/>
                     <navigationItem key="navigationItem" id="Sdh-jL-21w"/>
                     <connections>
                         <outlet property="tableView" destination="dYD-l5-zH8" id="6fh-TX-hQG"/>
@@ -69,41 +69,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0d-RZ-kgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="652" y="-85"/>
+            <point key="canvasLocation" x="1126" y="-390"/>
         </scene>
         <!--Item-->
-        <scene sceneID="nhe-0s-ivT">
+        <scene sceneID="yaR-XQ-G5f">
             <objects>
-                <viewController id="cn7-xV-1xf" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yTZ-vK-8PS">
+                <viewController id="LQd-3H-XxZ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n82-VV-Ydi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.36068126307312853" green="0.40290094802092979" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <viewLayoutGuide key="safeArea" id="PxE-bb-h4c"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="gJi-Al-5kY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="lWf-z5-G5N"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="XxL-rh-4js"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="L6X-N2-OAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MEh-dD-F0J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="652" y="603"/>
+            <point key="canvasLocation" x="1126" y="283"/>
         </scene>
         <!--Tab Bar Controller-->
-        <scene sceneID="90e-ps-7Fu">
+        <scene sceneID="9eR-1v-fE2">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="vwB-rI-hIq" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="B6e-BC-QB7" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qq5-2I-0zg">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eR3-hO-QXa">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Ogx-fG-Vhg" kind="relationship" relationship="viewControllers" id="C6n-I7-Uf5"/>
-                        <segue destination="cn7-xV-1xf" kind="relationship" relationship="viewControllers" id="kiU-VK-TY7"/>
+                        <segue destination="Ogx-fG-Vhg" kind="relationship" relationship="viewControllers" id="08F-oL-GiP"/>
+                        <segue destination="LQd-3H-XxZ" kind="relationship" relationship="viewControllers" id="gZV-uq-zUk"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9iA-zI-m8A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vas-dH-5Le" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-142.40000000000001" y="35.082458770614693"/>
+            <point key="canvasLocation" x="328" y="-194.30284857571215"/>
         </scene>
     </scenes>
 </document>

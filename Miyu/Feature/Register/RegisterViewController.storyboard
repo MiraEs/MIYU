@@ -22,6 +22,9 @@
                                 <rect key="frame" x="174" y="511" width="41" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Finish"/>
+                                <connections>
+                                    <action selector="finishButtonTapped:" destination="XFn-ID-2np" eventType="touchUpInside" id="uXL-fc-97q"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsL-8U-zXo">
                                 <rect key="frame" x="47" y="235" width="34" height="21"/>
@@ -94,6 +97,13 @@
                         <color key="backgroundColor" red="0.86637452411167515" green="0.86637452411167515" blue="0.86637452411167515" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="zL2-Wl-fEv"/>
                     </view>
+                    <connections>
+                        <outlet property="emailLabel" destination="KTv-aT-Ix1" id="ih6-Iu-Kmu"/>
+                        <outlet property="firstNameLabel" destination="6kx-Js-m30" id="8gn-xh-eFF"/>
+                        <outlet property="lastNameLabel" destination="WzE-bp-3BQ" id="8vZ-95-3PS"/>
+                        <outlet property="passwordLabel" destination="SFj-f8-BaZ" id="U1a-0o-0d0"/>
+                        <outlet property="profileImage" destination="jEj-Cq-9Wu" id="vTD-vN-HbY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q5G-Tz-ar7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

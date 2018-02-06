@@ -37,6 +37,10 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setup()
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: Constants.homeCellSegue, sender: self)
+    }
 }
 
 extension HomepageViewController: UIBarPositioningDelegate {
