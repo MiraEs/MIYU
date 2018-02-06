@@ -23,6 +23,7 @@
 		4937FB0020264A33006E991B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4937FAFD20264A33006E991B /* GoogleService-Info.plist */; };
 		495AB39F202941D300D4D721 /* OtherProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB39E202941D300D4D721 /* OtherProfileViewController.swift */; };
 		495AB3A1202942FC00D4D721 /* InitializeViewControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB3A0202942FC00D4D721 /* InitializeViewControllerManager.swift */; };
+		495AB3A52029461B00D4D721 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB3A42029461B00D4D721 /* RegisterViewModel.swift */; };
 		49A6D7EE201E86E500B994A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D7ED201E86E500B994A2 /* AppDelegate.swift */; };
 		49A6D7F5201E86E500B994A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A6D7F4201E86E500B994A2 /* Assets.xcassets */; };
 		49A6D7F8201E86E500B994A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49A6D7F6201E86E500B994A2 /* LaunchScreen.storyboard */; };
@@ -73,6 +74,7 @@
 		4937FAFD20264A33006E991B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		495AB39E202941D300D4D721 /* OtherProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileViewController.swift; sourceTree = "<group>"; };
 		495AB3A0202942FC00D4D721 /* InitializeViewControllerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializeViewControllerManager.swift; sourceTree = "<group>"; };
+		495AB3A42029461B00D4D721 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		49A6D7EA201E86E500B994A2 /* Miyu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Miyu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A6D7ED201E86E500B994A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Miyu/Supporting Files/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		49A6D7F4201E86E500B994A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				4937FAF920263CD5006E991B /* RegisterViewController.swift */,
+				495AB3A42029461B00D4D721 /* RegisterViewModel.swift */,
 				4937FAF620263C77006E991B /* RegisterViewController.storyboard */,
 			);
 			path = Register;
@@ -537,6 +540,7 @@
 				49D76EAC2027908B00881F15 /* FirebaseUserManager.swift in Sources */,
 				49DC302720227D1000E7F05F /* ProfileTableViewCell.swift in Sources */,
 				49108EBD2027D7200031314B /* AppUser.swift in Sources */,
+				495AB3A52029461B00D4D721 /* RegisterViewModel.swift in Sources */,
 				49A6D830202104D300B994A2 /* HomepageTableViewCell.swift in Sources */,
 				495AB39F202941D300D4D721 /* OtherProfileViewController.swift in Sources */,
 				49A6D83620210C1400B994A2 /* BaseViewController.swift in Sources */,

@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-enum PresentVC {
-    case registerVC, homeVC
+enum PresentViewController {
+    case HomepageViewController, RegisterViewController
 }
 
 internal final class LoginViewModel {
@@ -29,12 +29,12 @@ internal final class LoginViewModel {
         self.presentingVC = presentingVC
     }
 
-    func presentVC(vc: PresentVC) {
+    func presentVC(vc: PresentViewController) {
         switch vc {
-        case .homeVC:
+        case .HomepageViewController:
             guard let homeVC = homeVC else { return }
             presentingVC?.present(homeVC, animated: true, completion: nil)
-        case .registerVC:
+        case .RegisterViewController:
             guard let registerVC = registerVC else { return }
             presentingVC?.present(registerVC, animated: true, completion: nil)
         }
