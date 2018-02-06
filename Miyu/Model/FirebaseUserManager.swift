@@ -19,6 +19,12 @@ internal final class FirebaseUserManager {
         }
     }
     
+    var ref: DatabaseReference! {
+        get {
+            return Database.database().reference()
+        }
+    }
+    
     private init() {}
     
     func createUser(user: AppUser, handler: (() -> ())? = nil) {
@@ -63,4 +69,6 @@ internal final class FirebaseUserManager {
             print("Error signing out: %@", signOutError)
         }
     }
+
+    
 }

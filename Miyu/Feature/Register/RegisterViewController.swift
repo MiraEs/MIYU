@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 /// RegisterViewController initial build of User's profile before main home page.
 internal final class RegisterViewController: BaseViewController {
@@ -36,9 +37,18 @@ internal final class RegisterViewController: BaseViewController {
         }
         
         let user = AppUser(email: email, password: password)
+        createFullUser()
         fbManager.createUser(user: user) { [weak self] in
             self?.viewModel?.presentRootController()
         }
     }
+    
+    func createFullUser() {
+        let currentUser = Auth.auth().currentUser
+        
+        
+    }
+    
+    
     
 }

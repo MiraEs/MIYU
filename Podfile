@@ -9,6 +9,7 @@ target 'Miyu' do
 pod 'Cosmos', '~> 14.0'
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
+pod 'Firebase/Database'
 
 
 end
