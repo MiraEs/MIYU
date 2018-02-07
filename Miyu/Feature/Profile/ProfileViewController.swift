@@ -12,6 +12,9 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    private weak var currentUser: AppUser?
+    private weak var fbManager: FirebaseUserManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -19,6 +19,7 @@ internal final class FirebaseUserManager {
         }
     }
     
+    // TODO: Not sure where im using this
     var currentUser: User? {
         get {
             return Auth.auth().currentUser
@@ -37,7 +38,6 @@ internal final class FirebaseUserManager {
     
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
             if user != nil {
-                
                 self.ref.child("users").child((user!.uid)).setValue(userInfo)
                 print("successful user added \(email)")
                 handler?()
@@ -73,16 +73,15 @@ internal final class FirebaseUserManager {
         }
     }
     
+    // TODO: FINISH
     func getCurrentUserData() {
         guard let userID = Auth.auth().currentUser?.uid else { return }
-        print("userID \(userID)")
         ref.child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get user value
-            //guard let value = snapshot.value as? NSDictionary else { return }
+            
+            guard let value = snapshot.value as? [String:String] else { return }
             //let firstName = value["firstName"] as? String ?? ""
-            print("Snapshot \(snapshot)")
-
-            // ...
+            print("Snapshot \(value)")
+            
         }) { (error) in
             print(error.localizedDescription)
         }

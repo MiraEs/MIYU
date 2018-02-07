@@ -13,16 +13,8 @@ enum PresentViewController {
     case HomepageViewController, RegisterViewController
 }
 
-internal final class LoginViewModel {
-    
-    private weak var homeVC: UIViewController? {
-        return HomepageViewController.instantiate(fromAppStoryboard: .HomepageViewController)
-    }
-    
-    private weak var registerVC: UIViewController? {
-        return RegisterViewController.instantiate(fromAppStoryboard: .RegisterViewController)
-    }
-    
+internal final class LoginViewModel: InstantiatedViewControllers {
+
     private weak var presentingVC: UIViewController?
     
     init(presentingVC: UIViewController) {
@@ -32,10 +24,10 @@ internal final class LoginViewModel {
     func presentVC(vc: PresentViewController) {
         switch vc {
         case .HomepageViewController:
-            guard let homeVC = homeVC else { return }
-            presentingVC?.present(homeVC, animated: true, completion: nil)
+            guard let homeTabBar = self.tabBar else { return }
+            presentingVC?.present(homeTabBar, animated: true, completion: nil)
         case .RegisterViewController:
-            guard let registerVC = registerVC else { return }
+            guard let registerVC = self.registerVC else { return }
             presentingVC?.present(registerVC, animated: true, completion: nil)
         }
     }

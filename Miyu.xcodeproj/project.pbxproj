@@ -22,8 +22,9 @@
 		4937FAFF20264A33006E991B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4937FAFD20264A33006E991B /* GoogleService-Info.plist */; };
 		4937FB0020264A33006E991B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4937FAFD20264A33006E991B /* GoogleService-Info.plist */; };
 		495AB39F202941D300D4D721 /* OtherProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB39E202941D300D4D721 /* OtherProfileViewController.swift */; };
-		495AB3A1202942FC00D4D721 /* InitializeViewControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB3A0202942FC00D4D721 /* InitializeViewControllerManager.swift */; };
+		495AB3A1202942FC00D4D721 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB3A0202942FC00D4D721 /* Extension+UIViewController.swift */; };
 		495AB3A52029461B00D4D721 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB3A42029461B00D4D721 /* RegisterViewModel.swift */; };
+		495E9B97202B6BEE007F23B8 /* InstantiatedViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495E9B96202B6BEE007F23B8 /* InstantiatedViewControllers.swift */; };
 		49A6D7EE201E86E500B994A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D7ED201E86E500B994A2 /* AppDelegate.swift */; };
 		49A6D7F5201E86E500B994A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A6D7F4201E86E500B994A2 /* Assets.xcassets */; };
 		49A6D7F8201E86E500B994A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49A6D7F6201E86E500B994A2 /* LaunchScreen.storyboard */; };
@@ -73,8 +74,9 @@
 		4937FAFB20263D88006E991B /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
 		4937FAFD20264A33006E991B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		495AB39E202941D300D4D721 /* OtherProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileViewController.swift; sourceTree = "<group>"; };
-		495AB3A0202942FC00D4D721 /* InitializeViewControllerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializeViewControllerManager.swift; sourceTree = "<group>"; };
+		495AB3A0202942FC00D4D721 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		495AB3A42029461B00D4D721 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		495E9B96202B6BEE007F23B8 /* InstantiatedViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantiatedViewControllers.swift; sourceTree = "<group>"; };
 		49A6D7EA201E86E500B994A2 /* Miyu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Miyu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A6D7ED201E86E500B994A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Miyu/Supporting Files/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		49A6D7F4201E86E500B994A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -263,7 +265,8 @@
 		49A6D82D2021042C00B994A2 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				495AB3A0202942FC00D4D721 /* InitializeViewControllerManager.swift */,
+				495AB3A0202942FC00D4D721 /* Extension+UIViewController.swift */,
+				495E9B96202B6BEE007F23B8 /* InstantiatedViewControllers.swift */,
 				49A6D832202104E800B994A2 /* Constants.swift */,
 				49A6D83720210CB500B994A2 /* Helper Classes */,
 			);
@@ -546,7 +549,8 @@
 				49A6D830202104D300B994A2 /* HomepageTableViewCell.swift in Sources */,
 				495AB39F202941D300D4D721 /* OtherProfileViewController.swift in Sources */,
 				49A6D83620210C1400B994A2 /* BaseViewController.swift in Sources */,
-				495AB3A1202942FC00D4D721 /* InitializeViewControllerManager.swift in Sources */,
+				495AB3A1202942FC00D4D721 /* Extension+UIViewController.swift in Sources */,
+				495E9B97202B6BEE007F23B8 /* InstantiatedViewControllers.swift in Sources */,
 				49DC302320227CA600E7F05F /* ProfileViewController.swift in Sources */,
 				4937FAF220257564006E991B /* ExploreViewController.swift in Sources */,
 				49A6D833202104E800B994A2 /* Constants.swift in Sources */,

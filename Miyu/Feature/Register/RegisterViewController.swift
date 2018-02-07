@@ -37,16 +37,12 @@ internal final class RegisterViewController: BaseViewController {
             let lastName = lastNameLabel.text else {
                 return
         }
-    
         
         let userCredentials = UserCredential(email: email, password: password)
         let user = AppUser(firstName: firstName, lastName: lastName, email: email)
-        
         
         fbManager.createUser(user: user, userCredentials: userCredentials) { [weak self] in
             self?.viewModel?.presentRootController()
         }
     }
-    
-
 }

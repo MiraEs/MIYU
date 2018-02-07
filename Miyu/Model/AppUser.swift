@@ -8,6 +8,10 @@
 
 import Foundation
 
+internal protocol GetSnapshotProtocol {
+    
+}
+
 struct UserCredential {
     let email: String?
     let password: String?
@@ -29,7 +33,7 @@ internal final class AppUser {
         self.lastName = lastName
         self.email = email
         self.photoUrl = "www.google.com"
-        self.userInfo = self.addUser()
+        self.userInfo = self.createUser()
     }
     
     convenience init?(userDict: [String: String]) {
@@ -42,12 +46,7 @@ internal final class AppUser {
         }
     }
     
-    
-    func getUser() {
-        fbManager?.getCurrentUserData()
-    }
-    
-    private func addUser() -> [String: String]? {
+    private func createUser() -> [String: String]? {
         guard let email = email,
             let firstName = firstName,
             let lastName = lastName else {
@@ -59,8 +58,13 @@ internal final class AppUser {
             "firstName" : firstName,
             "lastName" : lastName
         ]
-        
         return user
     }
+    
+    func buildCurrentUser(_ snapshot: [String:String]) -> AppUser? {
+        let user = AppUser.init(userDict: snapshot)
+        return user
+    }
+    
     
 }

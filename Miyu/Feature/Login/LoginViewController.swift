@@ -41,6 +41,7 @@ internal final class LoginViewController: BaseViewController {
         let user = UserCredential(email: emailTextField.text!, password: passwordTextField.text!)
         
         fbManager.login(user: user) { [weak self] in
+            self?.fbManager.getCurrentUserData()
             self?.viewModel.presentVC(vc: .HomepageViewController)
         }
     }
