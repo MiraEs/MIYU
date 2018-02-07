@@ -38,10 +38,9 @@ internal final class LoginViewController: BaseViewController {
     
     @IBAction func didLoginTapped(_ sender: Any) {
         
-        let user = AppUser(email: emailTextField.text!, password: passwordTextField.text!)
+        let user = UserCredential(email: emailTextField.text!, password: passwordTextField.text!)
         
         fbManager.login(user: user) { [weak self] in
-            user.getUser()
             self?.viewModel.presentVC(vc: .HomepageViewController)
         }
     }

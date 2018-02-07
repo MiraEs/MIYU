@@ -27,25 +27,18 @@ internal final class FirebaseUserManager {
     
     private init() {}
     
-    func createUser(user: AppUser, handler: (() -> ())? = nil) {
-        guard let email = user.email,
-            let password = user.password else {
+    func createUser(user: AppUser, userCredentials: UserCredential, handler: (() -> ())? = nil) {
+        guard let email = userCredentials.email,
+            let password = userCredentials.password,
+            let userInfo = user.userInfo else {
                 return
         }
         
-        // Database
-        
-        // Authentication
+    
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
             if user != nil {
-                //self.ref.child("users").child((currentUser?.uid)!).setValue(users)
-                let users: [String: Any] = [
-                    "firstName" : "Yolanda",
-                    "lastName" : "de la Cruz",
-                    "email" : email,
-                    "photo" : "www.google.com"
-                ]
-                self.ref.child("users").child((user!.uid)).setValue(users)
+                
+                self.ref.child("users").child((user!.uid)).setValue(userInfo)
                 print("successful user added \(email)")
                 handler?()
             } else {
@@ -55,7 +48,7 @@ internal final class FirebaseUserManager {
         })
     }
     
-    func login(user: AppUser, handler: (()->())? = nil) {
+    func login(user: UserCredential, handler: (()->())? = nil) {
         guard let email = user.email,
             let password = user.password else {
                 return
@@ -63,9 +56,7 @@ internal final class FirebaseUserManager {
         
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if user != nil {
-                print("Sign in >>>>>>>>> \(user?.uid)")
                 handler?()
-                print("FIRE BASE MANAGER - LOGIN \(email)")
             } else {
                 // TODO: create error alert class
                 print(error.debugDescription)
@@ -96,5 +87,4 @@ internal final class FirebaseUserManager {
             print(error.localizedDescription)
         }
     }
-    
 }

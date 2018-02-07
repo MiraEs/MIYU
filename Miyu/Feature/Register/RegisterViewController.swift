@@ -32,13 +32,18 @@ internal final class RegisterViewController: BaseViewController {
     
     @IBAction func finishButtonTapped(_ sender: Any) {
         guard let email = emailLabel.text,
-            let password = passwordLabel.text else {
+            let password = passwordLabel.text,
+            let firstName = firstNameLabel.text,
+            let lastName = lastNameLabel.text else {
                 return
         }
+    
         
-        let user = AppUser(email: email, password: password)
+        let userCredentials = UserCredential(email: email, password: password)
+        let user = AppUser(firstName: firstName, lastName: lastName, email: email)
         
-        fbManager.createUser(user: user) { [weak self] in
+        
+        fbManager.createUser(user: user, userCredentials: userCredentials) { [weak self] in
             self?.viewModel?.presentRootController()
         }
     }
