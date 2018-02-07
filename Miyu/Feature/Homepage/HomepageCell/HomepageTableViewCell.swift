@@ -27,11 +27,6 @@ class HomepageTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
-    func setup() {
-        profileImage.layer.cornerRadius = 20.0
-        profileImage.clipsToBounds = true
-    }
 
     
 }

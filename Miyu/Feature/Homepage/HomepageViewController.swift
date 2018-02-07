@@ -11,26 +11,23 @@ import Firebase
 
 internal final class HomepageViewController: BaseViewController {
     
-    @IBOutlet weak var tableView: UITableView!
-    
     private weak var fbManager: FirebaseUserManager?
-    
     private weak var currentUser: AppUser?
+    private var viewModel: HomepageViewModel? {
+        return HomepageViewModel(self)
+    }
+    private var users: [AppUser]?
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setup()
+        viewModel?.setup(tableView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-    }
-    
-    // MARK: SETUP
-    private func setup() {
-        tableView.register(UINib(nibName: Constants.homeXib, bundle: nil),
-                           forCellReuseIdentifier: Constants.homeCell)
+        print("homepage will appear")
     }
 }
 
@@ -42,7 +39,6 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.homeCell, for: indexPath) as! HomepageTableViewCell
-        cell.setup()
         return cell
     }
     
