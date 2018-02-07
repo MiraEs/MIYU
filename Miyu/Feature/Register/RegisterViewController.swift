@@ -12,8 +12,10 @@ import Firebase
 /// RegisterViewController initial build of User's profile before main home page.
 internal final class RegisterViewController: BaseViewController {
     
-    private var fbManager = FirebaseUserManager.manager
-    private var viewModel: RegisterViewModel!
+    private weak var fbManager = FirebaseUserManager.manager
+    private weak var viewModel: RegisterViewModel! {
+        return RegisterViewModel(presentingViewController: self)
+    }
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var firstNameLabel: UITextField!
     @IBOutlet weak var lastNameLabel: UITextField!
@@ -22,12 +24,6 @@ internal final class RegisterViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setup()
-    }
-    
-    private func setup() {
-        viewModel = RegisterViewModel(presentingViewController: self)
     }
     
     @IBAction func finishButtonTapped(_ sender: Any) {
@@ -41,7 +37,7 @@ internal final class RegisterViewController: BaseViewController {
         let userCredentials = UserCredential(email: email, password: password)
         let user = AppUser(firstName: firstName, lastName: lastName, email: email)
         
-        fbManager.createUser(user: user, userCredentials: userCredentials) { [weak self] in
+        fbManager?.createUser(user: user, userCredentials: userCredentials) { [weak self] in
             self?.viewModel?.presentRootController()
         }
     }

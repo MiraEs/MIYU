@@ -231,10 +231,10 @@
 		49A6D824201FB2F200B994A2 /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
+				495AB39E202941D300D4D721 /* OtherProfileViewController.swift */,
 				49A6D8342021051D00B994A2 /* HomepageCell */,
 				49A6D820201FB2A100B994A2 /* HomepageViewController.swift */,
 				4933BECA2023FD27004307E4 /* HomepageViewController.storyboard */,
-				495AB39E202941D300D4D721 /* OtherProfileViewController.swift */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";

@@ -11,7 +11,7 @@ import Firebase
 
 internal final class LoginViewController: BaseViewController {
     
-    private var fbManager = FirebaseUserManager.manager
+    private weak var fbManager = FirebaseUserManager.manager
     
     private weak var viewModel: LoginViewModel! {
         return LoginViewModel(presentingVC: self)
@@ -25,7 +25,6 @@ internal final class LoginViewController: BaseViewController {
         
     }
     
-    
     // MARK: USER MANAGEMENT
   
     @IBAction func registerTapped(_ sender: Any) {
@@ -33,15 +32,15 @@ internal final class LoginViewController: BaseViewController {
     }
     
     @IBAction func signOutTapped(_ sender: Any) {
-        fbManager.signOut()
+        fbManager?.signOut()
     }
     
     @IBAction func didLoginTapped(_ sender: Any) {
         
         let user = UserCredential(email: emailTextField.text!, password: passwordTextField.text!)
         
-        fbManager.login(user: user) { [weak self] in
-            self?.fbManager.getCurrentUserData()
+        fbManager?.login(user: user) { [weak self] in
+            self?.fbManager?.getCurrentUserData()
             self?.viewModel.presentVC(vc: .HomepageViewController)
         }
     }

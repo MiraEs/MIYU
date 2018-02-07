@@ -13,18 +13,18 @@ internal final class FirebaseUserManager {
     
     static let manager = FirebaseUserManager()
     
-    var ref: DatabaseReference! {
+    private weak var ref: DatabaseReference! {
         get {
             return Database.database().reference()
         }
     }
     
-    // TODO: Not sure where im using this
-    var currentUser: User? {
+    private weak var currentUser: User? {
         get {
             return Auth.auth().currentUser
         }
     }
+
     
     private init() {}
     

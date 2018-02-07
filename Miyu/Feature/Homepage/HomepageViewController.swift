@@ -29,7 +29,6 @@ internal final class HomepageViewController: BaseViewController {
     
     // MARK: SETUP
     private func setup() {
-        // Tableview setup
         tableView.register(UINib(nibName: Constants.homeXib, bundle: nil),
                            forCellReuseIdentifier: Constants.homeCell)
     }

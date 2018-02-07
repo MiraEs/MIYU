@@ -31,5 +31,4 @@ internal final class LoginViewModel: InstantiatedViewControllers {
             presentingVC?.present(registerVC, animated: true, completion: nil)
         }
     }
-    
 }
