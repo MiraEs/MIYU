@@ -12,14 +12,18 @@ import UIKit
 internal final class HomepageViewModel {
     
     private var presentingViewController: UIViewController
+    private weak var fbManager = FirebaseUserManager.manager
+    private var users: [AppUser]?
     
     init(_ presentingViewController: UIViewController) {
         self.presentingViewController = presentingViewController
     }
     
+    // MARK: UTILITY
     func setup(_ tableView: UITableView) {
         tableView.register(UINib(nibName: Constants.homeXib, bundle: nil),
                            forCellReuseIdentifier: Constants.homeCell)
+        fbManager?.getPosts()
     }
     
 }

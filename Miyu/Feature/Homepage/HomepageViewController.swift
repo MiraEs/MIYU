@@ -11,12 +11,11 @@ import Firebase
 
 internal final class HomepageViewController: BaseViewController {
     
-    private weak var fbManager: FirebaseUserManager?
     private weak var currentUser: AppUser?
     private var viewModel: HomepageViewModel? {
         return HomepageViewModel(self)
     }
-    private var users: [AppUser]?
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -27,7 +26,6 @@ internal final class HomepageViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        print("homepage will appear")
     }
 }
 

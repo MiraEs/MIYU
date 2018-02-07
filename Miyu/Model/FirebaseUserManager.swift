@@ -13,15 +13,15 @@ internal final class FirebaseUserManager {
     
     static let manager = FirebaseUserManager()
     
-    private weak var ref: DatabaseReference! {
+    var currentUser: User? {
         get {
-            return Database.database().reference()
+            return Auth.auth().currentUser
         }
     }
     
-    private weak var currentUser: User? {
+    private weak var ref: DatabaseReference! {
         get {
-            return Auth.auth().currentUser
+            return Database.database().reference()
         }
     }
 
@@ -84,6 +84,19 @@ internal final class FirebaseUserManager {
             
         }) { (error) in
             print(error.localizedDescription)
+        }
+    }
+    
+    func getPosts() {
+        ref.child("posts").observe(.value) { (snapshot) in
+            
+            let enumerator = snapshot.children
+            while let rest = enumerator.nextObject() as? DataSnapshot {
+                
+                guard let value = rest.value as? [String:String] else { return }
+                print(value["caption"])
+                
+            }
         }
     }
 }
