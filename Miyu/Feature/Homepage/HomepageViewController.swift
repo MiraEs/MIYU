@@ -7,15 +7,24 @@
 //
 
 import UIKit
+import Firebase
 
-class HomepageViewController: BaseViewController {
-
+internal final class HomepageViewController: BaseViewController {
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    private weak var fbManager: FirebaseUserManager?
+    
+    private weak var currentUser: AppUser?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
     }
     
     // MARK: SETUP

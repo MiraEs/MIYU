@@ -13,15 +13,15 @@ internal final class FirebaseUserManager {
     
     static let manager = FirebaseUserManager()
     
-    var currentUser: User? {
-        get {
-            return Auth.auth().currentUser
-        }
-    }
-    
     var ref: DatabaseReference! {
         get {
             return Database.database().reference()
+        }
+    }
+    
+    var currentUser: User? {
+        get {
+            return Auth.auth().currentUser
         }
     }
     
@@ -33,8 +33,19 @@ internal final class FirebaseUserManager {
                 return
         }
         
+        // Database
+        
+        // Authentication
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
             if user != nil {
+                //self.ref.child("users").child((currentUser?.uid)!).setValue(users)
+                let users: [String: Any] = [
+                    "firstName" : "Yolanda",
+                    "lastName" : "de la Cruz",
+                    "email" : email,
+                    "photo" : "www.google.com"
+                ]
+                self.ref.child("users").child((user!.uid)).setValue(users)
                 print("successful user added \(email)")
                 handler?()
             } else {
@@ -52,8 +63,9 @@ internal final class FirebaseUserManager {
         
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if user != nil {
+                print("Sign in >>>>>>>>> \(user?.uid)")
                 handler?()
-                print(email)
+                print("FIRE BASE MANAGER - LOGIN \(email)")
             } else {
                 // TODO: create error alert class
                 print(error.debugDescription)
@@ -70,29 +82,15 @@ internal final class FirebaseUserManager {
         }
     }
     
-    
-    func createProfile(_ user: AppUser) {
-        //creates user
-        //self.ref.child("users").child(user.uid).setValue(["username": username])
-        let users: [String: Any] = [
-            "firstName" : "Maria",
-            "lastName" : "de la Cruz",
-            "email" : user.email ?? "",
-            "photo" : "www.google.com"
-        ]
-    self.ref.child("users").child((currentUser?.uid)!).setValue(users)
-    }
-    
     func getCurrentUserData() {
-        let userID = Auth.auth().currentUser?.uid
-        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        print("userID \(userID)")
+        ref.child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
-            let value = snapshot.value as? NSDictionary
-//            let username = value?["username"] as? String ?? ""
-//            let user = AppUser(email: value?["email"], password: "")
-            
-            print("VALUE \(value)")
-            
+            //guard let value = snapshot.value as? NSDictionary else { return }
+            //let firstName = value["firstName"] as? String ?? ""
+            print("Snapshot \(snapshot)")
+
             // ...
         }) { (error) in
             print(error.localizedDescription)

@@ -37,16 +37,11 @@ internal final class RegisterViewController: BaseViewController {
         }
         
         let user = AppUser(email: email, password: password)
-        createFullUser(user)
+        
         fbManager.createUser(user: user) { [weak self] in
             self?.viewModel?.presentRootController()
         }
     }
     
-    private func createFullUser(_ user: AppUser) {
-        fbManager.createProfile(user)
-    }
-    
-    
-    
+
 }

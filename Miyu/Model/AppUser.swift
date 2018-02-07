@@ -10,17 +10,19 @@ import Foundation
 
 /// AppUser class includes properties for AppUser object.
 internal final class AppUser {
+    
+    private let fbManager: FirebaseUserManager?
     let email: String?
     let password: String?
     
     init(email: String, password: String) {
         self.email = email
         self.password = password
+        self.fbManager = FirebaseUserManager.manager
     }
     
-    //
-//    func createUser() -> AppUser {
-//        let user = AppUser.init(email: email, password: password)
-//        return user
-//    }
+    
+    func getUser() {
+        fbManager?.getCurrentUserData()
+    }
 }
