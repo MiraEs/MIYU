@@ -19,7 +19,7 @@ internal final class FirebaseUserManager {
         }
     }
     
-    private weak var ref: DatabaseReference! {
+    var ref: DatabaseReference! {
         get {
             return Database.database().reference()
         }
@@ -87,16 +87,22 @@ internal final class FirebaseUserManager {
         }
     }
     
-    func getPosts() {
+    func getPosts() -> [[String:String]]? {
+        var returnValue = [[String:String]]()
         ref.child("posts").observe(.value) { (snapshot) in
             
             let enumerator = snapshot.children
             while let rest = enumerator.nextObject() as? DataSnapshot {
                 
                 guard let value = rest.value as? [String:String] else { return }
-                print(value["caption"])
-                
+                print("VALUE \(value)")
+                returnValue.append(value)
             }
         }
+        return returnValue
+    }
+    
+    func fetchPosts(eventType: DataEventType, with handler: @escaping (DataSnapshot) -> Void) {
+        ref.child("posts").observe(eventType, with: handler)
     }
 }
