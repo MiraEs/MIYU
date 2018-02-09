@@ -1,0 +1,6 @@
+framework module Pods_Miyu {
+  umbrella header "Pods-Miyu-umbrella.h"
+
+  export *
+  module * { export * }
+}
