@@ -11,7 +11,8 @@ import Firebase
 
 internal final class HomepageViewController: BaseViewController {
     
-    private var demposts: [[String:String]] = []
+    private var allPosts = [[String:String]]()
+
     private var fbManager = FirebaseUserManager.manager
     
     private weak var currentUser: AppUser?
@@ -29,30 +30,28 @@ internal final class HomepageViewController: BaseViewController {
    
     }
     
-    
     private func fetchPosts() {
         fbManager.fetchPosts(eventType: .childAdded) { (snapshot) in
             if let dict = snapshot.value as? [String:String] {
-                self.demposts.append(dict)
+                self.allPosts.append(dict)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
             }
         }
     }
-    
 
 }
 
 extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return demposts.count
+        return allPosts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.homeCell, for: indexPath) as! HomepageTableViewCell
-        cell.nameLabel.text = demposts[indexPath.row]["caption"]
+        cell.nameLabel.text = allPosts[indexPath.row]["caption"]
         return cell
     }
     
