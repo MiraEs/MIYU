@@ -22,7 +22,7 @@
 		4937FAFF20264A33006E991B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4937FAFD20264A33006E991B /* GoogleService-Info.plist */; };
 		4937FB0020264A33006E991B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4937FAFD20264A33006E991B /* GoogleService-Info.plist */; };
 		495AB39F202941D300D4D721 /* OtherProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB39E202941D300D4D721 /* OtherProfileViewController.swift */; };
-		495AB3A1202942FC00D4D721 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB3A0202942FC00D4D721 /* Extension+UIViewController.swift */; };
+		495AB3A1202942FC00D4D721 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB3A0202942FC00D4D721 /* Extensions.swift */; };
 		495AB3A52029461B00D4D721 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB3A42029461B00D4D721 /* RegisterViewModel.swift */; };
 		495E9B97202B6BEE007F23B8 /* InstantiatedViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495E9B96202B6BEE007F23B8 /* InstantiatedViewControllers.swift */; };
 		495E9B99202B815C007F23B8 /* HomepageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495E9B98202B815C007F23B8 /* HomepageViewModel.swift */; };
@@ -76,7 +76,7 @@
 		4937FAFB20263D88006E991B /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
 		4937FAFD20264A33006E991B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		495AB39E202941D300D4D721 /* OtherProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileViewController.swift; sourceTree = "<group>"; };
-		495AB3A0202942FC00D4D721 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
+		495AB3A0202942FC00D4D721 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		495AB3A42029461B00D4D721 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		495E9B96202B6BEE007F23B8 /* InstantiatedViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantiatedViewControllers.swift; sourceTree = "<group>"; };
 		495E9B98202B815C007F23B8 /* HomepageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewModel.swift; sourceTree = "<group>"; };
@@ -270,7 +270,7 @@
 		49A6D82D2021042C00B994A2 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				495AB3A0202942FC00D4D721 /* Extension+UIViewController.swift */,
+				495AB3A0202942FC00D4D721 /* Extensions.swift */,
 				495E9B96202B6BEE007F23B8 /* InstantiatedViewControllers.swift */,
 				49A6D832202104E800B994A2 /* Constants.swift */,
 				49A6D83720210CB500B994A2 /* Helper Classes */,
@@ -556,7 +556,7 @@
 				49A6D830202104D300B994A2 /* HomepageTableViewCell.swift in Sources */,
 				495AB39F202941D300D4D721 /* OtherProfileViewController.swift in Sources */,
 				49A6D83620210C1400B994A2 /* BaseViewController.swift in Sources */,
-				495AB3A1202942FC00D4D721 /* Extension+UIViewController.swift in Sources */,
+				495AB3A1202942FC00D4D721 /* Extensions.swift in Sources */,
 				495E9B97202B6BEE007F23B8 /* InstantiatedViewControllers.swift in Sources */,
 				49DC302320227CA600E7F05F /* ProfileViewController.swift in Sources */,
 				4937FAF220257564006E991B /* ExploreViewController.swift in Sources */,

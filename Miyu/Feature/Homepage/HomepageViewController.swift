@@ -40,18 +40,9 @@ internal final class HomepageViewController: BaseViewController {
         }
     }
     
-    private func fetchPhoto(_ urlString: String?, _ tableViewCell: HomepageTableViewCell) {
+    private func fetchPhoto(_ urlString: String?, _ cell: HomepageTableViewCell) {
         if let urlString = urlString {
-            let url = URL(string: urlString)
-            URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
-                if error != nil {
-                    print(error)
-                }
-                DispatchQueue.main.async {
-                    tableViewCell.contentImage.image = UIImage(data: data!)
-                }
-                
-            }).resume()
+            cell.contentImage.loadCachedImage(urlString)
         }
     }
 
