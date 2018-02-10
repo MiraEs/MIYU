@@ -7,13 +7,13 @@
 //
 
 import UIKit
+import Cosmos
 
 class HomepageTableViewCell: UITableViewCell {
 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
-    
     @IBOutlet weak var captionLabel: UILabel!
     
     // TODO: this will change if video..
@@ -24,8 +24,32 @@ class HomepageTableViewCell: UITableViewCell {
     // TODO: Figure out model to obtain this data.
     @IBOutlet weak var recentCommentLabel: UILabel!
     
+    // TODO: Capture rating data
+    @IBOutlet weak var ratingView: CosmosView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+    
+    }
+    
+    // MARK: RATING FUNCTIONALITY
+    
+    func update(_ rating: Double) {
+        ratingView.rating = rating
+        //print(rating)
+    }
+    
+    func setupTap(_ tag: Int) {
+        profileImage.isUserInteractionEnabled = true
+        profileImage.tag = tag
+        
+        let tapped = UITapGestureRecognizer(target: self, action: #selector(myFunction))
+        tapped.numberOfTapsRequired = 1
+        profileImage.addGestureRecognizer(tapped)
+    }
+    
+    @objc func myFunction(gesture: UITapGestureRecognizer) {
+        print("it worked")
     }
 
     
