@@ -13,7 +13,7 @@
         <!--Upload-->
         <scene sceneID="ep9-dS-Q2e">
             <objects>
-                <viewController id="Bzy-5R-Lfb" customClass="UploadViewController" customModule="Simi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Bzy-5R-Lfb" customClass="UploadViewController" customModule="Miyu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H45-E0-wP6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,13 +85,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYa-xu-FBw">
+                                <rect key="frame" x="164.5" y="636" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="uploadContent:" destination="Bzy-5R-Lfb" eventType="touchUpInside" id="KFE-aM-Fko"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.7960767989130475" blue="0.83026271661129025" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="UYa-xu-FBw" firstAttribute="centerX" secondItem="IxR-J2-X4S" secondAttribute="centerX" id="gyV-wK-7gb"/>
+                            <constraint firstItem="IxR-J2-X4S" firstAttribute="bottom" secondItem="UYa-xu-FBw" secondAttribute="bottom" constant="1" id="yrd-Zc-JXj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="IxR-J2-X4S"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Upload" id="gc0-oI-hyi"/>
                     <connections>
                         <outlet property="captionTextView" destination="ETu-mX-rXd" id="6nV-c7-ly8"/>
+                        <outlet property="centerImage" destination="reZ-Tm-6yR" id="SIL-dm-cSK"/>
                         <outlet property="name" destination="fGE-q7-9zu" id="RKv-1W-rSP"/>
                         <outlet property="profileImage" destination="F8n-fY-Siz" id="pv5-4u-fSE"/>
                         <outlet property="rating" destination="Ih5-p2-5ud" id="dzw-gv-X1a"/>

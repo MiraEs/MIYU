@@ -8,13 +8,15 @@
 
 import Foundation
 
-internal final class Post {
+internal final class Post: NSObject {
     
     private var title: String?
     private var caption: String?
+    private var data: String?
     
-    init(title: String?, caption: String?) {
+    init(title: String?, caption: String?, data: String?) {
         self.title = title
         self.caption = caption
+        self.data = data
     }
 }

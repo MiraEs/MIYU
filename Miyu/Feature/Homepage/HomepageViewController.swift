@@ -10,7 +10,6 @@ import UIKit
 import Firebase
 
 internal final class HomepageViewController: BaseViewController {
-    
     private var allPosts = [[String:String]]()
 
     private var fbManager = FirebaseUserManager.manager
@@ -40,6 +39,21 @@ internal final class HomepageViewController: BaseViewController {
             }
         }
     }
+    
+    private func fetchPhoto(_ urlString: String?, _ tableViewCell: HomepageTableViewCell) {
+        if let urlString = urlString {
+            let url = URL(string: urlString)
+            URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+                if error != nil {
+                    print(error)
+                }
+                DispatchQueue.main.async {
+                    tableViewCell.contentImage.image = UIImage(data: data!)
+                }
+                
+            }).resume()
+        }
+    }
 
 }
 
@@ -52,6 +66,7 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.homeCell, for: indexPath) as! HomepageTableViewCell
         cell.nameLabel.text = allPosts[indexPath.row]["caption"]
+        fetchPhoto(allPosts[indexPath.row]["data"], cell)
         return cell
     }
     
