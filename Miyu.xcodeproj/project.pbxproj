@@ -42,6 +42,7 @@
 		49DC302320227CA600E7F05F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC302220227CA600E7F05F /* ProfileViewController.swift */; };
 		49DC302720227D1000E7F05F /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC302520227D1000E7F05F /* ProfileTableViewCell.swift */; };
 		49DC302820227D1000E7F05F /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49DC302620227D1000E7F05F /* ProfileTableViewCell.xib */; };
+		49E4F577202E93B700D5C7B4 /* UploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E4F576202E93B700D5C7B4 /* UploadViewModel.swift */; };
 		8736BCB40BCE784B2B71E8F5 /* Pods_Miyu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8711C96527BBB4952E43A15B /* Pods_Miyu.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +103,7 @@
 		49DC302220227CA600E7F05F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		49DC302520227D1000E7F05F /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		49DC302620227D1000E7F05F /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		49E4F576202E93B700D5C7B4 /* UploadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewModel.swift; sourceTree = "<group>"; };
 		8711C96527BBB4952E43A15B /* Pods_Miyu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Miyu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A81E4928A6D84A33072D6897 /* Pods-Miyu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Miyu.release.xcconfig"; path = "Pods/Target Support Files/Pods-Miyu/Pods-Miyu.release.xcconfig"; sourceTree = "<group>"; };
 		CCC9F6D602AA27277E5E0FB5 /* Pods-Miyu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Miyu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Miyu/Pods-Miyu.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				4937FAEC2025732A006E991B /* UploadViewController.swift */,
+				49E4F576202E93B700D5C7B4 /* UploadViewModel.swift */,
 				4937FAEE2025733F006E991B /* UploadViewController.storyboard */,
 			);
 			path = Upload;
@@ -549,6 +552,7 @@
 				4937FAFA20263CD5006E991B /* RegisterViewController.swift in Sources */,
 				49108EBF2027D76A0031314B /* LoginViewModel.swift in Sources */,
 				49A6D822201FB2A100B994A2 /* HomepageViewController.swift in Sources */,
+				49E4F577202E93B700D5C7B4 /* UploadViewModel.swift in Sources */,
 				49D76EAC2027908B00881F15 /* FirebaseUserManager.swift in Sources */,
 				49DC302720227D1000E7F05F /* ProfileTableViewCell.swift in Sources */,
 				49108EBD2027D7200031314B /* AppUser.swift in Sources */,
