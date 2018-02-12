@@ -9,6 +9,10 @@
 import Foundation
 import Firebase
 
+enum Children: String {
+    case posts
+}
+
 internal final class FirebaseUserManager {
     
     static let manager = FirebaseUserManager()
@@ -28,6 +32,7 @@ internal final class FirebaseUserManager {
     
     private init() {}
     
+    // MARK: BASIC LOGIN/REGISTRATION FLOW
     func createUser(user: AppUser, userCredentials: UserCredential, handler: (() -> ())? = nil) {
         guard let email = userCredentials.email,
             let password = userCredentials.password,
@@ -73,6 +78,7 @@ internal final class FirebaseUserManager {
         }
     }
     
+    // MARK: FETCHING DATA
     // TODO: FINISH
     func getCurrentUserData() {
         guard let userID = Auth.auth().currentUser?.uid else { return }
@@ -104,5 +110,24 @@ internal final class FirebaseUserManager {
     
     func fetchPosts(eventType: DataEventType, with handler: @escaping (DataSnapshot) -> Void) {
         ref.child("posts").observe(eventType, with: handler)
+    }
+    
+    // MARK: POSTING DATA
+    
+    func uploadToDatabase(_ contentUrl: String, _ event: Children) {
+        guard let uid = currentUser?.uid else { return }
+        let key = ref.child(event.rawValue).childByAutoId().key
+        let post: [String : Any] = [
+            "caption" : "caption with rating",
+            "data" : contentUrl,
+            "rating" : 4.5        ]
+        
+        let childUpdates = ["/posts/\(key)" : post,
+                            "/user-posts/\(uid)/\(key)/" : post,
+                            "/user-ratings/\(uid)/" : 4.5
+            ] as [String : Any]
+        ref.updateChildValues(childUpdates)
+        print("updating to firebase using fb manager")
+        
     }
 }

@@ -43,7 +43,8 @@ internal final class UploadViewModel {
                     print(error!)
                 }
                 if let urlString = metadata?.downloadURL()?.absoluteString {
-                    self.uploadToDatabase(urlString)
+                    //self.uploadToDatabase(urlString)
+                    self.fbManager.uploadToDatabase(urlString, .posts)
                 }
             })
             
@@ -58,22 +59,4 @@ internal final class UploadViewModel {
             })
         }
     }
-    
-    private func uploadToDatabase(_ contentUrl: String) {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        
-        // Currently just updating to "posts"
-        let ref = Database.database().reference()
-        let key = ref.child("posts").childByAutoId().key
-        let post: [String: Any] = [
-            "caption": "caption1",
-            "data" : contentUrl
-        ]
-        
-        let childUpdates = ["/posts/\(key)": post,
-                            "/user-posts/\(uid)/\(key)/": post]
-        ref.updateChildValues(childUpdates)
-        print("update to database")
-    }
-
 }

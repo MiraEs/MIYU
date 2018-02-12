@@ -8,6 +8,7 @@
 
 import UIKit
 import Cosmos
+import Firebase
 
 class HomepageTableViewCell: UITableViewCell {
 
@@ -36,19 +37,24 @@ class HomepageTableViewCell: UITableViewCell {
     
     func update(_ rating: Double) {
         ratingView.rating = rating
-        //print(rating)
+        print(rating)
+    }
+    
+    // TODO: firebase rating
+    private func addRating(_ rating: Double) {
+        
     }
     
     func setupTap(_ tag: Int) {
         profileImage.isUserInteractionEnabled = true
         profileImage.tag = tag
         
-        let tapped = UITapGestureRecognizer(target: self, action: #selector(myFunction))
+        let tapped = UITapGestureRecognizer(target: self, action: #selector(showUserProfile))
         tapped.numberOfTapsRequired = 1
         profileImage.addGestureRecognizer(tapped)
     }
     
-    @objc func myFunction(gesture: UITapGestureRecognizer) {
+    @objc func showUserProfile(gesture: UITapGestureRecognizer) {
         print("it worked")
     }
 
