@@ -114,8 +114,9 @@ internal final class FirebaseUserManager {
     
     // MARK: POSTING DATA
     
-    func uploadToDatabase(_ contentUrl: String, _ event: Children) {
+    private func uploadToDatabase(_ contentUrl: String, _ event: Children) {
         guard let uid = currentUser?.uid else { return }
+        // childByAutoId used for chronologicallly adding
         let key = ref.child(event.rawValue).childByAutoId().key
         let post: [String : Any] = [
             "caption" : "caption with rating",
@@ -128,6 +129,27 @@ internal final class FirebaseUserManager {
             ] as [String : Any]
         ref.updateChildValues(childUpdates)
         print("updating to firebase using fb manager")
+    }
+    
+    
+    
+    //TODO: Fix to include video content as well
+    func uploadContentToStorage(with content: UIImageView) {
+        let contentName = NSUUID().uuidString
+        let storageRef = Storage.storage().reference().child("users").child((currentUser?.uid)!).child("\(contentName)")
         
+        if let image = content.image {
+            let uploadData = UIImagePNGRepresentation(image)
+            
+            storageRef.putData(uploadData!, metadata: nil, completion: { (metadata, error) in
+                if error != nil {
+                    print(error!)
+                }
+                
+                if let urlString = metadata?.downloadURL()?.absoluteString {
+                    self.uploadToDatabase(urlString, .posts)
+                }
+            })
+        }
     }
 }

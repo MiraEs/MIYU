@@ -64,7 +64,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="229-3b-bvJ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Sdh-jL-21w"/>
+                    <navigationItem key="navigationItem" id="Sdh-jL-21w">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Fnh-I3-PBP">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="epz-La-fdm">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <connections>
+                                <action selector="uploadContent:" destination="Ogx-fG-Vhg" id="T1X-TO-3HI"/>
+                                <segue destination="qex-km-QDT" kind="show" id="jc8-RC-cIp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="dYD-l5-zH8" id="6fh-TX-hQG"/>
                     </connections>
@@ -116,6 +128,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8VR-1P-8RL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1068" y="136"/>
+        </scene>
+        <!--UploadViewController-->
+        <scene sceneID="uWZ-VL-YHX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UploadViewController" id="qex-km-QDT" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dn7-yv-6Pc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1870" y="118"/>
         </scene>
         <!--Home-->
         <scene sceneID="rfF-uA-SEE">

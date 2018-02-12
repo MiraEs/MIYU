@@ -22,7 +22,6 @@ internal final class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     // MARK: USER MANAGEMENT

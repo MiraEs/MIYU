@@ -17,6 +17,8 @@ class UploadViewController: UIViewController {
     @IBOutlet weak var captionTextView: UITextView!
     @IBOutlet weak var centerImage: UIButton!
     
+    private weak var fbManager = FirebaseUserManager.manager
+    
     private var viewModel: UploadViewModel! {
         return UploadViewModel(presentVc: self)
     }
@@ -33,7 +35,7 @@ class UploadViewController: UIViewController {
     
     @IBAction func uploadContent(_ sender: Any) {
         print("upload pic to storage")
-        viewModel?.uploadPic(with: profileImage)
+        fbManager?.uploadContentToStorage(with: profileImage)
     }
     
     @IBAction func uploadImageTapped(_ sender: Any) {

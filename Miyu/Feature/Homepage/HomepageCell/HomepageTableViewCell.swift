@@ -37,12 +37,16 @@ class HomepageTableViewCell: UITableViewCell {
     
     func update(_ rating: Double) {
         ratingView.rating = rating
+        //updateRatingForPost()
         print(rating)
     }
     
     // TODO: firebase rating
-    private func addRating(_ rating: Double) {
-        
+    private func updateRatingForPost() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let ref = Database.database().reference()
+        let path = ref.child(Children.posts.rawValue).key
+        print("path \(path)")
     }
     
     func setupTap(_ tag: Int) {

@@ -29,6 +29,15 @@ internal final class HomepageViewController: BaseViewController {
    
     }
     
+    // MARK: SEGUE TO UPLOAD VC
+    
+    @IBAction func uploadContent(_ sender: Any) {
+        
+    }
+    
+    // MARK: FETCH POSTS
+    // TODO: REFACTOR FB MANAGER
+    
     private func fetchPosts() {
         fbManager.fetchPosts(eventType: .childAdded) { (snapshot) in
             if let dict = snapshot.value as? [String:String] {
@@ -77,15 +86,6 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
-//    @objc func myFunction(gesture: UITapGestureRecognizer) {
-//        print("it worked")
-//    }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.performSegue(withIdentifier: Constants.homeCellSegue, sender: self)
-//    }
-    
 }
 
 extension HomepageViewController: UIBarPositioningDelegate {

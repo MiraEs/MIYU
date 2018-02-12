@@ -13,7 +13,7 @@
         <!--Upload-->
         <scene sceneID="ep9-dS-Q2e">
             <objects>
-                <viewController id="Bzy-5R-Lfb" customClass="UploadViewController" customModule="Miyu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UploadViewController" id="Bzy-5R-Lfb" customClass="UploadViewController" customModule="Miyu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H45-E0-wP6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

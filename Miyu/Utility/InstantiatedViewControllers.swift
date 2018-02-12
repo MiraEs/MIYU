@@ -8,9 +8,14 @@
 
 import UIKit
 
+enum PresentViewController: String {
+    case HomepageViewController, RegisterViewController, UploadViewController
+}
+
+// MARK: FUNCTION DEFINITIONS INITIALIZING STORYBOARDS
 enum AppStoryboard: String {
     
-    case HomepageViewController, RegisterViewController, ProfileViewController
+    case HomepageViewController, RegisterViewController, ProfileViewController, UploadViewController, LoginViewController
     
     var instance: UIStoryboard {
         
@@ -35,7 +40,13 @@ enum AppStoryboard: String {
     }
 }
 
+// MARK: INSTANTIATING STORYBOARDS
+
 class InstantiatedViewControllers {
+    
+    var uploadVC: UIViewController? {
+        return UploadViewController.instantiate(fromAppStoryboard: .UploadViewController)
+    }
     
     var registerVC: UIViewController? {
         return RegisterViewController.instantiate(fromAppStoryboard: .RegisterViewController)
@@ -68,4 +79,21 @@ class InstantiatedViewControllers {
     }
     
     init() {}
+}
+
+extension InstantiatedViewControllers {
+    
+    func presentDestinationVC(from presentingVC: UIViewController?, to vc: PresentViewController) {
+        switch vc {
+        case .HomepageViewController:
+            guard let homeTabBar = self.tabBar else { return }
+            presentingVC?.present(homeTabBar, animated: true, completion: nil)
+        case .RegisterViewController:
+            guard let registerVC = self.registerVC else { return }
+            presentingVC?.present(registerVC, animated: true, completion: nil)
+        case .UploadViewController:
+            guard let uploadVC = self.uploadVC else { return }
+            presentingVC?.present(uploadVC, animated: true, completion: nil)
+        }
+    }
 }

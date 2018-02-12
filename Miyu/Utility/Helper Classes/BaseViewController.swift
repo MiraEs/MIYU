@@ -6,7 +6,6 @@
 //  Copyright © 2018 ME. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 internal class BaseViewController: UIViewController {

@@ -20,8 +20,7 @@ internal final class RegisterViewModel: InstantiatedViewControllers {
     
     /// Presents main home page which is a tab bar controller.
     func presentRootController() {
-        guard let homeTabBar = tabBar else { return }
-        presentingViewController?.present(homeTabBar, animated: true, completion: nil)
+        presentDestinationVC(from: self.presentingViewController, to: .HomepageViewController)
     }
     
 }
