@@ -70,6 +70,9 @@
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="uploadContent:" destination="Ogx-fG-Vhg" eventType="touchUpInside" id="5H1-Z0-SrY"/>
+                                </connections>
                             </button>
                             <connections>
                                 <action selector="uploadContent:" destination="Ogx-fG-Vhg" id="T1X-TO-3HI"/>

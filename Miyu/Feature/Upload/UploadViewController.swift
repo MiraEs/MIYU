@@ -42,8 +42,6 @@ class UploadViewController: UIViewController {
         print("upload Image tapped")
         viewModel?.showPicker()
     }
-    
-    
 }
 
 extension UploadViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

@@ -113,7 +113,7 @@ internal final class FirebaseUserManager {
     }
     
     // MARK: POSTING DATA
-    
+    // TODO: IMPLEMENT RATING PROPERTY FOR EACH POST
     private func uploadToDatabase(_ contentUrl: String, _ event: Children) {
         guard let uid = currentUser?.uid else { return }
         // childByAutoId used for chronologicallly adding

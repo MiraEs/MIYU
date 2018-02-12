@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 internal final class HomepageViewController: BaseViewController {
-    private var allPosts = [[String:String]]()
+    private var allPosts = [[String:AnyObject]]()
 
     private var fbManager = FirebaseUserManager.manager
     
@@ -32,15 +32,15 @@ internal final class HomepageViewController: BaseViewController {
     // MARK: SEGUE TO UPLOAD VC
     
     @IBAction func uploadContent(_ sender: Any) {
-        
+        print("upload content")
+        self.viewModel?.presentVC(vc: .UploadViewController)
     }
     
     // MARK: FETCH POSTS
     // TODO: REFACTOR FB MANAGER
-    
     private func fetchPosts() {
         fbManager.fetchPosts(eventType: .childAdded) { (snapshot) in
-            if let dict = snapshot.value as? [String:String] {
+            if let dict = snapshot.value as? [String:AnyObject] {
                 self.allPosts.append(dict)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -54,7 +54,6 @@ internal final class HomepageViewController: BaseViewController {
             cell.contentImage.loadCachedImage(urlString)
         }
     }
-
 }
 
 extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
@@ -67,8 +66,14 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.homeCell, for: indexPath) as! HomepageTableViewCell
         
         // Labels
-        cell.nameLabel.text = allPosts[indexPath.row]["caption"]
-        fetchPhoto(allPosts[indexPath.row]["data"], cell)
+        let currentCell = allPosts[indexPath.row]
+        
+        guard let name = currentCell["caption"] as? String,
+            let urlString = currentCell["data"] as? String else { return UITableViewCell() }
+        
+        cell.nameLabel.text = name //cell.nameLabel.text = allPosts[indexPath.row]["caption"]
+        fetchPhoto(urlString, cell) //fetchPhoto(allPosts[indexPath.row]["data"], cell)
+        
         
         // Rating
         let rating: Double = Double((indexPath as NSIndexPath).row) / 99 * 5

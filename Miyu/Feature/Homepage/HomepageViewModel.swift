@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-internal final class HomepageViewModel {
+internal final class HomepageViewModel: InstantiatedViewControllers {
     
     private var presentingViewController: UIViewController
     
@@ -27,7 +27,7 @@ internal final class HomepageViewModel {
     
     // MARK: FIREBASE
     func presentVC(vc: PresentViewController) {
-        
+        presentDestinationVC(from: self.presentingViewController, to: vc)
     }
     
 }

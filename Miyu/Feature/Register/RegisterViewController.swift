@@ -26,6 +26,11 @@ internal final class RegisterViewController: BaseViewController {
         super.viewDidLoad()
     }
     
+    @IBAction func backButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     @IBAction func finishButtonTapped(_ sender: Any) {
         guard let email = emailLabel.text,
             let password = passwordLabel.text,
