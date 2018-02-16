@@ -69,25 +69,22 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         let currentCell = allPosts[indexPath.row]
         
         guard let name = currentCell["caption"] as? String,
-            let urlString = currentCell["data"] as? String else { return UITableViewCell() }
+            let urlString = currentCell["data"] as? String,
+            let _ = currentCell["rating"] as? String else {
+                return UITableViewCell()
+        }
         
-        cell.nameLabel.text = name //cell.nameLabel.text = allPosts[indexPath.row]["caption"]
-        fetchPhoto(urlString, cell) //fetchPhoto(allPosts[indexPath.row]["data"], cell)
-        
+        cell.nameLabel.text = name
+        fetchPhoto(urlString, cell)
         
         // Rating
-        let rating: Double = Double((indexPath as NSIndexPath).row) / 99 * 5
-        cell.update(rating)
+        //let rating: Double = Double((indexPath as NSIndexPath).row) / 99 * 5
+        //cell.update(rating, indexPath)
         
         cell.setupTap(indexPath.row)
         // Image Interaction segue to profile
         
-//        cell.profileImage.isUserInteractionEnabled = true
-//        cell.profileImage.tag = indexPath.row
-//        
-//        let tapped = UITapGestureRecognizer(target: self, action: #selector(myFunction))
-//        tapped.numberOfTapsRequired = 1
-//        cell.profileImage.addGestureRecognizer(tapped)
+        cell.ratingUpdate(indexPath)
         
         return cell
     }

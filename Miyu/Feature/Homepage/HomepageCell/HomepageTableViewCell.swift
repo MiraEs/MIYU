@@ -10,6 +10,11 @@ import UIKit
 import Cosmos
 import Firebase
 
+struct Rating {
+    let count: Int
+    let ratingScore: Double
+}
+
 class HomepageTableViewCell: UITableViewCell {
 
     @IBOutlet weak var profileImage: UIImageView!
@@ -35,19 +40,35 @@ class HomepageTableViewCell: UITableViewCell {
     
     // MARK: RATING FUNCTIONALITY
     
-    func update(_ rating: Double) {
-        ratingView.rating = rating
-        //updateRatingForPost()
-        print(rating)
+    func ratingUpdate(_ indexPath: IndexPath) {
+        ratingView.didFinishTouchingCosmos = { [weak self] rating in
+            self?.ratingView.rating = rating
+            //self?.updateRatingInFb(rating)
+            print("RATING FOR \(indexPath) is \(rating)")
+        }
     }
     
     // TODO: firebase rating
-    private func updateRatingForPost() {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        let ref = Database.database().reference()
-        let path = ref.child(Children.posts.rawValue).key
-        print("path \(path)")
-    }
+    
+//    private func updateRatingInFb(_ rating: Double) {
+//        //guard let uid = Auth.auth().currentUser?.uid else { return }
+//        let ref = Database.database().reference()
+//        let queryRef = ref.child("posts")
+//        //let queryRef = usersRef.queryOrdered(byChild: "rating")
+//            //.queryEqual(toValue: "LKupL7KYiedpr6uEizdCapezJ6i2")
+//
+//        queryRef.observeSingleEvent(of: .value, with: { (snapshot) in
+//
+//            for snap in snapshot.children {
+//                let userSnap = snap as! DataSnapshot
+//                let key = userSnap.key
+//                print("USER SNAP \(key)")
+//            }
+//        })
+//        //queryRef.setValue(["username": username])
+//        let key = queryRef.
+//        print("QUERY KEY \(key)")
+//    }
     
     func setupTap(_ tag: Int) {
         profileImage.isUserInteractionEnabled = true
