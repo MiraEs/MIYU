@@ -70,7 +70,7 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         
         guard let name = currentCell["caption"] as? String,
             let urlString = currentCell["data"] as? String,
-            let _ = currentCell["rating"] as? String else {
+            let rating = currentCell["rating"] as? Double else {
                 return UITableViewCell()
         }
         
@@ -80,13 +80,19 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         // Rating
         //let rating: Double = Double((indexPath as NSIndexPath).row) / 99 * 5
         //cell.update(rating, indexPath)
-        
+
         cell.setupTap(indexPath.row)
         // Image Interaction segue to profile
         
-        cell.ratingUpdate(indexPath)
+        cell.ratingView.rating = rating
+        //cell.ratingUpdate(indexPath)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("did select row")
+      
     }
 }
 
