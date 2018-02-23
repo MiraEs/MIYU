@@ -43,13 +43,14 @@ class HomepageTableViewCell: UITableViewCell {
     func ratingUpdate(_ indexPath: IndexPath) {
         ratingView.didFinishTouchingCosmos = { rating in
             print("did rate: \(rating)")
-            
+            self.updateRatingInFb(rating)
         }
     }
     
     // TODO: firebase rating
     
     private func updateRatingInFb(_ rating: Double) {
+        print("updating rating.......")
         //guard let uid = Auth.auth().currentUser?.uid else { return }
         let ref = Database.database().reference()
         let queryRef = ref.child("posts")

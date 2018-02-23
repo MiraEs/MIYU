@@ -16,7 +16,7 @@ internal final class HomepageViewController: BaseViewController {
     private var viewModel: HomepageViewModel? {
         return HomepageViewModel(self)
     }
-    private weak var allPosts = [Post]()
+    private var allPosts = [Post]()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -44,7 +44,8 @@ internal final class HomepageViewController: BaseViewController {
     private func fetchPosts() {
         fbManager?.fetchPosts(eventType: .childAdded) { (snapshot) in
             if let dict = snapshot.value as? [String:AnyObject] {
-                if let validPost = Post.createPost(with: dict) {
+                let key = snapshot.key
+                if let validPost = Post.createPost(with: dict, key: key) {
                     self.allPosts.append(validPost)
                 }
 
@@ -86,15 +87,13 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.ratingView.rating = currentCell.rating!
         cell.ratingLabel.text = "\(currentCell.rating!)"
-        //cell.ratingUpdate(indexPath)
+        cell.ratingUpdate(indexPath)
+        cell.commentCaptionLabel.text = "KEY \(String(describing: currentCell.key))"
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("did select row")
-      
-    }
+  
 }
 
 extension HomepageViewController: UIBarPositioningDelegate {
