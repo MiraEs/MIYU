@@ -10,8 +10,9 @@ import UIKit
 import Firebase
 
 internal final class HomepageViewController: BaseViewController {
-    private var allPosts = [[String:AnyObject]]()
-
+    //private var allPosts = [[String:AnyObject]]()
+    private var allPosts = [Post]()
+    
     private var fbManager = FirebaseUserManager.manager
     
     private weak var currentUser: AppUser?
@@ -25,7 +26,8 @@ internal final class HomepageViewController: BaseViewController {
         super.viewDidLoad()
         
         viewModel?.setup(tableView)
-        fetchPosts()
+        //fetchPosts()
+        fetchPostsUsingModel()
    
     }
     
@@ -38,10 +40,25 @@ internal final class HomepageViewController: BaseViewController {
     
     // MARK: FETCH POSTS
     // TODO: REFACTOR FB MANAGER
-    private func fetchPosts() {
+//    private func fetchPosts() {
+//        fbManager.fetchPosts(eventType: .childAdded) { (snapshot) in
+//            if let dict = snapshot.value as? [String:AnyObject] {
+//                self.allPosts.append(dict)
+//                DispatchQueue.main.async {
+//                    self.tableView.reloadData()
+//                }
+//            }
+//        }
+//    }
+    
+    private func fetchPostsUsingModel() {
+        print("FETCHING STARTED")
         fbManager.fetchPosts(eventType: .childAdded) { (snapshot) in
             if let dict = snapshot.value as? [String:AnyObject] {
-                self.allPosts.append(dict)
+                if let validPost = Post.createPost(with: dict) {
+                    self.allPosts.append(validPost)
+                }
+              
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -59,7 +76,7 @@ internal final class HomepageViewController: BaseViewController {
 extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allPosts.count
+            return allPosts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -68,14 +85,13 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         // Labels
         let currentCell = allPosts[indexPath.row]
         
-        guard let name = currentCell["caption"] as? String,
-            let urlString = currentCell["data"] as? String,
-            let rating = currentCell["rating"] as? Double else {
-                return UITableViewCell()
-        }
+        // NEW
         
-        cell.nameLabel.text = name
-        fetchPhoto(urlString, cell)
+        //cell.nameLabel.text = currentCell.caption
+        //fetchPhoto(currentCell.data, cell)
+        
+        // TEST
+        cell.nameLabel.text = currentCell.caption
         
         // Rating
         //let rating: Double = Double((indexPath as NSIndexPath).row) / 99 * 5
@@ -84,7 +100,8 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setupTap(indexPath.row)
         // Image Interaction segue to profile
         
-        cell.ratingView.rating = rating
+        cell.ratingView.rating = currentCell.rating!
+        cell.ratingLabel.text = "\(currentCell.rating!)"
         //cell.ratingUpdate(indexPath)
         
         return cell
