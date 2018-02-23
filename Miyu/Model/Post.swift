@@ -21,13 +21,12 @@ internal final class Post: NSObject {
         self.data = data
     }
     
+    // TODO: CREATE PROPER ERROR CATCH
     static func createPost(with dict: [String:AnyObject]) -> Post? {
         var validPost: Post?
-        print("CREATING POST w/ DICT \(dict)")
         guard let caption = dict["caption"] as? String,
             let data = dict["data"] as? String,
             let rating = dict["rating"] as? Double else {
-                print("RETURNING NIL")
                 return nil
            }
         

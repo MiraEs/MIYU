@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 internal final class HomepageViewController: BaseViewController {
-    //private var allPosts = [[String:AnyObject]]()
+
     private var allPosts = [Post]()
     
     private var fbManager = FirebaseUserManager.manager
@@ -26,8 +26,7 @@ internal final class HomepageViewController: BaseViewController {
         super.viewDidLoad()
         
         viewModel?.setup(tableView)
-        //fetchPosts()
-        fetchPostsUsingModel()
+        fetchPosts()
    
     }
     
@@ -40,19 +39,8 @@ internal final class HomepageViewController: BaseViewController {
     
     // MARK: FETCH POSTS
     // TODO: REFACTOR FB MANAGER
-//    private func fetchPosts() {
-//        fbManager.fetchPosts(eventType: .childAdded) { (snapshot) in
-//            if let dict = snapshot.value as? [String:AnyObject] {
-//                self.allPosts.append(dict)
-//                DispatchQueue.main.async {
-//                    self.tableView.reloadData()
-//                }
-//            }
-//        }
-//    }
     
-    private func fetchPostsUsingModel() {
-        print("FETCHING STARTED")
+    private func fetchPosts() {
         fbManager.fetchPosts(eventType: .childAdded) { (snapshot) in
             if let dict = snapshot.value as? [String:AnyObject] {
                 if let validPost = Post.createPost(with: dict) {
@@ -81,17 +69,11 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.homeCell, for: indexPath) as! HomepageTableViewCell
-        
-        // Labels
         let currentCell = allPosts[indexPath.row]
         
-        // NEW
-        
-        //cell.nameLabel.text = currentCell.caption
-        //fetchPhoto(currentCell.data, cell)
-        
-        // TEST
+        // Labels
         cell.nameLabel.text = currentCell.caption
+        fetchPhoto(currentCell.data, cell)
         
         // Rating
         //let rating: Double = Double((indexPath as NSIndexPath).row) / 99 * 5
