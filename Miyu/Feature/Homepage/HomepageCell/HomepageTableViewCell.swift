@@ -40,34 +40,24 @@ class HomepageTableViewCell: UITableViewCell {
     
     // MARK: RATING FUNCTIONALITY
     
-    func ratingUpdate(_ indexPath: IndexPath) {
+    func ratingUpdate(_ indexPath: IndexPath, _ key: String) {
         ratingView.didFinishTouchingCosmos = { rating in
             print("did rate: \(rating)")
-            self.updateRatingInFb(rating)
+            self.updateRatingInFb(rating, key)
         }
     }
     
     // TODO: firebase rating
     
-    private func updateRatingInFb(_ rating: Double) {
-        print("updating rating.......")
+    private func updateRatingInFb(_ rating: Double, _ key: String) {
+        print("updating rating....... with key \(key)")
         //guard let uid = Auth.auth().currentUser?.uid else { return }
         let ref = Database.database().reference()
-        let queryRef = ref.child("posts")
-        //let queryRef = usersRef.queryOrdered(byChild: "rating")
-            //.queryEqual(toValue: "LKupL7KYiedpr6uEizdCapezJ6i2")
+        let usersRef = ref.child("posts")
+        let queryRef = usersRef.child(key).child("rating")
         
-        queryRef.observe(.childChanged, with: { (snapshot) in
-
-            for snap in snapshot.children {
-                let userSnap = snap as! DataSnapshot
-                let key = userSnap.key
-                print("USER SNAP \(key)")
-            }
-        })
-        //queryRef.setValue(["username": username])
-        //let key = queryRef.
-        //print("QUERY KEY \(key)")
+        print("query ref \(queryRef)")
+        queryRef.setValue(rating)
     }
     
     func setupTap(_ tag: Int) {

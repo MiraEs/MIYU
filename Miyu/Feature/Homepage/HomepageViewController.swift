@@ -73,6 +73,7 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.homeCell, for: indexPath) as! HomepageTableViewCell
         let currentCell = allPosts[indexPath.row]
+        let key = currentCell.key!
         
         // Labels
         cell.nameLabel.text = currentCell.caption
@@ -87,7 +88,7 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.ratingView.rating = currentCell.rating!
         cell.ratingLabel.text = "\(currentCell.rating!)"
-        cell.ratingUpdate(indexPath)
+        cell.ratingUpdate(indexPath, key)
         cell.commentCaptionLabel.text = "KEY \(String(describing: currentCell.key))"
         
         return cell
