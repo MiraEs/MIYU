@@ -10,24 +10,20 @@ import UIKit
 import Firebase
 
 internal final class HomepageViewController: BaseViewController {
-
-    private var allPosts = [Post]()
     
-    private var fbManager = FirebaseUserManager.manager
-    
+    private weak var fbManager = FirebaseUserManager.manager
     private weak var currentUser: AppUser?
     private var viewModel: HomepageViewModel? {
         return HomepageViewModel(self)
     }
+    private weak var allPosts = [Post]()
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel?.setup(tableView)
-        fetchPosts()
-   
+        setup()
     }
     
     // MARK: SEGUE TO UPLOAD VC
@@ -37,16 +33,21 @@ internal final class HomepageViewController: BaseViewController {
         self.viewModel?.presentVC(vc: .UploadViewController)
     }
     
+    private func setup() {
+        viewModel?.setup(tableView)
+        fetchPosts()
+    }
+    
     // MARK: FETCH POSTS
-    // TODO: REFACTOR FB MANAGER
+    // TODO: CAN THIS BE ABSTRACTED TO VIEW MODEL?
     
     private func fetchPosts() {
-        fbManager.fetchPosts(eventType: .childAdded) { (snapshot) in
+        fbManager?.fetchPosts(eventType: .childAdded) { (snapshot) in
             if let dict = snapshot.value as? [String:AnyObject] {
                 if let validPost = Post.createPost(with: dict) {
                     self.allPosts.append(validPost)
                 }
-              
+
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -64,7 +65,8 @@ internal final class HomepageViewController: BaseViewController {
 extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return allPosts.count
+        
+        return allPosts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
