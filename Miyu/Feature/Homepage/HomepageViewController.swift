@@ -38,6 +38,13 @@ internal final class HomepageViewController: BaseViewController {
         fetchPosts()
     }
     
+    // MARK: TEST
+    private func testChange() {
+        fbManager?.fetchPosts(eventType: .childChanged, with: { (snapshot) in
+            print("changed occured :\(snapshot)")
+        })
+    }
+    
     // MARK: FETCH POSTS
     // TODO: CAN THIS BE ABSTRACTED TO VIEW MODEL?
     
@@ -55,6 +62,7 @@ internal final class HomepageViewController: BaseViewController {
             }
         }
     }
+    
     
     private func fetchPhoto(_ urlString: String?, _ cell: HomepageTableViewCell) {
         if let urlString = urlString {
@@ -75,20 +83,29 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         let currentCell = allPosts[indexPath.row]
         let key = currentCell.key!
         
+        
         // Labels
         cell.nameLabel.text = currentCell.caption
         fetchPhoto(currentCell.data, cell)
         
         // Rating
         //let rating: Double = Double((indexPath as NSIndexPath).row) / 99 * 5
-        //cell.update(rating, indexPath)
+        
 
         cell.setupTap(indexPath.row)
         // Image Interaction segue to profile
         
         cell.ratingView.rating = currentCell.rating!
         cell.ratingLabel.text = "\(currentCell.rating!)"
-        cell.ratingUpdate(indexPath, key)
+        
+        cell.ratingView.didFinishTouchingCosmos = {
+            rating in
+            cell.ratingView.rating = rating
+            cell.ratingUpdate(rating, key)
+            self.allPosts[indexPath.row].rating = rating
+        }
+        
+        
         cell.commentCaptionLabel.text = "KEY \(String(describing: currentCell.key))"
         
         return cell

@@ -40,11 +40,11 @@ class HomepageTableViewCell: UITableViewCell {
     
     // MARK: RATING FUNCTIONALITY
     
-    func ratingUpdate(_ indexPath: IndexPath, _ key: String) {
-        ratingView.didFinishTouchingCosmos = { rating in
-            print("did rate: \(rating)")
+    func ratingUpdate(_ rating: Double, _ key: String) {
+        //ratingView.didFinishTouchingCosmos = { rating in
+            //print("did rate: \(rating)")
             self.updateRatingInFb(rating, key)
-        }
+        //}
     }
     
     // TODO: firebase rating
@@ -58,6 +58,8 @@ class HomepageTableViewCell: UITableViewCell {
         
         print("query ref \(queryRef)")
         queryRef.setValue(rating)
+        
+        // need to update tableview?
     }
     
     func setupTap(_ tag: Int) {
