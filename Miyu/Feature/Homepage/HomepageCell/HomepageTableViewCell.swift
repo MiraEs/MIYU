@@ -16,6 +16,8 @@ struct Rating {
 }
 
 class HomepageTableViewCell: UITableViewCell {
+    
+    private weak var fbManager = FirebaseUserManager.manager
 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -40,26 +42,27 @@ class HomepageTableViewCell: UITableViewCell {
     
     // MARK: RATING FUNCTIONALITY
     
-    func ratingUpdate(_ rating: Double, _ key: String) {
+    func ratingUpdate(_ rating: Double, _ key: String, _ uid: String) {
         //ratingView.didFinishTouchingCosmos = { rating in
             //print("did rate: \(rating)")
-            self.updateRatingInFb(rating, key)
+        
+            self.updateRatingInFb(rating, key, uid)
         //}
     }
     
     // TODO: firebase rating
     
-    private func updateRatingInFb(_ rating: Double, _ key: String) {
+    private func updateRatingInFb(_ rating: Double, _ key: String, _ uid: String) {
         print("updating rating....... with key \(key)")
-        //guard let uid = Auth.auth().currentUser?.uid else { return }
         let ref = Database.database().reference()
         let usersRef = ref.child("posts")
-        let queryRef = usersRef.child(key).child("rating")
+        let postsRef = usersRef.child(key).child("rating")
+        let userPostsRef = ref.child("user-posts").child(uid).child(key).child("rating")
         
-        print("query ref \(queryRef)")
-        queryRef.setValue(rating)
+        postsRef.setValue(rating)
+        userPostsRef.setValue(rating)
         
-        // need to update tableview?
+        fbManager?.calculateRating(uid)
     }
     
     func setupTap(_ tag: Int) {

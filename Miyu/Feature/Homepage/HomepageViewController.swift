@@ -38,13 +38,6 @@ internal final class HomepageViewController: BaseViewController {
         fetchPosts()
     }
     
-    // MARK: TEST
-    private func testChange() {
-        fbManager?.fetchPosts(eventType: .childChanged, with: { (snapshot) in
-            print("changed occured :\(snapshot)")
-        })
-    }
-    
     // MARK: FETCH POSTS
     // TODO: CAN THIS BE ABSTRACTED TO VIEW MODEL?
     
@@ -82,8 +75,9 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.homeCell, for: indexPath) as! HomepageTableViewCell
         let currentCell = allPosts[indexPath.row]
         let key = currentCell.key!
+        let uid = currentCell.uid!
         
-        
+        print("CELL'S UID \(uid)")
         // Labels
         cell.nameLabel.text = currentCell.caption
         fetchPhoto(currentCell.data, cell)
@@ -101,7 +95,7 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         cell.ratingView.didFinishTouchingCosmos = {
             rating in
             cell.ratingView.rating = rating
-            cell.ratingUpdate(rating, key)
+            cell.ratingUpdate(rating, key, uid)
             self.allPosts[indexPath.row].rating = rating
         }
         

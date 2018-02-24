@@ -121,16 +121,47 @@ internal final class FirebaseUserManager {
         let post: [String : Any] = [
             "caption" : "caption with rating",
             "data" : contentUrl,
-            "rating" : 4.5        ]
+            "rating" : 0.0,
+            "uid" : uid ]
+        
+        let userPost: [String : Any] = [
+            "caption" : "caption with rating",
+            "data" : contentUrl,
+            "rating" : 0.0 ]
         
         let childUpdates = ["/posts/\(key)" : post,
-                            "/user-posts/\(uid)/\(key)/" : post,
+                            "/user-posts/\(uid)/\(key)/" : userPost,
                             "/user-ratings/\(uid)/" : 4.5
             ] as [String : Any]
         ref.updateChildValues(childUpdates)
         print("updating to firebase using fb manager")
     }
     
+    func calculateRating(_ uid: String) {
+        print("CALCULATE RATING for \(uid)")
+        let userRef = ref.child("user-posts").child(uid)
+        
+        userRef.observe(.value) { (snapshot) in
+            print("RATING SNAPSHOT COUNT \(snapshot.childrenCount)")
+            //let count = Float(snapshot.childrenCount)
+            //var sum: Float = 0.0
+            
+            if let all = snapshot.value as? [String:AnyObject] {
+                print("ALL \(all)")
+                
+                for each in all {
+                    if let value = each.value as? [String:AnyObject] {
+                        print("EACH RATING \(value["rating"])")
+                    }
+                }
+                
+            }
+            
+            
+        }
+        
+    }
+
     
     
     //TODO: Fix to include video content as well
