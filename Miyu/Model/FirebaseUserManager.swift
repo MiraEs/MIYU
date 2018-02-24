@@ -137,7 +137,11 @@ internal final class FirebaseUserManager {
         print("updating to firebase using fb manager")
     }
     
-    func calculateRating(_ uid: String) {
+    func calculatePostAverageRating() {
+        
+    }
+    
+    func calculateAllPostsRating(_ uid: String) {
         print("CALCULATE RATING for \(uid)")
         let userRef = ref.child("user-posts").child(uid)
         
@@ -145,13 +149,12 @@ internal final class FirebaseUserManager {
         userRef.observe(.value) { (snapshot) in
             print("RATING SNAPSHOT COUNT \(snapshot.childrenCount)")
             let count = Float(snapshot.childrenCount)
-            var sum: Float = 0.0
+            var sum: Float = 5.0
             var average: Float = 0.0
             
             if let children = snapshot.value as? [String:AnyObject] {
                 for child in children {
                     if let value = child.value as? [String:AnyObject] {
-                        //print("EACH RATING \(value["rating"])")
                         guard let rating = value["rating"] as? Float else { return }
                         sum += rating
                     }
@@ -164,10 +167,16 @@ internal final class FirebaseUserManager {
             self.updateUserRating(with: average, uid)
         }
     }
+
     
     private func updateUserRating(with average: Float, _ uid: String) {
         let userRef = ref.child("user-ratings").child(uid)
-        userRef.setValue(average)
+        
+        userRef.observe(.value) { (snapshot) in
+            guard let currentRating = snapshot.value as? Float else { return }
+                let newRating = (currentRating+average)/2
+                userRef.setValue(newRating)
+        }
     }
 
     
