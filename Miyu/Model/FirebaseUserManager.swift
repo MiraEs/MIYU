@@ -141,24 +141,26 @@ internal final class FirebaseUserManager {
         print("CALCULATE RATING for \(uid)")
         let userRef = ref.child("user-posts").child(uid)
         
+        
         userRef.observe(.value) { (snapshot) in
             print("RATING SNAPSHOT COUNT \(snapshot.childrenCount)")
-            //let count = Float(snapshot.childrenCount)
-            //var sum: Float = 0.0
+            let count = Float(snapshot.childrenCount)
+            var sum: Float = 0.0
+            var average: Float = 0.0
             
-            if let all = snapshot.value as? [String:AnyObject] {
-                print("ALL \(all)")
-                
-                for each in all {
-                    if let value = each.value as? [String:AnyObject] {
-                        print("EACH RATING \(value["rating"])")
+            if let children = snapshot.value as? [String:AnyObject] {
+                for child in children {
+                    if let value = child.value as? [String:AnyObject] {
+                        //print("EACH RATING \(value["rating"])")
+                        guard let rating = value["rating"] as? Float else { return }
+                        sum += rating
                     }
                 }
-                
             }
-            
-            
+            average = sum/count
+            print("AVERAGE >>>> \(average)")
         }
+        
         
     }
 
