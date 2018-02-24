@@ -159,15 +159,21 @@ internal final class FirebaseUserManager {
             }
             average = sum/count
             print("AVERAGE >>>> \(average)")
+            
+            //UPDATE USER RATING
+            self.updateUserRating(with: average, uid)
         }
-        
-        
+    }
+    
+    private func updateUserRating(with average: Float, _ uid: String) {
+        let userRef = ref.child("user-ratings").child(uid)
+        userRef.setValue(average)
     }
 
     
     
     //TODO: Fix to include video content as well
-    func uploadContentToStorage(with content: UIImageView) {
+    func uploadContentToStorage(with content: UIImageView, completionHandler: @escaping ()->Void) {
         let contentName = NSUUID().uuidString
         let storageRef = Storage.storage().reference().child("users").child((currentUser?.uid)!).child("\(contentName)")
         
@@ -181,6 +187,7 @@ internal final class FirebaseUserManager {
                 
                 if let urlString = metadata?.downloadURL()?.absoluteString {
                     self.uploadToDatabase(urlString, .posts)
+                    completionHandler()
                 }
             })
         }
