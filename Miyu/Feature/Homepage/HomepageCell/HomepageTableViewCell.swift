@@ -64,7 +64,6 @@ class HomepageTableViewCell: UITableViewCell {
         
         fbManager?.calculateAllPostsRating(uid)
         fbManager?.updateCount(key)
-        //fbManager?.calculatePostAverageRating()
     }
     
     func setupTap(_ tag: Int) {
