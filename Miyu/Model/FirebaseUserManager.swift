@@ -139,26 +139,40 @@ internal final class FirebaseUserManager {
     }
     
     // MARK: CALCULATE POST RATING
-    // @An = Average new, @Ao = Average old
-    // @Vn = new Value, @Sn = new Size
-    // THIS ONLY CALUCLATES WITH 1 ADDED VALUE TO AVERAGE
-    // An = Ao + ((Vn - Ao)/Sn)
     func updateCount(_ key: String) {
         let postRef = ref.child("posts").child(key)
         
         postRef.observeSingleEvent(of: .value) { (snapshot) in
             if let value = snapshot.value as? [String:AnyObject] {
                 guard let count = value["count"] as? Int,
-                    let averageRating = value["averageRating"] else { return }
+                    let averageRating = value["averageRating"] as? Double,
+                    let rating = value["rating"] as? Double else { return }
                 let newCount = count + 1
                 
                 //postRef.updateChildValues(["count": newCount])
                 self.uploadCount(key, newCount)
                 print("NEW COUNT >>>> \(newCount)")
-                //self.calculatePostRating(key, count)
-                //self.calculatePostRating(newCount, averageRating, postRef)
+                
+                self.calculatePostRating(newCount, averageRating, rating, postRef)
             }
         }
+    }
+    
+    // @An = Average new, @Ao = Average old
+    // @Vn = new Value, @Sn = new Size
+    // THIS ONLY CALUCLATES WITH 1 ADDED VALUE TO AVERAGE
+    // An = Ao + ((Vn - Ao)/Sn)
+    private func calculatePostRating(_ newCount: Int,
+                                     _ averageRating: Double,
+                                     _ rating: Double,
+                                     _ postRef: DatabaseReference) {
+        print("CALCULATE AVERAGE FOR THIS POStT......")
+        let size: Double = Double(newCount)
+        let oldAverage = averageRating
+        let newValue = rating
+        let newAverage = oldAverage + ((newValue - oldAverage)/size)
+        print("newAverage >>>> \(newAverage)")
+        
     }
     
     private func uploadCount(_ key: String, _ count: Int) {
@@ -166,10 +180,6 @@ internal final class FirebaseUserManager {
         postRef.updateChildValues(["count": count])
     }
     
-    private func calculatePostRating(_ newCount: Int, _ averageRating: Double, _ postRef: DatabaseReference) {
-        print("CALCULATE AVERAGE FOR THIS POStT......")
-        
-    }
     
     
     private func uploadNewPostRating(_ newRating: Double, _ postRef: DatabaseReference) {
