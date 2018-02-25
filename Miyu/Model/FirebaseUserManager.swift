@@ -122,7 +122,8 @@ internal final class FirebaseUserManager {
             "caption" : "caption with rating",
             "data" : contentUrl,
             "rating" : 0.0,
-            "uid" : uid ]
+            "uid" : uid,
+            "count": 0 ]
         
         let userPost: [String : Any] = [
             "caption" : "caption with rating",
@@ -137,16 +138,33 @@ internal final class FirebaseUserManager {
         print("updating to firebase using fb manager")
     }
     
-    func calculatePostAverageRating() {
+    func updateCount(_ key: String) {
+        let postRef = ref.child("posts").child(key)
         
+        postRef.observeSingleEvent(of: .value) { (snapshot) in
+            if let value = snapshot.value as? [String:AnyObject] {
+                guard let count = value["count"] as? Int else { return }
+                let newCount = count + 1
+                
+                //postRef.updateChildValues(["count": newCount])
+                self.uploadCount(key, newCount)
+                print("NEW COUNT >>>> \(newCount)")
+            }
+        }
     }
+    
+    private func uploadCount(_ key: String, _ count: Int) {
+        let postRef = ref.child("posts").child(key)
+        postRef.updateChildValues(["count": count])
+    }
+    
     
     func calculateAllPostsRating(_ uid: String) {
         print("CALCULATE RATING for \(uid)")
         let userRef = ref.child("user-posts").child(uid)
         
         
-        userRef.observe(.value) { (snapshot) in
+        userRef.observe(.childChanged) { (snapshot) in
             print("RATING SNAPSHOT COUNT \(snapshot.childrenCount)")
             let count = Float(snapshot.childrenCount)
             var sum: Float = 5.0
