@@ -33,6 +33,7 @@ internal final class FirebaseUserManager {
     private init() {}
     
     // MARK: BASIC LOGIN/REGISTRATION FLOW
+    
     func createUser(user: AppUser, userCredentials: UserCredential, handler: (() -> ())? = nil) {
         guard let email = userCredentials.email,
             let password = userCredentials.password,
@@ -93,49 +94,21 @@ internal final class FirebaseUserManager {
         }
     }
     
-    func getPosts() -> [[String:String]]? {
-        var returnValue = [[String:String]]()
-        ref.child("posts").observe(.value) { (snapshot) in
-            
-            let enumerator = snapshot.children
-            while let rest = enumerator.nextObject() as? DataSnapshot {
-                
-                guard let value = rest.value as? [String:String] else { return }
-                print("VALUE \(value)")
-                returnValue.append(value)
-            }
-        }
-        return returnValue
-    }
-    
-    func fetchPosts(eventType: DataEventType, with handler: @escaping (DataSnapshot) -> Void) {
+    func getPosts(eventType: DataEventType, with handler: @escaping (DataSnapshot) -> Void) {
         ref.child("posts").observe(eventType, with: handler)
     }
     
-    // MARK: POSTING DATA
+    // MARK: UPLOAD DATA
     // TODO: IMPLEMENT RATING PROPERTY FOR EACH POST
-    private func uploadToDatabase(_ contentUrl: String, _ event: Children) {
+    
+        /// POST
+    
+    private func uploadPost(_ contentUrl: String, _ event: Children) {
         guard let uid = currentUser?.uid else { return }
-        // childByAutoId used for chronologicallly adding
         let key = ref.child(event.rawValue).childByAutoId().key
-//        let post: [String : Any] = [
-//            "caption" : "caption with rating",
-//            "data" : contentUrl,
-//            "rating" : 0.0,
-//            "uid" : uid,
-//            "count": 0,
-//            "averageRating" : 0.0 ]
-
-//        let userPost: [String : Any] = [
-//            "caption" : "caption with rating",
-//            "data" : contentUrl,
-//            "rating" : 0.0 ]
-       
         let postObject = Post(rating: 0.0, caption: "no caption", data: contentUrl, uid: uid, count: 0, averageRating: 0.0)
-        //let post = postObject.dictionaryWithValues(forKeys: ["rating", "caption", "data", "uid", "count", "averageRating"])
-        let post = postObject.dictionary
-        
-        print("CONVER THIS MOTHER FCKER >>>\(post)")
+    
+        guard let post = postObject.dictionary else { return }
       
         let childUpdates = ["/posts/\(key)" : post,
                             "/user-posts/\(uid)/\(key)/" : post
@@ -144,8 +117,16 @@ internal final class FirebaseUserManager {
         print("updating to firebase using fb manager")
     }
     
-    // MARK: CALCULATE POST RATING
-    func updateCount(_ key: String) {
+    private func uploadPostRatedCount(_ key: String, _ count: Int) {
+        let postRef = ref.child("posts").child(key)
+        postRef.updateChildValues(["count": count])
+    }
+    
+    private func uploadPostAverageRating(_ newRating: Double, _ postRef: DatabaseReference) {
+        postRef.updateChildValues(["averageRating": newRating])
+    }
+
+    func updatePostRatedCount(_ key: String) {
         let postRef = ref.child("posts").child(key)
         
         postRef.observeSingleEvent(of: .value) { (snapshot) in
@@ -155,20 +136,56 @@ internal final class FirebaseUserManager {
                     let rating = value["rating"] as? Double else { return }
                 let newCount = count + 1
                 
-                //postRef.updateChildValues(["count": newCount])
-                self.uploadCount(key, newCount)
+                self.uploadPostRatedCount(key, newCount)
                 print("NEW COUNT >>>> \(newCount)")
                 
-                self.calculatePostRating(newCount, averageRating, rating, postRef)
+                self.calculatePostAverageRating(newCount, averageRating, rating, postRef)
             }
         }
     }
+    
+        /// USER
+    
+    private func updateUserRating(with average: Float, _ uid: String) {
+        let userRef = ref.child("user-ratings").child(uid)
+        
+        userRef.observe(.value) { (snapshot) in
+            guard let currentRating = snapshot.value as? Float else { return }
+            let newRating = (currentRating+average)/2
+            userRef.setValue(newRating)
+        }
+    }
+    
+        /// POST CONTENT
+    
+    //TODO: Fix to include video content as well
+    func uploadContentToStorage(with content: UIImageView, completionHandler: @escaping ()->Void) {
+        let contentName = NSUUID().uuidString
+        let storageRef = Storage.storage().reference().child("users").child((currentUser?.uid)!).child("\(contentName)")
+        
+        if let image = content.image {
+            let uploadData = UIImagePNGRepresentation(image)
+            
+            storageRef.putData(uploadData!, metadata: nil, completion: { (metadata, error) in
+                if error != nil {
+                    print(error!)
+                }
+                
+                if let urlString = metadata?.downloadURL()?.absoluteString {
+                    self.uploadPost(urlString, .posts)
+                    completionHandler()
+                }
+            })
+        }
+    }
+    
+    // MARK: CALCULATE POST & USER RATINGS
     
     // @An = Average new, @Ao = Average old
     // @Vn = new Value, @Sn = new Size
     // THIS ONLY CALUCLATES WITH 1 ADDED VALUE TO AVERAGE
     // An = Ao + ((Vn - Ao)/Sn)
-    private func calculatePostRating(_ newCount: Int,
+    private func calculatePostAverageRating(_ newCount: Int,
                                      _ averageRating: Double,
                                      _ rating: Double,
                                      _ postRef: DatabaseReference) {
@@ -178,20 +195,9 @@ internal final class FirebaseUserManager {
         let newValue = rating
         let newAverage = oldAverage + ((newValue - oldAverage)/size)
         print("newAverage >>>> \(newAverage)")
+        uploadPostAverageRating(newAverage, postRef)
         
     }
-    
-    private func uploadCount(_ key: String, _ count: Int) {
-        let postRef = ref.child("posts").child(key)
-        postRef.updateChildValues(["count": count])
-    }
-    
-    
-    
-    private func uploadNewPostRating(_ newRating: Double, _ postRef: DatabaseReference) {
-        postRef.updateChildValues(["averageRating": newRating])
-    }
-    
     
     func calculateAllPostsRating(_ uid: String) {
         print("CALCULATE RATING for \(uid)")
@@ -220,38 +226,5 @@ internal final class FirebaseUserManager {
         }
     }
     
-    // MARK: CALCULATE USER RATING
     
-    private func updateUserRating(with average: Float, _ uid: String) {
-        let userRef = ref.child("user-ratings").child(uid)
-        
-        userRef.observe(.value) { (snapshot) in
-            guard let currentRating = snapshot.value as? Float else { return }
-            let newRating = (currentRating+average)/2
-            userRef.setValue(newRating)
-        }
-    }
-    
-    
-    
-    //TODO: Fix to include video content as well
-    func uploadContentToStorage(with content: UIImageView, completionHandler: @escaping ()->Void) {
-        let contentName = NSUUID().uuidString
-        let storageRef = Storage.storage().reference().child("users").child((currentUser?.uid)!).child("\(contentName)")
-        
-        if let image = content.image {
-            let uploadData = UIImagePNGRepresentation(image)
-            
-            storageRef.putData(uploadData!, metadata: nil, completion: { (metadata, error) in
-                if error != nil {
-                    print(error!)
-                }
-                
-                if let urlString = metadata?.downloadURL()?.absoluteString {
-                    self.uploadToDatabase(urlString, .posts)
-                    completionHandler()
-                }
-            })
-        }
-    }
 }

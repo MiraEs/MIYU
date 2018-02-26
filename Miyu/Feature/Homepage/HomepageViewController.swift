@@ -26,11 +26,6 @@ internal final class HomepageViewController: BaseViewController {
         setup()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        fetchPosts()
-    }
-    
     // MARK: SEGUE TO UPLOAD VC
     
     @IBAction func uploadContent(_ sender: Any) {
@@ -47,7 +42,7 @@ internal final class HomepageViewController: BaseViewController {
     // TODO: CAN THIS BE ABSTRACTED TO VIEW MODEL?
     
     private func fetchPosts() {
-        fbManager?.fetchPosts(eventType: .childAdded) { (snapshot) in
+        fbManager?.getPosts(eventType: .childAdded) { (snapshot) in
             if let dict = snapshot.value as? [String:AnyObject] {
                 let key = snapshot.key
                 if let validPost = Post.createPost(with: dict, key: key) {

@@ -63,7 +63,7 @@ class HomepageTableViewCell: UITableViewCell {
         userPostsRef.setValue(rating)
         
         fbManager?.calculateAllPostsRating(uid)
-        fbManager?.updateCount(key)
+        fbManager?.updatePostRatedCount(key)
     }
     
     func setupTap(_ tag: Int) {

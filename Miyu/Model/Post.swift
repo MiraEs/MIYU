@@ -8,8 +8,6 @@
 
 import Foundation
 
-/** DIFFERENCE BETWEEN NSOBJECT (originally NSOBJECT) VS. ENCODABLE? **/
-
 internal final class Post: Encodable {
     
     //private var title: String?
