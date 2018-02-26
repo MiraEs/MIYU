@@ -1,3 +1,4 @@
+
 //
 //  HomepageViewController.swift
 //  Miyu
@@ -43,7 +44,7 @@ internal final class HomepageViewController: BaseViewController {
     private func fetchPosts() {
         fbManager?.getPosts(eventType: .childAdded, with: { (snapshot) in
                 do {
-                    let data = try JSONSerialization.data(withJSONObject: snapshot.value as Any, options: [])
+                    let data = try JSONSerialization.data(withJSONObject: snapshot.value, options: [String:AnyObject])
                     let post = try JSONDecoder().decode(Post.self, from: data)
                     post.key = snapshot.key
                     self.allPosts.append(post)
