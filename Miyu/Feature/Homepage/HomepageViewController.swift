@@ -43,21 +43,23 @@ internal final class HomepageViewController: BaseViewController {
     // TODO: CAN THIS BE ABSTRACTED TO VIEW MODEL?
     private func fetchPosts() {
         fbManager?.getPosts(eventType: .childAdded, with: { (snapshot) in
-                do {
-                    let data = try JSONSerialization.data(withJSONObject: snapshot.value, options: [String:AnyObject])
+            do {
+                if JSONSerialization.isValidJSONObject(snapshot.value) {
+                    let data = try JSONSerialization.data(withJSONObject: snapshot.value!, options: [])
                     let post = try JSONDecoder().decode(Post.self, from: data)
                     post.key = snapshot.key
                     self.allPosts.append(post)
-                } catch {
-                    print(error)
                 }
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
+            } catch {
+                print(error)
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
             
         })
     }
-
+    
     
     
     private func fetchPhoto(_ urlString: String?, _ cell: HomepageTableViewCell) {

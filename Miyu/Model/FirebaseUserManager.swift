@@ -216,7 +216,8 @@ internal final class FirebaseUserManager {
         print("CALCULATE AVERAGE FOR THIS POStT......")
         guard let count = post.count,
             let averageRating = post.averageRating,
-            let rating = post.rating else {
+            let rating = post.rating,
+            let key = post.key else {
             return
         }
         
@@ -225,7 +226,9 @@ internal final class FirebaseUserManager {
         let newValue = rating
         let newAverage = oldAverage + ((newValue - oldAverage)/size)
         print("newAverage >>>> \(newAverage)")
-        uploadPostAverageRating(newAverage, postRef!)
+        
+        let ref = postRef?.child(key)
+        uploadPostAverageRating(newAverage, ref!)
     }
     
     func calculateAllPostsRating(_ uid: String) {
