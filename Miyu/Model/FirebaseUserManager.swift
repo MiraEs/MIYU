@@ -56,9 +56,7 @@ internal final class FirebaseUserManager {
 
 extension FirebaseUserManager {
     // MARK: UPLOAD NEW POSTS
-    
-    //TODO: Fix to include video content as well
-    ///1. New post uploaded to Database & 2. New post content uploaded to storage
+    ///1. New post uploaded to Database
     private func uploadPost(_ contentUrl: String, _ caption: String?, _ event: Children) {
         let key = ref.child(event.rawValue).childByAutoId().key
         guard let uid = currentUser?.uid,
@@ -71,6 +69,28 @@ extension FirebaseUserManager {
                                            "/user-posts/\(uid)/\(key)/" : post]
         
         ref.updateChildValues(childUpdates)
+    }
+    
+    //TODO: Fix to include video content as well
+    //2. New post content uploaded to storage
+    func uploadContentToStorage(with content: UIImageView, _ caption: String, completionHandler: @escaping ()->Void) {
+        let contentName = NSUUID().uuidString
+        let storageRef = Storage.storage().reference().child(FbChildPaths.users).child((currentUser?.uid)!).child("\(contentName)")
+        
+        if let image = content.image {
+            let uploadData = UIImagePNGRepresentation(image)
+            
+            storageRef.putData(uploadData!, metadata: nil, completion: { (metadata, error) in
+                if error != nil {
+                    print(error!)
+                }
+                
+                if let urlString = metadata?.downloadURL()?.absoluteString {
+                    self.uploadPost(urlString, caption, .posts)
+                    completionHandler()
+                }
+            })
+        }
     }
 }
 

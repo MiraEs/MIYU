@@ -38,7 +38,7 @@ class UploadViewController: UIViewController {
     
     @IBAction func uploadContent(_ sender: Any) {
         print("upload pic to storage")
-        fbManager?.uploadContentToStorage(with: profileImage, caption: caption, completionHandler: { [weak self] in
+        fbManager?.uploadContentToStorage(with: profileImage, caption!, completionHandler: { [weak self] in
             self?.dismiss(animated: true, completion: nil)
         })
     }
