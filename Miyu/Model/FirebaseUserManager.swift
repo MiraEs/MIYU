@@ -117,10 +117,9 @@ internal final class FirebaseUserManager {
         }
         
         guard let post = Post(caption: caption, data: contentUrl, uid: uid).dictionary else { return }
-    
-        let childUpdates = ["/posts/\(key)" : post,
-                            "/user-posts/\(uid)/\(key)/" : post
-            ] as [String : Any]
+        let childUpdates: [String: Any] = ["/posts/\(key)" : post,
+                            "/user-posts/\(uid)/\(key)/" : post]
+        
         ref.updateChildValues(childUpdates)
     }
     
