@@ -182,7 +182,9 @@ extension FirebaseUserManager {
             if let children = snapshot.value as? [String:AnyObject] {
                 for child in children {
                     if let value = child.value as? [String:AnyObject] {
-                        guard let rating = value[PostKeys.rating] as? Float else { return }
+                        guard let rating = value[PostKeys.averageRating] as? Float else {
+                            return
+                        }
                         sum += rating
                     }
                 }
