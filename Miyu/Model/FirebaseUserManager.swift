@@ -141,8 +141,7 @@ extension FirebaseUserManager {
         print("CALCULATE AVERAGE FOR THIS POST......")
         guard let count = post.count,
             let averageRating = post.averageRating,
-            let rating = post.rating,
-            let key = post.key else {
+            let rating = post.rating else {
                 return
         }
         
@@ -151,14 +150,20 @@ extension FirebaseUserManager {
         let newValue = rating
         let newAverage = oldAverage + ((newValue - oldAverage)/size)
         print("newAverage >>>> \(newAverage)")
-        
-        let ref = postRef?.child(key)
-        uploadPostAverageRating(newAverage, ref!)
+        post.averageRating = newAverage
+        uploadPostAverageRating(post)
     }
     
     //4. Upload new average rating to database
-    private func uploadPostAverageRating(_ newRating: Double, _ postRef: DatabaseReference) {
-        postRef.updateChildValues([PostKeys.averageRating: newRating])
+    private func uploadPostAverageRating(_ post: Post) {
+        guard let key = post.key,
+            let uid = post.uid else {
+            return
+        }
+        guard let validPost = post.dictionary else { return }
+        let childUpdates: [String: Any] = ["/posts/\(key)/" : validPost,
+                                           "/user-posts/\(uid)/\(key)/" : validPost]
+        ref.updateChildValues(childUpdates)
     }
     
     /// USER
