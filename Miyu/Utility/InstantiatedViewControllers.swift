@@ -12,7 +12,7 @@ enum PresentViewController: String {
     case HomepageViewController, RegisterViewController, UploadViewController
 }
 
-// MARK: FUNCTION DEFINITIONS INITIALIZING STORYBOARDS
+/// AppStoryboard enum provides all VCs and instantiates each by storyboard ID.
 enum AppStoryboard: String {
     
     case HomepageViewController, RegisterViewController, ProfileViewController, UploadViewController, LoginViewController
@@ -22,6 +22,8 @@ enum AppStoryboard: String {
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)
     }
     
+    ///From: https://medium.com/@gurdeep060289/clean-code-for-multiple-storyboards-c64eb679dbf6
+    ///TODO: Refactor
     func viewController<T: UIViewController>(viewControllerClass: T.Type, function: String = #function, line: Int = #line, file: String = #file) -> T {
         
         let storyboardID = (viewControllerClass as UIViewController.Type).storyboardID

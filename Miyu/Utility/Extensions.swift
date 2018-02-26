@@ -23,6 +23,8 @@ extension UIViewController {
 
 // MARK: UIImageView
 
+/// UIImageView extension for cacheing images
+// TODO: Capture video content as well
 let imageCache = NSCache<AnyObject, AnyObject>()
 extension UIImageView {
     
@@ -51,6 +53,8 @@ extension UIImageView {
 
 // MARK: ENCODABLE
 
+/// Needed for object -> Json ready data for firebase - 'Codable' isn't extendable.
+/// Discussion: https://stackoverflow.com/questions/46597624/can-swift-convert-a-class-struct-data-into-dictionary
 extension Encodable {
     var dictionary: [String: Any]? {
         guard let data = try? JSONEncoder().encode(self) else { return nil }

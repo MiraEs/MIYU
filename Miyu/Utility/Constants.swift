@@ -8,6 +8,28 @@
 
 import Foundation
 
+// MARK: FIREBASE
+
+/// Enum for Firebase child paths - no cases used purely as namespace and to avoid uncessary instantiation
+/// Discussion: https://stackoverflow.com/questions/38585344/swift-constants-struct-or-enum
+enum FbChildPaths {
+    typealias rawValue = String
+    
+    static let users = "users"
+    static let posts = "posts"
+    static let userPosts = "user-posts"
+    static let userRatings = "user-ratings"
+}
+
+enum PostKeys {
+    
+    static let count = "count"
+    static let averageRating = "averageRating"
+    static let rating = "rating"
+}
+
+// MARK: OTHER
+
 internal final class Constants {
     
     // MARK: HOMEPAGE TABLE VIEW CELL
@@ -21,6 +43,5 @@ internal final class Constants {
     
     // MARK: POST STRUCT KEYS
     static let postKeys: [String] = ["caption", "data", "rating", "uid", "count", "averageRating"]
-    
-    
 }
+
