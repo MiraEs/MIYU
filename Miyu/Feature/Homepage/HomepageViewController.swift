@@ -35,7 +35,8 @@ internal final class HomepageViewController: BaseViewController {
     
     private func setup() {
         viewModel?.setup(tableView)
-        fetchPosts()
+        //fetchPosts()
+        testThis()
     }
     
     // MARK: FETCH POSTS
@@ -45,16 +46,37 @@ internal final class HomepageViewController: BaseViewController {
         fbManager?.getPosts(eventType: .childAdded) { (snapshot) in
             if let dict = snapshot.value as? [String:AnyObject] {
                 let key = snapshot.key
+                
                 if let validPost = Post.createPost(with: dict, key: key) {
                     self.allPosts.append(validPost)
                 }
-
+                
+                
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
             }
         }
     }
+    
+    //MIRTEST
+    private func testThis() {
+        fbManager?.getPosts(eventType: .childAdded, with: { (snapshot) in
+                do {
+                    let data = try JSONSerialization.data(withJSONObject: snapshot.value as Any, options: [])
+                    let post = try JSONDecoder().decode(Post.self, from: data)
+                    post.key = snapshot.key
+                    self.allPosts.append(post)
+                } catch {
+                    print(error)
+                }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            
+        })
+    }
+
     
     
     private func fetchPhoto(_ urlString: String?, _ cell: HomepageTableViewCell) {
@@ -85,7 +107,7 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         // Rating
         //let rating: Double = Double((indexPath as NSIndexPath).row) / 99 * 5
         
-
+        
         cell.setupTap(indexPath.row)
         // Image Interaction segue to profile
         
@@ -105,7 +127,7 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-  
+    
 }
 
 extension HomepageViewController: UIBarPositioningDelegate {

@@ -55,11 +55,13 @@ extension UIImageView {
 
 /// Needed for object -> Json ready data for firebase - 'Codable' isn't extendable.
 /// Discussion: https://stackoverflow.com/questions/46597624/can-swift-convert-a-class-struct-data-into-dictionary
+/// More Info on Decodable/Codable: https://www.raywenderlich.com/172145/encoding-decoding-and-serialization-in-swift-4
 extension Encodable {
     var dictionary: [String: Any]? {
         guard let data = try? JSONEncoder().encode(self) else { return nil }
         return (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)).flatMap { $0 as? [String: Any] }
     }
 }
+
 
 

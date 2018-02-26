@@ -19,6 +19,11 @@ internal final class Post: Encodable {
     var uid: String?
     var count: Int?
     
+    enum CodingKeys: String, CodingKey {
+        case caption, data, averageRating, uid, count, rating
+    }
+
+    
     init(rating: Double?, caption: String?, data: String?,
          key: String?, uid: String?, count: Int?, averageRating: Double?) {
         self.rating = rating
@@ -57,5 +62,19 @@ internal final class Post: Encodable {
                          key: validKey, uid: uid, count: count, averageRating: averageRating)
         
         return validPost
+    }
+}
+
+extension Post: Decodable {
+    convenience init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let caption = try container.decode(String.self, forKey: .caption)
+        let data = try container.decode(String.self, forKey: .data)
+        let uid = try container.decode(String.self, forKey: .uid)
+        let count = try container.decode(Int.self, forKey: .count)
+        let averageRating = try container.decode(Double.self, forKey: .averageRating)
+        let rating = try container.decode(Double.self, forKey: .rating)
+        
+        self.init(rating: rating, caption: caption, data: data, uid: uid, count: count, averageRating: averageRating)
     }
 }

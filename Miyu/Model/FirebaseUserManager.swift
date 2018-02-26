@@ -29,6 +29,12 @@ internal final class FirebaseUserManager {
         }
     }
     
+    var postRef: DatabaseReference? {
+        get {
+            return ref.child(FbChildPaths.posts)
+        }
+    }
+    
     
     private init() {}
     
@@ -95,7 +101,7 @@ internal final class FirebaseUserManager {
     }
     
     func getPosts(eventType: DataEventType, with handler: @escaping (DataSnapshot) -> Void) {
-        ref.child(FbChildPaths.posts).observe(eventType, with: handler)
+        postRef?.observe(eventType, with: handler)
     }
     
     // MARK: UPLOAD DATA
@@ -106,8 +112,13 @@ internal final class FirebaseUserManager {
     private func uploadPost(_ contentUrl: String, _ event: Children) {
         guard let uid = currentUser?.uid else { return }
         let key = ref.child(event.rawValue).childByAutoId().key
-        let post = Post(rating: 0.0, caption: "no caption", data: contentUrl,
-                              uid: uid, count: 0, averageRating: 0.0).dictionary
+        
+        guard let post = Post(rating: 0.0, caption: "no caption",
+                              data: contentUrl,
+                              uid: uid, count: 0,
+                              averageRating: 0.0).dictionary else {
+                                return
+        }
     
         let childUpdates = ["/posts/\(key)" : post,
                             "/user-posts/\(uid)/\(key)/" : post
@@ -117,8 +128,7 @@ internal final class FirebaseUserManager {
     }
     
     private func uploadPostRatedCount(_ key: String, _ count: Int) {
-        let postRef = ref.child(FbChildPaths.posts).child(key)
-        postRef.updateChildValues([PostKeys.count: count])
+        postRef?.child(key).updateChildValues([PostKeys.count: count])
     }
     
     private func uploadPostAverageRating(_ newRating: Double, _ postRef: DatabaseReference) {
@@ -126,22 +136,29 @@ internal final class FirebaseUserManager {
     }
 
     func updatePostRatedCount(_ key: String) {
-        let postRef = ref.child(FbChildPaths.posts).child(key)
+        let ref = postRef?.child(key)
         
-        postRef.observeSingleEvent(of: .value) { (snapshot) in
+        ref?.observeSingleEvent(of: .value) { (snapshot) in
             if let value = snapshot.value as? [String:AnyObject] {
                 guard let count = value[PostKeys.count] as? Int,
                     let averageRating = value[PostKeys.averageRating] as? Double,
                     let rating = value[PostKeys.rating] as? Double else { return }
                 let newCount = count + 1
                 
-                self.uploadPostRatedCount(key, newCount)
-                print("NEW COUNT >>>> \(newCount)")
                 
-                self.calculatePostAverageRating(newCount, averageRating, rating, postRef)
+                // Update Count and Post average rating
+                self.uploadPostRatedCount(key, newCount)
+                self.calculatePostAverageRating(newCount, averageRating, rating, ref!)
             }
         }
     }
+    //MIRTEST
+//    private func test(_ snapshot: DataSnapshot) {
+//        if let value = snapshot.value as? Data {
+//            let object = try? JSONDecoder().decode(Post.self, from: value)
+//            print("TESTING DECODER \(object)")
+//        }
+//    }
     
         /// USER
     
