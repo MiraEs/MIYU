@@ -22,68 +22,17 @@ internal final class FirebaseUserManager {
             return Auth.auth().currentUser
         }
     }
-    
     private weak var ref: DatabaseReference! {
         get {
             return Database.database().reference()
         }
     }
-    
     private weak var postRef: DatabaseReference? {
         get {
             return ref.child(FbChildPaths.posts)
         }
     }
-    
-    
     private init() {}
-    
-    // MARK: BASIC LOGIN/REGISTRATION FLOW
-    
-    func createUser(user: AppUser, userCredentials: UserCredential, handler: (() -> ())? = nil) {
-        guard let email = userCredentials.email,
-            let password = userCredentials.password,
-            let userInfo = user.userInfo else {
-                return
-        }
-        
-        
-        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
-            if user != nil {
-                self.ref.child(FbChildPaths.users).child(user!.uid).setValue(userInfo)
-                print("successful user added \(email)")
-                handler?()
-            } else {
-                // TODO: Create error alert class
-                print(error?.localizedDescription ?? "Unknown error")
-            }
-        })
-    }
-    
-    func login(user: UserCredential, handler: (()->())? = nil) {
-        guard let email = user.email,
-            let password = user.password else {
-                return
-        }
-        
-        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-            if user != nil {
-                handler?()
-            } else {
-                // TODO: create error alert class
-                print(error.debugDescription)
-            }
-        }
-    }
-    
-    func signOut() {
-        do {
-            print("signing out \(String(describing: currentUser?.email))")
-            try Auth.auth().signOut()
-        } catch let signOutError as NSError {
-            print("Error signing out: %@", signOutError)
-        }
-    }
     
     // MARK: GET USER DATA
     // TODO: FINISH
@@ -103,10 +52,13 @@ internal final class FirebaseUserManager {
     func getPosts(eventType: DataEventType, with handler: @escaping (DataSnapshot) -> Void) {
         postRef?.observe(eventType, with: handler)
     }
+}
+
+extension FirebaseUserManager {
+    // MARK: UPLOAD NEW POSTS
     
-    // MARK: 1. CREATE NEW POST, UPLOADED TO DATABASE, 2. POST STORED IN STORAGE
-    
-    //1. New post uploaded to Database
+    //TODO: Fix to include video content as well
+    ///1. New post uploaded to Database & 2. New post content uploaded to storage
     private func uploadPost(_ contentUrl: String, _ caption: String?, _ event: Children) {
         let key = ref.child(event.rawValue).childByAutoId().key
         guard let uid = currentUser?.uid,
@@ -120,11 +72,10 @@ internal final class FirebaseUserManager {
         
         ref.updateChildValues(childUpdates)
     }
-    
-    //2. New post content uploaded to storage
-    //TODO: Fix to include video content as well
+}
 
-    
+extension FirebaseUserManager {
+
     // MARK: RATING
     /**
      1. Get count and add number of rates (after tapping star)
@@ -162,10 +113,10 @@ internal final class FirebaseUserManager {
     
     //3.Calculate post's average rating
     /** @An = Average new, @Ao = Average old
-        @Vn = new Value, @Sn = new Size
-        THIS ONLY CALUCLATES WITH 1 ADDED VALUE TO AVERAGE
-        An = Ao + ((Vn - Ao)/Sn)
-    **/
+     @Vn = new Value, @Sn = new Size
+     THIS ONLY CALUCLATES WITH 1 ADDED VALUE TO AVERAGE
+     An = Ao + ((Vn - Ao)/Sn)
+     **/
     private func calculatePostAverageRating(_ post: Post) {
         print("CALCULATE AVERAGE FOR THIS POST......")
         guard let count = post.count,
@@ -227,6 +178,54 @@ internal final class FirebaseUserManager {
             guard let currentRating = snapshot.value as? Float else { return }
             let newRating = (currentRating+average)/2
             userRef.setValue(newRating)
+        }
+    }
+}
+
+extension FirebaseUserManager {
+    // MARK: BASIC LOGIN/REGISTRATION FLOW
+    func createUser(user: AppUser, userCredentials: UserCredential, handler: (() -> ())? = nil) {
+        guard let email = userCredentials.email,
+            let password = userCredentials.password,
+            let userInfo = user.userInfo else {
+                return
+        }
+        
+        
+        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+            if user != nil {
+                self.ref.child(FbChildPaths.users).child(user!.uid).setValue(userInfo)
+                print("successful user added \(email)")
+                handler?()
+            } else {
+                // TODO: Create error alert class
+                print(error?.localizedDescription ?? "Unknown error")
+            }
+        })
+    }
+    
+    func login(user: UserCredential, handler: (()->())? = nil) {
+        guard let email = user.email,
+            let password = user.password else {
+                return
+        }
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            if user != nil {
+                handler?()
+            } else {
+                // TODO: create error alert class
+                print(error.debugDescription)
+            }
+        }
+    }
+    
+    func signOut() {
+        do {
+            print("signing out \(String(describing: currentUser?.email))")
+            try Auth.auth().signOut()
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
         }
     }
 }
