@@ -118,21 +118,27 @@ internal final class FirebaseUserManager {
         guard let uid = currentUser?.uid else { return }
         // childByAutoId used for chronologicallly adding
         let key = ref.child(event.rawValue).childByAutoId().key
-        let post: [String : Any] = [
-            "caption" : "caption with rating",
-            "data" : contentUrl,
-            "rating" : 0.0,
-            "uid" : uid,
-            "count": 0 ]
+//        let post: [String : Any] = [
+//            "caption" : "caption with rating",
+//            "data" : contentUrl,
+//            "rating" : 0.0,
+//            "uid" : uid,
+//            "count": 0,
+//            "averageRating" : 0.0 ]
+
+//        let userPost: [String : Any] = [
+//            "caption" : "caption with rating",
+//            "data" : contentUrl,
+//            "rating" : 0.0 ]
+       
+        let postObject = Post(rating: 0.0, caption: "no caption", data: contentUrl, uid: uid, count: 0, averageRating: 0.0)
+        //let post = postObject.dictionaryWithValues(forKeys: ["rating", "caption", "data", "uid", "count", "averageRating"])
+        let post = postObject.dictionary
         
-        let userPost: [String : Any] = [
-            "caption" : "caption with rating",
-            "data" : contentUrl,
-            "rating" : 0.0 ]
-        
+        print("CONVER THIS MOTHER FCKER >>>\(post)")
+      
         let childUpdates = ["/posts/\(key)" : post,
-                            "/user-posts/\(uid)/\(key)/" : userPost,
-                            "/user-ratings/\(uid)/" : 4.5
+                            "/user-posts/\(uid)/\(key)/" : post
             ] as [String : Any]
         ref.updateChildValues(childUpdates)
         print("updating to firebase using fb manager")

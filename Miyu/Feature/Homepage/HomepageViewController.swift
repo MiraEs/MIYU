@@ -26,6 +26,11 @@ internal final class HomepageViewController: BaseViewController {
         setup()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        fetchPosts()
+    }
+    
     // MARK: SEGUE TO UPLOAD VC
     
     @IBAction func uploadContent(_ sender: Any) {
