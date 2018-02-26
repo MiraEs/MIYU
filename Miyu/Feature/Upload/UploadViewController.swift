@@ -19,14 +19,17 @@ class UploadViewController: UIViewController {
     
     private weak var fbManager = FirebaseUserManager.manager
     
-    private var viewModel: UploadViewModel! {
+    private weak var viewModel: UploadViewModel! {
         return UploadViewModel(presentVc: self)
     }
+    
+    lazy var caption: String? = { [weak self] in
+        return self?.captionTextView.text
+    }()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     @IBAction func editCaptionTapped(_ sender: Any) {
@@ -35,7 +38,8 @@ class UploadViewController: UIViewController {
     
     @IBAction func uploadContent(_ sender: Any) {
         print("upload pic to storage")
-        fbManager?.uploadContentToStorage(with: profileImage, completionHandler: {
+        //guard let caption = captionTextView.text else { return }
+        fbManager?.uploadContentToStorage(with: profileImage, caption: caption, completionHandler: {
             self.dismiss(animated: true, completion: nil)
         })
     }

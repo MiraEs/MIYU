@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum CodingKeys: String, CodingKey {
+    case caption, data, averageRating, uid, count, rating
+}
+
 internal final class Post: Encodable {
     
     //private var title: String?
@@ -19,11 +23,6 @@ internal final class Post: Encodable {
     var uid: String?
     var count: Int?
     
-    enum CodingKeys: String, CodingKey {
-        case caption, data, averageRating, uid, count, rating
-    }
-
-    
     init(rating: Double?, caption: String?, data: String?,
          uid: String?, count: Int?, averageRating: Double?) {
         self.rating = rating
@@ -33,8 +32,17 @@ internal final class Post: Encodable {
         self.count = count
         self.averageRating = averageRating
     }
+    
+    init(caption: String?, data: String?, uid: String?) {
+        self.rating = 0.0
+        self.averageRating = 0.0
+        self.count = 0
+        self.uid = uid
+        self.data = data
+        self.caption = caption
+    }
 }
-
+// TODO: REFACTOR?
 extension Post: Decodable {
     convenience init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)

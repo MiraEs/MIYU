@@ -109,22 +109,19 @@ internal final class FirebaseUserManager {
     
         /// POST
     
-    private func uploadPost(_ contentUrl: String, _ event: Children) {
-        guard let uid = currentUser?.uid else { return }
+    private func uploadPost(_ contentUrl: String, _ caption: String?, _ event: Children) {
         let key = ref.child(event.rawValue).childByAutoId().key
-        
-        guard let post = Post(rating: 0.0, caption: "no caption",
-                              data: contentUrl,
-                              uid: uid, count: 0,
-                              averageRating: 0.0).dictionary else {
-                                return
+        guard let uid = currentUser?.uid,
+            let caption = caption else {
+                return
         }
+        
+        guard let post = Post(caption: caption, data: contentUrl, uid: uid).dictionary else { return }
     
         let childUpdates = ["/posts/\(key)" : post,
                             "/user-posts/\(uid)/\(key)/" : post
             ] as [String : Any]
         ref.updateChildValues(childUpdates)
-        print("updating to firebase using fb manager")
     }
     
     private func uploadPostRatedCount(_ key: String, _ count: Int) {
@@ -152,13 +149,7 @@ internal final class FirebaseUserManager {
             }
         }
     }
-    //MIRTEST
-//    private func test(_ snapshot: DataSnapshot) {
-//        if let value = snapshot.value as? Data {
-//            let object = try? JSONDecoder().decode(Post.self, from: value)
-//            print("TESTING DECODER \(object)")
-//        }
-//    }
+
     
         /// USER
     
@@ -175,7 +166,7 @@ internal final class FirebaseUserManager {
         /// POST CONTENT
     
     //TODO: Fix to include video content as well
-    func uploadContentToStorage(with content: UIImageView, completionHandler: @escaping ()->Void) {
+    func uploadContentToStorage(with content: UIImageView, caption: String?, completionHandler: @escaping ()->Void) {
         let contentName = NSUUID().uuidString
         let storageRef = Storage.storage().reference().child(FbChildPaths.users).child((currentUser?.uid)!).child("\(contentName)")
         
@@ -188,7 +179,7 @@ internal final class FirebaseUserManager {
                 }
                 
                 if let urlString = metadata?.downloadURL()?.absoluteString {
-                    self.uploadPost(urlString, .posts)
+                    self.uploadPost(urlString, caption, .posts)
                     completionHandler()
                 }
             })
