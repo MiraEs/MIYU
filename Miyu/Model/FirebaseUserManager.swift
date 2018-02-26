@@ -123,8 +123,9 @@ internal final class FirebaseUserManager {
         ref.updateChildValues(childUpdates)
     }
     
-    private func uploadPostRatedCount(_ post: Post, _ newCount: Int) {
-        guard let key = post.key else { return }
+    private func uploadPostRatedCount(_ post: Post) {
+        guard let key = post.key,
+            let newCount = post.count else { return }
         postRef?.child(key).updateChildValues([PostKeys.count: newCount])
     }
     
@@ -159,7 +160,9 @@ internal final class FirebaseUserManager {
             guard let post = self.decodeData(snapshot.value) else { return }
             guard let count = post.count else { return }
             let newCount = count + 1
-            self.uploadPostRatedCount(post, newCount)
+            post.key = key
+            post.count = newCount
+            self.uploadPostRatedCount(post)
             self.calculatePostAverageRating(post)
         })
     }
