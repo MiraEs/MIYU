@@ -8,10 +8,6 @@
 
 import Foundation
 
-internal protocol GetSnapshotProtocol {
-    
-}
-
 struct UserCredential {
     let email: String?
     let password: String?
