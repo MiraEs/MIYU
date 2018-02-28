@@ -38,7 +38,7 @@ class UploadViewController: UIViewController {
     
     @IBAction func uploadContent(_ sender: Any) {
         print("upload pic to storage")
-        fbManager?.uploadContentToStorage(with: profileImage, caption!, completionHandler: { [weak self] in
+        fbManager?.uploadContentToStorage(with: profileImage, to: .posts, caption!, completionHandler: { [weak self] in
             self?.dismiss(animated: true, completion: nil)
         })
     }
@@ -52,16 +52,9 @@ class UploadViewController: UIViewController {
 extension UploadViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+
         
-//        var selectedImage: UIImage?
-//
-//        if let editedImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
-//            selectedImage = editedImage
-//        } else if let originalImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
-//            selectedImage = originalImage
-//        }
-        
-        let selectedImage = Helper.toStringUrl(info)
+        let selectedImage = Image.setImage(info)
         
         if let selectedImage = selectedImage {
             profileImage.image = selectedImage

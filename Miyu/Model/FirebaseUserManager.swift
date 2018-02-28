@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 enum Children: String {
-    case posts
+    case posts, user
 }
 
 internal final class FirebaseUserManager {
@@ -41,7 +41,7 @@ internal final class FirebaseUserManager {
         ref.child(FbChildPaths.users).child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
             
             guard let value = snapshot.value as? [String:String] else { return }
-            //let firstName = value["firstName"] as? String ?? ""
+            
             print("Snapshot \(value)")
             
         }) { (error) in
@@ -73,25 +73,26 @@ extension FirebaseUserManager {
     
     //TODO: Fix to include video content as well
     //2. New post content uploaded to storage
-    func uploadContentToStorage(with content: UIImageView, _ caption: String, completionHandler: @escaping ()->Void) {
+    func uploadContentToStorage(with content: UIImageView, to path: Children, _ caption: String, completionHandler: @escaping ()->Void) {
         let contentName = NSUUID().uuidString
         let storageRef = Storage.storage().reference().child(FbChildPaths.users).child((currentUser?.uid)!).child("\(contentName)")
         
-        if let image = content.image {
-            let uploadData = UIImagePNGRepresentation(image)
-            
-            storageRef.putData(uploadData!, metadata: nil, completion: { (metadata, error) in
-                if error != nil {
-                    print(error!)
-                }
-                
-                if let urlString = metadata?.downloadURL()?.absoluteString {
+        let uploadData = Image.convertToPngData(with: content.image!)
+        
+        storageRef.putData(uploadData!, metadata: nil, completion: { (metadata, error) in
+            if error != nil {
+                print(error!)
+            }
+
+            if let urlString = metadata?.downloadURL()?.absoluteString {
+                if path == .posts {
                     self.uploadPost(urlString, caption, .posts)
-                    completionHandler()
                 }
-            })
-        }
+                completionHandler()
+            }
+        })
     }
+
 }
 
 extension FirebaseUserManager {
