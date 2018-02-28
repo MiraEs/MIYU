@@ -53,13 +53,15 @@ extension UploadViewController: UIImagePickerControllerDelegate, UINavigationCon
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
-        var selectedImage: UIImage?
+//        var selectedImage: UIImage?
+//
+//        if let editedImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
+//            selectedImage = editedImage
+//        } else if let originalImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
+//            selectedImage = originalImage
+//        }
         
-        if let editedImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
-            selectedImage = editedImage
-        } else if let originalImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
-            selectedImage = originalImage
-        }
+        let selectedImage = Helper.toStringUrl(info)
         
         if let selectedImage = selectedImage {
             profileImage.image = selectedImage
