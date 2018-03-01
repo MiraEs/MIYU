@@ -1,5 +1,5 @@
 //
-//  MediaContent.swift
+//  Image.swift
 //  Miyu
 //
 //  Created by Mira Estil on 2/28/18.
@@ -28,7 +28,10 @@ class Image {
         }
         return data
     }
-    
+}
 
-    
+extension UIImage {
+    func toPngData() -> Data? {
+        return UIImagePNGRepresentation(self)
+    }
 }

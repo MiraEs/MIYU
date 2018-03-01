@@ -13,6 +13,9 @@ struct UserCredential {
     let password: String?
 }
 
+enum AppUserKeys: String, CodingKey {
+    case email, firstName, lastName
+}
 /// AppUser class includes properties for AppUser object.
 internal final class AppUser {
     
@@ -20,7 +23,7 @@ internal final class AppUser {
     private var email: String?
     private var firstName: String?
     private var lastName: String?
-    private let photoUrl: String
+    var photoUrl: String
     var userInfo: [String: String]?
     
     init(firstName: String, lastName: String, email: String) {
@@ -61,6 +64,16 @@ internal final class AppUser {
         let user = AppUser.init(userDict: snapshot)
         return user
     }
-    
-    
 }
+
+extension AppUser: Encodable {
+    func encode(to encoder: Encoder) throws
+    {
+        var container = encoder.container(keyedBy: AppUserKeys.self)
+        try container.encode(firstName, forKey: .firstName)
+        try container.encode(lastName, forKey: .lastName)
+        try container.encode(email, forKey: .email)
+    }
+}
+
+

@@ -212,23 +212,44 @@ extension FirebaseUserManager {
 
 extension FirebaseUserManager {
     // MARK: BASIC LOGIN/REGISTRATION FLOW
-    func createUser(user: AppUser, userCredentials: UserCredential, handler: (() -> ())? = nil) {
+    func createUser(appUser: AppUser, userCredentials: UserCredential, profileImage: UIImage, handler: (() -> ())? = nil) {
         guard let email = userCredentials.email,
-            let password = userCredentials.password,
-            let userInfo = user.userInfo else {
+            let password = userCredentials.password else {
                 return
         }
         
         
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
             if user != nil {
-                self.ref.child(FbChildPaths.users).child(user!.uid).setValue(userInfo)
+//                self.ref.child(FbChildPaths.users).child(user!.uid).setValue(userInfo)
+                self.addToDatabase(appUser, user!, profileImage)
                 print("successful user added \(email)")
                 handler?()
             } else {
                 // TODO: Create error alert class
                 print(error?.localizedDescription ?? "Unknown error")
             }
+        })
+    }
+    
+    private func addToDatabase(_ userInfo: AppUser, _ currentUser: User, _ profileImage: UIImage) {
+        
+        let contentName = NSUUID().uuidString
+        let storageRef = Storage.storage().reference().child(FbChildPaths.users).child((currentUser.uid)).child("\(contentName)_profile_image")
+        
+        let uploadData = profileImage.toPngData()
+        
+        storageRef.putData(uploadData!, metadata: nil, completion: { (metadata, error) in
+            if error != nil {
+                print(error!)
+            }
+            
+            if let urlString = metadata?.downloadURL()?.absoluteString {
+                self.ref.child(FbChildPaths.users).child(currentUser.uid).setValue(["photoUrl" : urlString])
+            }
+            
+            let userData = userInfo.dictionary
+            self.ref.child(FbChildPaths.users).child(currentUser.uid).updateChildValues(userData!)
         })
     }
     
