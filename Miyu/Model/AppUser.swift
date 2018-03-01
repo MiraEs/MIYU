@@ -16,6 +16,10 @@ struct UserCredential {
 enum AppUserKeys: String, CodingKey {
     case email, firstName, lastName
 }
+
+enum AppUserKeysB: String, CodingKey {
+    case email, firstName, lastName, photoUrl
+}
 /// AppUser class includes properties for AppUser object.
 internal final class AppUser {
     
@@ -23,7 +27,7 @@ internal final class AppUser {
     private var email: String?
     private var firstName: String?
     private var lastName: String?
-    var photoUrl: String
+    var photoUrl: String?
     var userInfo: [String: String]?
     
     init(firstName: String, lastName: String, email: String) {
@@ -31,8 +35,15 @@ internal final class AppUser {
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
-        self.photoUrl = "www.google.com"
+        self.photoUrl = ""
         self.userInfo = self.createUser()
+    }
+    
+    init(firstName: String, lastName: String, email: String, photoUrl: String) {
+        self.firstName = firstName
+        self.lastName = lastName
+        self.email = email
+        self.photoUrl = photoUrl
     }
     
     convenience init?(userDict: [String: String]) {
@@ -45,6 +56,7 @@ internal final class AppUser {
         }
     }
     
+    // TODO: Delete this once ENCODABLE and DECODABLE are properly inherited
     private func createUser() -> [String: String]? {
         guard let email = email,
             let firstName = firstName,
@@ -73,6 +85,20 @@ extension AppUser: Encodable {
         try container.encode(firstName, forKey: .firstName)
         try container.encode(lastName, forKey: .lastName)
         try container.encode(email, forKey: .email)
+    }
+}
+
+
+//case email, firstName, lastName, photoUrl
+extension AppUser: Decodable {
+    convenience init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: AppUserKeysB.self)
+        let email = try container.decode(String.self, forKey: .email)
+        let firstName = try container.decode(String.self, forKey: .firstName)
+        let lastName = try container.decode(String.self, forKey: .lastName)
+        let photoUrl = try container.decode(String.self, forKey: .email)
+        
+        self.init(firstName: firstName, lastName: lastName, email: email, photoUrl: photoUrl)
     }
 }
 

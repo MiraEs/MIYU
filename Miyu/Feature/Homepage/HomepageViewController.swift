@@ -48,7 +48,6 @@ internal final class HomepageViewController: BaseViewController {
                     let data = try JSONSerialization.data(withJSONObject: snapshot.value!, options: [])
                     let post = try JSONDecoder().decode(Post.self, from: data)
                     post.key = snapshot.key
-                    //self.allPosts.append(post)
                     self.allPosts.insert(post, at: 0)
                 }
             } catch {
