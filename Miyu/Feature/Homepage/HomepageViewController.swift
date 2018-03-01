@@ -56,11 +56,8 @@ internal final class HomepageViewController: BaseViewController {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-            
         })
     }
-    
-    
     
     private func fetchPhoto(_ urlString: String?, _ cell: HomepageTableViewCell) {
         if let urlString = urlString {

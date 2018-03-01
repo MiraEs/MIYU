@@ -23,20 +23,17 @@ enum AppUserKeysB: String, CodingKey {
 /// AppUser class includes properties for AppUser object.
 internal final class AppUser {
     
-    private let fbManager: FirebaseUserManager?
+    //private let fbManager: FirebaseUserManager?
     private var email: String?
     private var firstName: String?
     private var lastName: String?
     var photoUrl: String?
-    var userInfo: [String: String]?
     
     init(firstName: String, lastName: String, email: String) {
-        self.fbManager = FirebaseUserManager.manager
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
-        self.photoUrl = ""
-        self.userInfo = self.createUser()
+        self.photoUrl = "www.google.com"
     }
     
     init(firstName: String, lastName: String, email: String, photoUrl: String) {
@@ -54,22 +51,6 @@ internal final class AppUser {
         } else {
             return nil
         }
-    }
-    
-    // TODO: Delete this once ENCODABLE and DECODABLE are properly inherited
-    private func createUser() -> [String: String]? {
-        guard let email = email,
-            let firstName = firstName,
-            let lastName = lastName else {
-                return [:]
-        }
-        
-        let user: [String: String] = [
-            "email" : email,
-            "firstName" : firstName,
-            "lastName" : lastName
-        ]
-        return user
     }
     
     func buildCurrentUser(_ snapshot: [String:String]) -> AppUser? {
