@@ -2,4 +2,69 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Miyu/Feature/Homepage/HomepageViewModel.swift"
+            timestampString = "541709402.954796"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "HomepageViewModel"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Miyu.HomepageViewModel.allPosts.getter : Swift.Optional&lt;Swift.Array&lt;Miyu.Post&gt;&gt;"
+                  moduleName = "Miyu"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mira/Developer/Miyu/Miyu/Feature/Homepage/HomepageViewModel.swift"
+                  timestampString = "541706404.7726541"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Miyu.HomepageViewModel.allPosts.setter : Swift.Optional&lt;Swift.Array&lt;Miyu.Post&gt;&gt;"
+                  moduleName = "Miyu"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mira/Developer/Miyu/Miyu/Feature/Homepage/HomepageViewModel.swift"
+                  timestampString = "541706404.775052"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Miyu.HomepageViewModel.init(__ObjC.UIViewController) -&gt; Miyu.HomepageViewModel"
+                  moduleName = "Miyu"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mira/Developer/Miyu/Miyu/Feature/Homepage/HomepageViewModel.swift"
+                  timestampString = "541706404.777999"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "192">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

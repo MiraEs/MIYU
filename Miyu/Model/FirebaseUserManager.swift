@@ -36,8 +36,8 @@ internal final class FirebaseUserManager {
     
     // MARK: GET USER DATA
     // TODO: FINISH
-    func getCurrentUserData() {
-        guard let userID = Auth.auth().currentUser?.uid else { return }
+    func getCurrentUserData(_ userID: String) {
+        //guard let userID = Auth.auth().currentUser?.uid else { return }
         ref.child(FbChildPaths.users).child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
             
             guard let value = snapshot.value as? [String:String] else { return }
@@ -51,6 +51,10 @@ internal final class FirebaseUserManager {
     
     func getPosts(eventType: DataEventType, with handler: @escaping (DataSnapshot) -> Void) {
         postRef?.observe(eventType, with: handler)
+    }
+    
+    func getUsers(eventType: DataEventType, uid: String, with handler: @escaping (DataSnapshot) -> Void) {
+        ref?.child(FbChildPaths.users).child(uid).observe(eventType, with: handler)
     }
 }
 

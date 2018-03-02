@@ -77,7 +77,7 @@ extension AppUser: Decodable {
         let email = try container.decode(String.self, forKey: .email)
         let firstName = try container.decode(String.self, forKey: .firstName)
         let lastName = try container.decode(String.self, forKey: .lastName)
-        let photoUrl = try container.decode(String.self, forKey: .email)
+        let photoUrl = try container.decode(String.self, forKey: .photoUrl)
         
         self.init(firstName: firstName, lastName: lastName, email: email, photoUrl: photoUrl)
     }

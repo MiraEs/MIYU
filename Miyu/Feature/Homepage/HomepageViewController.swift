@@ -17,6 +17,7 @@ internal final class HomepageViewController: BaseViewController {
     private var viewModel: HomepageViewModel? {
         return HomepageViewModel(self)
     }
+    //private var allPosts = [Post]()
     private var allPosts = [Post]()
     
     @IBOutlet weak var tableView: UITableView!
@@ -40,23 +41,31 @@ internal final class HomepageViewController: BaseViewController {
     }
     
     // MARK: FETCH POSTS
-    // TODO: CAN THIS BE ABSTRACTED TO VIEW MODEL?
     private func fetchPosts() {
-        fbManager?.getPosts(eventType: .childAdded, with: { (snapshot) in
-            do {
-                if JSONSerialization.isValidJSONObject(snapshot.value) {
-                    let data = try JSONSerialization.data(withJSONObject: snapshot.value!, options: [])
-                    let post = try JSONDecoder().decode(Post.self, from: data)
-                    post.key = snapshot.key
-                    self.allPosts.insert(post, at: 0)
-                }
-            } catch {
-                print(error)
-            }
+        self.viewModel?.getPosts({ (post) in
+            self.allPosts.append(post)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         })
+    }
+    
+    private func getUserData(_ uid: String) -> AppUser? {
+        var validUser: AppUser?
+        fbManager?.getUsers(eventType: .value, uid: uid, with: { (snapshot) in
+            do {
+                if JSONSerialization.isValidJSONObject(snapshot.value!) {
+                    let data = try JSONSerialization.data(withJSONObject: snapshot.value!, options: [])
+                    
+                    let user = try JSONDecoder().decode(AppUser.self, from: data)
+                    print("user >>>> \(user)")
+                    validUser = user
+                }
+            } catch {
+                print(error)
+            }
+        })
+        return validUser
     }
     
     private func fetchPhoto(_ urlString: String?, _ cell: HomepageTableViewCell) {
@@ -64,29 +73,28 @@ internal final class HomepageViewController: BaseViewController {
             cell.contentImage.loadCachedImage(urlString)
         }
     }
+    
 }
 
 extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return allPosts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.homeCell, for: indexPath) as! HomepageTableViewCell
-        let currentCell = allPosts[indexPath.row]
+        let currentCell = allPosts[(allPosts.count-1) - indexPath.row]
         let key = currentCell.key!
         let uid = currentCell.uid!
         
-        print("CELL'S UID \(uid)")
+        
         // Labels
         cell.nameLabel.text = currentCell.caption
         fetchPhoto(currentCell.data, cell)
         
         // Rating
-        //let rating: Double = Double((indexPath as NSIndexPath).row) / 99 * 5
-        
         
         cell.setupTap(indexPath.row)
         // Image Interaction segue to profile
@@ -100,7 +108,6 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
             cell.ratingUpdate(rating, key, uid)
             self.allPosts[indexPath.row].rating = rating
         }
-        
         
         cell.commentCaptionLabel.text = "KEY \(String(describing: currentCell.key))"
         
