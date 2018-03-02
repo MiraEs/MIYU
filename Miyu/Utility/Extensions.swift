@@ -21,6 +21,18 @@ extension UIViewController {
     }
 }
 
+extension UIViewController {
+    func hideKeyboardWhenTap() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
 // MARK: UIImageView
 
 /// UIImageView extension for cacheing images

@@ -15,8 +15,6 @@ internal final class HomepageViewModel: InstantiatedViewControllers {
 
     private weak var fbManager = FirebaseUserManager.manager
     
-    //var allPosts: [Post]?
-    
     init(_ presentingViewController: UIViewController) {
         self.presentingViewController = presentingViewController
         

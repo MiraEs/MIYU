@@ -74,7 +74,7 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         let uid = currentCell.uid!
         
         // Labels
-        //cell.nameLabel.text = currentCell
+        cell.nameLabel.text = currentCell.user?.firstName
         
         // Image Interaction segue to profile
         fetchPhoto(currentCell.data, currentCell.user?.photoUrl, cell)

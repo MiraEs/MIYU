@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class UploadViewController: UIViewController {
+class UploadViewController: BaseViewController {
 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var name: UILabel!

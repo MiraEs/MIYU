@@ -41,18 +41,9 @@ class HomepageTableViewCell: UITableViewCell {
     }
     
     // MARK: RATING FUNCTIONALITY
-    
-    func ratingUpdate(_ rating: Double, _ key: String, _ uid: String) {
-        //ratingView.didFinishTouchingCosmos = { rating in
-            //print("did rate: \(rating)")
-        
-            self.updateRatingInFb(rating, key, uid)
-        //}
-    }
-    
     // TODO: firebase rating
     
-    private func updateRatingInFb(_ rating: Double, _ key: String, _ uid: String) {
+    func ratingUpdate(_ rating: Double, _ key: String, _ uid: String) {
         print("updating rating....... with key \(key)")
         let ref = Database.database().reference()
         let usersRef = ref.child("posts")
@@ -62,7 +53,7 @@ class HomepageTableViewCell: UITableViewCell {
         postsRef.setValue(rating)
         userPostsRef.setValue(rating)
         
-        fbManager?.calculateAllPostsRating(uid)
+        //fbManager?.calculateAllPostsRating(uid)
         fbManager?.updatePostRatedCount(key)
     }
     
