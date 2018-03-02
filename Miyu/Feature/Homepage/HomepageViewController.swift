@@ -40,7 +40,7 @@ internal final class HomepageViewController: BaseViewController {
         fetchPosts()
     }
     
-    // MARK: FETCH POSTS
+    // MARK: FETCH DATA
     private func fetchPosts() {
         self.viewModel?.getPosts({ [weak self] (post) in
             self?.allPosts.append(post)
@@ -73,16 +73,15 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         let key = currentCell.key!
         let uid = currentCell.uid!
         
-        print("USERRRRRRR INFOOO >> \(currentCell.user)")
         // Labels
-        cell.nameLabel.text = currentCell.caption
+        //cell.nameLabel.text = currentCell
+        
+        // Image Interaction segue to profile
         fetchPhoto(currentCell.data, currentCell.user?.photoUrl, cell)
+        cell.setupTap(indexPath.row)
+        
         
         // Rating
-        
-        cell.setupTap(indexPath.row)
-        // Image Interaction segue to profile
-        
         cell.ratingView.rating = currentCell.rating!
         cell.ratingLabel.text = "\(currentCell.rating!)"
         
@@ -91,8 +90,6 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
             cell.ratingUpdate(rating, key, uid)
             self?.allPosts[indexPath.row].rating = rating
         }
-        
-        cell.commentCaptionLabel.text = "KEY \(String(describing: currentCell.key))"
         
         return cell
     }
