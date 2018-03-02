@@ -22,7 +22,7 @@ internal final class Post: Encodable {
     var key: String?
     var uid: String?
     var count: Int?
-    //var user: AppUser?
+    var user: AppUser?
     
 //    init(user: AppUser) {
 //        self.user = user

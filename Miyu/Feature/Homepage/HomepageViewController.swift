@@ -42,30 +42,12 @@ internal final class HomepageViewController: BaseViewController {
     
     // MARK: FETCH POSTS
     private func fetchPosts() {
-        self.viewModel?.getPosts({ (post) in
-            self.allPosts.append(post)
+        self.viewModel?.getPosts({ [weak self] (post) in
+            self?.allPosts.append(post)
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                self?.tableView.reloadData()
             }
         })
-    }
-    
-    private func getUserData(_ uid: String) -> AppUser? {
-        var validUser: AppUser?
-        fbManager?.getUsers(eventType: .value, uid: uid, with: { (snapshot) in
-            do {
-                if JSONSerialization.isValidJSONObject(snapshot.value!) {
-                    let data = try JSONSerialization.data(withJSONObject: snapshot.value!, options: [])
-                    
-                    let user = try JSONDecoder().decode(AppUser.self, from: data)
-                    print("user >>>> \(user)")
-                    validUser = user
-                }
-            } catch {
-                print(error)
-            }
-        })
-        return validUser
     }
     
     private func fetchPhoto(_ urlString: String?, _ cell: HomepageTableViewCell) {
@@ -89,7 +71,7 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         let key = currentCell.key!
         let uid = currentCell.uid!
         
-        
+        print("USERRRRRRR INFOOO >> \(currentCell.user)")
         // Labels
         cell.nameLabel.text = currentCell.caption
         fetchPhoto(currentCell.data, cell)
@@ -113,8 +95,6 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
-    
 }
 
 extension HomepageViewController: UIBarPositioningDelegate {
