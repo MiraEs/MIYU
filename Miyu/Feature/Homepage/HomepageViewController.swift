@@ -50,9 +50,11 @@ internal final class HomepageViewController: BaseViewController {
         })
     }
     
-    private func fetchPhoto(_ urlString: String?, _ cell: HomepageTableViewCell) {
-        if let urlString = urlString {
-            cell.contentImage.loadCachedImage(urlString)
+    private func fetchPhoto(_ contentUrlString: String?, _ profileUrlString: String?, _ cell: HomepageTableViewCell) {
+        if let contentUrlString = contentUrlString,
+            let profileUrlString = profileUrlString {
+            cell.contentImage.loadCachedImage(contentUrlString)
+            cell.profileImage.loadCachedImage(profileUrlString)
         }
     }
     
@@ -74,7 +76,7 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         print("USERRRRRRR INFOOO >> \(currentCell.user)")
         // Labels
         cell.nameLabel.text = currentCell.caption
-        fetchPhoto(currentCell.data, cell)
+        fetchPhoto(currentCell.data, currentCell.user?.photoUrl, cell)
         
         // Rating
         
@@ -84,11 +86,10 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         cell.ratingView.rating = currentCell.rating!
         cell.ratingLabel.text = "\(currentCell.rating!)"
         
-        cell.ratingView.didFinishTouchingCosmos = {
-            rating in
+        cell.ratingView.didFinishTouchingCosmos = { [weak self] rating in
             cell.ratingView.rating = rating
             cell.ratingUpdate(rating, key, uid)
-            self.allPosts[indexPath.row].rating = rating
+            self?.allPosts[indexPath.row].rating = rating
         }
         
         cell.commentCaptionLabel.text = "KEY \(String(describing: currentCell.key))"
