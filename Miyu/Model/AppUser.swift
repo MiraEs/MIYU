@@ -15,7 +15,7 @@ struct UserCredential {
 
 
 enum AppUserKeys: String, CodingKey {
-    case email, firstName, lastName, photoUrl
+    case email, firstName, lastName, photoUrl, userRating
 }
 /// AppUser class includes properties for AppUser object.
 internal final class AppUser {
@@ -24,15 +24,16 @@ internal final class AppUser {
     var firstName: String?
     var lastName: String?
     var photoUrl: String?
+    var userRating: Double?
     
-    init(firstName: String, lastName: String, email: String, photoUrl: String = "") {
+    init(firstName: String, lastName: String, email: String,
+         photoUrl: String = "", userRating: Double = 5) {
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
         self.photoUrl = photoUrl
+        self.userRating = userRating
     }
-    
-
 }
 
 extension AppUser: Encodable {
@@ -42,6 +43,7 @@ extension AppUser: Encodable {
         try container.encode(firstName, forKey: .firstName)
         try container.encode(lastName, forKey: .lastName)
         try container.encode(email, forKey: .email)
+        try container.encode(userRating, forKey: .userRating)
     }
 }
 
@@ -52,8 +54,10 @@ extension AppUser: Decodable {
         let firstName = try container.decode(String.self, forKey: .firstName)
         let lastName = try container.decode(String.self, forKey: .lastName)
         let photoUrl = try container.decode(String.self, forKey: .photoUrl)
+        let userRating = try container.decode(Double.self, forKey: .userRating)
         
-        self.init(firstName: firstName, lastName: lastName, email: email, photoUrl: photoUrl)
+        self.init(firstName: firstName, lastName: lastName,
+                  email: email, photoUrl: photoUrl, userRating: userRating)
     }
 }
 

@@ -226,7 +226,6 @@ extension FirebaseUserManager {
         
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
             if user != nil {
-//                self.ref.child(FbChildPaths.users).child(user!.uid).setValue(userInfo)
                 self.addToDatabase(appUser, user!, profileImage)
                 print("successful user added \(email)")
                 handler?()
@@ -255,6 +254,7 @@ extension FirebaseUserManager {
             
             let userData = userInfo.dictionary
             self.ref.child(FbChildPaths.users).child(currentUser.uid).updateChildValues(userData!)
+            self.ref.child(FbChildPaths.userRatings).child(currentUser.uid).setValue(userInfo.userRating)
         })
     }
     
