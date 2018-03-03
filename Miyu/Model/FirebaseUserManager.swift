@@ -17,7 +17,7 @@ internal final class FirebaseUserManager {
     
     static let manager = FirebaseUserManager()
     
-    private weak var currentUser: User? {
+    var currentUser: User? {
         get {
             return Auth.auth().currentUser
         }
@@ -282,7 +282,7 @@ extension FirebaseUserManager {
 }
 
 extension FirebaseUserManager {
-    //TODO: REFACTOR TO EXTENSION/*******************/
+    //TODO: REFACTOR FOR UNIVERSAL OBJECTS AND TO ITS ON FILE/*******************/
     private func decodeData(_ snapshot: Any) -> Post? {
         guard let data = try? JSONSerialization.data(withJSONObject: snapshot, options: []) else {
             return nil

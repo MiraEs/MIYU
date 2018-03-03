@@ -73,6 +73,9 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         let key = currentCell.key!
         let uid = currentCell.uid!
         
+        // Setup
+        cell.setupCell(uid)
+        
         // Labels
         cell.nameLabel.text = currentCell.user?.firstName
         
@@ -85,10 +88,12 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         cell.ratingView.rating = currentCell.rating!
         cell.ratingLabel.text = "\(currentCell.rating!)"
         
-        cell.ratingView.didFinishTouchingCosmos = { [weak self] rating in
-            cell.ratingView.rating = rating
-            cell.ratingUpdate(rating, key, uid)
-            self?.allPosts[indexPath.row].rating = rating
+        if fbManager?.currentUser?.uid != uid {
+            cell.ratingView.didFinishTouchingCosmos = { [weak self] rating in
+                cell.ratingView.rating = rating
+                cell.ratingUpdate(rating, key, uid)
+                self?.allPosts[indexPath.row].rating = rating
+            }
         }
         
         return cell

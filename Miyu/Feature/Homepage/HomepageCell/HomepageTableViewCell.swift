@@ -32,12 +32,20 @@ class HomepageTableViewCell: UITableViewCell {
     // TODO: Figure out model to obtain this data.
     @IBOutlet weak var recentCommentLabel: UILabel!
     
-    // TODO: Capture rating data
     @IBOutlet weak var ratingView: CosmosView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     
+    }
+    
+    //MARK: SETUP
+    func setupCell(_ uid: String) {
+        if fbManager?.currentUser?.uid != uid {
+            ratingView.isHidden = false
+        } else {
+            ratingView.isHidden = true
+        }
     }
     
     // MARK: RATING FUNCTIONALITY
@@ -53,7 +61,6 @@ class HomepageTableViewCell: UITableViewCell {
         postsRef.setValue(rating)
         userPostsRef.setValue(rating)
         
-        //fbManager?.calculateAllPostsRating(uid)
         fbManager?.updatePostRatedCount(key)
     }
     
