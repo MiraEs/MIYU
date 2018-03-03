@@ -179,20 +179,17 @@ extension FirebaseUserManager {
         let userRef = ref.child(FbChildPaths.userPosts).child(uid)
         
         
-        userRef.observe(.childChanged) { (snapshot) in
+        userRef.observe(.value) { (snapshot) in
             print("RATING SNAPSHOT COUNT \(snapshot.childrenCount)")
             let count = Float(snapshot.childrenCount)
-            var sum: Float = 5.0
+            var sum: Float = 0.0
             var average: Float = 0.0
             
-            if let children = snapshot.value as? [String:AnyObject] {
-                for child in children {
-                    if let value = child.value as? [String:AnyObject] {
-                        guard let rating = value[PostKeys.averageRating] as? Float else {
-                            return
-                        }
-                        sum += rating
-                    }
+            let enumerator = snapshot.children
+            while let object = enumerator.nextObject() as? DataSnapshot {
+                if let value = object.value as? [String:AnyObject] {
+                    guard let averageRating = value[PostKeys.averageRating] as? Float else { return }
+                    sum += averageRating
                 }
             }
             average = sum/count
@@ -223,7 +220,7 @@ extension FirebaseUserManager {
                 return
         }
         
-        
+
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
             if user != nil {
                 self.addToDatabase(appUser, user!, profileImage)
