@@ -13,7 +13,7 @@ private enum FontFamilies {
     typealias rawValue = String
     
     static let avenirNextDemiBold = "AvenirNext-DemiBold"
-    static let appleSDGothicNeoUltraLight = "AppleSDGothicNeo-UltraLight"
+    static let avenirNextUltraLight = "AvenirNext-UltraLight"
 }
 
 extension UILabel {
@@ -22,10 +22,14 @@ extension UILabel {
     }
     
     func mediumFont() {
-        self.font = UIFont(name: FontFamilies.appleSDGothicNeoUltraLight, size: 25)
+        self.font = UIFont(name: FontFamilies.avenirNextUltraLight, size: 18)
     }
     
-    func smallFont() {
-        self.font = UIFont(name: FontFamilies.appleSDGothicNeoUltraLight, size: 16)
+    func smallFontLight() {
+        self.font = UIFont(name: FontFamilies.avenirNextUltraLight, size: 15)
+    }
+    
+    func smallFontBold() {
+           self.font = UIFont(name: FontFamilies.avenirNextDemiBold, size: 15)
     }
 }

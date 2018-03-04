@@ -54,8 +54,12 @@ class HomepageTableViewCell: UITableViewCell {
     func design() {
         profileImage.setRounded()
         nameLabel.largeFont()
-        //ratingLabel.mediumFont()
-        captionLabel.smallFont()
+        captionLabel.mediumFont()
+        if let ratingLabel = ratingLabel {
+            ratingLabel.mediumFont()
+        }
+        commentCountLabel.smallFontBold()
+        
     }
     
     // MARK: RATING FUNCTIONALITY

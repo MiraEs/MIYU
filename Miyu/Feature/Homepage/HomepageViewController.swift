@@ -79,14 +79,18 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         // Labels
         cell.nameLabel.text = currentCell.user?.firstName
         
+        cell.commentCountLabel.text = "\(#imageLiteral(resourceName: "star"))\(String(describing: currentCell.count)) have rated this."
+        
         // Image Interaction segue to profile
         fetchPhoto(currentCell.data, currentCell.user?.photoUrl, cell)
         cell.setupTap(indexPath.row)
         
         
         // Rating
-        cell.ratingView.rating = currentCell.rating!
-        cell.ratingLabel.text = "\(currentCell.rating!)"
+        if let rating = currentCell.rating {
+            cell.ratingView.rating = rating
+            cell.ratingLabel.text = "\(rating)"
+        }
         
         if fbManager?.currentUser?.uid != uid {
             cell.ratingView.didFinishTouchingCosmos = { [weak self] rating in
