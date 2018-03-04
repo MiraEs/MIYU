@@ -33,6 +33,19 @@ extension UIViewController {
     }
 }
 
+// MARK: UIImage
+
+extension UIImageView {
+    func setRounded() {
+        self.contentMode = UIViewContentMode.scaleAspectFill
+        self.layer.borderWidth = 1
+        self.layer.masksToBounds = false
+        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.cornerRadius = self.frame.height/2.5
+        self.clipsToBounds = true
+    }
+}
+
 // MARK: UIImageView
 
 /// UIImageView extension for cacheing images

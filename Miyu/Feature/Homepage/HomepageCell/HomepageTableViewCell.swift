@@ -19,7 +19,11 @@ class HomepageTableViewCell: UITableViewCell {
     
     private weak var fbManager = FirebaseUserManager.manager
 
-    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var profileImage: UIImageView! {
+        didSet {
+            design()
+        }
+    }
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
@@ -46,6 +50,12 @@ class HomepageTableViewCell: UITableViewCell {
         } else {
             ratingView.isHidden = true
         }
+    }
+    func design() {
+        profileImage.setRounded()
+        nameLabel.largeFont()
+        //ratingLabel.mediumFont()
+        captionLabel.smallFont()
     }
     
     // MARK: RATING FUNCTIONALITY
@@ -76,6 +86,4 @@ class HomepageTableViewCell: UITableViewCell {
     @objc func showUserProfile(gesture: UITapGestureRecognizer) {
         print("it worked")
     }
-
-    
 }
