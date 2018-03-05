@@ -53,7 +53,7 @@ class HomepageTableViewCell: UITableViewCell {
     }
     func design() {
         profileImage.setRounded()
-        nameLabel.largeFont()
+        nameLabel.largeFontBold()
         captionLabel.mediumFont()
         if let ratingLabel = ratingLabel {
             ratingLabel.mediumFont()

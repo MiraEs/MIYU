@@ -16,6 +16,8 @@ class UploadViewController: BaseViewController {
     @IBOutlet weak var rating: UILabel!
     @IBOutlet weak var captionTextView: UITextView!
     @IBOutlet weak var centerImage: UIButton!
+    @IBOutlet weak var uploadButton: UIButton!
+    @IBOutlet weak var editCaptionContainer: UIView!
     
     private weak var fbManager = FirebaseUserManager.manager
     
@@ -30,6 +32,18 @@ class UploadViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+    }
+    
+    // MARK: DESIGN
+    private func setup() {
+        editCaptionContainer.layer.borderWidth = 1
+        editCaptionContainer.layer.borderColor = UIColor.black.cgColor
+        
+        profileImage.setRounded()
+        rating.mediumFontObique()
+        name.largeFontLight()
+        
     }
     
     @IBAction func editCaptionTapped(_ sender: Any) {
@@ -57,9 +71,9 @@ extension UploadViewController: UIImagePickerControllerDelegate, UINavigationCon
         let selectedImage = Image.setImage(info)
         
         if let selectedImage = selectedImage {
-            profileImage.image = selectedImage
+            uploadButton.setImage(selectedImage, for: .normal)
         }
-        
+
         dismiss(animated: true, completion: nil)
     }
 }
