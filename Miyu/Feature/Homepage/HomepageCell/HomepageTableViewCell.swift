@@ -58,9 +58,22 @@ class HomepageTableViewCell: UITableViewCell {
         if let ratingLabel = ratingLabel {
             ratingLabel.mediumFont()
         }
-        commentCountLabel.smallFontBold()
+        commentCaptionLabel.smallFontLight()
         
     }
+    
+    func commentCaption(_ imageName: String, _ cellCount: Int) {
+        let imageAttachment = NSTextAttachment()
+        imageAttachment.image = UIImage(named: imageName)
+        imageAttachment.bounds = CGRect(x: 0, y: 1, width: (imageAttachment.image!.size.width)/2, height: (imageAttachment.image!.size.height)/2)
+        
+       
+        let attachmentString = NSAttributedString(attachment: imageAttachment)
+        let caption = NSMutableAttributedString(string: "\(cellCount) people have rated this.")
+        caption.insert(attachmentString, at: 0)
+        commentCaptionLabel.attributedText = caption
+    }
+    
     
     // MARK: RATING FUNCTIONALITY
     // TODO: firebase rating
@@ -91,3 +104,5 @@ class HomepageTableViewCell: UITableViewCell {
         print("it worked")
     }
 }
+
+

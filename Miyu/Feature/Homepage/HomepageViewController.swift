@@ -78,8 +78,7 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         
         // Labels
         cell.nameLabel.text = currentCell.user?.firstName
-        
-        cell.commentCountLabel.text = "\(#imageLiteral(resourceName: "star"))\(String(describing: currentCell.count)) have rated this."
+        cell.commentCaption("star", currentCell.count!)
         
         // Image Interaction segue to profile
         fetchPhoto(currentCell.data, currentCell.user?.photoUrl, cell)
