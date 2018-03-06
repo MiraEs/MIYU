@@ -30,20 +30,19 @@ class UploadViewController: BaseViewController {
         return self?.captionTextView.text
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.navigationBar.isHidden = false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-  
     }
     
     // MARK: DESIGN & SETUP
-    private func setupNavBar() {
-        
-    }
-    
+
     private func setup() {
-        setupNavBar()
         editCaptionContainer.layer.borderWidth = 1
         editCaptionContainer.layer.borderColor = UIColor.black.cgColor
         
@@ -62,7 +61,9 @@ class UploadViewController: BaseViewController {
     
     @IBAction func uploadContent(_ sender: Any) {
         print("upload pic to storage")
-        fbManager?.uploadContentToStorage(with: profileImage, to: .posts, caption!, completionHandler: { [weak self] in
+        fbManager?.uploadContentToStorage(with: centerImage.imageView!,
+                                          to: .posts, caption!,
+                                          completionHandler: { [weak self] in
             self?.dismiss(animated: true, completion: nil)
         })
     }
@@ -75,7 +76,8 @@ class UploadViewController: BaseViewController {
 
 extension UploadViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : Any]) {
 
         
         let selectedImage = Image.setImage(info)

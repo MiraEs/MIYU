@@ -12,8 +12,30 @@ internal class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        view.backgroundColor = UIColor(red:0.92, green:0.74, blue:0.74, alpha:1.0)
-        self.hideKeyboardWhenTap()
+       setup()
     }
+    
+    private func setup() {
+        design()
+        keyboardFunctionality()
+    }
+    
+    private func design() {
+         view.backgroundColor = UIColor(red:0.96, green:0.81, blue:0.76, alpha:1.0)
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(blurEffectView)
+    }
+    
+    private func keyboardFunctionality() {
+        self.hideKeyboardWhenTap()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
 }
