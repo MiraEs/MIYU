@@ -40,7 +40,6 @@ class HomepageTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-    
     }
     
     //MARK: SETUP

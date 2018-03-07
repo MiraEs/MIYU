@@ -101,6 +101,10 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor.clear
+    }
 }
 
 extension HomepageViewController: UIBarPositioningDelegate {
