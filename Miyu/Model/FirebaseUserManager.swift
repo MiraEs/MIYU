@@ -178,8 +178,7 @@ extension FirebaseUserManager {
         print("CALCULATE RATING for \(uid)")
         let userRef = ref.child(FbChildPaths.userPosts).child(uid)
         
-        
-        userRef.observe(.value) { (snapshot) in
+        userRef.observeSingleEvent(of: .value) { (snapshot) in
             print("RATING SNAPSHOT COUNT \(snapshot.childrenCount)")
             let count = Float(snapshot.childrenCount)
             var sum: Float = 0.0

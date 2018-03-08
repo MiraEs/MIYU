@@ -47,8 +47,8 @@ class UploadViewController: BaseViewController {
         editCaptionContainer.layer.borderColor = UIColor.black.cgColor
         
         profileImage.setRounded()
-        rating.mediumFontObique()
-        name.largeFontLight()
+        rating.mediumFont()
+        name.largeFont()
     }
     
     @IBAction func dismiss(_ sender: Any) {

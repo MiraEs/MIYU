@@ -25,9 +25,9 @@ class HomepageTableViewCell: UITableViewCell {
         }
     }
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var ratingLabel: UILabel!
-    @IBOutlet weak var captionLabel: UILabel!
     
+    @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var userRatingLabel: UILabel!
     // TODO: this will change if video..
     @IBOutlet weak var contentImage: UIImageView!
     @IBOutlet weak var commentCaptionLabel: UILabel!
@@ -50,14 +50,16 @@ class HomepageTableViewCell: UITableViewCell {
             ratingView.isHidden = true
         }
     }
+    
     func design() {
         profileImage.setRounded()
-        nameLabel.largeFontBold()
+        
+        nameLabel.largeFont()
         captionLabel.mediumFont()
-        if let ratingLabel = ratingLabel {
-            ratingLabel.mediumFont()
+        if let label = userRatingLabel {
+            label.smallFont()
         }
-        commentCaptionLabel.smallFontLight()
+        commentCaptionLabel.smallFont()
         
     }
     

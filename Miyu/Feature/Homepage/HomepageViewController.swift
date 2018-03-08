@@ -17,7 +17,7 @@ internal final class HomepageViewController: BaseViewController {
     private var viewModel: HomepageViewModel? {
         return HomepageViewModel(self)
     }
-    //private var allPosts = [Post]()
+    
     private var allPosts = [Post]()
     
     @IBOutlet weak var tableView: UITableView!
@@ -39,12 +39,15 @@ internal final class HomepageViewController: BaseViewController {
         viewModel?.setup(tableView)
         fetchPosts()
     }
+
     
     // MARK: FETCH DATA
     private func fetchPosts() {
+        let sv = self.displaySpinner(onView: self.view)
         self.viewModel?.getPosts({ [weak self] (post) in
             self?.allPosts.append(post)
             DispatchQueue.main.async {
+                self?.removeSpinner(spinner: sv)
                 self?.tableView.reloadData()
             }
         })
@@ -57,7 +60,6 @@ internal final class HomepageViewController: BaseViewController {
             cell.profileImage.loadCachedImage(profileUrlString)
         }
     }
-    
 }
 
 extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
@@ -84,12 +86,10 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         fetchPhoto(currentCell.data, currentCell.user?.photoUrl, cell)
         cell.setupTap(indexPath.row)
         
-        
         // Rating
-        if let rating = currentCell.rating {
-            cell.ratingView.rating = rating
-            cell.ratingLabel.text = "\(rating)"
-        }
+        let rating = currentCell.rating!
+        cell.ratingView.rating = rating
+        cell.userRatingLabel.text = "\(currentCell.user?.userRating ?? 0)"
         
         if fbManager?.currentUser?.uid != uid {
             cell.ratingView.didFinishTouchingCosmos = { [weak self] rating in
@@ -98,11 +98,11 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
                 self?.allPosts[indexPath.row].rating = rating
             }
         }
-        
         return cell
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell,
+                   forRowAt indexPath: IndexPath) {
         cell.backgroundColor = UIColor.clear
     }
 }

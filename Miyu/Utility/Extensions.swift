@@ -8,62 +8,6 @@
 
 import UIKit
 
-// MARK: UIVIewController
-
-extension UIViewController {
-    
-    class var storyboardID: String {
-        return "\(self)"
-    }
-    
-    static func instantiate(fromAppStoryboard appStoryboard: AppStoryboard) -> Self {
-        return appStoryboard.viewController(viewControllerClass: self)
-    }
-}
-
-// MARK: KEYBOARD SHENNANIGANS
-extension UIViewController {
-    func hideKeyboardWhenTap() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if view.frame.origin.y == 0 {
-                view.frame.origin.y -= keyboardSize.height
-            }
-        }
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if view.frame.origin.y != 0 {
-                view.frame.origin.y += keyboardSize.height
-            }
-        }
-    }
-  
-}
-
-// MARK: UIImage
-
-extension UIImageView {
-    func setRounded() {
-        self.contentMode = UIViewContentMode.scaleAspectFill
-        self.layer.borderWidth = 1
-        self.layer.masksToBounds = false
-        self.layer.borderColor = UIColor.black.cgColor
-        self.layer.cornerRadius = self.frame.height/2.5
-        self.clipsToBounds = true
-    }
-}
-
 // MARK: UIImageView
 
 /// UIImageView extension for cacheing images
@@ -105,9 +49,5 @@ extension Encodable {
         return (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)).flatMap { $0 as? [String: Any] }
     }
 }
-
-
-
-
 
 

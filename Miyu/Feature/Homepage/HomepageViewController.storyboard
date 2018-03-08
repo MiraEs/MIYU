@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Homepage View Controller-->
+        <!--HOME-->
         <scene sceneID="WPe-C7-Xsm">
             <objects>
                 <viewController storyboardIdentifier="HomepageViewController" id="Ogx-fG-Vhg" customClass="HomepageViewController" customModule="Miyu" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dYD-l5-zH8">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dYD-l5-zH8">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -39,43 +39,27 @@
                                     <outlet property="delegate" destination="Ogx-fG-Vhg" id="v3Q-kB-Nvm"/>
                                 </connections>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZNQ-OJ-Dw2">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items/>
-                            </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooY-pV-zuU">
-                                <rect key="frame" x="163" y="32" width="49.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.85252730139704891" green="1" blue="0.73520657969411896" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="ZNQ-OJ-Dw2" firstAttribute="top" secondItem="Pef-7k-UEp" secondAttribute="top" constant="20" id="26s-xv-zzH"/>
-                            <constraint firstItem="ooY-pV-zuU" firstAttribute="centerY" secondItem="ZNQ-OJ-Dw2" secondAttribute="centerY" id="44A-QK-7e1"/>
-                            <constraint firstItem="ooY-pV-zuU" firstAttribute="centerX" secondItem="ZNQ-OJ-Dw2" secondAttribute="centerX" id="Xes-bw-MOM"/>
+                            <constraint firstItem="dYD-l5-zH8" firstAttribute="top" secondItem="229-3b-bvJ" secondAttribute="bottom" constant="-554" id="Wnf-zd-ade"/>
                             <constraint firstItem="dYD-l5-zH8" firstAttribute="leading" secondItem="229-3b-bvJ" secondAttribute="leading" id="awC-4U-NkX"/>
                             <constraint firstItem="229-3b-bvJ" firstAttribute="trailing" secondItem="dYD-l5-zH8" secondAttribute="trailing" id="esu-0n-cOW"/>
-                            <constraint firstItem="ZNQ-OJ-Dw2" firstAttribute="trailing" secondItem="229-3b-bvJ" secondAttribute="trailing" id="mch-MJ-eAp"/>
                             <constraint firstItem="229-3b-bvJ" firstAttribute="bottom" secondItem="dYD-l5-zH8" secondAttribute="bottom" id="oKD-CE-uMr"/>
-                            <constraint firstItem="dYD-l5-zH8" firstAttribute="top" secondItem="ZNQ-OJ-Dw2" secondAttribute="bottom" id="w3z-YN-eeO"/>
-                            <constraint firstItem="ZNQ-OJ-Dw2" firstAttribute="leading" secondItem="229-3b-bvJ" secondAttribute="leading" id="zAY-ML-5bq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="229-3b-bvJ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Sdh-jL-21w">
+                    <navigationItem key="navigationItem" title="HOME" id="Sdh-jL-21w">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="Fnh-I3-PBP">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="epz-La-fdm">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="uploadContent:" destination="Ogx-fG-Vhg" eventType="touchUpInside" id="5H1-Z0-SrY"/>
+                                    <action selector="uploadContent:" destination="Ogx-fG-Vhg" eventType="touchUpInside" id="NWv-rv-Ydh"/>
                                 </connections>
                             </button>
                             <connections>
-                                <action selector="uploadContent:" destination="Ogx-fG-Vhg" id="T1X-TO-3HI"/>
                                 <segue destination="qex-km-QDT" kind="show" id="jc8-RC-cIp"/>
                             </connections>
                         </barButtonItem>

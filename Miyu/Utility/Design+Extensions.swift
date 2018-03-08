@@ -14,38 +14,34 @@ private enum FontFamilies {
     
     static let avenirNextDemiBold = "AvenirNext-DemiBold"
     static let avenirNextUltraLight = "AvenirNext-UltraLight"
-    static let avenirLight = "Avenir-Light"
-    static let avenirOblique = "Avenir-Oblique"
+    static let avenirLight = "Avenir Next"
 }
 
+// MARK: UILabel
 extension UILabel {
-    func smallFontLight() {
-        self.font = UIFont(name: FontFamilies.avenirNextUltraLight, size: 15)
-    }
-    
-    func smallFontBold() {
-        self.font = UIFont(name: FontFamilies.avenirNextDemiBold, size: 15)
+    func smallFont() {
+        self.font = UIFont(name: FontFamilies.avenirLight, size: 13)
     }
     
     func mediumFont() {
-        self.font = UIFont(name: FontFamilies.avenirNextUltraLight, size: 18)
+        self.font = UIFont(name: FontFamilies.avenirLight, size: 16)
     }
     
-    func mediumFontLight() {
-        self.font = UIFont(name: FontFamilies.avenirLight, size: 18)
+    func largeFont() {
+        self.font = UIFont(name: FontFamilies.avenirLight, size: 25)
     }
     
-    func mediumFontObique() {
-        self.font = UIFont(name: FontFamilies.avenirOblique, size: 22)
+}
+
+// MARK: UIImage
+
+extension UIImageView {
+    func setRounded() {
+        self.contentMode = UIViewContentMode.scaleAspectFill
+        self.layer.borderWidth = 1
+        self.layer.masksToBounds = false
+        self.layer.borderColor = UIColor.white.cgColor
+        self.layer.cornerRadius = self.frame.height/2
+        self.clipsToBounds = true
     }
-    
-    func largeFontBold() {
-        self.font = UIFont(name: FontFamilies.avenirNextDemiBold, size: 40)
-    }
-    
-    func largeFontLight() {
-        self.font = UIFont(name: FontFamilies.avenirLight, size: 30)
-    }
-    
-    
 }
