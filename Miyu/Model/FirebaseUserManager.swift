@@ -191,6 +191,7 @@ extension FirebaseUserManager {
                     sum += averageRating
                 }
             }
+            
             average = sum/count
             print("AVERAGE >>>> \(average)")
             
@@ -203,7 +204,7 @@ extension FirebaseUserManager {
     private func updateUserRating(with average: Float, _ uid: String) {
         let userRef = ref.child(FbChildPaths.userRatings).child(uid)
         
-        userRef.observe(.value) { (snapshot) in
+        userRef.observeSingleEvent(of: .value) { (snapshot) in
             guard let currentRating = snapshot.value as? Float else { return }
             let newRating = (currentRating+average)/2
             userRef.setValue(newRating)

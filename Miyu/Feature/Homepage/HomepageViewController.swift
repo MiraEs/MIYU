@@ -43,11 +43,11 @@ internal final class HomepageViewController: BaseViewController {
     
     // MARK: FETCH DATA
     private func fetchPosts() {
-        let sv = self.displaySpinner(onView: self.view)
+        let loadingIndicator = self.displaySpinner(onView: self.view)
         self.viewModel?.getPosts({ [weak self] (post) in
             self?.allPosts.append(post)
             DispatchQueue.main.async {
-                self?.removeSpinner(spinner: sv)
+                self?.removeSpinner(spinner: loadingIndicator)
                 self?.tableView.reloadData()
             }
         })
