@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var profileImage: UIImageView!
@@ -35,6 +35,8 @@ class ProfileViewController: UIViewController {
     private func setup() {
         tableView.register(UINib(nibName: Constants.profileXib, bundle: nil),
                            forCellReuseIdentifier: Constants.profileCell)
+        
+        profileImage.setRounded()
     }
     
     private func loadUserData() {
