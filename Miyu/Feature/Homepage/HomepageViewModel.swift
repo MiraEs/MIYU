@@ -39,7 +39,7 @@ internal final class HomepageViewModel: InstantiatedViewControllers {
                     let data = try JSONSerialization.data(withJSONObject: snapshot.value!, options: [])
                     let post = try JSONDecoder().decode(Post.self, from: data)
             
-                    self.getUserData(post.uid!, { (user) in
+                    self.fbManager?.getUserData(post.uid!, { (user) in
                         post.user = user
                         post.key = snapshot.key
                         completion(post)
@@ -49,22 +49,6 @@ internal final class HomepageViewModel: InstantiatedViewControllers {
                 print(error)
             }
 
-        })
-    }
-    
-    private func getUserData(_ uid: String, _ handler: @escaping (_ user: AppUser)->Void) {
-        fbManager?.getUsers(eventType: .value, uid: uid, with: { (snapshot) in
-            do {
-                if JSONSerialization.isValidJSONObject(snapshot.value!) {
-                    let data = try JSONSerialization.data(withJSONObject: snapshot.value!, options: [])
-                    
-                    let user = try JSONDecoder().decode(AppUser.self, from: data)
-                    
-                    handler(user)
-                }
-            } catch {
-                print(error)
-            }
         })
     }
 }

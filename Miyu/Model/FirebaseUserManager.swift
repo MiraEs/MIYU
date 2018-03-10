@@ -32,29 +32,58 @@ internal final class FirebaseUserManager {
             return ref.child(FbChildPaths.posts)
         }
     }
+    
+    private weak var userPostRef: DatabaseReference? {
+        get {
+            return ref.child(FbChildPaths.userPosts)
+        }
+    }
     private init() {}
     
     // MARK: GET USER DATA
-    // TODO: FINISH
-    func getCurrentUserData(_ userID: String) {
-        //guard let userID = Auth.auth().currentUser?.uid else { return }
-        ref.child(FbChildPaths.users).child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            guard let value = snapshot.value as? [String:String] else { return }
-            
-            print("Snapshot \(value)")
-            
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-    }
     
     func getPosts(eventType: DataEventType, with handler: @escaping (DataSnapshot) -> Void) {
         postRef?.observe(eventType, with: handler)
     }
     
+    
+    func getUserPosts(uid: String, eventType: DataEventType, with handler: @escaping (Post) -> Void) {
+        let userRef = userPostRef?.child(uid)
+        userRef?.observeSingleEvent(of: .value) { (snapshot) in
+            
+            let enumerator = snapshot.children
+            while let object = enumerator.nextObject() as? DataSnapshot {
+                do {
+                    let data = try JSONSerialization.data(withJSONObject: object.value!, options: [])
+                    let post = try JSONDecoder().decode(Post.self, from: data)
+                    
+                    handler(post)
+                } catch {
+                    print(error)
+                }
+            }
+        }
+    }
+    
     func getUsers(eventType: DataEventType, uid: String, with handler: @escaping (DataSnapshot) -> Void) {
         ref?.child(FbChildPaths.users).child(uid).observe(eventType, with: handler)
+    }
+    
+    //TODO:: REFACTOR FROM HOMEPAGE CELL
+    func getUserData(_ uid: String, _ handler: @escaping (_ user: AppUser)->Void) {
+        self.getUsers(eventType: .value, uid: uid, with: { (snapshot) in
+            do {
+                if JSONSerialization.isValidJSONObject(snapshot.value!) {
+                    let data = try JSONSerialization.data(withJSONObject: snapshot.value!, options: [])
+                    
+                    let user = try JSONDecoder().decode(AppUser.self, from: data)
+                    
+                    handler(user)
+                }
+            } catch {
+                print(error)
+            }
+        })
     }
 }
 
@@ -87,7 +116,7 @@ extension FirebaseUserManager {
             if error != nil {
                 print(error!)
             }
-
+            
             if let urlString = metadata?.downloadURL()?.absoluteString {
                 if path == .posts {
                     self.uploadPost(urlString, caption, .posts)
@@ -96,11 +125,11 @@ extension FirebaseUserManager {
             }
         })
     }
-
+    
 }
 
 extension FirebaseUserManager {
-
+    
     // MARK: RATING
     /**
      1. Get count and add number of rates (after tapping star)
@@ -163,7 +192,7 @@ extension FirebaseUserManager {
     private func uploadPostAverageRating(_ post: Post) {
         guard let key = post.key,
             let uid = post.uid else {
-            return
+                return
         }
         guard let validPost = post.dictionary else { return }
         let childUpdates: [String: Any] = ["/posts/\(key)/" : validPost,
@@ -200,6 +229,7 @@ extension FirebaseUserManager {
         }
     }
     
+    
     //6. Upload new user rating average
     private func updateUserRating(with average: Float, _ uid: String) {
         let userRef = ref.child(FbChildPaths.userRatings).child(uid)
@@ -220,7 +250,7 @@ extension FirebaseUserManager {
                 return
         }
         
-
+        
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
             if user != nil {
                 self.addToDatabase(appUser, user!, profileImage)

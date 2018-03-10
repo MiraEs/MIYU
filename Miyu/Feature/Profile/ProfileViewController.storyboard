@@ -61,7 +61,7 @@
                                 <color key="backgroundColor" red="0.50092310056058587" green="0.75530177581839064" blue="0.82078838832487311" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4.67" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxI-Gj-5WZ">
-                                <rect key="frame" x="114" y="124" width="34" height="21"/>
+                                <rect key="frame" x="114" y="125" width="34" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -87,7 +87,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="lWf-z5-G5N"/>
                     <connections>
+                        <outlet property="profileImage" destination="gYY-IN-Pyz" id="mYO-s2-xOd"/>
                         <outlet property="tableView" destination="x86-C6-ouW" id="n10-vr-Cjd"/>
+                        <outlet property="userAttribute" destination="ftQ-qX-Yab" id="3gY-G3-h3Z"/>
+                        <outlet property="userName" destination="Ysu-1C-l4w" id="SU2-HR-fMA"/>
+                        <outlet property="userRating" destination="FxI-Gj-5WZ" id="kbf-KZ-u5y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L6X-N2-OAs" userLabel="First Responder" sceneMemberID="firstResponder"/>

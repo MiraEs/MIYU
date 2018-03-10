@@ -7,35 +7,75 @@
 //
 
 import UIKit
+import Firebase
 
 class ProfileViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var userRating: UILabel!
+    @IBOutlet weak var userAttribute: UILabel!
     
-    private weak var currentUser: AppUser?
-    private weak var fbManager: FirebaseUserManager?
+    private var userPosts = [Post]()
+    private weak var fbManager = FirebaseUserManager.manager
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setup()
+        loadUserData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        loadUserData()
     }
     
     private func setup() {
         tableView.register(UINib(nibName: Constants.profileXib, bundle: nil),
                            forCellReuseIdentifier: Constants.profileCell)
     }
+    
+    private func loadUserData() {
+        if let uid = fbManager?.currentUser?.uid {
+            fbManager?.getUserData(uid, { [weak self] (user) in
+                self?.setUserData(user)
+                self?.loadUserPosts(user)
+            })
+        }
+    }
+    
+    private func setUserData(_ user: AppUser) {
+        guard let url = user.photoUrl else { return }
+        profileImage.loadCachedImage(url)
+        
+        userName.text = "\(String(describing: user.firstName)) \(String(describing: user.lastName))"
+        
+        userRating.text = "\(String(describing: user.userRating))"
+        
+    }
+    
+    private func loadUserPosts(_ user: AppUser) {
+        guard let uid = fbManager?.currentUser?.uid else { return }
+        fbManager?.getUserPosts(uid: uid, eventType: .value, with: { (post) in
+            self.userPosts.append(post)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        })
+    }
 }
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return userPosts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.profileCell, for: indexPath) as! ProfileTableViewCell
-        
+        cell.textLabel?.text = "LALALAL"
         return cell
     }
 }
