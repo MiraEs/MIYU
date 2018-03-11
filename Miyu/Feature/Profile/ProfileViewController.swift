@@ -16,6 +16,7 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userRating: UILabel!
     @IBOutlet weak var userAttribute: UILabel!
+    @IBOutlet weak var profileMenuBar: MenuBar!
     
     private var userPosts = [Post]()
     private weak var fbManager = FirebaseUserManager.manager
@@ -31,6 +32,8 @@ class ProfileViewController: BaseViewController {
         super.viewWillAppear(true)
         loadUserData()
     }
+    
+    
     
     private func setup() {
         tableView.register(UINib(nibName: Constants.profileXib, bundle: nil),
