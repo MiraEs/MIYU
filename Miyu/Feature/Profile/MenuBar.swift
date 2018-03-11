@@ -12,8 +12,9 @@ class MenuBar: UIView {
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = UIColor.white
+        cv.alwaysBounceHorizontal = true
         cv.dataSource = self
         cv.delegate = self
         return cv
@@ -27,8 +28,8 @@ class MenuBar: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = UIColor.purple
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(MenuCell.self, forCellWithReuseIdentifier: cellId)
+        
         addSubview(collectionView)
         
         addConstraints(format: "H:|[v0]|", views: collectionView)
@@ -43,7 +44,7 @@ extension MenuBar: UICollectionViewDataSource, UICollectionViewDelegateFlowLayou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        cell.backgroundColor = UIColor.green
+        cell.backgroundColor = UIColor.cyan
         return cell
     }
     
@@ -51,6 +52,33 @@ extension MenuBar: UICollectionViewDataSource, UICollectionViewDelegateFlowLayou
         print("TAPPED IT \(indexPath)")
     }
     
-
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (self.frame.width)/4, height: frame.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
 }
+
+//TODO: MOVE TO OWN FILES
+
+class MenuCell: BaseCell {
+    let imageView: UIImageView = {
+        let iv = UIImageView()
+        iv.image = UIImage(named: "camera")
+        return iv
+    }()
+    
+    override func setupViews() {
+        super.setupViews()
+        
+        addSubview(imageView)
+        addConstraints(format: "H:|[v0(28)]|", views: imageView)
+        addConstraints(format: "V:|[v0(28)]|", views: imageView)
+        addConstraint(NSLayoutConstraint(item: imageView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
+         addConstraint(NSLayoutConstraint(item: imageView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
+    }
+}
+
 
