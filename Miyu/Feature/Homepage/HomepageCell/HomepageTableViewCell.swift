@@ -17,6 +17,15 @@ struct Rating {
 
 class HomepageTableViewCell: UITableViewCell {
     
+    var post: Post? {
+        didSet {
+            nameLabel.text = post?.user?.firstName
+            commentCaption("star", (post?.count)!)
+            ratingView.rating = (post?.rating)!
+            userRatingLabel.text = "\(post?.user?.userRating ?? 0)"
+        }
+    }
+    
     private weak var fbManager = FirebaseUserManager.manager
 
     @IBOutlet weak var profileImage: UIImageView! {
