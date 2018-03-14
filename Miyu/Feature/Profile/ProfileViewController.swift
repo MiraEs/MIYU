@@ -32,9 +32,7 @@ class ProfileViewController: BaseViewController {
         super.viewWillAppear(true)
         loadUserData()
     }
-    
-    
-    
+
     private func setup() {
         tableView.register(UINib(nibName: Constants.profileXib, bundle: nil),
                            forCellReuseIdentifier: Constants.profileCell)
@@ -75,7 +73,8 @@ class ProfileViewController: BaseViewController {
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userPosts.count
+        //return userPosts.count
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

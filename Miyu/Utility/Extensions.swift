@@ -16,7 +16,9 @@ let imageCache = NSCache<AnyObject, AnyObject>()
 extension UIImageView {
     
     func loadCachedImage(_ urlString: String) {
+        
         let url = URL(string: urlString)
+        self.image = nil
         if let cachedImage = imageCache.object(forKey: urlString as AnyObject) {
             self.image = cachedImage as? UIImage
             return
@@ -28,8 +30,10 @@ extension UIImageView {
             }
             DispatchQueue.main.async {
                 if let downloadedImage = UIImage(data: data!) {
+                    
+                        self.image = downloadedImage
+                    
                     imageCache.setObject(downloadedImage, forKey: urlString as AnyObject)
-                    self.image = downloadedImage
                 }
                 
                 self.image = UIImage(data: data!)
