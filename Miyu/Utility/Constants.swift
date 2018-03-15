@@ -41,7 +41,12 @@ internal final class Constants {
     static let profileCell = "profileCell"
     static let profileXib = "ProfileTableViewCell"
     
+    // MARK: PROFILE CUSTOM TAB VIEW & MENU BAR
+    static let customCollectionCell = "customCollectionCell"
+    static let menuBarCollectionCell = "menuBarCollectionCell"
+    
     // MARK: POST STRUCT KEYS
     static let postKeys: [String] = ["caption", "data", "rating", "uid", "count", "averageRating"]
+    
 }
 

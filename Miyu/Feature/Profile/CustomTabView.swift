@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol CustomTabViewDelegate: class {
-    func tappedThat(_ viewInt: Int)
-}
-
 class CustomTabView: UIView, CustomTabViewDelegate {
     
     
@@ -35,9 +31,7 @@ class CustomTabView: UIView, CustomTabViewDelegate {
             break
         }
     }
-  
     
-    let cellId = "cellId"
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -69,7 +63,8 @@ class CustomTabView: UIView, CustomTabViewDelegate {
     }
     
     func setupCollectionView() {
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: Constants.customCollectionCell)
+        
         
         addSubview(collectionView)
         
@@ -98,7 +93,7 @@ extension CustomTabView: UICollectionViewDataSource, UICollectionViewDelegateFlo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.customCollectionCell, for: indexPath)
         cell.backgroundColor = UIColor.green
         return cell
     }
@@ -106,10 +101,6 @@ extension CustomTabView: UICollectionViewDataSource, UICollectionViewDelegateFlo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("TAPPED IT AGAIN \(indexPath)")
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: (self.frame.width)/4, height: frame.height)
-//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0

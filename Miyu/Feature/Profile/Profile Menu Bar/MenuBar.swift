@@ -22,7 +22,6 @@ class MenuBar: UIView {
     
     weak var customDelegate: CustomTabViewDelegate?
     
-    let cellId = "cellId"
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -30,7 +29,7 @@ class MenuBar: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        collectionView.register(MenuCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(MenuCell.self, forCellWithReuseIdentifier: Constants.menuBarCollectionCell)
 
         addSubview(collectionView)
         
@@ -43,11 +42,11 @@ class MenuBar: UIView {
 extension MenuBar: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? MenuCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.menuBarCollectionCell, for: indexPath) as? MenuCell else { return UICollectionViewCell() }
         
         cell.backgroundColor = UIColor.cyan
     
@@ -69,25 +68,5 @@ extension MenuBar: UICollectionViewDataSource, UICollectionViewDelegateFlowLayou
     }
 }
 
-//TODO: MOVE TO OWN FILES
-
-class MenuCell: BaseCell {
-    let imageView: UIImageView = {
-        let iv = UIImageView()
-        iv.image = UIImage(named: "camera")
-        return iv
-    }()
-    
-    
-    override func setupViews() {
-        super.setupViews()
-        
-        addSubview(imageView)
-        addConstraints(format: "H:|[v0(28)]|", views: imageView)
-        addConstraints(format: "V:|[v0(28)]|", views: imageView)
-        addConstraint(NSLayoutConstraint(item: imageView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
-         addConstraint(NSLayoutConstraint(item: imageView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
-    }
-}
 
 
