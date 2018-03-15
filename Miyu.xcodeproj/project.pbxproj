@@ -32,6 +32,7 @@
 		495E9B97202B6BEE007F23B8 /* InstantiatedViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495E9B96202B6BEE007F23B8 /* InstantiatedViewControllers.swift */; };
 		495E9B99202B815C007F23B8 /* HomepageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495E9B98202B815C007F23B8 /* HomepageViewModel.swift */; };
 		495E9B9B202BACA1007F23B8 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495E9B9A202BACA1007F23B8 /* Post.swift */; };
+		498EC8282058B47F00EA6DAA /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498EC8272058B47F00EA6DAA /* CustomTabView.swift */; };
 		49964D3720471719007204E4 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49964D3620471719007204E4 /* Image.swift */; };
 		49A6D7EE201E86E500B994A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D7ED201E86E500B994A2 /* AppDelegate.swift */; };
 		49A6D7F5201E86E500B994A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A6D7F4201E86E500B994A2 /* Assets.xcassets */; };
@@ -94,6 +95,7 @@
 		495E9B96202B6BEE007F23B8 /* InstantiatedViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantiatedViewControllers.swift; sourceTree = "<group>"; };
 		495E9B98202B815C007F23B8 /* HomepageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewModel.swift; sourceTree = "<group>"; };
 		495E9B9A202BACA1007F23B8 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		498EC8272058B47F00EA6DAA /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
 		49964D3620471719007204E4 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		49A6D7EA201E86E500B994A2 /* Miyu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Miyu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A6D7ED201E86E500B994A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Miyu/Supporting Files/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
@@ -334,6 +336,7 @@
 				49DC302920227D1600E7F05F /* Profile Cell */,
 				49DC302220227CA600E7F05F /* ProfileViewController.swift */,
 				4933BEC82023FA35004307E4 /* ProfileViewController.storyboard */,
+				498EC8272058B47F00EA6DAA /* CustomTabView.swift */,
 				493847762054B2A800FFA15A /* MenuBar.swift */,
 			);
 			path = Profile;
@@ -586,6 +589,7 @@
 				495AB3A52029461B00D4D721 /* RegisterViewModel.swift in Sources */,
 				49A6D830202104D300B994A2 /* HomepageTableViewCell.swift in Sources */,
 				495AB39F202941D300D4D721 /* OtherProfileViewController.swift in Sources */,
+				498EC8282058B47F00EA6DAA /* CustomTabView.swift in Sources */,
 				4938476E2050769900FFA15A /* BaseTableViewCell.swift in Sources */,
 				49A6D83620210C1400B994A2 /* BaseViewController.swift in Sources */,
 				495AB3A1202942FC00D4D721 /* Extensions.swift in Sources */,
