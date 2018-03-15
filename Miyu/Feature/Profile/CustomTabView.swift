@@ -9,10 +9,11 @@
 import UIKit
 
 protocol CustomTabViewDelegate: class {
-    func tappedThat()
+    func tappedThat(_ viewInt: Int)
 }
 
 class CustomTabView: UIView, CustomTabViewDelegate {
+    
     
     lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .plain)
@@ -21,8 +22,18 @@ class CustomTabView: UIView, CustomTabViewDelegate {
         return table
     }()
     
-    func tappedThat() {
-        print(".>>>>> tappingTAPPPPPPPPPPP")
+    func tappedThat(_ viewInt: Int) {
+        print("VIEWWW INTTT \(viewInt)")
+        switch viewInt {
+        case 0:
+            collectionView.isHidden = true
+            tableView.isHidden = false
+        case 1:
+            collectionView.isHidden = false
+            tableView.isHidden = true
+        default:
+            break
+        }
     }
   
     
@@ -42,8 +53,9 @@ class CustomTabView: UIView, CustomTabViewDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        //setupTableView()
+        setupTableView()
         setupCollectionView()
+        collectionView.isHidden = true
     }
     
     func setupTableView() {

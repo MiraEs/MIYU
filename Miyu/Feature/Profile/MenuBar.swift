@@ -57,7 +57,7 @@ extension MenuBar: UICollectionViewDataSource, UICollectionViewDelegateFlowLayou
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("TAPPED IT \(indexPath)")
 
-        customDelegate?.tappedThat()
+        customDelegate?.tappedThat(indexPath.row)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

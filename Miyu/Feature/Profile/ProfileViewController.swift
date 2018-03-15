@@ -30,7 +30,7 @@ class ProfileViewController: BaseViewController {
         setup()
         loadUserData()
         
-        //OMG DELEGATION WORKING YAY 
+        //OMG DELEGATION WORKING YAY
         profileMenuBar.customDelegate = customTabView
     }
     
