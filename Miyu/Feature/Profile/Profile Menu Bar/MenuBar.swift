@@ -44,7 +44,8 @@ extension MenuBar: UICollectionViewDataSource, UICollectionViewDelegateFlowLayou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.menuBarCollectionCell, for: indexPath) as? MenuCell else { return UICollectionViewCell() }
-        
+        cell.layer.borderWidth = 2
+        cell.layer.borderColor = UIColor.green.cgColor
         cell.backgroundColor = UIColor.cyan
     
         return cell
