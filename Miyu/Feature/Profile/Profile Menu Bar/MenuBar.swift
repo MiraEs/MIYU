@@ -22,7 +22,6 @@ class MenuBar: UIView {
     
     weak var customDelegate: CustomTabViewDelegate?
     
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -32,10 +31,8 @@ class MenuBar: UIView {
         collectionView.register(MenuCell.self, forCellWithReuseIdentifier: Constants.menuBarCollectionCell)
 
         addSubview(collectionView)
-        
         addConstraints(format: "H:|[v0]|", views: collectionView)
         addConstraints(format: "V:|[v0]|", views: collectionView)
-        
     }
 }
 
@@ -60,7 +57,7 @@ extension MenuBar: UICollectionViewDataSource, UICollectionViewDelegateFlowLayou
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (self.frame.width)/4, height: frame.height)
+        return CGSize(width: (self.frame.width)/2, height: frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

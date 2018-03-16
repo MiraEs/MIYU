@@ -13,6 +13,7 @@ class BaseCell: UICollectionViewCell {
         super.init(frame: frame)
         setupViews()
     }
+    
     func setupViews() {}
     
     required init?(coder aDecoder: NSCoder) {
