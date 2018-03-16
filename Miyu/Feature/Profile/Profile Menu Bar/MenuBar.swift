@@ -33,6 +33,9 @@ class MenuBar: UIView {
         addSubview(collectionView)
         addConstraints(format: "H:|[v0]|", views: collectionView)
         addConstraints(format: "V:|[v0]|", views: collectionView)
+        
+        let selectedPath = IndexPath(item: 0, section: 0)
+        collectionView.selectItem(at: selectedPath, animated: false, scrollPosition: .bottom)
     }
 }
 
@@ -44,10 +47,9 @@ extension MenuBar: UICollectionViewDataSource, UICollectionViewDelegateFlowLayou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.menuBarCollectionCell, for: indexPath) as? MenuCell else { return UICollectionViewCell() }
-        cell.layer.borderWidth = 2
-        cell.layer.borderColor = UIColor.green.cgColor
-        cell.backgroundColor = UIColor.cyan
-    
+        
+        cell.imageView.image?.withRenderingMode(.alwaysTemplate)
+        cell.tintColor = UIColor.gray
         return cell
     }
     

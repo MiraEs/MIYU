@@ -20,9 +20,12 @@ class CustomTabView: UIView, CustomTabViewDelegate {
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.dataSource = self
         cv.delegate = self
+        cv.backgroundColor = UIColor.white
         return cv
     }()
     
@@ -131,7 +134,6 @@ extension CustomTabView: UICollectionViewDataSource, UICollectionViewDelegateFlo
         if let contentUrl = currentCell.data {
             cell?.imageView.loadCachedImage(contentUrl)
         }
-        
         return cell!
     }
     
@@ -139,8 +141,8 @@ extension CustomTabView: UICollectionViewDataSource, UICollectionViewDelegateFlo
         print("TAPPED IT AGAIN \(indexPath)")
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (self.frame.width)/3, height: (self.frame.height)/3)
     }
 }
 
