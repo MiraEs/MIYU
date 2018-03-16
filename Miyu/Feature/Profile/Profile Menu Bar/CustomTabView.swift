@@ -51,12 +51,12 @@ class CustomTabView: UIView, CustomTabViewDelegate {
         
         addConstraints(format: "H:|[v0]|", views: tableView)
         addConstraints(format: "V:|[v0]|", views: tableView)
-        tableView.register(UINib(nibName: Constants.profileXib, bundle: nil),
-                           forCellReuseIdentifier: Constants.profileCell)
+        tableView.register(UINib(nibName: Constants.homeXib, bundle: nil),
+                           forCellReuseIdentifier: Constants.homeCell)
     }
     
     func setupCollectionView() {
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: Constants.customCollectionCell)
+        collectionView.register(ProfileCollectionViewCell.self, forCellWithReuseIdentifier: Constants.customCollectionCell)
         addSubview(collectionView)
         
         addConstraints(format: "H:|[v0]|", views: collectionView)
@@ -86,6 +86,14 @@ class CustomTabView: UIView, CustomTabViewDelegate {
             break
         }
     }
+    
+    private func fetchPhoto(_ contentUrlString: String?, _ profileUrlString: String?, _ cell: HomepageTableViewCell) {
+        if let contentUrlString = contentUrlString,
+            let profileUrlString = profileUrlString {
+            cell.contentImage.loadCachedImage(contentUrlString)
+            cell.profileImage.loadCachedImage(profileUrlString)
+        }
+    }
 }
 
 extension CustomTabView: UITableViewDelegate, UITableViewDataSource {
@@ -95,10 +103,17 @@ extension CustomTabView: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.profileCell, for: indexPath) as! ProfileTableViewCell
-        let post = userPosts[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.homeCell, for: indexPath) as! HomepageTableViewCell
+        let currentCell = userPosts[(userPosts.count-1) - indexPath.row]
         
-        cell.textLabel?.text = post.caption
+        let uid = currentCell.uid!
+        
+        // Setup
+        cell.setupCell(uid)
+        cell.post = currentCell
+        
+        // Image Interaction segue to profile
+        fetchPhoto(currentCell.data, currentCell.user?.photoUrl, cell)
         
         return cell
     }
@@ -110,9 +125,14 @@ extension CustomTabView: UICollectionViewDataSource, UICollectionViewDelegateFlo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.customCollectionCell, for: indexPath)
-        cell.backgroundColor = UIColor.green
-        return cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.customCollectionCell, for: indexPath) as? ProfileCollectionViewCell
+        
+        let currentCell = userPosts[(userPosts.count-1) - indexPath.row]
+        if let contentUrl = currentCell.data {
+            cell?.imageView.loadCachedImage(contentUrl)
+        }
+        
+        return cell!
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -126,9 +146,10 @@ extension CustomTabView: UICollectionViewDataSource, UICollectionViewDelegateFlo
 
 // TODO: REFACTOR TO OWN file
 
-class CustomCollectionViewCell: BaseCell {
+class ProfileCollectionViewCell: BaseCell {
     let imageView: UIImageView = {
         let iv = UIImageView()
+         iv.contentMode = .scaleAspectFit
         return iv
     }()
     
@@ -136,7 +157,8 @@ class CustomCollectionViewCell: BaseCell {
         super.setupViews()
         
         addSubview(imageView)
-        //addConstraints(format: <#T##String#>, views: <#T##UIView...##UIView#>)
+        addConstraints(format: "H:|[v0]|", views: imageView)
+        addConstraints(format: "V:|[v0]|", views: imageView)
     }
 }
 
