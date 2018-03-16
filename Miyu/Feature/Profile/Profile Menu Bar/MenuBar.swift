@@ -35,7 +35,7 @@ class MenuBar: UIView {
         addConstraints(format: "V:|[v0]|", views: collectionView)
         
         let selectedPath = IndexPath(item: 0, section: 0)
-        collectionView.selectItem(at: selectedPath, animated: false, scrollPosition: .bottom)
+        collectionView.selectItem(at: selectedPath, animated: false, scrollPosition: .centeredHorizontally)
     }
 }
 
@@ -62,10 +62,7 @@ extension MenuBar: UICollectionViewDataSource, UICollectionViewDelegateFlowLayou
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (self.frame.width)/2, height: frame.height)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
+
 }
 
 

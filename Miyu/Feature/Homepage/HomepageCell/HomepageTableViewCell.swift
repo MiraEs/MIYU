@@ -34,7 +34,6 @@ class HomepageTableViewCell: UITableViewCell {
         }
     }
     @IBOutlet weak var nameLabel: UILabel!
-    
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var userRatingLabel: UILabel!
     // TODO: this will change if video..
@@ -69,7 +68,6 @@ class HomepageTableViewCell: UITableViewCell {
             label.smallFont()
         }
         commentCaptionLabel.smallFont()
-        
     }
     
     func commentCaption(_ imageName: String, _ cellCount: Int) {

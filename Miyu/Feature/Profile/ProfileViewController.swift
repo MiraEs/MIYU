@@ -24,12 +24,12 @@ class ProfileViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
     }
 
     private func setup() {
@@ -46,12 +46,10 @@ class ProfileViewController: BaseViewController {
     
     private func setUserData(_ user: AppUser) {
         guard let url = user.photoUrl else { return }
+        
         profileImage.loadCachedImage(url)
-        
         userName.text = "\(String(describing: user.firstName)) \(String(describing: user.lastName))"
-        
         userRating.text = "\(String(describing: user.userRating))"
-        
     }
 }
 
