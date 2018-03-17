@@ -19,10 +19,11 @@ class HomepageTableViewCell: UITableViewCell {
     
     var post: Post? {
         didSet {
-            nameLabel.text = post?.user?.firstName
+            nameLabel.text = post?.user?.firstName ?? "NO NAME"
             commentCaption("star", (post?.count)!)
             ratingView.rating = (post?.rating)!
             userRatingLabel.text = "\(post?.user?.userRating ?? 0)"
+            captionLabel.text = post?.caption
         }
     }
     

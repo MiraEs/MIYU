@@ -48,6 +48,11 @@ class CustomTabView: UIView, CustomTabViewDelegate {
         tableView.isHidden = true
     }
     
+    func initialLoad() {
+        loadData()
+        tableView.isHidden = true
+    }
+    
     // MARK: SETUP
     func setupTableView() {
         addSubview(tableView)
@@ -56,7 +61,6 @@ class CustomTabView: UIView, CustomTabViewDelegate {
         addConstraints(format: "V:|[v0]|", views: tableView)
         tableView.register(UINib(nibName: Constants.homeXib, bundle: nil),
                            forCellReuseIdentifier: Constants.homeCell)
-        tableView.backgroundColor = UIColor.clear
     }
     
     func setupCollectionView() {
@@ -111,7 +115,7 @@ extension CustomTabView: UITableViewDelegate, UITableViewDataSource {
         if let url = currentCell.data {
             cell.contentImage.loadCachedImage(url)
         }
-        
+
         return cell
     }
 }

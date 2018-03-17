@@ -34,6 +34,10 @@ class MenuBar: UIView {
         addConstraints(format: "H:|[v0]|", views: collectionView)
         addConstraints(format: "V:|[v0]|", views: collectionView)
         
+        initialLoad()
+    }
+    
+    func initialLoad() {
         let selectedPath = IndexPath(item: 0, section: 0)
         collectionView.selectItem(at: selectedPath, animated: false, scrollPosition: .centeredHorizontally)
     }

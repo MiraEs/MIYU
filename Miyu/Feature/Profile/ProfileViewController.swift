@@ -30,6 +30,7 @@ class ProfileViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
+        
     }
 
     private func setup() {
@@ -48,8 +49,11 @@ class ProfileViewController: BaseViewController {
         guard let url = user.photoUrl else { return }
         
         profileImage.loadCachedImage(url)
-        userName.text = "\(String(describing: user.firstName)) \(String(describing: user.lastName))"
-        userRating.text = "\(String(describing: user.userRating))"
+        guard let firstName = user.firstName,
+            let lastName = user.lastName,
+            let rating = user.userRating else { return }
+        userName.text = "\(firstName) \(lastName)"
+        userRating.text = "\(rating)"
     }
 }
 
