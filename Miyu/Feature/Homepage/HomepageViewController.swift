@@ -24,12 +24,12 @@ internal final class HomepageViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        print("VIEW WILL APPEAR TABLE RELOAD")
         tableView.reloadData()
     }
     
@@ -55,6 +55,7 @@ internal final class HomepageViewController: BaseViewController {
     // MARK: FETCH DATA
     private func fetchPosts() {
         let loadingIndicator = self.displaySpinner(onView: self.view)
+        print("ADDED POST AND IS NOW UPDATED >>>>>>>>>>>>>  ")
         self.viewModel?.getPosts({ [weak self] (post) in
             self?.store?.posts.append(post)
             DispatchQueue.main.async {
@@ -90,6 +91,7 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         let uid = currentCell.uid!
         
         // Setup
+        print("CURRENT USER >>>>> \(currentCell.user?.firstName)")
         cell.setupCell(uid)
         cell.post = currentCell
         

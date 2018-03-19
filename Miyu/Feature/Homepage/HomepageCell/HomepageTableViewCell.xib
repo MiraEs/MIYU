@@ -21,25 +21,28 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Picture description and other good stuff caption stuff and stuff here" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUD-j2-8Nf">
-                        <rect key="frame" x="10" y="90" width="872" height="20.5"/>
+                        <rect key="frame" x="10" y="90" width="872" height="47"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="47" id="fnH-zb-vHf"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog" translatesAutoresizingMaskIntoConstraints="NO" id="JSI-uK-gow">
-                        <rect key="frame" x="10" y="120.5" width="872" height="872"/>
+                        <rect key="frame" x="10" y="147" width="872" height="872"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="JSI-uK-gow" secondAttribute="height" multiplier="1:1" id="Elc-fE-45g"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* 1000 people rated this" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZH-B9-b1W">
-                        <rect key="frame" x="10" y="997.5" width="184" height="20.5"/>
+                        <rect key="frame" x="10" y="1024" width="184" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L1p-DO-jn8" userLabel="Comment Header">
-                        <rect key="frame" x="10" y="1028" width="827" height="20.5"/>
+                        <rect key="frame" x="10" y="1054.5" width="827" height="20.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Comments(25)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcK-cd-6Bg">
                                 <rect key="frame" x="0.0" y="0.0" width="678.5" height="20.5"/>
@@ -55,8 +58,8 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rC0-b4-6Qh" customClass="CosmosView" customModule="Cosmos">
-                        <rect key="frame" x="286" y="1068.5" width="320" height="86"/>
+                    <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="rC0-b4-6Qh" customClass="CosmosView" customModule="Cosmos">
+                        <rect key="frame" x="286" y="1095" width="320" height="60"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
@@ -132,7 +135,6 @@
                     <constraint firstItem="1Hx-jD-0Ob" firstAttribute="top" secondItem="rcd-P5-2X9" secondAttribute="top" id="dMr-0x-Gth"/>
                     <constraint firstAttribute="bottom" secondItem="rC0-b4-6Qh" secondAttribute="bottom" constant="40" id="lJl-te-zJn"/>
                     <constraint firstAttribute="trailing" secondItem="L1p-DO-jn8" secondAttribute="trailing" constant="55" id="mTt-HP-l01"/>
-                    <constraint firstItem="rC0-b4-6Qh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="286" id="qgf-fr-5y5"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

@@ -46,12 +46,9 @@ internal final class FirebaseUserManager {
         postRef?.observe(eventType, with: handler)
     }
     
-    
     func getUserPosts(uid: String, eventType: DataEventType, with handler: @escaping (Post) -> Void) {
         let userRef = userPostRef?.child(uid)
         userRef?.observeSingleEvent(of: .value) { (snapshot) in
-        
-            
             let enumerator = snapshot.children
             while let object = enumerator.nextObject() as? DataSnapshot {
                 do {
