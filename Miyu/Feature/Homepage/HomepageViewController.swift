@@ -47,7 +47,7 @@ internal final class HomepageViewController: BaseViewController {
         if (store?.posts.isEmpty)! {
             fetchPosts()
         } else {
-            self.loadData(store!)
+            store?.posts = self.loadData(store!)
         }
     }
 
@@ -56,7 +56,6 @@ internal final class HomepageViewController: BaseViewController {
     private func fetchPosts() {
         let loadingIndicator = self.displaySpinner(onView: self.view)
         self.viewModel?.getPosts({ [weak self] (post) in
-            //self?.allPosts.append(post)
             self?.store?.posts.append(post)
             DispatchQueue.main.async {
                 self?.removeSpinner(spinner: loadingIndicator)
@@ -78,15 +77,15 @@ internal final class HomepageViewController: BaseViewController {
 extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return allPosts.count
-        return (store?.posts.count)!
+        guard let count = store?.posts.count else { return 0 }
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.homeCell, for: indexPath) as! HomepageTableViewCell
-        let allPosts = store?.posts
-        let currentCell = allPosts![((allPosts?.count)!-1) - indexPath.row]
+        guard let allPosts = store?.posts else { return UITableViewCell() }
+        let currentCell = allPosts[((allPosts.count)-1) - indexPath.row]
         let key = currentCell.key!
         let uid = currentCell.uid!
         
@@ -104,8 +103,8 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
             cell.ratingView.didFinishTouchingCosmos = { [weak self] rating in
                 cell.ratingView.rating = rating
                 cell.ratingUpdate(rating, key, uid)
-                let allPosts = self?.store?.posts
-                allPosts![indexPath.row].rating = rating
+                guard let allPosts = self?.store?.posts else { return }
+                allPosts[indexPath.row].rating = rating
             }
         }
         return cell

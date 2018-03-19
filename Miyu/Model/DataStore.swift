@@ -18,7 +18,6 @@ internal final class DataStore {
         let manager = FileManager.default
         let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first
         print("URL PATH IN documentDirectory = \(String(describing: url))")
-        //return (url!.appendingPathComponent("Data").path)
         return (url?.appendingPathComponent("Data"))!
     }
     
