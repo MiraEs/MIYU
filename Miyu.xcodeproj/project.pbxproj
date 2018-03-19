@@ -26,6 +26,8 @@
 		49384772205201C600FFA15A /* Extensions+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49384771205201C600FFA15A /* Extensions+UIViewController.swift */; };
 		493847772054B2A800FFA15A /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493847762054B2A800FFA15A /* MenuBar.swift */; };
 		493847792055AF4B00FFA15A /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493847782055AF4B00FFA15A /* BaseCell.swift */; };
+		4949F1D6205F546600AB6160 /* CAppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4949F1D5205F546600AB6160 /* CAppUser.swift */; };
+		4949F1D8205F547100AB6160 /* CPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4949F1D7205F547100AB6160 /* CPost.swift */; };
 		495AB39F202941D300D4D721 /* OtherProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB39E202941D300D4D721 /* OtherProfileViewController.swift */; };
 		495AB3A1202942FC00D4D721 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB3A0202942FC00D4D721 /* Extensions.swift */; };
 		495AB3A52029461B00D4D721 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB3A42029461B00D4D721 /* RegisterViewModel.swift */; };
@@ -36,6 +38,7 @@
 		498EC82A205AFFA300EA6DAA /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498EC829205AFFA300EA6DAA /* MenuCell.swift */; };
 		498EC82D205B001300EA6DAA /* Profile Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498EC82C205B001300EA6DAA /* Profile Protocols.swift */; };
 		498EC830205B203000EA6DAA /* ProfileUserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498EC82F205B203000EA6DAA /* ProfileUserDataModel.swift */; };
+		498EC833205D827400EA6DAA /* Miyu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 498EC831205D827400EA6DAA /* Miyu.xcdatamodeld */; };
 		49964D3720471719007204E4 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49964D3620471719007204E4 /* Image.swift */; };
 		49A6D7EE201E86E500B994A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D7ED201E86E500B994A2 /* AppDelegate.swift */; };
 		49A6D7F5201E86E500B994A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A6D7F4201E86E500B994A2 /* Assets.xcassets */; };
@@ -92,6 +95,8 @@
 		49384771205201C600FFA15A /* Extensions+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewController.swift"; sourceTree = "<group>"; };
 		493847762054B2A800FFA15A /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		493847782055AF4B00FFA15A /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		4949F1D5205F546600AB6160 /* CAppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAppUser.swift; sourceTree = "<group>"; };
+		4949F1D7205F547100AB6160 /* CPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPost.swift; sourceTree = "<group>"; };
 		495AB39E202941D300D4D721 /* OtherProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileViewController.swift; sourceTree = "<group>"; };
 		495AB3A0202942FC00D4D721 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		495AB3A42029461B00D4D721 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
@@ -102,6 +107,7 @@
 		498EC829205AFFA300EA6DAA /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		498EC82C205B001300EA6DAA /* Profile Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile Protocols.swift"; sourceTree = "<group>"; };
 		498EC82F205B203000EA6DAA /* ProfileUserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserDataModel.swift; sourceTree = "<group>"; };
+		498EC832205D827400EA6DAA /* Miyu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Miyu.xcdatamodel; sourceTree = "<group>"; };
 		49964D3620471719007204E4 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		49A6D7EA201E86E500B994A2 /* Miyu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Miyu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A6D7ED201E86E500B994A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Miyu/Supporting Files/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
@@ -215,6 +221,7 @@
 		49A6D7E1201E86E500B994A2 = {
 			isa = PBXGroup;
 			children = (
+				498EC831205D827400EA6DAA /* Miyu.xcdatamodeld */,
 				49A6D7EC201E86E500B994A2 /* Miyu */,
 				49A6D801201E86E500B994A2 /* MiyuTests */,
 				49A6D80C201E86E500B994A2 /* MiyuUITests */,
@@ -351,6 +358,8 @@
 				49D76EAB2027908B00881F15 /* FirebaseUserManager.swift */,
 				49108EBC2027D7200031314B /* AppUser.swift */,
 				495E9B9A202BACA1007F23B8 /* Post.swift */,
+				4949F1D5205F546600AB6160 /* CAppUser.swift */,
+				4949F1D7205F547100AB6160 /* CPost.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -598,11 +607,14 @@
 				49A9B6C6204B4F650067A578 /* Design+Extensions.swift in Sources */,
 				49384772205201C600FFA15A /* Extensions+UIViewController.swift in Sources */,
 				495E9B99202B815C007F23B8 /* HomepageViewModel.swift in Sources */,
+				4949F1D6205F546600AB6160 /* CAppUser.swift in Sources */,
 				493847792055AF4B00FFA15A /* BaseCell.swift in Sources */,
+				498EC833205D827400EA6DAA /* Miyu.xcdatamodeld in Sources */,
 				493847702051F8A200FFA15A /* Alert.swift in Sources */,
 				4937FAED2025732A006E991B /* UploadViewController.swift in Sources */,
 				49A6D7EE201E86E500B994A2 /* AppDelegate.swift in Sources */,
 				498EC82D205B001300EA6DAA /* Profile Protocols.swift in Sources */,
+				4949F1D8205F547100AB6160 /* CPost.swift in Sources */,
 				4937FAFA20263CD5006E991B /* RegisterViewController.swift in Sources */,
 				49108EBF2027D76A0031314B /* LoginViewModel.swift in Sources */,
 				49964D3720471719007204E4 /* Image.swift in Sources */,
@@ -917,6 +929,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		498EC831205D827400EA6DAA /* Miyu.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				498EC832205D827400EA6DAA /* Miyu.xcdatamodel */,
+			);
+			currentVersion = 498EC832205D827400EA6DAA /* Miyu.xcdatamodel */;
+			path = Miyu.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 49A6D7E2201E86E500B994A2 /* Project object */;
 }

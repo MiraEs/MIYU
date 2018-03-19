@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17D102" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CAppUser" representedClassName=".CAppUser" syncable="YES" codeGenerationType="category">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photoUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userRating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="posts" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CPost" inverseName="user" inverseEntity="CPost" syncable="YES"/>
+    </entity>
+    <entity name="CPost" representedClassName=".CPost" syncable="YES" codeGenerationType="category">
+        <attribute name="averageRating" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="caption" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="count" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="data" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rating" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CAppUser" inverseName="posts" inverseEntity="CAppUser" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CAppUser" positionX="-63" positionY="45" width="128" height="133"/>
+        <element name="CPost" positionX="-306" positionY="-18" width="128" height="163"/>
+    </elements>
+</model>

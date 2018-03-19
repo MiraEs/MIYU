@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import CoreData
 
 class ProfileViewController: BaseViewController {
 
@@ -18,6 +19,8 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var profileMenuBar: MenuBar!
     @IBOutlet weak var customTabView: CustomTabView!
     
+    private var posts: [NSManagedObject] = []
+    
     private var viewModel: ProfileUserDataModel? {
         return ProfileUserDataModel()
     }
@@ -25,24 +28,50 @@ class ProfileViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+//              print(">>>>> POSTS FROM CORE DATA >>>>>> \(posts[0].value(forKeyPath: "caption") as? String)")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-        
+  
     }
 
     private func setup() {
         profileMenuBar.customDelegate = customTabView
         profileImage.setRounded()
         loadUserData()
+        //getData()
+        
     }
 
+    // MARK: FETCH DATA
     private func loadUserData() {
         viewModel?.loadUserData({ [weak self] (user) in
             self?.setUserData(user)
         })
+    }
+    
+    private func getData() {
+        //1
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        
+        //2
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "CPost")
+        
+        //3
+        do {
+            posts = try managedContext.fetch(fetchRequest)
+            print("HERE ARE THE MOFO POSTS >>>>>>>>> \(posts)")
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
     }
     
     private func setUserData(_ user: AppUser) {

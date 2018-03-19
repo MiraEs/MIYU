@@ -84,8 +84,6 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setupTap(indexPath.row)
         
         // Rating
-    
-        
         if fbManager?.currentUser?.uid != uid {
             cell.ratingView.didFinishTouchingCosmos = { [weak self] rating in
                 cell.ratingView.rating = rating
