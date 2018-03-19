@@ -1,29 +1,28 @@
 //
-//  Extension+UIViewControllerData.swift
+//  DataStoreManager.swift
 //  Miyu
 //
 //  Created by Mira Estil on 3/19/18.
 //  Copyright © 2018 ME. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-extension UIViewController {
-    
+class DataStoreManager {
     func saveData(_ objects: [AnyObject], store: DataStore, pathComponent: PathComponents) {
         let url = store.filePath.appendingPathComponent(pathComponent.rawValue)
         let encoder = JSONEncoder()
         switch pathComponent {
         case .postData:
-                do {
-                    let data = try encoder.encode(objects as? [Post])
-                    try data.write(to: url, options: [])
-                } catch {
-                    fatalError(error.localizedDescription)
-                }
+            do {
+                let data = try encoder.encode(objects as? [Post])
+                try data.write(to: url, options: [])
+            } catch {
+                fatalError(error.localizedDescription)
+            }
         case .userData:
             do {
-                let data = try encoder.encode(objects as? [AppUser])
+                let data = try encoder.encode(objects as? [Post])
                 try data.write(to: url, options: [])
             } catch {
                 fatalError(error.localizedDescription)

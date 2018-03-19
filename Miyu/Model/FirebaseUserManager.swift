@@ -50,13 +50,14 @@ internal final class FirebaseUserManager {
     func getUserPosts(uid: String, eventType: DataEventType, with handler: @escaping (Post) -> Void) {
         let userRef = userPostRef?.child(uid)
         userRef?.observeSingleEvent(of: .value) { (snapshot) in
+        
             
             let enumerator = snapshot.children
             while let object = enumerator.nextObject() as? DataSnapshot {
                 do {
+                    print("FETCHING USER POSTS FROM FIREBASE>>>>>>")
                     let data = try JSONSerialization.data(withJSONObject: object.value!, options: [])
                     let post = try JSONDecoder().decode(Post.self, from: data)
-                    
                     handler(post)
                 } catch {
                     print(error)

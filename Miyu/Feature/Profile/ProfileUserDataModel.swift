@@ -12,9 +12,9 @@ class ProfileUserDataModel {
     
     private weak var fbManager = FirebaseUserManager.manager
     
-    //private var userPosts = [Post]()
+    private weak var store = DataStore.sharedInstance
     
-    //private var currentUser: AppUser?
+    private weak var storeManager = DataStoreManager()
     
     init() {}
     

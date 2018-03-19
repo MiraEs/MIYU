@@ -35,6 +35,9 @@ class CustomTabView: UIView, CustomTabViewDelegate {
     
     private var userPosts = [Post]()
     
+    private weak var store = DataStore.sharedInstance
+    private weak var storeManager = DataStoreManager()
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -49,8 +52,15 @@ class CustomTabView: UIView, CustomTabViewDelegate {
     }
     
     func initialLoad() {
-        loadData()
+        if (store?.userPosts.isEmpty)! {
+            loadData()
+        }
         tableView.isHidden = true
+    }
+    
+    func reloadData() {
+        tableView.reloadData()
+        collectionView.reloadData()
     }
     
     // MARK: SETUP
@@ -73,12 +83,13 @@ class CustomTabView: UIView, CustomTabViewDelegate {
     
     func loadData() {
         viewModel?.loadUserPosts({ [weak self] (post) in
-            self?.userPosts.append(post)
+            self?.store?.userPosts.append(post)
             DispatchQueue.main.async {
                 self?.collectionView.reloadData()
                 self?.tableView.reloadData()
             }
         })
+        storeManager?.saveData((self.store?.userPosts)!, store: store!, pathComponent: .userData)
     }
     
     // MARK: FUNCTIONALITY
@@ -99,12 +110,15 @@ class CustomTabView: UIView, CustomTabViewDelegate {
 extension CustomTabView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userPosts.count
+        //return userPosts.count
+        guard let count = store?.userPosts.count else { return 0 }
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.homeCell, for: indexPath) as! HomepageTableViewCell
         
+        guard let userPosts = store?.userPosts else { return UITableViewCell() }
         let currentCell = userPosts[(userPosts.count-1) - indexPath.row]
         let uid = currentCell.uid!
         
@@ -122,12 +136,14 @@ extension CustomTabView: UITableViewDelegate, UITableViewDataSource {
 
 extension CustomTabView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return userPosts.count
+        guard let count = store?.userPosts.count else { return 0 }
+        return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.customCollectionCell, for: indexPath) as? ProfileCollectionViewCell
         
+        guard let userPosts = store?.userPosts else { return UICollectionViewCell() }
         let currentCell = userPosts[(userPosts.count-1) - indexPath.row]
         
         if let contentUrl = currentCell.data {

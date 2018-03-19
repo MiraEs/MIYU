@@ -31,6 +31,8 @@ class ProfileViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
+        customTabView.reloadData()
     }
 
     private func setup() {

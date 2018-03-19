@@ -13,13 +13,12 @@ import Firebase
 internal final class HomepageViewController: BaseViewController {
     
     private weak var store = DataStore.sharedInstance
+    private weak var storeManager = DataStoreManager()
     private weak var fbManager = FirebaseUserManager.manager
     private weak var currentUser: AppUser?
     private var viewModel: HomepageViewModel? {
         return HomepageViewModel(self)
     }
-    
-    //private var allPosts = [Post]()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -44,10 +43,11 @@ internal final class HomepageViewController: BaseViewController {
     private func setup() {
         viewModel?.setup(tableView)
         
+        
         if (store?.posts.isEmpty)! {
             fetchPosts()
         } else {
-            store?.posts = self.loadPosts(store!, .postData)
+            store?.posts = (storeManager?.loadPosts(store!, from: .postData))!
         }
     }
 
@@ -62,7 +62,7 @@ internal final class HomepageViewController: BaseViewController {
                 self?.tableView.reloadData()
             }
         })
-        self.saveData((self.store?.posts)!, store: store!, pathComponent: .postData)
+        storeManager?.saveData((self.store?.posts)!, store: store!, pathComponent: .postData)
     }
     
     private func fetchPhoto(_ contentUrlString: String?, _ profileUrlString: String?, _ cell: HomepageTableViewCell) {
@@ -71,10 +71,6 @@ internal final class HomepageViewController: BaseViewController {
             cell.contentImage.loadCachedImage(contentUrlString)
             cell.profileImage.loadCachedImage(profileUrlString)
         }
-    }
-    
-    private func fetchCurrentUserData() {
-        
     }
 }
 
