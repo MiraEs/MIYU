@@ -9,7 +9,7 @@
 import Foundation
 
 enum PathComponents: String {
-    case data = "Data"
+    case postData = "postData"
     case userData = "userData"
 }
 
@@ -27,5 +27,6 @@ internal final class DataStore {
     }
 
     var posts: [Post] = []
+    var userPosts: [Post] = []
 }
 

@@ -47,7 +47,7 @@ internal final class HomepageViewController: BaseViewController {
         if (store?.posts.isEmpty)! {
             fetchPosts()
         } else {
-            store?.posts = self.loadData(store!, pathComponent: .data)
+            store?.posts = self.loadPosts(store!, .postData)
         }
     }
 
@@ -62,7 +62,7 @@ internal final class HomepageViewController: BaseViewController {
                 self?.tableView.reloadData()
             }
         })
-        self.saveData((self.store?.posts)!, store: store!, pathComponent: .data)
+        self.saveData((self.store?.posts)!, store: store!, pathComponent: .postData)
     }
     
     private func fetchPhoto(_ contentUrlString: String?, _ profileUrlString: String?, _ cell: HomepageTableViewCell) {

@@ -10,20 +10,29 @@ import UIKit
 
 extension UIViewController {
     
-    
-    func saveData(_ posts: [Post], store: DataStore, pathComponent: PathComponents) {
+    func saveData(_ objects: [AnyObject], store: DataStore, pathComponent: PathComponents) {
         let url = store.filePath.appendingPathComponent(pathComponent.rawValue)
         let encoder = JSONEncoder()
-        do {
-            let data = try encoder.encode(posts)
-            try data.write(to: url, options: [])
-        } catch {
-            fatalError(error.localizedDescription)
+        switch pathComponent {
+        case .postData:
+                do {
+                    let data = try encoder.encode(objects as? [Post])
+                    try data.write(to: url, options: [])
+                } catch {
+                    fatalError(error.localizedDescription)
+                }
+        case .userData:
+            do {
+                let data = try encoder.encode(objects as? [AppUser])
+                try data.write(to: url, options: [])
+            } catch {
+                fatalError(error.localizedDescription)
+            }
         }
     }
     
-    func loadData(_ store: DataStore, pathComponent: PathComponents) -> [Post] {
-        let url = store.filePath.appendingPathComponent(pathComponent.rawValue)
+    func loadPosts(_ store: DataStore, from path: PathComponents) -> [Post] {
+        let url = store.filePath.appendingPathComponent(path.rawValue)
         let decoder = JSONDecoder()
         do {
             let data = try Data(contentsOf: url, options: [])
