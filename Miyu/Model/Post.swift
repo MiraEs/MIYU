@@ -12,7 +12,7 @@ enum CodingKeys: String, CodingKey {
     case caption, data, averageRating, uid, count, rating
 }
 
-internal final class Post: Encodable {
+internal final class Post: Codable {
     
     //private var title: String?
     var caption: String?
@@ -45,7 +45,7 @@ internal final class Post: Encodable {
     }
 }
 // TODO: REFACTOR?
-extension Post: Decodable {
+extension Post {
     convenience init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let caption = try container.decode(String.self, forKey: .caption)

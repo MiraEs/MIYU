@@ -12,13 +12,14 @@ import Firebase
 
 internal final class HomepageViewController: BaseViewController {
     
+    private weak var store = DataStore.sharedInstance
     private weak var fbManager = FirebaseUserManager.manager
     private weak var currentUser: AppUser?
     private var viewModel: HomepageViewModel? {
         return HomepageViewModel(self)
     }
     
-    private var allPosts = [Post]()
+    //private var allPosts = [Post]()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -26,6 +27,11 @@ internal final class HomepageViewController: BaseViewController {
         super.viewDidLoad()
         
         setup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
     }
     
     // MARK: SEGUE TO UPLOAD VC
@@ -37,7 +43,12 @@ internal final class HomepageViewController: BaseViewController {
     
     private func setup() {
         viewModel?.setup(tableView)
-        fetchPosts()
+        
+        if (store?.posts.isEmpty)! {
+            fetchPosts()
+        } else {
+            self.loadData(store!)
+        }
     }
 
     
@@ -45,12 +56,14 @@ internal final class HomepageViewController: BaseViewController {
     private func fetchPosts() {
         let loadingIndicator = self.displaySpinner(onView: self.view)
         self.viewModel?.getPosts({ [weak self] (post) in
-            self?.allPosts.append(post)
+            //self?.allPosts.append(post)
+            self?.store?.posts.append(post)
             DispatchQueue.main.async {
                 self?.removeSpinner(spinner: loadingIndicator)
                 self?.tableView.reloadData()
             }
         })
+        self.saveData((self.store?.posts)!, store: store!)
     }
     
     private func fetchPhoto(_ contentUrlString: String?, _ profileUrlString: String?, _ cell: HomepageTableViewCell) {
@@ -65,13 +78,15 @@ internal final class HomepageViewController: BaseViewController {
 extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allPosts.count
+        //return allPosts.count
+        return (store?.posts.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.homeCell, for: indexPath) as! HomepageTableViewCell
-        let currentCell = allPosts[(allPosts.count-1) - indexPath.row]
+        let allPosts = store?.posts
+        let currentCell = allPosts![((allPosts?.count)!-1) - indexPath.row]
         let key = currentCell.key!
         let uid = currentCell.uid!
         
@@ -85,12 +100,12 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         
         // Rating
     
-        
         if fbManager?.currentUser?.uid != uid {
             cell.ratingView.didFinishTouchingCosmos = { [weak self] rating in
                 cell.ratingView.rating = rating
                 cell.ratingUpdate(rating, key, uid)
-                self?.allPosts[indexPath.row].rating = rating
+                let allPosts = self?.store?.posts
+                allPosts![indexPath.row].rating = rating
             }
         }
         return cell

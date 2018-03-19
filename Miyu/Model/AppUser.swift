@@ -18,7 +18,7 @@ enum AppUserKeys: String, CodingKey {
     case email, firstName, lastName, photoUrl, userRating
 }
 /// AppUser class includes properties for AppUser object.
-internal final class AppUser {
+internal final class AppUser: Codable {
 
     var email: String?
     var firstName: String?
@@ -36,7 +36,7 @@ internal final class AppUser {
     }
 }
 
-extension AppUser: Encodable {
+extension AppUser {
     func encode(to encoder: Encoder) throws
     {
         var container = encoder.container(keyedBy: AppUserKeys.self)
@@ -47,7 +47,7 @@ extension AppUser: Encodable {
     }
 }
 
-extension AppUser: Decodable {
+extension AppUser {
     convenience init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: AppUserKeys.self)
         let email = try container.decode(String.self, forKey: .email)
