@@ -33,6 +33,7 @@ internal final class HomepageViewModel: InstantiatedViewControllers {
     // MARK: PREPARE DATA
     
     func getPosts(_ completion: @escaping (_ posts: Post)->Void) {
+        print("get postss CALLLED >>>>>>")
         fbManager?.getPosts(eventType: .childAdded, with: { (snapshot) in
             do {
                 if JSONSerialization.isValidJSONObject(snapshot.value!) {

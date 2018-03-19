@@ -33,10 +33,7 @@ class CustomTabView: UIView, CustomTabViewDelegate {
         return ProfileUserDataModel()
     }()
     
-    private var userPosts = [Post]()
-    
     private weak var store = DataStore.sharedInstance
-    private weak var storeManager = DataStoreManager()
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -47,14 +44,11 @@ class CustomTabView: UIView, CustomTabViewDelegate {
         
         setupCollectionView()
         setupTableView()
-        loadData()
         tableView.isHidden = true
     }
     
     func initialLoad() {
-        if (store?.userPosts.isEmpty)! {
-            loadData()
-        }
+
         tableView.isHidden = true
     }
     
@@ -81,17 +75,6 @@ class CustomTabView: UIView, CustomTabViewDelegate {
         collectionView.register(ProfileCollectionViewCell.self, forCellWithReuseIdentifier: Constants.customCollectionCell)
     }
     
-    func loadData() {
-        viewModel?.loadUserPosts({ [weak self] (post) in
-            self?.store?.userPosts.append(post)
-            DispatchQueue.main.async {
-                self?.collectionView.reloadData()
-                self?.tableView.reloadData()
-            }
-        })
-        storeManager?.saveData((self.store?.userPosts)!, store: store!, pathComponent: .userData)
-    }
-    
     // MARK: FUNCTIONALITY
     func tappedThat(_ viewInt: Int) {
         switch viewInt {
@@ -110,7 +93,6 @@ class CustomTabView: UIView, CustomTabViewDelegate {
 extension CustomTabView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return userPosts.count
         guard let count = store?.userPosts.count else { return 0 }
         return count
     }

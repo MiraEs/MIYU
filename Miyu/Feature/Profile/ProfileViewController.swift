@@ -19,6 +19,7 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var customTabView: CustomTabView!
     
     private weak var store = DataStore.sharedInstance
+    private weak var storeManager = DataStoreManager()
     
     private var viewModel: ProfileUserDataModel? {
         return ProfileUserDataModel()
@@ -31,15 +32,22 @@ class ProfileViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-        //customTabView.reloadData()
-        customTabView.loadData()
+        print("PROFILE VIEW WILL APPEAR")
+        customTabView.reloadData()
     }
 
     private func setup() {
         profileMenuBar.customDelegate = customTabView
         profileImage.setRounded()
         loadUserData()
+        
+        if (store?.userPosts.isEmpty)! {
+            print("STORE USER POSTS IS EMPTY")
+            loadUserPosts()
+        } else {
+            print("STORE USER POST COUNT \(store?.userPosts.count)")
+            store?.userPosts = (storeManager?.loadPosts(store!, from: .userData))!
+        }
     }
 
     private func loadUserData() {
@@ -47,6 +55,18 @@ class ProfileViewController: BaseViewController {
             self?.setUserData(user)
         })
     }
+    
+    func loadUserPosts() {
+        viewModel?.loadUserPosts({ [weak self] (post) in
+            self?.store?.userPosts.append(post)
+            DispatchQueue.main.async {
+                self?.customTabView.collectionView.reloadData()
+                self?.customTabView.tableView.reloadData()
+            }
+        })
+        storeManager?.saveData((self.store?.userPosts)!, store: store!, pathComponent: .userData)
+    }
+    
     
     private func setUserData(_ user: AppUser) {
         guard let url = user.photoUrl else { return }

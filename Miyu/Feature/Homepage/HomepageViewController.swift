@@ -45,8 +45,10 @@ internal final class HomepageViewController: BaseViewController {
         
         
         if (store?.posts.isEmpty)! {
+            print("STORE ALL POSTS EMPTY - RETREIVING DATA NOW")
             fetchPosts()
         } else {
+            print("STORE ALL POSTS COUNT \(store?.posts.count)")
             store?.posts = (storeManager?.loadPosts(store!, from: .postData))!
         }
     }
