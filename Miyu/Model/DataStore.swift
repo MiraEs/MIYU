@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum PathComponents: String {
+    case data = "Data"
+    case userData = "userData"
+}
+
 internal final class DataStore {
     
     static let sharedInstance = DataStore()
@@ -18,9 +23,9 @@ internal final class DataStore {
         let manager = FileManager.default
         let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first
         print("URL PATH IN documentDirectory = \(String(describing: url))")
-        return (url?.appendingPathComponent("Data"))!
+        return url!
     }
-    
+
     var posts: [Post] = []
 }
 

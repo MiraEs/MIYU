@@ -18,6 +18,8 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var profileMenuBar: MenuBar!
     @IBOutlet weak var customTabView: CustomTabView!
     
+    private weak var store = DataStore.sharedInstance
+    
     private var viewModel: ProfileUserDataModel? {
         return ProfileUserDataModel()
     }
@@ -29,8 +31,6 @@ class ProfileViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-        
     }
 
     private func setup() {

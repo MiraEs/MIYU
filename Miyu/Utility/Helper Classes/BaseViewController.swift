@@ -56,29 +56,3 @@ internal class BaseViewController: UIViewController {
     }
     
 }
-
-extension BaseViewController {
-    
-    func saveData(_ posts: [Post], store: DataStore) {
-        let url = store.filePath
-        let encoder = JSONEncoder()
-        do {
-            let data = try encoder.encode(posts)
-            try data.write(to: url, options: [])
-        } catch {
-            fatalError(error.localizedDescription)
-        }
-    }
-    
-    func loadData(_ store: DataStore) -> [Post] {
-        let url = store.filePath
-        let decoder = JSONDecoder()
-        do {
-            let data = try Data(contentsOf: url, options: [])
-            let posts = try decoder.decode([Post].self, from: data)
-            return posts
-        } catch {
-            fatalError(error.localizedDescription)
-        }
-    }
-}
