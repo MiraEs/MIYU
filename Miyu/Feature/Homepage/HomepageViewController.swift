@@ -63,19 +63,25 @@ internal final class HomepageViewController: BaseViewController {
             print(posts)
         }
     }
-
-
     
     // MARK: FETCH DATA
     private func fetchPosts() {
         let loadingIndicator = self.displaySpinner(onView: self.view)
         print("ADDED POST AND IS NOW UPDATED >>>>>>>>>>>>>  ")
         self.viewModel?.getPosts({ [weak self] (post) in
-            self?.store?.posts.append(post)
+            //self?.store?.posts.append(post)
+            self?.fetchPostUserData(post)
             DispatchQueue.main.async {
                 self?.removeSpinner(spinner: loadingIndicator)
                 self?.tableView.reloadData()
             }
+        })
+    }
+    
+    private func fetchPostUserData(_ post: Post) {
+        fbManager?.getUserData(post.uid!, { [weak self] (user) in
+            post.user = user
+            self?.store?.posts.append(post)
         })
     }
     
@@ -101,26 +107,46 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         guard let allPosts = store?.posts else { return UITableViewCell() }
         let currentCell = allPosts[((allPosts.count)-1) - indexPath.row]
         
-        if let key = currentCell.key,
+//        if let key = currentCell.key,
+//            let uid = currentCell.uid,
+//            let currentUid = fbManager?.currentUser?.uid,
+//            let user = currentCell.user,
+//            let photoUrl = user.photoUrl,
+//            let data = currentCell.data {
+//
+//            cell.post = currentCell
+//            cell.setupCell(uid)
+//            cell.setupTap(indexPath.row)
+//            fetchPhoto(data, photoUrl, cell)
+//
+//            if uid != currentUid {
+//                cell.ratingView.didFinishTouchingCosmos = { rating in
+//                    cell.ratingView.rating = rating
+//                    cell.ratingUpdate(rating, key, uid)
+//                    currentCell.rating = rating
+//                }
+//            }
+//            return cell
+//        }
+        
+        guard let key = currentCell.key,
             let uid = currentCell.uid,
             let currentUid = fbManager?.currentUser?.uid,
             let user = currentCell.user,
             let photoUrl = user.photoUrl,
-            let data = currentCell.data {
-            
-            cell.post = currentCell
-            cell.setupCell(uid)
-            cell.setupTap(indexPath.row)
-            fetchPhoto(data, photoUrl, cell)
-            
-            if uid != currentUid {
-                cell.ratingView.didFinishTouchingCosmos = { rating in
-                    cell.ratingView.rating = rating
-                    cell.ratingUpdate(rating, key, uid)
-                    currentCell.rating = rating
-                }
+            let data = currentCell.data else { return UITableViewCell() }
+        
+        cell.post = currentCell
+        cell.setupCell(uid)
+        cell.setupTap(indexPath.row)
+        fetchPhoto(data, photoUrl, cell)
+        
+        if uid != currentUid {
+            cell.ratingView.didFinishTouchingCosmos = { rating in
+                cell.ratingView.rating = rating
+                cell.ratingUpdate(rating, key, uid)
+                currentCell.rating = rating
             }
-            return cell
         }
         
         return cell

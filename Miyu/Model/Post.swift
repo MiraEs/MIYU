@@ -28,7 +28,6 @@ internal final class Post: Codable {
     init(rating: Double?, caption: String?, data: String?,
          uid: String?, count: Int?, averageRating: Double?, key: String?) {
         self.rating = rating
-        
         self.caption = caption
         self.data = data
         self.uid = uid
