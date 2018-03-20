@@ -42,17 +42,11 @@ internal final class HomepageViewController: BaseViewController {
     
     private func setup() {
         viewModel?.setup(tableView)
-
-        test()
-        //let posts = DataStoreManager.loadAll(Post.self)
-        //self.store?.posts = posts
-        //print(posts)
-        //fetchPosts()
-        
+        loadDataFromDisk()
     }
     
     // MARK: MIRTEST
-    func test() {
+    func loadDataFromDisk() {
         let posts = DataStoreManager.loadAll(Post.self)
         if posts.isEmpty {
             print("disk is empty - fetching from netowrk")
@@ -69,7 +63,6 @@ internal final class HomepageViewController: BaseViewController {
         let loadingIndicator = self.displaySpinner(onView: self.view)
         print("ADDED POST AND IS NOW UPDATED >>>>>>>>>>>>>  ")
         self.viewModel?.getPosts({ [weak self] (post) in
-            //self?.store?.posts.append(post)
             self?.fetchPostUserData(post)
             DispatchQueue.main.async {
                 self?.removeSpinner(spinner: loadingIndicator)
@@ -105,30 +98,9 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
     
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.homeCell, for: indexPath) as! HomepageTableViewCell
         guard let allPosts = store?.posts else { return UITableViewCell() }
+        
         let currentCell = allPosts[((allPosts.count)-1) - indexPath.row]
-        
-//        if let key = currentCell.key,
-//            let uid = currentCell.uid,
-//            let currentUid = fbManager?.currentUser?.uid,
-//            let user = currentCell.user,
-//            let photoUrl = user.photoUrl,
-//            let data = currentCell.data {
-//
-//            cell.post = currentCell
-//            cell.setupCell(uid)
-//            cell.setupTap(indexPath.row)
-//            fetchPhoto(data, photoUrl, cell)
-//
-//            if uid != currentUid {
-//                cell.ratingView.didFinishTouchingCosmos = { rating in
-//                    cell.ratingView.rating = rating
-//                    cell.ratingUpdate(rating, key, uid)
-//                    currentCell.rating = rating
-//                }
-//            }
-//            return cell
-//        }
-        
+
         guard let key = currentCell.key,
             let uid = currentCell.uid,
             let currentUid = fbManager?.currentUser?.uid,
@@ -148,7 +120,6 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
                 currentCell.rating = rating
             }
         }
-        
         return cell
     }
     
