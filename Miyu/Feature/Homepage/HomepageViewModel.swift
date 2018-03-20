@@ -33,7 +33,7 @@ internal final class HomepageViewModel: InstantiatedViewControllers {
     // MARK: PREPARE DATA
     
     func getPosts(_ completion: @escaping (_ posts: Post)->Void) {
-        print("get postss CALLLED >>>>>>")
+        print("get postss CALLLED FROM HOMWPAGE VIEW MODEL >>>>>>")
         fbManager?.getPosts(eventType: .childAdded, with: { (snapshot) in
             do {
                 if JSONSerialization.isValidJSONObject(snapshot.value!) {
@@ -44,6 +44,8 @@ internal final class HomepageViewModel: InstantiatedViewControllers {
                         post.user = user
                         post.key = snapshot.key
                         completion(post)
+                        print("SAVEE POST: \(post)")
+                        post.savePost()
                     })
                 }
             } catch {

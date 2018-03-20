@@ -52,7 +52,6 @@ internal final class FirebaseUserManager {
             let enumerator = snapshot.children
             while let object = enumerator.nextObject() as? DataSnapshot {
                 do {
-                    print("FETCHING USER POSTS FROM FIREBASE>>>>>>")
                     let data = try JSONSerialization.data(withJSONObject: object.value!, options: [])
                     let post = try JSONDecoder().decode(Post.self, from: data)
                     handler(post)
@@ -95,7 +94,7 @@ extension FirebaseUserManager {
                 return
         }
         
-        guard let post = Post(caption: caption, data: contentUrl, uid: uid).dictionary else { return }
+        guard let post = Post(caption: caption, data: contentUrl, uid: uid, key: key).dictionary else { return }
         let childUpdates: [String: Any] = ["/posts/\(key)" : post,
                                            "/user-posts/\(uid)/\(key)/" : post]
         

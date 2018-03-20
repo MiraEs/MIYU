@@ -9,7 +9,7 @@
 import Foundation
 
 enum CodingKeys: String, CodingKey {
-    case caption, data, averageRating, uid, count, rating
+    case caption, data, averageRating, uid, count, rating, key
 }
 
 internal final class Post: Codable {
@@ -26,23 +26,36 @@ internal final class Post: Codable {
 
     
     init(rating: Double?, caption: String?, data: String?,
-         uid: String?, count: Int?, averageRating: Double?) {
+         uid: String?, count: Int?, averageRating: Double?, key: String?) {
         self.rating = rating
+        
         self.caption = caption
         self.data = data
         self.uid = uid
         self.count = count
         self.averageRating = averageRating
+        self.key = key
     }
     
-    init(caption: String?, data: String?, uid: String?) {
+    init(caption: String?, data: String?, uid: String?, key: String?) {
         self.rating = 0.0
         self.averageRating = 0.0
         self.count = 0
         self.uid = uid
         self.data = data
         self.caption = caption
+        self.key = key
     }
+    
+    func savePost() {
+        DataStoreManager.save(self, with: key!)
+        print("SAVING POST >>>>> \(self) with key: \(key)")
+    }
+    
+    func deletePost() {
+        DataStoreManager.delete(key!)
+    }
+    
 }
 // TODO: REFACTOR?
 extension Post {
@@ -54,8 +67,10 @@ extension Post {
         let count = try container.decode(Int.self, forKey: .count)
         let averageRating = try container.decode(Double.self, forKey: .averageRating)
         let rating = try container.decode(Double.self, forKey: .rating)
-        
+        let key = try container.decode(String.self, forKey: .key)
+
         self.init(rating: rating, caption: caption, data: data, uid: uid,
-                  count: count, averageRating: averageRating)
+                  count: count, averageRating: averageRating, key: key)
     }
 }
+

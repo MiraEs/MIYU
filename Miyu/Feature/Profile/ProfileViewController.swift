@@ -49,7 +49,7 @@ class ProfileViewController: BaseViewController {
             store?.userPosts = (storeManager?.loadPosts(store!, from: .userData))!
         }
     }
-
+    
     private func loadUserData() {
         viewModel?.loadUserData({ [weak self] (user) in
             self?.setUserData(user)
@@ -64,6 +64,7 @@ class ProfileViewController: BaseViewController {
                 self?.customTabView.tableView.reloadData()
             }
         })
+        //DataStoreManager.save(self?.store?.userPosts, with: PathComponents.postData.rawValue)
         storeManager?.saveData((self.store?.userPosts)!, store: store!, pathComponent: .userData)
     }
     

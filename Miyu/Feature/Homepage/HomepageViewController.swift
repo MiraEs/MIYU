@@ -42,16 +42,28 @@ internal final class HomepageViewController: BaseViewController {
     
     private func setup() {
         viewModel?.setup(tableView)
+
+        test()
+        //let posts = DataStoreManager.loadAll(Post.self)
+        //self.store?.posts = posts
+        //print(posts)
+        //fetchPosts()
         
-        
-        if (store?.posts.isEmpty)! {
-            print("STORE ALL POSTS EMPTY - RETREIVING DATA NOW")
+    }
+    
+    // MARK: MIRTEST
+    func test() {
+        let posts = DataStoreManager.loadAll(Post.self)
+        if posts.isEmpty {
+            print("disk is empty - fetching from netowrk")
             fetchPosts()
         } else {
-            print("STORE ALL POSTS COUNT \(store?.posts.count)")
-            store?.posts = (storeManager?.loadPosts(store!, from: .postData))!
+            print("disk has information - pulling from disk")
+            self.store?.posts = posts
+            print(posts)
         }
     }
+
 
     
     // MARK: FETCH DATA
@@ -65,7 +77,6 @@ internal final class HomepageViewController: BaseViewController {
                 self?.tableView.reloadData()
             }
         })
-        storeManager?.saveData((self.store?.posts)!, store: store!, pathComponent: .postData)
     }
     
     private func fetchPhoto(_ contentUrlString: String?, _ profileUrlString: String?, _ cell: HomepageTableViewCell) {
@@ -89,28 +100,29 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.homeCell, for: indexPath) as! HomepageTableViewCell
         guard let allPosts = store?.posts else { return UITableViewCell() }
         let currentCell = allPosts[((allPosts.count)-1) - indexPath.row]
-        let key = currentCell.key!
-        let uid = currentCell.uid!
         
-        // Setup
-        print("CURRENT USER >>>>> \(currentCell.user?.firstName)")
-        cell.setupCell(uid)
-        cell.post = currentCell
-        
-        // Image Interaction segue to profile
-        fetchPhoto(currentCell.data, currentCell.user?.photoUrl, cell)
-        cell.setupTap(indexPath.row)
-        
-        // Rating
-    
-        if fbManager?.currentUser?.uid != uid {
-            cell.ratingView.didFinishTouchingCosmos = { [weak self] rating in
-                cell.ratingView.rating = rating
-                cell.ratingUpdate(rating, key, uid)
-                guard let allPosts = self?.store?.posts else { return }
-                allPosts[indexPath.row].rating = rating
+        if let key = currentCell.key,
+            let uid = currentCell.uid,
+            let currentUid = fbManager?.currentUser?.uid,
+            let user = currentCell.user,
+            let photoUrl = user.photoUrl,
+            let data = currentCell.data {
+            
+            cell.post = currentCell
+            cell.setupCell(uid)
+            cell.setupTap(indexPath.row)
+            fetchPhoto(data, photoUrl, cell)
+            
+            if uid != currentUid {
+                cell.ratingView.didFinishTouchingCosmos = { rating in
+                    cell.ratingView.rating = rating
+                    cell.ratingUpdate(rating, key, uid)
+                    currentCell.rating = rating
+                }
             }
+            return cell
         }
+        
         return cell
     }
     
