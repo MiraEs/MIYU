@@ -45,7 +45,6 @@ internal final class HomepageViewModel: InstantiatedViewControllers {
                         post.key = snapshot.key
                         completion(post)
                         print("SAVEE POST: \(post)")
-                        post.savePost()
                     })
                 }
             } catch {

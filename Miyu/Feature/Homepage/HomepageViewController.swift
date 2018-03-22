@@ -42,21 +42,22 @@ internal final class HomepageViewController: BaseViewController {
     
     private func setup() {
         viewModel?.setup(tableView)
-        loadDataFromDisk()
+        fetchPosts()
+        //loadDataFromDisk()
     }
     
     // MARK: MIRTEST
-    func loadDataFromDisk() {
-        let posts = DataStoreManager.loadAll(Post.self)
-        if posts.isEmpty {
-            print("disk is empty - fetching from netowrk")
-            fetchPosts()
-        } else {
-            print("disk has information - pulling from disk")
-            self.store?.posts = posts
-            print(posts)
-        }
-    }
+//    func loadDataFromDisk() {
+//        let posts = DataStoreManager.loadAll(Post.self)
+//        if posts.isEmpty {
+//            print("disk is empty - fetching from netowrk")
+//            fetchPosts()
+//        } else {
+//            print("disk has information - pulling from disk")
+//            self.store?.posts = posts
+//            print(posts)
+//        }
+//    }
     
     // MARK: FETCH DATA
     private func fetchPosts() {
