@@ -26,6 +26,7 @@ internal final class HomepageViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        print("REALM CONFIG >>>>> \(Realm.Configuration.defaultConfiguration.fileURL!)")
     }
     
     override func viewWillAppear(_ animated: Bool) {
