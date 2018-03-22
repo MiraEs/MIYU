@@ -45,7 +45,7 @@ class ProfileViewController: BaseViewController {
             print("STORE USER POSTS IS EMPTY")
             loadUserPosts()
         } else {
-            print("STORE USER POST COUNT \(store?.userPosts.count)")
+            print("STORE USER POST COUNT \(String(describing: store?.userPosts.count))")
             store?.userPosts = (storeManager?.loadPosts(store!, from: .userData))!
         }
     }
@@ -75,7 +75,7 @@ class ProfileViewController: BaseViewController {
         profileImage.loadCachedImage(url)
         guard let firstName = user.firstName,
             let lastName = user.lastName,
-            let rating = user.userRating else { return }
+            let rating = user.userRating.value else { return }
         userName.text = "\(firstName) \(lastName)"
         userRating.text = "\(rating)"
     }

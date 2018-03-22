@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct UserCredential {
     let email: String?
@@ -18,21 +19,22 @@ enum AppUserKeys: String, CodingKey {
     case email, firstName, lastName, photoUrl, userRating
 }
 /// AppUser class includes properties for AppUser object.
-internal final class AppUser: Codable {
+internal final class AppUser: Object, Codable {
 
-    var email: String?
-    var firstName: String?
-    var lastName: String?
-    var photoUrl: String?
-    var userRating: Double?
+    @objc dynamic var email: String? = nil
+    @objc dynamic  var firstName: String? = nil
+    @objc dynamic var lastName: String? = nil
+    @objc dynamic var photoUrl: String? = nil
+    var userRating = RealmOptional<Double>()
     
-    init(firstName: String, lastName: String, email: String,
+    convenience init(firstName: String, lastName: String, email: String,
          photoUrl: String = "", userRating: Double = 5) {
+        self.init()
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
         self.photoUrl = photoUrl
-        self.userRating = userRating
+        self.userRating.value = userRating
     }
 }
 
@@ -43,7 +45,7 @@ extension AppUser {
         try container.encode(firstName, forKey: .firstName)
         try container.encode(lastName, forKey: .lastName)
         try container.encode(email, forKey: .email)
-        try container.encode(userRating, forKey: .userRating)
+        try container.encode(userRating.value, forKey: .userRating)
     }
 }
 

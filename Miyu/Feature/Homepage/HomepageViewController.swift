@@ -9,6 +9,7 @@
 
 import UIKit
 import Firebase
+import RealmSwift
 
 internal final class HomepageViewController: BaseViewController {
     
@@ -43,39 +44,18 @@ internal final class HomepageViewController: BaseViewController {
     private func setup() {
         viewModel?.setup(tableView)
         fetchPosts()
-        //loadDataFromDisk()
     }
-    
-    // MARK: MIRTEST
-//    func loadDataFromDisk() {
-//        let posts = DataStoreManager.loadAll(Post.self)
-//        if posts.isEmpty {
-//            print("disk is empty - fetching from netowrk")
-//            fetchPosts()
-//        } else {
-//            print("disk has information - pulling from disk")
-//            self.store?.posts = posts
-//            print(posts)
-//        }
-//    }
     
     // MARK: FETCH DATA
     private func fetchPosts() {
         let loadingIndicator = self.displaySpinner(onView: self.view)
         print("ADDED POST AND IS NOW UPDATED >>>>>>>>>>>>>  ")
         self.viewModel?.getPosts({ [weak self] (post) in
-            self?.fetchPostUserData(post)
+            self?.store?.posts.append(post)
             DispatchQueue.main.async {
                 self?.removeSpinner(spinner: loadingIndicator)
                 self?.tableView.reloadData()
             }
-        })
-    }
-    
-    private func fetchPostUserData(_ post: Post) {
-        fbManager?.getUserData(post.uid!, { [weak self] (user) in
-            post.user = user
-            self?.store?.posts.append(post)
         })
     }
     
@@ -118,7 +98,7 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
             cell.ratingView.didFinishTouchingCosmos = { rating in
                 cell.ratingView.rating = rating
                 cell.ratingUpdate(rating, key, uid)
-                currentCell.rating = rating
+                currentCell.rating.value = rating
             }
         }
         return cell

@@ -21,9 +21,9 @@ class HomepageTableViewCell: UITableViewCell {
         didSet {
             if let post = post,
                 let user = post.user,
-                let count = post.count,
-                let rating = post.rating,
-                let userRating = user.userRating,
+                let count = post.count.value,
+                let rating = post.rating.value,
+                let userRating = user.userRating.value,
                 let caption = post.caption {
                 nameLabel.text = user.firstName ?? "NO NAME"
                 commentCaption("star", count)

@@ -139,10 +139,10 @@ extension FirebaseUserManager {
         
         ref?.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let post = self.decodeData(snapshot.value as Any) else { return }
-            guard let count = post.count else { return }
+            guard let count = post.count.value else { return }
             let newCount = count + 1
             post.key = key
-            post.count = newCount
+            post.count.value = newCount
             self.uploadPostRatedCount(post)
             self.calculatePostAverageRating(post)
         })
@@ -151,7 +151,7 @@ extension FirebaseUserManager {
     //2. Upload new count to database
     private func uploadPostRatedCount(_ post: Post) {
         guard let key = post.key,
-            let newCount = post.count else {
+            let newCount = post.count.value else {
                 return
         }
         postRef?.child(key).updateChildValues([PostKeys.count: newCount])
@@ -165,9 +165,9 @@ extension FirebaseUserManager {
      **/
     private func calculatePostAverageRating(_ post: Post) {
         print("CALCULATE AVERAGE FOR THIS POST......")
-        guard let count = post.count,
-            let averageRating = post.averageRating,
-            let rating = post.rating else {
+        guard let count = post.count.value,
+            let averageRating = post.averageRating.value,
+            let rating = post.rating.value else {
                 return
         }
         
@@ -176,7 +176,7 @@ extension FirebaseUserManager {
         let newValue = rating
         let newAverage = oldAverage + ((newValue - oldAverage)/size)
         print("newAverage >>>> \(newAverage)")
-        post.averageRating = newAverage
+        post.averageRating.value = newAverage
         uploadPostAverageRating(post)
     }
     

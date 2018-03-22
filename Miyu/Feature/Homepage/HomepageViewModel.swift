@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import RealmSwift
 
 internal final class HomepageViewModel: InstantiatedViewControllers {
     
@@ -45,6 +46,7 @@ internal final class HomepageViewModel: InstantiatedViewControllers {
                         post.key = snapshot.key
                         completion(post)
                         print("SAVEE POST: \(post)")
+                        post.writeToRealm()
                     })
                 }
             } catch {

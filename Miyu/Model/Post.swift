@@ -7,53 +7,65 @@
 //
 
 import Foundation
+import RealmSwift
 
 enum CodingKeys: String, CodingKey {
     case caption, data, averageRating, uid, count, rating, key
 }
 
-internal final class Post: Codable {
+internal final class Post: Object, Codable {
     
-    //private var title: String?
-    var caption: String?
-    var data: String?
-    var averageRating: Double?
-    var rating: Double?
-    var key: String?
-    var uid: String?
-    var count: Int?
-    var user: AppUser?
+    @objc dynamic var caption: String? = nil
+    @objc dynamic  var data: String? = nil
+    var averageRating = RealmOptional<Double>()
+    var rating = RealmOptional<Double>()
+    @objc dynamic var key: String? = nil
+    @objc dynamic var uid: String? = nil
+    var count = RealmOptional<Int>()
+    @objc dynamic var user: AppUser?
 
     
-    init(rating: Double?, caption: String?, data: String?,
+    required convenience init(rating: Double?, caption: String?, data: String?,
          uid: String?, count: Int?, averageRating: Double?, key: String?) {
-        self.rating = rating
+        self.init()
+        self.rating.value = rating
         self.caption = caption
         self.data = data
         self.uid = uid
-        self.count = count
-        self.averageRating = averageRating
+        self.count.value = count
+        self.averageRating.value = averageRating
         self.key = key
     }
     
-    init(caption: String?, data: String?, uid: String?, key: String?) {
-        self.rating = 0.0
-        self.averageRating = 0.0
-        self.count = 0
+    convenience init(caption: String?, data: String?, uid: String?, key: String?) {
+        self.init()
+        self.rating.value = 0.0
+        self.averageRating.value = 0.0
+        self.count.value = 0
         self.uid = uid
         self.data = data
         self.caption = caption
         self.key = key
     }
+    
+    // FILE MANAGER
     
     func savePost() {
         DataStoreManager.save(self, with: key!)
-        print("SAVING POST >>>>> \(self) with key: \(key)")
+        print("SAVING POST >>>>> \(self) with key: \(String(describing: key))")
     }
     
     func deletePost() {
         DataStoreManager.delete(key!)
     }
+    
+    // REALM
+    func writeToRealm() {
+        try! uiRealm.write {
+            uiRealm.add(self)
+        }
+    }
+    
     
 }
 // TODO: REFACTOR?
@@ -70,6 +82,19 @@ extension Post {
 
         self.init(rating: rating, caption: caption, data: data, uid: uid,
                   count: count, averageRating: averageRating, key: key)
+    }
+}
+
+extension Post {
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(caption, forKey: .caption)
+        try container.encode(data, forKey: .data)
+        try container.encode(uid, forKey: .uid)
+        try container.encode(count.value, forKey: .count)
+        try container.encode(averageRating.value, forKey: .averageRating)
+        try container.encode(rating.value, forKey: .rating)
+        try container.encode(key, forKey: .key)
     }
 }
 
