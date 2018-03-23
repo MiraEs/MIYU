@@ -93,8 +93,11 @@ class CustomTabView: UIView, CustomTabViewDelegate {
 extension CustomTabView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let count = store?.userPosts.count else { return 0 }
-        return count
+        if store?.userPosts == nil {
+            return 0
+        } else {
+            return (store?.userPosts.count)!
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -118,8 +121,11 @@ extension CustomTabView: UITableViewDelegate, UITableViewDataSource {
 
 extension CustomTabView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let count = store?.userPosts.count else { return 0 }
-        return count
+        if store?.userPosts == nil {
+            return 0
+        } else {
+            return (store?.userPosts.count)!
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

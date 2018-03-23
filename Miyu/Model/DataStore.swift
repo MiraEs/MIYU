@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import RealmSwift
 
 enum PathComponents: String {
     case postData = "postData"
@@ -28,6 +28,7 @@ internal final class DataStore {
     }
 
     var posts: [Post] = []
-    var userPosts: [Post] = []
+    //var userPosts: [Post] = []
+    var userPosts: Results<Post>!
 }
 

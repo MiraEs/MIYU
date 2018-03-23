@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import RealmSwift
 
 class ProfileViewController: BaseViewController {
 
@@ -20,10 +21,13 @@ class ProfileViewController: BaseViewController {
     
     private weak var store = DataStore.sharedInstance
     private weak var storeManager = DataStoreManager()
+    private weak var fbManager = FirebaseUserManager.manager
     
     private var viewModel: ProfileUserDataModel? {
         return ProfileUserDataModel()
     }
+    
+    var userPosts: Results<Post>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,14 +44,7 @@ class ProfileViewController: BaseViewController {
         profileMenuBar.customDelegate = customTabView
         profileImage.setRounded()
         loadUserData()
-        
-        if (store?.userPosts.isEmpty)! {
-            print("STORE USER POSTS IS EMPTY")
-            loadUserPosts()
-        } else {
-            print("STORE USER POST COUNT \(String(describing: store?.userPosts.count))")
-            store?.userPosts = (storeManager?.loadPosts(store!, from: .userData))!
-        }
+        loadUserPostsFromRealm()
     }
     
     private func loadUserData() {
@@ -58,14 +55,19 @@ class ProfileViewController: BaseViewController {
     
     func loadUserPosts() {
         viewModel?.loadUserPosts({ [weak self] (post) in
-            self?.store?.userPosts.append(post)
+            //self?.store?.userPosts.append(post)
             DispatchQueue.main.async {
                 self?.customTabView.collectionView.reloadData()
                 self?.customTabView.tableView.reloadData()
             }
         })
-        //DataStoreManager.save(self?.store?.userPosts, with: PathComponents.postData.rawValue)
-        storeManager?.saveData((self.store?.userPosts)!, store: store!, pathComponent: .userData)
+    }
+    
+    func loadUserPostsFromRealm() {
+        if let uid = fbManager?.currentUser?.uid {
+            print("current user UID >>>>> \(uid)")
+            userPosts = uiRealm.objects(Post.self).filter("uid == %@", uid)
+        }
     }
     
     
