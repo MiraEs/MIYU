@@ -1,1 +1,0 @@
-<!-- Love react-native-camera? Please consider supporting our collective: 👉  https://opencollective.com/react-native-camera/donate -->

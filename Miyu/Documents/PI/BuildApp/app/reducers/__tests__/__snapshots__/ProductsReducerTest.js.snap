@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`ProductsReducer should handle clearProductCache 1`] = `Object {}`;
