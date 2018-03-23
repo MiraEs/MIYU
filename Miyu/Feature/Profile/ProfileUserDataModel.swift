@@ -6,7 +6,7 @@
 //  Copyright © 2018 ME. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class ProfileUserDataModel {
     
@@ -16,7 +16,21 @@ class ProfileUserDataModel {
     
     private weak var storeManager = DataStoreManager()
     
-    init() {}
+    private var presentingViewController: UIViewController
+    
+    init(_ presentingViewController: UIViewController) {
+        self.presentingViewController = presentingViewController
+    }
+    
+    func setup(_ collectionView: UICollectionView) {
+        collectionView.register(ContentCollectionViewCell.self, forCellWithReuseIdentifier: Constants.contentCollectionViewCell)
+        collectionView.register(ContentTableViewCell.self, forCellWithReuseIdentifier: Constants.contentTableViewCell)
+        collectionView.alwaysBounceHorizontal = true
+    }
+    
+    func designSetup(_ image: UIImageView) {
+        image.setRounded()
+    }
     
     func loadUserData(_ handler: @escaping (_ user: AppUser)->Void) {
         if let uid = fbManager?.currentUser?.uid {
@@ -26,11 +40,5 @@ class ProfileUserDataModel {
         }
     }
     
-    func loadUserPosts(_ completion: @escaping (_ post: Post)->Void) {
-        guard let uid = fbManager?.currentUser?.uid else { return }
-        
-        fbManager?.getUserPosts(uid: uid, eventType: .value, with: { (post) in
-            completion(post)
-        })
-    }
+    
 }

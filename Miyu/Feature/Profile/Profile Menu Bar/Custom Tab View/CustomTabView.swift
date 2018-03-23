@@ -30,9 +30,7 @@ class CustomTabView: UIView, CustomTabViewDelegate {
         return table
     }()
     
-    lazy var viewModel: ProfileUserDataModel? = {
-        return ProfileUserDataModel()
-    }()
+
     
     private weak var store = DataStore.sharedInstance
     
@@ -56,7 +54,7 @@ class CustomTabView: UIView, CustomTabViewDelegate {
         
         addConstraints(format: "H:|[v0]|", views: collectionView)
         addConstraints(format: "V:|[v0]|", views: collectionView)
-        collectionView.register(ProfileCollectionViewCell.self, forCellWithReuseIdentifier: Constants.customCollectionCell)
+        collectionView.register(CustomTabCollectionViewCell.self, forCellWithReuseIdentifier: Constants.customCollectionCell)
     }
     
     // MARK: FUNCTIONALITY
@@ -113,7 +111,7 @@ extension CustomTabView: UICollectionViewDataSource, UICollectionViewDelegateFlo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.customCollectionCell, for: indexPath) as? ProfileCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.customCollectionCell, for: indexPath) as? CustomTabCollectionViewCell
         
         guard let userPosts = store?.userPosts else { return UICollectionViewCell() }
         let currentCell = userPosts[(userPosts.count-1) - indexPath.row]

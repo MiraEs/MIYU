@@ -12,15 +12,24 @@ import RealmSwift
 
 class ProfileViewController: BaseViewController {
 
-    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var profileImage: UIImageView! {
+        didSet {
+            viewModel?.designSetup(profileImage)
+        }
+    }
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userRating: UILabel!
     @IBOutlet weak var userAttribute: UILabel!
     @IBOutlet weak var profileMenuBar: MenuBar!
-    @IBOutlet weak var contentCollectionView: UICollectionView!
+    @IBOutlet weak var contentCollectionView: UICollectionView! {
+        didSet {
+            contentCollectionView.delegate = self
+            contentCollectionView.dataSource = self
+        }
+    }
     
     private var viewModel: ProfileUserDataModel? {
-        return ProfileUserDataModel()
+        return ProfileUserDataModel(self)
     }
     
     override func viewDidLoad() {
@@ -36,20 +45,10 @@ class ProfileViewController: BaseViewController {
     }
 
     private func setup() {
-        contentCollectionView.delegate = self
-        profileImage.setRounded()
+        viewModel?.setup(contentCollectionView)
         loadUserData()
-        setupContentCollectionView()
     }
-    
-    private func setupContentCollectionView() {
-        contentCollectionView.delegate = self
-        contentCollectionView.dataSource = self
-        contentCollectionView.register(ContentCollectionViewCell.self, forCellWithReuseIdentifier: Constants.contentCollectionViewCell)
-        contentCollectionView.register(ContentTableViewCell.self, forCellWithReuseIdentifier: Constants.contentTableViewCell)
-        contentCollectionView.alwaysBounceHorizontal = true
-    }
-    
+
     private func loadUserData() {
         viewModel?.loadUserData({ [weak self] (user) in
             self?.setUserData(user)

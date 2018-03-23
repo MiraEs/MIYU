@@ -18,7 +18,6 @@ internal final class HomepageViewModel: InstantiatedViewControllers {
     
     init(_ presentingViewController: UIViewController) {
         self.presentingViewController = presentingViewController
-        
     }
     
     // MARK: UTILITY
