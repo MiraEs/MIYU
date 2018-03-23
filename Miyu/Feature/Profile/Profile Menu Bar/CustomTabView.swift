@@ -19,7 +19,7 @@ class CustomTabView: UIView, CustomTabViewDelegate {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.dataSource = self
         cv.delegate = self
-        cv.backgroundColor = UIColor.white
+        cv.backgroundColor = UIColor.clear
         return cv
     }()
     
@@ -153,11 +153,12 @@ extension CustomTabView: UICollectionViewDataSource, UICollectionViewDelegateFlo
 }
 
 // TODO: REFACTOR TO OWN file
-
 class ProfileCollectionViewCell: BaseCell {
     let imageView: UIImageView = {
         let iv = UIImageView()
+        iv.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleBottomMargin, .flexibleRightMargin, .flexibleLeftMargin, .flexibleTopMargin]
         iv.contentMode = .scaleAspectFit
+        iv.clipsToBounds = true
         return iv
     }()
     
@@ -167,6 +168,7 @@ class ProfileCollectionViewCell: BaseCell {
         addSubview(imageView)
         addConstraints(format: "H:|[v0]|", views: imageView)
         addConstraints(format: "V:|[v0]|", views: imageView)
+        self.backgroundColor = UIColor.clear
     }
 }
 

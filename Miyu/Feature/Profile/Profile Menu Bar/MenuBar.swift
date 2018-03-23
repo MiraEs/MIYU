@@ -15,6 +15,7 @@ class MenuBar: UIView {
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.alwaysBounceHorizontal = true
+        cv.backgroundColor = UIColor.clear
         cv.dataSource = self
         cv.delegate = self
         return cv
