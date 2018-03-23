@@ -36,7 +36,6 @@ internal final class HomepageViewController: BaseViewController {
     }
     
     // MARK: SEGUE TO UPLOAD VC
-    
     @IBAction func uploadContent(_ sender: Any) {
         print("upload content")
         self.viewModel?.presentVC(vc: .UploadViewController)
@@ -50,6 +49,10 @@ internal final class HomepageViewController: BaseViewController {
     private func reloadData() {
         allPosts = uiRealm.objects(Post.self)
         self.tableView.reloadData()
+        
+        if let uid = fbManager?.currentUser?.uid {
+            self.store?.userPosts = uiRealm.objects(Post.self).filter("uid == %@", uid)
+        }
     }
     
     // MARK: FETCH DATA

@@ -8,6 +8,7 @@
 
 //TODO: REFACTOR
 import UIKit
+import RealmSwift
 
 class CustomTabView: UIView, CustomTabViewDelegate {
     
@@ -34,6 +35,8 @@ class CustomTabView: UIView, CustomTabViewDelegate {
     }()
     
     private weak var store = DataStore.sharedInstance
+    private weak var fbManager = FirebaseUserManager.manager
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -44,11 +47,10 @@ class CustomTabView: UIView, CustomTabViewDelegate {
         
         setupCollectionView()
         setupTableView()
-        tableView.isHidden = true
+        initialLoad()
     }
     
     func initialLoad() {
-
         tableView.isHidden = true
     }
     

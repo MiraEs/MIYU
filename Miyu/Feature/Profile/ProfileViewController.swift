@@ -19,15 +19,9 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var profileMenuBar: MenuBar!
     @IBOutlet weak var customTabView: CustomTabView!
     
-    private weak var store = DataStore.sharedInstance
-    private weak var storeManager = DataStoreManager()
-    private weak var fbManager = FirebaseUserManager.manager
-    
     private var viewModel: ProfileUserDataModel? {
         return ProfileUserDataModel()
     }
-    
-    var userPosts: Results<Post>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +38,6 @@ class ProfileViewController: BaseViewController {
         profileMenuBar.customDelegate = customTabView
         profileImage.setRounded()
         loadUserData()
-        loadUserPostsFromRealm()
     }
     
     private func loadUserData() {
@@ -52,24 +45,6 @@ class ProfileViewController: BaseViewController {
             self?.setUserData(user)
         })
     }
-    
-    func loadUserPosts() {
-        viewModel?.loadUserPosts({ [weak self] (post) in
-            //self?.store?.userPosts.append(post)
-            DispatchQueue.main.async {
-                self?.customTabView.collectionView.reloadData()
-                self?.customTabView.tableView.reloadData()
-            }
-        })
-    }
-    
-    func loadUserPostsFromRealm() {
-        if let uid = fbManager?.currentUser?.uid {
-            print("current user UID >>>>> \(uid)")
-            userPosts = uiRealm.objects(Post.self).filter("uid == %@", uid)
-        }
-    }
-    
     
     private func setUserData(_ user: AppUser) {
         guard let url = user.photoUrl else { return }
