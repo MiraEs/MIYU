@@ -34,26 +34,6 @@ class CustomTabView: UIView, CustomTabViewDelegate {
         return ProfileUserDataModel()
     }()
     
-    private weak var store = DataStore.sharedInstance
-    private weak var fbManager = FirebaseUserManager.manager
-    
-    
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//    }
-//
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        setupCollectionView()
-        setupTableView()
-        initialLoad()
-    }
-    
-    func initialLoad() {
-        tableView.isHidden = true
-    }
-    
     func reloadData() {
         tableView.reloadData()
         collectionView.reloadData()
