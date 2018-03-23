@@ -1,5 +1,5 @@
 //
-//  ProfileCollectionViewCell.swift
+//  CustomTabCollectionViewCell.swift
 //  Miyu
 //
 //  Created by Mira Estil on 3/23/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileCollectionViewCell: BaseCell {
+class CustomTabCollectionViewCell: BaseCell {
     let imageView: UIImageView = {
         let iv = UIImageView()
         iv.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleBottomMargin, .flexibleRightMargin, .flexibleLeftMargin, .flexibleTopMargin]

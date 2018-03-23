@@ -45,6 +45,10 @@ internal final class Constants {
     static let customCollectionCell = "customCollectionCell"
     static let menuBarCollectionCell = "menuBarCollectionCell"
     
+    // MARK: CUSTOM TAB VIEW CELLS
+    static let contentTableViewCell = "contentTableViewCell"
+    static let contentCollectionViewCell = "contentCollectionViewCell"
+    
     // MARK: POST STRUCT KEYS
     static let postKeys: [String] = ["caption", "data", "rating", "uid", "count", "averageRating"]
     

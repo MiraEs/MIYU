@@ -17,11 +17,7 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var userRating: UILabel!
     @IBOutlet weak var userAttribute: UILabel!
     @IBOutlet weak var profileMenuBar: MenuBar!
-    //@IBOutlet weak var customTabView: CustomTabView!
     @IBOutlet weak var contentCollectionView: UICollectionView!
-    
-    let cellIdA = "cellIdA"
-    let cellIdB = "cellIdB"
     
     private var viewModel: ProfileUserDataModel? {
         return ProfileUserDataModel()
@@ -30,7 +26,6 @@ class ProfileViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,8 +45,8 @@ class ProfileViewController: BaseViewController {
     private func setupContentCollectionView() {
         contentCollectionView.delegate = self
         contentCollectionView.dataSource = self
-        contentCollectionView.register(ContentCollectionViewCell.self, forCellWithReuseIdentifier: cellIdA)
-        contentCollectionView.register(ContentTableViewCell.self, forCellWithReuseIdentifier: cellIdB)
+        contentCollectionView.register(ContentCollectionViewCell.self, forCellWithReuseIdentifier: Constants.contentCollectionViewCell)
+        contentCollectionView.register(ContentTableViewCell.self, forCellWithReuseIdentifier: Constants.contentTableViewCell)
         contentCollectionView.alwaysBounceHorizontal = true
     }
     
@@ -82,12 +77,11 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if indexPath.row == 0 {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdA, for: indexPath) as! ContentCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.contentCollectionViewCell, for: indexPath) as! ContentCollectionViewCell
         profileMenuBar.customDelegate = cell.view
-        
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdB, for: indexPath) as! ContentTableViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.contentTableViewCell, for: indexPath) as! ContentTableViewCell
             profileMenuBar.customDelegate = cell.view
             
             return cell
@@ -100,39 +94,6 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     
 }
 
-class ContentTableViewCell: BaseCell {
-    
-    lazy var view: CustomTabView = {
-        let view = CustomTabView()
-        return view
-    }()
-    
-    override func setupViews() {
-        super.setupViews()
-        
-        addSubview(view)
-        addConstraints(format: "H:|[v0]|", views: view)
-        addConstraints(format: "V:|[v0]|", views: view)
-        
-        view.setupTableView()
-    }
-}
-
-class ContentCollectionViewCell: BaseCell {
-    lazy var view: CustomTabView = {
-        let view = CustomTabView()
-        return view
-    }()
-    
-    override func setupViews() {
-         super.setupViews()
-        
-        addSubview(view)
-        addConstraints(format: "H:|[v0]|", views: view)
-        addConstraints(format: "V:|[v0]|", views: view)
-        view.setupCollectionView()
-    }
-}
 
 
 
