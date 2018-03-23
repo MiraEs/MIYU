@@ -38,10 +38,10 @@ class CustomTabView: UIView, CustomTabViewDelegate {
     private weak var fbManager = FirebaseUserManager.manager
     
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//    }
+//
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -152,25 +152,6 @@ extension CustomTabView: UICollectionViewDataSource, UICollectionViewDelegateFlo
     }
 }
 
-// TODO: REFACTOR TO OWN file
-class ProfileCollectionViewCell: BaseCell {
-    let imageView: UIImageView = {
-        let iv = UIImageView()
-        iv.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleBottomMargin, .flexibleRightMargin, .flexibleLeftMargin, .flexibleTopMargin]
-        iv.contentMode = .scaleAspectFit
-        iv.clipsToBounds = true
-        return iv
-    }()
-    
-    override func setupViews() {
-        super.setupViews()
-        
-        addSubview(imageView)
-        addConstraints(format: "H:|[v0]|", views: imageView)
-        addConstraints(format: "V:|[v0]|", views: imageView)
-        self.backgroundColor = UIColor.clear
-    }
-}
 
 
 

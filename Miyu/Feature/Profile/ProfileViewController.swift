@@ -17,7 +17,10 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var userRating: UILabel!
     @IBOutlet weak var userAttribute: UILabel!
     @IBOutlet weak var profileMenuBar: MenuBar!
-    @IBOutlet weak var customTabView: CustomTabView!
+    //@IBOutlet weak var customTabView: CustomTabView!
+    @IBOutlet weak var contentCollectionView: UICollectionView!
+    
+    let collectionContentCellId = "collectionContentCellId"
     
     private var viewModel: ProfileUserDataModel? {
         return ProfileUserDataModel()
@@ -26,18 +29,28 @@ class ProfileViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         print("PROFILE VIEW WILL APPEAR")
-        customTabView.reloadData()
+        //customTabView.reloadData()
+        contentCollectionView.reloadData()
     }
 
     private func setup() {
-        profileMenuBar.customDelegate = customTabView
+        contentCollectionView.delegate = self
+        //profileMenuBar.customDelegate = customTabView
         profileImage.setRounded()
         loadUserData()
+        setupContentCollectionView()
+    }
+    
+    private func setupContentCollectionView() {
+        contentCollectionView.delegate = self
+        contentCollectionView.dataSource = self
+        contentCollectionView.register(ContentCollectionViewCell.self, forCellWithReuseIdentifier: collectionContentCellId)
     }
     
     private func loadUserData() {
@@ -57,5 +70,42 @@ class ProfileViewController: BaseViewController {
         userRating.text = "\(rating)"
     }
 }
+
+extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+   
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionContentCellId, for: indexPath) as! ContentCollectionViewCell
+        profileMenuBar.customDelegate = cell.view
+        
+        cell.backgroundColor = UIColor.green
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+    }
+    
+}
+
+class ContentCollectionViewCell: BaseCell {
+    
+    lazy var view: CustomTabView = {
+        let view = CustomTabView()
+        return view
+    }()
+    
+    override func setupViews() {
+        super.setupViews()
+        
+        addSubview(view)
+        addConstraints(format: "H:|[v0]|", views: view)
+        addConstraints(format: "V:|[v0]|", views: view)
+    }
+}
+
 
 

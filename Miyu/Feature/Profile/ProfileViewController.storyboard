@@ -53,43 +53,59 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Du-eo-mVx" customClass="MenuBar" customModule="Miyu" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="169" width="375" height="50"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="1" green="0.83001911610000001" blue="0.53398158809999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="nCw-ER-fsB"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eN4-Hz-Vob" customClass="CustomTabView" customModule="Miyu" customModuleProvider="target">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hKc-OQ-HNz">
                                 <rect key="frame" x="0.0" y="219" width="375" height="448"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tSr-B4-7y4">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JBg-7U-g3R">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="0.36068126307312853" green="0.40290094802092979" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="PxE-bb-h4c" firstAttribute="trailing" secondItem="0Du-eo-mVx" secondAttribute="trailing" id="0cu-tt-vwU"/>
-                            <constraint firstItem="PxE-bb-h4c" firstAttribute="bottom" secondItem="eN4-Hz-Vob" secondAttribute="bottom" id="124-yf-dvp"/>
                             <constraint firstItem="gYY-IN-Pyz" firstAttribute="top" secondItem="88E-Nh-ZaN" secondAttribute="bottom" constant="15" id="1SJ-yT-2v3"/>
-                            <constraint firstItem="eN4-Hz-Vob" firstAttribute="top" secondItem="0Du-eo-mVx" secondAttribute="bottom" id="1ly-20-YRY"/>
                             <constraint firstItem="Ysu-1C-l4w" firstAttribute="leading" secondItem="gYY-IN-Pyz" secondAttribute="trailing" constant="8" id="7He-vI-AXM"/>
-                            <constraint firstItem="PxE-bb-h4c" firstAttribute="trailing" secondItem="eN4-Hz-Vob" secondAttribute="trailing" id="7iA-Rw-035"/>
                             <constraint firstItem="gYY-IN-Pyz" firstAttribute="leading" secondItem="PxE-bb-h4c" secondAttribute="leading" constant="24" id="A9P-x1-hig"/>
                             <constraint firstItem="ftQ-qX-Yab" firstAttribute="leading" secondItem="Ysu-1C-l4w" secondAttribute="leading" id="Aer-2X-Bjg"/>
+                            <constraint firstItem="hKc-OQ-HNz" firstAttribute="top" secondItem="0Du-eo-mVx" secondAttribute="bottom" id="FR4-J1-ByV"/>
                             <constraint firstItem="FxI-Gj-5WZ" firstAttribute="leading" secondItem="Ysu-1C-l4w" secondAttribute="leading" id="GGb-ts-2fn"/>
                             <constraint firstItem="88E-Nh-ZaN" firstAttribute="leading" secondItem="PxE-bb-h4c" secondAttribute="leading" id="Gq4-Hv-EXH"/>
-                            <constraint firstItem="eN4-Hz-Vob" firstAttribute="leading" secondItem="PxE-bb-h4c" secondAttribute="leading" id="HKx-S8-6JC"/>
                             <constraint firstItem="ftQ-qX-Yab" firstAttribute="top" secondItem="FxI-Gj-5WZ" secondAttribute="bottom" constant="7" id="Quk-dy-Wx7"/>
                             <constraint firstItem="PxE-bb-h4c" firstAttribute="trailing" secondItem="88E-Nh-ZaN" secondAttribute="trailing" id="VAF-Dk-Nlz"/>
                             <constraint firstItem="Ysu-1C-l4w" firstAttribute="top" secondItem="88E-Nh-ZaN" secondAttribute="bottom" constant="15" id="bAj-Y1-FDt"/>
                             <constraint firstItem="0Du-eo-mVx" firstAttribute="leading" secondItem="PxE-bb-h4c" secondAttribute="leading" id="cOo-4B-gpI"/>
                             <constraint firstItem="PxE-bb-h4c" firstAttribute="top" secondItem="88E-Nh-ZaN" secondAttribute="top" id="grq-tt-F6b"/>
+                            <constraint firstItem="PxE-bb-h4c" firstAttribute="trailing" secondItem="hKc-OQ-HNz" secondAttribute="trailing" id="kkc-PB-UJY"/>
                             <constraint firstItem="PxE-bb-h4c" firstAttribute="trailing" secondItem="ftQ-qX-Yab" secondAttribute="trailing" constant="5" id="n9j-T2-Sv1"/>
                             <constraint firstItem="FxI-Gj-5WZ" firstAttribute="top" secondItem="Ysu-1C-l4w" secondAttribute="bottom" constant="12" id="qHq-0C-VMb"/>
+                            <constraint firstItem="hKc-OQ-HNz" firstAttribute="leading" secondItem="PxE-bb-h4c" secondAttribute="leading" id="wrp-cc-XEv"/>
+                            <constraint firstItem="PxE-bb-h4c" firstAttribute="bottom" secondItem="hKc-OQ-HNz" secondAttribute="bottom" id="ygX-H8-l1R"/>
                             <constraint firstItem="0Du-eo-mVx" firstAttribute="top" secondItem="gYY-IN-Pyz" secondAttribute="bottom" constant="10" id="zEs-mj-1DJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PxE-bb-h4c"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="lWf-z5-G5N"/>
                     <connections>
-                        <outlet property="customTabView" destination="eN4-Hz-Vob" id="sJU-KJ-lso"/>
+                        <outlet property="contentCollectionView" destination="hKc-OQ-HNz" id="6sh-3o-cy4"/>
                         <outlet property="profileImage" destination="gYY-IN-Pyz" id="mYO-s2-xOd"/>
                         <outlet property="profileMenuBar" destination="0Du-eo-mVx" id="R5j-RN-QSC"/>
                         <outlet property="userAttribute" destination="ftQ-qX-Yab" id="3gY-G3-h3Z"/>
