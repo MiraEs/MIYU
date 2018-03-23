@@ -34,6 +34,8 @@ class CustomTabView: UIView, CustomTabViewDelegate {
         return ProfileUserDataModel()
     }()
     
+    private weak var store = DataStore.sharedInstance
+    
     func reloadData() {
         tableView.reloadData()
         collectionView.reloadData()

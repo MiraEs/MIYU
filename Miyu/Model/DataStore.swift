@@ -28,7 +28,6 @@ internal final class DataStore {
     }
 
     var posts: [Post] = []
-    //var userPosts: [Post] = []
     var userPosts: Results<Post>!
 }
 
