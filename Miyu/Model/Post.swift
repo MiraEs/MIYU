@@ -59,10 +59,6 @@ internal final class Post: Object, Codable {
         }
     }
     
-    func deleteFromRealm() {
-        try! uiRealm.delete(self)
-    }
-    
     
 }
 // TODO: REFACTOR?
