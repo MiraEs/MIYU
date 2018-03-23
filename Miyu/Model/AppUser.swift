@@ -36,6 +36,10 @@ internal final class AppUser: Object, Codable {
         self.photoUrl = photoUrl
         self.userRating.value = userRating
     }
+    
+    override static func primaryKey() -> String? {
+        return "email"
+    }
 }
 
 extension AppUser {

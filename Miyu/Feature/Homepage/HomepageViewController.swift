@@ -47,7 +47,7 @@ internal final class HomepageViewController: BaseViewController {
     }
 
     private func reloadData() {
-        allPosts = uiRealm.objects(Post.self)
+        allPosts = uiRealm.objects(Post.self) 
         self.tableView.reloadData()
         
         if let uid = fbManager?.currentUser?.uid {
