@@ -21,18 +21,18 @@ internal final class HomepageViewController: BaseViewController {
         return HomepageViewModel(self)
     }
     
+    var allPosts: Results<Post>!
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        print("REALM CONFIG >>>>> \(Realm.Configuration.defaultConfiguration.fileURL!)")
+        print("REALM CONFIG >>>>>>>>>>>>>>>>>>>>>>>>> \(Realm.Configuration.defaultConfiguration.fileURL!)")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        print("VIEW WILL APPEAR TABLE RELOAD")
-        tableView.reloadData()
     }
     
     // MARK: SEGUE TO UPLOAD VC
@@ -46,6 +46,11 @@ internal final class HomepageViewController: BaseViewController {
         viewModel?.setup(tableView)
         fetchPosts()
     }
+
+    private func reloadData() {
+        allPosts = uiRealm.objects(Post.self)
+        self.tableView.reloadData()
+    }
     
     // MARK: FETCH DATA
     private func fetchPosts() {
@@ -55,10 +60,11 @@ internal final class HomepageViewController: BaseViewController {
             self?.store?.posts.append(post)
             DispatchQueue.main.async {
                 self?.removeSpinner(spinner: loadingIndicator)
-                self?.tableView.reloadData()
+                self?.reloadData()
             }
         })
     }
+
     
     private func fetchPhoto(_ contentUrlString: String?, _ profileUrlString: String?, _ cell: HomepageTableViewCell) {
         if let contentUrlString = contentUrlString,
@@ -72,16 +78,17 @@ internal final class HomepageViewController: BaseViewController {
 extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let count = store?.posts.count else { return 0 }
-        return count
+        if allPosts == nil {
+            return 0
+        } else {
+            return allPosts.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.homeCell, for: indexPath) as! HomepageTableViewCell
-        guard let allPosts = store?.posts else { return UITableViewCell() }
-        
-        let currentCell = allPosts[((allPosts.count)-1) - indexPath.row]
+        let currentCell = allPosts[(allPosts.count-1) - indexPath.row]
 
         guard let key = currentCell.key,
             let uid = currentCell.uid,

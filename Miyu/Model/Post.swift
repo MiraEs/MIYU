@@ -48,6 +48,10 @@ internal final class Post: Object, Codable {
         self.key = key
     }
     
+    override static func primaryKey() -> String? {
+        return "key"
+    }
+    
     // FILE MANAGER
     
     func savePost() {
@@ -62,8 +66,12 @@ internal final class Post: Object, Codable {
     // REALM
     func writeToRealm() {
         try! uiRealm.write {
-            uiRealm.add(self)
+            uiRealm.add(self, update: true)
         }
+    }
+    
+    func deleteFromRealm() {
+        try! uiRealm.delete(self)
     }
     
     
