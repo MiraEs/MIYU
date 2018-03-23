@@ -109,7 +109,10 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
             cell.ratingView.didFinishTouchingCosmos = { rating in
                 cell.ratingView.rating = rating
                 cell.ratingUpdate(rating, key, uid)
-                currentCell.rating.value = rating
+                //currentCell.rating.value = rating
+                try! uiRealm.write {
+                    currentCell.rating.value = rating
+                }
             }
         }
         return cell
