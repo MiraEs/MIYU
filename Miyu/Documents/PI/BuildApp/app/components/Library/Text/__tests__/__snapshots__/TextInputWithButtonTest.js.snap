@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BuildLibrary TextInputWithButton should render correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 42,
+        "justifyContent": "space-between",
+        "paddingHorizontal": 16,
+      },
+    ]
+  }
+>
+  <TextInput
+    autoCapitalize="none"
+    autoCorrect={false}
+    autoFocus={false}
+    clearButtonMode="while-editing"
+    multiline={false}
+    onBlur={[Function]}
+    onChangeText={[Function]}
+    onFocus={[Function]}
+    placeholder="Placeholder Test"
+    placeholderTextColor="#B1B2B4"
+    selectionColor="#00A499"
+    style={
+      Array [
+        Object {
+          "color": "#63666A",
+          "flex": 1,
+          "fontFamily": "ProximaNova-RegularIt",
+          "fontSize": 13,
+          "fontStyle": "italic",
+          "marginRight": 8,
+        },
+      ]
+    }
+    underlineColorAndroid="transparent"
+    value=""
+  />
+</View>
+`;
+
+exports[`BuildLibrary TextInputWithButton should render with create button 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 42,
+        "justifyContent": "space-between",
+        "paddingHorizontal": 16,
+      },
+    ]
+  }
+>
+  <TextInput
+    autoCapitalize="none"
+    autoCorrect={false}
+    autoFocus={false}
+    clearButtonMode="while-editing"
+    multiline={false}
+    onBlur={[Function]}
+    onChangeText={[Function]}
+    onFocus={[Function]}
+    placeholder="Placeholder Test"
+    placeholderTextColor="#B1B2B4"
+    selectionColor="#00A499"
+    style={
+      Array [
+        Object {
+          "color": "#63666A",
+          "flex": 1,
+          "fontFamily": "ProximaNova-RegularIt",
+          "fontSize": 13,
+          "fontStyle": "italic",
+          "marginRight": 8,
+        },
+        Object {
+          "fontFamily": "ProximaNova-Regular",
+        },
+      ]
+    }
+    underlineColorAndroid="transparent"
+    value=""
+  />
+  <Button
+    accessibilityLabel="Test"
+    borders={false}
+    color="none"
+    isLoading={false}
+    onPress={[Function]}
+    text="Test"
+    textColor="primary"
+    textWeight="normal"
+    trackAction="test"
+    trackContextData={undefined}
+  />
+</View>
+`;

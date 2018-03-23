@@ -1,0 +1,494 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductVariationsScreen should render with no selected finish 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <ProductConfigurationHeader
+    hasSelectedFinish={false}
+    productConfigurationId="u-u-i-d"
+  />
+  <View
+    style={
+      Object {
+        "flexGrow": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "marginTop": 24,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "marginBottom": 8,
+            "marginLeft": 8,
+          }
+        }
+      >
+        Finish: 
+        <Text
+          color="error"
+          weight="bold"
+        >
+          Please select an available finish
+        </Text>
+      </Text>
+      <ScrollView
+        contentContainerStyle={
+          Object {
+            "paddingLeft": 8,
+          }
+        }
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+      >
+        <View>
+          <ProductConfigurationOptionButton
+            imageURI="cloudinary/url/PRODUCT_SECTION/mfg/finishImage1.png"
+            isSelected={false}
+            onPress={[Function]}
+            price={654.12}
+            text="finish 1"
+          />
+        </View>
+        <View>
+          <ProductConfigurationOptionButton
+            imageURI="cloudinary/url/PRODUCT_SECTION/mfg/finishImage2.png"
+            isSelected={false}
+            onPress={[Function]}
+            price={7843.12}
+            text="finish 2"
+          />
+        </View>
+      </ScrollView>
+    </View>
+    <View
+      style={
+        Object {
+          "marginTop": 24,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "marginLeft": 8,
+          }
+        }
+      >
+        : 
+        <Text
+          weight="bold"
+        />
+      </Text>
+      <ScrollView
+        contentContainerStyle={
+          Object {
+            "paddingLeft": 8,
+          }
+        }
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+      >
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "marginRight": 8,
+              "opacity": 1,
+              "padding": 8,
+              "width": 100,
+            }
+          }
+          testID={undefined}
+          tvParallaxProperties={undefined}
+        >
+          <View
+            style={
+              Object {
+                "opacity": 0.6,
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#FFFFFF",
+                    "borderColor": "#D0D3D4",
+                    "borderWidth": 1,
+                    "padding": 8,
+                  },
+                  Object {
+                    "borderColor": "#D45D00",
+                    "borderWidth": 3,
+                    "padding": 6,
+                  },
+                ]
+              }
+            >
+              <Image
+                source={
+                  Object {
+                    "uri": "cloudinary/url/PRODUCT_SECTION/mfg/image.png",
+                  }
+                }
+                style={
+                  Object {
+                    "height": 80,
+                    "width": 80,
+                  }
+                }
+              />
+            </View>
+            <Text
+              size="small"
+              textAlign="center"
+            />
+          </View>
+        </View>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "marginRight": 8,
+              "opacity": 1,
+              "padding": 8,
+              "width": 100,
+            }
+          }
+          testID={undefined}
+          tvParallaxProperties={undefined}
+        >
+          <View
+            style={
+              Object {
+                "opacity": 0.6,
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#FFFFFF",
+                    "borderColor": "#D0D3D4",
+                    "borderWidth": 1,
+                    "padding": 8,
+                  },
+                  Object {
+                    "borderColor": "#D45D00",
+                    "borderWidth": 3,
+                    "padding": 6,
+                  },
+                ]
+              }
+            >
+              <Image
+                source={
+                  Object {
+                    "uri": "cloudinary/url/PRODUCT_SECTION/mfg/image.png",
+                  }
+                }
+                style={
+                  Object {
+                    "height": 80,
+                    "width": 80,
+                  }
+                }
+              />
+            </View>
+            <Text
+              size="small"
+              textAlign="center"
+            />
+          </View>
+        </View>
+      </ScrollView>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`ProductVariationsScreen should render with selected finish 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <ProductConfigurationHeader
+    hasSelectedFinish={true}
+    productConfigurationId="u-u-i-d"
+  />
+  <View
+    style={
+      Object {
+        "flexGrow": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "marginTop": 24,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "marginBottom": 8,
+            "marginLeft": 8,
+          }
+        }
+      >
+        Finish: 
+        <Text
+          weight="bold"
+        >
+          finish 1
+        </Text>
+      </Text>
+      <ScrollView
+        contentContainerStyle={
+          Object {
+            "paddingLeft": 8,
+          }
+        }
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+      >
+        <View>
+          <ProductConfigurationOptionButton
+            imageURI="cloudinary/url/PRODUCT_SECTION/mfg/finishImage1.png"
+            isSelected={true}
+            onPress={[Function]}
+            price={654.12}
+            text="finish 1"
+          />
+        </View>
+        <View>
+          <ProductConfigurationOptionButton
+            imageURI="cloudinary/url/PRODUCT_SECTION/mfg/finishImage2.png"
+            isSelected={false}
+            onPress={[Function]}
+            price={7843.12}
+            text="finish 2"
+          />
+        </View>
+      </ScrollView>
+    </View>
+    <View
+      style={
+        Object {
+          "marginTop": 24,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "marginLeft": 8,
+          }
+        }
+      >
+        : 
+        <Text
+          weight="bold"
+        />
+      </Text>
+      <ScrollView
+        contentContainerStyle={
+          Object {
+            "paddingLeft": 8,
+          }
+        }
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+      >
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "marginRight": 8,
+              "opacity": 1,
+              "padding": 8,
+              "width": 100,
+            }
+          }
+          testID={undefined}
+          tvParallaxProperties={undefined}
+        >
+          <View
+            style={
+              Object {
+                "opacity": 0.6,
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#FFFFFF",
+                    "borderColor": "#D0D3D4",
+                    "borderWidth": 1,
+                    "padding": 8,
+                  },
+                  Object {
+                    "borderColor": "#D45D00",
+                    "borderWidth": 3,
+                    "padding": 6,
+                  },
+                ]
+              }
+            >
+              <Image
+                source={
+                  Object {
+                    "uri": "cloudinary/url/PRODUCT_SECTION/mfg/image.png",
+                  }
+                }
+                style={
+                  Object {
+                    "height": 80,
+                    "width": 80,
+                  }
+                }
+              />
+            </View>
+            <Text
+              size="small"
+              textAlign="center"
+            />
+          </View>
+        </View>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "marginRight": 8,
+              "opacity": 1,
+              "padding": 8,
+              "width": 100,
+            }
+          }
+          testID={undefined}
+          tvParallaxProperties={undefined}
+        >
+          <View
+            style={
+              Object {
+                "opacity": 0.6,
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#FFFFFF",
+                    "borderColor": "#D0D3D4",
+                    "borderWidth": 1,
+                    "padding": 8,
+                  },
+                  Object {
+                    "borderColor": "#D45D00",
+                    "borderWidth": 3,
+                    "padding": 6,
+                  },
+                ]
+              }
+            >
+              <Image
+                source={
+                  Object {
+                    "uri": "cloudinary/url/PRODUCT_SECTION/mfg/image.png",
+                  }
+                }
+                style={
+                  Object {
+                    "height": 80,
+                    "width": 80,
+                  }
+                }
+              />
+            </View>
+            <Text
+              size="small"
+              textAlign="center"
+            />
+          </View>
+        </View>
+      </ScrollView>
+    </View>
+  </View>
+</View>
+`;

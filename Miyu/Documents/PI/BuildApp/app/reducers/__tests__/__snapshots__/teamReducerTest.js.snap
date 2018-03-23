@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`teamReducer reducer should DELETE_PROJECT_TEAM_MEMBER_SUCCESS 1`] = `
+Object {
+  "isLoading": false,
+  "message": "Delete Completed",
+  "team": Object {
+    "invitees": Array [],
+    "members": Array [],
+  },
+}
+`;
+
+exports[`teamReducer reducer should LOAD_INVITEES_FAIL 1`] = `
+Object {
+  "isLoading": false,
+  "message": "Unable to retrieve team.",
+  "team": Object {
+    "invitees": Array [],
+    "members": Array [],
+  },
+}
+`;
+
+exports[`teamReducer reducer should LOAD_INVITEES_SUCCESS 1`] = `
+Object {
+  "isLoading": false,
+  "message": "",
+  "team": Object {
+    "invitees": Array [],
+    "members": Array [],
+  },
+}
+`;
+
+exports[`teamReducer reducer should LOAD_TEAM_FAIL 1`] = `
+Object {
+  "isLoading": false,
+  "message": "Unable to retrieve team.",
+  "team": Object {
+    "invitees": Array [],
+    "members": Array [],
+  },
+}
+`;
+
+exports[`teamReducer reducer should LOAD_TEAM_SUCCESS 1`] = `
+Object {
+  "isLoading": false,
+  "message": "",
+  "team": Object {
+    "invitees": Array [],
+    "members": Array [
+      Object {},
+    ],
+  },
+}
+`;
+
+exports[`teamReducer reducer should REJECT_PROJECT_INVITE_FAIL 1`] = `
+Object {
+  "isLoading": false,
+  "message": "",
+  "team": Object {
+    "inviteeError": undefined,
+    "invitees": Array [],
+    "members": Array [],
+  },
+}
+`;
+
+exports[`teamReducer reducer should REJECT_PROJECT_INVITE_SUCCESS 1`] = `
+Object {
+  "isLoading": false,
+  "message": "",
+  "team": Object {
+    "invitees": Array [],
+    "members": Array [],
+  },
+}
+`;
+
+exports[`teamReducer reducer should RESEND_INVITE 1`] = `
+Object {
+  "isLoading": false,
+  "message": "",
+  "team": Object {
+    "invitees": Array [],
+    "members": Array [],
+  },
+}
+`;
+
+exports[`teamReducer reducer should SEND_PROJECT_INVITES_ERROR 1`] = `
+Object {
+  "inviteeError": "Something went wrong ):",
+  "isLoading": false,
+  "message": "",
+  "team": Object {
+    "invitees": Array [],
+    "members": Array [],
+  },
+}
+`;
+
+exports[`teamReducer reducer should SEND_PROJECT_INVITES_SUCCESS 1`] = `
+Object {
+  "isLoading": false,
+  "message": "",
+  "team": Object {
+    "invitees": Array [
+      undefined,
+    ],
+    "members": Array [],
+  },
+}
+`;
+
+exports[`teamReducer reducer should return initialState 1`] = `
+Object {
+  "isLoading": false,
+  "isResendingInvites": false,
+  "message": "",
+  "resendError": "",
+  "team": Object {
+    "invitees": Array [],
+    "members": Array [],
+  },
+}
+`;

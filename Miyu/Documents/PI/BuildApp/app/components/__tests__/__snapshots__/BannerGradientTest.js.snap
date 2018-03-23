@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BannerGradient component should render correctly 1`] = `
+<BVLinearGradient
+  colors={
+    Array [
+      16777215,
+      807804695,
+    ]
+  }
+  end={
+    Object {
+      "x": 0,
+      "y": 0.75,
+    }
+  }
+  locations={null}
+  start={
+    Object {
+      "x": 0,
+      "y": 0,
+    }
+  }
+  style={undefined}
+/>
+`;

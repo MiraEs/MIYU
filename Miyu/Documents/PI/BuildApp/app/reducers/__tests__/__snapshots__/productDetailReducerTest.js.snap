@@ -1,0 +1,231 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`productDetailReducer reducer should CLEAR_REVIEWS 1`] = `
+Object {
+  "error": "",
+  "isLoading": false,
+  "isNoReviews": false,
+  "lastViewedProductCompositeId": 0,
+  "productsSpecs": Object {},
+  "questionAndAnswerFilter": "",
+  "reviews": Array [],
+  "reviewsLoadError": false,
+  "rootCategories": Object {},
+  "screenViews": Object {},
+  "totalReviews": 0,
+}
+`;
+
+exports[`productDetailReducer reducer should GALLERY_GO_TO_INDEX 1`] = `
+Object {
+  "error": "",
+  "isLoading": false,
+  "lastViewedProductCompositeId": 0,
+  "productsSpecs": Object {},
+  "questionAndAnswerFilter": "",
+  "reviews": Array [],
+  "reviewsLoadError": false,
+  "rootCategories": Object {},
+  "screenViews": Object {
+    "u-u-i-d": Object {
+      "imageGalleryIndex": 7,
+    },
+  },
+  "totalReviews": 0,
+}
+`;
+
+exports[`productDetailReducer reducer should GET_PRODUCT_SPECS_FAIL 1`] = `
+Object {
+  "error": undefined,
+  "isLoading": false,
+  "lastViewedProductCompositeId": 0,
+  "productsSpecs": Object {},
+  "questionAndAnswerFilter": "",
+  "reviews": Array [],
+  "reviewsLoadError": false,
+  "rootCategories": Object {},
+  "screenViews": Object {},
+  "totalReviews": 0,
+}
+`;
+
+exports[`productDetailReducer reducer should GET_PRODUCT_SPECS_SUCCESS 1`] = `
+Object {
+  "error": "",
+  "isLoading": false,
+  "lastViewedProductCompositeId": 0,
+  "productsSpecs": Object {
+    "undefined": undefined,
+  },
+  "questionAndAnswerFilter": "",
+  "reviews": Array [],
+  "reviewsLoadError": false,
+  "rootCategories": Object {},
+  "screenViews": Object {},
+  "totalReviews": 0,
+}
+`;
+
+exports[`productDetailReducer reducer should RECEIVE_PRODUCT_REVIEWS_FAILURE 1`] = `
+Object {
+  "error": "",
+  "isLoading": false,
+  "lastViewedProductCompositeId": 0,
+  "productsSpecs": Object {},
+  "questionAndAnswerFilter": "",
+  "reviews": Array [],
+  "reviewsLoadError": true,
+  "rootCategories": Object {},
+  "screenViews": Object {},
+  "totalReviews": 0,
+}
+`;
+
+exports[`productDetailReducer reducer should RECEIVE_PRODUCT_REVIEWS_SUCCESS 1`] = `
+Object {
+  "error": "",
+  "isLoading": false,
+  "isNoReviews": true,
+  "lastViewedProductCompositeId": 0,
+  "productsSpecs": Object {},
+  "questionAndAnswerFilter": "",
+  "reviews": Array [],
+  "reviewsLoadError": false,
+  "rootCategories": Object {},
+  "screenViews": Object {},
+  "totalReviews": 0,
+}
+`;
+
+exports[`productDetailReducer reducer should RECEIVE_PRODUCT_ROOT_CATEGORY 1`] = `
+Object {
+  "error": "",
+  "isLoading": false,
+  "lastViewedProductCompositeId": 0,
+  "productsSpecs": Object {},
+  "questionAndAnswerFilter": "",
+  "reviews": Array [],
+  "reviewsLoadError": false,
+  "rootCategories": Object {
+    "1234": Object {
+      "0": "1",
+    },
+  },
+  "screenViews": Object {},
+  "totalReviews": 0,
+}
+`;
+
+exports[`productDetailReducer reducer should REVIEWS_RESET_FAILURE 1`] = `
+Object {
+  "error": "",
+  "isLoading": false,
+  "isNoReviews": false,
+  "lastViewedProductCompositeId": 0,
+  "productsSpecs": Object {},
+  "questionAndAnswerFilter": "",
+  "reviews": Array [],
+  "reviewsLoadError": false,
+  "rootCategories": Object {},
+  "screenViews": Object {},
+  "totalReviews": 0,
+}
+`;
+
+exports[`productDetailReducer reducer should SAVE_LAST_VIEWED_PRODUCT_COMPOSITE_ID 1`] = `
+Object {
+  "error": "",
+  "isLoading": false,
+  "lastViewedProductCompositeId": undefined,
+  "productsSpecs": Object {},
+  "questionAndAnswerFilter": "",
+  "reviews": Array [],
+  "reviewsLoadError": false,
+  "rootCategories": Object {},
+  "screenViews": Object {},
+  "totalReviews": 0,
+}
+`;
+
+exports[`productDetailReducer reducer should SEARCH_SUCCESS 1`] = `
+Object {
+  "arProducts": Array [],
+  "error": "",
+  "isLoading": false,
+  "lastViewedProductCompositeId": 0,
+  "productsSpecs": Object {},
+  "questionAndAnswerFilter": "",
+  "reviews": Array [],
+  "reviewsLoadError": false,
+  "rootCategories": Object {},
+  "screenViews": Object {},
+  "totalReviews": 0,
+}
+`;
+
+exports[`productDetailReducer reducer should SET_PRODUCT_SPEC_FILTER 1`] = `
+Object {
+  "error": "",
+  "isLoading": false,
+  "lastViewedProductCompositeId": 0,
+  "productSpecFilter": "",
+  "productsSpecs": Object {},
+  "questionAndAnswerFilter": "",
+  "reviews": Array [],
+  "reviewsLoadError": false,
+  "rootCategories": Object {},
+  "screenViews": Object {},
+  "totalReviews": 0,
+}
+`;
+
+exports[`productDetailReducer reducer should SET_QUESTION_AND_ANSWER_FILTER 1`] = `
+Object {
+  "error": "",
+  "isLoading": false,
+  "lastViewedProductCompositeId": 0,
+  "productsSpecs": Object {},
+  "questionAndAnswerFilter": undefined,
+  "reviews": Array [],
+  "reviewsLoadError": false,
+  "rootCategories": Object {},
+  "screenViews": Object {},
+  "totalReviews": 0,
+}
+`;
+
+exports[`productDetailReducer reducer should UPDATE_SQUARE_FOOTAGE 1`] = `
+Object {
+  "error": "",
+  "isLoading": false,
+  "lastViewedProductCompositeId": 0,
+  "productsSpecs": Object {},
+  "questionAndAnswerFilter": "",
+  "reviews": Array [],
+  "reviewsLoadError": false,
+  "rootCategories": Object {},
+  "screenViews": Object {
+    "u-u-i-d": Object {
+      "squareFootage": 100,
+    },
+  },
+  "totalReviews": 0,
+}
+`;
+
+exports[`productDetailReducer reducer should return initialState 1`] = `
+Object {
+  "arProducts": Array [],
+  "error": "",
+  "isLoading": false,
+  "lastViewedProductCompositeId": 0,
+  "productsSpecs": Object {},
+  "questionAndAnswerFilter": "",
+  "reviews": Array [],
+  "reviewsLoadError": false,
+  "rootCategories": Object {},
+  "screenViews": Object {},
+  "totalReviews": 0,
+}
+`;

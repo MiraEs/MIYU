@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectRow component should render a project 1`] = `
+<TouchableHighlight
+  accessibilityLabel="Project"
+  onLayout={undefined}
+  onPress={[Function]}
+  underlayColor="rgba(0, 0, 0, .1)"
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#FFFFFF",
+        "borderBottomColor": "#c8c7cc",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+        "padding": 16,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "marginRight": 8,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text>
+            <Text
+              weight="bold"
+            >
+              Test
+            </Text>
+          </Text>
+        </View>
+        <Text
+          color="greyDark"
+        >
+          2 team members  |  1 item  |  1 purchased
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      />
+    </View>
+    <Icon
+      color="#acabab"
+      name="ios-arrow-forward"
+      size={25}
+      style={undefined}
+    />
+  </View>
+</TouchableHighlight>
+`;
+
+exports[`ProjectRow component should render a project 2`] = `
+<TouchableHighlight
+  accessibilityLabel="Project"
+  onLayout={undefined}
+  onPress={[Function]}
+  underlayColor="rgba(0, 0, 0, .1)"
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#FFFFFF",
+        "borderBottomColor": "#c8c7cc",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+        "padding": 16,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "marginRight": 8,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Text>
+            Another name
+          </Text>
+        </View>
+        <Text
+          color="greyDark"
+        >
+          NaN team members
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      />
+    </View>
+    <Icon
+      color="#acabab"
+      name="ios-arrow-forward"
+      size={25}
+      style={undefined}
+    />
+  </View>
+</TouchableHighlight>
+`;
+
+exports[`ProjectRow component should render a string 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "borderBottomColor": "#D0D3D4",
+      "borderBottomWidth": 1,
+      "padding": 16,
+    }
+  }
+>
+  <Text>
+    Test
+  </Text>
+</View>
+`;
+
+exports[`ProjectRow component should render an element 1`] = `<Test />`;

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ManufacturerCallToAction Container should render with a sale 1`] = `
+<View
+  style={
+    Object {
+      "marginBottom": 16,
+      "paddingHorizontal": 8,
+    }
+  }
+>
+  <Text
+    color="accent"
+    weight="bold"
+  >
+    Test Sale
+  </Text>
+  <Text>
+    <Text
+      color="primary"
+      onPress={[Function]}
+    >
+      Call 
+      (530) 961-9574
+       
+    </Text>
+    Test sale details.
+  </Text>
+</View>
+`;

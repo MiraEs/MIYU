@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sessionReducer reducer should GET_SESSION 1`] = `
+Object {
+  "session": Object {},
+  "sessionError": Object {},
+}
+`;
+
+exports[`sessionReducer reducer should GET_SESSION_ERROR 1`] = `
+Object {
+  "session": Object {},
+  "sessionError": Object {},
+}
+`;
+
+exports[`sessionReducer reducer should SAVE_SESSION 1`] = `
+Object {
+  "session": Object {},
+  "sessionError": Object {},
+}
+`;
+
+exports[`sessionReducer reducer should SAVE_SESSION_ERROR 1`] = `
+Object {
+  "session": Object {},
+  "sessionError": Object {},
+}
+`;
+
+exports[`sessionReducer reducer should return initialState 1`] = `
+Object {
+  "session": Object {},
+  "sessionError": Object {},
+}
+`;

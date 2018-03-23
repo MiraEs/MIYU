@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmptyCart component should render with default props 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#EBEDEF",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#FFFFFF",
+        "borderBottomWidth": 1,
+        "borderColor": "#D0D3D4",
+        "borderTopWidth": 1,
+        "justifyContent": "flex-start",
+        "marginTop": 16,
+        "paddingBottom": 24,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "marginTop": 24,
+        }
+      }
+    >
+      <Icon
+        color="#EBEDEF"
+        name="ios-cart"
+        size={55}
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "marginTop": 24,
+        }
+      }
+    >
+      <Text
+        lineHeight={false}
+      >
+        Your shopping cart is empty
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "marginTop": 24,
+        }
+      }
+    >
+      <Button
+        accessibilityLabel="Load Cart Button"
+        onPress={[Function]}
+        style={
+          Object {
+            "flex": 0,
+          }
+        }
+        text="Load Cart"
+        trackAction="build:app:emptycart:loadcart"
+      />
+    </View>
+  </View>
+</View>
+`;

@@ -1,0 +1,298 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ordersReducer reducer should ADD_PROJECT_ORDER 1`] = `
+Object {
+  "errors": Object {
+    "loadOrderDetails": null,
+    "loadOrders": null,
+    "loadReturnDetails": null,
+    "loadReturns": null,
+    "loadShippingInfo": null,
+  },
+  "loadingOrders": true,
+  "loadingReturns": true,
+  "orderDetails": Object {},
+  "orders": Array [],
+  "returnDetails": Object {},
+  "returns": Array [],
+  "shippingInfo": Object {},
+}
+`;
+
+exports[`ordersReducer reducer should LOAD_ORDER_DETAILS_FAIL 1`] = `
+Object {
+  "errors": Object {
+    "loadOrderDetails": undefined,
+    "loadOrders": null,
+    "loadReturnDetails": null,
+    "loadReturns": null,
+    "loadShippingInfo": null,
+  },
+  "loadingOrders": true,
+  "loadingReturns": true,
+  "orderDetails": Object {},
+  "orders": Array [],
+  "returnDetails": Object {},
+  "returns": Array [],
+  "shippingInfo": Object {},
+}
+`;
+
+exports[`ordersReducer reducer should LOAD_ORDER_DETAILS_SUCCESS 1`] = `
+Object {
+  "errors": Object {
+    "loadOrderDetails": null,
+    "loadOrders": null,
+    "loadReturnDetails": null,
+    "loadReturns": null,
+    "loadShippingInfo": null,
+  },
+  "loadingOrders": true,
+  "loadingReturns": true,
+  "orderDetails": Object {
+    "undefined": Object {
+      "ordernumber": "1234",
+    },
+  },
+  "orders": Array [],
+  "returnDetails": Object {},
+  "returns": Array [],
+  "shippingInfo": Object {},
+}
+`;
+
+exports[`ordersReducer reducer should LOAD_ORDERS 1`] = `
+Object {
+  "errors": Object {
+    "loadOrderDetails": null,
+    "loadOrders": null,
+    "loadReturnDetails": null,
+    "loadReturns": null,
+    "loadShippingInfo": null,
+  },
+  "loadingOrders": true,
+  "loadingReturns": true,
+  "orderDetails": Object {},
+  "orders": Array [],
+  "returnDetails": Object {},
+  "returns": Array [],
+  "shippingInfo": Object {},
+}
+`;
+
+exports[`ordersReducer reducer should LOAD_ORDERS_FAIL 1`] = `
+Object {
+  "errors": Object {
+    "loadOrderDetails": null,
+    "loadOrders": undefined,
+    "loadReturnDetails": null,
+    "loadReturns": null,
+    "loadShippingInfo": null,
+  },
+  "loadingOrders": false,
+  "loadingReturns": true,
+  "orderDetails": Object {},
+  "orders": Array [],
+  "returnDetails": Object {},
+  "returns": Array [],
+  "shippingInfo": Object {},
+}
+`;
+
+exports[`ordersReducer reducer should LOAD_ORDERS_SUCCESS 1`] = `
+Object {
+  "errors": Object {
+    "loadOrderDetails": null,
+    "loadOrders": null,
+    "loadReturnDetails": null,
+    "loadReturns": null,
+    "loadShippingInfo": null,
+  },
+  "loadingOrders": false,
+  "loadingReturns": true,
+  "orderDetails": Object {},
+  "orders": undefined,
+  "returnDetails": Object {},
+  "returns": Array [],
+  "shippingInfo": Object {},
+}
+`;
+
+exports[`ordersReducer reducer should LOAD_RETURN_DETAILS_FAIL 1`] = `
+Object {
+  "errors": Object {
+    "loadOrderDetails": null,
+    "loadOrders": null,
+    "loadReturnDetails": undefined,
+    "loadReturns": null,
+    "loadShippingInfo": null,
+  },
+  "loadingOrders": true,
+  "loadingReturns": true,
+  "orderDetails": Object {},
+  "orders": Array [],
+  "returnDetails": Object {},
+  "returns": Array [],
+  "shippingInfo": Object {},
+}
+`;
+
+exports[`ordersReducer reducer should LOAD_RETURN_DETAILS_SUCCESS 1`] = `
+Object {
+  "errors": Object {
+    "loadOrderDetails": null,
+    "loadOrders": null,
+    "loadReturnDetails": null,
+    "loadReturns": null,
+    "loadShippingInfo": null,
+  },
+  "loadingOrders": true,
+  "loadingReturns": true,
+  "orderDetails": Object {},
+  "orders": Array [],
+  "returnDetails": Object {
+    "2": Object {
+      "returnId": 2,
+    },
+  },
+  "returns": Array [],
+  "shippingInfo": Object {},
+}
+`;
+
+exports[`ordersReducer reducer should LOAD_RETURNS 1`] = `
+Object {
+  "errors": Object {
+    "loadOrderDetails": null,
+    "loadOrders": null,
+    "loadReturnDetails": null,
+    "loadReturns": null,
+    "loadShippingInfo": null,
+  },
+  "loadingOrders": true,
+  "loadingReturns": true,
+  "orderDetails": Object {},
+  "orders": Array [],
+  "returnDetails": Object {},
+  "returns": Array [],
+  "shippingInfo": Object {},
+}
+`;
+
+exports[`ordersReducer reducer should LOAD_RETURNS_FAIL 1`] = `
+Object {
+  "errors": Object {
+    "loadOrderDetails": null,
+    "loadOrders": null,
+    "loadReturnDetails": null,
+    "loadReturns": undefined,
+    "loadShippingInfo": null,
+  },
+  "loadingOrders": true,
+  "loadingReturns": false,
+  "orderDetails": Object {},
+  "orders": Array [],
+  "returnDetails": Object {},
+  "returns": Array [],
+  "shippingInfo": Object {},
+}
+`;
+
+exports[`ordersReducer reducer should LOAD_RETURNS_SUCCESS 1`] = `
+Object {
+  "errors": Object {
+    "loadOrderDetails": null,
+    "loadOrders": null,
+    "loadReturnDetails": null,
+    "loadReturns": null,
+    "loadShippingInfo": null,
+  },
+  "loadingOrders": true,
+  "loadingReturns": false,
+  "orderDetails": Object {},
+  "orders": Array [],
+  "returnDetails": Object {},
+  "returns": undefined,
+  "shippingInfo": Object {},
+}
+`;
+
+exports[`ordersReducer reducer should LOAD_SHIPPING_INFO_FAIL 1`] = `
+Object {
+  "errors": Object {
+    "loadOrderDetails": null,
+    "loadOrders": null,
+    "loadReturnDetails": null,
+    "loadReturns": null,
+    "loadShippingInfo": undefined,
+  },
+  "loadingOrders": true,
+  "loadingReturns": true,
+  "orderDetails": Object {},
+  "orders": Array [],
+  "returnDetails": Object {},
+  "returns": Array [],
+  "shippingInfo": Object {},
+}
+`;
+
+exports[`ordersReducer reducer should LOAD_SHIPPING_INFO_SUCCESS 1`] = `
+Object {
+  "errors": Object {
+    "loadOrderDetails": null,
+    "loadOrders": null,
+    "loadReturnDetails": null,
+    "loadReturns": null,
+    "loadShippingInfo": null,
+  },
+  "loadingOrders": true,
+  "loadingReturns": true,
+  "orderDetails": Object {},
+  "orders": Array [],
+  "returnDetails": Object {},
+  "returns": Array [],
+  "shippingInfo": Object {
+    "1234": Object {
+      "orderNumber": "1234",
+    },
+  },
+}
+`;
+
+exports[`ordersReducer reducer should SIGN_USER_OUT 1`] = `
+Object {
+  "errors": Object {
+    "loadOrderDetails": null,
+    "loadOrders": null,
+    "loadReturnDetails": null,
+    "loadReturns": null,
+    "loadShippingInfo": null,
+  },
+  "loadingOrders": true,
+  "loadingReturns": true,
+  "orderDetails": Object {},
+  "orders": Array [],
+  "returnDetails": Object {},
+  "returns": Array [],
+  "shippingInfo": Object {},
+}
+`;
+
+exports[`ordersReducer reducer should return initialState 1`] = `
+Object {
+  "errors": Object {
+    "loadOrderDetails": null,
+    "loadOrders": null,
+    "loadReturnDetails": null,
+    "loadReturns": null,
+    "loadShippingInfo": null,
+  },
+  "loadingOrders": true,
+  "loadingReturns": true,
+  "orderDetails": Object {},
+  "orders": Array [],
+  "returnDetails": Object {},
+  "returns": Array [],
+  "shippingInfo": Object {},
+}
+`;

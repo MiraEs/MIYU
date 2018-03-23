@@ -1,0 +1,6 @@
+{
+  "extends": "../../.eslintrc",
+  "rules": {
+    "react/no-multi-comp": 0,
+  }
+}

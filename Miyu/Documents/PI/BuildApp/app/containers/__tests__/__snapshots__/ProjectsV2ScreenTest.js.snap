@@ -1,0 +1,234 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectsV2Screen component should render a guest user correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#EBEDEF",
+      "flex": 1,
+    }
+  }
+>
+  <SectionList
+    ListHeaderComponent={[Function]}
+    keyExtractor={[Function]}
+    onRefresh={[Function]}
+    refreshing={false}
+    renderItem={[Function]}
+    renderSectionHeader={[Function]}
+    scrollsToTop={true}
+    sections={
+      Array [
+        Object {
+          "data": Array [
+            "You have no active projects",
+          ],
+          "title": "PROJECTS",
+        },
+        Object {
+          "data": Array [
+            "You have no archived projects",
+          ],
+          "title": "ARCHIVED PROJECTS",
+        },
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`ProjectsV2Screen component should render a user with no projects correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#EBEDEF",
+      "flex": 1,
+    }
+  }
+>
+  <SectionList
+    ListHeaderComponent={[Function]}
+    keyExtractor={[Function]}
+    onRefresh={[Function]}
+    refreshing={false}
+    renderItem={[Function]}
+    renderSectionHeader={[Function]}
+    scrollsToTop={true}
+    sections={
+      Array [
+        Object {
+          "data": Array [
+            "You have no active projects",
+          ],
+          "title": "PROJECTS",
+        },
+        Object {
+          "data": Array [
+            "You have no archived projects",
+          ],
+          "title": "ARCHIVED PROJECTS",
+        },
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`ProjectsV2Screen component should render a user with projects correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#EBEDEF",
+      "flex": 1,
+    }
+  }
+>
+  <SectionList
+    ListHeaderComponent={[Function]}
+    keyExtractor={[Function]}
+    onRefresh={[Function]}
+    refreshing={false}
+    renderItem={[Function]}
+    renderSectionHeader={[Function]}
+    scrollsToTop={true}
+    sections={
+      Array [
+        Object {
+          "data": Array [
+            Object {
+              "favoriteListCount": 1,
+              "isOwnedByUser": false,
+              "name": "test",
+              "orderCount": 1,
+              "photoGalleryCount": 1,
+              "teamMemberCount": 1,
+            },
+            Object {
+              "favoriteListCount": 1,
+              "isOwnedByUser": true,
+              "name": "test 2",
+              "orderCount": 1,
+              "photoGalleryCount": 1,
+              "teamMemberCount": 1,
+            },
+          ],
+          "title": "PROJECTS",
+        },
+        Object {
+          "data": Array [
+            "You have no archived projects",
+          ],
+          "title": "ARCHIVED PROJECTS",
+        },
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`ProjectsV2Screen component should render an error correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#EBEDEF",
+      "flex": 1,
+    }
+  }
+>
+  <ErrorText
+    text="error"
+  />
+</View>
+`;
+
+exports[`ProjectsV2Screen function tests should have a state 1`] = `
+Object {
+  "isRefreshing": false,
+  "projectNameFilter": "",
+}
+`;
+
+exports[`ProjectsV2Screen function tests should render a non-project 1`] = `
+<ProjectRow
+  analyticsData={
+    Object {
+      "trackData": Object {
+        "screen": "Projects",
+      },
+      "trackName": "build:app:projectrowtap",
+    }
+  }
+  onPress={[Function]}
+  project="test"
+/>
+`;
+
+exports[`ProjectsV2Screen function tests should render a project 1`] = `
+<ProjectRow
+  analyticsData={
+    Object {
+      "trackData": Object {
+        "screen": "Projects",
+      },
+      "trackName": "build:app:projectrowtap",
+    }
+  }
+  onPress={[Function]}
+  project={
+    Object {
+      "favoriteListCount": 1,
+      "isOwnedByUser": false,
+      "name": "test",
+      "orderCount": 1,
+      "photoGalleryCount": 1,
+      "teamMemberCount": 1,
+    }
+  }
+/>
+`;
+
+exports[`ProjectsV2Screen function tests should render a project search box 1`] = `
+<Form
+  onChange={[Function]}
+  style={
+    Object {
+      "marginHorizontal": 8,
+    }
+  }
+>
+  <FormInput
+    accessibilityLabel="search"
+    autoCapitalize="none"
+    autoCorrect={false}
+    icon="search"
+    name="search"
+    onSubmitEditing={[Function]}
+    placeholder="Search Projects"
+    returnKeyType="search"
+    textInputContainerStyle={
+      Object {
+        "marginTop": 0,
+      }
+    }
+    value=""
+  />
+</Form>
+`;
+
+exports[`ProjectsV2Screen function tests should render project name accent 1`] = `
+<Text
+  color="accent"
+  fontStyle="italic"
+>
+    
+  Following
+</Text>
+`;
+
+exports[`ProjectsV2Screen function tests should render the section header 1`] = `
+<ListHeader
+  text="active"
+/>
+`;
+
+exports[`ProjectsV2Screen function tests shouldn't render a project search box 1`] = `undefined`;

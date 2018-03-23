@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AccountDetailsScreen component should getSortedAddresses 1`] = `
+Array [
+  Object {
+    "addressId": 2,
+  },
+  Object {
+    "addressId": 1,
+  },
+]
+`;
+
+exports[`AccountDetailsScreen component should handle componentWillReceiveProps 1`] = `
+Object {
+  "dataSource": Object {
+    "_data": Object {
+      "account settings": Array [
+        Object {
+          "component": [Function],
+        },
+      ],
+      "addresses": Array [
+        Object {
+          "addressId": 2,
+        },
+        Object {
+          "addressId": 1,
+        },
+        Object {
+          "component": [Function],
+        },
+      ],
+      "email subscriptions": Array [
+        Object {
+          "component": [Function],
+        },
+      ],
+      "payments": Array [
+        Object {
+          "component": [Function],
+        },
+      ],
+    },
+    "getRowCount": [Function],
+  },
+  "optimistic": false,
+}
+`;
+
+exports[`AccountDetailsScreen component should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+    }
+  }
+>
+  <ListView
+    dataSource={
+      Object {
+        "_data": Object {
+          "account settings": Array [
+            Object {
+              "component": [Function],
+            },
+          ],
+          "addresses": Array [
+            Object {
+              "component": [Function],
+            },
+          ],
+          "email subscriptions": Array [
+            Object {
+              "component": [Function],
+            },
+          ],
+          "payments": Array [
+            Object {
+              "component": [Function],
+            },
+          ],
+        },
+        "getRowCount": [Function],
+      }
+    }
+    enableEmptySections={false}
+    renderHeader={[Function]}
+    renderRow={[Function]}
+    renderSectionHeader={[Function]}
+    scrollsToTop={true}
+  />
+</View>
+`;

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[object Object] 1`] = `
+Object {
+  "actions": Object {
+    "goToGalleryIndex": [Function],
+  },
+}
+`;
+
+exports[`ProductDetailLargeImageGalleryScreen should render correctly 1`] = `
+<LargeImageGalleryScreen
+  actions={
+    Object {
+      "goToGalleryIndex": [Function],
+    }
+  }
+  currentIndex={0}
+  images={
+    Array [
+      Object {
+        "uri": "test",
+      },
+    ]
+  }
+  navigator={
+    Object {
+      "pop": [Function],
+      "updateCurrentRouteParams": [Function],
+    }
+  }
+  onNavigationPress={[Function]}
+  productConfigurationId="1"
+  title="test"
+/>
+`;

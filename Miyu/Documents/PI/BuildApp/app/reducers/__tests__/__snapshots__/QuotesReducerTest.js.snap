@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`quotesReducer should return initial state 1`] = `
+Object {
+  "composites": Object {},
+  "error": "",
+}
+`;
+
+exports[`quotesReducer should return the state for LOAD_QUOTE_COMPOSITE_FAIL 1`] = `
+Object {
+  "composites": Object {},
+  "error": "Test error",
+}
+`;
+
+exports[`quotesReducer should return the state for LOAD_QUOTE_COMPOSITE_SUCCESS 1`] = `
+Object {
+  "composites": Object {
+    "1234": Object {},
+  },
+  "error": "",
+}
+`;

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StockCount should render a stock count 1`] = `
+<Text
+  color="accent"
+  weight="bold"
+>
+  7 In Stock
+</Text>
+`;
+
+exports[`StockCount should return null if availableByLocation 1`] = `null`;
+
+exports[`StockCount should return null if discontinued 1`] = `null`;
+
+exports[`StockCount should return null if no selectedFinish 1`] = `null`;
+
+exports[`StockCount should return null if squareFootageBased 1`] = `null`;

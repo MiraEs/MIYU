@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FavoritesListRow component should render 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "marginBottom": 8,
+        "marginHorizontal": 8,
+        "padding": 8,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "borderBottomWidth": 1,
+        "borderColor": "#EBEDEF",
+        "flexDirection": "row",
+        "paddingBottom": 8,
+      }
+    }
+  >
+    <Text
+      weight="bold"
+    >
+      Office
+    </Text>
+    <Text
+      color="grey"
+    >
+       
+      2 Items
+    </Text>
+  </View>
+  <TouchableOpacity
+    onPress={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingTop": 8,
+      }
+    }
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }
+    />
+    <Icon
+      color="#D0D3D4"
+      name="ios-arrow-forward"
+      size={25}
+    />
+  </TouchableOpacity>
+</View>
+`;
+
+exports[`FavoritesListRow component should render an empty row 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "marginBottom": 8,
+        "marginHorizontal": 8,
+        "padding": 8,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "borderBottomWidth": 1,
+        "borderColor": "#EBEDEF",
+        "flexDirection": "row",
+        "paddingBottom": 8,
+      }
+    }
+  >
+    <Text
+      weight="bold"
+    />
+    <Text
+      color="grey"
+    >
+       
+      undefined Items
+    </Text>
+  </View>
+  <TouchableOpacity
+    onPress={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "paddingTop": 8,
+      }
+    }
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }
+    />
+    <Icon
+      color="#D0D3D4"
+      name="ios-arrow-forward"
+      size={25}
+    />
+  </TouchableOpacity>
+</View>
+`;

@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductQAndAButton should render a Q and A button if there are Q and A entries 1`] = `null`;
+
+exports[`ProductQAndAButton should return null if there are no Q and A entries 1`] = `null`;

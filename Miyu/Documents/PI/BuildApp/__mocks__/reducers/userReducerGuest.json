@@ -1,0 +1,35 @@
+{
+  "user": {
+    "notificationCount": 0,
+    "status": "AUTH_STATUS_ANONYMOUS",
+    "isGuest": true,
+    "username": "",
+    "shippingAddresses": [],
+    "billingAddresses": [],
+    "defaultShippingAddressId": null,
+    "storeCredit": 0,
+    "rep": {},
+    "tierInfo": {}
+  },
+  "notificationSettings": {
+    "MARKETING": {
+      "PUSH": true,
+      "SMS": false
+    }
+  },
+  "userPushNotificationsEnabled": true,
+  "isCreatingUser": false,
+  "isLoading": false,
+  "isLoggingIn": false,
+  "isLoggingInSocial": false,
+  "isLoggedIn": false,
+  "_error": "",
+  "errors": {
+    "signUp": "",
+    "login": "",
+    "rep": "",
+    "update": ""
+  },
+  "deviceToken": "",
+  "impersonatorId": null
+}

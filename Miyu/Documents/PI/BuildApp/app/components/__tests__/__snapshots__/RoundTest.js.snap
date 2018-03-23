@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Round component should render correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "black",
+        "borderRadius": 20,
+        "height": 40,
+        "justifyContent": "center",
+        "width": 40,
+      },
+      undefined,
+    ]
+  }
+/>
+`;

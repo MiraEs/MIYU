@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchFilterInput component should render with default props 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderBottomColor": "#D0D3D4",
+        "borderBottomWidth": 1,
+        "padding": 8,
+      },
+      Object {},
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+        },
+        Object {
+          "borderColor": "#D0D3D4",
+          "borderWidth": 1,
+        },
+      ]
+    }
+  >
+    <Icon
+      color="#B1B2B4"
+      name={undefined}
+      size={21}
+      style={
+        Array [
+          Object {
+            "marginHorizontal": 8,
+          },
+          Object {},
+        ]
+      }
+    />
+    <TextInput
+      autoCapitalize="none"
+      autoCorrect={false}
+      clearButtonMode="while-editing"
+      defaultValue="text"
+      onBlur={[Function]}
+      onChangeText={[Function]}
+      onFocus={[Function]}
+      onLayout={[Function]}
+      placeholder="placeholder"
+      placeholderTextColor="#D0D3D4"
+      selectionColor="red"
+      style={
+        Array [
+          Object {
+            "color": "#63666A",
+            "flex": 1,
+            "fontSize": 13,
+            "height": 44,
+            "paddingRight": 8,
+          },
+          Object {},
+        ]
+      }
+      underlineColorAndroid="transparent"
+    />
+  </View>
+</View>
+`;

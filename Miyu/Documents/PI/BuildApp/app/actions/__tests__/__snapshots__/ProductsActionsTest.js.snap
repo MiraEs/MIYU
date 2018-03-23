@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductActions should handle clearProductCache 1`] = `
+Object {
+  "payload": undefined,
+  "type": "CLEAR_PRODUCT_CACHE",
+}
+`;
+
+exports[`ProductActions should handle setAvailability 1`] = `
+Object {
+  "payload": Object {
+    "availability": 2,
+    "compositeId": 1,
+    "event": "SET_AVAILABILITY",
+  },
+  "type": "AVAILABILITY_ACTION",
+}
+`;

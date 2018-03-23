@@ -1,0 +1,496 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaymentMethodScreen component mapStateToProps should return with expected results 1`] = `
+Object {
+  "applePay": true,
+  "isGuest": true,
+}
+`;
+
+exports[`PaymentMethodScreen component route.navigationBar.renderLeft should return with expected results 1`] = `
+<NavigationBarIconButton
+  color="#00A499"
+  iconName="ios-arrow-back"
+  iconSize={33}
+  loading={false}
+  onPress={[Function]}
+  trackAction="build:app:checkout:navtapclose"
+/>
+`;
+
+exports[`PaymentMethodScreen component setScreenTrackingInformation should return with expected results 1`] = `
+Object {
+  "name": "build:app:paymentmethod",
+}
+`;
+
+exports[`PaymentMethodScreen component should render with ApplePay button 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderBottomWidth": 1,
+          "borderColor": "#D0D3D4",
+          "flexDirection": "row",
+          "height": 70,
+          "justifyContent": "flex-start",
+        },
+        Object {
+          "paddingHorizontal": 24,
+        },
+      ]
+    }
+  >
+    <Text
+      size="large"
+      weight="bold"
+    >
+      How do you want to pay?
+    </Text>
+  </View>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel="Credit Card Checkout Button"
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomWidth": 1,
+        "borderColor": "#D0D3D4",
+        "flexDirection": "row",
+        "height": 70,
+        "justifyContent": "flex-start",
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
+          "paddingHorizontal": 24,
+          "paddingVertical": 24,
+        }
+      }
+    >
+      <Image
+        resizeMode="contain"
+        source={1}
+        style={
+          Object {
+            "height": 42,
+            "width": 63,
+          }
+        }
+      />
+      <View
+        style={
+          Object {
+            "paddingLeft": 16,
+          }
+        }
+      >
+        <Text
+          size="large"
+          weight="bold"
+        >
+          Credit Card
+        </Text>
+      </View>
+    </View>
+    <Icon
+      color="#63666A"
+      name="ios-arrow-forward"
+      size={27}
+      style={
+        Object {
+          "paddingHorizontal": 24,
+        }
+      }
+    />
+  </View>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel="PayPal Checkout Button"
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomWidth": 1,
+        "borderColor": "#D0D3D4",
+        "flexDirection": "row",
+        "height": 70,
+        "justifyContent": "flex-start",
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
+          "paddingHorizontal": 24,
+          "paddingVertical": 24,
+        }
+      }
+    >
+      <Image
+        resizeMode="contain"
+        source={1}
+        style={
+          Object {
+            "height": 42,
+            "width": 63,
+          }
+        }
+      />
+      <View
+        style={
+          Object {
+            "paddingLeft": 16,
+          }
+        }
+      >
+        <Text
+          size="large"
+          weight="bold"
+        >
+          PayPal
+        </Text>
+      </View>
+    </View>
+    <Icon
+      color="#63666A"
+      name="ios-arrow-forward"
+      size={27}
+      style={
+        Object {
+          "paddingHorizontal": 24,
+        }
+      }
+    />
+  </View>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel="ApplePay Checkout Button"
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomWidth": 1,
+        "borderColor": "#D0D3D4",
+        "flexDirection": "row",
+        "height": 70,
+        "justifyContent": "flex-start",
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
+          "paddingHorizontal": 24,
+          "paddingVertical": 24,
+        }
+      }
+    >
+      <Image
+        resizeMode="contain"
+        source={1}
+        style={
+          Object {
+            "borderColor": "#000000",
+            "borderRadius": 5,
+            "borderWidth": 1,
+            "height": 42,
+            "width": 63,
+          }
+        }
+      />
+      <View
+        style={
+          Object {
+            "paddingLeft": 16,
+          }
+        }
+      >
+        <Text
+          size="large"
+          weight="bold"
+        >
+          ApplePay
+        </Text>
+      </View>
+    </View>
+    <Icon
+      color="#63666A"
+      name="ios-arrow-forward"
+      size={27}
+      style={
+        Object {
+          "paddingHorizontal": 24,
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`PaymentMethodScreen component should render with CheckoutLoginModal 1`] = `
+<CheckoutLoginModal
+  navigator={
+    Object {
+      "push": [Function],
+    }
+  }
+  onCheckoutLogin={[Function]}
+  paymentType="CREDIT_CARD"
+  title="PayPal Checkout"
+/>
+`;
+
+exports[`PaymentMethodScreen component should render with default props 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderBottomWidth": 1,
+          "borderColor": "#D0D3D4",
+          "flexDirection": "row",
+          "height": 70,
+          "justifyContent": "flex-start",
+        },
+        Object {
+          "paddingHorizontal": 24,
+        },
+      ]
+    }
+  >
+    <Text
+      size="large"
+      weight="bold"
+    >
+      How do you want to pay?
+    </Text>
+  </View>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel="Credit Card Checkout Button"
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomWidth": 1,
+        "borderColor": "#D0D3D4",
+        "flexDirection": "row",
+        "height": 70,
+        "justifyContent": "flex-start",
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
+          "paddingHorizontal": 24,
+          "paddingVertical": 24,
+        }
+      }
+    >
+      <Image
+        resizeMode="contain"
+        source={1}
+        style={
+          Object {
+            "height": 42,
+            "width": 63,
+          }
+        }
+      />
+      <View
+        style={
+          Object {
+            "paddingLeft": 16,
+          }
+        }
+      >
+        <Text
+          size="large"
+          weight="bold"
+        >
+          Credit Card
+        </Text>
+      </View>
+    </View>
+    <Icon
+      color="#63666A"
+      name="ios-arrow-forward"
+      size={27}
+      style={
+        Object {
+          "paddingHorizontal": 24,
+        }
+      }
+    />
+  </View>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel="PayPal Checkout Button"
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderBottomWidth": 1,
+        "borderColor": "#D0D3D4",
+        "flexDirection": "row",
+        "height": 70,
+        "justifyContent": "flex-start",
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
+          "paddingHorizontal": 24,
+          "paddingVertical": 24,
+        }
+      }
+    >
+      <Image
+        resizeMode="contain"
+        source={1}
+        style={
+          Object {
+            "height": 42,
+            "width": 63,
+          }
+        }
+      />
+      <View
+        style={
+          Object {
+            "paddingLeft": 16,
+          }
+        }
+      >
+        <Text
+          size="large"
+          weight="bold"
+        >
+          PayPal
+        </Text>
+      </View>
+    </View>
+    <Icon
+      color="#63666A"
+      name="ios-arrow-forward"
+      size={27}
+      style={
+        Object {
+          "paddingHorizontal": 24,
+        }
+      }
+    />
+  </View>
+</View>
+`;

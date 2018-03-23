@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DatePickerScreen should render 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+      },
+      Object {
+        "backgroundColor": "grey",
+      },
+    ]
+  }
+>
+  <CalendarPicker
+    dates={
+      Array [
+        Object {},
+      ]
+    }
+    onSelectDate={[Function]}
+    selection={undefined}
+  />
+  <View
+    style={
+      Object {
+        "backgroundColor": "white",
+        "elevation": 3,
+        "shadowColor": "black",
+        "shadowOffset": Object {
+          "height": 1,
+          "width": 0,
+        },
+        "shadowOpacity": 0.4,
+        "shadowRadius": 2,
+        "zIndex": 2,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "padding": 14,
+        }
+      }
+    >
+      <Text
+        lineHeight={false}
+      >
+        Selected delivery date:
+      </Text>
+      <Text
+        lineHeight={false}
+        weight="bold"
+      >
+        Make a selection
+      </Text>
+    </View>
+  </View>
+</View>
+`;

@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OptionSelectButton component should render configured 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel="notset"
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <View
+    style={
+      Array [
+        Object {
+          "justifyContent": "space-between",
+          "marginTop": 8,
+        },
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "flexShrink": 1,
+        },
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "#D0D3D4",
+          "borderStyle": "solid",
+          "borderWidth": 1,
+          "flexWrap": "wrap",
+          "padding": 8,
+        },
+        Object {},
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "flexShrink": 1,
+          },
+          Object {
+            "flex": 1,
+            "overflow": "hidden",
+          },
+        ]
+      }
+    >
+      <Text
+        lineHeight={false}
+      >
+        <Text
+          lineHeight={false}
+          style={null}
+        >
+          
+        </Text>
+        <Text
+          lineHeight={false}
+          style={null}
+          weight="bold"
+        >
+          
+        </Text>
+      </Text>
+    </View>
+    <Icon
+      color="#D0D3D4"
+      name="ios-arrow-forward"
+      size={28}
+    />
+  </View>
+</View>
+`;
+
+exports[`OptionSelectButton component should render unconfigured 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel="notset"
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <View
+    style={
+      Array [
+        Object {
+          "justifyContent": "space-between",
+          "marginTop": 8,
+        },
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "flexShrink": 1,
+        },
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "#D0D3D4",
+          "borderStyle": "solid",
+          "borderWidth": 1,
+          "flexWrap": "wrap",
+          "padding": 8,
+        },
+        Object {},
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "flexShrink": 1,
+          },
+          Object {
+            "flex": 1,
+            "overflow": "hidden",
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#63666A",
+            "fontFamily": "ProximaNova-Regular",
+            "fontSize": 16,
+          }
+        }
+      >
+        
+      </Text>
+    </View>
+    <Icon
+      color="#D0D3D4"
+      name="ios-arrow-forward"
+      size={28}
+    />
+  </View>
+</View>
+`;

@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AlertBar should render with default props 1`] = `null`;
+
+exports[`AlertBar should render with isMessageVisible set to false 1`] = `
+<View
+  style={
+    Object {
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    iterationCount={1}
+    nativeID={undefined}
+    onAnimationBegin={[Function]}
+    onAnimationEnd={[Function]}
+    onLayout={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#00A499",
+        "elevation": 5,
+        "height": 100,
+        "justifyContent": "flex-end",
+        "opacity": 0,
+        "paddingBottom": 8,
+        "paddingHorizontal": 16,
+        "paddingTop": 28,
+        "shadowColor": "black",
+        "shadowOffset": Object {
+          "height": 3,
+          "width": 0,
+        },
+        "shadowOpacity": 0.4,
+        "shadowRadius": 3,
+      }
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Icon
+        color="#FFFFFF"
+        name="ios-checkmark"
+        size={32}
+        style={
+          Object {
+            "marginRight": 8,
+          }
+        }
+      />
+      <Text
+        color="white"
+        lineHeight={false}
+        style={
+          Object {
+            "flex": -1,
+          }
+        }
+        textAlign="left"
+      />
+    </View>
+  </View>
+</View>
+`;

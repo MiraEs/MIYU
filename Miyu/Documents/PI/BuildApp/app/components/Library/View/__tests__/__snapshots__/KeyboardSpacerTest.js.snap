@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BuildLibrary KeyboardSpacer should render correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "right": 0,
+      },
+      Object {
+        "height": 0,
+      },
+      undefined,
+    ]
+  }
+/>
+`;

@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductRestrictions should render with full props 1`] = `
+<View>
+  <InlineAlert
+    style={
+      Object {
+        "margin": 8,
+      }
+    }
+    title="ab1953"
+  >
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#A94442",
+            "textAlign": "center",
+          }
+        }
+      >
+        This item cannot be shipped to the following 
+        : 
+        CA
+      </Text>
+      <Button
+        accessibilityLabel="Shop Similar Products Button"
+        onPress={[Function]}
+        style={
+          Object {
+            "marginTop": 8,
+          }
+        }
+        text="Shop Similar Products"
+        trackAction={undefined}
+      />
+    </View>
+  </InlineAlert>
+</View>
+`;

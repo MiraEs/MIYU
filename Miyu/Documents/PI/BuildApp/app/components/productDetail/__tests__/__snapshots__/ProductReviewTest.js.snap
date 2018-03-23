@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductReview should render 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "paddingHorizontal": 8,
+      },
+      Object {
+        "paddingTop": 8,
+      },
+    ]
+  }
+>
+  <Text
+    weight="bold"
+  >
+    title
+  </Text>
+  <Text>
+    by 
+    nickname
+  </Text>
+  <Text
+    fontStyle="italic"
+    size="small"
+  >
+    Written 
+    date string
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "width": 80,
+        },
+        Object {
+          "paddingTop": 8,
+        },
+      ]
+    }
+  >
+    <StarRating
+      disabled={true}
+      emptyStar="ios-star-outline"
+      fullStar="ios-star"
+      halfStar="ios-star-half"
+      iconSet="Ionicons"
+      maxStars={5}
+      rating={4}
+      selectedStar={[Function]}
+      starColor="#D45D00"
+      starSize={14}
+    />
+  </View>
+  <Text
+    style={
+      Object {
+        "paddingBottom": 8,
+      }
+    }
+  >
+    text
+  </Text>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#EBEDEF",
+        "flexDirection": "row",
+        "flexWrap": "wrap",
+        "paddingHorizontal": 8,
+      }
+    }
+  >
+    <Image
+      height={25}
+      resizeMode="contain"
+      source="/image/url"
+      width={50}
+    />
+    <Text
+      size="small"
+      style={
+        Object {
+          "paddingLeft": 8,
+        }
+      }
+    >
+      Posted on 
+      syndication name
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`ProductReview should render with no syndication source 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "paddingHorizontal": 8,
+      },
+      Object {
+        "paddingTop": 8,
+      },
+    ]
+  }
+>
+  <Text
+    weight="bold"
+  >
+    title
+  </Text>
+  <Text>
+    by 
+    nickname
+  </Text>
+  <Text
+    fontStyle="italic"
+    size="small"
+  >
+    Written 
+    date string
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "width": 80,
+        },
+        Object {
+          "paddingTop": 8,
+        },
+      ]
+    }
+  >
+    <StarRating
+      disabled={true}
+      emptyStar="ios-star-outline"
+      fullStar="ios-star"
+      halfStar="ios-star-half"
+      iconSet="Ionicons"
+      maxStars={5}
+      rating={4}
+      selectedStar={[Function]}
+      starColor="#D45D00"
+      starSize={14}
+    />
+  </View>
+  <Text
+    style={
+      Object {
+        "paddingBottom": 8,
+      }
+    }
+  >
+    text
+  </Text>
+</View>
+`;

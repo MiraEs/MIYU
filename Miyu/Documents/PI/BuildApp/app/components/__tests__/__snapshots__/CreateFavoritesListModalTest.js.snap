@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateFavoritesListModal component should render CreateFavoritesListModal with an error message 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "padding": 8,
+      "paddingTop": 16,
+    }
+  }
+>
+  <Form
+    onChange={[Function]}
+  >
+    <FormInput
+      accessibilityLabel="List Name Field"
+      hideErrorText={true}
+      isRequired={true}
+      label="List Name"
+      name="favoritesName"
+      onSubmitEditing={[Function]}
+      returnKeyType="go"
+      value={null}
+    />
+    <Text
+      color="error"
+      textAlign="center"
+    >
+      ERROR
+    </Text>
+  </Form>
+  <View
+    style={
+      Array [
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "right": 0,
+        },
+        Object {
+          "height": 0,
+        },
+        undefined,
+      ]
+    }
+  />
+  <FixedBottomButton
+    accessibilityLabel="Cart Save Modal Button"
+    buttonText="Create Favorites List"
+    onPress={[Function]}
+    trackAction="build:app:favorites:createlist"
+  />
+</View>
+`;
+
+exports[`CreateFavoritesListModal component should render CreateFavoritesListModal with only required props 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "padding": 8,
+      "paddingTop": 16,
+    }
+  }
+>
+  <Form
+    onChange={[Function]}
+  >
+    <FormInput
+      accessibilityLabel="List Name Field"
+      hideErrorText={true}
+      isRequired={true}
+      label="List Name"
+      name="favoritesName"
+      onSubmitEditing={[Function]}
+      returnKeyType="go"
+      value={null}
+    />
+    <Text
+      color="error"
+      textAlign="center"
+    />
+  </Form>
+  <View
+    style={
+      Array [
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "right": 0,
+        },
+        Object {
+          "height": 0,
+        },
+        undefined,
+      ]
+    }
+  />
+  <FixedBottomButton
+    accessibilityLabel="Cart Save Modal Button"
+    buttonText="Create Favorites List"
+    onPress={[Function]}
+    trackAction="build:app:favorites:createlist"
+  />
+</View>
+`;

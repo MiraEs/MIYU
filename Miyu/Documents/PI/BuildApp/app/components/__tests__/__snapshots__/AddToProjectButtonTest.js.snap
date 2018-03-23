@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddToProjectButton component should render correctly 1`] = `
+<Button
+  accessibilityLabel="Add To Project"
+  color="white"
+  onPress={[Function]}
+  text="Add To Project"
+  textColor="secondary"
+  trackAction="build:app:pdp:addtoproject"
+  trackContextData={[Function]}
+/>
+`;

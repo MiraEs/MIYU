@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SaleSection component should render correctly 1`] = `
+<ParallaxScrollView
+  backgroundColor="#EBEDEF"
+  contentBackgroundColor="#EBEDEF"
+  parallaxHeaderHeight={200}
+  renderBackground={[Function]}
+  renderForeground={[Function]}
+>
+  <AtomComponent
+    categoryIncludes={undefined}
+    scrollEnabled={false}
+  />
+</ParallaxScrollView>
+`;

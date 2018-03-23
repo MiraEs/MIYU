@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HTML should render default props 1`] = `
+<View>
+  <Text
+    weight="bold"
+  >
+    
+    
+    strong tag
+  </Text>
+  <Text
+    weight="bold"
+  >
+    
+    
+    b tag
+  </Text>
+  <Text>
+    <Text>
+      
+      
+      • 
+      Brass faucet body construction ensures durability and reliability for the life of the faucet
+    </Text>
+  </Text>
+  <Text>
+    
+    
+    M-PACT Common Valve System: This innovation from Moen gives the homeowner the up-most functionality and convenience when it comes to bathroom faucets. Designed to be a catch-all valve system, once M-PACT is installed you can upgrade the style of the lavatory or shower faucet without replacing nay of the faucet plumbing.
+  </Text>
+  <Text>
+    <Text
+      weight="bold"
+    >
+      LifeShine Non-Tarnish Finish:
+    </Text>
+  </Text>
+  <Text>
+    <Text>
+      
+      
+      • 
+      Overall Height: 5" (counter top to the highest part on faucet)
+    </Text>
+    <Text>
+      
+      
+      • 
+      Spout Height: 3-1/2" (counter top to spout outlet)
+    </Text>
+    <Text>
+      
+      
+      • 
+      Spout Reach: 5" (center of faucet base to the center of spout outlet)
+    </Text>
+    <Text>
+      
+      
+      • 
+      Installation Type: Widespread
+    </Text>
+    <Text>
+      
+      
+      • 
+      Number of Holes Required For Installation: 3
+    </Text>
+    <Text>
+      
+      
+      • 
+      Faucet Centers (Distance Between Handle Installation Holes): 8"
+    </Text>
+    <Text>
+      
+      
+      • 
+      Flow Rate: 1.5 gallons-per-minute
+    </Text>
+    <Text>
+      
+      
+      • 
+      Maximum Deck Thickness: 2-1/2"
+    </Text>
+    <Text>
+      
+      
+      • 
+      2 handles included with faucet
+    </Text>
+    <Text>
+      
+      
+      • 
+      Valve Type: 1224 cartridge design
+    </Text>
+    <Text
+      weight="bold"
+    >
+      
+      
+      • 
+      Rough-In Valve 9000 Required for faucet to function (sold separately).
+    </Text>
+  </Text>
+  <Text
+    fontStyle="italic"
+  >
+    
+    
+    em style
+  </Text>
+  <Text
+    fontStyle="italic"
+  >
+    em tag
+  </Text>
+  <Text>
+    
+    
+  </Text>
+  <Text
+    size="xlarge"
+    weight="bold"
+  >
+    h1 tag
+  </Text>
+  <Text
+    size="larger"
+    weight="bold"
+  >
+    h2 tag
+  </Text>
+  <Text
+    size="large"
+    weight="bold"
+  >
+    h3 tag
+  </Text>
+  <Text
+    weight="bold"
+  >
+    h4 tag
+  </Text>
+  <Text>
+    
+    
+    table tag
+  </Text>
+  <Text>
+    
+    
+    div tag
+  </Text>
+  <Text
+    fontStyle="italic"
+  >
+    
+    
+    i tag
+  </Text>
+</View>
+`;

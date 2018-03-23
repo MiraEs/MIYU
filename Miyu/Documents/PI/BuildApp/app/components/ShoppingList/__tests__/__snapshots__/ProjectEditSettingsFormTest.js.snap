@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectEditSettingsForm component should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+>
+  <Form
+    onChange={[Function]}
+    scrollsToTop={true}
+    style={
+      Object {
+        "paddingHorizontal": 8,
+      }
+    }
+  >
+    <FormInput
+      accessibilityLabel="Title"
+      autoCapitalize="words"
+      autoCorrect={false}
+      autoFocus={true}
+      isRequired={true}
+      isRequiredError="Required."
+      label="Title*"
+      maxLength={50}
+      name="name"
+      returnKeyType="next"
+      validateOnChange={true}
+      value="Test"
+    />
+    <FormInput
+      accessibilityLabel="Description"
+      autoCapitalize="sentences"
+      autoCorrect={false}
+      inputStyle={
+        Object {
+          "height": 72,
+        }
+      }
+      isRequired={false}
+      label="Description"
+      maxLength={256}
+      multiline={true}
+      name="description"
+      valid={true}
+      value="Test"
+    />
+  </Form>
+  <Button
+    accessibilityLabel="Save"
+    isDisabled={false}
+    isLoading={false}
+    onPress={[Function]}
+    style={
+      Object {
+        "flex": 0,
+        "height": 44,
+      }
+    }
+    text="Update Settings"
+    trackAction="build:app:project:details:editsave"
+  />
+</View>
+`;
+
+exports[`ProjectEditSettingsForm component should render w/o a description 1`] = `
+<View
+  style={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+>
+  <Form
+    onChange={[Function]}
+    scrollsToTop={true}
+    style={
+      Object {
+        "paddingHorizontal": 8,
+      }
+    }
+  >
+    <FormInput
+      accessibilityLabel="Title"
+      autoCapitalize="words"
+      autoCorrect={false}
+      autoFocus={true}
+      isRequired={true}
+      isRequiredError="Required."
+      label="Title*"
+      maxLength={50}
+      name="name"
+      returnKeyType="next"
+      validateOnChange={true}
+      value="Test"
+    />
+    <FormInput
+      accessibilityLabel="Description"
+      autoCapitalize="sentences"
+      autoCorrect={false}
+      inputStyle={
+        Object {
+          "height": 72,
+        }
+      }
+      isRequired={false}
+      label="Description"
+      maxLength={256}
+      multiline={true}
+      name="description"
+      valid={true}
+      value=""
+    />
+  </Form>
+  <Button
+    accessibilityLabel="Save"
+    isDisabled={false}
+    isLoading={false}
+    onPress={[Function]}
+    style={
+      Object {
+        "flex": 0,
+        "height": 44,
+      }
+    }
+    text="Update Settings"
+    trackAction="build:app:project:details:editsave"
+  />
+</View>
+`;
+
+exports[`ProjectEditSettingsForm function tests handleChange should change the state 1`] = `
+Object {
+  "description": Object {
+    "valid": true,
+    "value": "",
+  },
+  "formValid": true,
+  "name": Object {
+    "valid": true,
+    "value": "another value",
+  },
+}
+`;
+
+exports[`ProjectEditSettingsForm function tests should initialize the state 1`] = `
+Object {
+  "description": Object {
+    "valid": true,
+    "value": "Test",
+  },
+  "formValid": true,
+  "name": Object {
+    "valid": true,
+    "value": "Test",
+  },
+}
+`;

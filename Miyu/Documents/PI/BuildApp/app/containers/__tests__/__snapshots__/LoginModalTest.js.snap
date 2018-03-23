@@ -1,0 +1,259 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginModal component should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#63666A",
+          "height": 64,
+          "shadowColor": "black",
+        },
+        Object {
+          "backgroundColor": "#FFFFFF",
+        },
+        Object {
+          "borderBottomColor": "#D0D3D4",
+          "borderBottomWidth": 1,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "space-around",
+          },
+          Object {
+            "marginTop": 20,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "flex": 1,
+          }
+        }
+      >
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel="Left Nav Button"
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={
+            Object {
+              "bottom": 14,
+              "left": 14,
+              "right": 14,
+              "top": 14,
+            }
+          }
+          isTVSelectable={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "minHeight": 44,
+              "minWidth": 44,
+              "opacity": 1,
+            }
+          }
+          testID={undefined}
+          tvParallaxProperties={undefined}
+        >
+          <Icon
+            color="#7A7A7A"
+            name="ios-close"
+            style={
+              Array [
+                Object {
+                  "fontSize": 38,
+                },
+                Object {},
+              ]
+            }
+          />
+          <Text
+            color="greyDark"
+            lineHeight={false}
+            style={
+              Array [
+                Object {
+                  "color": "#FFFFFF",
+                  "fontFamily": "ProximaNova-Regular",
+                  "fontSize": 16,
+                  "marginVertical": 8,
+                  "textAlign": "center",
+                },
+                Object {
+                  "paddingLeft": 8,
+                },
+                Object {
+                  "color": "#7A7A7A",
+                  "opacity": 1,
+                },
+                undefined,
+              ]
+            }
+          />
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 3,
+          }
+        }
+      >
+        <Text
+          capitalize={undefined}
+          color="secondary"
+          lineHeight={false}
+          numberOfLines={1}
+          style={
+            Array [
+              Object {
+                "fontFamily": "ProximaNova-Regular",
+              },
+              undefined,
+            ]
+          }
+          textAlign="center"
+          weight="bold"
+        >
+          Login
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "flex": 1,
+            "paddingRight": 8,
+          }
+        }
+      >
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel="Right Nav Button"
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={
+            Object {
+              "bottom": 14,
+              "left": 14,
+              "right": 14,
+              "top": 14,
+            }
+          }
+          isTVSelectable={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "minHeight": 44,
+              "minWidth": 44,
+              "opacity": 1,
+            }
+          }
+          testID={undefined}
+          tvParallaxProperties={undefined}
+        >
+          <View />
+          <Text
+            color="greyDark"
+            lineHeight={false}
+            style={
+              Array [
+                Object {
+                  "color": "#FFFFFF",
+                  "fontFamily": "ProximaNova-Regular",
+                  "fontSize": 16,
+                  "marginVertical": 8,
+                  "textAlign": "center",
+                },
+                Object {
+                  "color": "#7A7A7A",
+                  "opacity": 1,
+                },
+                undefined,
+              ]
+            }
+          >
+            Sign Up
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+  <ScrollView
+    keyboardShouldPersistTaps="always"
+    style={
+      Object {
+        "marginHorizontal": 8,
+        "paddingTop": 8,
+      }
+    }
+  >
+    <View>
+      <LoginForm
+        isCheckout={false}
+        linkAccounts={false}
+        loginFail={[Function]}
+        loginSuccess={[Function]}
+        navForgotPassword={[Function]}
+        noNotificationPrompt={undefined}
+      />
+    </View>
+  </ScrollView>
+  <View
+    style={
+      Array [
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "right": 0,
+        },
+        Object {
+          "height": 0,
+        },
+        undefined,
+      ]
+    }
+  />
+</View>
+`;

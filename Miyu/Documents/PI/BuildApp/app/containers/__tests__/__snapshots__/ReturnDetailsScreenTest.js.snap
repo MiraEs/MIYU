@@ -1,0 +1,257 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReturnDetailsScreen component should render correctly 1`] = `
+<ScrollView
+  scrollsToTop={true}
+  style={
+    Object {
+      "backgroundColor": "#EBEDEF",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "padding": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "paddingBottom": 16,
+        }
+      }
+    >
+      <Text
+        selectable={true}
+        size="large"
+        weight="bold"
+      >
+        Return #
+        0
+      </Text>
+      <Text
+        weight="bold"
+      />
+      <Text>
+        Submitted: 
+      </Text>
+      <Text>
+        Order #: 
+      </Text>
+    </View>
+  </View>
+  <View
+    accessibilityLabel={undefined}
+    style={
+      Array [
+        Object {
+          "paddingTop": 8,
+        },
+      ]
+    }
+  >
+    <Text
+      family="archer"
+      lineHeight={false}
+      style={
+        Object {
+          "letterSpacing": 1,
+          "margin": 8,
+        }
+      }
+      weight="bold"
+    >
+      ITEMS BEING RETURNED
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "padding": 8,
+      }
+    }
+  >
+    <ListView
+      dataSource={
+        Object {
+          "_data": Array [],
+          "getRowCount": [Function],
+        }
+      }
+      enableEmptySections={true}
+      renderRow={[Function]}
+      scrollEnabled={false}
+    />
+  </View>
+  <View
+    accessibilityLabel={undefined}
+    style={
+      Array [
+        Object {
+          "paddingTop": 8,
+        },
+      ]
+    }
+  >
+    <Text
+      family="archer"
+      lineHeight={false}
+      style={
+        Object {
+          "letterSpacing": 1,
+          "margin": 8,
+        }
+      }
+      weight="bold"
+    >
+      SHIPPING ADDRESS
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "padding": 8,
+      }
+    }
+  />
+  <View
+    accessibilityLabel={undefined}
+    style={
+      Array [
+        Object {
+          "paddingTop": 8,
+        },
+      ]
+    }
+  >
+    <Text
+      family="archer"
+      lineHeight={false}
+      style={
+        Object {
+          "letterSpacing": 1,
+          "margin": 8,
+        }
+      }
+      weight="bold"
+    >
+      BILLING INFORMATION
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "padding": 8,
+      }
+    }
+  />
+  <View
+    accessibilityLabel={undefined}
+    style={
+      Array [
+        Object {
+          "paddingTop": 8,
+        },
+      ]
+    }
+  >
+    <Text
+      family="archer"
+      lineHeight={false}
+      style={
+        Object {
+          "letterSpacing": 1,
+          "margin": 8,
+        }
+      }
+      weight="bold"
+    >
+      RETURN SUMMARY
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "padding": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 8,
+        }
+      }
+    >
+      <Text>
+        Credit Subtotal
+      </Text>
+      <Text />
+    </View>
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 8,
+        }
+      }
+    >
+      <Text>
+        Tax Credit:
+      </Text>
+      <Text />
+    </View>
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 8,
+        }
+      }
+    >
+      <Text>
+        Restocking Fee:
+      </Text>
+      <Text />
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "borderTopColor": "#EBEDEF",
+            "borderTopWidth": 1,
+            "marginTop": 16,
+            "padding": 8,
+          },
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "paddingHorizontal": 8,
+          },
+        ]
+      }
+    >
+      <Text
+        weight="bold"
+      >
+        Credit Total:
+      </Text>
+      <Text
+        color="primary"
+        weight="bold"
+      />
+    </View>
+  </View>
+</ScrollView>
+`;

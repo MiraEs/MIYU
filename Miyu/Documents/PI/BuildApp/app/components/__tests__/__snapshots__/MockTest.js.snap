@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal component should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "bottom": 0,
+      "height": 568,
+      "justifyContent": "flex-end",
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "transform": Array [
+        Object {
+          "translateY": 568,
+        },
+      ],
+    }
+  }
+>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+    testID={undefined}
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#000000",
+          "flex": 1,
+          "justifyContent": "flex-end",
+          "opacity": 0,
+        }
+      }
+    />
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#FFFFFF",
+        }
+      }
+      testID={undefined}
+    >
+      <NavigationBar
+        fullHeader={false}
+        leftNavButton={
+          Object {
+            "icon": "ios-close",
+            "onPress": [Function],
+          }
+        }
+        light={true}
+        rightNavButton={null}
+        title={
+          Object {
+            "text": undefined,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CouponButton component should render correctly 1`] = `
+<View
+  style={undefined}
+>
+  <IconButton
+    accessibilityLabel="Coupon Edit"
+    color="white"
+    iconName="ios-pricetag"
+    isLoading={false}
+    onPress={[Function]}
+    size="regular"
+    text="Coupon Code"
+    textColor="secondary"
+    trackAction={undefined}
+  />
+</View>
+`;

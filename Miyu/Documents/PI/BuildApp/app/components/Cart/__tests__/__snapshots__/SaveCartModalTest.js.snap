@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SaveCartModal component should render with default props 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+      "paddingHorizontal": 8,
+      "paddingVertical": 16,
+    }
+  }
+>
+  <Form
+    onChange={[Function]}
+  >
+    <FormInput
+      accessibilityLabel="Cart Name Field"
+      hideErrorText={true}
+      isRequired={true}
+      label="Cart Name"
+      name="cartName"
+      returnKeyType="done"
+      value={null}
+    />
+  </Form>
+  <KeyboardSpacer
+    onToggle={[Function]}
+    topSpacing={0}
+  />
+  <FixedBottomButton
+    accessibilityLabel="Save Cart Button"
+    buttonText="Save"
+    disabled={false}
+    hideOnKeyboardShow={false}
+    isLoading={false}
+    onPress={[Function]}
+    pinToKeyboard={true}
+    trackAction="build:app:cart:savecart"
+  />
+</View>
+`;

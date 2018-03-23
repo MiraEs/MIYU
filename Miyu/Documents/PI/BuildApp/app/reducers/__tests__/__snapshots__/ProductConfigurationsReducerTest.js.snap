@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductConfigurationsActions should handle clearProductCache 1`] = `Object {}`;

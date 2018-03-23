@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectDetailsScreen component should render correctly 1`] = `
+<TabbedPager
+  initialPage={0}
+  scrollEnabled={false}
+  tabs={
+    Array [
+      Object {
+        "component": <ShoppingListTab
+          projectId={1}
+    />,
+        "name": "Shopping List",
+      },
+      Object {
+        "component": <TeamTab
+          projectId={1}
+    />,
+        "name": "Team",
+      },
+      Object {
+        "component": <PhotosTab
+          projectId={1}
+    />,
+        "name": "Photos",
+      },
+    ]
+  }
+/>
+`;
+
+exports[`ProjectDetailsScreen component should render the photos tab 1`] = `
+<TabbedPager
+  initialPage={2}
+  scrollEnabled={false}
+  tabs={
+    Array [
+      Object {
+        "component": <ShoppingListTab
+          projectId={1}
+    />,
+        "name": "Shopping List",
+      },
+      Object {
+        "component": <TeamTab
+          projectId={1}
+    />,
+        "name": "Team",
+      },
+      Object {
+        "component": <PhotosTab
+          projectId={1}
+    />,
+        "name": "Photos",
+      },
+    ]
+  }
+/>
+`;
+
+exports[`ProjectDetailsScreen component should render the shopping list tab 1`] = `
+<TabbedPager
+  initialPage={0}
+  scrollEnabled={false}
+  tabs={
+    Array [
+      Object {
+        "component": <ShoppingListTab
+          projectId={1}
+    />,
+        "name": "Shopping List",
+      },
+      Object {
+        "component": <TeamTab
+          projectId={1}
+    />,
+        "name": "Team",
+      },
+      Object {
+        "component": <PhotosTab
+          projectId={1}
+    />,
+        "name": "Photos",
+      },
+    ]
+  }
+/>
+`;
+
+exports[`ProjectDetailsScreen component should render the team tab 1`] = `
+<TabbedPager
+  initialPage={1}
+  scrollEnabled={false}
+  tabs={
+    Array [
+      Object {
+        "component": <ShoppingListTab
+          projectId={1}
+    />,
+        "name": "Shopping List",
+      },
+      Object {
+        "component": <TeamTab
+          projectId={1}
+    />,
+        "name": "Team",
+      },
+      Object {
+        "component": <PhotosTab
+          projectId={1}
+    />,
+        "name": "Photos",
+      },
+    ]
+  }
+/>
+`;

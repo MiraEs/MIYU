@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductConfigurationHeader should mapStateToProps 1`] = `
+Object {
+  "compositeId": 1234,
+  "manufacturer": "mfg",
+  "productComposite": Object {
+    "manufacturer": "mfg",
+  },
+  "productConfiguration": Object {
+    "compositeId": 1234,
+    "selectedFinish": Object {
+      "leadTimeText": "lead time text",
+      "pricebookCostView": Object {
+        "cost": 123,
+      },
+      "sku": "selectedSKU",
+    },
+  },
+  "selectedLeadTimeText": "lead time text",
+  "selectedSku": "selectedSKU",
+  "stockText": "stock text",
+}
+`;
+
+exports[`ProductConfigurationHeader should mapStateToProps without productConfiguration 1`] = `
+Object {
+  "productConfiguration": undefined,
+}
+`;
+
+exports[`ProductConfigurationHeader should render nothing if there's no productConfiguration 1`] = `null`;
+
+exports[`ProductConfigurationHeader should render with no selected finish 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "elevation": 3,
+      "height": 77,
+      "padding": 8,
+      "shadowColor": "black",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 0.35,
+      "shadowRadius": 2,
+      "zIndex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <Text
+      numberOfLines={1}
+      style={
+        Object {
+          "flexShrink": 1,
+        }
+      }
+      weight="bold"
+    >
+      mfg
+       
+      compositeProductId
+    </Text>
+    <Text
+      color="primary"
+      style={
+        Object {
+          "flexGrow": 1,
+        }
+      }
+      textAlign="right"
+      weight="bold"
+    >
+      $123 - $321
+    </Text>
+  </View>
+  <Text
+    size="small"
+  >
+    Availability based on selected finish
+  </Text>
+</View>
+`;
+
+exports[`ProductConfigurationHeader should render with selected finish 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "elevation": 3,
+      "height": 77,
+      "padding": 8,
+      "shadowColor": "black",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 0.35,
+      "shadowRadius": 2,
+      "zIndex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <Text
+      numberOfLines={1}
+      style={
+        Object {
+          "flexShrink": 1,
+        }
+      }
+      weight="bold"
+    >
+      mfg
+       
+      selectedSKU
+    </Text>
+    <Text
+      color="primary"
+      style={
+        Object {
+          "flexGrow": 1,
+        }
+      }
+      textAlign="right"
+      weight="bold"
+    >
+      $777
+    </Text>
+  </View>
+  <Text
+    color="accent"
+    size="small"
+    weight="bold"
+  >
+    stock text
+  </Text>
+  <Text
+    size="small"
+  >
+    lead time text
+  </Text>
+</View>
+`;

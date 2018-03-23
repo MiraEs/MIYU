@@ -1,0 +1,14 @@
+{
+  "creditCard": {},
+  "paypal": null,
+  "applePay": {
+    "error": "400 "
+  },
+  "billingAddressId": null,
+  "creditCardId": null,
+  "shippingAddressId": null,
+  "creditCards": [],
+  "paymentType": "APPLEPAY",
+  "error": "",
+  "isLoading": false
+}

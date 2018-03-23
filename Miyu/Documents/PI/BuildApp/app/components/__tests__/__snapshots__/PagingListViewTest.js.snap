@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PagingListView component should render correctly 1`] = `
+<ListView
+  automaticallyAdjustContentInsets={false}
+  dataSource={
+    Object {
+      "_data": Array [
+        Object {},
+        Object {},
+        Object {},
+      ],
+      "getRowCount": [Function],
+    }
+  }
+  enableEmptySections={true}
+  onEndReached={[Function]}
+  refreshControl={
+    <RefreshControlMock
+      onRefresh={[Function]}
+      refreshing={false}
+    />
+  }
+  renderFooter={[Function]}
+  renderHeader={undefined}
+  renderRow={[Function]}
+  scrollsToTop={true}
+  style={undefined}
+/>
+`;
+
+exports[`PagingListView component should render empty correctly 1`] = `
+<ListView
+  automaticallyAdjustContentInsets={false}
+  dataSource={
+    Object {
+      "_data": Array [],
+      "getRowCount": [Function],
+    }
+  }
+  enableEmptySections={true}
+  onEndReached={[Function]}
+  refreshControl={
+    <RefreshControlMock
+      onRefresh={[Function]}
+      refreshing={false}
+    />
+  }
+  renderFooter={[Function]}
+  renderHeader={undefined}
+  renderRow={[Function]}
+  scrollsToTop={true}
+  style={undefined}
+/>
+`;

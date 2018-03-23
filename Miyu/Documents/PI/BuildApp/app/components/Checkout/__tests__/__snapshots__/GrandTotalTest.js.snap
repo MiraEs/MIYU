@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GrandTotal component should render with default props 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "borderColor": "#D0D3D4",
+      "borderTopWidth": 1,
+      "paddingHorizontal": 16,
+      "paddingVertical": 8,
+    }
+  }
+>
+  <View
+    accessibilityLabel="Total Price"
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <Text
+      lineHeight={false}
+      size="large"
+      style={
+        Object {
+          "flexGrow": 1,
+        }
+      }
+      weight="bold"
+    >
+      Grand Total
+    </Text>
+    <Text
+      color="primary"
+      lineHeight={false}
+      size="large"
+      weight="bold"
+    />
+  </View>
+</View>
+`;

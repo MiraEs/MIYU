@@ -1,0 +1,401 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IntroScreen component should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel="Skip"
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "alignSelf": "flex-end",
+        "flexDirection": "row",
+        "height": 44,
+        "opacity": 1,
+        "paddingRight": 16,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <Text
+      lineHeight={false}
+    >
+      Skip 
+    </Text>
+    <Icon
+      color="#63666A"
+      name="ios-arrow-forward"
+      size={18}
+    />
+  </View>
+  <Pager
+    markerEnabled={false}
+    scrollEnabled={false}
+    style={
+      Object {
+        "backgroundColor": "#EBEDEF",
+        "flex": 1,
+        "paddingBottom": 8,
+        "width": 320,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "width": 320,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#FFFFFF",
+              "flex": 1,
+              "justifyContent": "flex-end",
+            },
+            Object {
+              "justifyContent": "center",
+            },
+          ]
+        }
+      >
+        <Image
+          resizeMode="contain"
+          source={1}
+          style={
+            Object {
+              "height": 110,
+              "marginBottom": 24,
+              "width": 200,
+            }
+          }
+        />
+        <View
+          style={Object {}}
+        >
+          <Text
+            size="large"
+            textAlign="center"
+          >
+            <Text
+              size="large"
+              weight="bold"
+            >
+              Get the most out of Build.com
+              
+               
+            </Text>
+            With an account you can collaborate with projects, organize favorites, and easily manage your orders and shipments.
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "height": 174,
+          }
+        }
+      >
+        <Button
+          accessibilityLabel="Login Button"
+          color="primary"
+          onPress={[Function]}
+          style={
+            Array [
+              Object {
+                "marginHorizontal": 16,
+                "marginTop": 16,
+              },
+              undefined,
+            ]
+          }
+          text="Login"
+          textColor={undefined}
+          trackAction="build:app:onboarding:login"
+        />
+        <Button
+          accessibilityLabel="Sign Up Button"
+          color="white"
+          onPress={[Function]}
+          style={
+            Array [
+              Object {
+                "marginHorizontal": 16,
+                "marginTop": 16,
+              },
+              undefined,
+            ]
+          }
+          text="Sign Up"
+          textColor="secondary"
+          trackAction="build:app:onboarding:signup"
+        />
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "height": 44,
+              "justifyContent": "center",
+              "marginHorizontal": 16,
+              "marginTop": 16,
+              "opacity": 1,
+            }
+          }
+          testID={undefined}
+          tvParallaxProperties={undefined}
+        >
+          <Text
+            decoration="underline"
+            weight="bold"
+          >
+            Continue as Guest
+             
+          </Text>
+          <Icon
+            color="#63666A"
+            name="ios-arrow-forward"
+            size={18}
+          />
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "width": 320,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#FFFFFF",
+              "flex": 1,
+              "justifyContent": "flex-end",
+            },
+            undefined,
+          ]
+        }
+      >
+        <Image
+          resizeMode="contain"
+          source={1}
+          style={
+            Object {
+              "height": 200,
+              "width": 200,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "borderBottomWidth": 1,
+              "borderColor": "#D0D3D4",
+              "borderTopWidth": 1,
+              "padding": 8,
+            }
+          }
+        >
+          <Text
+            size="large"
+            textAlign="center"
+          >
+            <Text
+              size="large"
+              weight="bold"
+            >
+              Receive Build Deals!
+               
+            </Text>
+            Enable notifications to receive alerts on instant price drops and exclusive coupons.
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "height": 174,
+          }
+        }
+      >
+        <Button
+          accessibilityLabel="Notifications Opt In"
+          color="primary"
+          onPress={[Function]}
+          style={
+            Array [
+              Object {
+                "marginHorizontal": 16,
+                "marginTop": 16,
+              },
+              undefined,
+            ]
+          }
+          text="Opt into Push Notifications"
+          textColor={undefined}
+          trackAction="build:app:onboarding:notificationsoptin"
+        />
+        <Button
+          accessibilityLabel="Notifications Opt Out"
+          color="white"
+          onPress={[Function]}
+          style={
+            Array [
+              Object {
+                "marginHorizontal": 16,
+                "marginTop": 16,
+              },
+              undefined,
+            ]
+          }
+          text="No thanks, not at this time"
+          textColor="secondary"
+          trackAction="build:app:onboarding:notificationsoptout"
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "width": 320,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#FFFFFF",
+              "flex": 1,
+              "justifyContent": "flex-end",
+            },
+            undefined,
+          ]
+        }
+      >
+        <Image
+          resizeMode="contain"
+          source={1}
+          style={
+            Object {
+              "height": 200,
+              "width": 200,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "borderBottomWidth": 1,
+              "borderColor": "#D0D3D4",
+              "borderTopWidth": 1,
+              "padding": 8,
+            }
+          }
+        >
+          <Text
+            size="large"
+            textAlign="center"
+          >
+            <Text
+              size="large"
+              weight="bold"
+            >
+              Ok, you're all set up!
+               
+            </Text>
+            Feel free to hit the "Experts" tab whenever you need help from one of our awesome product experts!
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "height": 174,
+          }
+        }
+      >
+        <Button
+          accessibilityLabel="Tour The App"
+          color="primary"
+          onPress={[Function]}
+          style={
+            Array [
+              Object {
+                "marginHorizontal": 16,
+                "marginTop": 16,
+              },
+              undefined,
+            ]
+          }
+          text="Tour the App"
+          textColor={undefined}
+          trackAction="build:app:onboarding:tourtheapp"
+        />
+        <Button
+          accessibilityLabel="Start Shopping"
+          color="white"
+          onPress={[Function]}
+          style={
+            Array [
+              Object {
+                "marginHorizontal": 16,
+                "marginTop": 16,
+              },
+              undefined,
+            ]
+          }
+          text="Start Shopping"
+          textColor="secondary"
+          trackAction="build:app:onboarding:startshopping"
+        />
+      </View>
+    </View>
+  </Pager>
+</View>
+`;

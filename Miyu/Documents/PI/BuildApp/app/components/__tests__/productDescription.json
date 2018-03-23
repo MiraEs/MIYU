@@ -1,0 +1,179 @@
+{
+	"title": "Double Handle Widespread Bathroom Faucet from the Brantford Collection - Pop-Up Drain Included",
+	"blocks": [
+		{
+			"htmlTag": "p",
+			"text": "strong tag",
+			"htmlFormatTag": "strong",
+			"blockType": "TextBlock"
+		},
+		{
+			"htmlTag": "p",
+			"text": "b tag",
+			"htmlFormatTag": "b",
+			"blockType": "TextBlock"
+		},
+		{
+			"htmlTag": "ul",
+			"listItems": [
+				{
+					"htmlTag": "li",
+					"text": "Brass faucet body construction ensures durability and reliability for the life of the faucet",
+					"htmlFormatTag": null,
+					"blockType": "TextBlock"
+				}
+			],
+			"blockType": "ListBlock"
+		},
+		{
+			"htmlTag": "p",
+			"text": "M-PACT Common Valve System: This innovation from Moen gives the homeowner the up-most functionality and convenience when it comes to bathroom faucets. Designed to be a catch-all valve system, once M-PACT is installed you can upgrade the style of the lavatory or shower faucet without replacing nay of the faucet plumbing.",
+			"htmlFormatTag": null,
+			"blockType": "TextBlock"
+		},
+		{
+			"htmlTag": "ul",
+			"listItems": [
+				{
+					"htmlTag": "strong",
+					"text": "LifeShine Non-Tarnish Finish:",
+					"htmlFormatTag": "strong",
+					"blockType": "TextBlock"
+				}
+			],
+			"blockType": "ListBlock"
+		},
+		{
+			"htmlTag": "ul",
+			"listItems": [
+				{
+					"htmlTag": "li",
+					"text": "Overall Height: 5\" (counter top to the highest part on faucet)",
+					"htmlFormatTag": null,
+					"blockType": "TextBlock"
+				},
+				{
+					"htmlTag": "li",
+					"text": "Spout Height: 3-1/2\" (counter top to spout outlet)",
+					"htmlFormatTag": null,
+					"blockType": "TextBlock"
+				},
+				{
+					"htmlTag": "li",
+					"text": "Spout Reach: 5\" (center of faucet base to the center of spout outlet)",
+					"htmlFormatTag": null,
+					"blockType": "TextBlock"
+				},
+				{
+					"htmlTag": "li",
+					"text": "Installation Type: Widespread",
+					"htmlFormatTag": null,
+					"blockType": "TextBlock"
+				},
+				{
+					"htmlTag": "li",
+					"text": "Number of Holes Required For Installation: 3",
+					"htmlFormatTag": null,
+					"blockType": "TextBlock"
+				},
+				{
+					"htmlTag": "li",
+					"text": "Faucet Centers (Distance Between Handle Installation Holes): 8\"",
+					"htmlFormatTag": null,
+					"blockType": "TextBlock"
+				},
+				{
+					"htmlTag": "li",
+					"text": "Flow Rate: 1.5 gallons-per-minute",
+					"htmlFormatTag": null,
+					"blockType": "TextBlock"
+				},
+				{
+					"htmlTag": "li",
+					"text": "Maximum Deck Thickness: 2-1/2\"",
+					"htmlFormatTag": null,
+					"blockType": "TextBlock"
+				},
+				{
+					"htmlTag": "li",
+					"text": "2 handles included with faucet",
+					"htmlFormatTag": null,
+					"blockType": "TextBlock"
+				},
+				{
+					"htmlTag": "li",
+					"text": "Valve Type: 1224 cartridge design",
+					"htmlFormatTag": null,
+					"blockType": "TextBlock"
+				},
+				{
+					"htmlTag": "li",
+					"text": "Rough-In Valve 9000 Required for faucet to function (sold separately).",
+					"htmlFormatTag": "strong",
+					"blockType": "TextBlock"
+				}
+			],
+			"blockType": "ListBlock"
+		},
+		{
+			"htmlTag": "p",
+			"text": "em style",
+			"htmlFormatTag": "em",
+			"blockType": "TextBlock"
+		},
+		{
+			"htmlTag": "em",
+			"text": "em tag",
+			"htmlFormatTag": null,
+			"blockType": "TextBlock"
+		},
+		{
+			"htmlTag": "br",
+			"text": "br tag",
+			"htmlFormatTag": null,
+			"blockType": "TextBlock"
+		},
+		{
+			"htmlTag": "h1",
+			"text": "h1 tag",
+			"htmlFormatTag": null,
+			"blockType": "TextBlock"
+		},
+		{
+			"htmlTag": "h2",
+			"text": "h2 tag",
+			"htmlFormatTag": null,
+			"blockType": "TextBlock"
+		},
+		{
+			"htmlTag": "h3",
+			"text": "h3 tag",
+			"htmlFormatTag": null,
+			"blockType": "TextBlock"
+		},
+		{
+			"htmlTag": "h4",
+			"text": "h4 tag",
+			"htmlFormatTag": null,
+			"blockType": "TextBlock"
+		},
+		{
+			"htmlTag": "table",
+			"text": "table tag",
+			"htmlFormatTag": null,
+			"blockType": "TextBlock"
+		},
+		{
+			"htmlTag": "div",
+			"text": "div tag",
+			"htmlFormatTag": null,
+			"blockType": "TextBlock"
+		},
+		{
+			"htmlTag": "p",
+			"text": "i tag",
+			"htmlFormatTag": "i",
+			"blockType": "TextBlock"
+		}
+	]
+}

@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# Prepend the branch name to the commit message
+#
+# Add this file as [repo]/.git/hooks/prepare-commit
+#
+# A couple notes:
+# 1. The file must be executable (chmod +x prepare-commit)
+# 2. This works on a per-repo basis
+
+files=$(git diff --cached --name-only --diff-filter=ACM | grep ".js$")
+
+if [ "$files" = "" ]; then
+	exit 0
+fi
+
+pass=true
+
+echo "\nValidating JavaScript:\n"
+
+for file in ${files}; do
+	result=$(eslint ${file} | grep "  error  ")
+	if [ "$result" == "" ]; then
+		echo "\t\033[32meslint passed: ${file}\033[0m"
+	else
+		echo "\t\033[31meslint failed: ${file}\033[0m"
+		pass=false
+	fi
+done
+
+if ! $pass; then
+	echo "\nYour commit contains files that should pass eslint but do not.\nPlease fix the eslint errors and try again.\n"
+	exit 1
+else
+	echo "\n"
+fi

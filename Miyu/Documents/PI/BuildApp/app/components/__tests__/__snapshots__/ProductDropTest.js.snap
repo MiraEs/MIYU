@@ -1,0 +1,640 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductDrop component should render with SEARCH_GALLERY 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+      },
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "marginHorizontal": 8,
+        "marginTop": 8,
+        "padding": 8,
+      },
+    ]
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <View
+    style={Object {}}
+  >
+    <Image
+      resizeMode="contain"
+      source="https://s3.img-b.com/image/upload/t_base,f_auto,dpr_2.0,c_lpad,w_330,h_320/404images/noimage.gif"
+      style={
+        Object {
+          "alignSelf": "center",
+          "height": 300,
+          "width": 304,
+        }
+      }
+    >
+      <FavoriteButton
+        compositeId={12345}
+        finishes={
+          Array [
+            Object {},
+          ]
+        }
+        product={
+          Object {
+            "finishes": Array [
+              Object {},
+            ],
+            "minPrice": 77.32,
+            "productCompositeId": 12345,
+            "productId": "12345",
+            "reviewRating": Object {
+              "numReviews": 1,
+            },
+            "selectedFinish": Object {
+              "uniqueId": 12345,
+            },
+            "squareFootageBased": false,
+          }
+        }
+        productUniqueId={12345}
+        style={
+          Object {
+            "marginRight": 8,
+          }
+        }
+      />
+    </Image>
+    <View>
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "flexShrink": 1,
+            },
+            Object {
+              "paddingBottom": 8,
+              "paddingTop": 16,
+            },
+          ]
+        }
+      >
+        <Text
+          numberOfLines={2}
+          size="small"
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+          weight="bold"
+        >
+           
+          12345
+        </Text>
+        <Text
+          color="primary"
+          numberOfLines={2}
+          size="small"
+          style={
+            Object {
+              "alignSelf": "flex-start",
+              "flex": 1,
+              "textAlign": "right",
+            }
+          }
+          weight="bold"
+        >
+          Starting at
+           
+          $77.32
+           
+        </Text>
+      </View>
+      <ListView
+        automaticallyAdjustContentInsets={false}
+        dataSource={
+          Object {
+            "_data": Array [
+              Object {},
+            ],
+            "getRowCount": [Function],
+          }
+        }
+        horizontal={true}
+        renderFooter={[Function]}
+        renderRow={[Function]}
+        scrollEnabled={false}
+        showsHorizontalScrollIndicator={false}
+      >
+        <SwatchImage
+          finish={Object {}}
+        />
+      </ListView>
+    </View>
+    <ArIcon
+      compositeId={12345}
+      style={null}
+    />
+  </View>
+</View>
+`;
+
+exports[`ProductDrop component should render with SEARCH_GRID 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+      },
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "flex": 1,
+        "marginLeft": 8,
+        "marginTop": 8,
+        "padding": 8,
+      },
+    ]
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <Image
+      resizeMode="contain"
+      source="https://s3.img-b.com/image/upload/t_base,f_auto,dpr_2.0,c_lpad,w_100,h_100/404images/noimage.gif"
+      style={
+        Object {
+          "alignSelf": "center",
+          "flex": 1,
+          "height": 136,
+          "marginBottom": 8,
+          "width": 148,
+        }
+      }
+    >
+      <FavoriteButton
+        compositeId={12345}
+        finishes={
+          Array [
+            Object {},
+          ]
+        }
+        product={
+          Object {
+            "finishes": Array [
+              Object {},
+            ],
+            "minPrice": 77.32,
+            "productCompositeId": 12345,
+            "productId": "12345",
+            "reviewRating": Object {
+              "numReviews": 1,
+            },
+            "selectedFinish": Object {
+              "uniqueId": 12345,
+            },
+            "squareFootageBased": false,
+          }
+        }
+        productUniqueId={12345}
+        style={
+          Object {
+            "marginRight": 8,
+          }
+        }
+      />
+    </Image>
+    <View
+      style={
+        Object {
+          "height": 75,
+        }
+      }
+    >
+      <Text
+        numberOfLines={1}
+        size="small"
+        weight="bold"
+      >
+         
+        12345
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <StarRating
+          disabled={true}
+          emptyStar="ios-star-outline"
+          fullStar="ios-star"
+          halfStar="ios-star-half"
+          iconSet="Ionicons"
+          maxStars={5}
+          rating={undefined}
+          selectedStar={[Function]}
+          starColor="#D45D00"
+          starSize={17}
+        />
+        <Text
+          size="small"
+        >
+          (
+          1
+          )
+        </Text>
+      </View>
+      <Text
+        color="primary"
+        size="small"
+        weight="bold"
+      >
+        Starting at
+         
+        $77.32
+         
+      </Text>
+    </View>
+    <ArIcon
+      compositeId={12345}
+      style={null}
+    />
+  </View>
+</View>
+`;
+
+exports[`ProductDrop component should render with required props 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+      },
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "height": 140,
+        "marginHorizontal": 8,
+        "marginTop": 8,
+      },
+    ]
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "flexShrink": 1,
+      }
+    }
+  >
+    <Image
+      resizeMode="contain"
+      source="https://s3.img-b.com/image/upload/t_base,f_auto,dpr_2.0,c_lpad,w_100,h_100/404images/noimage.gif"
+      style={
+        Object {
+          "height": 100,
+          "margin": 8,
+          "width": 100,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "height": 137,
+          "padding": 8,
+        }
+      }
+    >
+      <Text
+        numberOfLines={3}
+        size="small"
+        style={
+          Object {
+            "flex": 1,
+          }
+        }
+      >
+        <Text
+          size="small"
+          weight="bold"
+        >
+           
+          12345
+        </Text>
+         
+        
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <StarRating
+          disabled={true}
+          emptyStar="ios-star-outline"
+          fullStar="ios-star"
+          halfStar="ios-star-half"
+          iconSet="Ionicons"
+          maxStars={5}
+          rating={undefined}
+          selectedStar={[Function]}
+          starColor="#D45D00"
+          starSize={17}
+        />
+        <Text
+          size="small"
+        >
+          (
+          1
+          )
+        </Text>
+      </View>
+      <Text
+        color="primary"
+        size="small"
+        weight="bold"
+      >
+        Starting at
+         
+        $77.32
+         
+      </Text>
+    </View>
+    <FavoriteButton
+      compositeId={12345}
+      finishes={
+        Array [
+          Object {},
+        ]
+      }
+      product={
+        Object {
+          "finishes": Array [
+            Object {},
+          ],
+          "minPrice": 77.32,
+          "productCompositeId": 12345,
+          "productId": "12345",
+          "reviewRating": Object {
+            "numReviews": 1,
+          },
+          "selectedFinish": Object {
+            "uniqueId": 12345,
+          },
+          "squareFootageBased": false,
+        }
+      }
+      productUniqueId={12345}
+      style={
+        Object {
+          "alignSelf": "flex-start",
+          "marginRight": 8,
+          "marginTop": 8,
+        }
+      }
+    />
+    <ArIcon
+      compositeId={12345}
+      style={
+        Object {
+          "left": 8,
+          "position": "absolute",
+          "top": 8,
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`ProductDrop component should render with squareFootageBased prop 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+      },
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "height": 140,
+        "marginHorizontal": 8,
+        "marginTop": 8,
+      },
+    ]
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "flexShrink": 1,
+      }
+    }
+  >
+    <Image
+      resizeMode="contain"
+      source="https://s3.img-b.com/image/upload/t_base,f_auto,dpr_2.0,c_lpad,w_100,h_100/404images/noimage.gif"
+      style={
+        Object {
+          "height": 100,
+          "margin": 8,
+          "width": 100,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "height": 137,
+          "padding": 8,
+        }
+      }
+    >
+      <Text
+        numberOfLines={3}
+        size="small"
+        style={
+          Object {
+            "flex": 1,
+          }
+        }
+      >
+        <Text
+          size="small"
+          weight="bold"
+        >
+           
+          12345
+        </Text>
+         
+        
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <StarRating
+          disabled={true}
+          emptyStar="ios-star-outline"
+          fullStar="ios-star"
+          halfStar="ios-star-half"
+          iconSet="Ionicons"
+          maxStars={5}
+          rating={undefined}
+          selectedStar={[Function]}
+          starColor="#D45D00"
+          starSize={17}
+        />
+        <Text
+          size="small"
+        >
+          (
+          1
+          )
+        </Text>
+      </View>
+      <Text
+        color="primary"
+        size="small"
+        weight="bold"
+      >
+         
+        $1.29
+         
+        / sq ft
+      </Text>
+    </View>
+    <FavoriteButton
+      compositeId={12345}
+      finishes={
+        Array [
+          Object {},
+        ]
+      }
+      product={
+        Object {
+          "finishes": Array [
+            Object {},
+          ],
+          "minPrice": 77.32,
+          "productCompositeId": 12345,
+          "productId": "12345",
+          "reviewRating": Object {
+            "numReviews": 1,
+          },
+          "selectedFinish": Object {
+            "uniqueId": 12345,
+          },
+          "squareFootageBased": true,
+          "squareFootagePerCarton": 60,
+        }
+      }
+      productUniqueId={12345}
+      style={
+        Object {
+          "alignSelf": "flex-start",
+          "marginRight": 8,
+          "marginTop": 8,
+        }
+      }
+    />
+    <ArIcon
+      compositeId={12345}
+      style={
+        Object {
+          "left": 8,
+          "position": "absolute",
+          "top": 8,
+        }
+      }
+    />
+  </View>
+</View>
+`;

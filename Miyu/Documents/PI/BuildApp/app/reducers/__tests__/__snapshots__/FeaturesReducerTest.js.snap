@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`featuresReducer should expire features if needed 1`] = `
+Object {
+  "features": Object {
+    "expiredFeature": Object {
+      "default": false,
+      "enabled": false,
+      "expireAfter": null,
+    },
+    "feature1": false,
+    "feature2": true,
+    "notExpiredFeature": Object {
+      "default": false,
+      "enabled": true,
+      "expireAfter": 2117-04-21T07:00:00.000Z,
+    },
+  },
+}
+`;
+
+exports[`featuresReducer should return initialState 1`] = `
+Object {
+  "features": Object {
+    "actualTaxes": true,
+    "applePay": true,
+    "contentHomeScreen": true,
+    "facebookLoginAndroid": true,
+    "facebookLoginIOS": true,
+    "geCheckout": true,
+    "lookback": Object {
+      "default": false,
+      "enabled": false,
+      "expireAfter": null,
+    },
+    "onboarding": true,
+    "paypal": true,
+    "projects": false,
+    "recentSearches": true,
+    "returns": false,
+    "shoppingLists": true,
+    "typeAhead": true,
+    "useBranchLinksForShare": true,
+    "whyDidYouUpdate": false,
+  },
+}
+`;
+
+exports[`featuresReducer should return state if no features reducer is found 1`] = `Object {}`;
+
+exports[`featuresReducer should return the correct state for SET_FEATURE_STATE to false 1`] = `
+Object {
+  "features": Object {
+    "feature1": false,
+    "feature2": false,
+  },
+}
+`;
+
+exports[`featuresReducer should return the correct state for SET_FEATURE_STATE to true 1`] = `
+Object {
+  "features": Object {
+    "feature1": true,
+    "feature2": true,
+  },
+}
+`;
+
+exports[`featuresReducer should set a new feature with expiration 1`] = `
+Object {
+  "features": Object {
+    "feature1": false,
+    "feature2": true,
+    "testFeature": Object {
+      "default": false,
+      "enabled": true,
+      "expireAfter": 2117-04-21T07:00:00.000Z,
+    },
+  },
+}
+`;

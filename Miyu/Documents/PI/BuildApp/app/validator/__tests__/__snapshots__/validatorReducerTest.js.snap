@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`validatorReducer should return initialState 1`] = `Object {}`;
+
+exports[`validatorReducer should return the correct state for VALIDATE to true 1`] = `
+Object {
+  "data": "payload",
+}
+`;

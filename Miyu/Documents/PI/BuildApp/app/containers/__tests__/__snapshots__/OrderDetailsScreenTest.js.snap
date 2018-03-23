@@ -1,0 +1,248 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderDetailsScreen component should render correctly 1`] = `
+<ScrollView
+  scrollsToTop={true}
+  style={
+    Object {
+      "backgroundColor": "#EBEDEF",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "padding": 8,
+      }
+    }
+  >
+    <View>
+      <Text
+        selectable={true}
+        size="large"
+        weight="bold"
+      >
+        Order #
+      </Text>
+      <Text
+        weight="bold"
+      >
+        Unknown
+      </Text>
+      <Text>
+        Placed On: 
+      </Text>
+      <Text>
+        undefined Items
+      </Text>
+      <Text>
+        Total: 
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <IconButton
+        accessibilityLabel="Project Button"
+        color="white"
+        iconName="md-folder"
+        onPress={[Function]}
+        style={
+          Object {
+            "marginTop": 8,
+          }
+        }
+        text="Add to Project"
+        textColor="secondary"
+        trackAction="build:app:orderdetails:addtoproject"
+      />
+    </View>
+  </View>
+  <View
+    accessibilityLabel={undefined}
+    style={
+      Array [
+        Object {
+          "paddingTop": 8,
+        },
+      ]
+    }
+  >
+    <Text
+      family="archer"
+      lineHeight={false}
+      style={
+        Object {
+          "letterSpacing": 1,
+          "margin": 8,
+        }
+      }
+      weight="bold"
+    >
+      ITEM DETAILS
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "padding": 8,
+      }
+    }
+  >
+    <CartItemList
+      items={undefined}
+    />
+  </View>
+  <View
+    accessibilityLabel={undefined}
+    style={
+      Array [
+        Object {
+          "paddingTop": 8,
+        },
+      ]
+    }
+  >
+    <Text
+      family="archer"
+      lineHeight={false}
+      style={
+        Object {
+          "letterSpacing": 1,
+          "margin": 8,
+        }
+      }
+      weight="bold"
+    >
+      SHIPPING ADDRESS
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "padding": 8,
+      }
+    }
+  />
+  <View
+    accessibilityLabel={undefined}
+    style={
+      Array [
+        Object {
+          "paddingTop": 8,
+        },
+      ]
+    }
+  >
+    <Text
+      family="archer"
+      lineHeight={false}
+      style={
+        Object {
+          "letterSpacing": 1,
+          "margin": 8,
+        }
+      }
+      weight="bold"
+    >
+      ORDER SUMMARY
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "padding": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "padding": 8,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "borderBottomColor": "#EBEDEF",
+            "borderBottomWidth": 1,
+            "paddingBottom": 16,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+            }
+          }
+        >
+          <Text>
+            Subtotal:
+          </Text>
+          <Text />
+        </View>
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+            }
+          }
+        >
+          <Text>
+            Shipping:
+          </Text>
+          <Text />
+        </View>
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+            }
+          }
+        >
+          <Text>
+            Tax:
+          </Text>
+          <Text />
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+            },
+            Object {
+              "paddingTop": 8,
+            },
+          ]
+        }
+      >
+        <Text
+          weight="bold"
+        >
+          Grand Total:
+        </Text>
+        <Text
+          color="primary"
+          weight="bold"
+        />
+      </View>
+    </View>
+  </View>
+</ScrollView>
+`;

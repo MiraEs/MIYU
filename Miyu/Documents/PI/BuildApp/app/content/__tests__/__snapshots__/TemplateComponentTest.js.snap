@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TemplateComponent component should render articles correctly 1`] = `
+<Article
+  contentItem={
+    Object {
+      "content": Object {
+        "_type": "article-vendor-product-spotlight@1.0",
+      },
+    }
+  }
+/>
+`;
+
+exports[`TemplateComponent component should render correctly 1`] = `
+<AtomText@1
+  color="error"
+  size="small"
+  text="No content found."
+  textAlign="center"
+/>
+`;
+
+exports[`TemplateComponent component should render deals template correctly 1`] = `
+<DealsTemplate@1
+  contentItem={
+    Object {
+      "content": Object {
+        "_type": "deals-template@1.0",
+      },
+    }
+  }
+  selectedTab={undefined}
+/>
+`;
+
+exports[`TemplateComponent component should render native home correctly 1`] = `
+<NativeHome@1
+  contentItem={
+    Object {
+      "content": Object {
+        "_type": "native-home@1.0",
+      },
+    }
+  }
+  selectedTab={undefined}
+/>
+`;
+
+exports[`TemplateComponent component should render shared promo correctly 1`] = `
+<SharedPromo@1
+  contentItem={
+    Object {
+      "content": Object {
+        "_type": "shared-promo@1.0",
+      },
+    }
+  }
+/>
+`;
+
+exports[`TemplateComponent component should render unknown type correctly 1`] = `
+<AtomText@1
+  color="error"
+  size="small"
+  text="Unknown template: notreal@1.0"
+  textAlign="center"
+/>
+`;

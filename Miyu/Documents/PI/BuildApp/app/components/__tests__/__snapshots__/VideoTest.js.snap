@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Video component should render Wistia video correctly 1`] = `
+<View
+  style={
+    Object {
+      "height": 1080,
+      "margin": 0,
+      "padding": 0,
+      "width": 1920,
+    }
+  }
+>
+  <WebView
+    source={
+      Object {
+        "html": "<body style=\\"margin:0;\\"><iframe src=\\"http://fast.wistia.net/embed/iframe/hashKey?version=v1&videoHeight=1080&videoWidth=1920\\" allowtransparency=\\"true\\" frameborder=\\"0\\" scrolling=\\"no\\" class=\\"wistia_embed\\" name=\\"wistia_embed\\" width=\\"1920\\" height=\\"1080\\"></iframe></body>",
+      }
+    }
+    style={
+      Object {
+        "height": 1080,
+        "margin": 0,
+        "padding": 0,
+        "width": 1920,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`Video component should render YouTube video correctly 1`] = `
+<View
+  style={
+    Object {
+      "height": 1080,
+      "margin": 0,
+      "padding": 0,
+      "width": 1920,
+    }
+  }
+>
+  <WebView
+    source={
+      Object {
+        "html": "<body style=\\"margin:0;\\"><iframe width=\\"1920\\" height=\\"1080\\" src=\\"https://www.youtube.com/embed/hashKey\\" frameborder=\\"0\\" allowfullscreen></iframe></body>",
+      }
+    }
+    style={
+      Object {
+        "height": 1080,
+        "margin": 0,
+        "padding": 0,
+        "width": 1920,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`Video component should render correctly 1`] = `
+<View>
+  <Text>
+    Could not load video.
+  </Text>
+</View>
+`;

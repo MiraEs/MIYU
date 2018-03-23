@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuotesScreen container should render correctly with no quote number 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#EBEDEF",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#EBEDEF",
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <ListView
+        dataSource={
+          Object {
+            "cloneWithRows": [Function],
+            "cloneWithRowsAndSections": [Function],
+          }
+        }
+        renderHeader={[Function]}
+        renderRow={[Function]}
+        renderSeparator={[Function]}
+      />
+      <View
+        style={
+          Object {
+            "backgroundColor": "#FFFFFF",
+            "borderColor": "#D0D3D4",
+            "borderTopWidth": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "padding": 16,
+            }
+          }
+        >
+          <Text
+            lineHeight={false}
+            weight="bold"
+          >
+            Estimated Total
+          </Text>
+          <Text
+            color="primary"
+            lineHeight={false}
+            size="large"
+            weight="bold"
+          >
+            $1.00
+          </Text>
+        </View>
+        <Button
+          accessibilityLabel="Load Cart Button"
+          isLoading={false}
+          onPress={[Function]}
+          text="Load Cart"
+          trackAction="build:app:quotescreen:loadcart"
+        />
+      </View>
+    </View>
+  </View>
+</View>
+`;

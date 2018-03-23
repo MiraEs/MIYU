@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartRowActions component should render with Add to Project button 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "flex-end",
+      "flexGrow": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "flexDirection": "row",
+        "flexGrow": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "borderBottomWidth": 1,
+          "borderColor": "#D0D3D4",
+          "borderTopWidth": 1,
+          "flexDirection": "column",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <TouchableOpacity
+        onPress={[Function]}
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexGrow": 1,
+              "justifyContent": "center",
+              "width": 70,
+            },
+            Object {
+              "backgroundColor": "#00A499",
+            },
+          ]
+        }
+      >
+        <Icon
+          color="#FFFFFF"
+          name="md-folder-open"
+          size={30}
+        />
+        <Text
+          color="white"
+          size="small"
+          textAlign="center"
+        >
+          Add to Project
+        </Text>
+      </TouchableOpacity>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "borderBottomWidth": 1,
+          "borderColor": "#D0D3D4",
+          "borderTopWidth": 1,
+          "flexDirection": "column",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <TouchableOpacity
+        onPress={[Function]}
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexGrow": 1,
+              "justifyContent": "center",
+              "width": 70,
+            },
+            Object {
+              "backgroundColor": "#A94442",
+            },
+          ]
+        }
+      >
+        <Icon
+          color="#FFFFFF"
+          name="ios-trash"
+          size={30}
+        />
+        <Text
+          color="white"
+          size="small"
+          textAlign="center"
+        >
+          Remove
+        </Text>
+      </TouchableOpacity>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`CartRowActions component should render with default props 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "flex-end",
+      "flexGrow": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "flexDirection": "row",
+        "flexGrow": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "borderBottomWidth": 1,
+          "borderColor": "#D0D3D4",
+          "borderTopWidth": 1,
+          "flexDirection": "column",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <TouchableOpacity
+        onPress={[Function]}
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexGrow": 1,
+              "justifyContent": "center",
+              "width": 70,
+            },
+            Object {
+              "backgroundColor": "#A94442",
+            },
+          ]
+        }
+      >
+        <Icon
+          color="#FFFFFF"
+          name="ios-trash"
+          size={30}
+        />
+        <Text
+          color="white"
+          size="small"
+          textAlign="center"
+        >
+          Remove
+        </Text>
+      </TouchableOpacity>
+    </View>
+  </View>
+</View>
+`;

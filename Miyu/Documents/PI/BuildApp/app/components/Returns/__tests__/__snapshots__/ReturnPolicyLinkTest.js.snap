@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReturnPolicyLink component it should render 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "paddingVertical": 16,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    color="primary"
+  >
+    Return Policy
+  </Text>
+</View>
+`;

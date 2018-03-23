@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BuildLibrary ScrollView should render correctly 1`] = `
+<RCTScrollView
+  removeClippedSubviews={false}
+  scrollsToTop={false}
+>
+  <View />
+</RCTScrollView>
+`;

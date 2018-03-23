@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductDescription should handle a composite description error 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "flex": 1,
+        "padding": 8,
+      },
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+      },
+    ]
+  }
+>
+  <Text
+    textAlign="center"
+  >
+    test error
+  </Text>
+</View>
+`;
+
+exports[`ProductDescription should render default props 1`] = `
+<ScrollView
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+      "padding": 8,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "marginBottom": 16,
+      }
+    }
+  >
+    <Text
+      weight="bold"
+    >
+      Test title
+    </Text>
+    <HTML
+      json={Array []}
+    />
+  </View>
+</ScrollView>
+`;

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartDeliverySummary container should render correctly 1`] = `
+<ListView
+  dataSource={
+    Object {
+      "_data": Object {},
+      "getRowCount": [Function],
+    }
+  }
+  enableEmptySections={true}
+  renderRow={[Function]}
+  renderSectionHeader={[Function]}
+/>
+`;

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputAccessoryView should render with default props 1`] = `
+<PinToKeyboard
+  height={48}
+  hideInitially={true}
+>
+  <View
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "backgroundColor": "#FFFFFF",
+        "borderBottomColor": "#EBEDEF",
+        "borderBottomWidth": 1,
+        "borderTopColor": "#EBEDEF",
+        "borderTopWidth": 1,
+        "flex": 1,
+        "justifyContent": "center",
+        "paddingRight": 16,
+      }
+    }
+  >
+    <LinkButton
+      lineHeight={false}
+      onPress={[Function]}
+    >
+      Done
+    </LinkButton>
+  </View>
+</PinToKeyboard>
+`;
+
+exports[`InputAccessoryView should render with isAccessoryHidden prop 1`] = `null`;

@@ -1,0 +1,297 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductPrice component should render correctly with default props 1`] = `
+<View
+  style={
+    Object {
+      "paddingHorizontal": 8,
+    }
+  }
+>
+  <View>
+    <View
+      accessibilityLabel="Product Price"
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        size="larger"
+        weight="bold"
+      >
+        $300.20
+      </Text>
+    </View>
+    <Text
+      size="small"
+    >
+      Retail Price 
+      $350.22
+      , You Save 
+      15
+      %
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`ProductPrice component should render correctly with pro pricing 1`] = `
+<View
+  style={
+    Object {
+      "paddingHorizontal": 8,
+    }
+  }
+>
+  <View>
+    <View
+      accessibilityLabel="Product Price"
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        size="larger"
+        weight="bold"
+      >
+        $300.20
+      </Text>
+      <View
+        style={
+          Object {
+            "justifyContent": "center",
+            "marginLeft": 8,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "borderColor": "#D45D00",
+              "borderWidth": 2,
+              "justifyContent": "center",
+              "paddingLeft": 2,
+              "paddingRight": 1,
+            }
+          }
+        >
+          <Text
+            color="accent"
+            family="archer"
+            lineHeight={false}
+            size="small"
+            weight="bold"
+          >
+            PRO
+          </Text>
+        </View>
+      </View>
+    </View>
+    <Text>
+      <Text
+        color="greyDark"
+        size="small"
+      >
+        Consumer Price 
+        $350.22
+      </Text>
+       
+      <Text
+        color="accent"
+        size="small"
+      >
+        Pro Savings 
+        $150.22
+      </Text>
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`ProductPrice component should render discontinued product (with no cost) 1`] = `
+<View
+  style={
+    Object {
+      "paddingHorizontal": 8,
+    }
+  }
+/>
+`;
+
+exports[`ProductPrice component should render pro pricing with square footage product 1`] = `
+<View
+  style={
+    Object {
+      "paddingHorizontal": 8,
+    }
+  }
+>
+  <View>
+    <View
+      accessibilityLabel="Product Price"
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        size="larger"
+        weight="bold"
+      >
+        $0.67/sq ft
+      </Text>
+      <View
+        style={
+          Object {
+            "justifyContent": "center",
+            "marginLeft": 8,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "borderColor": "#D45D00",
+              "borderWidth": 2,
+              "justifyContent": "center",
+              "paddingLeft": 2,
+              "paddingRight": 1,
+            }
+          }
+        >
+          <Text
+            color="accent"
+            family="archer"
+            lineHeight={false}
+            size="small"
+            weight="bold"
+          >
+            PRO
+          </Text>
+        </View>
+      </View>
+    </View>
+    <Text>
+      <Text
+        color="greyDark"
+        size="small"
+      >
+        Consumer Price 
+        $1.17/sq ft
+      </Text>
+       
+      <Text
+        color="accent"
+        size="small"
+      >
+        Pro Savings 
+        $0.50/sq ft
+      </Text>
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`ProductPrice component should render square footage based pricing 1`] = `
+<View
+  style={
+    Object {
+      "paddingHorizontal": 8,
+    }
+  }
+>
+  <View>
+    <View
+      accessibilityLabel="Product Price"
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        size="larger"
+        weight="bold"
+      >
+        $0.67/sq ft
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`ProductPrice component should render with MAP 1`] = `
+<View
+  style={
+    Object {
+      "paddingHorizontal": 8,
+    }
+  }
+>
+  <View>
+    <View
+      accessibilityLabel="Product Price"
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        decoration="line-through"
+        size="larger"
+        weight="bold"
+      >
+        $300.20
+      </Text>
+    </View>
+  </View>
+  <View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "#D0D3D4",
+          "borderWidth": 1,
+          "marginVertical": 8,
+          "padding": 8,
+        }
+      }
+    >
+      <Text
+        textAlign="center"
+      >
+        <Text
+          fontStyle="italic"
+          textAlign="center"
+        >
+          To see our price, please add this item to your cart.
+           
+        </Text>
+        <Text
+          color="primary"
+          onPress={[Function]}
+        >
+          More Info
+        </Text>
+      </Text>
+    </View>
+    <Triangle
+      style={
+        Object {
+          "position": "absolute",
+          "right": 19,
+          "top": 2,
+        }
+      }
+    />
+  </View>
+</View>
+`;

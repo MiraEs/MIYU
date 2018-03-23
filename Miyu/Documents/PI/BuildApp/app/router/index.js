@@ -1,0 +1,207 @@
+
+import { createRouter } from '@expo/ex-navigation';
+
+import AboutScreen from '../containers/AboutScreen';
+import AccountDetailsScreen from '../containers/AccountDetailsScreen';
+import AddPhotoModal from '../containers/addPhotoModal';
+import AddToProjectModal from '../containers/AddToProjectModal';
+import AddToProjectUpsell from '../containers/ProjectsV2/AddToProjectUpsell';
+import AddressScreen from '../containers/AddressScreen';
+import CameraModalScreen from '../containers/CameraModalScreen';
+import CartDeliverySummary from '../containers/CartDeliverySummary';
+import CartScreen from '../containers/CartScreen';
+import CategoryBrowseScreen from '../containers/CategoryBrowseScreen';
+import CategoryScreen from '../containers/CategoryScreen';
+import ChangePasswordScreen from '../containers/ChangePasswordScreen';
+import CheckoutConfirmationScreen from '../containers/CheckoutConfirmationScreen';
+import CheckoutApplePayScreen from '../containers/CheckoutApplePayScreen';
+import CheckoutCreditCardScreen from '../containers/CheckoutCreditCardScreen';
+import CheckoutPayPalScreen from '../containers/CheckoutPayPalScreen';
+import ContactInfoScreen from '../containers/ContactInfoScreen';
+import ContentComponent from '../components/ContentComponent';
+import ContentTestScreen from '../containers/ContentTestScreen';
+import CreateEditProjectScreen from '../containers/CreateEditProjectScreen';
+import CreateProjectScreen from '../containers/ProjectsV2/CreateProjectScreen';
+import CreditCardScreen from '../containers/CreditCardScreen';
+import DatePickerScreen from '../containers/DatePickerScreen';
+import DeviceCameraModal from '../containers/DeviceCameraModal';
+import DevOptionsScreen from '../containers/devOptionsScreen';
+import DummyScreen from '../containers/dummyScreen';
+import EditAccountDetailsScreen from '../containers/EditAccountDetailsScreen';
+import EmailScreen from '../containers/EmailScreen';
+import EventsScreen from '../containers/EventsScreen';
+import ExpertsScreen from '../containers/ExpertsScreen';
+import FacetList from '../containers/FacetList';
+import FAQDetail from '../components/FAQDetail';
+import FavoritesListScreen from '../containers/FavoritesListScreen';
+import FavoritesScreen from '../containers/FavoritesScreen';
+import FeatureSwitchScreen from '../containers/FeaturesSwitchScreen';
+import ForgotPasswordScreen from '../components/ForgotPasswordScreen';
+import HelpScreen from '../components/HelpScreen';
+import HomeScreen from '../containers/HomeScreen';
+import IntroScreen from '../containers/IntroScreen';
+import InviteScreen from '../containers/inviteScreen';
+import InviteTeammateScreen from '../containers/ProjectsV2/InviteTeammateScreen';
+import LargeImageGalleryScreen from '../components/LargeImageGalleryScreen';
+import LinkAccountScreen from '../containers/linkAccountScreen';
+import ListsOverviewScreen from '../containers/ListsOverviewScreen';
+import ListSelector from '../components/ListSelector';
+import LoginModal from '../containers/LoginModal';
+import Main from '../containers/Main';
+import ManagePeople from '../containers/managePeopleScreen';
+import ModelDetailPickerScreen from '../containers/ModelDetailPickerScreen';
+import MoreScreen from '../containers/MoreScreen';
+import NewAddressScreen from '../containers/NewAddressScreen';
+import NotificationsScreen from '../containers/notificationsScreen';
+import OrderDetailsScreen from '../containers/OrderDetailsScreen';
+import OrdersScreen from '../containers/OrdersScreen';
+import OrderTrackingScreen from '../containers/OrderTrackingScreen';
+import PaymentCreditCardScreen from '../containers/PaymentCreditCardScreen';
+import PaymentMethodScreen from '../containers/PaymentMethodScreen';
+import PaymentPayPalScreen from '../containers/PaymentPayPalScreen';
+import ProductAttachmentDetail from '../components/productDetail/ProductAttachmentDetail';
+import ProductAttachments from '../containers/ProductAttachments';
+import ProductCustomizationScreen from '../containers/ProductCustomizationScreen';
+import ProductDescription from '../components/productDetail/ProductDescription';
+import ProductDetailLargeImageGalleryScreen from '../containers/ProductDetailLargeImageGalleryScreen';
+import ProductDetailScreen from '../containers/ProductDetailScreen';
+import ProductDropScreen from '../containers/productDropScreen';
+import ProductEditScreen from '../containers/ProjectsV2/ProjectDetails/ProductEditScreen';
+import ProductFullAnswer from '../components/productDetail/ProductFullAnswer';
+import ProductPricedOptionsScreen from '../components/productDetail/ProductPricedOptionsScreen';
+import ProductQAndA from '../containers/ProductQAndA';
+import ProductReviewScreen from '../containers/productReviewScreen';
+import ProductSpecifications from '../containers/ProductSpecifications';
+import ProductUpsell from '../containers/ProductUpsell';
+import ProductVariationsScreen from '../components/productDetail/ProductVariationsScreen';
+import ProductVideos from '../components/productDetail/ProductVideos';
+import ProfileScreen from '../containers/ProfileScreen';
+import ProjectSettingsScreen from '../containers/projectSettingsScreen';
+import ProjectsScreen from '../containers/ProjectsScreen';
+import ProjectDetailsScreen from '../containers/ProjectsV2/ProjectDetailsScreen';
+import ProjectDetailsSettingsScreen from '../containers/ProjectsV2/ProjectSettingsScreen';
+import ProjectEditSettingsScreen from '../containers/ProjectsV2/ProjectDetails/ProjectEditSettingsScreen';
+import ProjectsV2Screen from '../containers/ProjectsV2Screen';
+import ProRegistrationScreen from '../components/ProRegistrationScreen';
+import ProRegistrationSuccessScreen from '../components/ProRegistrationSuccessScreen';
+import ProjectUpdate from '../containers/projectUpdateModal';
+import PushNotificationsSettingsScreen from '../containers/pushNotificationSettingsScreen';
+import QuoteScreen from '../containers/QuoteScreen';
+import ReduxStoreScreen from '../containers/ReduxStoreScreen';
+import ReturnDetailsScreen from '../containers/ReturnDetailsScreen';
+import ReturnsScreen from '../containers/ReturnsScreen';
+import ReviewSubmitReturn from '../containers/Returns/ReviewSubmitReturn';
+import SelectItemsForReturn from '../containers/Returns/SelectItemsForReturn';
+import SelectPhotoModal from '../containers/SelectPhotoModal';
+import SelectShippingMethodForReturn from '../containers/Returns/SelectShippingMethodForReturn';
+import ShippingMethodScreen from '../containers/ShippingMethodScreen';
+import SingleEventScreen from '../containers/SingleEventScreen';
+import UpsellFinishSelection from '../components/UpsellFinishSelection';
+import CustomerImpersonator from '../containers/CustomerImpersonator';
+import Video from '../components/Video';
+import LookbackScreen from '../containers/LookbackScreen';
+
+export default createRouter(() => ({
+	about: () => AboutScreen,
+	accountDetails: () => AccountDetailsScreen,
+	addPhoto: () => AddPhotoModal,
+	addToProjectModal: () => AddToProjectModal,
+	addToProjectUpsell: () => AddToProjectUpsell,
+	addressScreen: () => AddressScreen,
+	camera: () => CameraModalScreen,
+	cartDeliverySummary: () => CartDeliverySummary,
+	cartScreen: () => CartScreen,
+	category: () => CategoryScreen,
+	changePassword: () => ChangePasswordScreen,
+	checkoutApplePay: () => CheckoutApplePayScreen,
+	checkoutCreditCard: () => CheckoutCreditCardScreen,
+	checkoutPayPal: () => CheckoutPayPalScreen,
+	checkoutConfirmation: () => CheckoutConfirmationScreen,
+	contactInfo: () => ContactInfoScreen,
+	content: () => ContentComponent,
+	contentHome: () => HomeScreen,
+	contentTest: () => ContentTestScreen,
+	customerImpersonator: () => CustomerImpersonator,
+	creditCardScreen: () => CreditCardScreen,
+	createProjectScreen: () => CreateProjectScreen,
+	datePicker: () => DatePickerScreen,
+	deviceCameraModal: () => DeviceCameraModal,
+	devOptionsScreen: () => DevOptionsScreen,
+	dummyScreen: () => DummyScreen,
+	editAccountDetails: () => EditAccountDetailsScreen,
+	editProject: () => CreateEditProjectScreen,
+	email: () => EmailScreen,
+	experts: () => ExpertsScreen,
+	facetSelection: () => FacetList,
+	faqDetail: () => FAQDetail,
+	favorites: () => FavoritesScreen,
+	favoritesList: () => FavoritesListScreen,
+	featureSwitches: () => FeatureSwitchScreen,
+	feed: () => EventsScreen,
+	forgotPassword: () => ForgotPasswordScreen,
+	help: () => HelpScreen,
+	home: () => CategoryBrowseScreen,
+	introScreen: () => IntroScreen,
+	largeImageGalleryScreen: () => LargeImageGalleryScreen,
+	linkAccount: () => LinkAccountScreen,
+	listsOverviewScreen: () => ListsOverviewScreen,
+	listSelector: () => ListSelector,
+	loginModal: () => LoginModal,
+	lookback: () => LookbackScreen,
+	main: () => Main,
+	managePeople: () => ManagePeople,
+	modelDetailPickerScreen: () => ModelDetailPickerScreen,
+	more: () => MoreScreen,
+	newAddress: () => NewAddressScreen,
+	newProject: () => CreateEditProjectScreen,
+	notifications: () => NotificationsScreen,
+	orderDetails: () => OrderDetailsScreen,
+	orders: () => OrdersScreen,
+	orderTracking: () => OrderTrackingScreen,
+	paymentCreditCard: () => PaymentCreditCardScreen,
+	paymentMethod: () => PaymentMethodScreen,
+	paymentPayPal: () => PaymentPayPalScreen,
+	productAnswer: () => ProductFullAnswer,
+	productPricedOptions: () => ProductPricedOptionsScreen,
+	productAttachmentDetail: () => ProductAttachmentDetail,
+	productAttachments: () => ProductAttachments,
+	productCustomizationScreen: () => ProductCustomizationScreen,
+	productDescription: () => ProductDescription,
+	productDetailLargeImageGallery: () => ProductDetailLargeImageGalleryScreen,
+	productDetail: () => ProductDetailScreen,
+	productDrops: () => ProductDropScreen,
+	productEdit: () => ProductEditScreen,
+	productQAndA: () => ProductQAndA,
+	productReviews: () => ProductReviewScreen,
+	productSpecifications: () => ProductSpecifications,
+	productUpsell: () => ProductUpsell,
+	productVariations: () => ProductVariationsScreen,
+	productVideos: () => ProductVideos,
+	profile: () => ProfileScreen,
+	projects: () => ProjectsScreen,
+	projectDetails: () => ProjectDetailsScreen,
+	projectDetailsSettings: () => ProjectDetailsSettingsScreen,
+	projectEditSettings: () => ProjectEditSettingsScreen,
+	projectsV2: () => ProjectsV2Screen,
+	proRegistration: () => ProRegistrationScreen,
+	proRegistrationSuccess: () => ProRegistrationSuccessScreen,
+	projectSettings: () => ProjectSettingsScreen,
+	projectUpdate: () => ProjectUpdate,
+	pushNotificationSettings: () => PushNotificationsSettingsScreen,
+	quoteScreen: () => QuoteScreen,
+	reduxStore: () => ReduxStoreScreen,
+	returnDetails: () => ReturnDetailsScreen,
+	returns: () => ReturnsScreen,
+	reviewSubmitReturn: () => ReviewSubmitReturn,
+	selectItemsForReturn: () => SelectItemsForReturn,
+	selectPhotoModal: () => SelectPhotoModal,
+	selectShippingMethodForReturn: () => SelectShippingMethodForReturn,
+	sendInvites: () => InviteScreen,
+	inviteTeammate: () => InviteTeammateScreen,
+	shippingMethod: () => ShippingMethodScreen,
+	singleEvent: () => SingleEventScreen,
+	upsellFinishSelection: () => UpsellFinishSelection,
+	video: () => Video,
+}), {
+	ignoreSerializableWarnings: true,
+});

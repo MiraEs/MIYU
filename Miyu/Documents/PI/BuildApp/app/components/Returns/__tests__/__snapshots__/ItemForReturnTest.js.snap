@@ -1,0 +1,435 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemForReturn component should render 1`] = `
+<TouchableOpacity
+  onPress={[Function]}
+  trackAction="test"
+  trackContextData={
+    Object {
+      "productCompositeId": 1,
+      "productId": 1,
+      "productUniqueId": 1,
+    }
+  }
+>
+  <SimplifiedProductInfo
+    productCompositeId={1}
+    productId={1}
+    productUniqueId={1}
+    style={Object {}}
+  />
+</TouchableOpacity>
+`;
+
+exports[`ItemForReturn component should render a reason 1`] = `
+<TouchableOpacity
+  onPress={[Function]}
+  trackAction="test"
+  trackContextData={
+    Object {
+      "productCompositeId": 1,
+      "productId": 1,
+      "productUniqueId": 1,
+    }
+  }
+>
+  <SimplifiedProductInfo
+    productCompositeId={1}
+    productId={1}
+    productUniqueId={1}
+    quantity={1}
+    reason={1}
+    returnQuantity={1}
+    selected={true}
+    style={
+      Object {
+        "borderColor": "#D45D00",
+      }
+    }
+  >
+    <Form
+      alternateScrollHandle={Object {}}
+      onChange={[Function]}
+      scrollsToTop={true}
+    >
+      <FormDropDown
+        accessibilityLabel="Reason"
+        isRequired={true}
+        isRequiredError="Required."
+        label="Reason*"
+        modalDescription="Select Reason for Return"
+        name="reason"
+        options={
+          Array [
+            Object {
+              "text": "Don't like it",
+              "value": 1,
+            },
+            Object {
+              "text": "Broken",
+              "value": 2,
+            },
+            Object {
+              "text": "Other",
+              "value": 3,
+            },
+          ]
+        }
+        placeholder="— Please select reason —"
+        value={1}
+      />
+    </Form>
+  </SimplifiedProductInfo>
+</TouchableOpacity>
+`;
+
+exports[`ItemForReturn component should render other reason & text 1`] = `
+<TouchableOpacity
+  onPress={[Function]}
+  trackAction="test"
+  trackContextData={
+    Object {
+      "productCompositeId": 1,
+      "productId": 1,
+      "productUniqueId": 1,
+    }
+  }
+>
+  <SimplifiedProductInfo
+    productCompositeId={1}
+    productId={1}
+    productUniqueId={1}
+    quantity={1}
+    reason={3}
+    reasonText="test"
+    returnQuantity={1}
+    selected={true}
+    style={
+      Object {
+        "borderColor": "#D45D00",
+      }
+    }
+  >
+    <Form
+      alternateScrollHandle={Object {}}
+      onChange={[Function]}
+      scrollsToTop={true}
+    >
+      <FormDropDown
+        accessibilityLabel="Reason"
+        isRequired={true}
+        isRequiredError="Required."
+        label="Reason*"
+        modalDescription="Select Reason for Return"
+        name="reason"
+        options={
+          Array [
+            Object {
+              "text": "Don't like it",
+              "value": 1,
+            },
+            Object {
+              "text": "Broken",
+              "value": 2,
+            },
+            Object {
+              "text": "Other",
+              "value": 3,
+            },
+          ]
+        }
+        placeholder="— Please select reason —"
+        value={3}
+      />
+      <FormInput
+        accessibilityLabel="Explanation"
+        componentStyle={
+          Array [
+            Object {
+              "flexGrow": 1,
+            },
+            undefined,
+          ]
+        }
+        isRequired={true}
+        isRequiredError="Required."
+        label="Explanation*"
+        name="reasonText"
+        value="test"
+      />
+    </Form>
+  </SimplifiedProductInfo>
+</TouchableOpacity>
+`;
+
+exports[`ItemForReturn component should render other reason 1`] = `
+<TouchableOpacity
+  onPress={[Function]}
+  trackAction="test"
+  trackContextData={
+    Object {
+      "productCompositeId": 1,
+      "productId": 1,
+      "productUniqueId": 1,
+    }
+  }
+>
+  <SimplifiedProductInfo
+    productCompositeId={1}
+    productId={1}
+    productUniqueId={1}
+    quantity={1}
+    reason={3}
+    returnQuantity={1}
+    selected={true}
+    style={
+      Object {
+        "borderColor": "#D45D00",
+      }
+    }
+  >
+    <Form
+      alternateScrollHandle={Object {}}
+      onChange={[Function]}
+      scrollsToTop={true}
+    >
+      <FormDropDown
+        accessibilityLabel="Reason"
+        isRequired={true}
+        isRequiredError="Required."
+        label="Reason*"
+        modalDescription="Select Reason for Return"
+        name="reason"
+        options={
+          Array [
+            Object {
+              "text": "Don't like it",
+              "value": 1,
+            },
+            Object {
+              "text": "Broken",
+              "value": 2,
+            },
+            Object {
+              "text": "Other",
+              "value": 3,
+            },
+          ]
+        }
+        placeholder="— Please select reason —"
+        value={3}
+      />
+      <FormInput
+        accessibilityLabel="Explanation"
+        componentStyle={
+          Array [
+            Object {
+              "flexGrow": 1,
+            },
+            undefined,
+          ]
+        }
+        isRequired={true}
+        isRequiredError="Required."
+        label="Explanation*"
+        name="reasonText"
+        value={undefined}
+      />
+    </Form>
+  </SimplifiedProductInfo>
+</TouchableOpacity>
+`;
+
+exports[`ItemForReturn component should render quantity selector & quantity error 1`] = `
+<TouchableOpacity
+  onPress={[Function]}
+  trackAction="test"
+  trackContextData={
+    Object {
+      "productCompositeId": 1,
+      "productId": 1,
+      "productUniqueId": 1,
+    }
+  }
+>
+  <SimplifiedProductInfo
+    productCompositeId={1}
+    productId={1}
+    productUniqueId={1}
+    quantity={2}
+    returnQuantity={5}
+    selected={true}
+    style={
+      Object {
+        "borderColor": "#D45D00",
+      }
+    }
+  >
+    <Form
+      alternateScrollHandle={Object {}}
+      onChange={[Function]}
+      scrollsToTop={true}
+    >
+      <View>
+        <Text
+          style={Object {}}
+          weight="bold"
+        >
+          How many do you want to return?
+        </Text>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "marginRight": 16,
+                "marginVertical": 8,
+                "width": 136,
+              }
+            }
+          >
+            <QuantitySelector
+              allowZero={true}
+              disableDelete={true}
+              maxQuantity={2}
+              onInputFocus={[Function]}
+              onUpdateQuantity={[Function]}
+              quantity={5}
+              theme="mini"
+            />
+          </View>
+          <Text>
+            of 
+            2
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Icon
+            color="#A94442"
+            name="ios-close-circle"
+            size={16}
+            style={
+              Object {
+                "marginBottom": 16,
+                "marginRight": 4,
+              }
+            }
+          />
+          <Text
+            color="error"
+            lineHeight={false}
+            size="small"
+            style={
+              Object {
+                "flex": 1,
+                "marginBottom": 16,
+              }
+            }
+            weight="bold"
+          >
+            Sorry you can’t return more than you ordered.
+          </Text>
+        </View>
+      </View>
+      <FormDropDown
+        accessibilityLabel="Reason"
+        isRequired={true}
+        isRequiredError="Required."
+        label="Reason*"
+        modalDescription="Select Reason for Return"
+        name="reason"
+        options={
+          Array [
+            Object {
+              "text": "Don't like it",
+              "value": 1,
+            },
+            Object {
+              "text": "Broken",
+              "value": 2,
+            },
+            Object {
+              "text": "Other",
+              "value": 3,
+            },
+          ]
+        }
+        placeholder="— Please select reason —"
+        value={undefined}
+      />
+    </Form>
+  </SimplifiedProductInfo>
+</TouchableOpacity>
+`;
+
+exports[`ItemForReturn component should render selected 1`] = `
+<TouchableOpacity
+  onPress={[Function]}
+  trackAction="test"
+  trackContextData={
+    Object {
+      "productCompositeId": 1,
+      "productId": 1,
+      "productUniqueId": 1,
+    }
+  }
+>
+  <SimplifiedProductInfo
+    productCompositeId={1}
+    productId={1}
+    productUniqueId={1}
+    selected={true}
+    style={
+      Object {
+        "borderColor": "#D45D00",
+      }
+    }
+  >
+    <Form
+      alternateScrollHandle={Object {}}
+      onChange={[Function]}
+      scrollsToTop={true}
+    >
+      <FormDropDown
+        accessibilityLabel="Reason"
+        isRequired={true}
+        isRequiredError="Required."
+        label="Reason*"
+        modalDescription="Select Reason for Return"
+        name="reason"
+        options={
+          Array [
+            Object {
+              "text": "Don't like it",
+              "value": 1,
+            },
+            Object {
+              "text": "Broken",
+              "value": 2,
+            },
+            Object {
+              "text": "Other",
+              "value": 3,
+            },
+          ]
+        }
+        placeholder="— Please select reason —"
+        value={undefined}
+      />
+    </Form>
+  </SimplifiedProductInfo>
+</TouchableOpacity>
+`;

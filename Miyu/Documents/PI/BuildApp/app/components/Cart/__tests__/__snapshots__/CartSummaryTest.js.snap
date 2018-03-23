@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartSummary component should render with default props 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "flex-end",
+        "borderBottomWidth": 1,
+        "borderColor": "#F2F2F2",
+        "paddingHorizontal": 16,
+      },
+      Object {
+        "paddingVertical": 16,
+      },
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "paddingVertical": 16,
+        },
+        Object {
+          "fontFamily": "ProximaNova-Bold",
+          "fontSize": 16,
+          "fontWeight": "700",
+        },
+      ]
+    }
+  >
+    Estimated Cart Totals
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#7A7A7A",
+        "fontSize": 13,
+        "marginLeft": 8,
+      }
+    }
+  >
+    Subtotal of items: 
+    $760.14
+  </Text>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "flex-end",
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#7A7A7A",
+          "fontSize": 13,
+          "marginLeft": 8,
+        }
+      }
+    >
+      Shipping:
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "#7A7A7A",
+            "fontSize": 13,
+            "marginLeft": 8,
+          },
+          Object {
+            "color": "#acabab",
+            "textDecorationLine": "line-through",
+          },
+        ]
+      }
+    >
+       
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "fontFamily": "ProximaNova-Bold",
+            "fontWeight": "700",
+          },
+          Object {
+            "color": "#D45D00",
+            "paddingTop": 1,
+          },
+        ]
+      }
+    >
+      FREE
+    </Text>
+  </View>
+  <View />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "paddingVertical": 16,
+        },
+        Object {
+          "fontFamily": "ProximaNova-Bold",
+          "fontSize": 13,
+          "fontWeight": "700",
+        },
+      ]
+    }
+  >
+    Estimated Grand Total: 
+    $760.14
+  </Text>
+</View>
+`;

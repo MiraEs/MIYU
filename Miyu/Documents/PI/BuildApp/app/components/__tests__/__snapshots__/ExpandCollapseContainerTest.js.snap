@@ -1,0 +1,175 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExpandCollapseContainer should not render with no children 1`] = `null`;
+
+exports[`ExpandCollapseContainer should render a more button 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderBottomWidth": 1,
+        "borderColor": "#D0D3D4",
+        "borderTopWidth": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "paddingHorizontal": 8,
+          "paddingRight": 16,
+          "paddingVertical": 8,
+        },
+        undefined,
+      ]
+    }
+  >
+    <LinkButton
+      onPress={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "marginLeft": 8,
+          "marginRight": 16,
+        }
+      }
+      wrapChildren={false}
+    >
+      <Icon
+        color="#B1B2B4"
+        name={undefined}
+        size={28}
+      />
+    </LinkButton>
+    <Text>
+      Header
+    </Text>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+        }
+      }
+    >
+      <Text>
+        More
+      </Text>
+    </View>
+  </View>
+  <AnimatedView />
+</View>
+`;
+
+exports[`ExpandCollapseContainer should render collapsed 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderBottomWidth": 1,
+        "borderColor": "#D0D3D4",
+        "borderTopWidth": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "paddingHorizontal": 8,
+          "paddingRight": 16,
+          "paddingVertical": 8,
+        },
+        undefined,
+      ]
+    }
+  >
+    <LinkButton
+      onPress={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "marginLeft": 8,
+          "marginRight": 16,
+        }
+      }
+      wrapChildren={false}
+    >
+      <Icon
+        color="#B1B2B4"
+        name={undefined}
+        size={28}
+      />
+    </LinkButton>
+    <Text>
+      Header
+    </Text>
+  </View>
+  <AnimatedView />
+</View>
+`;
+
+exports[`ExpandCollapseContainer should render expanded 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderBottomWidth": 1,
+        "borderColor": "#D0D3D4",
+        "borderTopWidth": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "paddingHorizontal": 8,
+          "paddingRight": 16,
+          "paddingVertical": 8,
+        },
+        undefined,
+      ]
+    }
+  >
+    <LinkButton
+      onPress={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "marginLeft": 8,
+          "marginRight": 16,
+        }
+      }
+      wrapChildren={false}
+    >
+      <Icon
+        color="#B1B2B4"
+        name={undefined}
+        size={28}
+      />
+    </LinkButton>
+    <Text>
+      Header
+    </Text>
+  </View>
+  <AnimatedView />
+</View>
+`;

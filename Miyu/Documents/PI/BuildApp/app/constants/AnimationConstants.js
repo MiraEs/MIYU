@@ -1,0 +1,4 @@
+export const ANIMATION_TIMEOUT_200 = 200;
+export const FADE_TEXT_DURATION = 400;
+export const TIMEOUT_DURATION_2 = 2000;
+export const TIMEOUT_DURATION_3 = 3000;

@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AtomLinkPicker component should render correctly 1`] = `null`;
+
+exports[`AtomLinkPicker component should render correctly for article 1`] = `
+<TouchableOpacity
+  activeOpacity={0.5}
+  onPress={[Function]}
+  trackAction="trackAction"
+  trackContextData={
+    Object {
+      "_a": "12345",
+      "_cr": "contentItemId",
+      "_g": 1,
+    }
+  }
+/>
+`;
+
+exports[`AtomLinkPicker component should render correctly for brand 1`] = `
+<TouchableOpacity
+  activeOpacity={0.5}
+  onPress={[Function]}
+  trackAction="trackAction"
+  trackContextData={
+    Object {
+      "_b": "12345",
+      "_cr": "contentItemId",
+      "_g": 1,
+    }
+  }
+/>
+`;
+
+exports[`AtomLinkPicker component should render correctly for category 1`] = `
+<TouchableOpacity
+  activeOpacity={0.5}
+  onPress={[Function]}
+  trackAction="trackAction"
+  trackContextData={
+    Object {
+      "_c": "123456",
+      "_cr": "contentItemId",
+      "_g": 1,
+    }
+  }
+/>
+`;
+
+exports[`AtomLinkPicker component should render correctly for favorite 1`] = `
+<TouchableOpacity
+  activeOpacity={0.5}
+  onPress={[Function]}
+  trackAction="trackAction"
+  trackContextData={
+    Object {
+      "_cr": "contentItemId",
+      "_f": "12345",
+      "_g": 1,
+    }
+  }
+/>
+`;
+
+exports[`AtomLinkPicker component should render correctly for page 1`] = `
+<TouchableOpacity
+  activeOpacity={0.5}
+  onPress={[Function]}
+  trackAction="trackAction"
+  trackContextData={
+    Object {
+      "_cr": "contentItemId",
+      "_g": 1,
+      "_r": "12345",
+    }
+  }
+/>
+`;
+
+exports[`AtomLinkPicker component should render correctly for product 1`] = `
+<TouchableOpacity
+  activeOpacity={0.5}
+  onPress={[Function]}
+  trackAction="trackAction"
+  trackContextData={
+    Object {
+      "_cr": "contentItemId",
+      "_g": 1,
+      "_s": "12345",
+    }
+  }
+/>
+`;
+
+exports[`AtomLinkPicker component should render correctly for profile 1`] = `
+<TouchableOpacity
+  activeOpacity={0.5}
+  onPress={[Function]}
+  trackAction="trackAction"
+  trackContextData={
+    Object {
+      "_cr": "contentItemId",
+      "_g": 1,
+    }
+  }
+/>
+`;
+
+exports[`AtomLinkPicker component should render correctly for video 1`] = `
+<TouchableOpacity
+  activeOpacity={0.5}
+  onPress={[Function]}
+  trackAction="trackAction"
+  trackContextData={
+    Object {
+      "_cr": "contentItemId",
+      "_g": 1,
+    }
+  }
+/>
+`;

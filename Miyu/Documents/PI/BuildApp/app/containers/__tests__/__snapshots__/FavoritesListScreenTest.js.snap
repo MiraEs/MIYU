@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FavoritesListScreen component should render correctly with no favorites 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "paddingVertical": 8,
+        }
+      }
+    >
+      This list is empty
+    </Text>
+    <Button
+      accessibilityLabel="Start Favoriting"
+      onPress={[Function]}
+      style={
+        Object {
+          "flex": 0,
+          "marginBottom": 72,
+          "marginTop": 8,
+        }
+      }
+      text="Start Favoriting"
+      trackAction="build:app:favorites:emptyFavoritesStartFavoriting"
+    />
+  </View>
+</View>
+`;
+
+exports[`FavoritesListScreen component should render the right nav button 1`] = `
+<NavigationBarIconButton
+  iconName="ios-more"
+  onPress={[Function]}
+  trackAction="build:app:favorites:navtapmore"
+/>
+`;
+
+exports[`FavoritesListScreen component should render with favorites products map as not owner 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <ListView
+    dataSource={
+      Object {
+        "_data": Array [],
+        "getRowCount": [Function],
+      }
+    }
+    enableEmptySections={true}
+    renderHeader={[Function]}
+    renderRow={[Function]}
+    renderSeparator={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#EBEDEF",
+      }
+    }
+  />
+</View>
+`;
+
+exports[`FavoritesListScreen component should render with favorites products map as owner 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView
+    bounceFirstRowOnMount={true}
+    dataSource={
+      ListViewDataSource {
+        "items": 0,
+      }
+    }
+    enableEmptySections={true}
+    maxSwipeDistance={210}
+    onScroll={[Function]}
+    renderHeader={[Function]}
+    renderQuickActions={[Function]}
+    renderRow={[Function]}
+    renderScrollComponent={[Function]}
+    renderSeparator={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#EBEDEF",
+      }
+    }
+  >
+    <View>
+      <View
+        accessibilityLabel={undefined}
+        style={
+          Array [
+            Object {
+              "paddingTop": 8,
+            },
+            Object {
+              "backgroundColor": "#EBEDEF",
+            },
+          ]
+        }
+      >
+        <Text
+          family="archer"
+          lineHeight={false}
+          style={
+            Object {
+              "letterSpacing": 1,
+              "margin": 8,
+            }
+          }
+          weight="bold"
+        >
+          FAVORITE NAME
+        </Text>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;
+
+exports[`FavoritesListScreen component should render with no favoriteId 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "paddingVertical": 8,
+        }
+      }
+    >
+      This favorites list is not available.
+    </Text>
+    <Button
+      accessibilityLabel="Go Back"
+      onPress={[Function]}
+      style={
+        Object {
+          "flex": 0,
+          "marginBottom": 72,
+          "marginTop": 8,
+        }
+      }
+      text="Go Back"
+      trackAction="build:app:favorites:emptyFavoritesStartFavoriting"
+    />
+  </View>
+</View>
+`;

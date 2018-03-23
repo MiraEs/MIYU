@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RelatedProduct functions state 1`] = `
+Object {
+  "isAddToCartEnabled": true,
+  "isQuantitySelectorsVisible": false,
+  "quantity": 1,
+  "showQuantitySelectorView": true,
+}
+`;
+
+exports[`RelatedProduct should render 1`] = `
+<TouchableWithoutFeedback
+  onPress={[Function]}
+>
+  <View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "justifyContent": "space-between",
+            "margin": 8,
+          }
+        }
+      >
+        <Image
+          height={95}
+          source="https://s3.img-b.com/image/upload/t_base,f_auto,dpr_2.0,c_lpad,w_95,h_95/404images/noimage.gif"
+          style={undefined}
+          width={95}
+        />
+        <View>
+          <Text
+            color="greyDark"
+            size="small"
+            textAlign="center"
+          >
+            1
+             @ 
+          </Text>
+          <Text
+            color="primary"
+            textAlign="center"
+            weight="bold"
+          />
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "paddingRight": 8,
+            "paddingVertical": 8,
+          }
+        }
+      >
+        <Text>
+          <Text
+            weight="bold"
+          >
+            Test Primary
+          </Text>
+           
+          Test Secondary
+        </Text>
+        <LinkButton
+          accessibilityLabel="relatedProductTestPrimary"
+          onPress={[Function]}
+        >
+          Why is this Required?
+        </LinkButton>
+        <Text>
+          
+           
+          <Text
+            weight="bold"
+          >
+            Choose Finish
+          </Text>
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "padding": 8,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "width": 44,
+          }
+        }
+      >
+        <QuantitySelector
+          allowZero={false}
+          disableDelete={true}
+          onInputFocus={[Function]}
+          onToggleSelectors={[Function]}
+          onUpdateQuantity={[Function]}
+          quantity={1}
+          theme="primary"
+        />
+      </View>
+      <AddToCartButton
+        onPress={[Function]}
+        style={
+          Object {
+            "borderColor": "#FFFFFF",
+            "borderLeftWidth": 1,
+            "flex": 1,
+          }
+        }
+        text="Add To Cart"
+      />
+    </View>
+  </View>
+</TouchableWithoutFeedback>
+`;

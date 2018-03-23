@@ -1,0 +1,287 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RelatedProducts component should render correctly with no products 1`] = `
+<RCTScrollView
+  dataSource={
+    ListViewDataSource {
+      "items": 0,
+    }
+  }
+  renderHeader={[Function]}
+  renderRow={[Function]}
+  renderScrollComponent={[Function]}
+  style={
+    Object {
+      "marginRight": 8,
+    }
+  }
+>
+  <View>
+    <Text
+      style={
+        Object {
+          "padding": 8,
+        }
+      }
+      weight="bold"
+    >
+      Related Products
+    </Text>
+  </View>
+</RCTScrollView>
+`;
+
+exports[`RelatedProducts component should render correctly with products 1`] = `
+<RCTScrollView
+  dataSource={
+    ListViewDataSource {
+      "items": 2,
+    }
+  }
+  renderHeader={[Function]}
+  renderRow={[Function]}
+  renderScrollComponent={[Function]}
+  style={
+    Object {
+      "marginRight": 8,
+    }
+  }
+>
+  <View>
+    <Text
+      style={
+        Object {
+          "padding": 8,
+        }
+      }
+      weight="bold"
+    >
+      Related Products
+    </Text>
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#FFFFFF",
+            "flex": 1,
+            "marginBottom": 8,
+            "marginLeft": 8,
+            "opacity": 1,
+            "padding": 8,
+          }
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <Image
+          height={132}
+          source={
+            Object {
+              "uri": "https://s3.img-b.com/image/upload/t_base,f_auto,dpr_2.0,c_lpad,w_100,h_100/404images/noimage.gif",
+            }
+          }
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "alignSelf": "center",
+              "flex": 1,
+            }
+          }
+          width={132}
+        >
+          <FavoriteButton
+            compositeId={undefined}
+            finishes={
+              Array [
+                Object {},
+              ]
+            }
+            product={
+              Object {
+                "selectedFinish": Object {},
+              }
+            }
+            productUniqueId={undefined}
+            style={undefined}
+          />
+        </Image>
+        <Text
+          color="primary"
+          numberOfLines={2}
+          size="small"
+        />
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#FFFFFF",
+            "flex": 1,
+            "marginBottom": 8,
+            "marginLeft": 8,
+            "opacity": 1,
+            "padding": 8,
+          }
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <Image
+          height={132}
+          source={
+            Object {
+              "uri": "https://s3.img-b.com/image/upload/t_base,f_auto,dpr_2.0,c_lpad,w_100,h_100/404images/noimage.gif",
+            }
+          }
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "alignSelf": "center",
+              "flex": 1,
+            }
+          }
+          width={132}
+        >
+          <FavoriteButton
+            compositeId={undefined}
+            finishes={
+              Array [
+                Object {},
+              ]
+            }
+            product={
+              Object {
+                "selectedFinish": Object {},
+              }
+            }
+            productUniqueId={undefined}
+            style={undefined}
+          />
+        </Image>
+        <Text
+          color="primary"
+          numberOfLines={2}
+          size="small"
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#FFFFFF",
+            "flex": 1,
+            "marginBottom": 8,
+            "marginLeft": 8,
+            "opacity": 1,
+            "padding": 8,
+          }
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <Image
+          height={132}
+          source={
+            Object {
+              "uri": "https://s3.img-b.com/image/upload/t_base,f_auto,dpr_2.0,c_lpad,w_100,h_100/404images/noimage.gif",
+            }
+          }
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "alignSelf": "center",
+              "flex": 1,
+            }
+          }
+          width={132}
+        >
+          <FavoriteButton
+            compositeId={undefined}
+            finishes={
+              Array [
+                Object {},
+              ]
+            }
+            product={
+              Object {
+                "selectedFinish": Object {},
+              }
+            }
+            productUniqueId={undefined}
+            style={undefined}
+          />
+        </Image>
+        <Text
+          color="primary"
+          numberOfLines={2}
+          size="small"
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "marginBottom": 8,
+            "marginLeft": 8,
+            "padding": 8,
+          }
+        }
+      />
+    </View>
+  </View>
+</RCTScrollView>
+`;

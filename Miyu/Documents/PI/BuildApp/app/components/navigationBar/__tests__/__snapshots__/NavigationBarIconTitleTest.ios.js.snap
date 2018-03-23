@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationBarIconTitle should render on iOS 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "marginTop": 0,
+    }
+  }
+>
+  <Icon
+    color="#EBEDEF"
+    name="lock"
+    size={27}
+    style={
+      Object {
+        "marginBottom": 8,
+        "marginRight": 8,
+      }
+    }
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "fontFamily": "ProximaNova-Bold",
+          "fontSize": 19,
+          "fontWeight": "700",
+        },
+        Object {
+          "color": "#EBEDEF",
+        },
+      ]
+    }
+  />
+</View>
+`;

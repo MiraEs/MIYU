@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProRegistrationScreen should render with full props 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "flex": 1,
+      "paddingBottom": 51,
+      "paddingHorizontal": 7,
+    }
+  }
+>
+  <Form
+    onChange={[Function]}
+    style={
+      Object {
+        "paddingTop": 7,
+      }
+    }
+  >
+    <Text>
+      Trade professionals qualify for PRO Pricing, a dedicated Account Manager, Trade Specific Promotions and more.
+    </Text>
+    <Text
+      weight="bold"
+    >
+      Profession*
+    </Text>
+    <DropDown
+      accessibilityLabel="Profession Drop Down"
+      buttonStyle={
+        Array [
+          Object {
+            "marginHorizontal": 0,
+          },
+          Object {},
+        ]
+      }
+      isRequired={true}
+      isRequiredError="Company name is required."
+      onPress={[Function]}
+      text={undefined}
+    />
+    <Text
+      weight="bold"
+    >
+      Company Name*
+    </Text>
+    <FormInput
+      accessibilityLabel="Company Name Input"
+      isRequired={true}
+      isRequiredError="Company name is required."
+      name="companyName"
+      value={undefined}
+    />
+    <Text
+      weight="bold"
+    >
+      Company Address*
+    </Text>
+    <FormInput
+      accessibilityLabel="Company Address Input"
+      isRequired={true}
+      isRequiredError="Company address is required."
+      name="companyAddress"
+      value={undefined}
+    />
+    <Text
+      weight="bold"
+    >
+      ZIP Code*
+    </Text>
+    <FormInput
+      accessibilityLabel="Company Zip Code Input"
+      isRequired={true}
+      isRequiredError="Company zip code is required."
+      keyboardType="numbers-and-punctuation"
+      name="companyZipCode"
+      onBlur={[Function]}
+      validationFunction={[Function]}
+      value={undefined}
+    />
+    <FormInput
+      accessibilityLabel="Company City Input"
+      isRequired={true}
+      isRequiredError="Company city is required."
+      label="Company City*"
+      name="companyCity"
+      value={undefined}
+    />
+    <Text
+      weight="bold"
+    >
+      Company State*
+    </Text>
+    <DropDown
+      accessibilityLabel="Company State Drop Down"
+      buttonStyle={
+        Array [
+          Object {
+            "marginHorizontal": 0,
+          },
+          Object {},
+        ]
+      }
+      isRequired={true}
+      isRequiredError="Company state is required."
+      onPress={[Function]}
+      text=""
+    />
+    <Text
+      weight="bold"
+    >
+      Company Country*
+    </Text>
+    <DropDown
+      accessibilityLabel="Company Country Drop Down"
+      buttonStyle={
+        Array [
+          Object {
+            "marginHorizontal": 0,
+          },
+          Object {},
+        ]
+      }
+      isRequired={true}
+      isRequiredError="Company country is required."
+      onPress={[Function]}
+      text="US"
+    />
+    <Text
+      weight="bold"
+    >
+      Phone Number*
+    </Text>
+    <FormInput
+      accessibilityLabel="Company Phone Number Input"
+      isRequired={true}
+      isRequiredError="Company phone number is required."
+      keyboardType="numeric"
+      name="companyPhoneNumber"
+      validationFunction={[Function]}
+      value={undefined}
+    />
+  </Form>
+  <KeyboardSpacer />
+  <FixedBottomButton
+    accessibilityLabel="Submit Button"
+    buttonText="Submit"
+    isLoading={false}
+    onPress={[Function]}
+    trackAction={undefined}
+  />
+</View>
+`;

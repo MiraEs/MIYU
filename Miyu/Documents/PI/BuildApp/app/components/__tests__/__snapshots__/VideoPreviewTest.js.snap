@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VideoPreview component should render Wistia preview correctly 1`] = `
+<View
+  style={
+    Object {
+      "height": 1080,
+      "width": 1920,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "flex": 1,
+        },
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        },
+      ]
+    }
+  >
+    <ActivityIndicator
+      animating={true}
+      color="#999999"
+      hidesWhenStopped={true}
+      size="small"
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`VideoPreview component should render YouTube preview correctly 1`] = `
+<Image
+  height={1080}
+  source={
+    Object {
+      "uri": "https://i.ytimg.com/vi/hashKey/sddefault.jpg",
+    }
+  }
+  style={
+    Object {
+      "alignItems": "center",
+      "justifyContent": "center",
+    }
+  }
+  width={1920}
+>
+  <BVLinearGradient
+    colors={
+      Array [
+        3899024998,
+        3895669555,
+      ]
+    }
+    end={
+      Object {
+        "x": 0,
+        "y": 1,
+      }
+    }
+    locations={null}
+    start={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    style={
+      Object {
+        "alignItems": "center",
+        "borderRadius": 6,
+        "height": 40,
+        "justifyContent": "center",
+        "width": 64,
+      }
+    }
+  >
+    <Icon
+      color="#FFFFFF"
+      name="ios-play"
+      size={30}
+      style={
+        Object {
+          "backgroundColor": "transparent",
+        }
+      }
+    />
+  </BVLinearGradient>
+</Image>
+`;

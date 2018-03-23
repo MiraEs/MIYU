@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuillOrderedListItem should render 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "color": "grey",
+      "marginLeft": 10,
+    }
+  }
+>
+  . 
+</Text>
+`;

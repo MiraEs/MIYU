@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageGallery Container should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "flexDirection": "column",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "height": 320,
+        "opacity": 1,
+        "width": 320,
+      }
+    }
+  >
+    <ListView
+      contentOffset={
+        Object {
+          "x": 0,
+          "y": 0,
+        }
+      }
+      dataSource={
+        Object {
+          "_data": Array [
+            Object {
+              "uri": "test",
+            },
+          ],
+          "getRowCount": [Function],
+        }
+      }
+      horizontal={true}
+      initialListSize={1}
+      onMomentumScrollEnd={[Function]}
+      pagingEnabled={true}
+      renderRow={[Function]}
+      scrollEnabled={true}
+      showsHorizontalScrollIndicator={false}
+      snapToInterval={1}
+      style={
+        Object {
+          "height": 320,
+          "width": 320,
+        }
+      }
+    >
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <Image
+          source={
+            Object {
+              "uri": "test",
+            }
+          }
+          style={
+            Object {
+              "height": 320,
+              "width": 320,
+            }
+          }
+        />
+      </View>
+    </ListView>
+  </View>
+  <View
+    style={
+      Object {
+        "alignSelf": "center",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignSelf": "center",
+          "flexDirection": "row",
+          "flexWrap": "wrap",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#63666A",
+            "borderRadius": 4,
+            "height": 8,
+            "marginBottom": 8,
+            "marginHorizontal": 4,
+            "width": 8,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;

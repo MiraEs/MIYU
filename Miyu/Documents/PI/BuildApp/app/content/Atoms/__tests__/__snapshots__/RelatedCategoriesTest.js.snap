@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RelatedCategories component should render correctly with no categories 1`] = `
+<ListView
+  dataSource={
+    Object {
+      "_data": Array [],
+      "getRowCount": [Function],
+    }
+  }
+  renderHeader={[Function]}
+  renderRow={[Function]}
+  style={
+    Object {
+      "marginRight": 8,
+    }
+  }
+/>
+`;
+
+exports[`RelatedCategories component should render correctly with products 1`] = `
+<ListView
+  dataSource={
+    Object {
+      "_data": Array [
+        Array [
+          undefined,
+          undefined,
+          undefined,
+          null,
+        ],
+      ],
+      "getRowCount": [Function],
+    }
+  }
+  renderHeader={[Function]}
+  renderRow={[Function]}
+  style={
+    Object {
+      "marginRight": 8,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "marginBottom": 8,
+          "marginLeft": 8,
+          "padding": 8,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "marginBottom": 8,
+          "marginLeft": 8,
+          "padding": 8,
+        }
+      }
+    />
+  </View>
+</ListView>
+`;

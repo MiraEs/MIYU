@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabbedPager Test should change pages correctly 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <PagerTabBar
+    onPageChanged={[Function]}
+    selectedTabIndex={0}
+    tabs={
+      Array [
+        Object {
+          "selected": true,
+          "text": "tab 1",
+        },
+        Object {
+          "selected": false,
+          "text": "tab 2",
+        },
+        Object {
+          "selected": false,
+          "text": "tab 3",
+        },
+      ]
+    }
+  />
+  <Pager
+    initialPage={0}
+    markerEnabled={false}
+    onPageChanged={[Function]}
+    scrollEnabled={true}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexGrow": 1,
+          "width": 320,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "flexGrow": 1,
+          "width": 320,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "flexGrow": 1,
+          "width": 320,
+        }
+      }
+    />
+  </Pager>
+</View>
+`;
+
+exports[`TabbedPager Test should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <PagerTabBar
+    onPageChanged={[Function]}
+    selectedTabIndex={0}
+    tabs={
+      Array [
+        Object {
+          "selected": true,
+          "text": "tab 1",
+        },
+        Object {
+          "selected": false,
+          "text": "tab 2",
+        },
+        Object {
+          "selected": false,
+          "text": "tab 3",
+        },
+      ]
+    }
+  />
+  <Pager
+    initialPage={0}
+    markerEnabled={false}
+    onPageChanged={[Function]}
+    scrollEnabled={true}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexGrow": 1,
+          "width": 320,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "flexGrow": 1,
+          "width": 320,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "flexGrow": 1,
+          "width": 320,
+        }
+      }
+    />
+  </Pager>
+</View>
+`;

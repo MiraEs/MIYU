@@ -1,0 +1,409 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FavoritesRow component should render a paint product correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flexDirection": "row",
+      "padding": 8,
+    }
+  }
+>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <Image
+      height={75}
+      source={
+        Object {
+          "uri": "https://s3.img-b.com/image/upload/t_base,f_auto,dpr_2.0,c_lpad,w_75,h_75/404images/noimage.gif",
+        }
+      }
+      width={75}
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "marginLeft": 8,
+      }
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <Text
+        lineHeight={false}
+        weight="bold"
+      >
+         
+      </Text>
+      <Text />
+      <Text
+        color="primary"
+        lineHeight={false}
+        style={
+          Object {
+            "marginVertical": 8,
+          }
+        }
+        weight="bold"
+      />
+    </View>
+    <Text
+      color="error"
+    >
+      DISCONTINUED
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`FavoritesRow component should render a product with a discontinued finish correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flexDirection": "row",
+      "padding": 8,
+    }
+  }
+>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <Image
+      height={75}
+      source={
+        Object {
+          "uri": "https://s3.img-b.com/image/upload/t_base,f_auto,dpr_2.0,c_lpad,w_75,h_75/404images/noimage.gif",
+        }
+      }
+      width={75}
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "marginLeft": 8,
+      }
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <Text
+        lineHeight={false}
+        weight="bold"
+      >
+         
+      </Text>
+      <Text />
+      <Text
+        color="primary"
+        lineHeight={false}
+        style={
+          Object {
+            "marginVertical": 8,
+          }
+        }
+        weight="bold"
+      >
+        Unavailable
+      </Text>
+    </View>
+    <Text
+      color="error"
+    >
+      DISCONTINUED
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`FavoritesRow component should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flexDirection": "row",
+      "padding": 8,
+    }
+  }
+>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <Image
+      height={75}
+      source={
+        Object {
+          "uri": "https://s3.img-b.com/image/upload/t_base,f_auto,dpr_2.0,c_lpad,w_75,h_75/404images/noimage.gif",
+        }
+      }
+      width={75}
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "marginLeft": 8,
+      }
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <Text
+        lineHeight={false}
+        weight="bold"
+      >
+         
+      </Text>
+      <Text />
+      <Text
+        color="primary"
+        lineHeight={false}
+        style={
+          Object {
+            "marginVertical": 8,
+          }
+        }
+        weight="bold"
+      />
+    </View>
+    <Text
+      color="error"
+    >
+      DISCONTINUED
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`FavoritesRow component should render with a fallback finish 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flexDirection": "row",
+      "padding": 8,
+    }
+  }
+>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <Image
+      height={75}
+      source={
+        Object {
+          "uri": "https://s3.img-b.com/image/upload/t_base,f_auto,dpr_2.0,c_lpad,w_75,h_75/404images/noimage.gif",
+        }
+      }
+      width={75}
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "marginLeft": 8,
+      }
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <Text
+        lineHeight={false}
+        weight="bold"
+      >
+         
+      </Text>
+      <Text />
+      <Text
+        color="primary"
+        lineHeight={false}
+        style={
+          Object {
+            "marginVertical": 8,
+          }
+        }
+        weight="bold"
+      >
+        Unavailable
+      </Text>
+    </View>
+    <Text
+      color="error"
+    >
+      DISCONTINUED
+    </Text>
+  </View>
+</View>
+`;

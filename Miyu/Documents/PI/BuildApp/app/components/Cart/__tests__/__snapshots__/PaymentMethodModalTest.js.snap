@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaymentMethodModal component should render with default props 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderColor": "#D0D3D4",
+        "borderTopWidth": 1,
+      }
+    }
+  />
+  <Button
+    accessibilityLabel="Credit Card Checkout Button"
+    borders={false}
+    color="white"
+    onPress={[Function]}
+    size="large"
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "flex-start",
+      }
+    }
+    trackAction="build:app:cart:checkoutCreditCard"
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "paddingHorizontal": 16,
+          "paddingVertical": 24,
+        }
+      }
+    >
+      <Image
+        resizeMode="contain"
+        source={1}
+      />
+      <View
+        style={
+          Object {
+            "paddingLeft": 16,
+          }
+        }
+      >
+        <Text
+          weight="bold"
+        >
+          Credit Card
+        </Text>
+      </View>
+    </View>
+  </Button>
+  <View
+    style={
+      Object {
+        "borderColor": "#D0D3D4",
+        "borderTopWidth": 1,
+      }
+    }
+  />
+  <Button
+    accessibilityLabel="PayPal Checkout Button"
+    borders={false}
+    color="white"
+    onPress={[Function]}
+    size="large"
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "flex-start",
+      }
+    }
+    trackAction="build:app:cart:checkoutPayPal"
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "paddingHorizontal": 16,
+          "paddingVertical": 24,
+        }
+      }
+    >
+      <Image
+        resizeMode="contain"
+        source={1}
+      />
+      <View
+        style={
+          Object {
+            "paddingLeft": 16,
+          }
+        }
+      >
+        <Text
+          weight="bold"
+        >
+          PayPal
+        </Text>
+      </View>
+    </View>
+  </Button>
+</View>
+`;

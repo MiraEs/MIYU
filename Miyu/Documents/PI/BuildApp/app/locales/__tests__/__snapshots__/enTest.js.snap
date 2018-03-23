@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`locales/en findMessage INVALID_NON_ONLINE_ORDER_AND_USER_IS_NOT_LOCAL 1`] = `"Invalid Quote."`;
+
+exports[`locales/en findMessage INVALID_NOT_FOUND 1`] = `"Quote not found."`;
+
+exports[`locales/en findMessage INVALID_NOT_LOCAL_USER_OR_EXPIRED_AND_NOT_QUANTITY_GREATERTHAN_0 1`] = `"Expired Quote."`;
+
+exports[`locales/en findMessage INVALID_ORDER_ALREADY_CREATED_FOR_QUOTE 1`] = `"Order already created for this Quote."`;
+
+exports[`locales/en findMessage INVALID_SESSION_CART_CANT_BE_LOADED 1`] = `"Quote can not be loaded."`;
+
+exports[`locales/en findMessage INVALID_SITE_ID_DOESNT_MATCH 1`] = `"This Quote is not for Build.com"`;
+
+exports[`locales/en findMessage UNKNOWN 1`] = `"Unknown message."`;
+
+exports[`locales/en findMessage VALID 1`] = `"Valid Quote."`;
+
+exports[`locales/en findMessage VALID_WITHOUT_OWNERSHIP 1`] = `"Valid Quote."`;

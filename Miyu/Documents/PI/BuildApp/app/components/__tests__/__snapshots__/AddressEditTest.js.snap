@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddressEdit should render with default props 1`] = `
+<Form
+  inputFocusOffset={undefined}
+  onChange={[Function]}
+  scrollsToTop={true}
+  style={undefined}
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+      }
+    }
+  >
+    <FormInput
+      accessibilityLabel="First Name"
+      autoCapitalize="words"
+      autoCorrect={false}
+      componentStyle={
+        Array [
+          Object {
+            "flexGrow": 1,
+          },
+          Object {
+            "marginRight": 8,
+          },
+        ]
+      }
+      isRequired={true}
+      isRequiredError="Required."
+      label="First Name*"
+      name="firstName"
+      value={undefined}
+    />
+    <FormInput
+      accessibilityLabel="Last Name"
+      autoCapitalize="words"
+      autoCorrect={false}
+      componentStyle={
+        Object {
+          "flexGrow": 1,
+        }
+      }
+      isRequired={true}
+      isRequiredError="Required."
+      label="Last Name*"
+      name="lastName"
+      value={undefined}
+    />
+  </View>
+  <FormInput
+    accessibilityLabel="Company"
+    autoCapitalize="words"
+    label="Company Name"
+    maxLength={75}
+    name="company"
+    value={undefined}
+  />
+  <FormInput
+    accessibilityLabel="Street Address"
+    help={null}
+    isRequired={true}
+    isRequiredError="Address is required."
+    label="Address*"
+    maxLength={100}
+    name="address"
+    validationFunction={[Function]}
+    value={undefined}
+  />
+  <FormInput
+    accessibilityLabel="Street Address 2"
+    label="Suite/Apt"
+    maxLength={100}
+    name="address2"
+    value={undefined}
+  />
+  <FormInput
+    accessibilityLabel="Zip Code"
+    autoCorrect={false}
+    error=""
+    isRequired={true}
+    isRequiredError="ZIP is required."
+    keyboardType="numbers-and-punctuation"
+    label="ZIP Code*"
+    maxLength={10}
+    name="zip"
+    onBlur={[Function]}
+    valid={null}
+    value={undefined}
+  />
+  <FormInput
+    accessibilityLabel="City"
+    autoCapitalize="words"
+    isRequired={true}
+    isRequiredError="City is required."
+    label="City*"
+    maxLength={50}
+    name="city"
+    onBlur={[Function]}
+    value={undefined}
+  />
+  <FormDropDown
+    accessibilityLabel="State"
+    dependentOnKey="country"
+    dropDownCustomTemplate={[Function]}
+    isRequired={true}
+    isRequiredError="Required."
+    label="State*"
+    modalDescription="Select State/Province"
+    name="state"
+    onChange={[Function]}
+    options={Array []}
+    value={undefined}
+  />
+  <FormDropDown
+    accessibilityLabel="Country"
+    isRequired={true}
+    isRequiredError="Country is required."
+    label="Country*"
+    modalDescription="Select Country"
+    name="country"
+    options={
+      Array [
+        Object {
+          "text": "United States",
+          "value": "US",
+        },
+        Object {
+          "text": "Canada",
+          "value": "CA",
+        },
+      ]
+    }
+    value={1}
+  />
+  <FormInput
+    accessibilityLabel="Phone Number"
+    focusOffset={30}
+    isRequired={true}
+    isRequiredError="Phone Number is required."
+    keyboardType="numeric"
+    label="Phone Number*"
+    name="phone"
+    returnKeyType="go"
+    validationFunction={[Function]}
+    value={undefined}
+  />
+  <Text
+    color="greyDark"
+    size="small"
+    style={
+      Object {
+        "paddingBottom": 8,
+      }
+    }
+  >
+    We will only use your phone number to contact you in regards to issues with your order or shipment delivery purposes.
+  </Text>
+  <KeyboardSpacer
+    topSpacing={0}
+  />
+</Form>
+`;

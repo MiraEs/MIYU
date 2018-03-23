@@ -1,0 +1,5 @@
+export default {
+	SELF_IDENTIFIED: 'SELF_IDENTIFIED',
+	VERIFIED: 'VERIFIED',
+	OWNED: 'OWNED',
+};

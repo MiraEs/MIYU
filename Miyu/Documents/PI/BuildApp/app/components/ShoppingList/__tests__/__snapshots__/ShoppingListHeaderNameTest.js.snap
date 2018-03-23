@@ -1,0 +1,273 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShoppingListHeaderName component it should handle a null name 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#EBEDEF",
+      "borderColor": "#D0D3D4",
+      "borderWidth": 1,
+      "flexDirection": "row",
+      "height": 44,
+      "paddingHorizontal": 16,
+    }
+  }
+>
+  <LinkButton
+    onPress={[Function]}
+    style={undefined}
+    wrapChildren={false}
+  >
+    <Icon
+      color="#63666A"
+      name={undefined}
+      size={28}
+    />
+  </LinkButton>
+  <TouchableHighlight
+    accessibilityLabel="Header name"
+    onPress={[Function]}
+    style={
+      Object {
+        "borderRadius": 3,
+        "flex": 1,
+        "paddingHorizontal": 8,
+      }
+    }
+    underlayColor="rgba(255, 255, 255, 0.05)"
+  >
+    <Text
+      family="archer"
+      size="large"
+      style={
+        Object {
+          "marginHorizontal": 16,
+          "minWidth": 44,
+        }
+      }
+      weight="bold"
+    >
+      
+    </Text>
+  </TouchableHighlight>
+  <LinkButton
+    onPress={[Function]}
+    wrapChildren={false}
+  >
+    <Icon
+      color="#63666A"
+      name={undefined}
+      size={30}
+    />
+  </LinkButton>
+</View>
+`;
+
+exports[`ShoppingListHeaderName component it should render 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#EBEDEF",
+      "borderColor": "#D0D3D4",
+      "borderWidth": 1,
+      "flexDirection": "row",
+      "height": 44,
+      "paddingHorizontal": 16,
+    }
+  }
+>
+  <LinkButton
+    onPress={[Function]}
+    style={undefined}
+    wrapChildren={false}
+  >
+    <Icon
+      color="#63666A"
+      name={undefined}
+      size={28}
+    />
+  </LinkButton>
+  <TouchableHighlight
+    accessibilityLabel="Header name"
+    onPress={[Function]}
+    style={
+      Object {
+        "borderRadius": 3,
+        "flex": 1,
+        "paddingHorizontal": 8,
+      }
+    }
+    underlayColor="rgba(255, 255, 255, 0.05)"
+  >
+    <Text
+      family="archer"
+      size="large"
+      style={
+        Object {
+          "marginHorizontal": 16,
+          "minWidth": 44,
+        }
+      }
+      weight="bold"
+    >
+      
+    </Text>
+  </TouchableHighlight>
+  <LinkButton
+    onPress={[Function]}
+    wrapChildren={false}
+  >
+    <Icon
+      color="#63666A"
+      name={undefined}
+      size={30}
+    />
+  </LinkButton>
+</View>
+`;
+
+exports[`ShoppingListHeaderName component it should render a name 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#EBEDEF",
+      "borderColor": "#D0D3D4",
+      "borderWidth": 1,
+      "flexDirection": "row",
+      "height": 44,
+      "paddingHorizontal": 16,
+    }
+  }
+>
+  <LinkButton
+    onPress={[Function]}
+    style={undefined}
+    wrapChildren={false}
+  >
+    <Icon
+      color="#63666A"
+      name={undefined}
+      size={28}
+    />
+  </LinkButton>
+  <TouchableHighlight
+    accessibilityLabel="Header name"
+    onPress={[Function]}
+    style={
+      Object {
+        "borderRadius": 3,
+        "flex": 1,
+        "paddingHorizontal": 8,
+      }
+    }
+    underlayColor="rgba(255, 255, 255, 0.05)"
+  >
+    <Text
+      family="archer"
+      size="large"
+      style={
+        Object {
+          "marginHorizontal": 16,
+          "minWidth": 44,
+        }
+      }
+      weight="bold"
+    >
+      Test
+    </Text>
+  </TouchableHighlight>
+  <LinkButton
+    onPress={[Function]}
+    wrapChildren={false}
+  >
+    <Icon
+      color="#63666A"
+      name={undefined}
+      size={30}
+    />
+  </LinkButton>
+</View>
+`;
+
+exports[`ShoppingListHeaderName component it should render in editing mode 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#EBEDEF",
+      "borderColor": "#D0D3D4",
+      "borderWidth": 1,
+      "flexDirection": "row",
+      "height": 44,
+      "paddingHorizontal": 16,
+    }
+  }
+>
+  <LinkButton
+    onPress={[Function]}
+    style={undefined}
+    wrapChildren={false}
+  >
+    <Icon
+      color="#63666A"
+      name={undefined}
+      size={28}
+    />
+  </LinkButton>
+  <Form
+    alternateScrollHandle={undefined}
+    inputFocusOffset={20}
+    onChange={[Function]}
+    scrollsToTop={true}
+    style={
+      Object {
+        "marginHorizontal": 16,
+      }
+    }
+  >
+    <FormInput
+      accessibilityLabel="name"
+      autoCapitalize="words"
+      errorStyle={
+        Object {
+          "marginBottom": 0,
+        }
+      }
+      inputStyle={
+        Object {
+          "height": 30,
+          "paddingVertical": 2,
+        }
+      }
+      label=""
+      name="name"
+      onBlur={[Function]}
+      onSubmitEditing={[Function]}
+      returnKeyType="done"
+      textInputContainerStyle={
+        Object {
+          "marginVertical": 0,
+          "paddingHorizontal": 7,
+        }
+      }
+      validateOnBlur={true}
+      validateOnChange={false}
+      validationFunction={[Function]}
+      value=""
+    />
+  </Form>
+  <LinkButton
+    onPress={[Function]}
+    wrapChildren={false}
+  >
+    <Icon
+      color="#63666A"
+      name={undefined}
+      size={30}
+    />
+  </LinkButton>
+</View>
+`;

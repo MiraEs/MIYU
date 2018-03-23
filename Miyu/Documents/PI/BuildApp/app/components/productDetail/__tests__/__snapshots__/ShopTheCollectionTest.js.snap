@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShopTheCollection should render with products 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#EBEDEF",
+      "paddingBottom": 24,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "marginHorizontal": 8,
+        "marginVertical": 16,
+      }
+    }
+  >
+    <Text
+      size="large"
+      weight="bold"
+    >
+      Shop the Collection
+    </Text>
+    <TouchableHighlight
+      onPress={[Function]}
+      underlayColor="transparent"
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "flexDirection": "row",
+            "justifyContent": "flex-end",
+          }
+        }
+      >
+        <View>
+          <Text
+            color="primary"
+            size="small"
+          >
+            View All
+          </Text>
+        </View>
+        <Icon
+          color="#00A499"
+          name="ios-arrow-forward"
+          size={21}
+          style={
+            Object {
+              "marginLeft": 8,
+              "position": "relative",
+              "top": 5,
+            }
+          }
+        />
+      </View>
+    </TouchableHighlight>
+  </View>
+  <ScrollView
+    horizontal={true}
+  >
+    <TouchableHighlight
+      onPress={[Function]}
+      style={
+        Object {
+          "marginBottom": 8,
+          "marginHorizontal": 8,
+        }
+      }
+      underlayColor="transparent"
+    >
+      <View>
+        <Image
+          source={
+            Object {
+              "uri": "cloudinary/url/[object Object]",
+            }
+          }
+          style={
+            Object {
+              "height": 100,
+              "width": 100,
+            }
+          }
+        />
+        <Text
+          color="primary"
+          weight="bold"
+        >
+          $777.12
+        </Text>
+      </View>
+    </TouchableHighlight>
+  </ScrollView>
+</View>
+`;

@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`devicePhotosReducer should handle ADD_PHOTO 1`] = `
+Object {
+  "cursor": "",
+  "error": "",
+  "hasNextPage": false,
+  "isFetchingNextPage": false,
+  "photos": Array [
+    Object {
+      "image": Object {
+        "uri": "/test/uri",
+      },
+      "isSelected": true,
+    },
+  ],
+  "selectedPhotos": Array [
+    Object {
+      "image": Object {
+        "uri": "/test/uri",
+      },
+      "isSelected": true,
+    },
+  ],
+}
+`;
+
+exports[`devicePhotosReducer should handle FILTER_SELECTED_PHOTOS 1`] = `
+Object {
+  "cursor": "",
+  "data": Array [
+    Object {
+      "selected": true,
+      "uri": "/selected/photo",
+    },
+  ],
+  "error": "",
+  "hasNextPage": false,
+  "isFetchingNextPage": false,
+  "photos": Array [],
+  "selectedPhotos": Array [],
+}
+`;
+
+exports[`devicePhotosReducer should handle LOAD_DEVICE_PHOTOS_FAIL 1`] = `
+Object {
+  "cursor": "",
+  "error": [Error: load device photos test error],
+  "hasNextPage": false,
+  "isFetchingNextPage": false,
+  "photos": Array [],
+  "selectedPhotos": Array [],
+}
+`;
+
+exports[`devicePhotosReducer should handle LOAD_DEVICE_PHOTOS_SUCCESS 1`] = `
+Object {
+  "cursor": "u-u-i-d",
+  "error": "",
+  "hasNextPage": true,
+  "isFetchingNextPage": false,
+  "photos": Array [
+    Object {
+      "image": Object {
+        "uri": "/uri/1",
+      },
+      "isSelected": false,
+    },
+  ],
+  "selectedPhotos": Array [],
+}
+`;
+
+exports[`devicePhotosReducer should handle LOAD_DEVICE_PHOTOS_SUCCESS with selectedPhotos and one page 1`] = `
+Object {
+  "cursor": "",
+  "error": "",
+  "hasNextPage": false,
+  "isFetchingNextPage": false,
+  "photos": Array [
+    Object {
+      "image": Object {
+        "uri": "/photo/uri",
+      },
+      "isSelected": true,
+    },
+  ],
+  "selectedPhotos": Array [
+    Object {
+      "image": Object {
+        "uri": "/photo/uri",
+      },
+      "isSelected": true,
+    },
+  ],
+}
+`;
+
+exports[`devicePhotosReducer should handle REPLACE_SELECTED_PHOTOS 1`] = `
+Object {
+  "cursor": "",
+  "error": "",
+  "hasNextPage": false,
+  "isFetchingNextPage": false,
+  "photos": Array [],
+  "selectedPhotos": Array [
+    "/photo/uri",
+  ],
+}
+`;
+
+exports[`devicePhotosReducer should handle TOGGLE_FETCHING_PHOTOS 1`] = `
+Object {
+  "cursor": "",
+  "error": "",
+  "hasNextPage": false,
+  "isFetchingNextPage": true,
+  "photos": Array [],
+  "selectedPhotos": Array [],
+}
+`;
+
+exports[`devicePhotosReducer should handle TOGGLE_PHOTO_SELECTED 1`] = `
+Object {
+  "cursor": "",
+  "error": "",
+  "hasNextPage": false,
+  "isFetchingNextPage": false,
+  "photos": Array [
+    Object {
+      "image": Object {
+        "uri": "/photo/uri",
+      },
+      "isSelected": false,
+    },
+    Object {
+      "image": Object {
+        "uri": "/other/photo/uri",
+      },
+      "isSelected": false,
+    },
+    Object {
+      "image": Object {
+        "uri": "/yet/another/photo/uri",
+      },
+      "isSelected": true,
+    },
+  ],
+  "selectedPhotos": Array [
+    "/yet/another/photo/uri",
+  ],
+}
+`;

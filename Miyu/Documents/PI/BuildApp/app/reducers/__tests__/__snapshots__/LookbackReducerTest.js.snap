@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lookbackReducer should handle start recording 1`] = `
+Object {
+  "status": "RECORDING_STATUS_RECORDING",
+}
+`;
+
+exports[`lookbackReducer should handle stop recording 1`] = `
+Object {
+  "status": "RECORDING_STATUS_STOPPED",
+}
+`;
+
+exports[`lookbackReducer should return initialState 1`] = `
+Object {
+  "status": "RECORDING_STATUS_INACTIVE",
+}
+`;

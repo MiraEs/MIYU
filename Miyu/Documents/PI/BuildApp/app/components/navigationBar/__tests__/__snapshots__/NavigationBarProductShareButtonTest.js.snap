@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationBarProductShareButton should render with full props 1`] = `
+<NavigationBarIconButton
+  iconName="share"
+  loading={false}
+  onPress={[Function]}
+  trackAction="PDP_NAV_TAP_SHARE"
+/>
+`;

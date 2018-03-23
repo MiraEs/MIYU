@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BuildLibrary Screen should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#EBEDEF",
+      "flex": 1,
+    }
+  }
+/>
+`;

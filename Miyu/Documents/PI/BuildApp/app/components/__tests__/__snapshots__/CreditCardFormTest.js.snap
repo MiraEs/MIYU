@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreditCardForm component should render CreditCardForm with required props 1`] = `
+<Form
+  onChange={[Function]}
+  scrollsToTop={true}
+  style={undefined}
+>
+  <FormInput
+    accessibilityLabel="Card Number Input"
+    image={null}
+    isRequired={true}
+    isRequiredError="Card number is required."
+    keyboardType="numeric"
+    label="Card Number"
+    maxLength={19}
+    name="cardNumber"
+    validateOnBlur={false}
+    validationFunction={[Function]}
+    value=""
+  />
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+      }
+    }
+  >
+    <FormInput
+      accessibilityLabel="Expiration Field"
+      componentStyle={
+        Object {
+          "flex": 1,
+          "marginRight": 8,
+        }
+      }
+      isRequired={true}
+      isRequiredError="Exp date is required."
+      keyboardType="numeric"
+      label="Expiration"
+      maxLength={5}
+      name="expDate"
+      placeholder="mm/yy"
+      validateOnBlur={false}
+      validationFunction={[Function]}
+      value=""
+    />
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <FormInput
+        accessibilityLabel="Cvv"
+        icon="information-circle"
+        isRequired={true}
+        isRequiredError="CVV is required."
+        keyboardType="numeric"
+        label="CVV code"
+        maxLength={4}
+        name="cvv"
+        onIconPress={[Function]}
+        returnKeyType="done"
+        validateOnBlur={false}
+        validationFunction={[Function]}
+        value=""
+      />
+    </View>
+  </View>
+</Form>
+`;

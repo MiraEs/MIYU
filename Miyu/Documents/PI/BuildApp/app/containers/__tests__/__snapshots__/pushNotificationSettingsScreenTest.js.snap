@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SettingsScreen component should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#EBEDEF",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "marginBottom": 8,
+        "padding": 8,
+      }
+    }
+  >
+    <Text
+      size="large"
+      textAlign="center"
+      weight="bold"
+    >
+      Push notifications are disabled
+    </Text>
+    <Text
+      textAlign="center"
+    >
+      To receive notifications outside of this app, continue to your phone settings and enable notifications.
+    </Text>
+    <Button
+      accessibilityLabel="Enable Push Notifications"
+      onPress={[Function]}
+      style={
+        Object {
+          "marginTop": 16,
+        }
+      }
+      text="Enable Push Notifications"
+      trackAction="build:app:pushnotifications:enablenotificationstap"
+    />
+  </View>
+  <ListView
+    dataSource={
+      Object {
+        "_data": Array [],
+        "getRowCount": [Function],
+      }
+    }
+    enableEmptySections={true}
+    renderHeader={[Function]}
+    renderRow={[Function]}
+    scrollsToTop={true}
+  />
+</View>
+`;

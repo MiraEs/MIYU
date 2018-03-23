@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BuildLibrary Button should render correctly 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel="accessibilityLabel"
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 44,
+      "opacity": 1,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "justifyContent": "center",
+        },
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#00A499",
+          "borderColor": "#00A499",
+          "borderWidth": 1,
+          "opacity": 1,
+          "paddingHorizontal": 16,
+        },
+      ]
+    }
+  />
+</View>
+`;

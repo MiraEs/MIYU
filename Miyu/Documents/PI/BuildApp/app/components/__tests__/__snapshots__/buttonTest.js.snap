@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component should render a TouchableHighlight 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+      },
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#00A499",
+          "height": 44,
+          "justifyContent": "center",
+        },
+        undefined,
+        Object {
+          "borderColor": "#D0D3D4",
+          "borderWidth": 1,
+        },
+      ],
+    ]
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    lineHeight={false}
+    style={
+      Array [
+        Object {
+          "color": "#fff",
+          "fontFamily": "ProximaNova-Bold",
+          "fontSize": 16,
+          "marginHorizontal": 8,
+          "textAlign": "center",
+        },
+      ]
+    }
+  />
+</View>
+`;

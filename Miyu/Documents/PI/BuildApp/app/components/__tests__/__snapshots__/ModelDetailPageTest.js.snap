@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModelDetailPage should render default props 1`] = `
+<ScrollView
+  enableEmptySections={true}
+>
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 16,
+        "width": 320,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }
+    >
+      <Image
+        height={175}
+        source="https://s3.img-b.com/image/upload/t_base,f_auto,dpr_2.0,c_lpad,w_175,h_175/404images/noimage.gif"
+        width={175}
+      />
+    </View>
+    <Text
+      style={
+        Object {
+          "marginTop": 16,
+        }
+      }
+      weight="bold"
+    >
+      Test Manufacturer
+       
+      TEST-PROD 123
+       
+      Testing Finish
+       
+      Testing Title
+    </Text>
+    <Text
+      color="primary"
+      style={
+        Object {
+          "marginTop": 8,
+        }
+      }
+      weight="bold"
+    >
+      $150.00 - $200.64
+    </Text>
+    <View>
+      <Text
+        style={
+          Object {
+            "paddingTop": 8,
+          }
+        }
+        weight="bold"
+      >
+        Product Specifications:
+      </Text>
+      <ListView
+        dataSource={
+          Object {
+            "_data": Array [
+              Object {
+                "productSpectValue": Array [
+                  Object {
+                    "value": "Test Value 1",
+                  },
+                  Object {
+                    "value": "Test Value 2",
+                  },
+                ],
+              },
+            ],
+            "getRowCount": [Function],
+          }
+        }
+        enableEmptySections={true}
+        renderRow={[Function]}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "paddingHorizontal": 16,
+                "paddingVertical": 8,
+              },
+              Object {
+                "backgroundColor": "#FFFFFF",
+              },
+            ]
+          }
+        >
+          <Text
+            weight="bold"
+          />
+          <Text>
+            
+          </Text>
+        </View>
+      </ListView>
+    </View>
+  </View>
+</ScrollView>
+`;

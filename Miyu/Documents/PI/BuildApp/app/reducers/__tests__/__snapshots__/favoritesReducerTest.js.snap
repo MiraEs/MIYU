@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`favoritesReducer should return the state for CLEAR_SAVE_ERROR 1`] = `
+Object {
+  "favorites": Object {
+    "1234": Object {
+      "itemCount": 2,
+      "productsMap": Object {},
+    },
+  },
+  "saveListError": "",
+}
+`;
+
+exports[`favoritesReducer should return the state for DELETE_FAVORITE_PRODUCT 1`] = `
+Object {
+  "favorites": Object {
+    "1234": Object {
+      "itemCount": 1,
+      "productsMap": Object {},
+    },
+  },
+}
+`;
+
+exports[`favoritesReducer should return the state for DELETE_FAVORITES 1`] = `
+Object {
+  "favorites": Object {},
+}
+`;
+
+exports[`favoritesReducer should return the state for LOAD_CUSTOMER_FAVORITES 1`] = `
+Object {
+  "error": null,
+  "favorites": Object {},
+  "saveListError": "",
+  "showModalPending": 0,
+}
+`;
+
+exports[`favoritesReducer should return the state for LOAD_CUSTOMER_FAVORITES_FAIL 1`] = `
+Object {
+  "error": "Test error",
+  "favorites": Object {},
+  "saveListError": "",
+  "showModalPending": 0,
+}
+`;
+
+exports[`favoritesReducer should return the state for LOAD_CUSTOMER_FAVORITES_SUCCESS 1`] = `
+Object {
+  "error": null,
+  "favorites": Object {
+    "1234": Object {
+      "id": 1234,
+      "isOwner": false,
+      "itemCount": 1,
+      "name": "Test Favorites",
+      "productsMap": Object {
+        "3456": Object {
+          "availableByLocation": undefined,
+          "favoriteProductId": 777,
+          "finishes": Array [
+            Object {
+              "uniqueId": 2345,
+            },
+          ],
+          "id": 0,
+          "manufacturer": "TST MFG",
+          "productCompositeId": 3456,
+          "productConfigurationId": undefined,
+          "productId": 456,
+          "squareFootageBased": true,
+          "title": "Test title",
+          "type": undefined,
+          "uniqueId": 2345,
+        },
+      },
+    },
+  },
+  "saveListError": "",
+  "showModalPending": 0,
+}
+`;
+
+exports[`favoritesReducer should return the state for PROJECT_SAVE_FAVORITE_SUCCESS 1`] = `
+Object {
+  "favorites": Object {
+    "1234": Object {
+      "itemCount": 2,
+      "productsMap": Object {},
+      "selected": true,
+    },
+  },
+}
+`;
+
+exports[`favoritesReducer should return the state for SAVE_FAVORITE_PRODUCT 1`] = `
+Object {
+  "favorites": Object {
+    "1234": Object {
+      "itemCount": 3,
+      "productsMap": Object {
+        "4321": Object {
+          "favoriteId": 1234,
+          "productCompositeId": 4321,
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`favoritesReducer should return the state for SAVE_FAVORITES_FAIL 1`] = `
+Object {
+  "error": null,
+  "favorites": Object {},
+  "saveListError": "Test error",
+  "showModalPending": 0,
+}
+`;
+
+exports[`favoritesReducer should return the state for SAVE_NEW_FAVORITES_SUCCESS 1`] = `
+Object {
+  "error": null,
+  "favorites": Object {
+    "1234": Object {
+      "favoriteId": 1234,
+      "productsMap": Object {},
+    },
+  },
+  "saveListError": "",
+  "showModalPending": 0,
+}
+`;
+
+exports[`favoritesReducer should return the state for UPDATE_FAVORITES_SUCCESS 1`] = `
+Object {
+  "favorites": Object {
+    "1234": Object {
+      "itemCount": 2,
+      "name": "test name",
+      "productsMap": Object {},
+    },
+  },
+  "saveListError": "",
+}
+`;
+
+exports[`favoritesReducer should returns initial state 1`] = `
+Object {
+  "error": null,
+  "favorites": Object {},
+  "saveListError": "",
+  "showModalPending": 0,
+}
+`;

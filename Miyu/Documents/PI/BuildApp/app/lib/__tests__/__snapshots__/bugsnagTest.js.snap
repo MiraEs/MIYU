@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app/lib/bugsnag.js bugsnag should work should initialilze bugsnag in beta 1`] = `
+Object {
+  "leaveBreadcrumbs": [Function],
+}
+`;
+
+exports[`app/lib/bugsnag.js bugsnag should work should initialilze bugsnag in debug 1`] = `
+Object {
+  "leaveBreadcrumbs": [Function],
+}
+`;
+
+exports[`app/lib/bugsnag.js bugsnag should work should initialilze bugsnag in release 1`] = `
+Object {
+  "leaveBreadcrumbs": [Function],
+}
+`;

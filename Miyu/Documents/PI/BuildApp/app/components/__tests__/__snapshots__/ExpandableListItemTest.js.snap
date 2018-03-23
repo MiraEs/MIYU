@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExpandableListItem should render when not collapsed 1`] = `
+<View
+  style={
+    Object {
+      "borderBottomColor": "#c8c7cc",
+      "borderBottomWidth": 1,
+    }
+  }
+>
+  <TouchableOpacity
+    onPress={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "padding": 16,
+      }
+    }
+    trackAction="test-track-action"
+  >
+    <Text
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      body text
+    </Text>
+    <Icon
+      color="#acabab"
+      name="ios-arrow-up"
+      size={25}
+    />
+  </TouchableOpacity>
+  <View
+    style={
+      Object {
+        "paddingBottom": 16,
+        "paddingHorizontal": 16,
+      }
+    }
+  >
+    children
+  </View>
+</View>
+`;
+
+exports[`ExpandableListItem should render with full props 1`] = `
+<View
+  style={
+    Object {
+      "borderBottomColor": "#c8c7cc",
+      "borderBottomWidth": 1,
+    }
+  }
+>
+  <TouchableOpacity
+    onPress={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "padding": 16,
+      }
+    }
+    trackAction="test-track-action"
+  >
+    <Text
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      body text
+    </Text>
+    <Icon
+      color="#acabab"
+      name="ios-arrow-down"
+      size={25}
+    />
+  </TouchableOpacity>
+</View>
+`;

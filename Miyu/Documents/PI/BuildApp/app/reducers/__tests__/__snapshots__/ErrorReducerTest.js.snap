@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`errorReducer should return initialState 1`] = `
+Object {
+  "refresh": false,
+  "unauthorized": false,
+}
+`;
+
+exports[`errorReducer should return the state for REFRESH_CURRENT_SCREEN 1`] = `
+Object {
+  "refresh": true,
+}
+`;

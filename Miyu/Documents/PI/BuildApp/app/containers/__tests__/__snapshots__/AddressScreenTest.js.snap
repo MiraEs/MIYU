@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddressScreen component should render correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "flex": 1,
+      },
+      Object {
+        "backgroundColor": "#EBEDEF",
+      },
+    ]
+  }
+>
+  <ScrollView
+    scrollsToTop={true}
+    style={
+      Object {
+        "marginHorizontal": 8,
+        "marginTop": 8,
+      }
+    }
+  >
+    <Text
+      size="large"
+      weight="bold"
+    >
+      Select a Shipping Address
+    </Text>
+    <Text
+      color="error"
+      size="small"
+    />
+  </ScrollView>
+  <FixedBottomButton
+    accessibilityLabel="New Address Button"
+    buttonText="New Shipping Address"
+    color="white"
+    hideOnKeyboardShow={true}
+    onPress={[Function]}
+    pinToKeyboard={false}
+    style={
+      Object {
+        "marginBottom": 40,
+        "width": 200,
+      }
+    }
+    trackAction="build:app:address:newaddress"
+  />
+</View>
+`;

@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotificationsScreen component should render correctly 1`] = `
+<TabbedPager
+  tabs={
+    Array [
+      Object {
+        "component": <Unknown
+          showEmptyButton={true}
+          showEnableNotificationsPrompt={true}
+    />,
+        "name": "All",
+      },
+      Object {
+        "component": <Unknown
+          eventTypes={
+                Array [
+                      "order",
+                      "tracking",
+                      "return",
+                      "quote",
+                    ]
+          }
+          showEmptyButton={true}
+    />,
+        "name": "Orders",
+      },
+      Object {
+        "component": <Unknown
+          emptyText="Stay up to date with everything going on in your projects"
+          eventTypes={
+                Array [
+                      "post",
+                      "team_member",
+                      "team_expert",
+                    ]
+          }
+    />,
+        "name": "Projects",
+      },
+    ]
+  }
+/>
+`;

@@ -1,0 +1,243 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`projectEventsReducer reducer should ADD_FAIL 1`] = `
+Object {
+  "activeFilter": "ALL",
+  "error": "",
+  "events": Array [],
+  "hasNextPage": false,
+  "isFetchingData": true,
+  "isFetchingNextPage": false,
+  "isFiltering": false,
+  "isRefreshing": false,
+  "pageNumber": 1,
+  "showEvents": true,
+}
+`;
+
+exports[`projectEventsReducer reducer should GLOBAL_SAVE_COMMENT_SUCCESS 1`] = `
+Object {
+  "activeFilter": "ALL",
+  "error": "",
+  "events": Array [],
+  "hasNextPage": false,
+  "isFetchingData": true,
+  "isFetchingNextPage": false,
+  "isFiltering": false,
+  "isRefreshing": false,
+  "pageNumber": 1,
+  "showEvents": true,
+}
+`;
+
+exports[`projectEventsReducer reducer should PROJECT_ADD_EVENT 1`] = `
+Object {
+  "activeFilter": "ALL",
+  "error": "",
+  "events": Array [
+    undefined,
+  ],
+  "hasNextPage": false,
+  "isFetchingData": true,
+  "isFetchingNextPage": false,
+  "isFiltering": false,
+  "isRefreshing": false,
+  "pageNumber": 1,
+  "showEvents": true,
+}
+`;
+
+exports[`projectEventsReducer reducer should PROJECT_ADD_EVENT_ERROR 1`] = `
+Object {
+  "activeFilter": "ALL",
+  "error": "",
+  "events": Array [],
+  "hasNextPage": false,
+  "isFetchingData": true,
+  "isFetchingNextPage": false,
+  "isFiltering": false,
+  "isRefreshing": false,
+  "pageNumber": 1,
+  "showEvents": true,
+}
+`;
+
+exports[`projectEventsReducer reducer should PROJECT_ADD_EVENT_SUCCESS 1`] = `
+Object {
+  "activeFilter": "ALL",
+  "error": "",
+  "events": Array [],
+  "hasNextPage": false,
+  "isFetchingData": true,
+  "isFetchingNextPage": false,
+  "isFiltering": false,
+  "isRefreshing": false,
+  "pageNumber": 1,
+  "showEvents": true,
+}
+`;
+
+exports[`projectEventsReducer reducer should PROJECT_LOAD_EVENTS_ERROR 1`] = `
+Object {
+  "activeFilter": "ALL",
+  "error": "Unable to fetch feed events. Pull down to refresh.",
+  "events": Array [],
+  "hasNextPage": false,
+  "isFetchingData": false,
+  "isFetchingNextPage": false,
+  "isFiltering": false,
+  "isRefreshing": false,
+  "pageNumber": 1,
+  "showEvents": true,
+}
+`;
+
+exports[`projectEventsReducer reducer should PROJECT_LOAD_EVENTS_SUCCESS 1`] = `
+Object {
+  "activeFilter": "ALL",
+  "error": "",
+  "events": undefined,
+  "hasNextPage": undefined,
+  "isFetchingData": false,
+  "isFetchingNextPage": false,
+  "isFiltering": false,
+  "isRefreshing": false,
+  "pageNumber": 1,
+  "showEvents": true,
+}
+`;
+
+exports[`projectEventsReducer reducer should PROJECT_LOAD_NEXT_EVENTS_SUCCESS 1`] = `
+Object {
+  "activeFilter": "ALL",
+  "error": "",
+  "events": Array [],
+  "hasNextPage": undefined,
+  "isFetchingData": false,
+  "isFetchingNextPage": false,
+  "isFiltering": false,
+  "isRefreshing": false,
+  "pageNumber": 1,
+  "showEvents": true,
+}
+`;
+
+exports[`projectEventsReducer reducer should PROJECT_SAVE_COMMENT 1`] = `
+Object {
+  "activeFilter": "ALL",
+  "error": "",
+  "events": Array [],
+  "hasNextPage": false,
+  "isFetchingData": true,
+  "isFetchingNextPage": false,
+  "isFiltering": false,
+  "isRefreshing": false,
+  "pageNumber": 1,
+  "showEvents": true,
+}
+`;
+
+exports[`projectEventsReducer reducer should PROJECT_SAVE_COMMENT_ERROR 1`] = `
+Object {
+  "activeFilter": "ALL",
+  "error": "",
+  "events": Array [],
+  "hasNextPage": false,
+  "isFetchingData": true,
+  "isFetchingNextPage": false,
+  "isFiltering": false,
+  "isRefreshing": false,
+  "pageNumber": 1,
+  "showEvents": true,
+}
+`;
+
+exports[`projectEventsReducer reducer should PROJECT_SAVE_COMMENT_SUCCESS 1`] = `
+Object {
+  "activeFilter": "ALL",
+  "error": "",
+  "events": Array [],
+  "hasNextPage": false,
+  "isFetchingData": true,
+  "isFetchingNextPage": false,
+  "isFiltering": false,
+  "isRefreshing": false,
+  "pageNumber": 1,
+  "showEvents": true,
+}
+`;
+
+exports[`projectEventsReducer reducer should PROJECT_UPDATE_IS_REFRESHING 1`] = `
+Object {
+  "activeFilter": "ALL",
+  "error": "",
+  "events": Array [],
+  "hasNextPage": false,
+  "isFetchingData": true,
+  "isFetchingNextPage": false,
+  "isFiltering": false,
+  "isRefreshing": undefined,
+  "pageNumber": 1,
+  "showEvents": true,
+}
+`;
+
+exports[`projectEventsReducer reducer should UPDATE_ACTIVE_PROJECT_EVENTS_FILTER 1`] = `
+Object {
+  "activeFilter": undefined,
+  "error": "",
+  "events": Array [],
+  "hasNextPage": false,
+  "isFetchingData": true,
+  "isFetchingNextPage": false,
+  "isFiltering": false,
+  "isRefreshing": false,
+  "pageNumber": 1,
+  "showEvents": true,
+}
+`;
+
+exports[`projectEventsReducer reducer should UPDATE_IS_FETCHING_PROJECT_DATA 1`] = `
+Object {
+  "activeFilter": "ALL",
+  "error": "",
+  "events": Array [],
+  "hasNextPage": false,
+  "isFetchingData": undefined,
+  "isFetchingNextPage": false,
+  "isFiltering": false,
+  "isRefreshing": false,
+  "pageNumber": 1,
+  "showEvents": true,
+}
+`;
+
+exports[`projectEventsReducer reducer should UPDATE_SHOW_PROJECT_EVENTS 1`] = `
+Object {
+  "activeFilter": "ALL",
+  "error": "",
+  "events": Array [],
+  "hasNextPage": false,
+  "isFetchingData": true,
+  "isFetchingNextPage": false,
+  "isFiltering": false,
+  "isRefreshing": false,
+  "pageNumber": 1,
+  "showEvents": undefined,
+}
+`;
+
+exports[`projectEventsReducer reducer should return initialState 1`] = `
+Object {
+  "activeFilter": "ALL",
+  "error": "",
+  "events": Array [],
+  "hasNextPage": false,
+  "isFetchingData": true,
+  "isFetchingNextPage": false,
+  "isFiltering": false,
+  "isRefreshing": false,
+  "pageNumber": 1,
+  "showEvents": true,
+}
+`;

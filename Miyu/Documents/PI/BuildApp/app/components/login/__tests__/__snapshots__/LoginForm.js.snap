@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm component should render LoginForm 1`] = `
+<View>
+  <Form
+    onChange={[Function]}
+  >
+    <FormInput
+      accessibilityLabel="Email Address"
+      autoCapitalize="none"
+      autoCorrect={false}
+      blurOnSubmit={false}
+      isRequired={true}
+      isRequiredError="Email Address is required."
+      keyboardType="email-address"
+      label="Email Address*"
+      name="emailAddress"
+      scrollToOnFocus={false}
+      validationFunction={[Function]}
+      value=""
+    />
+    <FormInput
+      accessibilityLabel="Password"
+      autoCapitalize="none"
+      autoCorrect={false}
+      isRequired={true}
+      isRequiredError="Password is required."
+      label="Password*"
+      name="password"
+      onSubmitEditing={[Function]}
+      returnKeyType="go"
+      scrollToOnFocus={false}
+      secureTextEntry={true}
+      value={undefined}
+    />
+    <Button
+      accessibilityLabel="Login Button"
+      color="primary"
+      isLoading={undefined}
+      onPress={[Function]}
+      text="Login"
+      trackAction="build:app:loginmodal:login"
+    />
+    <LinkButton
+      accessibilityLabel="Forgot Password Button"
+      onPress={[Function]}
+      style={
+        Object {
+          "marginVertical": 16,
+        }
+      }
+    >
+      Forgot Password
+    </LinkButton>
+  </Form>
+</View>
+`;

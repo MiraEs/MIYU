@@ -1,0 +1,661 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventsScreen component should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+    }
+  }
+>
+  <FetchErrorMessage
+    text={undefined}
+  />
+  <ScrollView
+    automaticallyAdjustContentInsets={false}
+    onScroll={[Function]}
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={undefined}
+      />
+    }
+    scrollEventThrottle={3}
+    scrollsToTop={true}
+    style={
+      Object {
+        "backgroundColor": "#EBEDEF",
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "borderBottomColor": "#D0D3D4",
+            "borderBottomWidth": 1,
+            "marginBottom": 8,
+            "shadowColor": "black",
+            "shadowOffset": Object {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.1,
+            "shadowRadius": 3,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "borderBottomColor": "#D0D3D4",
+              "borderBottomWidth": 1,
+            }
+          }
+        >
+          <EventsFilters
+            filters={
+              Array [
+                Object {
+                  "text": "Feed",
+                  "type": "ALL",
+                },
+                Object {
+                  "text": "Orders",
+                  "type": "ORDER",
+                },
+                Object {
+                  "text": "Favorites",
+                  "type": "FAVORITE_LIST",
+                },
+                Object {
+                  "text": "Photos",
+                  "type": "PHOTOS",
+                },
+              ]
+            }
+            onFilterPress={[Function]}
+          />
+        </View>
+        <View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#FFFFFF",
+                "flex": 1,
+                "flexDirection": "row",
+                "marginTop": 8,
+                "paddingHorizontal": 8,
+              }
+            }
+          >
+            <View>
+              <Avatar
+                firstName=""
+                fullName=" "
+                lastName=""
+                url=""
+              />
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "alignSelf": "center",
+                    "flex": 1,
+                    "paddingLeft": 8,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}
+            >
+              <Text
+                style={
+                  Object {
+                    "marginVertical": 24,
+                  }
+                }
+              >
+                Post something...
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "marginLeft": 8,
+                  "opacity": 1,
+                  "paddingVertical": 8,
+                }
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}
+            >
+              <Text>
+                @BuildExpert
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}
+            >
+              <Icon
+                color="#63666A"
+                name="ios-camera"
+                size={25}
+                style={
+                  Object {
+                    "marginLeft": 8,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+      <ListView
+        automaticallyAdjustContentInsets={false}
+        dataSource={
+          Object {
+            "_data": Array [],
+            "getRowCount": [Function],
+          }
+        }
+        enableEmptySections={true}
+        renderRow={[Function]}
+        scrollsToTop={false}
+      />
+    </View>
+  </ScrollView>
+</View>
+`;
+
+exports[`EventsScreen component should render events correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+    }
+  }
+>
+  <FetchErrorMessage
+    text={undefined}
+  />
+  <ScrollView
+    automaticallyAdjustContentInsets={false}
+    onScroll={[Function]}
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={undefined}
+      />
+    }
+    scrollEventThrottle={3}
+    scrollsToTop={true}
+    style={
+      Object {
+        "backgroundColor": "#EBEDEF",
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "borderBottomColor": "#D0D3D4",
+            "borderBottomWidth": 1,
+            "marginBottom": 8,
+            "shadowColor": "black",
+            "shadowOffset": Object {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.1,
+            "shadowRadius": 3,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "borderBottomColor": "#D0D3D4",
+              "borderBottomWidth": 1,
+            }
+          }
+        >
+          <EventsFilters
+            filters={
+              Array [
+                Object {
+                  "text": "Feed",
+                  "type": "ALL",
+                },
+                Object {
+                  "text": "Orders",
+                  "type": "ORDER",
+                },
+                Object {
+                  "text": "Favorites",
+                  "type": "FAVORITE_LIST",
+                },
+                Object {
+                  "text": "Photos",
+                  "type": "PHOTOS",
+                },
+              ]
+            }
+            onFilterPress={[Function]}
+          />
+        </View>
+        <View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#FFFFFF",
+                "flex": 1,
+                "flexDirection": "row",
+                "marginTop": 8,
+                "paddingHorizontal": 8,
+              }
+            }
+          >
+            <View>
+              <Avatar
+                firstName=""
+                fullName=" "
+                lastName=""
+                url=""
+              />
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "alignSelf": "center",
+                    "flex": 1,
+                    "paddingLeft": 8,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}
+            >
+              <Text
+                style={
+                  Object {
+                    "marginVertical": 24,
+                  }
+                }
+              >
+                Post something...
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "marginLeft": 8,
+                  "opacity": 1,
+                  "paddingVertical": 8,
+                }
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}
+            >
+              <Text>
+                @BuildExpert
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}
+            >
+              <Icon
+                color="#63666A"
+                name="ios-camera"
+                size={25}
+                style={
+                  Object {
+                    "marginLeft": 8,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+      <ListView
+        automaticallyAdjustContentInsets={false}
+        dataSource={
+          Object {
+            "_data": Array [],
+            "getRowCount": [Function],
+          }
+        }
+        enableEmptySections={true}
+        renderRow={[Function]}
+        scrollsToTop={false}
+      />
+    </View>
+  </ScrollView>
+</View>
+`;
+
+exports[`EventsScreen component should render filtering correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+    }
+  }
+>
+  <FetchErrorMessage
+    text={undefined}
+  />
+  <ScrollView
+    automaticallyAdjustContentInsets={false}
+    onScroll={[Function]}
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={undefined}
+      />
+    }
+    scrollEventThrottle={3}
+    scrollsToTop={true}
+    style={
+      Object {
+        "backgroundColor": "#EBEDEF",
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "borderBottomColor": "#D0D3D4",
+            "borderBottomWidth": 1,
+            "marginBottom": 8,
+            "shadowColor": "black",
+            "shadowOffset": Object {
+              "height": 1,
+              "width": 0,
+            },
+            "shadowOpacity": 0.1,
+            "shadowRadius": 3,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "borderBottomColor": "#D0D3D4",
+              "borderBottomWidth": 1,
+            }
+          }
+        >
+          <EventsFilters
+            filters={
+              Array [
+                Object {
+                  "text": "Feed",
+                  "type": "ALL",
+                },
+                Object {
+                  "text": "Orders",
+                  "type": "ORDER",
+                },
+                Object {
+                  "text": "Favorites",
+                  "type": "FAVORITE_LIST",
+                },
+                Object {
+                  "text": "Photos",
+                  "type": "PHOTOS",
+                },
+              ]
+            }
+            onFilterPress={[Function]}
+          />
+        </View>
+        <View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#FFFFFF",
+                "flex": 1,
+                "flexDirection": "row",
+                "marginTop": 8,
+                "paddingHorizontal": 8,
+              }
+            }
+          >
+            <View>
+              <Avatar
+                firstName=""
+                fullName=" "
+                lastName=""
+                url=""
+              />
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "alignSelf": "center",
+                    "flex": 1,
+                    "paddingLeft": 8,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}
+            >
+              <Text
+                style={
+                  Object {
+                    "marginVertical": 24,
+                  }
+                }
+              >
+                Post something...
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "marginLeft": 8,
+                  "opacity": 1,
+                  "paddingVertical": 8,
+                }
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}
+            >
+              <Text>
+                @BuildExpert
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}
+            >
+              <Icon
+                color="#63666A"
+                name="ios-camera"
+                size={25}
+                style={
+                  Object {
+                    "marginLeft": 8,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+      <LoadingView
+        backgroundColor="#EBEDEF"
+      />
+    </View>
+  </ScrollView>
+</View>
+`;

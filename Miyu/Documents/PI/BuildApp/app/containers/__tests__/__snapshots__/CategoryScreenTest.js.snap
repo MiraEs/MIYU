@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoryScreen component should render correctly 1`] = `
+<ListView
+  accessibilityLabel="Subcategories"
+  automaticallyAdjustContentInsets={false}
+  dataSource={
+    Object {
+      "_data": Object {},
+      "getRowCount": [Function],
+    }
+  }
+  enableEmptySections={true}
+  renderHeader={[Function]}
+  renderRow={[Function]}
+  renderSectionHeader={[Function]}
+  scrollsToTop={true}
+  style={
+    Object {
+      "backgroundColor": "#EBEDEF",
+    }
+  }
+/>
+`;

@@ -1,0 +1,12 @@
+{
+  "name": "build-library",
+  "version": "0.0.1",
+  "description": "A library of React components.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/jest"
+  },
+  "devDependencies": {
+    "jest": "19.0.2"
+  }
+}

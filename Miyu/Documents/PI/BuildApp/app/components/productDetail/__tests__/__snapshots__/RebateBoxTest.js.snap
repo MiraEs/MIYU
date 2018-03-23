@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RebateBox Container should render with more than one rebate 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "flexDirection": "row",
+      "marginBottom": 16,
+      "paddingHorizontal": 8,
+      "paddingVertical": 16,
+    }
+  }
+>
+  <Icon
+    color="#D45D00"
+    name="md-mail-open"
+    size={30}
+  />
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "marginLeft": 16,
+      }
+    }
+  >
+    <Text
+      color="accent"
+      weight="bold"
+    >
+      Rebates
+       Available
+    </Text>
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <LinkButton
+        onPress={[Function]}
+      >
+        <Text
+          color="primary"
+          lineHeight={false}
+          size="small"
+        >
+          View
+           Details
+        </Text>
+      </LinkButton>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`RebateBox Container should render with no rebates 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "flexDirection": "row",
+      "marginBottom": 16,
+      "paddingHorizontal": 8,
+      "paddingVertical": 16,
+    }
+  }
+>
+  <Icon
+    color="#D45D00"
+    name="md-mail-open"
+    size={30}
+  />
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "marginLeft": 16,
+      }
+    }
+  >
+    <Text
+      color="accent"
+      weight="bold"
+    >
+      Rebates
+       Available
+    </Text>
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <LinkButton
+        onPress={[Function]}
+      >
+        <Text
+          color="primary"
+          lineHeight={false}
+          size="small"
+        >
+          View
+           Details
+        </Text>
+      </LinkButton>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`RebateBox Container should render with one rebate 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "flexDirection": "row",
+      "marginBottom": 16,
+      "paddingHorizontal": 8,
+      "paddingVertical": 16,
+    }
+  }
+>
+  <Icon
+    color="#D45D00"
+    name="md-mail-open"
+    size={30}
+  />
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "marginLeft": 16,
+      }
+    }
+  >
+    <Text
+      color="accent"
+      weight="bold"
+    >
+      Rebate
+       Available
+    </Text>
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <LinkButton
+        onPress={[Function]}
+      >
+        <Text
+          color="primary"
+          lineHeight={false}
+          size="small"
+        >
+          View
+           Details
+        </Text>
+      </LinkButton>
+    </View>
+  </View>
+</View>
+`;

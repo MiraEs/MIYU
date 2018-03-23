@@ -1,0 +1,352 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Search component should populate searchBoxText when passing in searchKeyword prop 1`] = `
+<View
+  style={
+    Array [
+      undefined,
+      Object {
+        "width": 276,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 44,
+        "padding": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "#D0D3D4",
+          "borderWidth": 1,
+          "flex": 1,
+          "flexDirection": "row",
+          "height": 30,
+          "paddingHorizontal": 8,
+        }
+      }
+    >
+      <Icon
+        color="#63666A"
+        name="ios-search"
+        size={16}
+      />
+      <TextInput
+        accessibilityLabel="Header Search Input"
+        autoCapitalize="none"
+        autoCorrect={false}
+        onChangeText={[Function]}
+        onFocus={[Function]}
+        onSubmitEditing={[Function]}
+        placeholder="What are you shopping for?"
+        placeholderTextColor={undefined}
+        returnKeyType="search"
+        style={
+          Object {
+            "alignSelf": "center",
+            "backgroundColor": "#FFFFFF",
+            "color": "#63666A",
+            "flex": 1,
+            "fontFamily": "ProximaNova-Regular",
+            "fontSize": 13,
+            "height": 28,
+            "paddingBottom": 8,
+            "paddingHorizontal": 8,
+            "paddingTop": 8,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value="test"
+      />
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hasTVPreferredFocus={undefined}
+        hitSlop={
+          Object {
+            "bottom": 5,
+            "left": 20,
+            "right": 10,
+            "top": 5,
+          }
+        }
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+            },
+            undefined,
+          ]
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <Icon
+          color="#D0D3D4"
+          name="ios-close-circle"
+          size={22}
+        />
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Header Search component should populate searchBoxText when passing in searchKeyword prop 2`] = `
+<View
+  style={
+    Array [
+      undefined,
+      Object {
+        "width": 276,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 44,
+        "padding": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "#D0D3D4",
+          "borderWidth": 1,
+          "flex": 1,
+          "flexDirection": "row",
+          "height": 30,
+          "paddingHorizontal": 8,
+        }
+      }
+    >
+      <Icon
+        color="#63666A"
+        name="ios-search"
+        size={16}
+      />
+      <TextInput
+        accessibilityLabel="Header Search Input"
+        autoCapitalize="none"
+        autoCorrect={false}
+        onChangeText={[Function]}
+        onFocus={[Function]}
+        onSubmitEditing={[Function]}
+        placeholder="What are you shopping for?"
+        placeholderTextColor={undefined}
+        returnKeyType="search"
+        style={
+          Object {
+            "alignSelf": "center",
+            "backgroundColor": "#FFFFFF",
+            "color": "#63666A",
+            "flex": 1,
+            "fontFamily": "ProximaNova-Regular",
+            "fontSize": 13,
+            "height": 28,
+            "paddingBottom": 8,
+            "paddingHorizontal": 8,
+            "paddingTop": 8,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value="test"
+      />
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hasTVPreferredFocus={undefined}
+        hitSlop={
+          Object {
+            "bottom": 5,
+            "left": 20,
+            "right": 10,
+            "top": 5,
+          }
+        }
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+            },
+            undefined,
+          ]
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <Icon
+          color="#D0D3D4"
+          name="ios-close-circle"
+          size={22}
+        />
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Header Search component should render a TouchableHighlight 1`] = `
+<View
+  style={
+    Array [
+      undefined,
+      Object {
+        "width": 276,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 44,
+        "padding": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "#D0D3D4",
+          "borderWidth": 1,
+          "flex": 1,
+          "flexDirection": "row",
+          "height": 30,
+          "paddingHorizontal": 8,
+        }
+      }
+    >
+      <Icon
+        color="#63666A"
+        name="ios-search"
+        size={16}
+      />
+      <TextInput
+        accessibilityLabel="Header Search Input"
+        autoCapitalize="none"
+        autoCorrect={false}
+        onChangeText={[Function]}
+        onFocus={[Function]}
+        onSubmitEditing={[Function]}
+        placeholder="What are you shopping for?"
+        placeholderTextColor={undefined}
+        returnKeyType="search"
+        style={
+          Object {
+            "alignSelf": "center",
+            "backgroundColor": "#FFFFFF",
+            "color": "#63666A",
+            "flex": 1,
+            "fontFamily": "ProximaNova-Regular",
+            "fontSize": 13,
+            "height": 28,
+            "paddingBottom": 8,
+            "paddingHorizontal": 8,
+            "paddingTop": 8,
+          }
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <View
+        style={
+          Object {
+            "width": 18,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Header Search component should show search button if hidden and allow full collapse 1`] = `
+<View
+  style={
+    Array [
+      undefined,
+      Object {
+        "width": 100,
+      },
+    ]
+  }
+>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel="Header Search Button"
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "alignSelf": "flex-end",
+        "height": 44,
+        "justifyContent": "center",
+        "opacity": 1,
+        "width": 44,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <Icon
+      color="#00A499"
+      name="ios-search"
+      size={27}
+    />
+  </View>
+</View>
+`;

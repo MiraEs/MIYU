@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecentlyViewedScreen component should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+/>
+`;

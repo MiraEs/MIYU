@@ -1,0 +1,998 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListsOverviewScreen component should render a guest user correctly 1`] = `
+<SectionList
+  ListHeaderComponent={[Function]}
+  keyExtractor={[Function]}
+  onRefresh={[Function]}
+  refreshing={false}
+  renderItem={[Function]}
+  renderSectionHeader={[Function]}
+  scrollsToTop={true}
+  sections={
+    Array [
+      Object {
+        "data": Array [
+          <View
+            style={
+                    Array [
+                            Object {
+                              "backgroundColor": "#FFFFFF",
+                              "borderBottomWidth": 1,
+                              "borderColor": "#D0D3D4",
+                              "borderTopWidth": 1,
+                              "padding": 16,
+                            },
+                          ]
+            }
+    >
+            <Text>
+                    You have not favorited any items yet. Tap the heart icon on any product to save it to a Favorites list.
+            </Text>
+            <Button
+                    accessibilityLabel="Start Shopping"
+                    onPress={[Function]}
+                    style={
+                            Object {
+                                    "marginTop": 8,
+                                  }
+                    }
+                    text="Start Shopping"
+                    trackAction="test"
+            />
+    </View>,
+        ],
+        "title": "FAVORITES",
+      },
+      Object {
+        "data": Array [
+          <View
+            style={
+                    Array [
+                            Object {
+                              "backgroundColor": "#FFFFFF",
+                              "borderBottomWidth": 1,
+                              "borderColor": "#D0D3D4",
+                              "borderTopWidth": 1,
+                              "padding": 16,
+                            },
+                            Object {
+                              "backgroundColor": "#CCEEEC",
+                            },
+                          ]
+            }
+    >
+            <Text
+                    family="archer"
+                    lineHeight={false}
+                    size="large"
+                    weight="bold"
+            >
+                    Start Your First Project
+            </Text>
+            <Text>
+                    Save, organize and track products in one place. Some more text to wrap
+            </Text>
+            <Button
+                    accessibilityLabel="Create a Project"
+                    onPress={[Function]}
+                    style={
+                            Object {
+                                    "marginTop": 8,
+                                  }
+                    }
+                    text="Create a Project"
+                    trackAction="test"
+            />
+    </View>,
+        ],
+        "title": "PROJECTS",
+      },
+    ]
+  }
+  style={
+    Object {
+      "backgroundColor": "#EBEDEF",
+      "flex": 1,
+    }
+  }
+/>
+`;
+
+exports[`ListsOverviewScreen component should render a user with no projects or favorites 1`] = `
+<SectionList
+  ListHeaderComponent={[Function]}
+  keyExtractor={[Function]}
+  onRefresh={[Function]}
+  refreshing={true}
+  renderItem={[Function]}
+  renderSectionHeader={[Function]}
+  scrollsToTop={true}
+  sections={
+    Array [
+      Object {
+        "data": Array [
+          <View
+            style={
+                    Array [
+                            Object {
+                              "backgroundColor": "#FFFFFF",
+                              "borderBottomWidth": 1,
+                              "borderColor": "#D0D3D4",
+                              "borderTopWidth": 1,
+                              "padding": 16,
+                            },
+                          ]
+            }
+    >
+            <Text>
+                    You have not favorited any items yet. Tap the heart icon on any product to save it to a Favorites list.
+            </Text>
+            <Button
+                    accessibilityLabel="Start Shopping"
+                    onPress={[Function]}
+                    style={
+                            Object {
+                                    "marginTop": 8,
+                                  }
+                    }
+                    text="Start Shopping"
+                    trackAction="test"
+            />
+    </View>,
+        ],
+        "title": "FAVORITES",
+      },
+      Object {
+        "data": Array [
+          <View
+            style={
+                    Array [
+                            Object {
+                              "backgroundColor": "#FFFFFF",
+                              "borderBottomWidth": 1,
+                              "borderColor": "#D0D3D4",
+                              "borderTopWidth": 1,
+                              "padding": 16,
+                            },
+                            Object {
+                              "backgroundColor": "#CCEEEC",
+                            },
+                          ]
+            }
+    >
+            <Text
+                    family="archer"
+                    lineHeight={false}
+                    size="large"
+                    weight="bold"
+            >
+                    Start Your First Project
+            </Text>
+            <Text>
+                    Save, organize and track products in one place. Some more text to wrap
+            </Text>
+            <Button
+                    accessibilityLabel="Create a Project"
+                    onPress={[Function]}
+                    style={
+                            Object {
+                                    "marginTop": 8,
+                                  }
+                    }
+                    text="Create a Project"
+                    trackAction="test"
+            />
+    </View>,
+        ],
+        "title": "PROJECTS",
+      },
+    ]
+  }
+  style={
+    Object {
+      "backgroundColor": "#EBEDEF",
+      "flex": 1,
+    }
+  }
+/>
+`;
+
+exports[`ListsOverviewScreen component should render a user with projects & favorites 1`] = `
+<SectionList
+  ListHeaderComponent={[Function]}
+  keyExtractor={[Function]}
+  onRefresh={[Function]}
+  refreshing={true}
+  renderItem={[Function]}
+  renderSectionHeader={[Function]}
+  scrollsToTop={true}
+  sections={
+    Array [
+      Object {
+        "data": Array [
+          Object {
+            "id": 237506,
+            "isOwner": true,
+            "itemCount": 2,
+            "name": "Office",
+            "productsMap": Object {
+              "1155759": Object {
+                "availableByLocation": false,
+                "favoriteProductId": 2092691,
+                "finishes": Array [
+                  Object {
+                    "cost": 156.82,
+                    "finish": "Black",
+                    "finishSampleUniqueId": null,
+                    "finishSwatch": Object {
+                      "hexValue": "000000",
+                      "styleValue": "",
+                      "swatchIdentifier": null,
+                      "swatchImage": "website/imagebase/swatchimages/int-cgs-bk.jpg",
+                    },
+                    "image": "safavieh-fox8508a-1419.jpg",
+                    "imagePaths": Object {
+                      "100": "/imagebase/resized/100x100/safaviehimages/safavieh-fox8508a-1419.jpg",
+                      "220": "/imagebase/resized/220x220/safaviehimages/safavieh-fox8508a-1419.jpg",
+                      "320": "/imagebase/resized/330x320/safaviehimages/safavieh-fox8508a-1419.jpg",
+                    },
+                    "msrp": 241.5,
+                    "sku": "FOX8508A",
+                    "status": "Discontinued",
+                    "uniqueId": 2763356,
+                  },
+                ],
+                "id": 0,
+                "manufacturer": "Safavieh",
+                "productCompositeId": 1155759,
+                "productConfigurationId": "ddbda9c6-cb39-4d8c-a7ab-bb7b7363d86a",
+                "productId": "FOX8508",
+                "squareFootageBased": false,
+                "title": "Bernard Desk Chair",
+                "type": "Furniture",
+                "uniqueId": 2763356,
+              },
+              "1155765": Object {
+                "availableByLocation": false,
+                "favoriteProductId": 2092693,
+                "finishes": Array [
+                  Object {
+                    "cost": 211.16,
+                    "finish": "Black",
+                    "finishSampleUniqueId": null,
+                    "finishSwatch": Object {
+                      "hexValue": "000000",
+                      "styleValue": "",
+                      "swatchIdentifier": null,
+                      "swatchImage": "website/imagebase/swatchimages/int-cgs-bk.jpg",
+                    },
+                    "image": "safavieh-fox8514a-1428.jpg",
+                    "imagePaths": Object {
+                      "100": "/imagebase/resized/100x100/safaviehimages/safavieh-fox8514a-1428.jpg",
+                      "220": "/imagebase/resized/220x220/safaviehimages/safavieh-fox8514a-1428.jpg",
+                      "320": "/imagebase/resized/330x320/safaviehimages/safavieh-fox8514a-1428.jpg",
+                    },
+                    "msrp": 451.84,
+                    "sku": "FOX8514A",
+                    "status": "stock",
+                    "uniqueId": 2763365,
+                  },
+                ],
+                "id": 1,
+                "manufacturer": "Safavieh",
+                "productCompositeId": 1155765,
+                "productConfigurationId": "baf1b4f0-f7a9-4994-8983-b0cd7e4b9036",
+                "productId": "FOX8514",
+                "squareFootageBased": false,
+                "title": "Olga Desk Chair",
+                "type": "Furniture",
+                "uniqueId": 2763365,
+              },
+            },
+          },
+        ],
+        "title": "FAVORITES",
+      },
+      Object {
+        "data": Array [
+          Object {
+            "favoriteListCount": 1,
+            "isOwnedByUser": false,
+            "name": "test",
+            "orderCount": 1,
+            "photoGalleryCount": 1,
+            "teamMemberCount": 1,
+          },
+          Object {
+            "favoriteListCount": 1,
+            "isOwnedByUser": true,
+            "name": "test 2",
+            "orderCount": 1,
+            "photoGalleryCount": 1,
+            "teamMemberCount": 1,
+          },
+        ],
+        "title": "PROJECTS",
+      },
+    ]
+  }
+  style={
+    Object {
+      "backgroundColor": "#EBEDEF",
+      "flex": 1,
+    }
+  }
+/>
+`;
+
+exports[`ListsOverviewScreen component should render an error correctly 1`] = `
+<SectionList
+  ListHeaderComponent={[Function]}
+  keyExtractor={[Function]}
+  onRefresh={[Function]}
+  refreshing={true}
+  renderItem={[Function]}
+  renderSectionHeader={[Function]}
+  scrollsToTop={true}
+  sections={Array []}
+  style={
+    Object {
+      "backgroundColor": "#EBEDEF",
+      "flex": 1,
+    }
+  }
+/>
+`;
+
+exports[`ListsOverviewScreen function tests getScreenData with data 1`] = `
+Array [
+  Object {
+    "data": Array [
+      Object {
+        "id": 237506,
+        "isOwner": true,
+        "itemCount": 2,
+        "name": "Office",
+        "productsMap": Object {
+          "1155759": Object {
+            "availableByLocation": false,
+            "favoriteProductId": 2092691,
+            "finishes": Array [
+              Object {
+                "cost": 156.82,
+                "finish": "Black",
+                "finishSampleUniqueId": null,
+                "finishSwatch": Object {
+                  "hexValue": "000000",
+                  "styleValue": "",
+                  "swatchIdentifier": null,
+                  "swatchImage": "website/imagebase/swatchimages/int-cgs-bk.jpg",
+                },
+                "image": "safavieh-fox8508a-1419.jpg",
+                "imagePaths": Object {
+                  "100": "/imagebase/resized/100x100/safaviehimages/safavieh-fox8508a-1419.jpg",
+                  "220": "/imagebase/resized/220x220/safaviehimages/safavieh-fox8508a-1419.jpg",
+                  "320": "/imagebase/resized/330x320/safaviehimages/safavieh-fox8508a-1419.jpg",
+                },
+                "msrp": 241.5,
+                "sku": "FOX8508A",
+                "status": "Discontinued",
+                "uniqueId": 2763356,
+              },
+            ],
+            "id": 0,
+            "manufacturer": "Safavieh",
+            "productCompositeId": 1155759,
+            "productConfigurationId": "ddbda9c6-cb39-4d8c-a7ab-bb7b7363d86a",
+            "productId": "FOX8508",
+            "squareFootageBased": false,
+            "title": "Bernard Desk Chair",
+            "type": "Furniture",
+            "uniqueId": 2763356,
+          },
+          "1155765": Object {
+            "availableByLocation": false,
+            "favoriteProductId": 2092693,
+            "finishes": Array [
+              Object {
+                "cost": 211.16,
+                "finish": "Black",
+                "finishSampleUniqueId": null,
+                "finishSwatch": Object {
+                  "hexValue": "000000",
+                  "styleValue": "",
+                  "swatchIdentifier": null,
+                  "swatchImage": "website/imagebase/swatchimages/int-cgs-bk.jpg",
+                },
+                "image": "safavieh-fox8514a-1428.jpg",
+                "imagePaths": Object {
+                  "100": "/imagebase/resized/100x100/safaviehimages/safavieh-fox8514a-1428.jpg",
+                  "220": "/imagebase/resized/220x220/safaviehimages/safavieh-fox8514a-1428.jpg",
+                  "320": "/imagebase/resized/330x320/safaviehimages/safavieh-fox8514a-1428.jpg",
+                },
+                "msrp": 451.84,
+                "sku": "FOX8514A",
+                "status": "stock",
+                "uniqueId": 2763365,
+              },
+            ],
+            "id": 1,
+            "manufacturer": "Safavieh",
+            "productCompositeId": 1155765,
+            "productConfigurationId": "baf1b4f0-f7a9-4994-8983-b0cd7e4b9036",
+            "productId": "FOX8514",
+            "squareFootageBased": false,
+            "title": "Olga Desk Chair",
+            "type": "Furniture",
+            "uniqueId": 2763365,
+          },
+        },
+      },
+    ],
+    "title": "FAVORITES",
+  },
+  Object {
+    "data": Array [
+      Object {
+        "favoriteListCount": 1,
+        "isOwnedByUser": false,
+        "name": "test",
+        "orderCount": 1,
+        "photoGalleryCount": 1,
+        "teamMemberCount": 1,
+      },
+      Object {
+        "favoriteListCount": 1,
+        "isOwnedByUser": true,
+        "name": "test 2",
+        "orderCount": 1,
+        "photoGalleryCount": 1,
+        "teamMemberCount": 1,
+      },
+    ],
+    "title": "PROJECTS",
+  },
+]
+`;
+
+exports[`ListsOverviewScreen function tests getScreenData with error 1`] = `Array []`;
+
+exports[`ListsOverviewScreen function tests getScreenData without data 1`] = `
+Array [
+  Object {
+    "data": Array [
+      <View
+        style={
+                Array [
+                        Object {
+                          "backgroundColor": "#FFFFFF",
+                          "borderBottomWidth": 1,
+                          "borderColor": "#D0D3D4",
+                          "borderTopWidth": 1,
+                          "padding": 16,
+                        },
+                      ]
+        }
+>
+        <Text>
+                You have not favorited any items yet. Tap the heart icon on any product to save it to a Favorites list.
+        </Text>
+        <Button
+                accessibilityLabel="Start Shopping"
+                onPress={[Function]}
+                style={
+                        Object {
+                                "marginTop": 8,
+                              }
+                }
+                text="Start Shopping"
+                trackAction="test"
+        />
+</View>,
+    ],
+    "title": "FAVORITES",
+  },
+  Object {
+    "data": Array [
+      <View
+        style={
+                Array [
+                        Object {
+                          "backgroundColor": "#FFFFFF",
+                          "borderBottomWidth": 1,
+                          "borderColor": "#D0D3D4",
+                          "borderTopWidth": 1,
+                          "padding": 16,
+                        },
+                        Object {
+                          "backgroundColor": "#CCEEEC",
+                        },
+                      ]
+        }
+>
+        <Text
+                family="archer"
+                lineHeight={false}
+                size="large"
+                weight="bold"
+        >
+                Start Your First Project
+        </Text>
+        <Text>
+                Save, organize and track products in one place. Some more text to wrap
+        </Text>
+        <Button
+                accessibilityLabel="Create a Project"
+                onPress={[Function]}
+                style={
+                        Object {
+                                "marginTop": 8,
+                              }
+                }
+                text="Create a Project"
+                trackAction="test"
+        />
+</View>,
+    ],
+    "title": "PROJECTS",
+  },
+]
+`;
+
+exports[`ListsOverviewScreen function tests renderEmptyFavoritesState 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderBottomWidth": 1,
+        "borderColor": "#D0D3D4",
+        "borderTopWidth": 1,
+        "padding": 16,
+      },
+    ]
+  }
+>
+  <Text>
+    You have not favorited any items yet. Tap the heart icon on any product to save it to a Favorites list.
+  </Text>
+  <Button
+    accessibilityLabel="Start Shopping"
+    onPress={[Function]}
+    style={
+      Object {
+        "marginTop": 8,
+      }
+    }
+    text="Start Shopping"
+    trackAction="test"
+  />
+</View>
+`;
+
+exports[`ListsOverviewScreen function tests renderEmptyProjectsState 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderBottomWidth": 1,
+        "borderColor": "#D0D3D4",
+        "borderTopWidth": 1,
+        "padding": 16,
+      },
+      Object {
+        "backgroundColor": "#CCEEEC",
+      },
+    ]
+  }
+>
+  <Text
+    family="archer"
+    lineHeight={false}
+    size="large"
+    weight="bold"
+  >
+    Start Your First Project
+  </Text>
+  <Text>
+    Save, organize and track products in one place. Some more text to wrap
+  </Text>
+  <Button
+    accessibilityLabel="Create a Project"
+    onPress={[Function]}
+    style={
+      Object {
+        "marginTop": 8,
+      }
+    }
+    text="Create a Project"
+    trackAction="test"
+  />
+</View>
+`;
+
+exports[`ListsOverviewScreen function tests renderFavorite should return FavoritesListRow 1`] = `
+<FavoritesListRow
+  analyticsData={
+    Object {
+      "trackName": "build:app:lists:favorites:rowtap",
+    }
+  }
+  favorite={
+    Object {
+      "id": 1,
+    }
+  }
+  favoriteId={1}
+  onDelete={[Function]}
+  onPress={[Function]}
+  style={
+    Object {
+      "marginBottom": 8,
+    }
+  }
+/>
+`;
+
+exports[`ListsOverviewScreen function tests renderFavorite should return element 1`] = `<Test />`;
+
+exports[`ListsOverviewScreen function tests renderFavorite should return last FavoritesListRow 1`] = `
+<FavoritesListRow
+  analyticsData={
+    Object {
+      "trackName": "build:app:lists:favorites:rowtap",
+    }
+  }
+  favorite={
+    Object {
+      "id": 1,
+    }
+  }
+  favoriteId={1}
+  onDelete={[Function]}
+  onPress={[Function]}
+  style={
+    Object {
+      "marginBottom": 0,
+    }
+  }
+/>
+`;
+
+exports[`ListsOverviewScreen function tests renderHeader should return errors 1`] = `
+<View
+  style={
+    Object {
+      "margin": 8,
+    }
+  }
+>
+  <ErrorText
+    text="Error loading Favorites: Test"
+  />
+  <ErrorText
+    text="Error loading Projects: Test"
+  />
+</View>
+`;
+
+exports[`ListsOverviewScreen function tests renderHeader should return null 1`] = `null`;
+
+exports[`ListsOverviewScreen function tests renderProject 1`] = `
+<ProjectRow
+  analyticsData={
+    Object {
+      "trackData": Object {
+        "screen": "Lists Overview",
+      },
+      "trackName": "build:app:projectrowtap",
+    }
+  }
+  onPress={[Function]}
+  project={
+    Object {
+      "favoriteListCount": 1,
+      "isOwnedByUser": false,
+      "name": "test",
+      "orderCount": 1,
+      "photoGalleryCount": 1,
+      "teamMemberCount": 1,
+    }
+  }
+/>
+`;
+
+exports[`ListsOverviewScreen function tests renderRow favorites last row 1`] = `
+<FavoritesListRow
+  analyticsData={
+    Object {
+      "trackName": "build:app:lists:favorites:rowtap",
+    }
+  }
+  favorite={Object {}}
+  favoriteId={undefined}
+  onDelete={[Function]}
+  onPress={[Function]}
+  style={
+    Object {
+      "marginBottom": 0,
+    }
+  }
+/>
+`;
+
+exports[`ListsOverviewScreen function tests renderRow project last row 1`] = `
+<ProjectRow
+  analyticsData={
+    Object {
+      "trackData": Object {
+        "screen": "Lists Overview",
+      },
+      "trackName": "build:app:projectrowtap",
+    }
+  }
+  onPress={[Function]}
+  project={Object {}}
+/>
+`;
+
+exports[`ListsOverviewScreen function tests renderRow project not last row 1`] = `
+<ProjectRow
+  analyticsData={
+    Object {
+      "trackData": Object {
+        "screen": "Lists Overview",
+      },
+      "trackName": "build:app:projectrowtap",
+    }
+  }
+  onPress={[Function]}
+  project={Object {}}
+/>
+`;
+
+exports[`ListsOverviewScreen function tests renderSectionHeader favorites header no favorites 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#EBEDEF",
+        "flex": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <ListHeader
+      border={false}
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "paddingBottom": 8,
+          },
+          Object {
+            "paddingBottom": 0,
+          },
+        ]
+      }
+      text="FAVORITES"
+    />
+  </View>
+</View>
+`;
+
+exports[`ListsOverviewScreen function tests renderSectionHeader favorites header with favorites 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#EBEDEF",
+        "flex": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <ListHeader
+      border={false}
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "paddingBottom": 8,
+          },
+          Object {},
+        ]
+      }
+      text="FAVORITES"
+    />
+    <LinkButton
+      accessibilityLabel="View All"
+      analyticsData={
+        Object {
+          "trackName": "build:app:lists:favorites:viewalltap",
+        }
+      }
+      onPress={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "marginRight": 8,
+          "minHeight": 44,
+          "minWidth": 44,
+          "paddingVertical": 16,
+        }
+      }
+      wrapChildren={false}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Text
+          color="primary"
+        >
+          View All
+        </Text>
+        <Icon
+          color="#00A499"
+          name="ios-arrow-forward"
+          size={25}
+          style={
+            Object {
+              "marginLeft": 8,
+            }
+          }
+        />
+      </View>
+    </LinkButton>
+  </View>
+</View>
+`;
+
+exports[`ListsOverviewScreen function tests renderSectionHeader project header no projects 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#EBEDEF",
+        "flex": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <ListHeader
+      border={false}
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "paddingBottom": 8,
+          },
+          Object {
+            "paddingBottom": 0,
+          },
+        ]
+      }
+      text="PROJECTS"
+    />
+  </View>
+</View>
+`;
+
+exports[`ListsOverviewScreen function tests renderSectionHeader project header with projects 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#EBEDEF",
+        "flex": 1,
+        "flexDirection": "row",
+      }
+    }
+  >
+    <ListHeader
+      border={false}
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "paddingBottom": 8,
+          },
+          Object {},
+        ]
+      }
+      text="PROJECTS"
+    />
+    <LinkButton
+      accessibilityLabel="View All"
+      analyticsData={
+        Object {
+          "trackName": "build:app:lists:projects:viewalltap",
+        }
+      }
+      onPress={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+          "marginRight": 8,
+          "minHeight": 44,
+          "minWidth": 44,
+          "paddingVertical": 16,
+        }
+      }
+      wrapChildren={false}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Text
+          color="primary"
+        >
+          View All
+        </Text>
+        <Icon
+          color="#00A499"
+          name="ios-arrow-forward"
+          size={25}
+          style={
+            Object {
+              "marginLeft": 8,
+            }
+          }
+        />
+      </View>
+    </LinkButton>
+  </View>
+</View>
+`;
+
+exports[`ListsOverviewScreen function tests should have a state 1`] = `
+Object {
+  "isRefreshing": true,
+}
+`;

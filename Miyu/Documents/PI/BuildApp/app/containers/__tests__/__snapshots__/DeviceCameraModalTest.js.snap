@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeviceCameraModal functions setScreenTrackingInformation 1`] = `
+Object {
+  "name": "build:app:devicecameramodal",
+}
+`;
+
+exports[`DeviceCameraModal functions state 1`] = `
+Object {
+  "cameraType": "back",
+}
+`;
+
+exports[`DeviceCameraModal should render 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "flex-end",
+      "backgroundColor": "#F2F2F2",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <Camera
+    aspect={undefined}
+    captureTarget={undefined}
+    keepAwake={true}
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="back"
+  />
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.5)",
+        "bottom": 0,
+        "height": 68,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+      }
+    }
+  >
+    <TouchableOpacity
+      onPress={[Function]}
+      style={
+        Object {
+          "left": 15,
+          "position": "absolute",
+          "top": 15,
+        }
+      }
+    >
+      <Icon
+        color="white"
+        name="ios-close"
+        size={50}
+        style={
+          Object {
+            "height": 50,
+            "width": 50,
+          }
+        }
+      />
+    </TouchableOpacity>
+    <TouchableOpacity
+      onPress={[Function]}
+      style={
+        Object {
+          "alignSelf": "center",
+        }
+      }
+    >
+      <Icon
+        color="white"
+        name="ios-radio-button-on"
+        size={65}
+        style={
+          Object {
+            "height": 65,
+            "width": 65,
+          }
+        }
+      />
+    </TouchableOpacity>
+    <TouchableOpacity
+      onPress={[Function]}
+      style={
+        Object {
+          "position": "absolute",
+          "right": 10,
+          "top": 10,
+        }
+      }
+    >
+      <Icon
+        color="white"
+        name="ios-reverse-camera-outline"
+        size={50}
+        style={
+          Object {
+            "height": 50,
+            "width": 50,
+          }
+        }
+      />
+    </TouchableOpacity>
+  </View>
+</View>
+`;

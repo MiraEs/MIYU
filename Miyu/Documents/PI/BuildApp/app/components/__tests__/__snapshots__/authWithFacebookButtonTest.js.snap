@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AuthWithFacebookButton should render with default props 1`] = `
+<TouchableHighlight
+  onPress={[Function]}
+  style={
+    Object {
+      "height": 44,
+      "marginBottom": 30,
+      "marginTop": 8,
+      "marginVertical": 24,
+    }
+  }
+  underlayColor="#001055"
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Icon
+      color="white"
+      name="logo-facebook"
+      size={25}
+      style={
+        Object {
+          "left": 20,
+          "position": "absolute",
+          "top": -2,
+        }
+      }
+    />
+    <Text
+      style={
+        Object {
+          "color": "#FFFFFF",
+          "fontFamily": "ProximaNova-Bold",
+          "fontSize": 16,
+        }
+      }
+    >
+      Test
+    </Text>
+  </View>
+</TouchableHighlight>
+`;

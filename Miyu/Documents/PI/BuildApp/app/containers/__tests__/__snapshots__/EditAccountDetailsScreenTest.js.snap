@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditAccountDetailsScreen component should render correctly 1`] = `
+<View>
+  <Form
+    onChange={[Function]}
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "padding": 8,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "flexShrink": 1,
+          }
+        }
+      >
+        <FormInput
+          accessibilityLabel="First Name"
+          autoCapitalize="none"
+          autoCorrect={false}
+          componentStyle={
+            Object {
+              "flex": 1,
+            }
+          }
+          isRequired={true}
+          isRequiredError="First name is required."
+          label="First Name"
+          maxLength={50}
+          name="firstName"
+          value="test"
+        />
+        <FormInput
+          accessibilityLabel="Last Name"
+          autoCapitalize="none"
+          autoCorrect={false}
+          componentStyle={
+            Object {
+              "flex": 1,
+              "paddingLeft": 8,
+            }
+          }
+          isRequired={true}
+          isRequiredError="Last name is required."
+          label="Last Name"
+          maxLength={50}
+          name="lastName"
+          value="test"
+        />
+      </View>
+      <FormInput
+        accessibilityLabel="Email"
+        autoCapitalize="none"
+        autoCorrect={false}
+        error=""
+        isRequired={true}
+        isRequiredError="Email is required."
+        label="Email"
+        maxLength={50}
+        name="email"
+        onSubmitEditing={[Function]}
+        returnKeyType="done"
+        valid={true}
+        validationFunction={[Function]}
+        value="test@test.com"
+      />
+    </View>
+  </Form>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+      }
+    }
+  >
+    <Button
+      accessibilityLabel="Update Account Details Button"
+      borders={false}
+      isLoading={false}
+      onPress={[Function]}
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+      text="Update Account Details"
+      trackAction="build:app:accountdetails:update"
+    />
+  </View>
+</View>
+`;

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ManagePeople component should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+    }
+  }
+>
+  <ScrollView
+    automaticallyAdjustContentInsets={false}
+    scrollsToTop={true}
+    style={
+      Object {
+        "backgroundColor": "#EBEDEF",
+      }
+    }
+  >
+    <ListView
+      automaticallyAdjustContentInsets={false}
+      dataSource={Object {}}
+      enableEmptySections={true}
+      renderRow={[Function]}
+      renderSectionHeader={[Function]}
+    />
+  </ScrollView>
+</View>
+`;

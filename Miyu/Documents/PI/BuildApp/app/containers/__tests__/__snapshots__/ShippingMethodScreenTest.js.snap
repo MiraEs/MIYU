@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShippingMethodScreen component should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#EBEDEF",
+      "flex": 1,
+    }
+  }
+>
+  <ScrollView
+    scrollsToTop={true}
+    style={
+      Object {
+        "marginTop": 8,
+        "paddingHorizontal": 8,
+      }
+    }
+  >
+    <Text
+      size="large"
+      weight="bold"
+    >
+      Select a Shipping Method
+    </Text>
+    <Text
+      color="error"
+      size="small"
+    >
+      
+    </Text>
+    <Text>
+      Please enter a shipping address before choosing a method.
+    </Text>
+  </ScrollView>
+</View>
+`;

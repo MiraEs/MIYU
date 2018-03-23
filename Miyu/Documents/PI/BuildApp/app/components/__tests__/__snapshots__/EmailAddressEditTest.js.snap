@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmailAddressEdit render should render with full props 1`] = `
+<FormInput
+  accessibilityLabel="accessibility label"
+  autoCapitalize="none"
+  autoCorrect={false}
+  isRequired={true}
+  isRequiredError="Email Address is required."
+  keyboardType="email-address"
+  label="Email Address*"
+  name="name"
+  onChange={undefined}
+  onSubmitEditing={[Function]}
+  returnKeyType="done"
+  validationFunction={[Function]}
+  value="c@b.c"
+/>
+`;

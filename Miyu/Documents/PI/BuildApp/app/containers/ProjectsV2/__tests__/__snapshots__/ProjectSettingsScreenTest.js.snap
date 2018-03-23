@@ -1,0 +1,224 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectSettingsScreen component should render correctly 1`] = `
+<ScrollView
+  style={
+    Object {
+      "backgroundColor": "#EBEDEF",
+      "flex": 1,
+    }
+  }
+>
+  <View>
+    <ErrorText
+      style={
+        Object {
+          "marginHorizontal": 8,
+        }
+      }
+      text=""
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "borderBottomWidth": 1,
+          "borderColor": "#D0D3D4",
+          "borderTopWidth": 1,
+          "marginBottom": 16,
+          "marginTop": 8,
+          "paddingHorizontal": 8,
+          "paddingVertical": 24,
+        }
+      }
+    >
+      <View>
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "marginBottom": 24,
+            }
+          }
+        >
+          <Text
+            size="large"
+            style={
+              Object {
+                "overflow": "hidden",
+              }
+            }
+            weight="bold"
+          >
+            Test
+          </Text>
+          <LinkButton
+            onPress={[Function]}
+            size="small"
+          >
+            Edit
+          </LinkButton>
+        </View>
+        <Text>
+          Test
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#FFFFFF",
+          "borderBottomWidth": 1,
+          "borderColor": "#D0D3D4",
+          "borderTopWidth": 1,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 8,
+          "paddingVertical": 8,
+        }
+      }
+    >
+      <Text>
+        Archive Project
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Switch
+          onTintColor="#00A499"
+          onValueChange={[Function]}
+          style={
+            Object {
+              "marginHorizontal": 8,
+            }
+          }
+          value={false}
+        />
+      </View>
+    </View>
+  </View>
+  <KeyboardSpacer
+    topSpacing={100}
+  />
+</ScrollView>
+`;
+
+exports[`ProjectSettingsScreen component should render w/o a description 1`] = `
+<ScrollView
+  style={
+    Object {
+      "backgroundColor": "#EBEDEF",
+      "flex": 1,
+    }
+  }
+>
+  <View>
+    <ErrorText
+      style={
+        Object {
+          "marginHorizontal": 8,
+        }
+      }
+      text=""
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "borderBottomWidth": 1,
+          "borderColor": "#D0D3D4",
+          "borderTopWidth": 1,
+          "marginBottom": 16,
+          "marginTop": 8,
+          "paddingHorizontal": 8,
+          "paddingVertical": 24,
+        }
+      }
+    >
+      <View>
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "marginBottom": 24,
+            }
+          }
+        >
+          <Text
+            size="large"
+            style={
+              Object {
+                "overflow": "hidden",
+              }
+            }
+            weight="bold"
+          >
+            Test
+          </Text>
+          <LinkButton
+            onPress={[Function]}
+            size="small"
+          >
+            Edit
+          </LinkButton>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#FFFFFF",
+          "borderBottomWidth": 1,
+          "borderColor": "#D0D3D4",
+          "borderTopWidth": 1,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "paddingHorizontal": 8,
+          "paddingVertical": 8,
+        }
+      }
+    >
+      <Text>
+        Archive Project
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Switch
+          onTintColor="#00A499"
+          onValueChange={[Function]}
+          style={
+            Object {
+              "marginHorizontal": 8,
+            }
+          }
+          value={false}
+        />
+      </View>
+    </View>
+  </View>
+  <KeyboardSpacer
+    topSpacing={100}
+  />
+</ScrollView>
+`;
+
+exports[`ProjectSettingsScreen function tests should return the screen tracking info 1`] = `
+Object {
+  "name": "build:app:more:projects:details:settings",
+}
+`;

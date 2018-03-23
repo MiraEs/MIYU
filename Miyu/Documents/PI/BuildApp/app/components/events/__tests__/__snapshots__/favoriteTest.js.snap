@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Team member event component should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "marginBottom": 8,
+      "marginLeft": 8,
+      "marginRight": 8,
+      "shadowColor": "black",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 0.1,
+      "shadowRadius": 3,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        },
+        Object {
+          "padding": 16,
+        },
+      ]
+    }
+  >
+    <View>
+      <Image
+        source={1}
+        style={
+          Object {
+            "height": 40,
+            "width": 40,
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "alignSelf": "center",
+          "flex": 1,
+          "paddingLeft": 8,
+        }
+      }
+    >
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        isTVSelectable={true}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+        testID={undefined}
+        tvParallaxProperties={undefined}
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#353535",
+              "flex": 1,
+              "fontFamily": "ProximaNova-Bold",
+              "fontWeight": "700",
+            }
+          }
+        />
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#909090",
+            "fontFamily": "ProximaNova-Bold",
+            "fontWeight": "700",
+          }
+        }
+      >
+        Favorites List
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "padding": 16,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#909090",
+          "fontFamily": "ProximaNova-Bold",
+          "fontWeight": "700",
+        }
+      }
+    >
+      0 Items
+    </Text>
+    <ProductList
+      event={
+        Object {
+          "eventId": 1,
+          "user": Object {},
+        }
+      }
+      products={Array []}
+    />
+  </View>
+  <Comments
+    comments={undefined}
+    eventId={1}
+    eventStoreType="eventStoreType"
+  />
+</View>
+`;

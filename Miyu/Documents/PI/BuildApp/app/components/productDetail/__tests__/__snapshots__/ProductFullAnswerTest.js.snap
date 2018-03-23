@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductFullAnswer should render 1`] = `
+<ScrollView
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "flex": 1,
+      },
+      Object {
+        "padding": 16,
+      },
+    ]
+  }
+>
+  <Text
+    weight="bold"
+  >
+    question
+  </Text>
+  <ProductAnswer>
+    <Text>
+      answer
+    </Text>
+  </ProductAnswer>
+</ScrollView>
+`;

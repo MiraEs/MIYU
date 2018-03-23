@@ -1,0 +1,249 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectShippingMethodForReturn component should render correctly 1`] = `
+<ScrollView
+  style={
+    Object {
+      "backgroundColor": "#EBEDEF",
+      "flex": 1,
+    }
+  }
+>
+  <StepText
+    currentStep={2}
+    maxStep={3}
+  />
+  <View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "paddingHorizontal": 8,
+        }
+      }
+    >
+      <Text
+        size="large"
+        weight="bold"
+      >
+        Choose Return Shipping Method
+      </Text>
+      <Text>
+        <Text
+          weight="bold"
+        >
+          Items are grouped based on the warehouse they shipped from.
+        </Text>
+         The need to be returned to the same warehouse. Please select your shipping methods and tap Continue to Review.
+      </Text>
+      <ReturnPolicyLink />
+    </View>
+    <FlatList
+      data={
+        Array [
+          Object {
+            "id": 1,
+            "items": Array [
+              Object {
+                "productUniqueId": 1,
+              },
+            ],
+            "shippingMethods": Array [
+              Object {
+                "description": "Return shipping cost will be deducted from your refund. A printer is required.",
+                "price": 7,
+                "title": "Drop off at UPS",
+              },
+              Object {
+                "description": "Return shipping cost will be deducted from your refund. A printer is required. You will need to call UPS to schedule a pick-up.",
+                "price": 12,
+                "title": "Have UPS come pick up",
+              },
+              Object {
+                "description": "You are responsible for obtaining your own shipping label and will not have full visibility into return tracking/status.",
+                "isPro": true,
+                "title": "Return with your own shipping label & provider",
+              },
+            ],
+          },
+        ]
+      }
+      keyExtractor={[Function]}
+      renderItem={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#EBEDEF",
+          "marginTop": 16,
+        }
+      }
+    />
+    <Button
+      accessibilityLabel="Continue to Review"
+      onPress={[Function]}
+      style={
+        Object {
+          "marginBottom": 16,
+          "marginHorizontal": 8,
+        }
+      }
+      text="Continue to Review"
+      trackAction="Test"
+    />
+  </View>
+</ScrollView>
+`;
+
+exports[`SelectShippingMethodForReturn functions displayName 1`] = `undefined`;
+
+exports[`SelectShippingMethodForReturn functions renderItem 1`] = `
+<SimplifiedProductInfo
+  productUniqueId={1}
+  style={
+    Object {
+      "marginBottom": 0,
+      "marginHorizontal": 0,
+    }
+  }
+/>
+`;
+
+exports[`SelectShippingMethodForReturn functions renderItemsGroup 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "borderColor": "#D0D3D4",
+      "borderWidth": 1,
+      "marginBottom": 8,
+      "marginHorizontal": 8,
+    }
+  }
+>
+  <FlatList
+    data={
+      Array [
+        Object {
+          "productUniqueId": 1,
+        },
+      ]
+    }
+    keyExtractor={[Function]}
+    renderItem={[Function]}
+    style={
+      Object {
+        "borderBottomColor": "#D0D3D4",
+        "borderBottomWidth": 1,
+        "marginBottom": 8,
+      }
+    }
+  />
+  <FlatList
+    data={
+      Array [
+        Object {
+          "description": "Return shipping cost will be deducted from your refund. A printer is required.",
+          "price": 7,
+          "title": "Drop off at UPS",
+        },
+        Object {
+          "description": "Return shipping cost will be deducted from your refund. A printer is required. You will need to call UPS to schedule a pick-up.",
+          "price": 12,
+          "title": "Have UPS come pick up",
+        },
+      ]
+    }
+    keyExtractor={[Function]}
+    renderItem={[Function]}
+  />
+</View>
+`;
+
+exports[`SelectShippingMethodForReturn functions renderShippingMethod should render a selected shipping method 1`] = `
+<TouchableOpacity
+  onPress={[Function]}
+  trackAction="test"
+>
+  <View
+    style={
+      Array [
+        Object {
+          "borderColor": "#D0D3D4",
+          "borderWidth": 1,
+          "marginBottom": 8,
+          "marginHorizontal": 8,
+          "padding": 8,
+        },
+        Object {
+          "borderColor": "#D45D00",
+          "borderWidth": 2,
+          "padding": 7,
+        },
+      ]
+    }
+  >
+    <Text
+      lineHeight={false}
+      size="large"
+      style={
+        Object {
+          "marginBottom": 8,
+        }
+      }
+      weight="bold"
+    >
+      Drop off at UPS
+       — 
+    </Text>
+    <Text>
+      Return shipping cost will be deducted from your refund. A printer is required.
+    </Text>
+  </View>
+</TouchableOpacity>
+`;
+
+exports[`SelectShippingMethodForReturn functions renderShippingMethod should render an unselected shipping method 1`] = `
+<TouchableOpacity
+  onPress={[Function]}
+  trackAction="test"
+>
+  <View
+    style={
+      Array [
+        Object {
+          "borderColor": "#D0D3D4",
+          "borderWidth": 1,
+          "marginBottom": 8,
+          "marginHorizontal": 8,
+          "padding": 8,
+        },
+        Object {},
+      ]
+    }
+  >
+    <Text
+      lineHeight={false}
+      size="large"
+      style={
+        Object {
+          "marginBottom": 8,
+        }
+      }
+      weight="bold"
+    >
+      Drop off at UPS
+       — 
+    </Text>
+    <Text>
+      Return shipping cost will be deducted from your refund. A printer is required.
+    </Text>
+  </View>
+</TouchableOpacity>
+`;
+
+exports[`SelectShippingMethodForReturn functions route 1`] = `undefined`;
+
+exports[`SelectShippingMethodForReturn functions setScreenTrackingInformation 1`] = `
+Object {
+  "name": "build:app:more:selectshippingforreturn",
+}
+`;

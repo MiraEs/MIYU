@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreditCardInfo component should not render without a cardType 1`] = `null`;
+
+exports[`CreditCardInfo component should not render without a lastFour 1`] = `null`;
+
+exports[`CreditCardInfo component should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "row",
+    }
+  }
+>
+  <Image
+    height={60}
+    resizeMode="contain"
+    source={1}
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "margin": 8,
+      }
+    }
+    width={60}
+  />
+  <View
+    style={
+      Object {
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Text
+      weight="bold"
+    >
+      name
+    </Text>
+    <Text
+      weight="bold"
+    >
+      **** **** **** 
+      1234
+    </Text>
+    <Text
+      size="small"
+    >
+      EXP 
+      06/17
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`CreditCardInfo component should render with no expDate 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "row",
+    }
+  }
+>
+  <Image
+    height={60}
+    resizeMode="contain"
+    source={1}
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "margin": 8,
+      }
+    }
+    width={60}
+  />
+  <View
+    style={
+      Object {
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Text
+      weight="bold"
+    >
+      name
+    </Text>
+    <Text
+      weight="bold"
+    >
+      **** **** **** 
+      1234
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`CreditCardInfo component should render with no name 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "row",
+    }
+  }
+>
+  <Image
+    height={60}
+    resizeMode="contain"
+    source={1}
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "margin": 8,
+      }
+    }
+    width={60}
+  />
+  <View
+    style={
+      Object {
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Text
+      weight="bold"
+    >
+      **** **** **** 
+      1234
+    </Text>
+    <Text
+      size="small"
+    >
+      EXP 
+      06/17
+    </Text>
+  </View>
+</View>
+`;

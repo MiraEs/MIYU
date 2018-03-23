@@ -1,0 +1,402 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectPhotoModal functions mapDispatchToProps 1`] = `
+Object {
+  "actions": Object {
+    "getDevicePhotos": undefined,
+    "resetSelectedPhotos": undefined,
+    "toggleFetchingPhotos": undefined,
+    "togglePhotoSelected": undefined,
+  },
+}
+`;
+
+exports[`SelectPhotoModal functions mapStateToProps 1`] = `
+Object {
+  "cursor": "cursor",
+  "error": "error",
+  "hasNextPage": true,
+  "isFetchingNextPage": false,
+  "photos": Array [],
+  "selectedPhotos": Array [],
+}
+`;
+
+exports[`SelectPhotoModal functions renderHeader 1`] = `
+<TouchableOpacity
+  onPress={[Function]}
+  style={
+    Array [
+      Object {
+        "height": 96,
+        "width": 96,
+      },
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+      },
+    ]
+  }
+>
+  <Icon
+    name="ios-camera"
+    size={65}
+    style={
+      Object {
+        "color": "#00A499",
+        "height": 55,
+      }
+    }
+  />
+  <Text
+    color="primary"
+    style={
+      Object {
+        "marginTop": 8,
+      }
+    }
+  >
+    Take Photo
+  </Text>
+</TouchableOpacity>
+`;
+
+exports[`SelectPhotoModal functions renderPhoto should render an element 1`] = `<Element />`;
+
+exports[`SelectPhotoModal functions renderPhoto should render center photo 1`] = `
+<View>
+  <TouchableHighlight
+    onPress={[Function]}
+    style={
+      Array [
+        Object {
+          "height": 96,
+          "marginBottom": 8,
+          "width": 96,
+        },
+        Object {
+          "marginHorizontal": 7,
+        },
+      ]
+    }
+    underlayColor="rgba(0, 0, 0, .2)"
+  >
+    <View>
+      <Image
+        resizeMode="cover"
+        source={
+          Object {
+            "uri": "uri",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "height": 96,
+              "width": 96,
+            },
+          ]
+        }
+      />
+    </View>
+  </TouchableHighlight>
+</View>
+`;
+
+exports[`SelectPhotoModal functions renderPhoto should render selected photo 1`] = `
+<View>
+  <TouchableHighlight
+    onPress={[Function]}
+    style={
+      Array [
+        Object {
+          "height": 96,
+          "marginBottom": 8,
+          "width": 96,
+        },
+        Object {
+          "marginHorizontal": 0,
+        },
+        Object {
+          "borderColor": "#D45D00",
+          "borderWidth": 2,
+        },
+      ]
+    }
+    underlayColor="rgba(0, 0, 0, .2)"
+  >
+    <View>
+      <Image
+        resizeMode="cover"
+        source={
+          Object {
+            "uri": "uri",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "height": 96,
+              "width": 96,
+            },
+            Object {
+              "height": 92,
+              "width": 92,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          Array [
+            Object {
+              "height": 96,
+              "width": 96,
+            },
+            Object {
+              "backgroundColor": "transparent",
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "#D45D00",
+              "borderRadius": 10,
+              "height": 18,
+              "position": "absolute",
+              "right": 10,
+              "top": 10,
+              "width": 18,
+            }
+          }
+        />
+        <Icon
+          color="white"
+          name="ios-checkmark-circle"
+          size={24}
+          style={
+            Object {
+              "position": "absolute",
+              "right": 10,
+              "top": 7,
+            }
+          }
+        />
+      </View>
+    </View>
+  </TouchableHighlight>
+</View>
+`;
+
+exports[`SelectPhotoModal functions renderPhoto should render unselected photo 1`] = `
+<View>
+  <TouchableHighlight
+    onPress={[Function]}
+    style={
+      Array [
+        Object {
+          "height": 96,
+          "marginBottom": 8,
+          "width": 96,
+        },
+        Object {
+          "marginHorizontal": 0,
+        },
+      ]
+    }
+    underlayColor="rgba(0, 0, 0, .2)"
+  >
+    <View>
+      <Image
+        resizeMode="cover"
+        source={
+          Object {
+            "uri": "uri",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "height": 96,
+              "width": 96,
+            },
+          ]
+        }
+      />
+    </View>
+  </TouchableHighlight>
+</View>
+`;
+
+exports[`SelectPhotoModal functions setScreenTrackingInformation 1`] = `
+Object {
+  "name": "build:app:selectphotomodal",
+}
+`;
+
+exports[`SelectPhotoModal should render 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+    }
+  }
+>
+  <FlatList
+    data={
+      Array [
+        <TouchableOpacity
+          onPress={[Function]}
+          style={
+              Array [
+                  Object {
+                    "height": 96,
+                    "width": 96,
+                  },
+                  Object {
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                  },
+                ]
+          }
+      >
+          <Icon
+              name="ios-camera"
+              size={65}
+              style={
+                  Object {
+                      "color": "#00A499",
+                      "height": 55,
+                    }
+              }
+          />
+          <Text
+              color="primary"
+              style={
+                  Object {
+                      "marginTop": 8,
+                    }
+              }
+          >
+              Take Photo
+          </Text>
+      </TouchableOpacity>,
+      ]
+    }
+    initialNumToRender={50}
+    keyExtractor={[Function]}
+    numColumns={3}
+    onEndReached={[Function]}
+    onEndReachedThreshold={1}
+    renderItem={[Function]}
+    style={
+      Object {
+        "margin": 8,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`SelectPhotoModal should render a selected photo count 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+    }
+  }
+>
+  <FlatList
+    data={
+      Array [
+        <TouchableOpacity
+          onPress={[Function]}
+          style={
+              Array [
+                  Object {
+                    "height": 96,
+                    "width": 96,
+                  },
+                  Object {
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                  },
+                ]
+          }
+      >
+          <Icon
+              name="ios-camera"
+              size={65}
+              style={
+                  Object {
+                      "color": "#00A499",
+                      "height": 55,
+                    }
+              }
+          />
+          <Text
+              color="primary"
+              style={
+                  Object {
+                      "marginTop": 8,
+                    }
+              }
+          >
+              Take Photo
+          </Text>
+      </TouchableOpacity>,
+      ]
+    }
+    initialNumToRender={50}
+    keyExtractor={[Function]}
+    numColumns={3}
+    onEndReached={[Function]}
+    onEndReachedThreshold={1}
+    renderItem={[Function]}
+    style={
+      Object {
+        "margin": 8,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "borderTopColor": "#acabab",
+        "borderTopWidth": 1,
+        "padding": 8,
+      }
+    }
+  >
+    <Text>
+      1
+       Photos Selected
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`SelectPhotoModal should render an error 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+    }
+  }
+>
+  <Text>
+    Test
+  </Text>
+</View>
+`;

@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShippingEstimateModal should render with full props 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "justifyContent": "flex-start",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderBottomWidth": 1,
+        "borderColor": "#D0D3D4",
+        "paddingHorizontal": 8,
+      }
+    }
+  >
+    <ScrollView
+      accessibilityLabel={undefined}
+      keyboardShouldPersistTaps="always"
+      onScroll={[Function]}
+      scrollsToTop={undefined}
+      style={undefined}
+    >
+      <View
+        style={
+          Array [
+            undefined,
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            },
+          ]
+        }
+      >
+        <Text
+          style={
+            Object {
+              "marginBottom": 8,
+            }
+          }
+          weight="bold"
+        >
+          ZIP Code:
+        </Text>
+        <View
+          style={
+            Object {
+              "width": 8,
+            }
+          }
+        />
+        <View
+          style={
+            Object {
+              "flexGrow": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderColor": "#D0D3D4",
+                  "borderWidth": 1,
+                  "marginVertical": 8,
+                  "paddingHorizontal": 16,
+                },
+                "",
+                "",
+                Object {
+                  "backgroundColor": "#FFFFFF",
+                },
+                Object {},
+              ]
+            }
+          >
+            <TextInput
+              accessibilityLabel="Zip Code Input"
+              accessible={true}
+              autoCapitalize="characters"
+              autoCorrect={false}
+              clearButtonMode="always"
+              hideErrorText={false}
+              inlineLabel={true}
+              isRequired={false}
+              isRequiredError="This field is required."
+              keyboardType="numbers-and-punctuation"
+              label="ZIP Code:"
+              lines={1}
+              multiline={false}
+              name="zipCode"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onSubmitEditing={[Function]}
+              placeholder="Enter Shipping ZIP Code"
+              returnKeyType="go"
+              scrollToOnAndroid={false}
+              scrollToOnFocus={false}
+              secureTextEntry={false}
+              style={
+                Array [
+                  Object {
+                    "color": "#63666A",
+                    "fontFamily": "ProximaNova-Regular",
+                    "fontSize": 16,
+                    "lineHeight": 21,
+                  },
+                  Object {
+                    "backgroundColor": "#FFFFFF",
+                  },
+                  Object {
+                    "height": 44,
+                  },
+                  undefined,
+                  "",
+                ]
+              }
+              textInputContainerStyle={Object {}}
+              underlineColorAndroid="transparent"
+              validateOnBlur={true}
+              validateOnChange={false}
+              value={undefined}
+            />
+          </View>
+        </View>
+      </View>
+    </ScrollView>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#EBEDEF",
+        "flex": 1,
+        "paddingBottom": 8,
+        "paddingHorizontal": 8,
+        "paddingTop": 16,
+      }
+    }
+  />
+</View>
+`;

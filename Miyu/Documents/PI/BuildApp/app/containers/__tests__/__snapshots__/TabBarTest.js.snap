@@ -1,0 +1,279 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabBar component should render correctly 1`] = `
+<TabNavigation
+  id="main"
+  initialTab="home"
+  navigatorUID="main"
+  tabBarHeight={44}
+>
+  <TabNavigationItem
+    accessibilityLabel="home-tab"
+    id="home"
+    onPress={[Function]}
+    renderIcon={[Function]}
+    renderTitle={[Function]}
+    title="Shop"
+  >
+    <StackNavigation
+      defaultRouteConfig={
+        Object {
+          "navigationBar": Object {
+            "backgroundColor": "#FFFFFF",
+            "borderBottomColor": "#D0D3D4",
+            "borderBottomWidth": 1,
+            "renderLeft": [Function],
+            "tintColor": "#333333",
+            "titleStyle": Array [
+              Object {
+                "fontFamily": "ProximaNova-Bold",
+                "fontSize": 19,
+                "fontWeight": "700",
+              },
+              undefined,
+            ],
+            "visible": true,
+          },
+        }
+      }
+      id="home"
+      initialRoute={undefined}
+      navigatorUID="home"
+    />
+  </TabNavigationItem>
+  <TabNavigationItem
+    accessibilityLabel="cart-tab"
+    id="cart"
+    onPress={[Function]}
+    renderBadge={[Function]}
+    renderIcon={[Function]}
+    renderTitle={[Function]}
+    title="Cart"
+  />
+  <TabNavigationItem
+    accessibilityLabel="experts-tab"
+    id="experts"
+    onPress={[Function]}
+    renderIcon={[Function]}
+    renderTitle={[Function]}
+    title="Help"
+  >
+    <StackNavigation
+      defaultRouteConfig={
+        Object {
+          "navigationBar": Object {
+            "backgroundColor": "#FFFFFF",
+            "borderBottomColor": "#D0D3D4",
+            "borderBottomWidth": 1,
+            "renderLeft": [Function],
+            "tintColor": "#333333",
+            "titleStyle": Array [
+              Object {
+                "fontFamily": "ProximaNova-Bold",
+                "fontSize": 19,
+                "fontWeight": "700",
+              },
+              undefined,
+            ],
+            "visible": true,
+          },
+        }
+      }
+      id="experts"
+      initialRoute={undefined}
+      navigatorUID="experts"
+    />
+  </TabNavigationItem>
+  <TabNavigationItem
+    accessibilityLabel="more-tab"
+    id="more"
+    onPress={[Function]}
+    renderBadge={[Function]}
+    renderIcon={[Function]}
+    renderTitle={[Function]}
+    title="Account"
+  >
+    <StackNavigation
+      defaultRouteConfig={
+        Object {
+          "navigationBar": Object {
+            "backgroundColor": "#FFFFFF",
+            "borderBottomColor": "#D0D3D4",
+            "borderBottomWidth": 1,
+            "renderLeft": [Function],
+            "tintColor": "#333333",
+            "titleStyle": Array [
+              Object {
+                "fontFamily": "ProximaNova-Bold",
+                "fontSize": 19,
+                "fontWeight": "700",
+              },
+              undefined,
+            ],
+            "visible": true,
+          },
+        }
+      }
+      id="more"
+      initialRoute={undefined}
+      navigatorUID="more"
+    />
+  </TabNavigationItem>
+</TabNavigation>
+`;
+
+exports[`TabBar component should render the Lists button 1`] = `
+<TabNavigation
+  id="main"
+  initialTab="home"
+  navigatorUID="main"
+  tabBarHeight={44}
+>
+  <TabNavigationItem
+    accessibilityLabel="home-tab"
+    id="home"
+    onPress={[Function]}
+    renderIcon={[Function]}
+    renderTitle={[Function]}
+    title="Shop"
+  >
+    <StackNavigation
+      defaultRouteConfig={
+        Object {
+          "navigationBar": Object {
+            "backgroundColor": "#FFFFFF",
+            "borderBottomColor": "#D0D3D4",
+            "borderBottomWidth": 1,
+            "renderLeft": [Function],
+            "tintColor": "#333333",
+            "titleStyle": Array [
+              Object {
+                "fontFamily": "ProximaNova-Bold",
+                "fontSize": 19,
+                "fontWeight": "700",
+              },
+              undefined,
+            ],
+            "visible": true,
+          },
+        }
+      }
+      id="home"
+      initialRoute={undefined}
+      navigatorUID="home"
+    />
+  </TabNavigationItem>
+  <TabNavigationItem
+    accessibilityLabel="lists-tab"
+    id="lists"
+    onPress={[Function]}
+    renderIcon={[Function]}
+    renderTitle={[Function]}
+    title="Lists"
+  >
+    <StackNavigation
+      defaultRouteConfig={
+        Object {
+          "navigationBar": Object {
+            "backgroundColor": "#FFFFFF",
+            "borderBottomColor": "#D0D3D4",
+            "borderBottomWidth": 1,
+            "renderLeft": [Function],
+            "tintColor": "#333333",
+            "titleStyle": Array [
+              Object {
+                "fontFamily": "ProximaNova-Bold",
+                "fontSize": 19,
+                "fontWeight": "700",
+              },
+              undefined,
+            ],
+            "visible": true,
+          },
+        }
+      }
+      id="lists"
+      initialRoute={undefined}
+      navigatorUID="lists"
+    />
+  </TabNavigationItem>
+  <TabNavigationItem
+    accessibilityLabel="cart-tab"
+    id="cart"
+    onPress={[Function]}
+    renderBadge={[Function]}
+    renderIcon={[Function]}
+    renderTitle={[Function]}
+    title="Cart"
+  />
+  <TabNavigationItem
+    accessibilityLabel="experts-tab"
+    id="experts"
+    onPress={[Function]}
+    renderIcon={[Function]}
+    renderTitle={[Function]}
+    title="Help"
+  >
+    <StackNavigation
+      defaultRouteConfig={
+        Object {
+          "navigationBar": Object {
+            "backgroundColor": "#FFFFFF",
+            "borderBottomColor": "#D0D3D4",
+            "borderBottomWidth": 1,
+            "renderLeft": [Function],
+            "tintColor": "#333333",
+            "titleStyle": Array [
+              Object {
+                "fontFamily": "ProximaNova-Bold",
+                "fontSize": 19,
+                "fontWeight": "700",
+              },
+              undefined,
+            ],
+            "visible": true,
+          },
+        }
+      }
+      id="experts"
+      initialRoute={undefined}
+      navigatorUID="experts"
+    />
+  </TabNavigationItem>
+  <TabNavigationItem
+    accessibilityLabel="more-tab"
+    id="more"
+    onPress={[Function]}
+    renderBadge={[Function]}
+    renderIcon={[Function]}
+    renderTitle={[Function]}
+    title="Account"
+  >
+    <StackNavigation
+      defaultRouteConfig={
+        Object {
+          "navigationBar": Object {
+            "backgroundColor": "#FFFFFF",
+            "borderBottomColor": "#D0D3D4",
+            "borderBottomWidth": 1,
+            "renderLeft": [Function],
+            "tintColor": "#333333",
+            "titleStyle": Array [
+              Object {
+                "fontFamily": "ProximaNova-Bold",
+                "fontSize": 19,
+                "fontWeight": "700",
+              },
+              undefined,
+            ],
+            "visible": true,
+          },
+        }
+      }
+      id="more"
+      initialRoute={undefined}
+      navigatorUID="more"
+    />
+  </TabNavigationItem>
+</TabNavigation>
+`;

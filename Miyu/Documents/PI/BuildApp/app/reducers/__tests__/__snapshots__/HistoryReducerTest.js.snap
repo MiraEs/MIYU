@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HistoryReducer reducer should HISTORY_CLEAR 1`] = `
+Object {
+  "categories": Array [],
+  "products": Array [],
+  "searches": Array [],
+}
+`;
+
+exports[`HistoryReducer reducer should return initialState 1`] = `
+Object {
+  "categories": Array [],
+  "products": Array [],
+  "searches": Array [],
+}
+`;

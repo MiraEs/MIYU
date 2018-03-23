@@ -1,0 +1,264 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`checkoutReducer reducer should AUTHORIZE_PAYPAL_PAYMENT_SUCCESS 1`] = `
+Object {
+  "applePay": null,
+  "billingAddressId": 1,
+  "creditCard": Object {},
+  "creditCardId": null,
+  "creditCards": Array [],
+  "error": "",
+  "isLoading": false,
+  "paymentType": null,
+  "paypal": Object {
+    "billingAddressId": 1,
+    "shippingAddressId": 0,
+  },
+  "shippingAddressId": 0,
+}
+`;
+
+exports[`checkoutReducer reducer should CHECKOUT_SUCCESS 1`] = `
+Object {
+  "applePay": null,
+  "billingAddressId": null,
+  "creditCard": Object {},
+  "creditCardId": null,
+  "creditCards": Array [],
+  "error": "",
+  "isLoading": false,
+  "paymentType": null,
+  "paypal": null,
+  "shippingAddressId": null,
+}
+`;
+
+exports[`checkoutReducer reducer should CLEAR_CREDIT_CARD 1`] = `
+Object {
+  "applePay": null,
+  "billingAddressId": null,
+  "creditCard": Object {},
+  "creditCardId": null,
+  "creditCards": Array [],
+  "error": "",
+  "isLoading": false,
+  "paymentType": null,
+  "paypal": null,
+  "shippingAddressId": null,
+}
+`;
+
+exports[`checkoutReducer reducer should CLEAR_PAYPAL 1`] = `
+Object {
+  "applePay": null,
+  "billingAddressId": null,
+  "creditCard": Object {},
+  "creditCardId": null,
+  "creditCards": Array [],
+  "error": "",
+  "isLoading": false,
+  "paymentType": null,
+  "paypal": null,
+  "shippingAddressId": null,
+}
+`;
+
+exports[`checkoutReducer reducer should CREATE_PAYPAL_PAYMENT_SUCCESS 1`] = `
+Object {
+  "applePay": null,
+  "billingAddressId": null,
+  "creditCard": Object {},
+  "creditCardId": null,
+  "creditCards": Array [],
+  "error": "",
+  "isLoading": false,
+  "paymentType": "PAYPAL",
+  "paypal": Object {},
+  "shippingAddressId": null,
+}
+`;
+
+exports[`checkoutReducer reducer should CREDIT_CARD 1`] = `
+Object {
+  "applePay": null,
+  "billingAddressId": null,
+  "creditCard": Object {},
+  "creditCardId": null,
+  "creditCards": Array [],
+  "error": "",
+  "isLoading": false,
+  "paymentType": null,
+  "paypal": null,
+  "shippingAddressId": null,
+}
+`;
+
+exports[`checkoutReducer reducer should DELETE_CREDIT_CARD_FAIL 1`] = `
+Object {
+  "applePay": null,
+  "billingAddressId": null,
+  "creditCard": Object {},
+  "creditCardId": null,
+  "creditCards": Array [],
+  "error": undefined,
+  "isLoading": false,
+  "paymentType": null,
+  "paypal": null,
+  "shippingAddressId": null,
+}
+`;
+
+exports[`checkoutReducer reducer should DELETE_CREDIT_CARD_SUCCESS 1`] = `
+Object {
+  "applePay": null,
+  "billingAddressId": null,
+  "creditCard": Object {},
+  "creditCardId": null,
+  "creditCards": Array [],
+  "error": "",
+  "isLoading": false,
+  "paymentType": null,
+  "paypal": null,
+  "shippingAddressId": null,
+}
+`;
+
+exports[`checkoutReducer reducer should GET_CREDIT_CARDS 1`] = `
+Object {
+  "applePay": null,
+  "billingAddressId": null,
+  "creditCard": Object {},
+  "creditCardId": null,
+  "creditCards": Array [],
+  "error": "",
+  "isLoading": false,
+  "paymentType": null,
+  "paypal": null,
+  "shippingAddressId": null,
+}
+`;
+
+exports[`checkoutReducer reducer should LOADING_CHECKOUT 1`] = `
+Object {
+  "applePay": null,
+  "billingAddressId": null,
+  "creditCard": Object {},
+  "creditCardId": null,
+  "creditCards": Array [],
+  "error": "",
+  "isLoading": true,
+  "paymentType": null,
+  "paypal": null,
+  "shippingAddressId": null,
+}
+`;
+
+exports[`checkoutReducer reducer should PAYPAL 1`] = `
+Object {
+  "applePay": null,
+  "billingAddressId": null,
+  "creditCard": Object {},
+  "creditCardId": null,
+  "creditCards": Array [],
+  "error": "",
+  "isLoading": false,
+  "paymentType": null,
+  "paypal": null,
+  "shippingAddressId": null,
+}
+`;
+
+exports[`checkoutReducer reducer should SIGN_USER_OUT 1`] = `
+Object {
+  "applePay": null,
+  "billingAddressId": null,
+  "creditCard": Object {},
+  "creditCardId": null,
+  "creditCards": Array [],
+  "error": "",
+  "isLoading": false,
+  "paymentType": null,
+  "paypal": null,
+  "shippingAddressId": null,
+}
+`;
+
+exports[`checkoutReducer reducer should UPDATE_BILLING_ADDRESS_ID 1`] = `
+Object {
+  "applePay": null,
+  "billingAddressId": undefined,
+  "creditCard": Object {},
+  "creditCardId": null,
+  "creditCards": Array [],
+  "error": "",
+  "isLoading": false,
+  "paymentType": null,
+  "paypal": null,
+  "shippingAddressId": null,
+}
+`;
+
+exports[`checkoutReducer reducer should UPDATE_CREDIT_CARD 1`] = `
+Object {
+  "applePay": null,
+  "billingAddressId": null,
+  "creditCard": Object {
+    "cardNumber": "4111111111111111",
+    "cvv": "123",
+    "expDate": "12/33",
+    "nameOnCard": "Testy McTesty",
+  },
+  "creditCardId": null,
+  "creditCards": Array [],
+  "error": "",
+  "isLoading": false,
+  "paymentType": null,
+  "paypal": null,
+  "shippingAddressId": null,
+}
+`;
+
+exports[`checkoutReducer reducer should UPDATE_SHIPPING_ADDRESS_ID 1`] = `
+Object {
+  "applePay": null,
+  "billingAddressId": null,
+  "creditCard": Object {},
+  "creditCardId": null,
+  "creditCards": Array [],
+  "error": "",
+  "isLoading": false,
+  "paymentType": null,
+  "paypal": null,
+  "shippingAddressId": undefined,
+}
+`;
+
+exports[`checkoutReducer reducer should USE_CREDIT_CARD 1`] = `
+Object {
+  "applePay": null,
+  "billingAddressId": undefined,
+  "creditCard": Object {},
+  "creditCardId": undefined,
+  "creditCards": Array [],
+  "error": "",
+  "isLoading": false,
+  "paymentType": "CREDIT_CARD",
+  "paypal": null,
+  "shippingAddressId": null,
+}
+`;
+
+exports[`checkoutReducer reducer should return initialState 1`] = `
+Object {
+  "applePay": null,
+  "billingAddressId": null,
+  "creditCard": Object {},
+  "creditCardId": null,
+  "creditCards": Array [],
+  "error": "",
+  "isLoading": false,
+  "paymentType": null,
+  "paypal": null,
+  "shippingAddressId": null,
+}
+`;

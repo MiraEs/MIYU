@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PricedOptionTextBox component should render PricedOptionTextBox with required props 1`] = `
+<View>
+  <FormInput
+    accessibilityLabel="testPricedOptionText"
+    defaultValue=""
+    label="test"
+    name="pricedOptionTextBox"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onSubmitEditing={[Function]}
+    placeholder="test"
+    returnKeyType="done"
+    textInputContainer={
+      Object {
+        "backgroundColor": "#FFFFFF",
+      }
+    }
+    value=""
+  />
+</View>
+`;

@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`singleEventReducer reducer should LOAD_SINGLE_EVENT_FAIL 1`] = `
+Object {
+  "error": "Unable to load event.",
+  "event": Object {
+    "comments": Array [],
+  },
+  "isLoading": false,
+}
+`;
+
+exports[`singleEventReducer reducer should LOAD_SINGLE_EVENT_SUCCESS 1`] = `
+Object {
+  "error": "",
+  "event": undefined,
+  "isLoading": false,
+}
+`;
+
+exports[`singleEventReducer reducer should RESET_SINGLE_EVENT_DATA 1`] = `
+Object {
+  "error": "",
+  "event": Object {
+    "comments": Array [],
+  },
+  "isLoading": true,
+}
+`;
+
+exports[`singleEventReducer reducer should SINGLE_EVENT_SAVE_COMMENT 1`] = `
+Object {
+  "error": "",
+  "event": Object {
+    "comments": Array [
+      undefined,
+    ],
+  },
+  "isLoading": true,
+}
+`;
+
+exports[`singleEventReducer reducer should SINGLE_EVENT_SAVE_COMMENT_FAIL 1`] = `
+Object {
+  "error": "",
+  "event": Object {
+    "comments": Array [],
+  },
+  "isLoading": true,
+}
+`;
+
+exports[`singleEventReducer reducer should SINGLE_EVENT_SAVE_COMMENT_SUCCESS 1`] = `
+Object {
+  "error": "",
+  "event": Object {
+    "comments": Array [],
+  },
+  "isLoading": true,
+}
+`;
+
+exports[`singleEventReducer reducer should return initialState 1`] = `
+Object {
+  "error": "",
+  "event": Object {
+    "comments": Array [],
+  },
+  "isLoading": true,
+}
+`;

@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`layoutReducer should return initialState 1`] = `
+Object {
+  "selectedTab": "home",
+  "tutorialMode": false,
+}
+`;
+
+exports[`layoutReducer should return the correct state for SET_TUTORIAL_MODE to true 1`] = `
+Object {
+  "TEST_COMPONENT": Object {},
+  "tutorialMode": true,
+}
+`;
+
+exports[`layoutReducer should update an existing value from the SET_COMPONENT_MEASUREMENTS action 1`] = `
+Object {
+  "TEST_COMPONENT": Object {
+    "0": "M",
+    "1": "E",
+    "10": "T",
+    "11": "S",
+    "2": "A",
+    "3": "S",
+    "4": "U",
+    "5": "R",
+    "6": "E",
+    "7": "M",
+    "8": "E",
+    "9": "N",
+  },
+  "tutorialMode": false,
+}
+`;
+
+exports[`layoutReducer should update the state from SET_COMPONENT_MEASUREMENTS action 1`] = `
+Object {
+  "NEW_COMPONENT": Object {},
+  "TEST_COMPONENT": Object {},
+  "tutorialMode": false,
+}
+`;

@@ -1,0 +1,495 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartRowFooter component should render with default props 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "column",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#EBEDEF",
+        "flex": 1,
+        "flexDirection": "row",
+        "paddingBottom": 16,
+        "paddingHorizontal": 8,
+        "paddingTop": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <CouponButton
+        addTrackAction="build:app:cart:addcouponcode"
+        editTrackAction="build:app:cart:editcouponcode"
+        removeTrackAction="build:app:cart:removecouponcode"
+        size="small"
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "width": 8,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <IconButton
+        accessibilityLabel="Shipping Estimate"
+        color="white"
+        iconName="ios-bus"
+        onPress={[Function]}
+        size="small"
+        text={
+          <Text
+            color="grey"
+            lineHeight={false}
+            size="xsmall"
+          >
+            Ship to
+            <Text
+              color="accent"
+              lineHeight={false}
+            >
+               95014
+            </Text>
+          </Text>
+        }
+        trackAction="build:app:cart:shippingestimate"
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "borderColor": "#D0D3D4",
+        "borderTopWidth": 1,
+        "flex": 1,
+        "paddingVertical": 8,
+      }
+    }
+  >
+    <CartSubTotal
+      cart={
+        Object {
+          "couponAmount": 0,
+          "couponCode": null,
+          "couponId": null,
+          "couponNumber": null,
+          "couponTotal": 0,
+          "customerId": 3984706,
+          "dateAdded": 1495370632717,
+          "dutyAmount": 0,
+          "isEmpty": false,
+          "quantity": 3,
+          "sessionCartId": 406071211,
+          "sessionCartItems": Array [
+            Object {
+              "containerType": "Product",
+              "couponAmount": 0,
+              "deleted": false,
+              "hasPricedOptions": false,
+              "hasSubItems": false,
+              "id": 146258888,
+              "isPackage": false,
+              "itemKey": "1738979",
+              "leadTimeInformation": Object {
+                "cartShippingEstimateStockStatus": "IN_STOCK",
+                "deliveryEstimate": "Delivered by Thursday, June 1st",
+                "estimatedShippingDate": 1496127600000,
+                "highDays": 1,
+                "id": null,
+                "isMadeToOrder": false,
+                "isOutOfStock": false,
+                "isPreOrder": false,
+                "itemId": null,
+                "lowDays": 1,
+                "shippingCutOffHour": 11,
+                "shippingEstimateMethod": "VENDOR",
+                "text": "Leaves the Warehouse Tomorrow, May 30th",
+              },
+              "leadTimeText": "Leaves the Warehouse Tomorrow, May 30th",
+              "parentKey": "",
+              "parentUniqueId": null,
+              "pmgItem": Object {
+                "expires": null,
+                "id": null,
+                "itemKey": "1738979",
+                "newPrice": null,
+                "originalPrice": null,
+                "parentKey": "",
+                "uniqueId": 1738979,
+              },
+              "pricebookMap": Object {
+                "1": 351.19,
+                "22": 340.65,
+                "27": 340.65,
+                "28": 340.65,
+                "29": 340.65,
+                "30": 345.92,
+                "31": 316.07,
+              },
+              "pricedOptions": Array [],
+              "product": Object {
+                "compositeSlugOverride": "delta 9159-dst kitchen faucet",
+                "containerType": "Product",
+                "cost": 501.7,
+                "description": "<p><strong>Product Features:</strong></p><ul><li>Made in the U.S.A. (Manufacturing plants: Greensburg, Indiana; Jackson, Tennessee)</li><li>Fully covered under Delta's limited lifetime warranty</li><li>All-brass faucet body and handle construction</li><li>Superior finishing process - faucet finish covered under lifetime warranty</li><li>For 3-hole installation (8\\" centers) order optional escutcheon RP64070</li><li>Insulated pullout spray faucet head with 54\\" hose</li><li>The design was inspired by the sleek elegance of modern European design</li><li>A sleek sophistication in the kitchen for both style and functionality</li><li>Spout swivels 360 degrees to allow for unobstructed sink access</li><li>High-arch gooseneck spout further allows for unobstructed sink access</li></ul><p><strong>Product Technologies:</strong></p><p class=\\"col-xs-12\\"><span class=\\"col-xs-3\\" style=\\"text-align: center;\\"><img alt=\\"MagnaTite\\" src=\\"//s1.img-b.com/imagebase/Deltaimages/magnatitegradient_pms-2c_resized.jpg\\"></span><span class=\\"col-xs-8\\"><strong>MagnaTite&reg; Docking</strong>: Delta&reg; MagnaTite Docking uses a powerful integrated magnet to ensure your pull-down faucet wand snaps precisely into place – and stays there. The spray wand comes free with a gentle tug, giving you complete flexibility to accomplish kitchen tasks. When you return the wand to its docked position, the MagnaTite magnet guides it to its proper place and makes sure your Delta faucet spray wand won't droop over time. The same technology is available in select Delta In2ition&reg; Two-in-One Showers in the bath.</span></p><p class=\\"col-xs-12\\"><span class=\\"col-xs-3\\" style=\\"text-align: center;\\"><img alt=\\"Diamond Seal\\" src=\\"//s1.img-b.com/imagebase/Deltaimages/dst_web_icon_resized.jpg\\"></span><span class=\\"col-xs-8\\"><strong>DIAMOND&trade; Seal Technology</strong>: Delta&reg; DIAMOND Seal Technology utilizes a ceramic disc valve with a real diamond coating to produce a faucet that will last up to five million uses. That's twice as long as the industry standard, guaranteeing a lifetime of leak-free, trouble-free performance. Delta Innoflex PEX supply lines are included with DIAMOND Seal faucets, so everything you need is in one box.</span></p><p class=\\"col-xs-12\\"><span class=\\"col-xs-3\\" style=\\"text-align: center;\\"><img alt=\\"Touch Clean\\" src=\\"//s1.img-b.com/imagebase/Deltaimages/touchclean_web_icon-new1_resized3.jpg\\"></span><span class=\\"col-xs-8\\"><strong>Touch-Clean&reg; Spray Holes</strong>: The Delta&reg; soft, rubber Touch-Clean Spray Holes make it easy to wipe away unsightly calcium and lime buildup with the touch of a finger, helping prevent your product from developing a mineral blockage which could reduce water flow. While other kitchen faucets, shower heads and hand showers may require chemical cleaners and soaking time to dissolve mineral buildup, Delta products featuring Touch-Clean Spray Holes can be simply wiped clean for improved performance and an instantly refreshed look.</span></p><p class=\\"col-xs-12\\"><span class=\\"col-xs-3\\" style=\\"text-align: center;\\"><img alt=\\"Water-Efficient\\" src=\\"//s1.img-b.com/imagebase/Deltaimages/waterefficient_icon_resized1.jpg\\"></span><span class=\\"col-xs-8\\"><strong>Water-Efficient</strong>: Delta&reg; water-efficient products help you conserve water during everyday tasks without sacrificing performance or experience. In Delta showers, faucets and toilets, water-efficient and WaterSense&reg; Certified labels go beyond helping to protect one of the world's most vital resources and makes it easy for you to cut back on water costs and stretch the hot water in your tank a little bit farther. Make your everyday life a little more efficient with Delta water-efficient products.</span></p><p><strong>Product Specifications:</strong></p><ul><li>Overall Height: 15-2/3\\" (measured from counter top to highest point of faucet)</li><li>Spout Height: 8-4/9\\" (measured from counter top to faucet outlet)</li><li>Spout Reach: 9-1/2\\" (measured from center of faucet base to center of faucet outlet)</li><li>Number of installation holes required: 1 or 3</li><li>1.8 gallons-per-minute flow rate</li><li>Installs onto decks up to 2-1/2\\" thick</li><li>1 handle included</li><li>ADA compliant</li><li>Low lead compliant - complies with federal and state regulations for lead content</li><li>Designed to easily connect to standard U.S. plumbing supply bibs</li><li>Extra secure mounting assembly</li><li>All necessary mounting hardware included</li></ul><p><strong>Variations:</strong></p><p class=\\"col-xs-4\\" style=\\"text-align: center;\\"><strong>9159T-DST</strong><br><img alt=\\"With Touch2O Technology\\" src=\\"//s1.img-b.com/imagebase/Deltaimages/9159t-dst-b1-variation-resized.jpg\\"><br> With Touch2O Technology</p><p class=\\"col-xs-4\\" style=\\"text-align: center;\\"><strong>9959-DST</strong><br><img alt=\\"Bar/Prep Version\\" src=\\"//s1.img-b.com/imagebase/Deltaimages/9959-dst-b1-variation-resized.jpg\\"><br> Bar/Prep Version</p><p class=\\"col-xs-4\\" style=\\"text-align: center;\\"><strong>9959T-DST</strong><br><img alt=\\"Bar/Prep Version w/ Touch2O Technology\\" src=\\"//s1.img-b.com/imagebase/Deltaimages/9959t-dst-b1-variation-resized.jpg\\"><br> Bar/Prep Version w/ Touch2O Technology</p><p><strong>About Delta:</strong></p><p>Delta is more than just a brand of kitchen and bathroom faucets. It's a name that represents what's possible in today's plumbing technologies. Every kitchen and bathroom in every home is unique, and with a wide range of pricing and features, Delta faucets and fixtures can meet every need.</p><p>Delta is driven by its quest for innovation&mdash;and this applies to its kitchen and bathroom faucets and fixtures. From Touch2O technology (which turns the faucet on and off with just a touch) and MagnaTite technology (which eliminates droopy pull-down spray heads), to H2Okinetic showers (for a warmer and more luxurious shower experience), your life is simplified through innovations. And if you're searching for a product to offer an eye-catching focal point, while providing durability and reliability for a lifetime, look no further than Delta.</p><p>From extremely affordable and reliable faucets to fully loaded fixtures featuring today's leading technologies, Delta has a faucet for everyone.</p>",
+                "displayName": "Delta 9159-DST",
+                "finish": "Arctic Stainless",
+                "freeShipping": "Y",
+                "image": "delta-9159-ar-dst-196.jpg",
+                "manufacturer": "Delta",
+                "notForForeignShipment": false,
+                "productCompositeId": 380199,
+                "productId": "9159-DST",
+                "productTitle": "Trinsic Pull-Down Kitchen Faucet with Magnetic Docking Spray Head - Includes Lifetime Warranty",
+                "saleId": null,
+                "series": "Trinsic",
+                "sku": "9159-AR-DST",
+                "status": "stock",
+                "stockCount": 685,
+                "uniqueId": 1738979,
+                "upc": "034449644402",
+              },
+              "productImage": null,
+              "productUrl": null,
+              "quantity": 1,
+              "relatedProducts": null,
+              "rootCategory": Object {
+                "categoryId": 1,
+                "categoryName": "Plumbing",
+              },
+              "sqftPerCarton": null,
+              "subItems": null,
+              "unitPrice": 351.19,
+            },
+            Object {
+              "containerType": "Product",
+              "couponAmount": 0,
+              "deleted": false,
+              "hasPricedOptions": false,
+              "hasSubItems": false,
+              "id": 146258886,
+              "isPackage": false,
+              "itemKey": "2915885",
+              "leadTimeInformation": Object {
+                "cartShippingEstimateStockStatus": "IN_STOCK",
+                "deliveryEstimate": null,
+                "estimatedShippingDate": 1496127600000,
+                "highDays": 1,
+                "id": null,
+                "isMadeToOrder": false,
+                "isOutOfStock": false,
+                "isPreOrder": false,
+                "itemId": null,
+                "lowDays": 1,
+                "shippingCutOffHour": 11,
+                "shippingEstimateMethod": "VENDOR",
+                "text": "Leaves the Warehouse Tomorrow, May 30th",
+              },
+              "leadTimeText": "Leaves the Warehouse Tomorrow, May 30th",
+              "parentKey": "",
+              "parentUniqueId": null,
+              "pmgItem": Object {
+                "expires": null,
+                "id": null,
+                "itemKey": "2915885",
+                "newPrice": null,
+                "originalPrice": null,
+                "parentKey": "",
+                "uniqueId": 2915885,
+              },
+              "pricebookMap": Object {
+                "1": 129,
+                "22": 125.13,
+                "27": 125.13,
+                "28": 125.13,
+                "29": 125.13,
+                "30": 127.07,
+                "31": 116.1,
+              },
+              "pricedOptions": Array [],
+              "product": Object {
+                "compositeSlugOverride": null,
+                "containerType": "Product",
+                "cost": 172,
+                "description": "<p><strong>Moen GX50C Product Features:</strong></p><ul><li>Continuous feed with stainless steel grind components provides more durability</li><li>Includes power cord, splash guard, flange and drain stopper, drain elbow, and mounting assembly.</li><li>Covered under Moen's 4 year limited warranty with in-home service</li><li>VORTEX&trade; Motor features permanent magnet motor technology designed to help reduce jamming</li><li>SoundSHIELD&trade; designed to provide sound deadening insulation</li><li>1/2 horsepower motor is quiet, efficient, and reliable</li></ul><p><strong>Moen GX50C Specifications:</strong></p><ul><li>Overall Height: 13-3/8\\"</li><li>Overall Width: 7-1/2\\"</li><li>Feed Type: Continuous</li><li>Horsepower: 1/2</li><li>Voltage: 115V</li></ul>",
+                "displayName": "Moen GX50C",
+                "finish": "Stainless Steel",
+                "freeShipping": "Y",
+                "image": "moen-gx50c.jpg",
+                "manufacturer": "Moen",
+                "notForForeignShipment": false,
+                "productCompositeId": 1219899,
+                "productId": "GX50C",
+                "productTitle": "GX 1/2 HP Continuous Garbage Disposal with SoundSHIELD Technology, Vortex Motor and Power cord included.",
+                "saleId": null,
+                "series": "GX",
+                "sku": "GX50C",
+                "status": "stock",
+                "stockCount": 98,
+                "uniqueId": 2915885,
+                "upc": "026508261798",
+              },
+              "productImage": null,
+              "productUrl": null,
+              "quantity": 1,
+              "relatedProducts": null,
+              "rootCategory": Object {
+                "categoryId": 1,
+                "categoryName": "Plumbing",
+              },
+              "sqftPerCarton": null,
+              "subItems": null,
+              "unitPrice": 129,
+            },
+            Object {
+              "containerType": "Product",
+              "couponAmount": 0,
+              "deleted": false,
+              "hasPricedOptions": false,
+              "hasSubItems": false,
+              "id": 146258889,
+              "isPackage": false,
+              "itemKey": "1755668",
+              "leadTimeInformation": Object {
+                "cartShippingEstimateStockStatus": "IN_STOCK",
+                "deliveryEstimate": null,
+                "estimatedShippingDate": 1496127600000,
+                "highDays": 1,
+                "id": null,
+                "isMadeToOrder": false,
+                "isOutOfStock": false,
+                "isPreOrder": false,
+                "itemId": null,
+                "lowDays": 1,
+                "shippingCutOffHour": 11,
+                "shippingEstimateMethod": "VENDOR",
+                "text": "Leaves the Warehouse Tomorrow, May 30th",
+              },
+              "leadTimeText": "Leaves the Warehouse Tomorrow, May 30th",
+              "parentKey": "",
+              "parentUniqueId": null,
+              "pmgItem": Object {
+                "expires": null,
+                "id": null,
+                "itemKey": "1755668",
+                "newPrice": null,
+                "originalPrice": null,
+                "parentKey": "",
+                "uniqueId": 1755668,
+              },
+              "pricebookMap": Object {
+                "1": 279.95,
+                "22": 271.55,
+                "27": 271.55,
+                "28": 271.55,
+                "29": 271.55,
+                "30": 275.75,
+              },
+              "pricedOptions": Array [],
+              "product": Object {
+                "compositeSlugOverride": "kraus khu100-32 kitchen sink",
+                "containerType": "Product",
+                "cost": 705,
+                "description": "<p style=\\"text-align: center;\\"><img class=\\"center-block\\" src=\\"//www.build.com/mediabase/manufacturers/kraus/description_enrichment/kraus-khu100-32-additional.jpg\\" width=\\"90%\\" alt=\\"Product Information\\"></p><p><strong>Kraus KHU100-32 Features:</strong></p><ul>
+        <li>Constructed of 16 gauge premium grade T-304 stainless steel - guaranteed to never rust or corrode</li><li>Commercial-grade satin finish - highly scratch and stain resistant</li><li>Padded, Stone-Guard undercoat applied over rubber pads to reduce sink noise while in use</li><li>Single basin design provides maximum workspace</li><li>Basin rack and basket strainer included</li><li>Extra deep (10\\" depth) design is perfect for the semi-professional kitchen</li><li>Undermount installation; fits 36+\\" cabinets</li><li>Standard 3-1/2\\" drain opening compatible with most garbage disposal units (including InSinkErator)</li><li>Fully covered under Kraus' limited lifetime warranty</li></ul><p><strong>Product Technologies / Benefits:</strong></p><p class=\\"col-xs-12\\"><span class=\\"col-xs-12\\" style=\\"text-align: center;\\"><img alt=\\"Sink Benefits and Technologies\\" class=\\"center-block\\" src=\\"/mediabase/manufacturers/kraus/description_enrichment/artisan-sink-icons.jpg\\" width=\\"95%\\"></span></p><p><strong>Kraus KHU100-32 Specifications:</strong></p><ul>
+        <li><strong>Height:</strong> 10\\" ( measured from bottom of sink to top of rim)</li><li><strong>Overall Width: </strong>19\\" (measured from back outer rim to front outer rim)</li><li><strong>Overall Length:</strong> 32\\" (measured from left outer rim to right outer)</li><li><strong>Basin Width:</strong> 17\\" (measured from back inner rim to front inner rim)</li><li><strong>Basin Length:</strong> 30\\" (measured from left inner rim to right inner rim)</li><li><strong>Basin Depth:</strong> 10\\" (measured from center of basin to rim)</li><li><strong>Installation Type</strong><strong>:</strong> Undermount</li><li><strong>Drain Outlet Connection: </strong>3-1/2\\"</li><li><strong>Minimum Base Cabinet Width: </strong>36\\"</li></ul><p style=\\"text-align: center;\\"><img class=\\"center-block\\" src=\\"//www.build.com/mediabase/manufacturers/kraus/description_enrichment/KHU100-32_linedraw.jpg\\" width=\\"70%\\" alt=\\"Dimensional Information\\"></p><p><strong>Variations:</strong></p><p class=\\"col-xs-4\\" style=\\"text-align: center;\\"><strong>KHU100-30</strong><br><img alt=\\"30 Version\\" class=\\"center-block\\" src=\\"//www.build.com/mediabase/manufacturers/kraus/description_enrichment/kraus-KHU100-30.jpg\\"><br> 30\\" Model</p><p class=\\"col-xs-4\\" style=\\"text-align: center;\\"><strong>KHU102-33</strong><br><img alt=\\"32-3/4 with 50/50 Split\\" class=\\"center-block\\" src=\\"//www.build.com/mediabase/manufacturers/kraus/description_enrichment/kraus-KHU102-33.jpg\\"><br> 32-3/4\\" Model with 50/50 Split</p><p class=\\"col-xs-4\\" style=\\"text-align: center;\\"><strong>KHU103-33</strong><br><img alt=\\"32-3/4 with 60/40 Split\\" class=\\"center-block\\" src=\\"//www.build.com/mediabase/manufacturers/kraus/description_enrichment/kraus-KHU103-33.jpg\\"><br> 32-3/4\\" Model with 60/40 Split</p><p class=\\"clear\\"></p>",
+                "displayName": "Kraus KHU100-32",
+                "finish": "Stainless Steel",
+                "freeShipping": "Y",
+                "image": "kraus-khu100-32-94.jpg",
+                "manufacturer": "Kraus",
+                "notForForeignShipment": true,
+                "productCompositeId": 577429,
+                "productId": "KHU100-32",
+                "productTitle": "32\\" Single Basin 16 Gauge Stainless Steel Kitchen Sink for Undermount Installations - Basin Rack and Basket Strainer Included",
+                "saleId": 4449,
+                "series": "Kitchen Sink",
+                "sku": "KHU100-32",
+                "status": "stock",
+                "stockCount": 263,
+                "uniqueId": 1755668,
+                "upc": "812679018930",
+              },
+              "productImage": null,
+              "productUrl": null,
+              "quantity": 1,
+              "relatedProducts": null,
+              "rootCategory": Object {
+                "categoryId": 1,
+                "categoryName": "Plumbing",
+              },
+              "sqftPerCarton": null,
+              "subItems": null,
+              "unitPrice": 279.95,
+            },
+          ],
+          "shippingOptions": Array [
+            Object {
+              "customerAvailable": true,
+              "leadTime": null,
+              "shippingCost": 0,
+              "shippingName": "Standard Delivery (5 - 7 Business Days)",
+              "shippingOption": "Standard Delivery",
+              "shippingOptionId": 12,
+            },
+            Object {
+              "customerAvailable": true,
+              "leadTime": null,
+              "shippingCost": 58.53,
+              "shippingName": "Two Day Delivery (2 Business Days)",
+              "shippingOption": "Two Day Delivery",
+              "shippingOptionId": 7,
+            },
+            Object {
+              "customerAvailable": true,
+              "leadTime": null,
+              "shippingCost": 97.77,
+              "shippingName": "One Day Delivery (1 Business Day)",
+              "shippingOption": "One Day Delivery",
+              "shippingOptionId": 10,
+            },
+          ],
+          "storeId": 248,
+          "subTotal": 760.14,
+          "taxAmount": 55.11,
+          "zipCode": "95014",
+        }
+      }
+      selectedShippingIndex={0}
+      user={
+        Object {
+          "apiUser": Object {
+            "avatar": null,
+            "firstName": null,
+            "lastName": null,
+            "name": "Geoff Lawson",
+            "title": null,
+            "userType": "CUSTOMER",
+          },
+          "billingAddresses": Array [],
+          "customerId": 3984706,
+          "defaultShippingAddressId": null,
+          "email": "geoff.lawson@build.com",
+          "firstName": "Geoff",
+          "isGuest": false,
+          "isPro": false,
+          "isSubscriber": null,
+          "lastName": "Lawson",
+          "notificationCount": 0,
+          "password": null,
+          "pricebookId": null,
+          "rep": Object {},
+          "shippingAddresses": Array [],
+          "status": "AUTH_STATUS_AUTHENTICATED",
+          "storeCredit": 0,
+          "tierInfo": Object {},
+          "userName": "JeffWithG",
+          "username": "geoff.lawson@build.com",
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "flex-end",
+        "paddingBottom": 16,
+        "paddingHorizontal": 16,
+      }
+    }
+  >
+    <Text
+      lineHeight={false}
+      size="large"
+      weight="bold"
+    >
+      Grand Total:
+    </Text>
+    <View
+      style={
+        Object {
+          "width": 8,
+        }
+      }
+    />
+    <Text
+      color="primary"
+      lineHeight={false}
+      size="large"
+      weight="bold"
+    >
+      $815.25
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "flexWrap": "wrap",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <LinkButton
+      onPress={[Function]}
+      size="xsmall"
+      textAlign="center"
+    >
+      <Text
+        size="xsmall"
+        textAlign="center"
+      >
+        By purchasing, I agree to Build.com's 
+      </Text>
+      terms and conditions.
+    </LinkButton>
+  </View>
+  <View
+    style={
+      Object {
+        "padding": 8,
+      }
+    }
+  >
+    <IconButton
+      accessibilityLabel="Cart Checkout"
+      borders={false}
+      iconName="ios-lock"
+      onPress={[Function]}
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+      text="Secure Checkout"
+      textColor="white"
+      trackAction="build:app:cart:selectCheckout"
+      trackContextData={
+        Object {
+          "&&products": ";1738979;;,;2915885;;,;1755668;;,",
+          "cart.checkoutstart": "checkoutstart",
+          "purchase.currencycode": "USD",
+        }
+      }
+    />
+  </View>
+</View>
+`;

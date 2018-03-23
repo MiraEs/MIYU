@@ -1,0 +1,377 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`userReducer should return initialState 1`] = `
+Object {
+  "_error": "",
+  "deviceToken": "",
+  "errors": Object {
+    "login": "",
+    "rep": "",
+    "signUp": "",
+    "update": "",
+  },
+  "impersonatorId": null,
+  "isCreatingUser": false,
+  "isLoading": false,
+  "isLoggedIn": false,
+  "isLoggingIn": true,
+  "isLoggingInSocial": true,
+  "notificationSettings": Object {
+    "MARKETING": Object {
+      "PUSH": true,
+      "SMS": false,
+    },
+  },
+  "user": Object {
+    "billingAddresses": Array [],
+    "defaultShippingAddressId": null,
+    "isGuest": true,
+    "notificationCount": 0,
+    "rep": Object {},
+    "shippingAddresses": Array [],
+    "status": "AUTH_STATUS_UNKNOWN",
+    "storeCredit": 0,
+    "tierInfo": Object {},
+    "username": "",
+  },
+  "userPushNotificationsEnabled": true,
+}
+`;
+
+exports[`userReducer should return the state for ALLOW_NOTIFICATIONS_FAILED 1`] = `
+Object {
+  "userPushNotificationsEnabled": false,
+}
+`;
+
+exports[`userReducer should return the state for ALLOW_NOTIFICATIONS_SUCCESS 1`] = `
+Object {
+  "userPushNotificationsEnabled": false,
+}
+`;
+
+exports[`userReducer should return the state for CREATE_USER_FAIL 1`] = `
+Object {
+  "errors": Object {
+    "signUp": "error",
+  },
+  "isCreatingUser": false,
+}
+`;
+
+exports[`userReducer should return the state for GET_CUSTOMER_FAIL 1`] = `
+Object {
+  "user": Object {
+    "isGuest": true,
+    "status": "AUTH_STATUS_ANONYMOUS",
+  },
+}
+`;
+
+exports[`userReducer should return the state for GET_CUSTOMER_ID_SUCCESS 1`] = `
+Object {
+  "isLoggedIn": true,
+  "user": Object {
+    "customerId": 1234,
+    "status": "AUTH_STATUS_AUTHENTICATED",
+  },
+}
+`;
+
+exports[`userReducer should return the state for GET_CUSTOMER_REP_FAIL 1`] = `
+Object {
+  "errors": Object {
+    "rep": Object {
+      "not": "found",
+    },
+  },
+  "user": Object {
+    "name": "Testy McTestory",
+    "rep": Object {},
+  },
+}
+`;
+
+exports[`userReducer should return the state for GET_CUSTOMER_REP_SUCCESS 1`] = `
+Object {
+  "user": Object {
+    "name": "Testy McTestory",
+    "rep": Object {
+      "profileId": 1234,
+    },
+  },
+}
+`;
+
+exports[`userReducer should return the state for GET_CUSTOMER_REWARDS_TIER 1`] = `
+Object {
+  "user": Object {
+    "name": "Testy McTestory",
+    "tierInfo": Object {
+      "tier": "silver",
+    },
+  },
+}
+`;
+
+exports[`userReducer should return the state for GET_CUSTOMER_SUCCESS 1`] = `
+Object {
+  "user": Object {
+    "customerId": 1234,
+    "name": "NotTesty McTestory",
+  },
+}
+`;
+
+exports[`userReducer should return the state for GET_NOTIFICATION_SETTINGS_SUCCESS 1`] = `
+Object {
+  "notificationSettings": Array [],
+  "user": Object {
+    "name": "name",
+  },
+  "userPushNotificationsEnabled": undefined,
+}
+`;
+
+exports[`userReducer should return the state for KEYCHAIN_FETCH_CREDS_FAIL 1`] = `
+Object {
+  "user": Object {
+    "name": "Testy McTestory",
+    "status": "AUTH_STATUS_ANONYMOUS",
+  },
+}
+`;
+
+exports[`userReducer should return the state for LOGIN_SOCIAL_USER_BEGIN 1`] = `
+Object {
+  "errors": Object {
+    "login": "",
+  },
+  "isLoggingInSocial": true,
+}
+`;
+
+exports[`userReducer should return the state for LOGIN_USER_BEGIN 1`] = `
+Object {
+  "errors": Object {
+    "login": "",
+  },
+  "isLoggingIn": true,
+}
+`;
+
+exports[`userReducer should return the state for LOGIN_USER_ERROR 1`] = `
+Object {
+  "errors": Object {
+    "login": undefined,
+  },
+  "impersonatorId": null,
+  "user": Object {
+    "status": "AUTH_STATUS_ANONYMOUS",
+  },
+}
+`;
+
+exports[`userReducer should return the state for LOGIN_USER_FINISH 1`] = `
+Object {
+  "isLoggingIn": false,
+  "isLoggingInSocial": false,
+}
+`;
+
+exports[`userReducer should return the state for LOGIN_USER_RESET 1`] = `
+Object {
+  "errors": Object {
+    "login": "",
+  },
+  "isLoggedIn": false,
+  "isLoggingIn": false,
+  "isLoggingInSocial": false,
+}
+`;
+
+exports[`userReducer should return the state for LOGIN_USER_SUCCESS 1`] = `
+Object {
+  "errors": Object {
+    "login": "",
+  },
+  "isCreatingUser": false,
+  "isLoggedIn": true,
+  "user": Object {
+    "notificationCount": 0,
+    "pay": "load",
+    "status": "AUTH_STATUS_AUTHENTICATED",
+    "username": "username",
+  },
+}
+`;
+
+exports[`userReducer should return the state for REQUEST_CREATE_USER 1`] = `
+Object {
+  "isCreatingUser": true,
+}
+`;
+
+exports[`userReducer should return the state for SAVE_NOTIFICATION_SETTINGS_FAIL 1`] = `
+Object {
+  "notificationSettings": Object {
+    "0": Object {
+      "foo": true,
+      "marketing": true,
+    },
+  },
+  "user": Object {
+    "name": "name",
+  },
+}
+`;
+
+exports[`userReducer should return the state for SAVE_NOTIFICATION_SETTINGS_SUCCESS 1`] = `
+Object {
+  "notificationSettings": Object {
+    "0": Object {
+      "foo": true,
+      "marketing": true,
+    },
+    "undefined": Object {
+      "PUSH": undefined,
+    },
+  },
+  "user": Object {
+    "name": "name",
+  },
+}
+`;
+
+exports[`userReducer should return the state for SET_IMPERSONATOR_ID 1`] = `
+Object {
+  "impersonatorId": Object {
+    "name": "name2",
+  },
+  "user": Object {
+    "name": "name",
+  },
+}
+`;
+
+exports[`userReducer should return the state for SHOULD_PRESENT_NO_EMAIL_ERROR_MESSAGE 1`] = `
+Object {
+  "user": Object {
+    "name": "name",
+    "noEmailErrorMessage": "We were unable to create your account because the Facebook login you used is not associated with an email address. Please create a new account here.",
+  },
+}
+`;
+
+exports[`userReducer should return the state for SIGN_USER_OUT 1`] = `
+Object {
+  "impersonatorId": null,
+  "isLoggedIn": false,
+  "notificationSettings": Object {
+    "MARKETING": Object {
+      "PUSH": true,
+      "SMS": false,
+    },
+  },
+  "user": Object {
+    "isGuest": true,
+    "status": "AUTH_STATUS_ANONYMOUS",
+  },
+  "userPushNotificationsEnabled": true,
+}
+`;
+
+exports[`userReducer should return the state for SOCIAL_GET_CLIENT_DATA 1`] = `
+Object {
+  "user": Object {
+    "data": "data",
+  },
+}
+`;
+
+exports[`userReducer should return the state for SOCIAL_LINK_USER 1`] = `
+Object {
+  "user": Object {
+    "socialLinkError": "",
+  },
+}
+`;
+
+exports[`userReducer should return the state for SOCIAL_LINK_USER_ERROR 1`] = `
+Object {
+  "user": Object {
+    "socialLinkError": "message",
+  },
+}
+`;
+
+exports[`userReducer should return the state for SOCIAL_LOGIN_PROMPT_CREDS 1`] = `
+Object {
+  "user": Object {
+    "email": "email",
+    "socialUserAccessToken": undefined,
+  },
+}
+`;
+
+exports[`userReducer should return the state for UPDATE_DEVICE_TOKEN 1`] = `
+Object {
+  "isCreatingUser": true,
+}
+`;
+
+exports[`userReducer should return the state for UPDATE_SIGNUP_ERROR 1`] = `
+Object {
+  "_error": "",
+  "deviceToken": "",
+  "errors": Object {
+    "login": "",
+    "rep": "",
+    "signUp": undefined,
+    "update": "",
+  },
+  "impersonatorId": null,
+  "isCreatingUser": false,
+  "isLoading": false,
+  "isLoggedIn": false,
+  "isLoggingIn": true,
+  "isLoggingInSocial": true,
+  "notificationSettings": Object {
+    "MARKETING": Object {
+      "PUSH": true,
+      "SMS": false,
+    },
+  },
+  "user": Object {
+    "billingAddresses": Array [],
+    "defaultShippingAddressId": null,
+    "isGuest": true,
+    "notificationCount": 0,
+    "rep": Object {},
+    "shippingAddresses": Array [],
+    "status": "AUTH_STATUS_UNKNOWN",
+    "storeCredit": 0,
+    "tierInfo": Object {},
+    "username": "",
+  },
+  "userPushNotificationsEnabled": true,
+}
+`;
+
+exports[`userReducer should return the state for UPDATE_USER 1`] = `
+Object {
+  "user": Object {
+    "name": "name2",
+  },
+}
+`;
+
+exports[`userReducer should return the state for UPDATE_USER_FAIL 1`] = `
+Object {
+  "errors": Object {
+    "update": Object {
+      "error": "error",
+    },
+  },
+}
+`;

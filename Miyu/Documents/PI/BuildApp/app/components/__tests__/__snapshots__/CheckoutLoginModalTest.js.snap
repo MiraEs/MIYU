@@ -1,0 +1,199 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckoutLoginModal component should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "padding": 16,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "marginVertical": 8,
+        }
+      }
+      weight="bold"
+    >
+      Build.com members always get more!
+    </Text>
+    <Button
+      accessibilityLabel="Member Sign In Button"
+      color="primary"
+      onPress={[Function]}
+      style={
+        Array [
+          Object {
+            "marginVertical": 8,
+          },
+          Object {
+            "flex": 0,
+          },
+        ]
+      }
+      text="Log in to Build.com"
+      trackAction="build:app:checkoutloginmodal:login"
+    />
+    <Button
+      accessibilityLabel="Create Account Button"
+      color="white"
+      onPress={[Function]}
+      style={
+        Array [
+          Object {
+            "marginVertical": 8,
+          },
+          Object {
+            "flex": 0,
+          },
+        ]
+      }
+      text="Create a Build.com Account"
+      textColor="secondary"
+      trackAction="build:app:checkoutloginmodal:signup"
+    />
+    <View
+      style={
+        Object {
+          "paddingHorizontal": 40,
+          "paddingVertical": 8,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "flexShrink": 1,
+            },
+            Object {
+              "marginVertical": 8,
+            },
+          ]
+        }
+      >
+        <Icon
+          color="#63666A"
+          name="logo-codepen"
+          size={40}
+          style={
+            Object {
+              "paddingRight": 16,
+            }
+          }
+        />
+        <Text
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+          weight="bold"
+        >
+          Earn rewards points on every purchase
+        </Text>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "flexShrink": 1,
+            },
+            Object {
+              "marginVertical": 8,
+            },
+          ]
+        }
+      >
+        <Icon
+          color="#63666A"
+          name="md-cart"
+          size={40}
+          style={
+            Object {
+              "paddingRight": 16,
+            }
+          }
+        />
+        <Text
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+          weight="bold"
+        >
+          Save time with super fast checkout
+        </Text>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "flexShrink": 1,
+            },
+            Object {
+              "marginVertical": 8,
+            },
+          ]
+        }
+      >
+        <Icon
+          color="#63666A"
+          name="md-heart"
+          size={40}
+          style={
+            Object {
+              "paddingRight": 16,
+            }
+          }
+        />
+        <Text
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+          weight="bold"
+        >
+          Create Favorites Lists
+        </Text>
+      </View>
+    </View>
+    <Button
+      accessibilityLabel="Guest Checkout Button"
+      color="white"
+      onPress={[Function]}
+      style={
+        Array [
+          Object {
+            "marginVertical": 8,
+          },
+          Object {
+            "flex": 0,
+          },
+        ]
+      }
+      text="Guest Checkout"
+      textColor="secondary"
+      trackAction="build:app:checkoutloginmodal:guestcheckout"
+    />
+  </View>
+</View>
+`;

@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProfileScreen component should render correctly 1`] = `
+<ScrollView
+  style={
+    Object {
+      "backgroundColor": "#EBEDEF",
+      "paddingTop": 8,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+        },
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "#D0D3D4",
+          "borderWidth": 1,
+          "marginBottom": 8,
+          "marginHorizontal": 8,
+          "padding": 8,
+        },
+      ]
+    }
+  >
+    <Image
+      height={150}
+      source="https://s3.img-b.com/image/upload/t_profile,w_150,h_150,c_thumb,dpr_2.0/v1/mediabase/build_profiles/0/profile/0"
+      style={
+        Object {
+          "marginRight": 8,
+        }
+      }
+      width={150}
+    />
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "flexWrap": "wrap",
+        }
+      }
+    >
+      <Text
+        family="archer"
+        size="larger"
+        weight="bold"
+      >
+        .
+      </Text>
+      <Text
+        family="archer"
+        lineHeight={false}
+        size="large"
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderColor": "#D0D3D4",
+        "borderWidth": 1,
+        "marginBottom": 8,
+        "marginHorizontal": 8,
+        "padding": 8,
+      }
+    }
+  >
+    <Text
+      family="archer"
+      size="large"
+      weight="bold"
+    >
+      Get in touch with me:
+    </Text>
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "paddingTop": 8,
+        }
+      }
+    >
+      <IconButton
+        accessibilityLabel="Call Button"
+        iconName="ios-call"
+        onPress={[Function]}
+        style={
+          Object {
+            "marginRight": 4,
+          }
+        }
+        text="Call"
+        textColor="white"
+        trackAction="build:app:profile:call"
+      />
+      <IconButton
+        accessibilityLabel="Email Button"
+        color="white"
+        iconName="ios-mail"
+        onPress={[Function]}
+        style={
+          Object {
+            "marginLeft": 4,
+          }
+        }
+        text="Email"
+        trackAction="build:app:profile:email"
+      />
+    </View>
+  </View>
+</ScrollView>
+`;

@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderInformation should render with props 1`] = `
+<View>
+  <Text
+    size="large"
+    style={
+      Array [
+        Object {
+          "marginHorizontal": 8,
+        },
+        Object {
+          "marginBottom": 8,
+          "marginTop": 24,
+        },
+      ]
+    }
+    weight="bold"
+  >
+    Order Information
+  </Text>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "paddingHorizontal": 16,
+        "paddingTop": 16,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "borderBottomWidth": 2,
+          "borderColor": "#EBEDEF",
+          "flexDirection": "row",
+          "paddingBottom": 16,
+        }
+      }
+    >
+      <Image
+        onPress={[Function]}
+      />
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "marginLeft": 16,
+          }
+        }
+      >
+        <Text
+          weight="bold"
+        />
+        <Text
+          lineHeight={false}
+          size="small"
+        >
+          Color/Finish: 
+        </Text>
+        <Text
+          size="small"
+        >
+          lead time info text
+        </Text>
+        <Text
+          size="small"
+        >
+          (Qty 
+          ) 
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "flex-end",
+        "marginBottom": 24,
+        "padding": 16,
+      }
+    }
+  >
+    <[object Object]
+      actualTaxes={true}
+      cart={
+        Object {
+          "sessionCartItems": Array [
+            Object {
+              "leadTimeInformation": Object {
+                "text": "lead time info text",
+              },
+              "product": Object {
+                "manufacturer": "mgf",
+              },
+            },
+          ],
+        }
+      }
+      selectedShippingIndex={0}
+      storeCredit={200}
+      useCouponCode={false}
+      useStoreCredit={true}
+      user={Object {}}
+    />
+  </View>
+</View>
+`;

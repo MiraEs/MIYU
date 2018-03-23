@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormErrorMessage  should render with full props 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+    }
+  }
+>
+  <Icon
+    color="#A94442"
+    name="ios-close-circle"
+    size={16}
+    style={
+      Array [
+        Object {
+          "marginBottom": 16,
+          "marginRight": 4,
+        },
+        Object {
+          "backgroundColor": "white",
+        },
+      ]
+    }
+  />
+  <Text
+    color="error"
+    lineHeight="small"
+    size="small"
+    style={
+      Array [
+        Object {
+          "marginBottom": 16,
+        },
+        Object {
+          "backgroundColor": "white",
+        },
+      ]
+    }
+    weight="bold"
+  >
+    There was an error
+  </Text>
+</View>
+`;

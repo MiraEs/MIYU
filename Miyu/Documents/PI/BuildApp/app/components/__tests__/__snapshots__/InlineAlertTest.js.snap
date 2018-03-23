@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InlineAlert should render with full props 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderColor": "#A94442",
+        "borderWidth": 2,
+      },
+      Object {},
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#A94442",
+        "padding": 8,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "textAlign": "center",
+          },
+          Object {
+            "fontFamily": "ProximaNova-Bold",
+            "fontWeight": "700",
+          },
+          Object {
+            "color": "#FFFFFF",
+          },
+        ]
+      }
+    >
+      Alert Title
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "padding": 8,
+      }
+    }
+  >
+    test child
+  </View>
+</View>
+`;

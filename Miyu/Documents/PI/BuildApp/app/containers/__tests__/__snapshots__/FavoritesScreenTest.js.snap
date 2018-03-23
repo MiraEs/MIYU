@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FavoritesScreen component should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Text>
+      You have not favorited any items yet
+    </Text>
+    <Button
+      accessibilityLabel="Start Favoriting"
+      onPress={[Function]}
+      style={
+        Object {
+          "flex": 0,
+          "marginBottom": 72,
+          "marginTop": 8,
+        }
+      }
+      text="Start Favoriting"
+      trackAction="build:app:favorites:emptyFavoritesStartFavoriting"
+    />
+  </View>
+</View>
+`;

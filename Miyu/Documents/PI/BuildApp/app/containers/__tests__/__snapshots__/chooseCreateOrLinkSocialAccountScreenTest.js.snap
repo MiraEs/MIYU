@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChooseCreateOrLinkSocialAccountScreen component should render correctly 1`] = `
+<View>
+  <Text
+    size="large"
+    textAlign="center"
+    weight="bold"
+  >
+    Do you want to create a Build.com account?
+  </Text>
+  <Button
+    accessibilityLabel="Create Account"
+    disabled={false}
+    isLoading={false}
+    onPress={[Function]}
+    style={
+      Object {
+        "flex": 0,
+        "marginTop": 24,
+      }
+    }
+    text="Create My Account"
+    trackAction="build:app:createOrLinkSocialAccount:create"
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+        },
+        Object {
+          "marginVertical": 32,
+        },
+      ]
+    }
+  >
+    <Text
+      lineHeight={false}
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+      textAlign="center"
+    >
+      OR
+    </Text>
+  </View>
+  <Text
+    size="large"
+    textAlign="center"
+    weight="bold"
+  >
+    Already have a Build.com account?
+  </Text>
+  <Text
+    textAlign="center"
+  >
+    Log in to link your Build and Facebook accounts
+  </Text>
+  <Button
+    accessibilityLabel="Login"
+    color="white"
+    disabled={false}
+    onPress={undefined}
+    style={
+      Object {
+        "flex": 0,
+        "marginTop": 24,
+      }
+    }
+    text="Login"
+    textColor="secondary"
+    trackAction="build:app:createOrLinkSocialAccount:link"
+  />
+</View>
+`;

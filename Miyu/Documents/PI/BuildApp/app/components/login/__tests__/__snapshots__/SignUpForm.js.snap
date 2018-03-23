@@ -1,0 +1,213 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUpForm component should render SignUpForm 1`] = `
+<View>
+  <Form
+    onChange={[Function]}
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <FormInput
+        accessibilityLabel="First Name"
+        autoCapitalize="words"
+        autoCorrect={false}
+        blurOnSubmit={false}
+        componentStyle={
+          Array [
+            Object {
+              "flex": 1,
+            },
+            Object {
+              "marginRight": 8,
+            },
+          ]
+        }
+        isRequired={true}
+        isRequiredError="First Name is required."
+        label="First Name*"
+        name="firstName"
+        value=""
+      />
+      <FormInput
+        accessibilityLabel="Last Name"
+        autoCapitalize="words"
+        autoCorrect={false}
+        blurOnSubmit={false}
+        componentStyle={
+          Object {
+            "flex": 1,
+          }
+        }
+        isRequired={true}
+        isRequiredError="Last Name is required."
+        label="Last Name*"
+        name="lastName"
+        value=""
+      />
+    </View>
+    <FormInput
+      accessibilityLabel="Email"
+      autoCapitalize="none"
+      autoCorrect={false}
+      blurOnSubmit={false}
+      isRequired={true}
+      isRequiredError="Email Address is required."
+      keyboardType="email-address"
+      label="Email Address*"
+      name="email"
+      value=""
+    />
+    <FormInput
+      accessibilityLabel="Password"
+      autoCapitalize="none"
+      autoCorrect={false}
+      isRequired={true}
+      isRequiredError="Password is required."
+      label="Password*"
+      name="password"
+      onSubmitEditing={[Function]}
+      returnKeyType="done"
+      secureTextEntry={true}
+      value={undefined}
+    />
+    <Button
+      accessibilityLabel="Create Account Button"
+      color="primary"
+      isLoading={false}
+      loadingText="Creating Account..."
+      onPress={[Function]}
+      text="Create Account"
+      trackAction="build:app:loginmodal:createaccount"
+    />
+  </Form>
+</View>
+`;
+
+exports[`SignUpForm component should render with pro signup 1`] = `
+<View>
+  <Form
+    onChange={[Function]}
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <FormInput
+        accessibilityLabel="First Name"
+        autoCapitalize="words"
+        autoCorrect={false}
+        blurOnSubmit={false}
+        componentStyle={
+          Array [
+            Object {
+              "flex": 1,
+            },
+            Object {
+              "marginRight": 8,
+            },
+          ]
+        }
+        isRequired={true}
+        isRequiredError="First Name is required."
+        label="First Name*"
+        name="firstName"
+        value=""
+      />
+      <FormInput
+        accessibilityLabel="Last Name"
+        autoCapitalize="words"
+        autoCorrect={false}
+        blurOnSubmit={false}
+        componentStyle={
+          Object {
+            "flex": 1,
+          }
+        }
+        isRequired={true}
+        isRequiredError="Last Name is required."
+        label="Last Name*"
+        name="lastName"
+        value=""
+      />
+    </View>
+    <FormInput
+      accessibilityLabel="Email"
+      autoCapitalize="none"
+      autoCorrect={false}
+      blurOnSubmit={false}
+      isRequired={true}
+      isRequiredError="Email Address is required."
+      keyboardType="email-address"
+      label="Email Address*"
+      name="email"
+      value=""
+    />
+    <FormInput
+      accessibilityLabel="Password"
+      autoCapitalize="none"
+      autoCorrect={false}
+      isRequired={true}
+      isRequiredError="Password is required."
+      label="Password*"
+      name="password"
+      onSubmitEditing={[Function]}
+      returnKeyType="done"
+      secureTextEntry={true}
+      value={undefined}
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "flexDirection": "row",
+          },
+          Object {
+            "paddingBottom": 16,
+            "paddingTop": 8,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1,
+          }
+        }
+      >
+        <Text
+          weight="bold"
+        >
+          Enroll as a Trade Professional
+        </Text>
+        <Text
+          size="small"
+        >
+          Verified PROs receive exclusive benefits.
+        </Text>
+      </View>
+      <Switch
+        onValueChange={[Function]}
+        value={false}
+      />
+    </View>
+    <Button
+      accessibilityLabel="Create Account Button"
+      color="primary"
+      isLoading={false}
+      loadingText="Creating Account..."
+      onPress={[Function]}
+      text="Create Account"
+      trackAction="build:app:loginmodal:createaccount"
+    />
+  </Form>
+</View>
+`;
