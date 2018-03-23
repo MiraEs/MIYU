@@ -29,6 +29,5 @@ internal final class DataStore {
 
     var posts: [Post] = []
     var userPosts: [Post] = []
-    
 }
 

@@ -52,17 +52,6 @@ internal final class Post: Object, Codable {
         return "key"
     }
     
-    // FILE MANAGER
-    
-    func savePost() {
-        DataStoreManager.save(self, with: key!)
-        print("SAVING POST >>>>> \(self) with key: \(String(describing: key))")
-    }
-    
-    func deletePost() {
-        DataStoreManager.delete(key!)
-    }
-    
     // REALM
     func writeToRealm() {
         try! uiRealm.write {
