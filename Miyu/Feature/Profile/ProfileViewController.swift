@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import RealmSwift
 
-class ProfileViewController: BaseViewController {
+class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     
     var menuDelegate: MenuScrollDelegate!
     
@@ -46,6 +46,20 @@ class ProfileViewController: BaseViewController {
         print("PROFILE VIEW WILL APPEAR")
         print("realm object count >>>>>>>>>> \(DataStore.sharedInstance.userPosts.count)")
     }
+    
+    func tappedThat(_ viewInt: Int) {
+        switch viewInt {
+        case 0:
+            print("scroll to the left kdsmfkndsf")
+            contentCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .right)
+        case 1:
+            print("scroll to the right skdjk")
+            contentCollectionView.selectItem(at: IndexPath(item: 1, section: 0), animated: true, scrollPosition: .left)
+        
+        default:
+            break
+        }
+    }
    
     private func setup() {
         viewModel?.setup(contentCollectionView)
@@ -80,11 +94,11 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.contentCollectionViewCell, for: indexPath) as! ContentCollectionViewCell
-            profileMenuBar.customDelegate = cell.view
+            profileMenuBar.customDelegate = self
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.contentTableViewCell, for: indexPath) as! ContentTableViewCell
-            profileMenuBar.customDelegate = cell.view
+            profileMenuBar.customDelegate = self
             return cell
         }
     }

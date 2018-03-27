@@ -10,7 +10,7 @@
 import UIKit
 import RealmSwift
 
-class CustomTabView: UIView, CustomTabViewDelegate {
+class CustomTabView: UIView {
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -52,18 +52,18 @@ class CustomTabView: UIView, CustomTabViewDelegate {
     }
     
     // MARK: FUNCTIONALITY
-    func tappedThat(_ viewInt: Int) {
-        switch viewInt {
-        case 0:
-            print("scroll to the left ")
-            collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredVertically, animated: true)
-        case 1:
-            print("scroll to the right ")
-            collectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .centeredVertically, animated: true)
-        default:
-            break
-        }
-    }
+//    func tappedThat(_ viewInt: Int) {
+//        switch viewInt {
+//        case 0:
+//            print("scroll to the left ")
+//            collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredVertically, animated: true)
+//        case 1:
+//            print("scroll to the right ")
+//            collectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .centeredVertically, animated: true)
+//        default:
+//            break
+//        }
+//    }
 }
 
 extension CustomTabView: UITableViewDelegate, UITableViewDataSource {
