@@ -1,5 +1,5 @@
 //
-//  ContentCollectionViewCell.swift
+//  ContentTableViewCell.swift
 //  Miyu
 //
 //  Created by Mira Estil on 3/23/18.
@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ContentCollectionViewCell: BaseCell {
+/// Cell class for the container collection view cell where the user post data table view is instantiated
+class ContentTableViewCell: BaseCell {
+    
     lazy var view: CustomTabView = {
         let view = CustomTabView()
         return view
@@ -20,6 +22,6 @@ class ContentCollectionViewCell: BaseCell {
         addSubview(view)
         addConstraints(format: "H:|[v0]|", views: view)
         addConstraints(format: "V:|[v0]|", views: view)
-        view.setupCollectionView()
+        view.setupTableView()
     }
 }

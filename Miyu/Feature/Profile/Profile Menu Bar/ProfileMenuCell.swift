@@ -1,5 +1,5 @@
 //
-//  MenuCell.swift
+//  ProfileMenuCell.swift
 //  Miyu
 //
 //  Created by Mira Estil on 3/15/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuCell: BaseCell {
+class ProfileMenuCell: BaseCell {
     
     let imageView: UIImageView = {
         let iv = UIImageView()

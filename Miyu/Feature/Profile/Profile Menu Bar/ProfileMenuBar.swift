@@ -1,5 +1,5 @@
 //
-//  MenuBar.swift
+//  ProfileMenuBar.swift
 //  Miyu
 //
 //  Created by Mira Estil on 3/10/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuBar: UIView {
+class ProfileMenuBar: UIView, MenuScrollDelegate {
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -29,7 +29,7 @@ class MenuBar: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        collectionView.register(MenuCell.self, forCellWithReuseIdentifier: Constants.menuBarCollectionCell)
+        collectionView.register(ProfileMenuCell.self, forCellWithReuseIdentifier: Constants.menuBarCollectionCell)
 
         addSubview(collectionView)
         addConstraints(format: "H:|[v0]|", views: collectionView)
@@ -42,16 +42,23 @@ class MenuBar: UIView {
         let selectedPath = IndexPath(item: 0, section: 0)
         collectionView.selectItem(at: selectedPath, animated: false, scrollPosition: .centeredHorizontally)
     }
+    
+    func scrollToCell(_ indexPath: IndexPath) {
+        print("delegate function called to scroll")
+        collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredVertically)
+    }
+    
+    
 }
 
-extension MenuBar: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+extension ProfileMenuBar: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.menuBarCollectionCell, for: indexPath) as? MenuCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.menuBarCollectionCell, for: indexPath) as? ProfileMenuCell else { return UICollectionViewCell() }
         
         cell.imageView.image?.withRenderingMode(.alwaysTemplate)
         cell.tintColor = UIColor.gray

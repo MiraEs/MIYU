@@ -8,10 +8,12 @@
 
 import UIKit
 
+/// Cell class for the collection view populating user data for Collection view cell
 class CustomTabCollectionViewCell: BaseCell {
     let imageView: UIImageView = {
         let iv = UIImageView()
-        iv.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleBottomMargin, .flexibleRightMargin, .flexibleLeftMargin, .flexibleTopMargin]
+        iv.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleBottomMargin,
+                               .flexibleRightMargin, .flexibleLeftMargin, .flexibleTopMargin]
         iv.contentMode = .scaleAspectFit
         iv.clipsToBounds = true
         return iv
@@ -23,6 +25,6 @@ class CustomTabCollectionViewCell: BaseCell {
         addSubview(imageView)
         addConstraints(format: "H:|[v0]|", views: imageView)
         addConstraints(format: "V:|[v0]|", views: imageView)
-        self.backgroundColor = UIColor.clear
+        self.backgroundColor = UIColor.red
     }
 }

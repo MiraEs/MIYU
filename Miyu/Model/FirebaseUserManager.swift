@@ -93,6 +93,7 @@ extension FirebaseUserManager {
         let childUpdates: [String: Any] = ["/posts/\(key)" : post,
                                            "/user-posts/\(uid)/\(key)/" : post]
         
+        
         ref.updateChildValues(childUpdates)
     }
     

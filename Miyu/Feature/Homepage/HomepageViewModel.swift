@@ -43,14 +43,13 @@ internal final class HomepageViewModel: InstantiatedViewControllers {
                     self.fbManager?.getUserData(post.uid!, { (user) in
                         post.user = user
                         post.key = snapshot.key
-                        completion(post)
                         post.writeToRealm()
+                        completion(post)
                     })
                 }
             } catch {
                 print(error)
             }
-
         })
     }
 }

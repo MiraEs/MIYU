@@ -30,15 +30,9 @@ class CustomTabView: UIView, CustomTabViewDelegate {
         return table
     }()
     
-
-    
     private weak var store = DataStore.sharedInstance
     
-    func reloadData() {
-        tableView.reloadData()
-        collectionView.reloadData()
-    }
-    
+
     // MARK: SETUP
     func setupTableView() {
         addSubview(tableView)
@@ -61,11 +55,11 @@ class CustomTabView: UIView, CustomTabViewDelegate {
     func tappedThat(_ viewInt: Int) {
         switch viewInt {
         case 0:
-            collectionView.isHidden = false
-            tableView.isHidden = true
+            print("scroll to the left ")
+            collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredVertically, animated: true)
         case 1:
-            collectionView.isHidden = true
-            tableView.isHidden = false
+            print("scroll to the right ")
+            collectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .centeredVertically, animated: true)
         default:
             break
         }
@@ -75,6 +69,7 @@ class CustomTabView: UIView, CustomTabViewDelegate {
 extension CustomTabView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("RELOADING TABLE VIEW CELLS FOR CONTENT")
         if store?.userPosts == nil {
             return 0
         } else {
@@ -103,6 +98,7 @@ extension CustomTabView: UITableViewDelegate, UITableViewDataSource {
 
 extension CustomTabView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("RELOADING COLLECTION VIEW CELLS FOR CONTENT")
         if store?.userPosts == nil {
             return 0
         } else {
