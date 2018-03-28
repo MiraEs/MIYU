@@ -11,3 +11,7 @@ import Foundation
 protocol CustomTabViewDelegate: class {
     func tappedThat(_ viewInt: Int)
 }
+
+protocol MenuScrollDelegate {
+    func scrollToCell(_ indexPath: IndexPath)
+}

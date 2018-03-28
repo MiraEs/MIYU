@@ -124,9 +124,6 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
 }
 
-protocol MenuScrollDelegate {
-    func scrollToCell(_ indexPath: IndexPath)
-}
 
 
 
