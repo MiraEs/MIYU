@@ -29,10 +29,12 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
             contentCollectionView.dataSource = self
         }
     }
+    @IBOutlet weak var propfileNavigationBar: UINavigationBar!
     
     var lastContentOffset: CGFloat = 0
     
     var uid: String?
+    var isDiffOrigin: Bool? = false
     
     private var viewModel: ProfileUserDataModel? {
         return ProfileUserDataModel(self)
@@ -40,7 +42,9 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setup()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +52,20 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
         print("PROFILE VIEW WILL APPEAR")
         print("realm object count >>>>>>>>>> \(DataStore.sharedInstance.userPosts.count)")
         loadUserData()
+        
+        if isDiffOrigin! {
+            propfileNavigationBar.isHidden = true
+            self.navigationController?.title = "YOU"
+            let refreshButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(buttonMethod))
+            navigationItem.leftBarButtonItem = refreshButton
+        } else {
+            propfileNavigationBar.isHidden = false
+        }
+    }
+    
+    @objc func buttonMethod() {
+        print("but")
+        self.navigationController?.popViewController(animated: true)
     }
     
     func tappedThat(_ viewInt: Int) {
@@ -77,10 +95,6 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
                 self?.setUserData(user)
             })
         }
-//                viewModel?.loadUserData({ [weak self] (user) in
-//                    self?.setUserData(user)
-//                    })
-        
     }
     
     private func setUserData(_ user: AppUser) {

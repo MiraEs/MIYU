@@ -124,12 +124,11 @@ class HomepageTableViewCell: UITableViewCell {
     @objc func showUserProfile(gesture: UITapGestureRecognizer) {
         print("clicked user for  \(String(describing: post?.user?.firstName))")
         //viewModel?.presentDestinationVC(from: presentingVc, to: .ProfileViewController)
-        let this = ProfileViewController.instantiate(fromAppStoryboard: .ProfileViewController)
-        this.uid = self.uid
-        presentingVc?.present(this, animated: true, completion: {
-            print("uid for this profile = \(String(describing: this.uid))") 
-        })
+        let dvc = ProfileViewController.instantiate(fromAppStoryboard: .ProfileViewController)
+        dvc.uid = self.uid
+        dvc.isDiffOrigin = true
         
+        presentingVc?.navigationController?.pushViewController(dvc, animated: true)
     }
 }
 

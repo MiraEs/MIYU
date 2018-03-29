@@ -33,13 +33,11 @@ class ProfileUserDataModel {
     }
     
     func loadUserData(_ uid: String?, _ handler: @escaping (_ user: AppUser)->Void) {
-        guard let validUid = uid else { return }
-        //if let validUid = fbManager?.currentUser?.uid {
-            fbManager?.getUserData(validUid, { (user) in
-                handler(user)
-            })
-        //}
         
+        guard let validUid = uid else { return }
+        fbManager?.getUserData(validUid, { (user) in
+            handler(user)
+        })
         
     }
 }

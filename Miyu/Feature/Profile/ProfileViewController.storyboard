@@ -108,6 +108,7 @@
                         <outlet property="contentCollectionView" destination="hKc-OQ-HNz" id="6sh-3o-cy4"/>
                         <outlet property="profileImage" destination="gYY-IN-Pyz" id="mYO-s2-xOd"/>
                         <outlet property="profileMenuBar" destination="0Du-eo-mVx" id="R5j-RN-QSC"/>
+                        <outlet property="propfileNavigationBar" destination="88E-Nh-ZaN" id="LB1-hy-ASH"/>
                         <outlet property="userAttribute" destination="ftQ-qX-Yab" id="3gY-G3-h3Z"/>
                         <outlet property="userName" destination="Ysu-1C-l4w" id="SU2-HR-fMA"/>
                         <outlet property="userRating" destination="FxI-Gj-5WZ" id="kbf-KZ-u5y"/>
