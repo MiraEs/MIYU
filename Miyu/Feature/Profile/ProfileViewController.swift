@@ -32,6 +32,8 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     
     var lastContentOffset: CGFloat = 0
     
+    var uid: String?
+    
     private var viewModel: ProfileUserDataModel? {
         return ProfileUserDataModel(self)
     }
@@ -45,6 +47,7 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
         super.viewWillAppear(false)
         print("PROFILE VIEW WILL APPEAR")
         print("realm object count >>>>>>>>>> \(DataStore.sharedInstance.userPosts.count)")
+        loadUserData()
     }
     
     func tappedThat(_ viewInt: Int) {
@@ -68,9 +71,16 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     }
     
     private func loadUserData() {
-        viewModel?.loadUserData({ [weak self] (user) in
-            self?.setUserData(user)
-        })
+        if let uid = uid {
+            print("uid is still good here >> \(uid)")
+            viewModel?.loadUserData(uid, { [weak self] (user) in
+                self?.setUserData(user)
+            })
+        }
+//                viewModel?.loadUserData({ [weak self] (user) in
+//                    self?.setUserData(user)
+//                    })
+        
     }
     
     private func setUserData(_ user: AppUser) {
@@ -110,11 +120,9 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if (self.lastContentOffset < scrollView.contentOffset.x) {
-            print("dragged left <<<<<<<<<")
             menuDelegate.scrollToCell(IndexPath(item: 1, section: 0))
             
         } else if (self.lastContentOffset > scrollView.contentOffset.x) {
-            print("dragged right >>>>>>>>>")
             menuDelegate.scrollToCell(IndexPath(item: 0, section: 0))
         }
     }

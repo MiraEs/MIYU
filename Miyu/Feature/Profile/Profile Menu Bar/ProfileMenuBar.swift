@@ -44,7 +44,7 @@ class ProfileMenuBar: UIView, MenuScrollDelegate {
     }
     
     func scrollToCell(_ indexPath: IndexPath) {
-        print("delegate function called to scroll")
+        //print("delegate function called to scroll")
         collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .bottom)
     }
     

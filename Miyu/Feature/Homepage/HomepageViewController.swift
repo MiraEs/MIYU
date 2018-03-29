@@ -101,6 +101,8 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
             let data = currentCell.data else { return UITableViewCell() }
         
         cell.post = currentCell
+        cell.viewModel = self.viewModel
+        cell.presentingVc = self
         cell.setupCell(uid)
         cell.setupTap(indexPath.row)
         fetchPhoto(data, photoUrl, cell)

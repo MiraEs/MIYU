@@ -9,7 +9,7 @@
 import UIKit
 
 enum PresentViewController: String {
-    case HomepageViewController, RegisterViewController, UploadViewController
+    case HomepageViewController, RegisterViewController, UploadViewController, ProfileViewController
 }
 
 /// AppStoryboard enum provides all VCs and instantiates each by storyboard ID.
@@ -18,7 +18,6 @@ enum AppStoryboard: String {
     case HomepageViewController, RegisterViewController, ProfileViewController, UploadViewController, LoginViewController
     
     var instance: UIStoryboard {
-        
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)
     }
     
@@ -31,7 +30,6 @@ enum AppStoryboard: String {
         let storyboardID = (viewControllerClass as UIViewController.Type).storyboardID
         
         guard let scene = instance.instantiateViewController(withIdentifier: storyboardID) as? T else {
-            
             fatalError("ViewController with identifier \(storyboardID), not found in \(self.rawValue) Storyboard.\nFile : \(file) \nLine Number : \(line) \nFunction : \(function)")
         }
         
@@ -98,6 +96,9 @@ extension InstantiatedViewControllers {
         case .UploadViewController:
             guard let uploadVC = self.uploadVC else { return }
             presentingVC?.present(uploadVC, animated: true, completion: nil)
+        case .ProfileViewController:
+            guard let profileVC = self.profileVC else { return }
+            presentingVC?.present(profileVC, animated: true, completion: nil)
         }
     }
 }

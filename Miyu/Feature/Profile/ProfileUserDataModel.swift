@@ -32,11 +32,14 @@ class ProfileUserDataModel {
         image.setRounded()
     }
     
-    func loadUserData(_ handler: @escaping (_ user: AppUser)->Void) {
-        if let uid = fbManager?.currentUser?.uid {
-            fbManager?.getUserData(uid, { (user) in
+    func loadUserData(_ uid: String?, _ handler: @escaping (_ user: AppUser)->Void) {
+        guard let validUid = uid else { return }
+        //if let validUid = fbManager?.currentUser?.uid {
+            fbManager?.getUserData(validUid, { (user) in
                 handler(user)
             })
-        }
+        //}
+        
+        
     }
 }
