@@ -12,7 +12,7 @@ class ProfileUserDataModel {
     
     private weak var fbManager = FirebaseUserManager.manager
     
-    var store = DataStore.sharedInstance
+    private weak var store = DataStore.sharedInstance
     
     private weak var storeManager = DataStoreManager()
     
@@ -39,5 +39,12 @@ class ProfileUserDataModel {
             handler(user)
         })
         
+    }
+    
+    func loadUserPosts(_ uid: String?, handler: ()->Void) {
+        if let uid = uid {
+            self.store?.userPosts = uiRealm.objects(Post.self).filter("uid == %@", uid)
+        }
+        handler()
     }
 }

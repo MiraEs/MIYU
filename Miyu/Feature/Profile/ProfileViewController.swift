@@ -58,21 +58,12 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     
     func dismissButtonState() {
         if isDiffOrigin! {
-            loadUserPosts()
             dismissButton.isEnabled = true
         } else {
             dismissButton.isEnabled = false
             dismissButton.tintColor = UIColor.clear
         }
     }
-    
-    func loadUserPosts() {
-        if let uid = uid {
-            self.viewModel?.store.userPosts = uiRealm.objects(Post.self).filter("uid == %@", uid)
-        }
-        self.contentCollectionView.reloadData()
-    }
-
     
     func tappedThat(_ viewInt: Int) {
         switch viewInt {
@@ -100,9 +91,15 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
             viewModel?.loadUserData(uid, { [weak self] (user) in
                 self?.setUserData(user)
             })
+            viewModel?.loadUserPosts(uid, handler: {
+                self.contentCollectionView.reloadData()
+            })
         } else {
             viewModel?.loadUserData(fbManager?.currentUser?.uid, { [weak self] (user) in
                 self?.setUserData(user)
+            })
+            viewModel?.loadUserPosts(fbManager?.currentUser?.uid, handler: {
+                self.contentCollectionView.reloadData()
             })
         }
     }
