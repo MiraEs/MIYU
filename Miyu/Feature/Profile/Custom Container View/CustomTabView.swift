@@ -50,20 +50,6 @@ class CustomTabView: UIView {
         addConstraints(format: "V:|[v0]|", views: collectionView)
         collectionView.register(CustomTabCollectionViewCell.self, forCellWithReuseIdentifier: Constants.customCollectionCell)
     }
-    
-    // MARK: FUNCTIONALITY
-//    func tappedThat(_ viewInt: Int) {
-//        switch viewInt {
-//        case 0:
-//            print("scroll to the left ")
-//            collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredVertically, animated: true)
-//        case 1:
-//            print("scroll to the right ")
-//            collectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .centeredVertically, animated: true)
-//        default:
-//            break
-//        }
-//    }
 }
 
 extension CustomTabView: UITableViewDelegate, UITableViewDataSource {

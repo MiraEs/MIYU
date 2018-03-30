@@ -27,7 +27,6 @@ internal final class DataStore {
         return url!
     }
 
-    var posts: [Post] = []
     var userPosts: Results<Post>!
 }
 

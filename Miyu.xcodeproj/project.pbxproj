@@ -217,8 +217,8 @@
 		498B5CF62065C64600FBD4AE /* Container Content Cells */ = {
 			isa = PBXGroup;
 			children = (
-				498B5CF12065C57600FBD4AE /* ContentTableViewCell.swift */,
 				498B5CF32065C59900FBD4AE /* ContentCollectionViewCell.swift */,
+				498B5CF12065C57600FBD4AE /* ContentTableViewCell.swift */,
 			);
 			path = "Container Content Cells";
 			sourceTree = "<group>";
@@ -226,7 +226,6 @@
 		498EC82B205AFFC000EA6DAA /* Profile Menu Bar */ = {
 			isa = PBXGroup;
 			children = (
-				498B5CF52065C5A700FBD4AE /* Custom Container View */,
 				498EC829205AFFA300EA6DAA /* ProfileMenuCell.swift */,
 				493847762054B2A800FFA15A /* ProfileMenuBar.swift */,
 			);
@@ -394,6 +393,7 @@
 				4933BEC82023FA35004307E4 /* ProfileViewController.storyboard */,
 				49DC302920227D1600E7F05F /* Profile User Cell */,
 				498EC82B205AFFC000EA6DAA /* Profile Menu Bar */,
+				498B5CF52065C5A700FBD4AE /* Custom Container View */,
 			);
 			path = Profile;
 			sourceTree = "<group>";

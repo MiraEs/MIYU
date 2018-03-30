@@ -60,14 +60,12 @@ internal final class HomepageViewController: BaseViewController {
         let loadingIndicator = self.displaySpinner(onView: self.view)
         print("ADDED POST AND IS NOW UPDATED >>>>>>>>>>>>>  ")
         self.viewModel?.getPosts({ [weak self] (post) in
-            self?.store?.posts.append(post)
             DispatchQueue.main.async {
                 self?.removeSpinner(spinner: loadingIndicator)
                 self?.reloadData()
             }
         })
     }
-
     
     private func fetchPhoto(_ contentUrlString: String?, _ profileUrlString: String?, _ cell: HomepageTableViewCell) {
         if let contentUrlString = contentUrlString,

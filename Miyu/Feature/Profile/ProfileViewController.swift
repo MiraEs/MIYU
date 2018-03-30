@@ -16,6 +16,7 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     var lastContentOffset: CGFloat = 0
     var uid: String?
     var isDiffOrigin: Bool? = false
+    private weak var fbManager = FirebaseUserManager.manager
     private var viewModel: ProfileUserDataModel? {
         return ProfileUserDataModel(self)
     }
@@ -52,14 +53,24 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
         
         print("realm object count >>>>>>>>>> \(DataStore.sharedInstance.userPosts.count)")
         loadUserData()
-        
+        dismissButtonState()
+    }
+    
+    func dismissButtonState() {
         if isDiffOrigin! {
+            loadUserPosts()
             dismissButton.isEnabled = true
         } else {
             dismissButton.isEnabled = false
             dismissButton.tintColor = UIColor.clear
-            
         }
+    }
+    
+    func loadUserPosts() {
+        if let uid = uid {
+            self.viewModel?.store.userPosts = uiRealm.objects(Post.self).filter("uid == %@", uid)
+        }
+        self.contentCollectionView.reloadData()
     }
 
     
@@ -87,6 +98,10 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
         if let uid = uid {
             print("uid is still good here >> \(uid)")
             viewModel?.loadUserData(uid, { [weak self] (user) in
+                self?.setUserData(user)
+            })
+        } else {
+            viewModel?.loadUserData(fbManager?.currentUser?.uid, { [weak self] (user) in
                 self?.setUserData(user)
             })
         }
@@ -121,7 +136,6 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
             return cell
         }
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
