@@ -19,6 +19,7 @@ enum FbChildPaths {
     static let posts = "posts"
     static let userPosts = "user-posts"
     static let userRatings = "user-ratings"
+    static let userFriends = "user-friends"
 }
 
 enum PostKeys {

@@ -65,6 +65,17 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
         }
     }
     
+    // MIRTEST
+    @IBAction func addFriendButtonTapped(_ sender: Any) {
+        print("adding friend")
+        fbManager?.addFriend(uid)
+    }
+    
+    
+    @IBAction func getFriends(_ sender: Any) {
+        fbManager?.getFriends()
+    }
+    
     func tappedThat(_ viewInt: Int) {
         switch viewInt {
         case 0:

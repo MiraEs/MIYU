@@ -29,10 +29,13 @@ internal final class FirebaseUserManager {
     }
     
     private weak var userPostRef: DatabaseReference? {
-        get {
-            return ref.child(FbChildPaths.userPosts)
-        }
+        return ref.child(FbChildPaths.userPosts)
     }
+    
+    private weak var userFriendsRef: DatabaseReference? {
+        return ref.child(FbChildPaths.userFriends)
+    }
+    
     private init() {}
     
     // MARK: GET USER DATA
@@ -74,6 +77,40 @@ internal final class FirebaseUserManager {
                 }
             } catch {
                 print(error)
+            }
+        })
+    }
+}
+
+extension FirebaseUserManager {
+    // MARK: ADD NEW FRIENDS
+    func addFriend(_ friendUid: String?) {
+        guard let uid = currentUser?.uid,
+                let friendUid = friendUid else {
+                return
+        }
+        
+        self.getUserData(friendUid) { (user) in
+            let userDict = user.dictionary
+            let childUpdates: [String:Any] = ["/user-friends/\(uid)/\(friendUid)/": userDict!]
+            self.ref.updateChildValues(childUpdates)
+        }
+    }
+    
+    func getFriends() {
+        guard let uid = currentUser?.uid else { return }
+        let userRef = userFriendsRef?.child(uid)
+        
+        userRef?.observeSingleEvent(of: .value, with: { (snapshot) in
+            let enumerator = snapshot.children
+            while let object = enumerator.nextObject() as? DataSnapshot {
+                do {
+                    let data = try JSONSerialization.data(withJSONObject: object.value!, options: [])
+                    let user = try JSONDecoder().decode(AppUser.self, from: data)
+                    print("USERS GET FRIENDS::: >>> \(user)")
+                } catch {
+                    print(error)
+                }
             }
         })
     }

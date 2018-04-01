@@ -50,6 +50,7 @@ extension AppUser {
         try container.encode(lastName, forKey: .lastName)
         try container.encode(email, forKey: .email)
         try container.encode(userRating.value, forKey: .userRating)
+        try container.encode(photoUrl, forKey: .photoUrl)
     }
 }
 
