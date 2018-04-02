@@ -72,11 +72,12 @@ class InstantiatedViewControllers {
     var tabBar: UITabBarController? {
         let tabBar = UITabBarController()
         guard let navController = navController,
-            let profileVC = profileVC else {
+            let profileVC = profileVC,
+            let uploadVC = uploadVC else {
                 return tabBar
         }
         
-        tabBar.setViewControllers([navController, profileVC], animated: true)
+        tabBar.setViewControllers([navController, uploadVC, profileVC], animated: true)
         return tabBar
     }
     
