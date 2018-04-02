@@ -35,12 +35,6 @@ internal final class HomepageViewController: BaseViewController {
         super.viewWillAppear(true)
     }
     
-    // MARK: SEGUE TO UPLOAD VC
-    @IBAction func uploadContent(_ sender: Any) {
-        print("upload content")
-        self.viewModel?.presentVC(vc: .UploadViewController)
-    }
-    
     private func setup() {
         viewModel?.setup(tableView)
         fetchPosts()

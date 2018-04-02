@@ -12,17 +12,10 @@ class ProfileMenuCell: BaseCell {
     
     let imageView: UIImageView = {
         let iv = UIImageView()
-        iv.image = UIImage(named: "camera")?.withRenderingMode(.alwaysTemplate)
         iv.tintColor = UIColor.gray
         iv.contentMode = .scaleAspectFit
         return iv
     }()
-    
-    override var isHighlighted: Bool {
-        didSet {
-            imageView.tintColor = isHighlighted ? UIColor.white : UIColor.gray
-        }
-    }
     
     override var isSelected: Bool {
         didSet {

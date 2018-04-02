@@ -51,10 +51,6 @@ class UploadViewController: BaseViewController {
         name.largeFont()
     }
     
-    @IBAction func dismiss(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
     @IBAction func editCaptionTapped(_ sender: Any) {
         print("edit caption tapped")
     }

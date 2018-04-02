@@ -14,12 +14,13 @@ class ProfileMenuBar: UIView, MenuScrollDelegate {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.alwaysBounceHorizontal = true
         cv.backgroundColor = UIColor.clear
         cv.dataSource = self
         cv.delegate = self
         return cv
     }()
+    
+    let images = ["grid", "table", "friends"]
     
     weak var customDelegate: CustomTabViewDelegate?
     
@@ -43,8 +44,7 @@ class ProfileMenuBar: UIView, MenuScrollDelegate {
     }
     
     func scrollToCell(_ indexPath: IndexPath) {
-        //print("SCROLL TO CELL >>>> \(indexPath)")
-        collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .right)
+        collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
     }
 }
 
@@ -58,6 +58,8 @@ extension ProfileMenuBar: UICollectionViewDataSource, UICollectionViewDelegateFl
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.menuBarCollectionCell, for: indexPath) as? ProfileMenuCell else { return UICollectionViewCell() }
         
         cell.imageView.image?.withRenderingMode(.alwaysTemplate)
+        let imageIcon = images[indexPath.row]
+        cell.imageView.image = UIImage(named: imageIcon)?.withRenderingMode(.alwaysTemplate)
         cell.tintColor = UIColor.gray
         return cell
     }
@@ -69,7 +71,8 @@ extension ProfileMenuBar: UICollectionViewDataSource, UICollectionViewDelegateFl
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (self.frame.width)/3, height: frame.height)
+        return CGSize(width: (self.frame.width)/3, height: frame.height - 5)
+        
     }
 
 }

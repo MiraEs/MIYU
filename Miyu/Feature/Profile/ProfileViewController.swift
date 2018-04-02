@@ -35,6 +35,8 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
         didSet {
             contentCollectionView.delegate = self
             contentCollectionView.dataSource = self
+            contentCollectionView.alwaysBounceHorizontal = false
+            contentCollectionView.showsHorizontalScrollIndicator = false
         }
     }
     @IBOutlet weak var profileNavigationBar: UINavigationBar!
@@ -47,6 +49,7 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        
         
         fbManager?.getFriends({ (user) in
             self.store?.friends.append(user)
@@ -77,25 +80,17 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
         fbManager?.addFriend(uid)
     }
     
-    // MIRTEST
-    @IBAction func getFriends(_ sender: Any) {
-        //fbManager?.getFriends()
-//        fbManager?.getFriends({ (user) in
-//            self.store?.friends.append(user)
-//        })
-        
-    }
     
     func tappedThat(_ viewInt: Int) {
         switch viewInt {
         case 0:
             print("scroll to the left kdsmfkndsf")
-            contentCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .right)
+            contentCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .right, animated: true)
         case 1:
             print("scroll to the right skdjk")
-            contentCollectionView.selectItem(at: IndexPath(item: 1, section: 0), animated: true, scrollPosition: .right)
+            contentCollectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .right, animated: true)
         case 2:
-            contentCollectionView.selectItem(at: IndexPath(item: 2, section: 0), animated: true, scrollPosition: .right)
+            contentCollectionView.scrollToItem(at: IndexPath(item: 2, section: 0), at: .right, animated: true)
         default:
             break
         }
@@ -158,6 +153,10 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
             profileMenuBar.customDelegate = self
             return cell
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

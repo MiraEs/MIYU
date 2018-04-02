@@ -20,6 +20,7 @@ class CustomTabView: UIView {
         cv.dataSource = self
         cv.delegate = self
         cv.backgroundColor = UIColor.clear
+        cv.alwaysBounceHorizontal = false
         return cv
     }()
     
@@ -27,6 +28,9 @@ class CustomTabView: UIView {
         let table = UITableView(frame: .zero, style: .plain)
         table.delegate = self
         table.dataSource = self
+        table.allowsSelection = false
+        table.showsHorizontalScrollIndicator = false
+        table.alwaysBounceHorizontal = false
         return table
     }()
     
@@ -34,6 +38,9 @@ class CustomTabView: UIView {
         let table = UITableView(frame: .zero, style: .plain)
         table.delegate = self
         table.dataSource = self
+        table.allowsSelection = false
+        table.showsHorizontalScrollIndicator = false
+        table.alwaysBounceHorizontal = false
         return table
     }()
     
@@ -111,7 +118,6 @@ extension CustomTabView: UITableViewDelegate, UITableViewDataSource {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: Constants.friendCell, for: indexPath) as! ContentFriendTableViewCell
             guard let friends = store?.friends else { return UITableViewCell() }
-            //cell.friendName.text = friends[indexPath.row].firstName
             cell.friend = friends[indexPath.row]
             if let imageUrl = friends[indexPath.row].photoUrl {
                 cell.profileImage.loadCachedImage(imageUrl)
