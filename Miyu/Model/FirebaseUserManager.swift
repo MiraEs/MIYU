@@ -87,17 +87,28 @@ internal final class FirebaseUserManager {
 extension FirebaseUserManager {
     // MARK: ADD NEW FRIENDS
     func addFriend(_ friendUid: String?) {
+    
         guard let uid = currentUser?.uid,
                 let friendUid = friendUid else {
                 return
         }
+        let userRef = userFriendsRef?.child(uid)
         
-        self.getUserData(friendUid) { (user) in
-            let userDict = user.dictionary
-            let childUpdates: [String:Any] = ["/user-friends/\(uid)/\(friendUid)/": userDict!]
-            self.ref.updateChildValues(childUpdates)
-        }
+        userRef?.observeSingleEvent(of: .value, with: { (snapshot) in
+            if snapshot.hasChild(friendUid) {
+                print("user already exists")
+                return
+            } else {
+                self.getUserData(friendUid) { (user) in
+                    let userDict = user.dictionary
+                    let childUpdates: [String:Any] = ["/user-friends/\(uid)/\(friendUid)/": userDict!]
+                    self.ref.updateChildValues(childUpdates)
+                }
+            }
+        })
     }
+    
+    
     
     func getFriends(_ handler: @escaping (_ user: AppUser)->Void) {
         guard let uid = currentUser?.uid else { return }

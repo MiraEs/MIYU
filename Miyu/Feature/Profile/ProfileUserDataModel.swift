@@ -14,8 +14,6 @@ class ProfileUserDataModel {
     
     private weak var store = DataStore.sharedInstance
     
-    private weak var storeManager = DataStoreManager()
-    
     private var presentingViewController: UIViewController
     
     init(_ presentingViewController: UIViewController) {
@@ -47,5 +45,11 @@ class ProfileUserDataModel {
             self.store?.userPosts = uiRealm.objects(Post.self).filter("uid == %@", uid)
         }
         handler()
+    }
+    
+    func fetchFriends() {
+        fbManager?.getFriends({ (user) in
+            self.store?.friends.append(user)
+        })
     }
 }

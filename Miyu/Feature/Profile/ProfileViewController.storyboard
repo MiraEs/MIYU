@@ -117,6 +117,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="lWf-z5-G5N"/>
                     <connections>
+                        <outlet property="addFriendButton" destination="pcQ-lT-M51" id="QJ4-hh-4I2"/>
                         <outlet property="contentCollectionView" destination="hKc-OQ-HNz" id="6sh-3o-cy4"/>
                         <outlet property="dismissButton" destination="MQQ-AA-gow" id="3Cj-QV-tHK"/>
                         <outlet property="profileImage" destination="gYY-IN-Pyz" id="mYO-s2-xOd"/>

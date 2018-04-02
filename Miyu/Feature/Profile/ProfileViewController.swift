@@ -21,7 +21,7 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     private var viewModel: ProfileUserDataModel? {
         return ProfileUserDataModel(self)
     }
-    
+
     @IBOutlet weak var profileImage: UIImageView! {
         didSet {
             viewModel?.designSetup(profileImage)
@@ -45,30 +45,26 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
         dismiss(animated: true, completion: nil)
         isDiffOrigin = false
     }
+    @IBOutlet weak var addFriendButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        
-        
-        fbManager?.getFriends({ (user) in
-            self.store?.friends.append(user)
-            self.contentCollectionView.reloadData()
-        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
-        
-        print("realm object count >>>>>>>>>> \(DataStore.sharedInstance.userPosts.count)")
+
         loadUserData()
-        dismissButtonState()
+        buttonStates()
     }
     
-    func dismissButtonState() {
+    func buttonStates() {
         if isDiffOrigin! {
             dismissButton.isEnabled = true
         } else {
+            addFriendButton.isEnabled = false
+            addFriendButton.tintColor = UIColor.clear
             dismissButton.isEnabled = false
             dismissButton.tintColor = UIColor.clear
         }
@@ -100,6 +96,7 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
         viewModel?.setup(contentCollectionView)
         loadUserData()
         menuDelegate = profileMenuBar
+        viewModel?.fetchFriends()
     }
     
     private func loadUserData() {
@@ -107,6 +104,12 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
             print("uid is still good here >> \(uid)")
             viewModel?.loadUserData(uid, { [weak self] (user) in
                 self?.setUserData(user)
+                if (self?.store?.friends.contains(where: {$0.email == user.email}))! {
+                    self?.addFriendButton.isEnabled = false
+                    self?.addFriendButton.tintColor = UIColor.clear
+                } else {
+                    self?.addFriendButton.isEnabled = true
+                }
             })
             viewModel?.loadUserPosts(uid, handler: {
                 self.contentCollectionView.reloadData()
@@ -119,6 +122,8 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
                 self.contentCollectionView.reloadData()
             })
         }
+        
+        //viewModel?.fetchFriends()
     }
     
     private func setUserData(_ user: AppUser) {
