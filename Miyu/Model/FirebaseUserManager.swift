@@ -21,6 +21,8 @@ internal final class FirebaseUserManager {
         return Auth.auth().currentUser
     }
     
+    private weak var store = DataStore.sharedInstance
+    
     private weak var ref: DatabaseReference! {
         return Database.database().reference()
     }
@@ -97,7 +99,7 @@ extension FirebaseUserManager {
         }
     }
     
-    func getFriends() {
+    func getFriends(_ handler: @escaping (_ user: AppUser)->Void) {
         guard let uid = currentUser?.uid else { return }
         let userRef = userFriendsRef?.child(uid)
         
@@ -107,6 +109,8 @@ extension FirebaseUserManager {
                 do {
                     let data = try JSONSerialization.data(withJSONObject: object.value!, options: [])
                     let user = try JSONDecoder().decode(AppUser.self, from: data)
+                    //self.store?.friends.append(users)
+                   handler(user)
                     print("USERS GET FRIENDS::: >>> \(user)")
                 } catch {
                     print(error)

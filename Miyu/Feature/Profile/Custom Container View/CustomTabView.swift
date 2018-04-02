@@ -73,15 +73,20 @@ class CustomTabView: UIView {
 extension CustomTabView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("RELOADING TABLE VIEW CELLS FOR CONTENT")
-        if tableView == tableView {
+        if tableView == self.tableView {
             if store?.userPosts == nil {
                 return 0
             } else {
                 return (store?.userPosts.count)!
             }
+        } else if tableView == self.friendTableView {
+            if store?.friends == nil {
+                return 0
+            } else {
+                return (store?.friends.count)!
+            }
         } else {
-            return 5
+            return 0
         }
     }
     
@@ -105,7 +110,12 @@ extension CustomTabView: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: Constants.friendCell, for: indexPath) as! ContentFriendTableViewCell
-            cell.friendName.text = "friend here MY FRIEND"
+            guard let friends = store?.friends else { return UITableViewCell() }
+            //cell.friendName.text = friends[indexPath.row].firstName
+            cell.friend = friends[indexPath.row]
+            if let imageUrl = friends[indexPath.row].photoUrl {
+                cell.profileImage.loadCachedImage(imageUrl)
+            }
             return cell
         }
     }

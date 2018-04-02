@@ -17,6 +17,7 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     var uid: String?
     var isDiffOrigin: Bool? = false
     private weak var fbManager = FirebaseUserManager.manager
+    private weak var store = DataStore.sharedInstance
     private var viewModel: ProfileUserDataModel? {
         return ProfileUserDataModel(self)
     }
@@ -46,6 +47,11 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        
+        fbManager?.getFriends({ (user) in
+            self.store?.friends.append(user)
+            self.contentCollectionView.reloadData()
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,9 +77,13 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
         fbManager?.addFriend(uid)
     }
     
-    
+    // MIRTEST
     @IBAction func getFriends(_ sender: Any) {
-        fbManager?.getFriends()
+        //fbManager?.getFriends()
+//        fbManager?.getFriends({ (user) in
+//            self.store?.friends.append(user)
+//        })
+        
     }
     
     func tappedThat(_ viewInt: Int) {
