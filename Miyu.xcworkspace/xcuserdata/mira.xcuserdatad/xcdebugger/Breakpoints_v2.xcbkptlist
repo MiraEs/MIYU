@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Miyu/Feature/Profile/Custom Container View/Container Content Cells/Content Friend Table Cell/ContentFriendTableViewCell.swift"
-            timestampString = "544396223.7860759"
+            timestampString = "544397418.711702"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "showUserProfile(gesture:)"
             landmarkType = "7">
          </BreakpointContent>

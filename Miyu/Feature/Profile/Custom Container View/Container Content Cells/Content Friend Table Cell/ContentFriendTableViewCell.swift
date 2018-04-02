@@ -23,7 +23,6 @@ class ContentFriendTableViewCell: UITableViewCell {
         didSet {
             if let friend = friend {
                 friendName.text = friend.firstName
-                
             }
         }
     }
@@ -50,7 +49,9 @@ class ContentFriendTableViewCell: UITableViewCell {
         let dvc = ProfileViewController.instantiate(fromAppStoryboard: .ProfileViewController)
         dvc.uid = self.friend?.keyUid
         dvc.isDiffOrigin = true
-        presentingVc?.present(dvc, animated: true, completion: nil)
+        if let pvc = presentingVc {
+            pvc.present(dvc, animated: true, completion: nil)
+        }
     }
     
     @IBAction func friendButtonTapped(_ sender: Any) {
