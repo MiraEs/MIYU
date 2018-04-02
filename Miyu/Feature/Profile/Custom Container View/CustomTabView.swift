@@ -46,7 +46,7 @@ class CustomTabView: UIView {
     
     private weak var store = DataStore.sharedInstance
     
-
+    var presentingVC: UIViewController?
     // MARK: SETUP
     
     func setupTableView() {
@@ -119,6 +119,7 @@ extension CustomTabView: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: Constants.friendCell, for: indexPath) as! ContentFriendTableViewCell
             guard let friends = store?.friends else { return UITableViewCell() }
             cell.friend = friends[indexPath.row]
+            cell.setupTap(indexPath.row)
             if let imageUrl = friends[indexPath.row].photoUrl {
                 cell.profileImage.loadCachedImage(imageUrl)
             }

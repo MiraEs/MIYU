@@ -23,4 +23,8 @@ class ContentFriendCell: BaseCell {
         addConstraints(format: "V:|[v0]|", views: view)
         view.setupFriendTableView()
     }
+    
+    func setupPresentingVc(_ pvc: UIViewController) {
+        view.presentingVC = pvc
+    }    
 }

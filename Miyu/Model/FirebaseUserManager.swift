@@ -120,9 +120,10 @@ extension FirebaseUserManager {
                 do {
                     let data = try JSONSerialization.data(withJSONObject: object.value!, options: [])
                     let user = try JSONDecoder().decode(AppUser.self, from: data)
-                    //self.store?.friends.append(users)
+                    print("USER'S UID >>>> \(object.key)")
+                    user.keyUid = object.key
                    handler(user)
-                    print("USERS GET FRIENDS::: >>> \(user)")
+                    
                 } catch {
                     print(error)
                 }

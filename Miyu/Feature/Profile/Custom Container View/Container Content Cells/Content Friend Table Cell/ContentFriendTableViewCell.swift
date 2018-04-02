@@ -10,7 +10,11 @@ import UIKit
 
 class ContentFriendTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var profileImage: UIImageView! {
+        didSet {
+            profileImage.isUserInteractionEnabled = true
+        }
+    }
     @IBOutlet weak var friendName: UILabel!
     @IBOutlet weak var rating: UILabel!
     @IBOutlet weak var friendButton: UIButton!
@@ -23,6 +27,7 @@ class ContentFriendTableViewCell: UITableViewCell {
             }
         }
     }
+    var presentingVc: UIViewController?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,6 +38,22 @@ class ContentFriendTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    func setupTap(_ tag: Int) {
+        profileImage.tag = tag
+        let tapped = UITapGestureRecognizer(target: self, action: #selector(showUserProfile))
+        tapped.numberOfTapsRequired = 1
+        profileImage.addGestureRecognizer(tapped)
+    }
+    
+    @objc func showUserProfile(gesture: UITapGestureRecognizer) {
+        print("show user profile")
+        let dvc = ProfileViewController.instantiate(fromAppStoryboard: .ProfileViewController)
+        dvc.uid = self.friend?.keyUid
+        dvc.isDiffOrigin = true
+        presentingVc?.present(dvc, animated: true, completion: nil)
+    }
+    
     @IBAction func friendButtonTapped(_ sender: Any) {
+        print("unfriend button tapped")
     }
 }

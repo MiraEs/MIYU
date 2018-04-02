@@ -122,8 +122,6 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
                 self.contentCollectionView.reloadData()
             })
         }
-        
-        //viewModel?.fetchFriends()
     }
     
     private func setUserData(_ user: AppUser) {
@@ -156,6 +154,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.contentFriendCell, for: indexPath) as! ContentFriendCell
             profileMenuBar.customDelegate = self
+            cell.setupPresentingVc(self)
             return cell
         }
     }
