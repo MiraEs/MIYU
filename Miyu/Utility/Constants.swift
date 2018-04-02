@@ -38,6 +38,10 @@ internal final class Constants {
     static let homeXib = "HomepageTableViewCell"
     static let homeCellSegue = "otherProfile"
     
+    // MARK: PROFILE FRIEND TABLE VIEW CELL
+    static let friendCell = "friendCell"
+    static let friendXib = "ContentFriendTableViewCell"
+    
     // MARK: PROFILE TABLE VIEW CELL
     static let profileCell = "profileCell"
     static let profileXib = "ProfileTableViewCell"
@@ -49,6 +53,7 @@ internal final class Constants {
     // MARK: CUSTOM TAB VIEW CELLS
     static let contentTableViewCell = "contentTableViewCell"
     static let contentCollectionViewCell = "contentCollectionViewCell"
+    static let contentFriendCell = "contentFriendCell"
     
     // MARK: POST STRUCT KEYS
     static let postKeys: [String] = ["caption", "data", "rating", "uid", "count", "averageRating"]

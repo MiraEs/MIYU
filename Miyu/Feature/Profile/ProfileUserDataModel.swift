@@ -25,6 +25,7 @@ class ProfileUserDataModel {
     func setup(_ collectionView: UICollectionView) {
         collectionView.register(ContentCollectionViewCell.self, forCellWithReuseIdentifier: Constants.contentCollectionViewCell)
         collectionView.register(ContentTableViewCell.self, forCellWithReuseIdentifier: Constants.contentTableViewCell)
+        collectionView.register(ContentFriendCell.self, forCellWithReuseIdentifier: Constants.contentFriendCell)
         collectionView.alwaysBounceHorizontal = true
     }
     

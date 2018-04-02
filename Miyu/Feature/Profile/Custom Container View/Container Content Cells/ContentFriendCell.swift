@@ -1,15 +1,14 @@
 //
-//  ContentCollectionViewCell.swift
+//  ContentFriendCell.swift
 //  Miyu
 //
-//  Created by Mira Estil on 3/23/18.
+//  Created by Mira Estil on 3/31/18.
 //  Copyright © 2018 ME. All rights reserved.
 //
 
 import UIKit
 
-/// Cell class for the container collection view cell where the user post data collection view is instantiated
-class ContentCollectionViewCell: BaseCell {
+class ContentFriendCell: BaseCell {
     
     lazy var view: CustomTabView = {
         let view = CustomTabView()
@@ -22,7 +21,6 @@ class ContentCollectionViewCell: BaseCell {
         addSubview(view)
         addConstraints(format: "H:|[v0]|", views: view)
         addConstraints(format: "V:|[v0]|", views: view)
-        view.setupCollectionView()
+        view.setupFriendTableView()
     }
-    
 }

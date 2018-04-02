@@ -83,8 +83,9 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
             contentCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .right)
         case 1:
             print("scroll to the right skdjk")
-            contentCollectionView.selectItem(at: IndexPath(item: 1, section: 0), animated: true, scrollPosition: .left)
-        
+            contentCollectionView.selectItem(at: IndexPath(item: 1, section: 0), animated: true, scrollPosition: .right)
+        case 2:
+            contentCollectionView.selectItem(at: IndexPath(item: 2, section: 0), animated: true, scrollPosition: .right)
         default:
             break
         }
@@ -130,7 +131,7 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
 extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -138,8 +139,12 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.contentCollectionViewCell, for: indexPath) as! ContentCollectionViewCell
             profileMenuBar.customDelegate = self
             return cell
-        } else {
+        } else if indexPath.row == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.contentTableViewCell, for: indexPath) as! ContentTableViewCell
+            profileMenuBar.customDelegate = self
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.contentFriendCell, for: indexPath) as! ContentFriendCell
             profileMenuBar.customDelegate = self
             return cell
         }
@@ -150,16 +155,14 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if (self.lastContentOffset < scrollView.contentOffset.x) {
+        let screenWidth = UIScreen.main.bounds.width
+        if scrollView.contentOffset.x == screenWidth {
             menuDelegate.scrollToCell(IndexPath(item: 1, section: 0))
-            
-        } else if (self.lastContentOffset > scrollView.contentOffset.x) {
+        } else if scrollView.contentOffset.x < screenWidth {
             menuDelegate.scrollToCell(IndexPath(item: 0, section: 0))
+        } else if scrollView.contentOffset.x > screenWidth {
+            menuDelegate.scrollToCell(IndexPath(item: 2, section: 0))
         }
-    }
-    
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        self.lastContentOffset = scrollView.contentOffset.x
     }
 }
 

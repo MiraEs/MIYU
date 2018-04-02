@@ -30,10 +30,18 @@ class CustomTabView: UIView {
         return table
     }()
     
+    lazy var friendTableView: UITableView = {
+        let table = UITableView(frame: .zero, style: .plain)
+        table.delegate = self
+        table.dataSource = self
+        return table
+    }()
+    
     private weak var store = DataStore.sharedInstance
     
 
     // MARK: SETUP
+    
     func setupTableView() {
         addSubview(tableView)
         
@@ -41,6 +49,16 @@ class CustomTabView: UIView {
         addConstraints(format: "V:|[v0]|", views: tableView)
         tableView.register(UINib(nibName: Constants.homeXib, bundle: nil),
                            forCellReuseIdentifier: Constants.homeCell)
+    }
+    
+    func setupFriendTableView() {
+        addSubview(friendTableView)
+        
+        addConstraints(format: "H:|[v0]|", views: friendTableView)
+        addConstraints(format: "V:|[v0]|", views: friendTableView)
+    
+        friendTableView.register(UINib(nibName: Constants.friendXib, bundle: nil),
+                                 forCellReuseIdentifier: Constants.friendCell)
     }
     
     func setupCollectionView() {
@@ -56,29 +74,40 @@ extension CustomTabView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("RELOADING TABLE VIEW CELLS FOR CONTENT")
-        if store?.userPosts == nil {
-            return 0
+        if tableView == tableView {
+            if store?.userPosts == nil {
+                return 0
+            } else {
+                return (store?.userPosts.count)!
+            }
         } else {
-            return (store?.userPosts.count)!
+            return 5
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.homeCell, for: indexPath) as! HomepageTableViewCell
         
-        guard let userPosts = store?.userPosts else { return UITableViewCell() }
-        let currentCell = userPosts[(userPosts.count-1) - indexPath.row]
-        let uid = currentCell.uid!
-        
-        // Setup
-        cell.setupCell(uid)
-        cell.post = currentCell
-        
-        if let url = currentCell.data {
-            cell.contentImage.loadCachedImage(url)
+        if tableView == self.tableView {
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.homeCell, for: indexPath) as! HomepageTableViewCell
+            
+            guard let userPosts = store?.userPosts else { return UITableViewCell() }
+            let currentCell = userPosts[(userPosts.count-1) - indexPath.row]
+            let uid = currentCell.uid!
+            
+            // Setup
+            cell.setupCell(uid)
+            cell.post = currentCell
+            
+            if let url = currentCell.data {
+                cell.contentImage.loadCachedImage(url)
+            }
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.friendCell, for: indexPath) as! ContentFriendTableViewCell
+            cell.friendName.text = "friend here MY FRIEND"
+            return cell
         }
-
-        return cell
     }
 }
 
@@ -113,6 +142,7 @@ extension CustomTabView: UICollectionViewDataSource, UICollectionViewDelegateFlo
         return CGSize(width: (self.frame.width)/3, height: (self.frame.height)/3)
     }
 }
+
 
 
 

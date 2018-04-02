@@ -34,27 +34,24 @@ class ProfileMenuBar: UIView, MenuScrollDelegate {
         addSubview(collectionView)
         addConstraints(format: "H:|[v0]|", views: collectionView)
         addConstraints(format: "V:|[v0]|", views: collectionView)
-        
         initialLoad()
     }
     
     func initialLoad() {
         let selectedPath = IndexPath(item: 0, section: 0)
-        collectionView.selectItem(at: selectedPath, animated: false, scrollPosition: .left)
+        collectionView.selectItem(at: selectedPath, animated: false, scrollPosition: .right)
     }
     
     func scrollToCell(_ indexPath: IndexPath) {
-        //print("delegate function called to scroll")
-        collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .bottom)
+        //print("SCROLL TO CELL >>>> \(indexPath)")
+        collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .right)
     }
-    
-    
 }
 
 extension ProfileMenuBar: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -72,7 +69,7 @@ extension ProfileMenuBar: UICollectionViewDataSource, UICollectionViewDelegateFl
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (self.frame.width)/2, height: frame.height)
+        return CGSize(width: (self.frame.width)/3, height: frame.height)
     }
 
 }
