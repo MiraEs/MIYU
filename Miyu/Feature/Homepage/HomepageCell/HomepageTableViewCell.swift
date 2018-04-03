@@ -127,7 +127,9 @@ class HomepageTableViewCell: UITableViewCell {
         let dvc = ProfileViewController.instantiate(fromAppStoryboard: .ProfileViewController)
         dvc.uid = self.uid
         dvc.isDiffOrigin = true
+        dvc.modalPresentationStyle = .overCurrentContext
         presentingVc?.present(dvc, animated: true, completion: nil)
+        
     }
 }
 
