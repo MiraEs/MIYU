@@ -50,6 +50,7 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        self.title = "Cheesey Pie"
     }
     
     override func viewWillAppear(_ animated: Bool) {

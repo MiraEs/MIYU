@@ -71,13 +71,13 @@ class InstantiatedViewControllers {
     
     var tabBar: UITabBarController? {
         let tabBar = UITabBarController()
-        guard let navController = navController,
+        guard let homeVC = homeVC,
             let profileVC = profileVC,
             let uploadVC = uploadVC else {
                 return tabBar
         }
         
-        tabBar.setViewControllers([navController, uploadVC, profileVC], animated: true)
+        tabBar.setViewControllers([homeVC, uploadVC, profileVC].map({UINavigationController(rootViewController: $0)}), animated: true)
         return tabBar
     }
     
@@ -89,8 +89,8 @@ extension InstantiatedViewControllers {
     func presentDestinationVC(from presentingVC: UIViewController?, to vc: PresentViewController) {
         switch vc {
         case .HomepageViewController:
-            guard let homeTabBar = self.tabBar else { return }
-            presentingVC?.present(homeTabBar, animated: true, completion: nil)
+            guard let tabBar = self.tabBar else { return }
+            presentingVC?.present(tabBar, animated: true, completion: nil)
         case .RegisterViewController:
             guard let registerVC = self.registerVC else { return }
             presentingVC?.present(registerVC, animated: true, completion: nil)
