@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ContentFriendCell: BaseCell {
+class ContentFriendCell: BaseCell, ProfileVcDelegate {
+    
+    var presentingVc: UIViewController?
     
     lazy var view: CustomTabView = {
         let view = CustomTabView()
@@ -22,9 +24,7 @@ class ContentFriendCell: BaseCell {
         addConstraints(format: "H:|[v0]|", views: view)
         addConstraints(format: "V:|[v0]|", views: view)
         view.setupFriendTableView()
+        view.profileVcDelegate = self
     }
-    
-    func setupPresentingVc(_ pvc: UIViewController) {
-        view.presentingVC = pvc
-    }    
+
 }

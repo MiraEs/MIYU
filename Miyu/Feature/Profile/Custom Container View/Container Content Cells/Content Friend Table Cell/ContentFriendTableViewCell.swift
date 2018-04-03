@@ -49,9 +49,10 @@ class ContentFriendTableViewCell: UITableViewCell {
         let dvc = ProfileViewController.instantiate(fromAppStoryboard: .ProfileViewController)
         dvc.uid = self.friend?.keyUid
         dvc.isDiffOrigin = true
-        if let pvc = presentingVc {
+        if let pvc = self.presentingVc {
             pvc.present(dvc, animated: true, completion: nil)
         }
+        
     }
     
     @IBAction func friendButtonTapped(_ sender: Any) {

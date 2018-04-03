@@ -44,8 +44,10 @@ class CustomTabView: UIView {
         return table
     }()
     
+    var profileVcDelegate: ProfileVcDelegate?
+    
     private weak var store = DataStore.sharedInstance
-    var presentingVC: UIViewController?
+    //var presentingVC: UIViewController?
     // MARK: SETUP
     
     func setupTableView() {
@@ -119,7 +121,9 @@ extension CustomTabView: UITableViewDelegate, UITableViewDataSource {
             guard let friends = store?.friends else { return UITableViewCell() }
             cell.friend = friends[indexPath.row]
             cell.setupTap(indexPath.row)
-            cell.presentingVc = self.presentingVC
+            
+            cell.presentingVc = profileVcDelegate?.presentingVc
+            
             if let imageUrl = friends[indexPath.row].photoUrl {
                 cell.profileImage.loadCachedImage(imageUrl)
             }
@@ -147,7 +151,6 @@ extension CustomTabView: UICollectionViewDataSource, UICollectionViewDelegateFlo
         if let contentUrl = currentCell.data {
             cell?.imageView.loadCachedImage(contentUrl)
         }
-        
         return cell!
     }
     

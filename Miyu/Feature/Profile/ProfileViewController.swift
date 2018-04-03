@@ -10,6 +10,10 @@ import UIKit
 import Firebase
 import RealmSwift
 
+protocol ProfileVcDelegate {
+    var presentingVc: UIViewController? { get set }
+}
+
 class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     
     var menuDelegate: MenuScrollDelegate!
@@ -50,6 +54,7 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        //profileVcDelegate.presentingVc = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -154,7 +159,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.contentFriendCell, for: indexPath) as! ContentFriendCell
             profileMenuBar.customDelegate = self
-            cell.setupPresentingVc(self)
+            cell.presentingVc = self
             return cell
         }
     }
