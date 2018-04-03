@@ -26,5 +26,4 @@ class ContentFriendCell: BaseCell, ProfileVcDelegate {
         view.setupFriendTableView()
         view.profileVcDelegate = self
     }
-
 }

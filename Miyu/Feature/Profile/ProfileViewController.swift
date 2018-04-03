@@ -10,10 +10,6 @@ import UIKit
 import Firebase
 import RealmSwift
 
-protocol ProfileVcDelegate {
-    var presentingVc: UIViewController? { get set }
-}
-
 class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     
     var menuDelegate: MenuScrollDelegate!

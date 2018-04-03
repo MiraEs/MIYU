@@ -45,9 +45,8 @@ class CustomTabView: UIView {
     }()
     
     var profileVcDelegate: ProfileVcDelegate?
-    
     private weak var store = DataStore.sharedInstance
-    //var presentingVC: UIViewController?
+    
     // MARK: SETUP
     
     func setupTableView() {
