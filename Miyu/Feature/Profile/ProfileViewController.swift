@@ -50,7 +50,6 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        //profileVcDelegate.presentingVc = self
     }
     
     override func viewWillAppear(_ animated: Bool) {

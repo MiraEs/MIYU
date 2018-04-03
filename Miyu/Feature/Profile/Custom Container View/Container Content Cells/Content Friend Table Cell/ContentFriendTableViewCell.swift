@@ -52,7 +52,6 @@ class ContentFriendTableViewCell: UITableViewCell {
         if let pvc = self.presentingVc {
             pvc.present(dvc, animated: true, completion: nil)
         }
-        
     }
     
     @IBAction func friendButtonTapped(_ sender: Any) {
