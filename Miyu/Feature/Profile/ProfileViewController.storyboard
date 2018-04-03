@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cn7-xV-1xf">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -16,7 +12,7 @@
             <objects>
                 <viewController storyboardIdentifier="ProfileViewController" id="cn7-xV-1xf" customClass="ProfileViewController" customModule="Miyu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yTZ-vK-8PS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="random_1" translatesAutoresizingMaskIntoConstraints="NO" id="gYY-IN-Pyz">
@@ -40,7 +36,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="88E-Nh-ZaN">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="YOU" id="sB4-eh-4SS">
                                         <barButtonItem key="leftBarButtonItem" title="Item" image="xbutton" style="plain" id="MQQ-AA-gow">
@@ -59,14 +55,14 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Du-eo-mVx" customClass="ProfileMenuBar" customModule="Miyu" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="169" width="375" height="35"/>
+                                <rect key="frame" x="0.0" y="169" width="600" height="35"/>
                                 <color key="backgroundColor" red="1" green="0.83001911610000001" blue="0.53398158809999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="nCw-ER-fsB"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hKc-OQ-HNz">
-                                <rect key="frame" x="0.0" y="204" width="375" height="463"/>
+                                <rect key="frame" x="0.0" y="204" width="600" height="396"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tSr-B4-7y4">
                                     <size key="itemSize" width="50" height="50"/>
@@ -118,8 +114,8 @@
                     <tabBarItem key="tabBarItem" title="Profile" id="lWf-z5-G5N"/>
                     <connections>
                         <outlet property="addFriendButton" destination="pcQ-lT-M51" id="QJ4-hh-4I2"/>
-                        <outlet property="contentCollectionView" destination="hKc-OQ-HNz" id="6sh-3o-cy4"/>
                         <outlet property="dismissButton" destination="MQQ-AA-gow" id="3Cj-QV-tHK"/>
+                        <outlet property="profileContentCollectionView" destination="hKc-OQ-HNz" id="6sh-3o-cy4"/>
                         <outlet property="profileImage" destination="gYY-IN-Pyz" id="mYO-s2-xOd"/>
                         <outlet property="profileMenuBar" destination="0Du-eo-mVx" id="R5j-RN-QSC"/>
                         <outlet property="profileNavigationBar" destination="88E-Nh-ZaN" id="LB1-hy-ASH"/>

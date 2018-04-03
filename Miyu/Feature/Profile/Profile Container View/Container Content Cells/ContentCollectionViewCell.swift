@@ -11,8 +11,8 @@ import UIKit
 /// Cell class for the container collection view cell where the user post data collection view is instantiated
 class ContentCollectionViewCell: BaseCell {
     
-    lazy var view: CustomTabView = {
-        let view = CustomTabView()
+    lazy var view: ProfileContainerView = {
+        let view = ProfileContainerView()
         return view
     }()
     

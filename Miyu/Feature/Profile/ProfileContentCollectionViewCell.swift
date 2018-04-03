@@ -1,5 +1,5 @@
 //
-//  CustomTabCollectionViewCell.swift
+//  ProfileContentCollectionViewCell.swift
 //  Miyu
 //
 //  Created by Mira Estil on 3/23/18.
@@ -9,7 +9,7 @@
 import UIKit
 
 /// Cell class for the collection view populating user data for Collection view cell
-class CustomTabCollectionViewCell: BaseCell {
+class ProfileContentCollectionViewCell: BaseCell {
     let imageView: UIImageView = {
         let iv = UIImageView()
         iv.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleBottomMargin,

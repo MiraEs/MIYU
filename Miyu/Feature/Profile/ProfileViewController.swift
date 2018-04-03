@@ -31,12 +31,12 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     @IBOutlet weak var userRating: UILabel!
     @IBOutlet weak var userAttribute: UILabel!
     @IBOutlet weak var profileMenuBar: ProfileMenuBar!
-    @IBOutlet weak var contentCollectionView: UICollectionView! {
+    @IBOutlet weak var profileContentCollectionView: UICollectionView! {
         didSet {
-            contentCollectionView.delegate = self
-            contentCollectionView.dataSource = self
-            contentCollectionView.alwaysBounceHorizontal = false
-            contentCollectionView.showsHorizontalScrollIndicator = false
+            profileContentCollectionView.delegate = self
+            profileContentCollectionView.dataSource = self
+            profileContentCollectionView.alwaysBounceHorizontal = false
+            profileContentCollectionView.showsHorizontalScrollIndicator = false
         }
     }
     @IBOutlet weak var profileNavigationBar: UINavigationBar!
@@ -80,20 +80,18 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     func tappedThat(_ viewInt: Int) {
         switch viewInt {
         case 0:
-            print("scroll to the left kdsmfkndsf")
-            contentCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .right, animated: true)
+            profileContentCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .right, animated: true)
         case 1:
-            print("scroll to the right skdjk")
-            contentCollectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .right, animated: true)
+            profileContentCollectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .right, animated: true)
         case 2:
-            contentCollectionView.scrollToItem(at: IndexPath(item: 2, section: 0), at: .right, animated: true)
+            profileContentCollectionView.scrollToItem(at: IndexPath(item: 2, section: 0), at: .right, animated: true)
         default:
             break
         }
     }
    
     private func setup() {
-        viewModel?.setup(contentCollectionView)
+        viewModel?.setup(profileContentCollectionView)
         loadUserData()
         menuDelegate = profileMenuBar
         viewModel?.fetchFriends()
@@ -112,14 +110,14 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
                 }
             })
             viewModel?.loadUserPosts(uid, handler: {
-                self.contentCollectionView.reloadData()
+                self.profileContentCollectionView.reloadData()
             })
         } else {
             viewModel?.loadUserData(fbManager?.currentUser?.uid, { [weak self] (user) in
                 self?.setUserData(user)
             })
             viewModel?.loadUserPosts(fbManager?.currentUser?.uid, handler: {
-                self.contentCollectionView.reloadData()
+                self.profileContentCollectionView.reloadData()
             })
         }
     }

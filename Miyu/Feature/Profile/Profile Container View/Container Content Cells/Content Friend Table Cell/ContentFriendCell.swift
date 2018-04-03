@@ -1,18 +1,19 @@
 //
-//  ContentTableViewCell.swift
+//  ContentFriendCell.swift
 //  Miyu
 //
-//  Created by Mira Estil on 3/23/18.
+//  Created by Mira Estil on 3/31/18.
 //  Copyright © 2018 ME. All rights reserved.
 //
 
 import UIKit
 
-/// Cell class for the container collection view cell where the user post data table view is instantiated
-class ContentTableViewCell: BaseCell {
+class ContentFriendCell: BaseCell, ProfileVcDelegate {
     
-    lazy var view: CustomTabView = {
-        let view = CustomTabView()
+    var presentingVc: UIViewController?
+    
+    lazy var view: ProfileContainerView = {
+        let view = ProfileContainerView()
         return view
     }()
     
@@ -22,6 +23,7 @@ class ContentTableViewCell: BaseCell {
         addSubview(view)
         addConstraints(format: "H:|[v0]|", views: view)
         addConstraints(format: "V:|[v0]|", views: view)
-        view.setupTableView()
+        view.setupFriendTableView()
+        view.profileVcDelegate = self
     }
 }

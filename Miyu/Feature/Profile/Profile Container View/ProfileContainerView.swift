@@ -1,5 +1,5 @@
 //
-//  CustomTabView.swift
+//  ProfileContainerView.swift
 //  Miyu
 //
 //  Created by Mira Estil on 3/13/18.
@@ -10,7 +10,7 @@
 import UIKit
 import RealmSwift
 
-class CustomTabView: UIView {
+class ProfileContainerView: UIView {
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -73,11 +73,11 @@ class CustomTabView: UIView {
         
         addConstraints(format: "H:|[v0]|", views: collectionView)
         addConstraints(format: "V:|[v0]|", views: collectionView)
-        collectionView.register(CustomTabCollectionViewCell.self, forCellWithReuseIdentifier: Constants.customCollectionCell)
+        collectionView.register(ProfileContentCollectionViewCell.self, forCellWithReuseIdentifier: Constants.customCollectionCell)
     }
 }
 
-extension CustomTabView: UITableViewDelegate, UITableViewDataSource {
+extension ProfileContainerView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == self.tableView {
@@ -131,7 +131,7 @@ extension CustomTabView: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension CustomTabView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+extension ProfileContainerView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("RELOADING COLLECTION VIEW CELLS FOR CONTENT")
         if store?.userPosts == nil {
@@ -142,7 +142,7 @@ extension CustomTabView: UICollectionViewDataSource, UICollectionViewDelegateFlo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.customCollectionCell, for: indexPath) as? CustomTabCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.customCollectionCell, for: indexPath) as? ProfileContentCollectionViewCell
         
         guard let userPosts = store?.userPosts else { return UICollectionViewCell() }
         let currentCell = userPosts[(userPosts.count-1) - indexPath.row]
