@@ -35,6 +35,7 @@ internal final class HomepageViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.navigationController?.initRootViewController(vc: self)
+        self.tableView.reloadData()
     }
     
     private func setup() {
