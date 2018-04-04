@@ -33,6 +33,7 @@ class UploadViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.initRootViewController(vc: self)
     }
     
     override func viewDidLoad() {

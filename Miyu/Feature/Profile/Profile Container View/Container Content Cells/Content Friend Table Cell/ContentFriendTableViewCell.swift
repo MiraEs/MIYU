@@ -26,7 +26,7 @@ class ContentFriendTableViewCell: UITableViewCell {
             }
         }
     }
-    var presentingVc: UIViewController?
+    var presentingVc: UINavigationController?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -50,7 +50,8 @@ class ContentFriendTableViewCell: UITableViewCell {
         dvc.uid = self.friend?.keyUid
         dvc.isDiffOrigin = true
         if let pvc = self.presentingVc {
-            pvc.present(dvc, animated: true, completion: nil)
+            //pvc.present(dvc, animated: true, completion: nil)
+            pvc.pushViewController(dvc, animated: true)
         }
     }
     

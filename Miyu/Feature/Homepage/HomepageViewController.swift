@@ -29,10 +29,12 @@ internal final class HomepageViewController: BaseViewController {
         super.viewDidLoad()
         setup()
         print("REALM CONFIG >>>>>>>>>>>>>>>>>>>>>>>>> \(Realm.Configuration.defaultConfiguration.fileURL!)")
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.navigationController?.initRootViewController(vc: self)
     }
     
     private func setup() {
@@ -93,7 +95,7 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
             let data = currentCell.data else { return UITableViewCell() }
         
         cell.post = currentCell
-        cell.presentingVc = self
+        cell.presentingVc = self.navigationController
         cell.setupCell(uid)
         cell.setupTap(indexPath.row)
         fetchPhoto(data, photoUrl, cell)

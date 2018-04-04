@@ -17,5 +17,5 @@ protocol MenuScrollDelegate {
 }
 
 protocol ProfileVcDelegate {
-    var presentingVc: UIViewController? { get set }
+    var presentingVc: UINavigationController? { get set }
 }

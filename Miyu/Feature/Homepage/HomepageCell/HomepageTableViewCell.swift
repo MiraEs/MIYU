@@ -36,7 +36,7 @@ class HomepageTableViewCell: UITableViewCell {
     }
     
     
-    var presentingVc: UIViewController?
+    var presentingVc: UINavigationController?
     var uid: String?
     
     private weak var fbManager = FirebaseUserManager.manager
@@ -127,8 +127,7 @@ class HomepageTableViewCell: UITableViewCell {
         let dvc = ProfileViewController.instantiate(fromAppStoryboard: .ProfileViewController)
         dvc.uid = self.uid
         dvc.isDiffOrigin = true
-        dvc.modalPresentationStyle = .overCurrentContext
-        presentingVc?.present(dvc, animated: true, completion: nil)
+        presentingVc?.pushViewController(dvc, animated: true)
         
     }
 }

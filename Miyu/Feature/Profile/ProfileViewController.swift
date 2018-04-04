@@ -50,7 +50,6 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        self.title = "Cheesey Pie"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,6 +57,7 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
 
         loadUserData()
         buttonStates()
+        self.navigationController?.initRootViewController(vc: self)
     }
     
     func buttonStates() {
@@ -153,7 +153,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.contentFriendCell, for: indexPath) as! ContentFriendCell
             profileMenuBar.customDelegate = self
-            cell.presentingVc = self
+            cell.presentingVc = self.navigationController
             return cell
         }
     }

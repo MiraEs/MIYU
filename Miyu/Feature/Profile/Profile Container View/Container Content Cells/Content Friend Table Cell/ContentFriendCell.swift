@@ -10,7 +10,7 @@ import UIKit
 
 class ContentFriendCell: BaseCell, ProfileVcDelegate {
     
-    var presentingVc: UIViewController?
+    var presentingVc: UINavigationController?
     
     lazy var view: ProfileContainerView = {
         let view = ProfileContainerView()
