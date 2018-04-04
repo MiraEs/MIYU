@@ -87,7 +87,6 @@ class InstantiatedViewControllers {
      init() {}
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
 }
 
 extension InstantiatedViewControllers {
@@ -110,3 +109,4 @@ extension InstantiatedViewControllers {
         }
     }
 }
+

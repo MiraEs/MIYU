@@ -13,29 +13,27 @@ import RealmSwift
 
 internal final class HomepageViewController: BaseViewController {
     
-    private weak var store = DataStore.sharedInstance
-    private weak var storeManager = DataStoreManager()
     private weak var fbManager = FirebaseUserManager.manager
-    private weak var currentUser: AppUser?
-    private var viewModel: HomepageViewModel? {
+    private weak var viewModel: HomepageViewModel? {
         return HomepageViewModel(self)
     }
-    
-    var allPosts: Results<Post>!
+    private var allPosts: Results<Post>!
     
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBAction func singOutButtonTapped(_ sender: Any) {
+        print("signing out")
+        fbManager?.signOut()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         print("REALM CONFIG >>>>>>>>>>>>>>>>>>>>>>>>> \(Realm.Configuration.defaultConfiguration.fileURL!)")
-    
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.navigationController?.initRootViewController(vc: self)
-        self.tableView.reloadData()
     }
     
     private func setup() {
@@ -44,23 +42,17 @@ internal final class HomepageViewController: BaseViewController {
     }
 
     private func reloadData() {
-        allPosts = uiRealm.objects(Post.self) 
+        allPosts = uiRealm.objects(Post.self)
+        viewModel?.filterUserPostData()
         self.tableView.reloadData()
-        
-        if let uid = fbManager?.currentUser?.uid {
-            self.store?.userPosts = uiRealm.objects(Post.self).filter("uid == %@", uid)
-        }
     }
     
     // MARK: FETCH DATA
     private func fetchPosts() {
         let loadingIndicator = self.displaySpinner(onView: self.view)
-        print("ADDED POST AND IS NOW UPDATED >>>>>>>>>>>>>  ")
         self.viewModel?.getPosts({ [weak self] (post) in
-            DispatchQueue.main.async {
                 self?.removeSpinner(spinner: loadingIndicator)
                 self?.reloadData()
-            }
         })
     }
     
@@ -116,11 +108,5 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell,
                    forRowAt indexPath: IndexPath) {
         cell.backgroundColor = UIColor.clear
-    }
-}
-
-extension HomepageViewController: UIBarPositioningDelegate {
-    func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
-        return .topAttached
     }
 }

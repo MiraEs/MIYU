@@ -73,7 +73,8 @@ extension UIView {
 // MArkl UINAVIGATIONCONTROLLER
 
 extension UINavigationController {
-    func initRootViewController(vc: UIViewController, transitionType type: String = kCATransitionFade, duration: CFTimeInterval = 0.3) {
+    func initRootViewController(vc: UIViewController, transitionType type: String = kCATransitionFade,
+                                duration: CFTimeInterval = 0.3) {
         self.addTransition(transitionType: type, duration: duration)
         self.viewControllers.removeAll()
         self.pushViewController(vc, animated: false)

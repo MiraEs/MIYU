@@ -48,8 +48,10 @@ class ProfileUserDataModel {
     }
     
     func fetchFriends() {
-        fbManager?.getFriends({ (user) in
-            self.store?.friends.append(user)
-        })
+        if (store?.friends.isEmpty)! {
+            fbManager?.getFriends({ (user) in
+                self.store?.friends.append(user)
+            })
+        }
     }
 }

@@ -39,17 +39,12 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
             profileContentCollectionView.showsHorizontalScrollIndicator = false
         }
     }
-    @IBOutlet weak var profileNavigationBar: UINavigationBar!
-    @IBOutlet weak var dismissButton: UIBarButtonItem!
-    @IBAction func dismissButtonTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-        isDiffOrigin = false
-    }
-    @IBOutlet weak var addFriendButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,22 +52,14 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
 
         loadUserData()
         buttonStates()
-        self.navigationController?.initRootViewController(vc: self)
     }
     
     func buttonStates() {
-        if isDiffOrigin! {
-            dismissButton.isEnabled = true
-        } else {
-            addFriendButton.isEnabled = false
-            addFriendButton.tintColor = UIColor.clear
-            dismissButton.isEnabled = false
-            dismissButton.tintColor = UIColor.clear
-        }
+        self.navigationItem.rightBarButtonItem?.isEnabled = true
     }
     
     // MIRTEST
-    @IBAction func addFriendButtonTapped(_ sender: Any) {
+    @objc func addFriendButtonTapped() {
         print("adding friend")
         fbManager?.addFriend(uid)
     }
@@ -96,18 +83,22 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
         loadUserData()
         menuDelegate = profileMenuBar
         viewModel?.fetchFriends()
+        
+        self.navigationItem.title = "YOU"
+        let right = UIBarButtonItem(image: UIImage(named: "addFriend"), style: .plain, target: self, action: #selector(self.addFriendButtonTapped))
+        self.navigationItem.setRightBarButton(right, animated: true)
     }
     
     private func loadUserData() {
         if let uid = uid {
-            print("uid is still good here >> \(uid)")
             viewModel?.loadUserData(uid, { [weak self] (user) in
                 self?.setUserData(user)
                 if (self?.store?.friends.contains(where: {$0.email == user.email}))! {
-                    self?.addFriendButton.isEnabled = false
-                    self?.addFriendButton.tintColor = UIColor.clear
+                    self?.navigationItem.rightBarButtonItem?.isEnabled = false
+                    self?.navigationItem.rightBarButtonItem?.tintColor = UIColor.clear
+                    
                 } else {
-                    self?.addFriendButton.isEnabled = true
+                    self?.navigationItem.rightBarButtonItem?.isEnabled = true
                 }
             })
             viewModel?.loadUserPosts(uid, handler: {
@@ -177,7 +168,3 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         }
     }
 }
-
-
-
-

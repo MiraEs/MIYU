@@ -43,10 +43,12 @@ internal final class FirebaseUserManager {
     // MARK: GET USER DATA
     
     func getPosts(eventType: DataEventType, with handler: @escaping (DataSnapshot) -> Void) {
+        print("NEWORK CALL - POSTS")
         postRef?.observe(eventType, with: handler)
     }
     
     func getUserPosts(uid: String, eventType: DataEventType, with handler: @escaping (Post) -> Void) {
+        print("NEWORK CALL - POSTS")
         let userRef = userPostRef?.child(uid)
         userRef?.observeSingleEvent(of: .value) { (snapshot) in
             let enumerator = snapshot.children
@@ -63,11 +65,13 @@ internal final class FirebaseUserManager {
     }
     
     func getUsers(eventType: DataEventType, uid: String, with handler: @escaping (DataSnapshot) -> Void) {
+        print("NEWORK CALL - USERS")
         ref?.child(FbChildPaths.users).child(uid).observe(eventType, with: handler)
     }
     
     //TODO:: REFACTOR FROM HOMEPAGE CELL
     func getUserData(_ uid: String, _ handler: @escaping (_ user: AppUser)->Void) {
+        print("NEWORK CALL - USER")
         self.getUsers(eventType: .value, uid: uid, with: { (snapshot) in
             do {
                 if JSONSerialization.isValidJSONObject(snapshot.value!) {
@@ -95,8 +99,8 @@ extension FirebaseUserManager {
         let userRef = userFriendsRef?.child(uid)
         
         userRef?.observeSingleEvent(of: .value, with: { (snapshot) in
+            print("NETWORK - CHECKING FRIEND LIST")
             if snapshot.hasChild(friendUid) {
-                print("user already exists")
                 return
             } else {
                 self.getUserData(friendUid) { (user) in
@@ -111,6 +115,7 @@ extension FirebaseUserManager {
     
     
     func getFriends(_ handler: @escaping (_ user: AppUser)->Void) {
+        print("NEWORK CALL - FRIENDS")
         guard let uid = currentUser?.uid else { return }
         let userRef = userFriendsRef?.child(uid)
         
@@ -192,6 +197,7 @@ extension FirebaseUserManager {
         let ref = postRef?.child(key)
         
         ref?.observeSingleEvent(of: .value, with: { (snapshot) in
+            print("NETWORK - CHECKING OLD CALCULATE AVERAGES")
             guard let post = self.decodeData(snapshot.value as Any) else { return }
             guard let count = post.count.value else { return }
             let newCount = count + 1
@@ -250,11 +256,10 @@ extension FirebaseUserManager {
     /// USER
     //5. Calculate all post averages for specific user of post recently rated
     func calculateAllPostsRating(_ uid: String) {
-        print("CALCULATE RATING for \(uid)")
         let userRef = ref.child(FbChildPaths.userPosts).child(uid)
         
         userRef.observeSingleEvent(of: .value) { (snapshot) in
-            print("RATING SNAPSHOT COUNT \(snapshot.childrenCount)")
+            print("NEWORK CALL - CALCULATE")
             let count = Float(snapshot.childrenCount)
             var sum: Float = 0.0
             var average: Float = 0.0
@@ -268,7 +273,6 @@ extension FirebaseUserManager {
             }
             
             average = sum/count
-            print("AVERAGE >>>> \(average)")
             
             //UPDATE USER RATING
             self.updateUserRating(with: average, uid)
@@ -281,6 +285,7 @@ extension FirebaseUserManager {
         let userRef = ref.child(FbChildPaths.userRatings).child(uid)
         
         userRef.observeSingleEvent(of: .value) { (snapshot) in
+            print("NETWORK - UPDATE USER RATING FROM OLD VALUE")
             guard let currentRating = snapshot.value as? Float else { return }
             let newRating = (currentRating+average)/2
             userRef.setValue(newRating)
@@ -300,7 +305,6 @@ extension FirebaseUserManager {
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
             if user != nil {
                 self.addToDatabase(appUser, user!, profileImage)
-                print("successful user added \(email)")
                 handler?()
             } else {
                 // TODO: Create error alert class

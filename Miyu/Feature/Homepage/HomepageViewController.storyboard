@@ -46,7 +46,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="229-3b-bvJ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="HOME" id="Sdh-jL-21w"/>
+                    <navigationItem key="navigationItem" title="HOME" id="Sdh-jL-21w">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="I10-da-xUS">
+                            <connections>
+                                <action selector="singOutButtonTapped:" destination="Ogx-fG-Vhg" id="4Sh-Qn-xke"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="dYD-l5-zH8" id="6fh-TX-hQG"/>
                     </connections>
