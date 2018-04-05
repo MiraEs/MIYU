@@ -41,24 +41,7 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L1p-DO-jn8" userLabel="Comment Header">
-                        <rect key="frame" x="10" y="1054.5" width="827" height="20.5"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Comments(25)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcK-cd-6Bg">
-                                <rect key="frame" x="0.0" y="0.0" width="678.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Susan Boller: &quot;YAY&quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u25-yq-zaZ">
-                                <rect key="frame" x="678.5" y="0.0" width="148.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                    </stackView>
-                    <view clipsSubviews="YES" contentMode="scaleAspectFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rC0-b4-6Qh" customClass="CosmosView" customModule="Cosmos">
+                    <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="rC0-b4-6Qh" customClass="CosmosView" customModule="Cosmos">
                         <rect key="frame" x="286" y="1095" width="320" height="60"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <userDefinedRuntimeAttributes>
@@ -119,34 +102,30 @@
                 <constraints>
                     <constraint firstItem="rC0-b4-6Qh" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="2E9-be-cpj"/>
                     <constraint firstItem="1Hx-jD-0Ob" firstAttribute="leading" secondItem="rcd-P5-2X9" secondAttribute="trailing" constant="10" id="32W-ng-qct"/>
-                    <constraint firstItem="L1p-DO-jn8" firstAttribute="leading" secondItem="IZH-B9-b1W" secondAttribute="leading" id="5aC-pS-Jc6"/>
                     <constraint firstItem="IZH-B9-b1W" firstAttribute="top" secondItem="JSI-uK-gow" secondAttribute="bottom" constant="5" id="7D2-xE-OTI"/>
                     <constraint firstItem="IZH-B9-b1W" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="7Tj-4l-R56"/>
                     <constraint firstItem="DUD-j2-8Nf" firstAttribute="top" secondItem="rcd-P5-2X9" secondAttribute="bottom" constant="10" id="CYD-it-HOP"/>
                     <constraint firstItem="DUD-j2-8Nf" firstAttribute="trailing" secondItem="JSI-uK-gow" secondAttribute="trailing" id="DAH-zC-mdf"/>
                     <constraint firstItem="rcd-P5-2X9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="DaD-FD-f3x"/>
-                    <constraint firstItem="L1p-DO-jn8" firstAttribute="top" secondItem="IZH-B9-b1W" secondAttribute="bottom" constant="10" id="GuN-fh-mPk"/>
                     <constraint firstItem="JSI-uK-gow" firstAttribute="top" secondItem="DUD-j2-8Nf" secondAttribute="bottom" constant="10" id="JXE-2o-5G2"/>
                     <constraint firstItem="DUD-j2-8Nf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Wo0-bS-Pc9"/>
                     <constraint firstAttribute="trailing" secondItem="JSI-uK-gow" secondAttribute="trailing" constant="10" id="aYj-rQ-qup"/>
                     <constraint firstItem="rcd-P5-2X9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="br8-6s-gcx"/>
+                    <constraint firstItem="rC0-b4-6Qh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="286" id="cEc-t5-bMs"/>
                     <constraint firstItem="JSI-uK-gow" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="cbE-mh-eB6"/>
-                    <constraint firstItem="rC0-b4-6Qh" firstAttribute="top" secondItem="L1p-DO-jn8" secondAttribute="bottom" constant="20" id="d3K-KL-u3O"/>
                     <constraint firstItem="1Hx-jD-0Ob" firstAttribute="top" secondItem="rcd-P5-2X9" secondAttribute="top" id="dMr-0x-Gth"/>
                     <constraint firstAttribute="bottom" secondItem="rC0-b4-6Qh" secondAttribute="bottom" constant="40" id="lJl-te-zJn"/>
-                    <constraint firstAttribute="trailing" secondItem="L1p-DO-jn8" secondAttribute="trailing" constant="55" id="mTt-HP-l01"/>
+                    <constraint firstItem="rC0-b4-6Qh" firstAttribute="top" secondItem="IZH-B9-b1W" secondAttribute="bottom" constant="50.5" id="lub-LF-dtr"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="captionLabel" destination="DUD-j2-8Nf" id="uGK-AG-z3P"/>
                 <outlet property="commentCaptionLabel" destination="IZH-B9-b1W" id="L8U-Lg-POl"/>
-                <outlet property="commentCountLabel" destination="JcK-cd-6Bg" id="Mj9-TQ-ugf"/>
                 <outlet property="contentImage" destination="JSI-uK-gow" id="86W-b8-oT5"/>
                 <outlet property="nameLabel" destination="rR8-HI-NhL" id="Rld-op-BGl"/>
                 <outlet property="profileImage" destination="rcd-P5-2X9" id="qLb-o5-Cam"/>
                 <outlet property="ratingView" destination="rC0-b4-6Qh" id="n9e-KF-mjE"/>
-                <outlet property="recentCommentLabel" destination="u25-yq-zaZ" id="j6s-HU-7nn"/>
                 <outlet property="userRatingLabel" destination="u2w-gT-dze" id="zhd-N2-Ayh"/>
             </connections>
             <point key="canvasLocation" x="118" y="371.5"/>
