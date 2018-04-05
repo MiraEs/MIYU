@@ -45,7 +45,10 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
-
+        if isDiffOrigin! {
+            viewModel?.resetFriendStorage()
+            viewModel?.fetchFriends()
+        }
         loadData()
         buttonStates()
     }
@@ -61,7 +64,6 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     
     // MIRTEST
     @objc func addFriendButtonTapped() {
-        print("adding friend")
         viewModel?.addFriend(uid!)
     }
     

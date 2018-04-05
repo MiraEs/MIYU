@@ -53,6 +53,7 @@ internal final class RegisterViewController: BaseViewController {
         let user = AppUser(firstName: firstName, lastName: lastName, email: email)
         
         fbManager?.createUser(appUser: user, userCredentials: userCredentials, profileImage: profileImage) { [weak self] in
+            //print("new user>>> \(user.firstName)")
             self?.viewModel?.presentRootController()
         }
     }

@@ -58,7 +58,7 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="rC0-b4-6Qh" customClass="CosmosView" customModule="Cosmos">
+                    <view clipsSubviews="YES" contentMode="scaleAspectFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rC0-b4-6Qh" customClass="CosmosView" customModule="Cosmos">
                         <rect key="frame" x="286" y="1095" width="320" height="60"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <userDefinedRuntimeAttributes>

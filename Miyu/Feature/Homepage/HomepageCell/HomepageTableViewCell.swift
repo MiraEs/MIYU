@@ -124,10 +124,12 @@ class HomepageTableViewCell: UITableViewCell {
     @objc func showUserProfile(gesture: UITapGestureRecognizer) {
         print("clicked user for  \(String(describing: post?.user?.firstName))")
         
-        let dvc = ProfileViewController.instantiate(fromAppStoryboard: .ProfileViewController)
-        dvc.uid = self.uid
-        dvc.isDiffOrigin = true
-        presentingVc?.pushViewController(dvc, animated: true)
+        if uid != fbManager?.currentUser?.uid {
+            let dvc = ProfileViewController.instantiate(fromAppStoryboard: .ProfileViewController)
+            dvc.uid = self.uid
+            dvc.isDiffOrigin = true
+            presentingVc?.pushViewController(dvc, animated: true)
+        }
         
     }
 }
