@@ -26,8 +26,6 @@ internal final class HomepageViewController: BaseViewController {
     @IBAction func singOutButtonTapped(_ sender: Any) {
         print("signing out")
         fbManager?.signOut {
-            //self.viewModel?.presentVC(vc: .LoginViewController)
-            //self.navigationController?.popToRootViewController(animated: true)
             AppDelegate.shared.rootViewController.switchToLogout()
         }
     }

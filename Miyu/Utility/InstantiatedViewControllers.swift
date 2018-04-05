@@ -9,7 +9,7 @@
 import UIKit
 
 enum PresentViewController: String {
-    case HomepageViewController, RegisterViewController, UploadViewController, ProfileViewController, LoginViewController
+    case HomepageViewController, RegisterViewController, UploadViewController, ProfileViewController
 }
 
 /// AppStoryboard enum provides all VCs and instantiates each by storyboard ID.
@@ -110,12 +110,6 @@ extension InstantiatedViewControllers {
         case .ProfileViewController:
             guard let profileVC = self.profileVC else { return }
             presentingVC?.present(profileVC, animated: true, completion: nil)
-        case .LoginViewController:
-            guard let loginVC = self.loginVC else { return }
-            appDelegate.window?.rootViewController = loginVC
-            appDelegate.window?.makeKeyAndVisible()
-//            presentingVC?.present(loginVC, animated: true, completion: nil)
         }
     }
-       
 }

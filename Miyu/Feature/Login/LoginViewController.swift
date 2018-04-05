@@ -35,11 +35,7 @@ internal final class LoginViewController: BaseViewController {
         
         let user = UserCredential(email: emailTextField.text!, password: passwordTextField.text!)
         
-        fbManager?.login(user: user) { [weak self] in
-            //self?.viewModel.presentVC(vc: .HomepageViewController)
-//            self?.dismiss(animated: false, completion: {
-//                print("dismissed login view")
-//            })
+        fbManager?.login(user: user) {
             AppDelegate.shared.rootViewController.switchToMainScreen()
         }
     }
