@@ -30,9 +30,14 @@ class HomepageTableViewCell: UITableViewCell {
                 ratingView.rating = rating
                 userRatingLabel.text = "\(userRating)"
                 captionLabel.text = caption
+                uid = post.uid
             }
         }
     }
+    
+    
+    var presentingVc: UINavigationController?
+    var uid: String?
     
     private weak var fbManager = FirebaseUserManager.manager
 
@@ -117,7 +122,13 @@ class HomepageTableViewCell: UITableViewCell {
     }
     
     @objc func showUserProfile(gesture: UITapGestureRecognizer) {
-        print("it worked")
+        print("clicked user for  \(String(describing: post?.user?.firstName))")
+        
+        let dvc = ProfileViewController.instantiate(fromAppStoryboard: .ProfileViewController)
+        dvc.uid = self.uid
+        dvc.isDiffOrigin = true
+        presentingVc?.pushViewController(dvc, animated: true)
+        
     }
 }
 

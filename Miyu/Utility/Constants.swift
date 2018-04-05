@@ -19,6 +19,7 @@ enum FbChildPaths {
     static let posts = "posts"
     static let userPosts = "user-posts"
     static let userRatings = "user-ratings"
+    static let userFriends = "user-friends"
 }
 
 enum PostKeys {
@@ -37,6 +38,10 @@ internal final class Constants {
     static let homeXib = "HomepageTableViewCell"
     static let homeCellSegue = "otherProfile"
     
+    // MARK: PROFILE FRIEND TABLE VIEW CELL
+    static let friendCell = "friendCell"
+    static let friendXib = "ContentFriendTableViewCell"
+    
     // MARK: PROFILE TABLE VIEW CELL
     static let profileCell = "profileCell"
     static let profileXib = "ProfileTableViewCell"
@@ -44,6 +49,11 @@ internal final class Constants {
     // MARK: PROFILE CUSTOM TAB VIEW & MENU BAR
     static let customCollectionCell = "customCollectionCell"
     static let menuBarCollectionCell = "menuBarCollectionCell"
+    
+    // MARK: CUSTOM TAB VIEW CELLS
+    static let contentTableViewCell = "contentTableViewCell"
+    static let contentCollectionViewCell = "contentCollectionViewCell"
+    static let contentFriendCell = "contentFriendCell"
     
     // MARK: POST STRUCT KEYS
     static let postKeys: [String] = ["caption", "data", "rating", "uid", "count", "averageRating"]

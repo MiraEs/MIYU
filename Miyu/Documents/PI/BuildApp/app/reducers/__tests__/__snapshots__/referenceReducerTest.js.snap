@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`referenceReducer should return initialState 1`] = `Object {}`;
-
-exports[`referenceReducer should return the state for REFERENCE_SET_REFERENCE 1`] = `
-Object {
-  "modal": Object {},
-}
-`;

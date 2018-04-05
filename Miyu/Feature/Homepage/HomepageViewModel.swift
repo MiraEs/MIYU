@@ -12,13 +12,12 @@ import RealmSwift
 
 internal final class HomepageViewModel: InstantiatedViewControllers {
     
-    private var presentingViewController: UIViewController
-
+    private weak var presentingViewController: UIViewController?
     private weak var fbManager = FirebaseUserManager.manager
+    private weak var store = DataStore.sharedInstance
     
     init(_ presentingViewController: UIViewController) {
         self.presentingViewController = presentingViewController
-        
     }
     
     // MARK: UTILITY
@@ -44,15 +43,21 @@ internal final class HomepageViewModel: InstantiatedViewControllers {
                     self.fbManager?.getUserData(post.uid!, { (user) in
                         post.user = user
                         post.key = snapshot.key
-                        completion(post)
-                        print("SAVEE POST: \(post)")
                         post.writeToRealm()
+                        DispatchQueue.main.async {
+                            completion(post)
+                        }
                     })
                 }
             } catch {
                 print(error)
             }
-
         })
+    }
+
+    func filterUserPostData() {
+        if let uid = fbManager?.currentUser?.uid {
+            self.store?.userPosts = uiRealm.objects(Post.self).filter("uid == %@", uid)
+        }
     }
 }

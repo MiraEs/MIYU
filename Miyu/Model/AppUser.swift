@@ -19,13 +19,14 @@ enum AppUserKeys: String, CodingKey {
     case email, firstName, lastName, photoUrl, userRating
 }
 /// AppUser class includes properties for AppUser object.
-internal final class AppUser: Object, Codable {
+final class AppUser: Object, Codable {
 
     @objc dynamic var email: String? = nil
     @objc dynamic  var firstName: String? = nil
     @objc dynamic var lastName: String? = nil
     @objc dynamic var photoUrl: String? = nil
     var userRating = RealmOptional<Double>()
+    @objc dynamic var keyUid: String? = nil
     
     convenience init(firstName: String, lastName: String, email: String,
          photoUrl: String = "", userRating: Double = 5) {
@@ -35,6 +36,18 @@ internal final class AppUser: Object, Codable {
         self.email = email
         self.photoUrl = photoUrl
         self.userRating.value = userRating
+    }
+    
+    
+    override static func primaryKey() -> String? {
+        return "email"
+    }
+    
+    // REALM
+    func writeToRealm() {
+        try! uiRealm.write {
+            uiRealm.add(self, update: true)
+        }
     }
 }
 
@@ -46,6 +59,7 @@ extension AppUser {
         try container.encode(lastName, forKey: .lastName)
         try container.encode(email, forKey: .email)
         try container.encode(userRating.value, forKey: .userRating)
+        try container.encode(photoUrl, forKey: .photoUrl)
     }
 }
 
@@ -62,5 +76,8 @@ extension AppUser {
                   email: email, photoUrl: photoUrl, userRating: userRating)
     }
 }
+
+
+
 
 

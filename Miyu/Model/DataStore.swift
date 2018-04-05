@@ -27,8 +27,8 @@ internal final class DataStore {
         return url!
     }
 
-    var posts: [Post] = []
-    //var userPosts: [Post] = []
     var userPosts: Results<Post>!
+    //var usersFriends: Results<UserFriend>!
+    var friends = [AppUser]()
 }
 

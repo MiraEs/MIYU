@@ -21,6 +21,8 @@ internal final class FirebaseUserManager {
         return Auth.auth().currentUser
     }
     
+    private weak var store = DataStore.sharedInstance
+    
     private weak var ref: DatabaseReference! {
         return Database.database().reference()
     }
@@ -29,19 +31,24 @@ internal final class FirebaseUserManager {
     }
     
     private weak var userPostRef: DatabaseReference? {
-        get {
-            return ref.child(FbChildPaths.userPosts)
-        }
+        return ref.child(FbChildPaths.userPosts)
     }
+    
+    private weak var userFriendsRef: DatabaseReference? {
+        return ref.child(FbChildPaths.userFriends)
+    }
+    
     private init() {}
     
     // MARK: GET USER DATA
     
     func getPosts(eventType: DataEventType, with handler: @escaping (DataSnapshot) -> Void) {
+        print("NEWORK CALL - POSTS")
         postRef?.observe(eventType, with: handler)
     }
     
     func getUserPosts(uid: String, eventType: DataEventType, with handler: @escaping (Post) -> Void) {
+        print("NEWORK CALL - POSTS")
         let userRef = userPostRef?.child(uid)
         userRef?.observeSingleEvent(of: .value) { (snapshot) in
             let enumerator = snapshot.children
@@ -58,11 +65,13 @@ internal final class FirebaseUserManager {
     }
     
     func getUsers(eventType: DataEventType, uid: String, with handler: @escaping (DataSnapshot) -> Void) {
+        print("NEWORK CALL - USERS")
         ref?.child(FbChildPaths.users).child(uid).observe(eventType, with: handler)
     }
     
     //TODO:: REFACTOR FROM HOMEPAGE CELL
     func getUserData(_ uid: String, _ handler: @escaping (_ user: AppUser)->Void) {
+        print("NEWORK CALL - USER")
         self.getUsers(eventType: .value, uid: uid, with: { (snapshot) in
             do {
                 if JSONSerialization.isValidJSONObject(snapshot.value!) {
@@ -74,6 +83,55 @@ internal final class FirebaseUserManager {
                 }
             } catch {
                 print(error)
+            }
+        })
+    }
+}
+
+extension FirebaseUserManager {
+    // MARK: ADD NEW FRIENDS
+    func addFriend(_ friendUid: String?) {
+    
+        guard let uid = currentUser?.uid,
+                let friendUid = friendUid else {
+                return
+        }
+        let userRef = userFriendsRef?.child(uid)
+        
+        userRef?.observeSingleEvent(of: .value, with: { (snapshot) in
+            print("NETWORK - CHECKING FRIEND LIST")
+            if snapshot.hasChild(friendUid) {
+                return
+            } else {
+                self.getUserData(friendUid) { (user) in
+                    let userDict = user.dictionary
+                    let childUpdates: [String:Any] = ["/user-friends/\(uid)/\(friendUid)/": userDict!]
+                    self.ref.updateChildValues(childUpdates)
+                }
+            }
+        })
+    }
+    
+    
+    
+    func getFriends(_ handler: @escaping (_ user: AppUser)->Void) {
+        print("NEWORK CALL - FRIENDS")
+        guard let uid = currentUser?.uid else { return }
+        let userRef = userFriendsRef?.child(uid)
+        
+        userRef?.observeSingleEvent(of: .value, with: { (snapshot) in
+            let enumerator = snapshot.children
+            while let object = enumerator.nextObject() as? DataSnapshot {
+                do {
+                    let data = try JSONSerialization.data(withJSONObject: object.value!, options: [])
+                    let user = try JSONDecoder().decode(AppUser.self, from: data)
+                    print("USER'S UID >>>> \(object.key)")
+                    user.keyUid = object.key
+                   handler(user)
+                    
+                } catch {
+                    print(error)
+                }
             }
         })
     }
@@ -92,6 +150,7 @@ extension FirebaseUserManager {
         guard let post = Post(caption: caption, data: contentUrl, uid: uid, key: key).dictionary else { return }
         let childUpdates: [String: Any] = ["/posts/\(key)" : post,
                                            "/user-posts/\(uid)/\(key)/" : post]
+        
         
         ref.updateChildValues(childUpdates)
     }
@@ -138,6 +197,7 @@ extension FirebaseUserManager {
         let ref = postRef?.child(key)
         
         ref?.observeSingleEvent(of: .value, with: { (snapshot) in
+            print("NETWORK - CHECKING OLD CALCULATE AVERAGES")
             guard let post = self.decodeData(snapshot.value as Any) else { return }
             guard let count = post.count.value else { return }
             let newCount = count + 1
@@ -196,11 +256,10 @@ extension FirebaseUserManager {
     /// USER
     //5. Calculate all post averages for specific user of post recently rated
     func calculateAllPostsRating(_ uid: String) {
-        print("CALCULATE RATING for \(uid)")
         let userRef = ref.child(FbChildPaths.userPosts).child(uid)
         
         userRef.observeSingleEvent(of: .value) { (snapshot) in
-            print("RATING SNAPSHOT COUNT \(snapshot.childrenCount)")
+            print("NEWORK CALL - CALCULATE")
             let count = Float(snapshot.childrenCount)
             var sum: Float = 0.0
             var average: Float = 0.0
@@ -214,7 +273,6 @@ extension FirebaseUserManager {
             }
             
             average = sum/count
-            print("AVERAGE >>>> \(average)")
             
             //UPDATE USER RATING
             self.updateUserRating(with: average, uid)
@@ -227,6 +285,7 @@ extension FirebaseUserManager {
         let userRef = ref.child(FbChildPaths.userRatings).child(uid)
         
         userRef.observeSingleEvent(of: .value) { (snapshot) in
+            print("NETWORK - UPDATE USER RATING FROM OLD VALUE")
             guard let currentRating = snapshot.value as? Float else { return }
             let newRating = (currentRating+average)/2
             userRef.setValue(newRating)
@@ -246,7 +305,6 @@ extension FirebaseUserManager {
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
             if user != nil {
                 self.addToDatabase(appUser, user!, profileImage)
-                print("successful user added \(email)")
                 handler?()
             } else {
                 // TODO: Create error alert class
@@ -293,10 +351,11 @@ extension FirebaseUserManager {
         }
     }
     
-    func signOut() {
+    func signOut(_ completion: @escaping ()->()) {
         do {
             print("signing out \(String(describing: currentUser?.email))")
             try Auth.auth().signOut()
+            completion()
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)
         }

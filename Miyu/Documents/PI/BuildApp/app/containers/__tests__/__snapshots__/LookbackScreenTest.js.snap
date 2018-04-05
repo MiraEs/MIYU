@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`LookbackScreen component should render correctly 1`] = `null`;
-
-exports[`LookbackScreen component should render correctly when recording 1`] = `null`;
-
-exports[`LookbackScreen component should render correctly when stopped recording 1`] = `null`;

@@ -9,7 +9,7 @@
 import UIKit
 
 enum PresentViewController: String {
-    case HomepageViewController, RegisterViewController, UploadViewController
+    case HomepageViewController, RegisterViewController, UploadViewController, ProfileViewController
 }
 
 /// AppStoryboard enum provides all VCs and instantiates each by storyboard ID.
@@ -18,7 +18,6 @@ enum AppStoryboard: String {
     case HomepageViewController, RegisterViewController, ProfileViewController, UploadViewController, LoginViewController
     
     var instance: UIStoryboard {
-        
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)
     }
     
@@ -31,7 +30,6 @@ enum AppStoryboard: String {
         let storyboardID = (viewControllerClass as UIViewController.Type).storyboardID
         
         guard let scene = instance.instantiateViewController(withIdentifier: storyboardID) as? T else {
-            
             fatalError("ViewController with identifier \(storyboardID), not found in \(self.rawValue) Storyboard.\nFile : \(file) \nLine Number : \(line) \nFunction : \(function)")
         }
         
@@ -47,6 +45,10 @@ enum AppStoryboard: String {
 // MARK: INSTANTIATING STORYBOARDS
 
 class InstantiatedViewControllers {
+    
+    var loginVC: UIViewController? {
+        return LoginViewController.instantiate(fromAppStoryboard: .LoginViewController)
+    }
     
     var uploadVC: UIViewController? {
         return UploadViewController.instantiate(fromAppStoryboard: .UploadViewController)
@@ -73,16 +75,22 @@ class InstantiatedViewControllers {
     
     var tabBar: UITabBarController? {
         let tabBar = UITabBarController()
-        guard let navController = navController,
-            let profileVC = profileVC else {
+        guard let homeVC = homeVC,
+            let profileVC = profileVC,
+            let uploadVC = uploadVC else {
                 return tabBar
         }
         
-        tabBar.setViewControllers([navController, profileVC], animated: true)
+        tabBar.setViewControllers([homeVC, uploadVC, profileVC].map({UINavigationController(rootViewController: $0)}), animated: true)
+        tabBar.tabBar.items?[0].image = UIImage(named: "burger")
+        tabBar.tabBar.items?[1].image = UIImage(named: "burger")
+        tabBar.tabBar.items?[2].image = UIImage(named: "burger")
         return tabBar
     }
     
     init() {}
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 }
 
 extension InstantiatedViewControllers {
@@ -90,14 +98,18 @@ extension InstantiatedViewControllers {
     func presentDestinationVC(from presentingVC: UIViewController?, to vc: PresentViewController) {
         switch vc {
         case .HomepageViewController:
-            guard let homeTabBar = self.tabBar else { return }
-            presentingVC?.present(homeTabBar, animated: true, completion: nil)
+            guard let mainBar = self.tabBar else { return }
+            appDelegate.window?.rootViewController = mainBar
+            appDelegate.window?.makeKeyAndVisible()
         case .RegisterViewController:
             guard let registerVC = self.registerVC else { return }
             presentingVC?.present(registerVC, animated: true, completion: nil)
         case .UploadViewController:
             guard let uploadVC = self.uploadVC else { return }
             presentingVC?.present(uploadVC, animated: true, completion: nil)
+        case .ProfileViewController:
+            guard let profileVC = self.profileVC else { return }
+            presentingVC?.present(profileVC, animated: true, completion: nil)
         }
     }
 }

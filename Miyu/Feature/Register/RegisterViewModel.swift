@@ -20,7 +20,7 @@ internal final class RegisterViewModel: InstantiatedViewControllers {
     
     /// Presents main home page which is a tab bar controller.
     func presentRootController() {
-        presentDestinationVC(from: self.presentingViewController, to: .HomepageViewController)
+        AppDelegate.shared.rootViewController.switchToMainScreen()
     }
     
 }

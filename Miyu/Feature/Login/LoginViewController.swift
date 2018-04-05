@@ -30,17 +30,13 @@ internal final class LoginViewController: BaseViewController {
        viewModel.presentVC(vc: .RegisterViewController)
     }
     
-    @IBAction func signOutTapped(_ sender: Any) {
-        fbManager?.signOut()
-    }
     
     @IBAction func didLoginTapped(_ sender: Any) {
         
         let user = UserCredential(email: emailTextField.text!, password: passwordTextField.text!)
         
-        fbManager?.login(user: user) { [weak self] in
-            print("login successful")
-            self?.viewModel.presentVC(vc: .HomepageViewController)
+        fbManager?.login(user: user) {
+            AppDelegate.shared.rootViewController.switchToMainScreen()
         }
     }
 }

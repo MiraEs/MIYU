@@ -6,8 +6,16 @@
 //  Copyright © 2018 ME. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol CustomTabViewDelegate: class {
     func tappedThat(_ viewInt: Int)
+}
+
+protocol MenuScrollDelegate {
+    func scrollToCell(_ indexPath: IndexPath)
+}
+
+protocol ProfileVcDelegate {
+    var presentingVc: UINavigationController? { get set }
 }
