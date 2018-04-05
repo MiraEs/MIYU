@@ -16,9 +16,7 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     var lastContentOffset: CGFloat = 0
     var uid: String?
     var isDiffOrigin: Bool? = false
-    private weak var fbManager = FirebaseUserManager.manager
-    private weak var store = DataStore.sharedInstance
-    private var viewModel: ProfileUserDataModel? {
+    private weak var viewModel: ProfileUserDataModel? {
         return ProfileUserDataModel(self)
     }
 
@@ -43,25 +41,28 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
 
-        loadUserData()
+        loadData()
         buttonStates()
     }
     
     func buttonStates() {
-        self.navigationItem.rightBarButtonItem?.isEnabled = true
+        if isDiffOrigin! {
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
+        } else {
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
+            self.navigationItem.rightBarButtonItem?.tintColor = UIColor.clear
+        }
     }
     
     // MIRTEST
     @objc func addFriendButtonTapped() {
         print("adding friend")
-        fbManager?.addFriend(uid)
+        viewModel?.addFriend(uid!)
     }
     
     
@@ -80,7 +81,7 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
    
     private func setup() {
         viewModel?.setup(profileContentCollectionView)
-        loadUserData()
+        loadData()
         menuDelegate = profileMenuBar
         viewModel?.fetchFriends()
         
@@ -89,29 +90,11 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
         self.navigationItem.setRightBarButton(right, animated: true)
     }
     
-    private func loadUserData() {
-        if let uid = uid {
-            viewModel?.loadUserData(uid, { [weak self] (user) in
-                self?.setUserData(user)
-                if (self?.store?.friends.contains(where: {$0.email == user.email}))! {
-                    self?.navigationItem.rightBarButtonItem?.isEnabled = false
-                    self?.navigationItem.rightBarButtonItem?.tintColor = UIColor.clear
-                    
-                } else {
-                    self?.navigationItem.rightBarButtonItem?.isEnabled = true
-                }
-            })
-            viewModel?.loadUserPosts(uid, handler: {
-                self.profileContentCollectionView.reloadData()
-            })
-        } else {
-            viewModel?.loadUserData(fbManager?.currentUser?.uid, { [weak self] (user) in
-                self?.setUserData(user)
-            })
-            viewModel?.loadUserPosts(fbManager?.currentUser?.uid, handler: {
-                self.profileContentCollectionView.reloadData()
-            })
-        }
+    private func loadData() {
+        viewModel?.loadData(isDiffOrigin!, uid, { [weak self] (user) in
+            self?.setUserData(user)
+            self?.profileContentCollectionView.reloadData()
+        })
     }
     
     private func setUserData(_ user: AppUser) {

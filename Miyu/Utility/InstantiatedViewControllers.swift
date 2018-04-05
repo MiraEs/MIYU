@@ -15,7 +15,7 @@ enum PresentViewController: String {
 /// AppStoryboard enum provides all VCs and instantiates each by storyboard ID.
 enum AppStoryboard: String {
     
-    case HomepageViewController, RegisterViewController, ProfileViewController, UploadViewController, LoginViewController
+    case HomepageViewController, RegisterViewController, ProfileViewController, UploadViewController
     
     var instance: UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)
@@ -106,7 +106,6 @@ extension InstantiatedViewControllers {
         case .ProfileViewController:
             guard let profileVC = self.profileVC else { return }
             presentingVC?.present(profileVC, animated: true, completion: nil)
-        }
     }
 }
 

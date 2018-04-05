@@ -31,7 +31,7 @@ internal final class LoginViewController: BaseViewController {
     }
     
     @IBAction func signOutTapped(_ sender: Any) {
-        fbManager?.signOut()
+        //fbManager?.signOut()
     }
     
     @IBAction func didLoginTapped(_ sender: Any) {
@@ -41,6 +41,7 @@ internal final class LoginViewController: BaseViewController {
         fbManager?.login(user: user) { [weak self] in
             print("login successful")
             self?.viewModel.presentVC(vc: .HomepageViewController)
+            self?.dismiss(animated: false, completion: nil)
         }
     }
 }

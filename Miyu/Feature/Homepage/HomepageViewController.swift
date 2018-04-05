@@ -23,7 +23,10 @@ internal final class HomepageViewController: BaseViewController {
     
     @IBAction func singOutButtonTapped(_ sender: Any) {
         print("signing out")
-        fbManager?.signOut()
+        fbManager?.signOut {
+            //self.viewModel?.presentVC(vc: .LoginViewController)
+            self.removeFromParentViewController()
+        }
     }
     
     override func viewDidLoad() {

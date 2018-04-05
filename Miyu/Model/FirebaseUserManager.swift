@@ -351,10 +351,11 @@ extension FirebaseUserManager {
         }
     }
     
-    func signOut() {
+    func signOut(_ completion: @escaping ()->()) {
         do {
             print("signing out \(String(describing: currentUser?.email))")
             try Auth.auth().signOut()
+            completion()
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)
         }
