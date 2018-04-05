@@ -58,9 +58,12 @@
 		49B44C362070689600A4A069 /* ContentFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B44C352070689600A4A069 /* ContentFriendCell.swift */; };
 		49BFABE520603EED0097A464 /* DataStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BFABE420603EED0097A464 /* DataStoreManager.swift */; };
 		49C8F821207576A4003ACE54 /* Extension+HomepageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8F820207576A4003ACE54 /* Extension+HomepageVC.swift */; };
+		49C8F8252075AFA0003ACE54 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8F8242075AFA0003ACE54 /* SplashViewController.swift */; };
 		49DC302320227CA600E7F05F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC302220227CA600E7F05F /* ProfileViewController.swift */; };
 		49DC302720227D1000E7F05F /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC302520227D1000E7F05F /* ProfileTableViewCell.swift */; };
 		49DC302820227D1000E7F05F /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49DC302620227D1000E7F05F /* ProfileTableViewCell.xib */; };
+		49E1D9472075BF3700B5B7FD /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1D9462075BF3700B5B7FD /* RootViewController.swift */; };
+		49E1D9492075C3ED00B5B7FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E1D9482075C3ED00B5B7FD /* Main.storyboard */; };
 		49E4F577202E93B700D5C7B4 /* UploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E4F576202E93B700D5C7B4 /* UploadViewModel.swift */; };
 		8736BCB40BCE784B2B71E8F5 /* Pods_Miyu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8711C96527BBB4952E43A15B /* Pods_Miyu.framework */; };
 /* End PBXBuildFile section */
@@ -138,9 +141,12 @@
 		49B44C352070689600A4A069 /* ContentFriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentFriendCell.swift; sourceTree = "<group>"; };
 		49BFABE420603EED0097A464 /* DataStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreManager.swift; sourceTree = "<group>"; };
 		49C8F820207576A4003ACE54 /* Extension+HomepageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+HomepageVC.swift"; sourceTree = "<group>"; };
+		49C8F8242075AFA0003ACE54 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		49DC302220227CA600E7F05F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		49DC302520227D1000E7F05F /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		49DC302620227D1000E7F05F /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		49E1D9462075BF3700B5B7FD /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		49E1D9482075C3ED00B5B7FD /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		49E4F576202E93B700D5C7B4 /* UploadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewModel.swift; sourceTree = "<group>"; };
 		8711C96527BBB4952E43A15B /* Pods_Miyu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Miyu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A81E4928A6D84A33072D6897 /* Pods-Miyu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Miyu.release.xcconfig"; path = "Pods/Target Support Files/Pods-Miyu/Pods-Miyu.release.xcconfig"; sourceTree = "<group>"; };
@@ -249,6 +255,7 @@
 		49A6D7E1201E86E500B994A2 = {
 			isa = PBXGroup;
 			children = (
+				49E1D9482075C3ED00B5B7FD /* Main.storyboard */,
 				49A6D7EC201E86E500B994A2 /* Miyu */,
 				49A6D801201E86E500B994A2 /* MiyuTests */,
 				49A6D80C201E86E500B994A2 /* MiyuUITests */,
@@ -333,6 +340,8 @@
 		49A6D82A201FB62400B994A2 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				49C8F8242075AFA0003ACE54 /* SplashViewController.swift */,
+				49E1D9462075BF3700B5B7FD /* RootViewController.swift */,
 				49A6D825201FB30300B994A2 /* Login */,
 				4937FAF820263C7D006E991B /* Register */,
 				49A6D824201FB2F200B994A2 /* Homepage */,
@@ -550,6 +559,7 @@
 				49A6D831202104D300B994A2 /* HomepageTableViewCell.xib in Resources */,
 				4933BECB2023FD27004307E4 /* HomepageViewController.storyboard in Resources */,
 				4937FAFE20264A33006E991B /* GoogleService-Info.plist in Resources */,
+				49E1D9492075C3ED00B5B7FD /* Main.storyboard in Resources */,
 				49DC302820227D1000E7F05F /* ProfileTableViewCell.xib in Resources */,
 				4933BEC92023FA35004307E4 /* ProfileViewController.storyboard in Resources */,
 				4937FAF720263C77006E991B /* RegisterViewController.storyboard in Resources */,
@@ -658,6 +668,7 @@
 				4937FAED2025732A006E991B /* UploadViewController.swift in Sources */,
 				49A6D7EE201E86E500B994A2 /* AppDelegate.swift in Sources */,
 				498EC82D205B001300EA6DAA /* Profile Protocols.swift in Sources */,
+				49E1D9472075BF3700B5B7FD /* RootViewController.swift in Sources */,
 				49B44C322070678E00A4A069 /* ContentFriendTableViewCell.swift in Sources */,
 				49C8F821207576A4003ACE54 /* Extension+HomepageVC.swift in Sources */,
 				4937FAFA20263CD5006E991B /* RegisterViewController.swift in Sources */,
@@ -686,6 +697,7 @@
 				4937FAF220257564006E991B /* ExploreViewController.swift in Sources */,
 				49A6D833202104E800B994A2 /* Constants.swift in Sources */,
 				495E9B9B202BACA1007F23B8 /* Post.swift in Sources */,
+				49C8F8252075AFA0003ACE54 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

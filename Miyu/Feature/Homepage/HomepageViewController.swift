@@ -19,13 +19,16 @@ internal final class HomepageViewController: BaseViewController {
     }
     private var allPosts: Results<Post>!
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func singOutButtonTapped(_ sender: Any) {
         print("signing out")
         fbManager?.signOut {
             //self.viewModel?.presentVC(vc: .LoginViewController)
-            self.removeFromParentViewController()
+            //self.navigationController?.popToRootViewController(animated: true)
+            AppDelegate.shared.rootViewController.switchToLogout()
         }
     }
     
