@@ -111,7 +111,6 @@
                     <constraint firstItem="DUD-j2-8Nf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Wo0-bS-Pc9"/>
                     <constraint firstAttribute="trailing" secondItem="JSI-uK-gow" secondAttribute="trailing" constant="10" id="aYj-rQ-qup"/>
                     <constraint firstItem="rcd-P5-2X9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="br8-6s-gcx"/>
-                    <constraint firstItem="rC0-b4-6Qh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="286" id="cEc-t5-bMs"/>
                     <constraint firstItem="JSI-uK-gow" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="cbE-mh-eB6"/>
                     <constraint firstItem="1Hx-jD-0Ob" firstAttribute="top" secondItem="rcd-P5-2X9" secondAttribute="top" id="dMr-0x-Gth"/>
                     <constraint firstAttribute="bottom" secondItem="rC0-b4-6Qh" secondAttribute="bottom" constant="40" id="lJl-te-zJn"/>
