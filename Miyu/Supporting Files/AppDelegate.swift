@@ -30,9 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // UILABEL
         UILabel.appearance().textColor = UIColor.black
         
-        //window = UIWindow(frame: UIScreen.main.bounds)
-        //window?.rootViewController = RootViewController()
-        //window?.makeKeyAndVisible()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = RootViewController()
+        window?.makeKeyAndVisible()
         
         return true
     }

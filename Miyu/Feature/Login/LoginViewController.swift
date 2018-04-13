@@ -17,11 +17,13 @@ internal final class LoginViewController: BaseViewController {
         return LoginViewModel(presentingVC: self)
     }
     
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailTextField: CustomTextField!
+    @IBOutlet weak var passwordTextField: CustomTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     // MARK: USER MANAGEMENT
@@ -38,5 +40,15 @@ internal final class LoginViewController: BaseViewController {
         fbManager?.login(user: user) {
             AppDelegate.shared.rootViewController.switchToMainScreen()
         }
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.tintColor = UIColor.red
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.tintColor = UIColor.green
     }
 }

@@ -53,6 +53,7 @@
 		49A6D833202104E800B994A2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D832202104E800B994A2 /* Constants.swift */; };
 		49A6D83620210C1400B994A2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D83520210C1400B994A2 /* BaseViewController.swift */; };
 		49A9B6C6204B4F650067A578 /* Design+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A9B6C5204B4F650067A578 /* Design+Extensions.swift */; };
+		49A9EDA720805B940044B5C1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A9EDA620805B940044B5C1 /* CustomTextField.swift */; };
 		49B44C322070678E00A4A069 /* ContentFriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B44C302070678E00A4A069 /* ContentFriendTableViewCell.swift */; };
 		49B44C332070678E00A4A069 /* ContentFriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B44C312070678E00A4A069 /* ContentFriendTableViewCell.xib */; };
 		49B44C362070689600A4A069 /* ContentFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B44C352070689600A4A069 /* ContentFriendCell.swift */; };
@@ -138,6 +139,7 @@
 		49A6D832202104E800B994A2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		49A6D83520210C1400B994A2 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		49A9B6C5204B4F650067A578 /* Design+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Design+Extensions.swift"; sourceTree = "<group>"; };
+		49A9EDA620805B940044B5C1 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		49B44C302070678E00A4A069 /* ContentFriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentFriendTableViewCell.swift; sourceTree = "<group>"; };
 		49B44C312070678E00A4A069 /* ContentFriendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentFriendTableViewCell.xib; sourceTree = "<group>"; };
 		49B44C352070689600A4A069 /* ContentFriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentFriendCell.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 				4938476D2050769900FFA15A /* BaseTableViewCell.swift */,
 				4938476F2051F8A200FFA15A /* Alert.swift */,
 				493847782055AF4B00FFA15A /* BaseCell.swift */,
+				49A9EDA620805B940044B5C1 /* CustomTextField.swift */,
 			);
 			path = "Helper Classes";
 			sourceTree = "<group>";
@@ -688,6 +691,7 @@
 				49C8F821207576A4003ACE54 /* Extension+HomepageVC.swift in Sources */,
 				4937FAFA20263CD5006E991B /* RegisterViewController.swift in Sources */,
 				498B5CF22065C57600FBD4AE /* ContentTableViewCell.swift in Sources */,
+				49A9EDA720805B940044B5C1 /* CustomTextField.swift in Sources */,
 				49108EBF2027D76A0031314B /* LoginViewModel.swift in Sources */,
 				49964D3720471719007204E4 /* Image.swift in Sources */,
 				49B44C362070689600A4A069 /* ContentFriendCell.swift in Sources */,
