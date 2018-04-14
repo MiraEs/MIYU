@@ -69,9 +69,9 @@ class ProfileUserDataModel {
     func addFriend(_ uid: String) {
         fbManager?.addFriend(uid)
     }
+
     
-    //MIRTEST
-    func buttonState() {
-        //store?.friends.contains(where: {$0.email == user.email})
+    func resetFriendStorage() {
+        self.store?.friends = [AppUser]()
     }
 }

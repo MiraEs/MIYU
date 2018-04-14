@@ -34,6 +34,17 @@ internal final class HomepageViewController: BaseViewController {
         super.viewDidLoad()
         setup()
         print("REALM CONFIG >>>>>>>>>>>>>>>>>>>>>>>>> \(Realm.Configuration.defaultConfiguration.fileURL!)")
+        activityBarButton()
+    }
+    
+    func activityBarButton() {
+          let left = UIBarButtonItem(image: UIImage(named: "burger"), style: .plain, target: self, action: #selector(self.presentActivityViews))
+        left.title = "20"
+        self.navigationItem.setLeftBarButton(left, animated: true)
+    }
+    
+    @objc func presentActivityViews() {
+        print("present recent ratings")
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -43,7 +43,7 @@ internal final class FirebaseUserManager {
     // MARK: GET USER DATA
     
     func getPosts(eventType: DataEventType, with handler: @escaping (DataSnapshot) -> Void) {
-        print("NEWORK CALL - POSTS")
+
         postRef?.observe(eventType, with: handler)
     }
     
@@ -65,7 +65,6 @@ internal final class FirebaseUserManager {
     }
     
     func getUsers(eventType: DataEventType, uid: String, with handler: @escaping (DataSnapshot) -> Void) {
-        print("NEWORK CALL - USERS")
         ref?.child(FbChildPaths.users).child(uid).observe(eventType, with: handler)
     }
     
@@ -127,8 +126,7 @@ extension FirebaseUserManager {
                     let user = try JSONDecoder().decode(AppUser.self, from: data)
                     print("USER'S UID >>>> \(object.key)")
                     user.keyUid = object.key
-                   handler(user)
-                    
+                    handler(user)
                 } catch {
                     print(error)
                 }

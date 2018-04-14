@@ -29,13 +29,14 @@ final class AppUser: Object, Codable {
     @objc dynamic var keyUid: String? = nil
     
     convenience init(firstName: String, lastName: String, email: String,
-         photoUrl: String = "", userRating: Double = 5) {
+                     photoUrl: String = "", userRating: Double = 5) {
         self.init()
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
         self.photoUrl = photoUrl
         self.userRating.value = userRating
+        self.keyUid = ""
     }
     
     
