@@ -41,11 +41,7 @@ class HomepageTableViewCell: UITableViewCell {
     
     private weak var fbManager = FirebaseUserManager.manager
 
-    @IBOutlet weak var profileImage: UIImageView! {
-        didSet {
-            design()
-        }
-    }
+    @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var userRatingLabel: UILabel!
@@ -61,6 +57,7 @@ class HomepageTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        design()
     }
     
     //MARK: SETUP
