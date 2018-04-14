@@ -45,10 +45,11 @@ internal final class LoginViewController: BaseViewController {
 
 extension LoginViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.tintColor = UIColor.red
+        textField.placeholder = nil
+        textField.tintColor = UIColor(red:0.50, green:0.35, blue:0.62, alpha:1.0)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.tintColor = UIColor.green
+        textField.tintColor = UIColor.white
     }
 }

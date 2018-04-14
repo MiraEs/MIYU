@@ -20,6 +20,8 @@ internal class BaseViewController: UIViewController {
         keyboardFunctionality()
     }
     
+    
+    /// MIRTEST: DELETE
     private func design() {
         //let pinkColor = UIColor(red:0.96, green:0.81, blue:0.76, alpha:1.0)
         //view.backgroundColor = pinkColor
@@ -34,8 +36,8 @@ internal class BaseViewController: UIViewController {
     
     private func gradientBackground() {
         
-        let pinkColor = UIColor(red:0.96, green:0.81, blue:0.76, alpha:1.0)
-        let darkPink = UIColor(red:0.93, green:0.60, blue:0.57, alpha:1.0)
+        let pinkColor = UIColor(red:0.95, green:0.80, blue:0.75, alpha:1.0)
+        let darkPink = UIColor(red:0.96, green:0.80, blue:0.76, alpha:1.0)
         let gradientLayer = CAGradientLayer()
         
         gradientLayer.frame = self.view.bounds

@@ -21,14 +21,18 @@ private enum FontFamilies {
 extension UILabel {
     func smallFont() {
         self.font = UIFont(name: FontFamilies.avenirLight, size: 13)
+        self.textColor = UIColor(red:0.59, green:0.52, blue:0.50, alpha:1.0)
     }
     
     func mediumFont() {
         self.font = UIFont(name: FontFamilies.avenirLight, size: 16)
+        self.textColor = UIColor(red:0.59, green:0.52, blue:0.50, alpha:1.0)
     }
     
     func largeFont() {
         self.font = UIFont(name: FontFamilies.avenirLight, size: 25)
+        //self.textColor = UIColor(red:0.59, green:0.52, blue:0.50, alpha:1.0)
+        self.textColor = UIColor.red
     }
     
 }
