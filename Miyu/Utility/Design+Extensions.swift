@@ -31,8 +31,7 @@ extension UILabel {
     
     func largeFont() {
         self.font = UIFont(name: FontFamilies.avenirLight, size: 25)
-        //self.textColor = UIColor(red:0.59, green:0.52, blue:0.50, alpha:1.0)
-        self.textColor = UIColor.red
+        self.textColor = UIColor(red:0.59, green:0.52, blue:0.50, alpha:0.5)
     }
     
 }

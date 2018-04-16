@@ -89,6 +89,7 @@ class HomepageTableViewCell: UITableViewCell {
         let attachmentString = NSAttributedString(attachment: imageAttachment)
         let caption = NSMutableAttributedString(string: "\(cellCount) people have rated this.")
         caption.insert(attachmentString, at: 0)
+        
         commentCaptionLabel.attributedText = caption
     }
     

@@ -8,43 +8,37 @@
 
 import UIKit
 
-internal class BaseViewController: UIViewController {
+internal class BaseViewController: UIViewController, CAAnimationDelegate {
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     private func setup() {
         gradientBackground()
         keyboardFunctionality()
     }
-    
-    
-    /// MIRTEST: DELETE
-    private func design() {
-        //let pinkColor = UIColor(red:0.96, green:0.81, blue:0.76, alpha:1.0)
-        //view.backgroundColor = pinkColor
-        
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = view.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        //view.addSubview(blurEffectView)
-        view.insertSubview(blurEffectView, at: 1)
-    }
-    
+ 
     private func gradientBackground() {
         
-        let pinkColor = UIColor(red:0.95, green:0.80, blue:0.75, alpha:1.0)
-        let darkPink = UIColor(red:0.96, green:0.80, blue:0.76, alpha:1.0)
+        let pink7 = UIColor(red:0.95, green:0.63, blue:0.51, alpha:0.5).cgColor
+        let pink8 = UIColor(red:0.93, green:0.44, blue:0.40, alpha:0.5).cgColor
+        
         let gradientLayer = CAGradientLayer()
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
         
         gradientLayer.frame = self.view.bounds
         
-        gradientLayer.colors = [pinkColor.cgColor, darkPink.cgColor]
-        
-        gradientLayer.locations = [0.0, 0.72]
+        gradientLayer.colors = [pink7, pink8, pink7]
+
+        //gradientLayer.locations = [0.0, 0.62]
         view.layer.insertSublayer(gradientLayer, at: 0)
         
     }
