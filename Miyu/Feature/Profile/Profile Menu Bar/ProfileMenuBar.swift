@@ -14,6 +14,7 @@ class ProfileMenuBar: UIView, MenuScrollDelegate {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.showsHorizontalScrollIndicator = true
         cv.backgroundColor = UIColor.clear
         cv.dataSource = self
         cv.delegate = self
@@ -30,8 +31,9 @@ class ProfileMenuBar: UIView, MenuScrollDelegate {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.backgroundColor = UIColor.clear
         collectionView.register(ProfileMenuCell.self, forCellWithReuseIdentifier: Constants.menuBarCollectionCell)
-
         addSubview(collectionView)
         addConstraints(format: "H:|[v0]|", views: collectionView)
         addConstraints(format: "V:|[v0]|", views: collectionView)

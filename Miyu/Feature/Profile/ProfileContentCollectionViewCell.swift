@@ -25,6 +25,5 @@ class ProfileContentCollectionViewCell: BaseCell {
         addSubview(imageView)
         addConstraints(format: "H:|[v0]|", views: imageView)
         addConstraints(format: "V:|[v0]|", views: imageView)
-        self.backgroundColor = UIColor.red
     }
 }

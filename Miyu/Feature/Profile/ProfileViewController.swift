@@ -31,6 +31,7 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     @IBOutlet weak var profileMenuBar: ProfileMenuBar!
     @IBOutlet weak var profileContentCollectionView: UICollectionView! {
         didSet {
+            profileContentCollectionView.backgroundColor = UIColor.clear
             profileContentCollectionView.delegate = self
             profileContentCollectionView.dataSource = self
             profileContentCollectionView.alwaysBounceHorizontal = false

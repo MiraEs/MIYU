@@ -206,6 +206,8 @@ extension FirebaseUserManager {
         })
     }
     
+    //MIRTEST
+    
     //2. Upload new count to database
     private func uploadPostRatedCount(_ post: Post) {
         guard let key = post.key,

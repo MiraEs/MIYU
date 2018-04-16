@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Miyu/Model/FirebaseUserManager.swift"
-            timestampString = "545265814.473343"
+            timestampString = "545612805.219413"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "305"
-            endingLineNumber = "305"
+            startingLineNumber = "313"
+            endingLineNumber = "313"
             landmarkName = "createUser(appUser:userCredentials:profileImage:handler:)"
             landmarkType = "7">
          </BreakpointContent>

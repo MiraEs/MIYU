@@ -19,6 +19,8 @@ internal final class HomepageViewController: BaseViewController {
     }
     private var allPosts: Results<Post>!
     
+    private var currentCellRating = ""
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     @IBOutlet weak var tableView: UITableView!

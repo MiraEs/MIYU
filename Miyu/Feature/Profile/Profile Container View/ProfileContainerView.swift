@@ -30,6 +30,7 @@ class ProfileContainerView: UIView {
         table.dataSource = self
         table.allowsSelection = false
         table.showsHorizontalScrollIndicator = false
+        table.backgroundColor = UIColor.clear
         table.alwaysBounceHorizontal = false
         return table
     }()
@@ -47,13 +48,14 @@ class ProfileContainerView: UIView {
     var profileVcDelegate: ProfileVcDelegate?
     private weak var store = DataStore.sharedInstance
     
+    
     // MARK: SETUP
     
     func setupTableView() {
         addSubview(tableView)
-        
         addConstraints(format: "H:|[v0]|", views: tableView)
         addConstraints(format: "V:|[v0]|", views: tableView)
+        tableView.backgroundColor = UIColor.clear
         tableView.register(UINib(nibName: Constants.homeXib, bundle: nil),
                            forCellReuseIdentifier: Constants.homeCell)
     }
@@ -63,7 +65,7 @@ class ProfileContainerView: UIView {
         
         addConstraints(format: "H:|[v0]|", views: friendTableView)
         addConstraints(format: "V:|[v0]|", views: friendTableView)
-    
+        friendTableView.backgroundColor = UIColor.clear
         friendTableView.register(UINib(nibName: Constants.friendXib, bundle: nil),
                                  forCellReuseIdentifier: Constants.friendCell)
     }
@@ -73,6 +75,7 @@ class ProfileContainerView: UIView {
         
         addConstraints(format: "H:|[v0]|", views: collectionView)
         addConstraints(format: "V:|[v0]|", views: collectionView)
+        collectionView.backgroundColor = UIColor.clear
         collectionView.register(ProfileContentCollectionViewCell.self, forCellWithReuseIdentifier: Constants.customCollectionCell)
     }
 }
