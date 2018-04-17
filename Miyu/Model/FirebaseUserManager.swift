@@ -210,12 +210,10 @@ extension FirebaseUserManager {
             guard let post = self.decodeData(snapshot.value as Any) else { return }
             guard let count = post.count.value else { return }
             
-            print("COUNT >> \(count)")
             
             activityRef?.observeSingleEvent(of: .value, with: { (snapshot) in
                 let objects = snapshot.children.allObjects as! [DataSnapshot]
                 if !objects.contains(where: {$0.key == key}) {
-                    print("updating count")
                     let newCount = count + 1
                     post.key = key
                     post.count.value = newCount

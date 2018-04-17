@@ -19,8 +19,8 @@ class ProfileContainerView: UIView {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.dataSource = self
         cv.delegate = self
-        cv.backgroundColor = UIColor.clear
         cv.alwaysBounceHorizontal = false
+        cv.backgroundColor = UIColor.clear
         return cv
     }()
     
@@ -30,8 +30,9 @@ class ProfileContainerView: UIView {
         table.dataSource = self
         table.allowsSelection = false
         table.showsHorizontalScrollIndicator = false
-        table.backgroundColor = UIColor.clear
         table.alwaysBounceHorizontal = false
+        table.showsVerticalScrollIndicator = false
+        table.backgroundColor = UIColor.clear
         return table
     }()
     
@@ -42,6 +43,8 @@ class ProfileContainerView: UIView {
         table.allowsSelection = false
         table.showsHorizontalScrollIndicator = false
         table.alwaysBounceHorizontal = false
+        table.backgroundColor = UIColor.clear
+        table.separatorStyle = .none
         return table
     }()
     
@@ -55,7 +58,6 @@ class ProfileContainerView: UIView {
         addSubview(tableView)
         addConstraints(format: "H:|[v0]|", views: tableView)
         addConstraints(format: "V:|[v0]|", views: tableView)
-        tableView.backgroundColor = UIColor.clear
         tableView.register(UINib(nibName: Constants.homeXib, bundle: nil),
                            forCellReuseIdentifier: Constants.homeCell)
     }
@@ -65,7 +67,6 @@ class ProfileContainerView: UIView {
         
         addConstraints(format: "H:|[v0]|", views: friendTableView)
         addConstraints(format: "V:|[v0]|", views: friendTableView)
-        friendTableView.backgroundColor = UIColor.clear
         friendTableView.register(UINib(nibName: Constants.friendXib, bundle: nil),
                                  forCellReuseIdentifier: Constants.friendCell)
     }
@@ -75,7 +76,6 @@ class ProfileContainerView: UIView {
         
         addConstraints(format: "H:|[v0]|", views: collectionView)
         addConstraints(format: "V:|[v0]|", views: collectionView)
-        collectionView.backgroundColor = UIColor.clear
         collectionView.register(ProfileContentCollectionViewCell.self, forCellWithReuseIdentifier: Constants.customCollectionCell)
     }
 }
@@ -112,11 +112,12 @@ extension ProfileContainerView: UITableViewDelegate, UITableViewDataSource {
             // Setup
             cell.setupCell(uid)
             cell.post = currentCell
-            
+        
             if let url = currentCell.data {
                 cell.contentImage.loadCachedImage(url)
             }
             
+            cell.backgroundColor = UIColor.clear
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: Constants.friendCell, for: indexPath) as! ContentFriendTableViewCell
@@ -129,6 +130,8 @@ extension ProfileContainerView: UITableViewDelegate, UITableViewDataSource {
             if let imageUrl = friends[indexPath.row].photoUrl {
                 cell.profileImage.loadCachedImage(imageUrl)
             }
+            
+            cell.backgroundColor = UIColor.clear
             return cell
         }
     }

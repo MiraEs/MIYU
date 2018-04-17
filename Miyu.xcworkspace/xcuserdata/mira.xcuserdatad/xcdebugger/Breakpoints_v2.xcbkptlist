@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Miyu/Model/FirebaseUserManager.swift"
-            timestampString = "545620716.315565"
+            timestampString = "545622318.4433481"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "337"
-            endingLineNumber = "337"
+            startingLineNumber = "333"
+            endingLineNumber = "333"
             landmarkName = "createUser(appUser:userCredentials:profileImage:handler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -43,54 +43,6 @@
             endingLineNumber = "23"
             landmarkName = "presentRootController()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Miyu/Model/FirebaseUserManager.swift"
-            timestampString = "545620716.3160861"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "217"
-            endingLineNumber = "217"
-            landmarkName = "updatePostRatedCount(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__ObjC.DataSnapshot) -&gt; () in closure #1 (__ObjC.DataSnapshot) -&gt; () in Miyu.FirebaseUserManager.updatePostRatedCount(Swift.String) -&gt; ()"
-                  moduleName = "Miyu"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mira/Developer/Miyu/Miyu/Model/FirebaseUserManager.swift"
-                  timestampString = "545620443.066313"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "217"
-                  endingLineNumber = "217"
-                  offsetFromSymbolStart = "259">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__ObjC.DataSnapshot) -&gt; Swift.Bool in closure #1 (__ObjC.DataSnapshot) -&gt; () in closure #1 (__ObjC.DataSnapshot) -&gt; () in Miyu.FirebaseUserManager.updatePostRatedCount(Swift.String) -&gt; ()"
-                  moduleName = "Miyu"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mira/Developer/Miyu/Miyu/Model/FirebaseUserManager.swift"
-                  timestampString = "545620443.069083"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "217"
-                  endingLineNumber = "217"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
