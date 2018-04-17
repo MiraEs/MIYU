@@ -13,6 +13,12 @@ enum Children: String {
     case posts, user
 }
 
+enum UserActivityAction {
+    typealias RawValue = String
+    
+    case rated
+}
+
 internal final class FirebaseUserManager {
     
     static let manager = FirebaseUserManager()
@@ -36,6 +42,10 @@ internal final class FirebaseUserManager {
     
     private weak var userFriendsRef: DatabaseReference? {
         return ref.child(FbChildPaths.userFriends)
+    }
+    
+    private weak var userActivity: DatabaseReference? {
+        return ref.child("user-activity")
     }
     
     private init() {}
@@ -193,20 +203,38 @@ extension FirebaseUserManager {
     //1. Get count and add number of rates
     func updatePostRatedCount(_ key: String) {
         let ref = postRef?.child(key)
+        let activityRef = userActivity?.child(currentUser!.uid).child("\(UserActivityAction.rated)")
         
         ref?.observeSingleEvent(of: .value, with: { (snapshot) in
             print("NETWORK - CHECKING OLD CALCULATE AVERAGES")
             guard let post = self.decodeData(snapshot.value as Any) else { return }
             guard let count = post.count.value else { return }
-            let newCount = count + 1
-            post.key = key
-            post.count.value = newCount
-            self.uploadPostRatedCount(post)
+            
+            print("COUNT >> \(count)")
+            
+            activityRef?.observeSingleEvent(of: .value, with: { (snapshot) in
+                let objects = snapshot.children.allObjects as! [DataSnapshot]
+                if !objects.contains(where: {$0.key == key}) {
+                    print("updating count")
+                    let newCount = count + 1
+                    post.key = key
+                    post.count.value = newCount
+                    self.uploadPostRatedCount(post)
+                    self.updateUserActivity(key)
+                }
+            })
             self.calculatePostAverageRating(post)
         })
     }
     
     //MIRTEST
+    func updateUserActivity(_ key: String) {
+        let ref = userActivity?.child(currentUser!.uid).child("\(UserActivityAction.rated)")
+
+        let value: [String: Any] = [key : true]
+        ref?.updateChildValues(value)
+    }
+    
     
     //2. Upload new count to database
     private func uploadPostRatedCount(_ post: Post) {
