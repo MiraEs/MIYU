@@ -12,5 +12,7 @@ pod 'Firebase/Auth'
 pod 'Firebase/Database'
 pod 'Firebase/Storage'
 pod 'RealmSwift'
+pod 'YPImagePicker'
+use_frameworks!
 
 end

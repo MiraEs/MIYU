@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import YPImagePicker
 
 class UploadViewController: BaseViewController {
     
@@ -18,6 +19,8 @@ class UploadViewController: BaseViewController {
     @IBOutlet weak var centerImage: UIButton!
     @IBOutlet weak var uploadButton: UIButton!
     @IBOutlet weak var editCaptionContainer: UIView!
+    
+    let picker = YPImagePicker()
     
     
     private weak var fbManager = FirebaseUserManager.manager
@@ -38,6 +41,23 @@ class UploadViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        setupCustomPicker()
+        
+    }
+    
+    func setupCustomPicker() {
+        var config = YPImagePickerConfiguration()
+        config.onlySquareImagesFromLibrary = false
+        config.onlySquareImagesFromCamera = true
+        config.libraryTargetImageSize = .original
+        config.usesFrontCamera = true
+        config.showsFilters = true
+        config.screens = [.library, .photo, .video]
+        config.startOnScreen = .library
+        config.showsCrop = .rectangle(ratio: (16/9))
+        config.hidesStatusBar = false
+        //config.overlayView = myOverlayView
+        YPImagePicker.setDefaultConfiguration(config)
     }
     
     // MARK: DESIGN & SETUP
@@ -78,23 +98,43 @@ class UploadViewController: BaseViewController {
     
     @IBAction func uploadImageTapped(_ sender: Any) {
         print("upload Image tapped")
-        viewModel?.showPicker()
-    }
-}
-
-extension UploadViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        
-        let selectedImage = Image.setImage(info)
-        
-        if let selectedImage = selectedImage {
-            uploadButton.setImage(selectedImage, for: .normal)
+        //viewModel?.showPicker()
+        picker.didSelectImage = { [unowned picker] img in
+            // image picked
+            print(img.size)
+            //self.imageView.image = img
+            self.uploadButton.setImage(img, for: .normal)
+            picker.dismiss(animated: true, completion: nil)
         }
         
-        dismiss(animated: true, completion: nil)
+//        picker.didSelectVideo = { videoData, videoThumbnailImage in
+//            // video picked
+//            self.uploadButton.setImage(videoThumbnailImage, for: .normal)
+//            picker.dismiss(animated: true, completion: nil)
+//        }
+//
+//        picker.didCancel = {
+//            print("Did Cancel")
+//        }
+        
+        present(picker, animated: true, completion: nil)
     }
 }
+//
+//extension UploadViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+//
+//    func imagePickerController(_ picker: UIImagePickerController,
+//                               didFinishPickingMediaWithInfo info: [String : Any]) {
+//
+//
+//        let selectedImage = Image.setImage(info)
+//
+//        if let selectedImage = selectedImage {
+//            uploadButton.setImage(selectedImage, for: .normal)
+//        }
+//
+//        dismiss(animated: true, completion: nil)
+//    }
+//
+//}
 
