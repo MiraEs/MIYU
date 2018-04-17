@@ -34,13 +34,16 @@ internal final class HomepageViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tabBarController?.delegate = self
+        
         setup()
         print("REALM CONFIG >>>>>>>>>>>>>>>>>>>>>>>>> \(Realm.Configuration.defaultConfiguration.fileURL!)")
         activityBarButton()
     }
     
     func activityBarButton() {
-          let left = UIBarButtonItem(image: UIImage(named: "burger"), style: .plain, target: self, action: #selector(self.presentActivityViews))
+        let left = UIBarButtonItem(image: UIImage(named: "burger"), style: .plain, target: self, action: #selector(self.presentActivityViews))
         left.title = "20"
         self.navigationItem.setLeftBarButton(left, animated: true)
     }
@@ -57,7 +60,7 @@ internal final class HomepageViewController: BaseViewController {
         viewModel?.setup(tableView)
         fetchPosts()
     }
-
+    
     private func reloadData() {
         allPosts = uiRealm.objects(Post.self)
         viewModel?.filterUserPostData()
@@ -68,8 +71,8 @@ internal final class HomepageViewController: BaseViewController {
     private func fetchPosts() {
         let loadingIndicator = self.displaySpinner(onView: self.view)
         self.viewModel?.getPosts({ [weak self] (post) in
-                self?.removeSpinner(spinner: loadingIndicator)
-                self?.reloadData()
+            self?.removeSpinner(spinner: loadingIndicator)
+            self?.reloadData()
         })
     }
     
@@ -93,10 +96,10 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.homeCell, for: indexPath) as! HomepageTableViewCell
         let currentCell = allPosts[(allPosts.count-1) - indexPath.row]
-
+        
         guard let key = currentCell.key,
             let uid = currentCell.uid,
             let currentUid = fbManager?.currentUser?.uid,
@@ -127,3 +130,25 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         cell.backgroundColor = UIColor.clear
     }
 }
+
+// mirtest refactor this..
+extension HomepageViewController: UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+
+        print("selected view controller laaaa\(tabBarController.selectedIndex)")
+                if tabBarController.selectedIndex == 1 {
+                   let upload = UploadViewController.instantiate(fromAppStoryboard: .UploadViewController)
+                    let uploadNav = UINavigationController(rootViewController: upload)
+                    present(uploadNav, animated: true) {
+                        tabBarController.selectedIndex = 0
+                    }
+                    
+                }
+    }
+    
+
+    
+    
+}
+

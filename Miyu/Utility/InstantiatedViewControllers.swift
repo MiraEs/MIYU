@@ -73,17 +73,22 @@ class InstantiatedViewControllers {
         return UINavigationController(rootViewController: homeVC)
     }
     
+    var dummyVc: UIViewController {
+        let vc = BaseViewController()
+        return vc
+    }
+    
     var tabBar: UITabBarController? {
         let tabBar = UITabBarController()
+        
         guard let homeVC = homeVC,
-            let profileVC = profileVC,
-            let uploadVC = uploadVC else {
+            let profileVC = profileVC else {
                 return tabBar
         }
-        
-        tabBar.setViewControllers([homeVC, uploadVC, profileVC].map({UINavigationController(rootViewController: $0)}), animated: true)
+    
+        tabBar.setViewControllers([homeVC, dummyVc, profileVC].map({UINavigationController(rootViewController: $0)}), animated: true)
         tabBar.tabBar.items?[0].image = UIImage(named: "burger")
-        tabBar.tabBar.items?[1].image = UIImage(named: "burger")
+        tabBar.tabBar.items?[1].image = UIImage(named: "camera")
         tabBar.tabBar.items?[2].image = UIImage(named: "burger")
         return tabBar
     }
@@ -106,7 +111,8 @@ extension InstantiatedViewControllers {
             presentingVC?.present(registerVC, animated: true, completion: nil)
         case .UploadViewController:
             guard let uploadVC = self.uploadVC else { return }
-            presentingVC?.present(uploadVC, animated: true, completion: nil)
+            let uploadVcNav = UINavigationController(rootViewController: uploadVC)
+            presentingVC?.present(uploadVcNav, animated: true, completion: nil)
         case .ProfileViewController:
             guard let profileVC = self.profileVC else { return }
             presentingVC?.present(profileVC, animated: true, completion: nil)

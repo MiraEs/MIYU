@@ -32,7 +32,7 @@ class UploadViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     override func viewDidLoad() {
@@ -53,6 +53,13 @@ class UploadViewController: BaseViewController {
         self.navigationItem.title = "UPLOAD"
         let right = UIBarButtonItem(title: "upload", style: .plain, target: self, action: #selector(UploadViewController.uploadContent))
         self.navigationItem.setRightBarButton(right, animated: true)
+        
+        let left = UIBarButtonItem(title: "x", style: .plain, target: self, action: #selector(UploadViewController.dismissCamera))
+        self.navigationItem.setLeftBarButton(left, animated: true)
+    }
+    
+    @objc func dismissCamera() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func editCaptionTapped(_ sender: Any) {
