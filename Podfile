@@ -12,7 +12,7 @@ pod 'Firebase/Auth'
 pod 'Firebase/Database'
 pod 'Firebase/Storage'
 pod 'RealmSwift'
-pod 'YPImagePicker'
-use_frameworks!
+pod 'YPImagePicker', '~> 2.8.1'
+
 
 end

@@ -15,7 +15,11 @@ class UploadViewController: BaseViewController {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var rating: UILabel!
-    @IBOutlet weak var captionTextView: UITextView!
+    @IBOutlet weak var captionTextView: UITextView! {
+        didSet {
+            captionTextView.keyboardAppearance = .dark
+        }
+    }
     @IBOutlet weak var centerImage: UIButton!
     @IBOutlet weak var uploadButton: UIButton!
     @IBOutlet weak var editCaptionContainer: UIView!
@@ -42,7 +46,7 @@ class UploadViewController: BaseViewController {
         super.viewDidLoad()
         setup()
         setupCustomPicker()
-        
+        self.tabBarController?.delegate = self
     }
     
     func setupCustomPicker() {
@@ -54,9 +58,9 @@ class UploadViewController: BaseViewController {
         config.showsFilters = true
         config.screens = [.library, .photo, .video]
         config.startOnScreen = .library
-        config.showsCrop = .rectangle(ratio: (16/9))
+        config.showsCrop = .rectangle(ratio: (1/1))
         config.hidesStatusBar = false
-        //config.overlayView = myOverlayView
+        //config.overlayView = myOverlayView®
         YPImagePicker.setDefaultConfiguration(config)
     }
     
@@ -98,26 +102,26 @@ class UploadViewController: BaseViewController {
     
     @IBAction func uploadImageTapped(_ sender: Any) {
         print("upload Image tapped")
-        //viewModel?.showPicker()
-        picker.didSelectImage = { [unowned picker] img in
-            // image picked
-            print(img.size)
-            //self.imageView.image = img
-            self.uploadButton.setImage(img, for: .normal)
-            picker.dismiss(animated: true, completion: nil)
-        }
         
-//        picker.didSelectVideo = { videoData, videoThumbnailImage in
-//            // video picked
-//            self.uploadButton.setImage(videoThumbnailImage, for: .normal)
+//        picker.didSelectImage = { [unowned picker] img in
+//            // image picked
+//            print(img.size)
+//
+//            self.uploadButton.setImage(img, for: .normal)
 //            picker.dismiss(animated: true, completion: nil)
 //        }
-//
-//        picker.didCancel = {
-//            print("Did Cancel")
-//        }
+//        present(picker, animated: true, completion: nil)
         
-        present(picker, animated: true, completion: nil)
+        //        picker.didSelectVideo = { videoData, videoThumbnailImage in
+        //            // video picked
+        //            self.uploadButton.setImage(videoThumbnailImage, for: .normal)
+        //            picker.dismiss(animated: true, completion: nil)
+        //        }
+        //
+        //        picker.didCancel = {
+        //            print("Did Cancel")
+        //        }
+        
     }
 }
 //
@@ -137,4 +141,34 @@ class UploadViewController: BaseViewController {
 //    }
 //
 //}
+
+extension UploadViewController: UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        
+        print("selected view controller laaaa\(tabBarController.selectedIndex)")
+        if tabBarController.selectedIndex == 1 {
+//            let upload = UploadViewController.instantiate(fromAppStoryboard: .UploadViewController)
+//            let uploadNav = UINavigationController(rootViewController: upload)
+//            present(uploadNav, animated: true) {
+//                tabBarController.selectedIndex = 0
+//            }
+            
+            picker.didSelectImage = { [unowned picker] img in
+                // image picked
+                print(img.size)
+                self.uploadButton.setImage(img, for: .normal)
+                picker.dismiss(animated: true, completion: nil)
+            }
+            picker.didCancel = {
+                print("did cancel")
+            }
+    
+            present(picker, animated: true, completion: nil)
+//            present(picker, animated: true) {
+//                tabBarController.selectedIndex = 0
+//            }
+        }
+    }
+}
 

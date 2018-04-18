@@ -10,6 +10,7 @@
 import UIKit
 import Firebase
 import RealmSwift
+import YPImagePicker
 
 internal final class HomepageViewController: BaseViewController {
     
@@ -40,6 +41,25 @@ internal final class HomepageViewController: BaseViewController {
         setup()
         print("REALM CONFIG >>>>>>>>>>>>>>>>>>>>>>>>> \(Realm.Configuration.defaultConfiguration.fileURL!)")
         activityBarButton()
+        setupCustomPicker()
+    }
+    
+    let picker = YPImagePicker()
+    
+    //mirtest
+    func setupCustomPicker() {
+        var config = YPImagePickerConfiguration()
+        config.onlySquareImagesFromLibrary = false
+        config.onlySquareImagesFromCamera = true
+        config.libraryTargetImageSize = .original
+        config.usesFrontCamera = true
+        config.showsFilters = true
+        config.screens = [.library, .photo, .video]
+        config.startOnScreen = .library
+        config.showsCrop = .rectangle(ratio: (1/1))
+        config.hidesStatusBar = false
+        //config.overlayView = myOverlayView®
+        YPImagePicker.setDefaultConfiguration(config)
     }
     
     func activityBarButton() {
@@ -135,20 +155,18 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
 extension HomepageViewController: UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-
+        
         print("selected view controller laaaa\(tabBarController.selectedIndex)")
-                if tabBarController.selectedIndex == 1 {
-                   let upload = UploadViewController.instantiate(fromAppStoryboard: .UploadViewController)
-                    let uploadNav = UINavigationController(rootViewController: upload)
-                    present(uploadNav, animated: true) {
-                        tabBarController.selectedIndex = 0
-                    }
-                    
-                }
+        if tabBarController.selectedIndex == 1 {
+            let upload = UploadViewController.instantiate(fromAppStoryboard: .UploadViewController)
+            let uploadNav = UINavigationController(rootViewController: upload)
+            present(picker, animated: true, completion: nil)
+//            present(uploadNav, animated: true) {
+//                tabBarController.selectedIndex = 0
+//            }
+            
+            
+        }
     }
-    
-
-    
-    
 }
 
