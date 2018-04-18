@@ -39,14 +39,12 @@ class UploadViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.navigationController?.navigationBar.isHidden = false
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         setupCustomPicker()
-        self.tabBarController?.delegate = self
     }
     
     func setupCustomPicker() {
@@ -97,77 +95,31 @@ class UploadViewController: BaseViewController {
                                           to: .posts, caption!,
                                           completionHandler: {
                                             print("upload complete")
+                                            self.dismiss(animated: true, completion: nil)
         })
     }
     
     @IBAction func uploadImageTapped(_ sender: Any) {
         print("upload Image tapped")
         
-//        picker.didSelectImage = { [unowned picker] img in
-//            // image picked
-//            print(img.size)
+        present(picker, animated: true, completion: nil)
+        
+        picker.didSelectImage = { [unowned picker] img in
+            // image picked
+            print(img.size)
+            
+            self.uploadButton.setImage(img, for: .normal)
+            picker.dismiss(animated: true, completion: nil)
+        }
 //
-//            self.uploadButton.setImage(img, for: .normal)
+//        picker.didSelectVideo = { videoData, videoThumbnailImage in
+//            // video picked
+//            self.uploadButton.setImage(videoThumbnailImage, for: .normal)
 //            picker.dismiss(animated: true, completion: nil)
 //        }
-//        present(picker, animated: true, completion: nil)
-        
-        //        picker.didSelectVideo = { videoData, videoThumbnailImage in
-        //            // video picked
-        //            self.uploadButton.setImage(videoThumbnailImage, for: .normal)
-        //            picker.dismiss(animated: true, completion: nil)
-        //        }
-        //
-        //        picker.didCancel = {
-        //            print("Did Cancel")
-        //        }
-        
-    }
-}
 //
-//extension UploadViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-//
-//    func imagePickerController(_ picker: UIImagePickerController,
-//                               didFinishPickingMediaWithInfo info: [String : Any]) {
-//
-//
-//        let selectedImage = Image.setImage(info)
-//
-//        if let selectedImage = selectedImage {
-//            uploadButton.setImage(selectedImage, for: .normal)
-//        }
-//
-//        dismiss(animated: true, completion: nil)
-//    }
-//
-//}
-
-extension UploadViewController: UITabBarControllerDelegate {
-    
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        
-        print("selected view controller laaaa\(tabBarController.selectedIndex)")
-        if tabBarController.selectedIndex == 1 {
-//            let upload = UploadViewController.instantiate(fromAppStoryboard: .UploadViewController)
-//            let uploadNav = UINavigationController(rootViewController: upload)
-//            present(uploadNav, animated: true) {
-//                tabBarController.selectedIndex = 0
-//            }
-            
-            picker.didSelectImage = { [unowned picker] img in
-                // image picked
-                print(img.size)
-                self.uploadButton.setImage(img, for: .normal)
-                picker.dismiss(animated: true, completion: nil)
-            }
-            picker.didCancel = {
-                print("did cancel")
-            }
-    
-            present(picker, animated: true, completion: nil)
-//            present(picker, animated: true) {
-//                tabBarController.selectedIndex = 0
-//            }
+        picker.didCancel = {
+            print("Did Cancel")
         }
     }
 }

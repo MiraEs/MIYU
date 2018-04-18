@@ -160,12 +160,10 @@ extension HomepageViewController: UITabBarControllerDelegate {
         if tabBarController.selectedIndex == 1 {
             let upload = UploadViewController.instantiate(fromAppStoryboard: .UploadViewController)
             let uploadNav = UINavigationController(rootViewController: upload)
-            present(picker, animated: true, completion: nil)
-//            present(uploadNav, animated: true) {
-//                tabBarController.selectedIndex = 0
-//            }
             
-            
+            present(uploadNav, animated: true, completion: {
+                tabBarController.selectedIndex = 0
+            })
         }
     }
 }

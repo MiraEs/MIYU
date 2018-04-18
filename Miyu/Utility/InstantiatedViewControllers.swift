@@ -87,7 +87,7 @@ class InstantiatedViewControllers {
                 return tabBar
         }
     
-        tabBar.setViewControllers([homeVC, uploadVC, profileVC].map({UINavigationController(rootViewController: $0)}), animated: true)
+        tabBar.setViewControllers([homeVC, dummyVc, profileVC].map({UINavigationController(rootViewController: $0)}), animated: true)
         tabBar.tabBar.items?[0].image = UIImage(named: "burger")
         tabBar.tabBar.items?[1].image = UIImage(named: "camera")
         tabBar.tabBar.items?[2].image = UIImage(named: "burger")
