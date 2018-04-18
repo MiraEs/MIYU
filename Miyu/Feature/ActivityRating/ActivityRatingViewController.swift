@@ -32,7 +32,6 @@ class ActivityRatingViewController: UIViewController {
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.delegate = self
@@ -55,8 +54,6 @@ class ActivityRatingViewController: UIViewController {
         }
         
         convertDecimalToString()
-        
-        
     }
  
     

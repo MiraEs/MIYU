@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Rated User View Controller-->
+        <scene sceneID="3Ic-QC-DoF">
+            <objects>
+                <viewController storyboardIdentifier="RatedUserViewController" id="c5G-A5-6Tt" customClass="RatedUserViewController" customModule="Miyu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Cf-ly-YFx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Rv-an-fMj">
+                                <rect key="frame" x="87" y="123" width="200" height="107"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0Rv-an-fMj" secondAttribute="height" multiplier="15:8" id="2Kr-Of-5GJ"/>
+                                    <constraint firstAttribute="width" constant="200" id="Efp-DA-4Va"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bobby bob rated a 5 stars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2k-Ce-Chh">
+                                <rect key="frame" x="89" y="311" width="198" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBx-44-n9e">
+                                <rect key="frame" x="165" y="273" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jvo-51-uiH" customClass="CosmosView" customModule="Cosmos">
+                                <rect key="frame" x="58" y="415" width="259" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                        <color key="value" red="1" green="0.71034079241374748" blue="0.78949477042684457" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                        <color key="value" red="0.029703362944162426" green="0.021099510371109482" blue="0.023450649708506757" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                        <color key="value" red="0.20845891497461932" green="0.1480768708487811" blue="0.16457722322131618" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                        <color key="value" red="0.19338708242512115" green="0.03936103869753689" blue="0.20845891497461932" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.63666688821408879" green="1" blue="0.83519235414500792" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="VBx-44-n9e" firstAttribute="centerX" secondItem="GeQ-dG-vwk" secondAttribute="centerX" id="3nd-lp-L7X"/>
+                            <constraint firstItem="n2k-Ce-Chh" firstAttribute="top" secondItem="VBx-44-n9e" secondAttribute="bottom" constant="17" id="6xe-4V-grJ"/>
+                            <constraint firstItem="Jvo-51-uiH" firstAttribute="leading" secondItem="GeQ-dG-vwk" secondAttribute="leading" constant="58" id="8jj-Vc-mso"/>
+                            <constraint firstItem="GeQ-dG-vwk" firstAttribute="bottom" secondItem="Jvo-51-uiH" secondAttribute="bottom" constant="124" id="ElJ-TB-7oF"/>
+                            <constraint firstItem="n2k-Ce-Chh" firstAttribute="centerX" secondItem="GeQ-dG-vwk" secondAttribute="centerX" id="LEC-MK-t5n"/>
+                            <constraint firstItem="0Rv-an-fMj" firstAttribute="top" secondItem="GeQ-dG-vwk" secondAttribute="top" constant="103" id="NhS-T6-JKT"/>
+                            <constraint firstItem="0Rv-an-fMj" firstAttribute="centerX" secondItem="GeQ-dG-vwk" secondAttribute="centerX" id="QqT-1P-UIt"/>
+                            <constraint firstItem="Jvo-51-uiH" firstAttribute="centerX" secondItem="GeQ-dG-vwk" secondAttribute="centerX" id="YlS-Mk-TIu"/>
+                            <constraint firstItem="Jvo-51-uiH" firstAttribute="top" secondItem="n2k-Ce-Chh" secondAttribute="bottom" constant="83" id="ZV7-uS-HH6"/>
+                            <constraint firstItem="VBx-44-n9e" firstAttribute="top" secondItem="0Rv-an-fMj" secondAttribute="bottom" constant="43.5" id="jD0-HV-RZo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GeQ-dG-vwk"/>
+                    </view>
+                    <connections>
+                        <outlet property="ratingMessage" destination="n2k-Ce-Chh" id="1sb-b2-jTh"/>
+                        <outlet property="ratingView" destination="Jvo-51-uiH" id="T33-QD-Vfv"/>
+                        <outlet property="userProfileImage" destination="0Rv-an-fMj" id="brE-w9-yZc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qSH-GL-79r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="163"/>
+        </scene>
+    </scenes>
+</document>

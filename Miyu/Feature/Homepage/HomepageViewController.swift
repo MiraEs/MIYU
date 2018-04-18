@@ -103,6 +103,13 @@ internal final class HomepageViewController: BaseViewController {
             cell.profileImage.loadCachedImage(profileUrlString)
         }
     }
+    
+    private func showUserRated(_ user: AppUser, _ rating: Double) {
+        let dvc = RatedUserViewController.instantiate(fromAppStoryboard: .RatedUserViewController)
+        dvc.userRated = user
+        dvc.rating = rating
+        present(dvc, animated: true, completion: nil)
+    }
 }
 
 extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
@@ -137,6 +144,7 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
             cell.ratingView.didFinishTouchingCosmos = { rating in
                 cell.ratingView.rating = rating
                 cell.ratingUpdate(rating, key, uid)
+                self.showUserRated(user, rating)
                 try! uiRealm.write {
                     currentCell.rating.value = rating
                 }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		49108EBD2027D7200031314B /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49108EBC2027D7200031314B /* AppUser.swift */; };
 		49108EBF2027D76A0031314B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49108EBE2027D76A0031314B /* LoginViewModel.swift */; };
+		491199FF2087FCEC0063356C /* RatedUserViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 491199FE2087FCEC0063356C /* RatedUserViewController.storyboard */; };
+		49119A012087FCF60063356C /* RatedUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49119A002087FCF60063356C /* RatedUserViewController.swift */; };
 		4918EF2F2071D4F400CB1A0C /* FirebaseUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4918EF2E2071D4F400CB1A0C /* FirebaseUserManager.swift */; };
 		4933BEC92023FA35004307E4 /* ProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4933BEC82023FA35004307E4 /* ProfileViewController.storyboard */; };
 		4933BECB2023FD27004307E4 /* HomepageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4933BECA2023FD27004307E4 /* HomepageViewController.storyboard */; };
@@ -91,6 +93,8 @@
 /* Begin PBXFileReference section */
 		49108EBC2027D7200031314B /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		49108EBE2027D76A0031314B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		491199FE2087FCEC0063356C /* RatedUserViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RatedUserViewController.storyboard; sourceTree = "<group>"; };
+		49119A002087FCF60063356C /* RatedUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatedUserViewController.swift; sourceTree = "<group>"; };
 		4918EF2E2071D4F400CB1A0C /* FirebaseUserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseUserManager.swift; sourceTree = "<group>"; };
 		4933BEC82023FA35004307E4 /* ProfileViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileViewController.storyboard; sourceTree = "<group>"; };
 		4933BECA2023FD27004307E4 /* HomepageViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomepageViewController.storyboard; sourceTree = "<group>"; };
@@ -446,6 +450,8 @@
 			children = (
 				49E1D94A2075E79400B5B7FD /* ActivityRating.storyboard */,
 				49E1D94C2075E79F00B5B7FD /* ActivityRatingViewController.swift */,
+				491199FE2087FCEC0063356C /* RatedUserViewController.storyboard */,
+				49119A002087FCF60063356C /* RatedUserViewController.swift */,
 			);
 			path = ActivityRating;
 			sourceTree = "<group>";
@@ -570,6 +576,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49E1D94B2075E79400B5B7FD /* ActivityRating.storyboard in Resources */,
+				491199FF2087FCEC0063356C /* RatedUserViewController.storyboard in Resources */,
 				49A6D7F8201E86E500B994A2 /* LaunchScreen.storyboard in Resources */,
 				49B44C332070678E00A4A069 /* ContentFriendTableViewCell.xib in Resources */,
 				49A6D7F5201E86E500B994A2 /* Assets.xcassets in Resources */,
@@ -709,6 +716,7 @@
 				495AB3A52029461B00D4D721 /* RegisterViewModel.swift in Sources */,
 				49A6D830202104D300B994A2 /* HomepageTableViewCell.swift in Sources */,
 				498EC8282058B47F00EA6DAA /* ProfileContainerView.swift in Sources */,
+				49119A012087FCF60063356C /* RatedUserViewController.swift in Sources */,
 				498B5CF020659F2200FBD4AE /* ProfileContentCollectionViewCell.swift in Sources */,
 				4938476E2050769900FFA15A /* BaseTableViewCell.swift in Sources */,
 				49A6D83620210C1400B994A2 /* BaseViewController.swift in Sources */,
