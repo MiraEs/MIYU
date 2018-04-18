@@ -19,7 +19,6 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     private weak var viewModel: ProfileUserDataModel? {
         return ProfileUserDataModel(self)
     }
-
     @IBOutlet weak var profileImage: UIImageView! {
         didSet {
             viewModel?.designSetup(profileImage)
@@ -66,6 +65,8 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     // MIRTEST
     @objc func addFriendButtonTapped() {
         viewModel?.addFriend(uid!)
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.clear
     }
     
     

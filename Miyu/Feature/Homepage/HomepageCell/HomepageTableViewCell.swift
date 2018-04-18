@@ -127,6 +127,8 @@ class HomepageTableViewCell: UITableViewCell {
             dvc.uid = self.uid
             dvc.isDiffOrigin = true
             presentingVc?.pushViewController(dvc, animated: true)
+        } else {
+            presentingVc?.tabBarController?.selectedIndex = 2
         }
         
     }
