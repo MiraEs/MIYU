@@ -37,9 +37,9 @@ class RatedUserViewController: UIViewController {
         fetchPhoto(photoUrl)
         
         if ratingNum == 1 {
-            ratingMessage.text = "\(user) rated \(user) \(ratingNum) star"
+            ratingMessage.text = "You rated \(user) \(ratingNum) star"
         } else {
-            ratingMessage.text = "\(user) rated \(user) \(ratingNum) stars"
+            ratingMessage.text = "You rated \(user) \(ratingNum) stars"
         }
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissView))

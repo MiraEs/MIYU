@@ -14,7 +14,6 @@ enum Children: String {
 }
 
 enum UserActivityAction: String {
-    
     case rated = "rated"
     case ratedBy = "rated-by"
 }
@@ -55,12 +54,10 @@ internal final class FirebaseUserManager {
     // MARK: GET USER DATA
     
     func getPosts(eventType: DataEventType, with handler: @escaping (DataSnapshot) -> Void) {
-
         postRef?.observe(eventType, with: handler)
     }
     
     func getUserPosts(uid: String, eventType: DataEventType, with handler: @escaping (Post) -> Void) {
-        print("NEWORK CALL - POSTS")
         let userRef = userPostRef?.child(uid)
         userRef?.observeSingleEvent(of: .value) { (snapshot) in
             let enumerator = snapshot.children
@@ -257,6 +254,23 @@ extension FirebaseUserManager {
                 "postRatingFromUser" : rating
             ]]
         ref?.updateChildValues(value)
+    }
+    
+    func getWhoRatedUsers() {
+        let ref = userActivity?.child(currentUser!.uid).child("\(UserActivityAction.ratedBy)")
+        ref?.queryLimited(toLast: 5).observeSingleEvent(of: .value, with: { (snapshot) in
+            var tempArr = [AppUser]()
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                let object = snap.value
+                let uid = snap.key
+                self.getUserData(uid, { (user) in
+                    tempArr.append(user)
+                })
+            }
+            print("TEMPPP ARRR >>>>> \(tempArr)")
+        })
+        
     }
     
     //2. Upload new count to database

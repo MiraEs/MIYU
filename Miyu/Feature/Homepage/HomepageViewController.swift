@@ -19,6 +19,7 @@ internal final class HomepageViewController: BaseViewController {
         return HomepageViewModel(self)
     }
     private var allPosts: Results<Post>!
+    private var ratedUsers: Results<AppUser>!
     
     private var currentCellRating = ""
     
@@ -44,6 +45,7 @@ internal final class HomepageViewController: BaseViewController {
         print("REALM CONFIG >>>>>>>>>>>>>>>>>>>>>>>>> \(Realm.Configuration.defaultConfiguration.fileURL!)")
         activityBarButton()
         setupCustomPicker()
+        //fbManager?.getWhoRatedUsers()
     }
     
     let picker = YPImagePicker()
@@ -88,6 +90,9 @@ internal final class HomepageViewController: BaseViewController {
         allPosts = uiRealm.objects(Post.self)
         viewModel?.filterUserPostData()
         self.tableView.reloadData()
+        
+        //mirtest
+        //ratedUsers = uiRealm.object(ofType: AppUser.self, forPrimaryKey: "email")
     }
     
     // MARK: FETCH DATA
