@@ -13,10 +13,10 @@ enum Children: String {
     case posts, user
 }
 
-enum UserActivityAction {
-    typealias RawValue = String
+enum UserActivityAction: String {
     
-    case rated
+    case rated = "rated"
+    case ratedBy = "rated-by"
 }
 
 internal final class FirebaseUserManager {
@@ -26,6 +26,8 @@ internal final class FirebaseUserManager {
     var currentUser: User? {
         return Auth.auth().currentUser
     }
+    
+    var currentUserInfo: AppUser?
     
     private weak var store = DataStore.sharedInstance
     
@@ -226,6 +228,9 @@ extension FirebaseUserManager {
     }
     
     //MIRTEST
+    //MIRTEST
+    //MIRTEST
+    //MIRTEST//MIRTEST//MIRTEST//MIRTEST//MIRTEST//MIRTEST//MIRTEST//MIRTEST//MIRTEST******
     func updateUserActivity(_ key: String) {
         let ref = userActivity?.child(currentUser!.uid).child("\(UserActivityAction.rated)")
 
@@ -233,6 +238,26 @@ extension FirebaseUserManager {
         ref?.updateChildValues(value)
     }
     
+    func updateWhoRated(_ currentUid: String, _ otherUid: String, _ rating: Double, _ postKey: String) {
+        let ref = userActivity?.child(otherUid).child("\(UserActivityAction.ratedBy)")
+        
+        // value represents the rating of post
+        /*
+         - user-activity
+            -rated
+            -rated-by
+                - otherUid
+                    - YOURuid
+                        -post key
+                        -rating of post (number)
+         */
+        let value: [String: Any] = [currentUid :
+            [
+                "postID": postKey,
+                "postRatingFromUser" : rating
+            ]]
+        ref?.updateChildValues(value)
+    }
     
     //2. Upload new count to database
     private func uploadPostRatedCount(_ post: Post) {
@@ -331,6 +356,7 @@ extension FirebaseUserManager {
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
             if user != nil {
                 self.addToDatabase(appUser, user!, profileImage)
+                self.currentUserInfo = appUser
                 handler?()
             } else {
                 // TODO: Create error alert class
@@ -370,6 +396,10 @@ extension FirebaseUserManager {
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if user != nil {
                 handler?()
+                guard let uid = self.currentUser?.uid else { return }
+                self.getUserData(uid, { (validUser) in
+                    self.currentUserInfo = validUser
+                })
             } else {
                 // TODO: create error alert class
                 print(error.debugDescription)

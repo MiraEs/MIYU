@@ -15,6 +15,12 @@ class ActivityRatingViewController: UIViewController {
     var pickerData = [[String]]()
     let cellId = "cellId"
     let cellId2 = "cellId2"
+    
+    
+    // IMPLEMENT TABLEVIEW >> max 4
+    // animate automatically each cell
+    // audio needed
+    let otherUsers = [AppUser]()
 
     @IBOutlet weak var arrow: UIImageView!
     @IBOutlet weak var topSeperatorView: UIView!
@@ -54,6 +60,14 @@ class ActivityRatingViewController: UIViewController {
         }
         
         convertDecimalToString()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissView))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissView() {
+        self.dismiss(animated: true, completion: nil)
     }
  
     

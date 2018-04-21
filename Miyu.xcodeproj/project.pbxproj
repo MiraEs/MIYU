@@ -67,7 +67,7 @@
 		49DC302820227D1000E7F05F /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49DC302620227D1000E7F05F /* ProfileTableViewCell.xib */; };
 		49E1D9472075BF3700B5B7FD /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1D9462075BF3700B5B7FD /* RootViewController.swift */; };
 		49E1D9492075C3ED00B5B7FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E1D9482075C3ED00B5B7FD /* Main.storyboard */; };
-		49E1D94B2075E79400B5B7FD /* ActivityRating.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E1D94A2075E79400B5B7FD /* ActivityRating.storyboard */; };
+		49E1D94B2075E79400B5B7FD /* ActivityRatingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E1D94A2075E79400B5B7FD /* ActivityRatingViewController.storyboard */; };
 		49E1D94D2075E79F00B5B7FD /* ActivityRatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1D94C2075E79F00B5B7FD /* ActivityRatingViewController.swift */; };
 		49E4F577202E93B700D5C7B4 /* UploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E4F576202E93B700D5C7B4 /* UploadViewModel.swift */; };
 		8736BCB40BCE784B2B71E8F5 /* Pods_Miyu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8711C96527BBB4952E43A15B /* Pods_Miyu.framework */; };
@@ -155,7 +155,7 @@
 		49DC302620227D1000E7F05F /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
 		49E1D9462075BF3700B5B7FD /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		49E1D9482075C3ED00B5B7FD /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		49E1D94A2075E79400B5B7FD /* ActivityRating.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivityRating.storyboard; sourceTree = "<group>"; };
+		49E1D94A2075E79400B5B7FD /* ActivityRatingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivityRatingViewController.storyboard; sourceTree = "<group>"; };
 		49E1D94C2075E79F00B5B7FD /* ActivityRatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRatingViewController.swift; sourceTree = "<group>"; };
 		49E4F576202E93B700D5C7B4 /* UploadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewModel.swift; sourceTree = "<group>"; };
 		8711C96527BBB4952E43A15B /* Pods_Miyu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Miyu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -448,7 +448,7 @@
 		49E1D94E2075E7A900B5B7FD /* ActivityRating */ = {
 			isa = PBXGroup;
 			children = (
-				49E1D94A2075E79400B5B7FD /* ActivityRating.storyboard */,
+				49E1D94A2075E79400B5B7FD /* ActivityRatingViewController.storyboard */,
 				49E1D94C2075E79F00B5B7FD /* ActivityRatingViewController.swift */,
 				491199FE2087FCEC0063356C /* RatedUserViewController.storyboard */,
 				49119A002087FCF60063356C /* RatedUserViewController.swift */,
@@ -575,7 +575,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49E1D94B2075E79400B5B7FD /* ActivityRating.storyboard in Resources */,
+				49E1D94B2075E79400B5B7FD /* ActivityRatingViewController.storyboard in Resources */,
 				491199FF2087FCEC0063356C /* RatedUserViewController.storyboard in Resources */,
 				49A6D7F8201E86E500B994A2 /* LaunchScreen.storyboard in Resources */,
 				49B44C332070678E00A4A069 /* ContentFriendTableViewCell.xib in Resources */,

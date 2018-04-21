@@ -20,27 +20,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Rv-an-fMj">
-                                <rect key="frame" x="87" y="123" width="200" height="107"/>
+                                <rect key="frame" x="157" y="123" width="60" height="32.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0Rv-an-fMj" secondAttribute="height" multiplier="15:8" id="2Kr-Of-5GJ"/>
-                                    <constraint firstAttribute="width" constant="200" id="Efp-DA-4Va"/>
+                                    <constraint firstAttribute="width" constant="60" id="Efp-DA-4Va"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bobby bob rated a 5 stars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2k-Ce-Chh">
-                                <rect key="frame" x="89" y="311" width="198" height="21"/>
+                                <rect key="frame" x="89" y="236.5" width="198" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBx-44-n9e">
-                                <rect key="frame" x="165" y="273" width="45" height="21"/>
+                                <rect key="frame" x="165" y="198.5" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jvo-51-uiH" customClass="CosmosView" customModule="Cosmos">
-                                <rect key="frame" x="58" y="415" width="259" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="27.5" y="340.5" width="320" height="202.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
                                         <color key="value" red="1" green="0.71034079241374748" blue="0.78949477042684457" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -54,6 +55,9 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
                                         <color key="value" red="0.19338708242512115" green="0.03936103869753689" blue="0.20845891497461932" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                        <real key="value" value="60"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
@@ -61,7 +65,6 @@
                         <constraints>
                             <constraint firstItem="VBx-44-n9e" firstAttribute="centerX" secondItem="GeQ-dG-vwk" secondAttribute="centerX" id="3nd-lp-L7X"/>
                             <constraint firstItem="n2k-Ce-Chh" firstAttribute="top" secondItem="VBx-44-n9e" secondAttribute="bottom" constant="17" id="6xe-4V-grJ"/>
-                            <constraint firstItem="Jvo-51-uiH" firstAttribute="leading" secondItem="GeQ-dG-vwk" secondAttribute="leading" constant="58" id="8jj-Vc-mso"/>
                             <constraint firstItem="GeQ-dG-vwk" firstAttribute="bottom" secondItem="Jvo-51-uiH" secondAttribute="bottom" constant="124" id="ElJ-TB-7oF"/>
                             <constraint firstItem="n2k-Ce-Chh" firstAttribute="centerX" secondItem="GeQ-dG-vwk" secondAttribute="centerX" id="LEC-MK-t5n"/>
                             <constraint firstItem="0Rv-an-fMj" firstAttribute="top" secondItem="GeQ-dG-vwk" secondAttribute="top" constant="103" id="NhS-T6-JKT"/>

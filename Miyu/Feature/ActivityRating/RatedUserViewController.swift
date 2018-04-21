@@ -14,7 +14,11 @@ class RatedUserViewController: UIViewController {
     private weak var fbManager = FirebaseUserManager.manager
     var userRated: AppUser?
     var rating: Double?
-    @IBOutlet weak var ratingView: CosmosView!
+    @IBOutlet weak var ratingView: CosmosView! {
+        didSet {
+            ratingView.isUserInteractionEnabled = false
+        }
+    }
     @IBOutlet weak var ratingMessage: UILabel!
     @IBOutlet weak var userProfileImage: UIImageView!
     
@@ -33,9 +37,9 @@ class RatedUserViewController: UIViewController {
         fetchPhoto(photoUrl)
         
         if ratingNum == 1 {
-            ratingMessage.text = "\(currentUser) rated \(user) \(ratingNum) star"
+            ratingMessage.text = "\(user) rated \(user) \(ratingNum) star"
         } else {
-            ratingMessage.text = "\(currentUser) rated \(user) \(ratingNum) stars"
+            ratingMessage.text = "\(user) rated \(user) \(ratingNum) stars"
         }
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissView))

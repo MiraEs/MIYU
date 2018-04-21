@@ -36,6 +36,8 @@ internal final class HomepageViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("CURRENT USER INFO YAYY>>>>>>>>>>>> \(fbManager?.currentUserInfo?.firstName)")
+        
         self.tabBarController?.delegate = self
         
         setup()
@@ -70,6 +72,7 @@ internal final class HomepageViewController: BaseViewController {
     
     @objc func presentActivityViews() {
         print("present recent ratings")
+        viewModel?.presentVC(vc: .ActivityRatingViewController)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -145,12 +148,26 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.ratingView.rating = rating
                 cell.ratingUpdate(rating, key, uid)
                 self.showUserRated(user, rating)
+                self.uploadToUserActivity(currentUid, uid, rating, currentCell.key!)
                 try! uiRealm.write {
                     currentCell.rating.value = rating
                 }
             }
         }
         return cell
+    }
+    
+    func uploadToUserActivity(_ currentUid: String,
+                              _ otherUid: String,
+                              _ rating: Double,
+                              _ postKey: String) {
+        /*
+         - user-activity
+            -currentUid
+                - otherUid
+                - otherUid
+         */
+        fbManager?.updateWhoRated(currentUid, otherUid, rating, postKey)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell,
