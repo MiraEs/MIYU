@@ -14,6 +14,7 @@ import YPImagePicker
 
 internal final class HomepageViewController: BaseViewController {
     
+    private weak var fbService = FirebaseSerivce.shared
     private weak var fbManager = FirebaseUserManager.manager
     private weak var viewModel: HomepageViewModel? {
         return HomepageViewModel(self)
@@ -83,7 +84,10 @@ internal final class HomepageViewController: BaseViewController {
     
     private func setup() {
         viewModel?.setup(tableView)
-        fetchPosts()
+        fbService?.getAllData(.posts, Post.self, { (object) in
+            print("lkjnkjfnkjnf \(object)")
+        })
+        //fetchPosts()
     }
     
     private func reloadData() {
