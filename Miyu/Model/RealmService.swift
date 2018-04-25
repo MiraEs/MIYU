@@ -53,10 +53,8 @@ class RealmService {
     }
     
     func observeRealmErrors(in vc: UIViewController, completion: @escaping (Error?)->Void) {
-        NotificationCenter.default.addObserver(forName: NSNotification.Name("RealmError"),
-                                               object: nil,
-                                               queue: nil) { (notification) in
-            notification.object as? Error
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("RealmError"), object: nil, queue: nil) { (notification) in
+            completion(notification.object as? Error)
         }
     }
     
