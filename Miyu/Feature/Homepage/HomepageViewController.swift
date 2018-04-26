@@ -29,7 +29,6 @@ internal final class HomepageViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func singOutButtonTapped(_ sender: Any) {
-        print("signing out")
         fbManager?.signOut {
             AppDelegate.shared.rootViewController.switchToLogout()
         }
@@ -63,7 +62,7 @@ internal final class HomepageViewController: BaseViewController {
         config.startOnScreen = .library
         config.showsCrop = .rectangle(ratio: (1/1))
         config.hidesStatusBar = false
-        //config.overlayView = myOverlayView®
+        //config.overlayView = myOverlayView
         YPImagePicker.setDefaultConfiguration(config)
     }
     
@@ -86,24 +85,10 @@ internal final class HomepageViewController: BaseViewController {
         viewModel?.setup(tableView)
         
         if allPosts == nil {
-            print("all posts is empty - fetching data")
-            let loadingIndicator = self.displaySpinner(onView: self.view)
-            fbService?.observeAllData(.posts, Post.self, { (post) in
-                self.fbService?.getData(.user(uid: post.uid!), AppUser.self, { (user, keyId) in
-                    //print("user \(user): keyId \(keyId)")
-                    user.uid = keyId
-                    post.user = user
-                    user.writeToRealm()
-                    post.writeToRealm()
-                    self.removeSpinner(spinner: loadingIndicator)
-                    self.reloadData()
-                })
+            self.viewModel?.getPosts(completionHandler: {
+                self.reloadData()
             })
-        } else {
-            print("allPsots not empty \(allPosts)")
         }
-        
-        //fetchPosts()
     }
     
     private func reloadData() {
@@ -115,20 +100,16 @@ internal final class HomepageViewController: BaseViewController {
         //ratedUsers = uiRealm.object(ofType: AppUser.self, forPrimaryKey: "email")
     }
     
-    // MARK: FETCH DATA
-    private func fetchPosts() {
-        let loadingIndicator = self.displaySpinner(onView: self.view)
-//        self.viewModel?.getPosts({ [weak self] (post) in
-//            self?.removeSpinner(spinner: loadingIndicator)
-//            self?.reloadData()
-//        })
-    }
     
     private func fetchPhoto(_ contentUrlString: String?, _ profileUrlString: String?, _ cell: HomepageTableViewCell) {
+        let loadingIndicator = self.displaySpinner(onView: self.view)
         if let contentUrlString = contentUrlString,
             let profileUrlString = profileUrlString {
             cell.contentImage.loadCachedImage(contentUrlString)
             cell.profileImage.loadCachedImage(profileUrlString)
+            DispatchQueue.main.async {
+                self.removeSpinner(spinner: loadingIndicator)
+            }
         }
     }
     

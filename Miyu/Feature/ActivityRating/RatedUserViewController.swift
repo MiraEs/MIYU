@@ -59,5 +59,4 @@ class RatedUserViewController: UIViewController {
     private func fetchPhoto( _ profileUrlString: String) {
         userProfileImage.loadCachedImage(profileUrlString)
     }
-    
 }
