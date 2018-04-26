@@ -90,7 +90,7 @@ internal final class HomepageViewController: BaseViewController {
             let loadingIndicator = self.displaySpinner(onView: self.view)
             fbService?.observeAllData(.posts, Post.self, { (post) in
                 self.fbService?.getData(.user(uid: post.uid!), AppUser.self, { (user, keyId) in
-                    print("user \(user): keyId \(keyId)")
+                    //print("user \(user): keyId \(keyId)")
                     user.uid = keyId
                     post.user = user
                     user.writeToRealm()

@@ -22,6 +22,11 @@ class RatedUserViewController: UIViewController {
     @IBOutlet weak var ratingMessage: UILabel!
     @IBOutlet weak var userProfileImage: UIImageView!
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("RATED BITCH HERE KJSNDFKSDNFKJNSF")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
