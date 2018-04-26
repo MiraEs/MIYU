@@ -65,6 +65,7 @@ internal final class FirebaseUserManager {
                 do {
                     let data = try JSONSerialization.data(withJSONObject: object.value!, options: [])
                     let post = try JSONDecoder().decode(Post.self, from: data)
+                    let keyId = snapshot.key
                     handler(post)
                 } catch {
                     print(error)

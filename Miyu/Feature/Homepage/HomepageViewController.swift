@@ -84,9 +84,21 @@ internal final class HomepageViewController: BaseViewController {
     
     private func setup() {
         viewModel?.setup(tableView)
-        fbService?.getAllData(.posts, Post.self, { (object) in
-            print("lkjnkjfnkjnf \(object)")
-        })
+        
+        //initial download of posts
+        
+        if allPosts == nil {
+            print("all posts is empty - fetching data")
+            fbService?.getAllData(.posts, Post.self, { (post) in
+                self.fbService?.getData(.user(uid: post.uid!), AppUser.self, { (user, keyId) in
+                    print("user \(user): keyId \(keyId)")
+                    user.uid = keyId
+                    user.writeToRealm()
+                    post.writeToRealm()
+                })
+            })
+        }
+        
         //fetchPosts()
     }
     

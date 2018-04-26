@@ -19,9 +19,10 @@ internal final class Post: Object, Codable {
     @objc dynamic  var data: String? = nil
     var averageRating = RealmOptional<Double>()
     var rating = RealmOptional<Double>()
-    @objc dynamic var key: String? = nil
     @objc dynamic var uid: String? = nil
     var count = RealmOptional<Int>()
+    
+    @objc dynamic var key: String? = nil
     @objc dynamic var user: AppUser?
 
     

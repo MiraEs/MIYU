@@ -12,15 +12,21 @@ import Foundation
 import Firebase
 import RealmSwift
 
-enum DatabaseRef {
+enum DatabaseRefs {
     
     case posts
-    //case users = Database.database().reference()
+    case users
+    case user(uid: String)
     
     var value: DatabaseReference? {
+        let ref = Database.database().reference()
         switch self {
         case .posts:
-            return Database.database().reference().child(FbChildPaths.posts)
+            return ref.child(FbChildPaths.posts)
+        case .users:
+            return ref.child(FbChildPaths.users)
+        case .user(let uid):
+            return ref.child(FbChildPaths.users).child(uid)
         }
     }
 }
@@ -29,17 +35,18 @@ class FirebaseSerivce {
     private init() {}
     static let shared = FirebaseSerivce()
     
-    func getAllData<T: Codable>(_ ref: DatabaseRef,
-                            _ anyObject: T.Type,
-                            _ completionHandler: @escaping (Object)->Void) {
+    // SINGLE EVENTS
+    func getAllData<T: Codable>(_ ref: DatabaseRefs,
+                                _ objectType: T.Type,
+                                _ completionHandler: @escaping (T)->Void) {
         ref.value?.queryLimited(toLast:100).observeSingleEvent(of: .value) { (snapshot) in
             let snaps = snapshot.children
             while let object = snaps.nextObject() as? DataSnapshot {
                 do {
                     if let value = object.value {
                         let data = try JSONSerialization.data(withJSONObject: value, options: [])
-                        let validDataObject = try JSONDecoder().decode(anyObject, from: data)
-                        completionHandler(validDataObject as! Object)
+                        let object = try JSONDecoder().decode(objectType, from: data)
+                        completionHandler(object)
                     }
                 } catch {
                     print(error)
@@ -48,7 +55,21 @@ class FirebaseSerivce {
         }
     }
     
-    func getData() {}
+    func getData<T: Codable>(_ ref: DatabaseRefs,
+                             _ objectType: T.Type,
+                             _ completionHandler: @escaping (T, _ keyId: String)->Void) {
+        ref.value?.observeSingleEvent(of: .value, with: { (snapshot) in
+            do {
+                if let value = snapshot.value {
+                    let data = try JSONSerialization.data(withJSONObject: value, options: [])
+                    let object = try JSONDecoder().decode(objectType, from: data)
+                    completionHandler(object, snapshot.key)
+                }
+            } catch {
+                print(error)
+            }
+        })
+    }
     
     func updateData() {}
     

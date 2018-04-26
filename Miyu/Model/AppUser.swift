@@ -26,7 +26,9 @@ final class AppUser: Object, Codable {
     @objc dynamic var lastName: String? = nil
     @objc dynamic var photoUrl: String? = nil
     var userRating = RealmOptional<Double>()
+    
     @objc dynamic var keyUid: String? = nil
+    @objc dynamic var uid: String? = nil
     
     convenience init(firstName: String, lastName: String, email: String,
                      photoUrl: String = "", userRating: Double = 5) {
@@ -37,11 +39,12 @@ final class AppUser: Object, Codable {
         self.photoUrl = photoUrl
         self.userRating.value = userRating
         self.keyUid = ""
+        self.uid = ""
     }
     
     
     override static func primaryKey() -> String? {
-        return "email"
+        return "uid"
     }
     
     // REALM
