@@ -32,28 +32,28 @@ internal final class HomepageViewModel: InstantiatedViewControllers {
     
     // MARK: PREPARE DATA
     
-    func getPosts(_ completion: @escaping (_ posts: Post)->Void) {
-        print("get postss CALLLED FROM HOMWPAGE VIEW MODEL >>>>>>")
-        fbManager?.getPosts(eventType: .childAdded, with: { (snapshot) in
-            do {
-                if JSONSerialization.isValidJSONObject(snapshot.value!) {
-                    let data = try JSONSerialization.data(withJSONObject: snapshot.value!, options: [])
-                    let post = try JSONDecoder().decode(Post.self, from: data)
-            
-                    self.fbManager?.getUserData(post.uid!, { (user) in
-                        post.user = user
-                        post.key = snapshot.key
-                        post.writeToRealm()
-                        DispatchQueue.main.async {
-                            completion(post)
-                        }
-                    })
-                }
-            } catch {
-                print(error)
-            }
-        })
-    }
+//    func getPosts(_ completion: @escaping (_ posts: Post)->Void) {
+//        print("get postss CALLLED FROM HOMWPAGE VIEW MODEL >>>>>>")
+//        fbManager?.getPosts(eventType: .childAdded, with: { (snapshot) in
+//            do {
+//                if JSONSerialization.isValidJSONObject(snapshot.value!) {
+//                    let data = try JSONSerialization.data(withJSONObject: snapshot.value!, options: [])
+//                    let post = try JSONDecoder().decode(Post.self, from: data)
+//
+//                    self.fbManager?.getUserData(post.uid!, { (user) in
+//                        post.user = user
+//                        post.key = snapshot.key
+//                        post.writeToRealm()
+//                        DispatchQueue.main.async {
+//                            completion(post)
+//                        }
+//                    })
+//                }
+//            } catch {
+//                print(error)
+//            }
+//        })
+//    }
 
     func filterUserPostData() {
         if let uid = fbManager?.currentUser?.uid {
