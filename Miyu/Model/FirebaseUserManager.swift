@@ -53,26 +53,26 @@ internal final class FirebaseUserManager {
     
     // MARK: GET USER DATA
     
-    func getPosts(eventType: DataEventType, with handler: @escaping (DataSnapshot) -> Void) {
-        postRef?.observe(eventType, with: handler)
-    }
+//    func getPosts(eventType: DataEventType, with handler: @escaping (DataSnapshot) -> Void) {
+//        postRef?.observe(eventType, with: handler)
+//    }
     
-    func getUserPosts(uid: String, eventType: DataEventType, with handler: @escaping (Post) -> Void) {
-        let userRef = userPostRef?.child(uid)
-        userRef?.observeSingleEvent(of: .value) { (snapshot) in
-            let enumerator = snapshot.children
-            while let object = enumerator.nextObject() as? DataSnapshot {
-                do {
-                    let data = try JSONSerialization.data(withJSONObject: object.value!, options: [])
-                    let post = try JSONDecoder().decode(Post.self, from: data)
-                    let keyId = snapshot.key
-                    handler(post)
-                } catch {
-                    print(error)
-                }
-            }
-        }
-    }
+//    func getUserPosts(uid: String, eventType: DataEventType, with handler: @escaping (Post) -> Void) {
+//        let userRef = userPostRef?.child(uid)
+//        userRef?.observeSingleEvent(of: .value) { (snapshot) in
+//            let enumerator = snapshot.children
+//            while let object = enumerator.nextObject() as? DataSnapshot {
+//                do {
+//                    let data = try JSONSerialization.data(withJSONObject: object.value!, options: [])
+//                    let post = try JSONDecoder().decode(Post.self, from: data)
+//                    let keyId = snapshot.key
+//                    handler(post)
+//                } catch {
+//                    print(error)
+//                }
+//            }
+//        }
+//    }
     
     func getUsers(eventType: DataEventType, uid: String, with handler: @escaping (DataSnapshot) -> Void) {
         ref?.child(FbChildPaths.users).child(uid).observe(eventType, with: handler)

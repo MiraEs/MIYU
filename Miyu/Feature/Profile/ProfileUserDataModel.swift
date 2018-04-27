@@ -12,6 +12,7 @@ import RealmSwift
 
 class ProfileUserDataModel {
     
+    private weak var fbSerivce = FirebaseSerivce.shared
     private weak var fbManager = FirebaseUserManager.manager
     private weak var store = DataStore.sharedInstance
     private weak var presentingViewController: UIViewController?
@@ -37,6 +38,10 @@ class ProfileUserDataModel {
         fbManager?.getUserData(validUid, { (user) in
             handler(user)
         })
+        fbSerivce?.getData(.user(uid), AppUser.self, { (<#Decodable & Encodable#>, <#String#>) in
+            <#code#>
+        })
+        
         
     }
     
