@@ -52,27 +52,6 @@ internal final class FirebaseUserManager {
     
     // MARK: GET USER DATA
     
-    //    func getPosts(eventType: DataEventType, with handler: @escaping (DataSnapshot) -> Void) {
-    //        postRef?.observe(eventType, with: handler)
-    //    }
-    
-    //    func getUserPosts(uid: String, eventType: DataEventType, with handler: @escaping (Post) -> Void) {
-    //        let userRef = userPostRef?.child(uid)
-    //        userRef?.observeSingleEvent(of: .value) { (snapshot) in
-    //            let enumerator = snapshot.children
-    //            while let object = enumerator.nextObject() as? DataSnapshot {
-    //                do {
-    //                    let data = try JSONSerialization.data(withJSONObject: object.value!, options: [])
-    //                    let post = try JSONDecoder().decode(Post.self, from: data)
-    //                    let keyId = snapshot.key
-    //                    handler(post)
-    //                } catch {
-    //                    print(error)
-    //                }
-    //            }
-    //        }
-    //    }
-    
     func getUsers(eventType: DataEventType, uid: String, with handler: @escaping (DataSnapshot) -> Void) {
         ref?.child(FbChildPaths.users).child(uid).observe(eventType, with: handler)
     }
@@ -107,7 +86,6 @@ extension FirebaseUserManager {
         let userRef = userFriendsRef?.child(uid)
         
         userRef?.observeSingleEvent(of: .value, with: { (snapshot) in
-            print("NETWORK - CHECKING FRIEND LIST")
             if snapshot.hasChild(friendUid) {
                 return
             } else {
@@ -142,48 +120,6 @@ extension FirebaseUserManager {
             }
         })
     }
-}
-
-extension FirebaseUserManager {
-    // MARK: UPLOAD NEW POSTS
-    ///1. New post uploaded to Database
-//    private func uploadPost(_ contentUrl: String, _ caption: String?, _ event: Children) {
-//        let key = ref.child(event.rawValue).childByAutoId().key
-//        guard let uid = currentUser?.uid,
-//            let caption = caption else {
-//                return
-//        }
-//
-//        guard let post = Post(caption: caption, data: contentUrl, uid: uid, key: key).dictionary else { return }
-//        let childUpdates: [String: Any] = ["/posts/\(key)" : post,
-//                                           "/user-posts/\(uid)/\(key)/" : post]
-//
-//
-//        ref.updateChildValues(childUpdates)
-//    }
-    
-    //TODO: Fix to include video content as well
-    //2. New post content uploaded to storage
-//    func uploadContentToStorage(with content: UIImageView, to path: Children, _ caption: String, completionHandler: @escaping ()->Void) {
-//        let contentName = NSUUID().uuidString
-//        let storageRef = Storage.storage().reference().child(FbChildPaths.users).child((currentUser?.uid)!).child("\(contentName)")
-//
-//        let uploadData = Image.convertToPngData(with: content.image!)
-//
-//        storageRef.putData(uploadData!, metadata: nil, completion: { (metadata, error) in
-//            if error != nil {
-//                print(error!)
-//            }
-//
-//            if let urlString = metadata?.downloadURL()?.absoluteString {
-//                if path == .posts {
-//                    self.uploadPost(urlString, caption, .posts)
-//                }
-//                completionHandler()
-//            }
-//        })
-//    }
-    
 }
 
 extension FirebaseUserManager {
@@ -382,30 +318,6 @@ extension FirebaseUserManager {
             }
         })
     }
-
-    
-//    private func addToStorage(_ currentUser: User,
-//                              _ profileImage: UIImage,
-//                              _ handler: @escaping (String)->()) {
-//
-//        let contentName = NSUUID().uuidString
-//        let storageRef = Storage.storage().reference().child(FbChildPaths.users).child((currentUser.uid)).child("\(contentName)")
-//        let uploadData = profileImage.toPngData()
-//
-//        storageRef.putData(uploadData!, metadata: nil, completion: { (metadata, error) in
-//            if error != nil {
-//                print(error!)
-//            }
-//
-//            storageRef.downloadURL(completion: { (url, error) in
-//                if error != nil {
-//                    print(error!.localizedDescription)
-//                } else if let urlString = url?.absoluteString {
-//                    handler(urlString)
-//                }
-//            })
-//        })
-//    }
     
     private func addToDatabase(_ userInfo: AppUser, _ photoUrl: String, _ uid: String) {
         guard let userData = userInfo.dictionary else { return }

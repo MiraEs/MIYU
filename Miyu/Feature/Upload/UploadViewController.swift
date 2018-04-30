@@ -107,7 +107,6 @@ class UploadViewController: BaseViewController {
         present(picker, animated: true, completion: nil)
         
         picker.didSelectImage = { [unowned picker] img in
-            // image picked
             print(img.size)
             
             self.uploadButton.setImage(img, for: .normal)
