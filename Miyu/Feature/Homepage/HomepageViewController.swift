@@ -41,9 +41,10 @@ internal final class HomepageViewController: BaseViewController {
         
         self.tabBarController?.delegate = self
         
-        setup()
+        
         print("REALM CONFIG >>>>>>>>>>>>>>>>>>>>>>>>> \(Realm.Configuration.defaultConfiguration.fileURL!)")
         activityBarButton()
+        setup()
         setupCustomPicker()
         //fbManager?.getWhoRatedUsers()
     }

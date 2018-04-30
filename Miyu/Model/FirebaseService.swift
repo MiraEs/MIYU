@@ -102,20 +102,32 @@ class FirebaseSerivce {
                     _ mediaContent: UIImageView,
                     _ caption: String,
                     _ completionHandler: CompletionHandler) {
-        let key = ref.value?.childByAutoId().key
+        
         guard let user = currentUser,
-            let image = mediaContent.image else { return }
+            let image = mediaContent.image,
+            let key = ref.value?.childByAutoId().key else { return }
         
         FirebaseHelper.addToStorage(user, image) { (urlString) in
             let post = Post(caption: caption, data: urlString, uid: user.uid, key: key)
-            post.user = user
-            let childUpdate = ["/posts/\(String(describing: key))":post,
-                               "/user-posts/\(user.uid)/\(String(describing: key))":post]
+            post.user = self.checkRealm(user.uid)
+            
+            guard let validPost = post.dictionary else { return}
+            let childUpdate: [String:Any] = ["/posts/\(key)":validPost,
+                               "/user-posts/\(user.uid)/\(key)":validPost]
             DatabaseRefs.parent.value?.updateChildValues(childUpdate)
             RealmService.shared.save(post)
+            
         }
 
         completionHandler?()
+    }
+    
+    //MIRTEST
+    func checkRealm<T: Object>(_ key: String) -> T? {
+        if let object = uiRealm.object(ofType: T.self, forPrimaryKey: key) {
+            return object
+        }
+        return nil
     }
     
     func deleteData() {}
