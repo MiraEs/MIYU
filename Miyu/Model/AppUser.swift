@@ -30,18 +30,19 @@ final class AppUser: Object, Codable {
     @objc dynamic var keyUid: String? = nil
     @objc dynamic var uid: String? = nil
     
-    convenience init(firstName: String, lastName: String, email: String,
-                     photoUrl: String = "", userRating: Double = 5) {
+    convenience init(firstName: String,
+                     lastName: String,
+                     email: String, userRating: Double = 5,
+                     photoUrl: String = "") {
         self.init()
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
-        self.photoUrl = photoUrl
         self.userRating.value = userRating
         self.keyUid = ""
         self.uid = ""
+        self.photoUrl = photoUrl
     }
-    
     
     override static func primaryKey() -> String? {
         return "uid"
@@ -77,7 +78,7 @@ extension AppUser {
         let userRating = try container.decode(Double.self, forKey: .userRating)
         
         self.init(firstName: firstName, lastName: lastName,
-                  email: email, photoUrl: photoUrl, userRating: userRating)
+                  email: email, userRating: userRating, photoUrl: photoUrl)
     }
 }
 

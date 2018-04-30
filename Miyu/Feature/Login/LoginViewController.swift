@@ -8,11 +8,13 @@
 
 import UIKit
 import Firebase
+import RealmSwift
 
 internal final class LoginViewController: BaseViewController {
     
     private weak var fbManager = FirebaseUserManager.manager
-    
+    private weak var fbSerivce = FirebaseSerivce.shared
+    private weak var store = DataStore.sharedInstance
     private weak var viewModel: LoginViewModel! {
         return LoginViewModel(presentingVC: self)
     }
@@ -40,6 +42,16 @@ internal final class LoginViewController: BaseViewController {
         fbManager?.login(user: user) {
             AppDelegate.shared.rootViewController.switchToMainScreen()
         }
+        
+//        FirebaseUserService.login(user: user) { (uid) in
+//            if let currentUser = uiRealm.objects(AppUser.self).filter("uid == %@", uid) {
+//                store?.currentUser = currentUser
+//            } else {
+//                self.fbSerivce?.getData(.user(uid: uid), AppUser.self, { (appUser, key) in
+//                    appUser.keyUid = key
+//                })
+//            }
+//        }
     }
 }
 

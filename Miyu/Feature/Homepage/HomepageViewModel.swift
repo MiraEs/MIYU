@@ -28,7 +28,6 @@ internal final class HomepageViewModel: InstantiatedViewControllers {
     
     func presentVC(vc: PresentViewController) {
         presentDestinationVC(from: self.presentingViewController, to: vc)
-        
     }
     
     // MARK: PREPARE DATA

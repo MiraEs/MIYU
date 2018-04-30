@@ -21,12 +21,11 @@ enum UserActivityAction: String {
 internal final class FirebaseUserManager {
     
     static let manager = FirebaseUserManager()
+    let fbService = FirebaseSerivce.shared
     
     var currentUser: User? {
         return Auth.auth().currentUser
     }
-    
-    var currentUserInfo: AppUser?
     
     private weak var store = DataStore.sharedInstance
     
@@ -360,27 +359,58 @@ extension FirebaseUserManager {
 }
 
 extension FirebaseUserManager {
-    // MARK: BASIC LOGIN/REGISTRATION FLOW
-    func createUser(appUser: AppUser, userCredentials: UserCredential, profileImage: UIImage, handler: (() -> ())? = nil) {
+     //MARK: BASIC LOGIN/REGISTRATION FLOW
+    func createUser(appUser: AppUser,
+                    userCredentials: UserCredential,
+                    profileImage: UIImage,
+                    handler: (() -> ())? = nil) {
         guard let email = userCredentials.email,
             let password = userCredentials.password else {
                 return
         }
-        
-        
+
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
             if user != nil {
-                self.addToDatabase(appUser, user!, profileImage)
-                self.currentUserInfo = appUser
+                self.addToStorage(appUser, user!, profileImage)
                 handler?()
             } else {
-                // TODO: Create error alert class
                 print(error?.localizedDescription ?? "Unknown error")
             }
         })
     }
     
-    private func addToDatabase(_ userInfo: AppUser, _ currentUser: User, _ profileImage: UIImage) {
+//    private func addToDatabase(_ userInfo: AppUser, _ currentUser: User, _ profileImage: UIImage) {
+//
+//        let contentName = NSUUID().uuidString
+//        let uid = currentUser.uid
+//        let storageRef = Storage.storage().reference().child(FbChildPaths.users).child(uid).child("\(contentName)")
+//        let storage = Storage.storage().reference().child(FbChildPaths.users).child(uid)
+//        let uploadData = profileImage.toPngData()
+//
+//        storageRef.putData(uploadData!, metadata: nil, completion: { (metadata, error) in
+//            if error != nil {
+//                print(error!)
+//            }
+//        })
+//
+//        storageRef.downloadURL { (url, error) in
+//            if error != nil {
+//                print(error!)
+//            }
+//            let urlString = url?.absoluteString
+//            userInfo.photoUrl = urlString
+//            let userData = userInfo.dictionary
+//            self.ref.child(FbChildPaths.users).child(currentUser.uid).setValue(["photoUrl" : urlString])
+//            self.ref.child(FbChildPaths.users).child(currentUser.uid).updateChildValues(userData!)
+//            self.ref.child(FbChildPaths.userRatings).child(currentUser.uid).setValue(userInfo.userRating)
+//
+//            RealmService.shared.save(userInfo)
+//        }
+//    }
+    
+    private func addToStorage(_ userInfo: AppUser,
+                               _ currentUser: User,
+                               _ profileImage: UIImage) {
         
         let contentName = NSUUID().uuidString
         let storageRef = Storage.storage().reference().child(FbChildPaths.users).child((currentUser.uid)).child("\(contentName)_profile_image")
@@ -392,13 +422,18 @@ extension FirebaseUserManager {
                 print(error!)
             }
             
-            if let urlString = metadata?.downloadURL()?.absoluteString {
-                self.ref.child(FbChildPaths.users).child(currentUser.uid).setValue(["photoUrl" : urlString])
-            }
-            
+   
             let userData = userInfo.dictionary
             self.ref.child(FbChildPaths.users).child(currentUser.uid).updateChildValues(userData!)
             self.ref.child(FbChildPaths.userRatings).child(currentUser.uid).setValue(userInfo.userRating)
+        })
+        
+        storageRef.downloadURL(completion: { (url, error) in
+            if error != nil {
+                print(error!)
+            }
+            
+            self.ref.child(FbChildPaths.users).child(currentUser.uid).setValue(["photoUrl" : url?.absoluteString])
         })
     }
     
@@ -407,14 +442,25 @@ extension FirebaseUserManager {
             let password = user.password else {
                 return
         }
-        
+
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if user != nil {
-                handler?()
                 guard let uid = self.currentUser?.uid else { return }
-                self.getUserData(uid, { (validUser) in
-                    self.currentUserInfo = validUser
-                })
+                
+                if uiRealm.object(ofType: AppUser.self, forPrimaryKey: uid) != nil {
+                    self.store?.currentUser = uiRealm.object(ofType: AppUser.self, forPrimaryKey: uid)
+                } else {
+                    self.fbService.getData(.user(uid: uid), AppUser.self, { (user, keyId) in
+                        user.uid = keyId
+                        RealmService.shared.save(user)
+                    })
+                }
+                
+                handler?()
+                
+//                self.getUserData(uid, { (validUser) in
+//                    self.currentUserInfo = validUser
+//                })
             } else {
                 // TODO: create error alert class
                 print(error.debugDescription)

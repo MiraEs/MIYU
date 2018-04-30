@@ -37,7 +37,7 @@ internal final class HomepageViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("CURRENT USER INFO YAYY>>>>>>>>>>>> \(String(describing: fbManager?.currentUserInfo?.firstName))")
+        //print("CURRENT USER INFO YAYY>>>>>>>>>>>> \(String(describing: fbManager?.currentUser?.firstName))")
         
         self.tabBarController?.delegate = self
         

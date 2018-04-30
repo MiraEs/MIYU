@@ -28,6 +28,7 @@ class UploadViewController: BaseViewController {
     
     
     private weak var fbManager = FirebaseUserManager.manager
+    private weak var fbService = FirebaseSerivce.shared
     
     private weak var viewModel: UploadViewModel! {
         return UploadViewModel(presentVc: self)
@@ -90,12 +91,13 @@ class UploadViewController: BaseViewController {
     
     @objc func uploadContent() {
         print("upload pic to storage")
-        guard let imageView = centerImage.imageView else { return }
-        fbManager?.uploadContentToStorage(with: imageView,
-                                          to: .posts, caption!,
-                                          completionHandler: {
-                                            print("upload complete")
-                                            self.dismiss(animated: true, completion: nil)
+        
+        guard let photo = centerImage.imageView,
+            let caption = caption else { return }
+        
+        fbService?.uploadPost(.posts, FbChildPaths.posts, photo, caption, {
+            print("upload complete")
+            self.dismiss(animated: true, completion: nil)
         })
     }
     

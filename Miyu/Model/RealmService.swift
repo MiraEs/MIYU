@@ -25,7 +25,7 @@ class RealmService {
         }
     }
     
-    func delete<T: Object>(_ object: T, with dictionary: [String: Any?]) {
+    func update<T: Object>(_ object: T, with dictionary: [String: Any?]) {
         do {
             try realm.write {
                 for (key,value) in dictionary {
@@ -37,7 +37,7 @@ class RealmService {
         }
     }
     
-    func update<T: Object>(_ object: T) {
+    func delete<T: Object>(_ object: T) {
         do {
             try realm.write {
                 realm.delete(object)

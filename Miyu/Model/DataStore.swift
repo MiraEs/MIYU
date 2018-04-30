@@ -26,7 +26,8 @@ internal final class DataStore {
         print("URL PATH IN documentDirectory = \(String(describing: url))")
         return url!
     }
-
+    
+    var currentUser: AppUser?
     var userPosts: Results<Post>!
     //var usersFriends: Results<UserFriend>!
     var friends = [AppUser]()

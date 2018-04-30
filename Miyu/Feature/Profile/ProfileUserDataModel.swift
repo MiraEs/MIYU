@@ -38,9 +38,7 @@ class ProfileUserDataModel {
         fbManager?.getUserData(validUid, { (user) in
             handler(user)
         })
-        fbSerivce?.getData(.user(uid), AppUser.self, { (<#Decodable & Encodable#>, <#String#>) in
-            <#code#>
-        })
+       
         
         
     }

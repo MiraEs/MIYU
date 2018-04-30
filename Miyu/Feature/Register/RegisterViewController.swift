@@ -13,6 +13,7 @@ import Firebase
 internal final class RegisterViewController: BaseViewController {
     
     private weak var fbManager = FirebaseUserManager.manager
+    
     private weak var viewModel: RegisterViewModel! {
         return RegisterViewModel(presentingViewController: self)
     }
@@ -52,8 +53,9 @@ internal final class RegisterViewController: BaseViewController {
         let userCredentials = UserCredential(email: email, password: password)
         let user = AppUser(firstName: firstName, lastName: lastName, email: email)
         
-        fbManager?.createUser(appUser: user, userCredentials: userCredentials, profileImage: profileImage) { [weak self] in
-            //print("new user>>> \(user.firstName)")
+        fbManager?.createUser(appUser: user,
+                              userCredentials: userCredentials,
+                              profileImage: profileImage) { [weak self] in
             self?.viewModel?.presentRootController()
         }
     }
