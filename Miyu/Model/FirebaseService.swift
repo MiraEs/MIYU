@@ -116,7 +116,6 @@ class FirebaseSerivce {
                                "/user-posts/\(user.uid)/\(key)":validPost]
             DatabaseRefs.parent.value?.updateChildValues(childUpdate)
             RealmService.shared.save(post)
-            
         }
 
         completionHandler?()

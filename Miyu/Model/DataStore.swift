@@ -29,7 +29,6 @@ internal final class DataStore {
     
     var currentUser: AppUser?
     var userPosts: Results<Post>!
-    //var usersFriends: Results<UserFriend>!
     var friends = [AppUser]()
     var ratedByUsers = [AppUser]()
 }

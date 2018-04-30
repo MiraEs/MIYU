@@ -33,12 +33,15 @@ class ProfileUserDataModel {
     }
     
     private func loadUserData(_ uid: String?, _ handler: @escaping (_ user: AppUser)->Void) {
-        
-        guard let validUid = uid else { return }
-        fbManager?.getUserData(validUid, { (user) in
+        guard let uid = uid else { return }
+//        fbManager?.getUserData(validUid, { (user) in
+//            handler(user)
+//        })
+        fbSerivce?.getData(.user(uid: uid), AppUser.self, { (user, key) in
+            user.keyUid = key
             handler(user)
         })
-  
+        
     }
     
     func loadData(_ isDiffOrigin: Bool, _ uid: String?, _ completion: @escaping (_ user: AppUser)->Void) {
@@ -51,7 +54,7 @@ class ProfileUserDataModel {
             }
         } else {
             if let vUid = fbManager?.currentUser?.uid {
-                 self.store?.userPosts = uiRealm.objects(Post.self).filter("uid == %@", vUid)
+                self.store?.userPosts = uiRealm.objects(Post.self).filter("uid == %@", vUid)
                 loadUserData(vUid) { (user) in
                     completion(user)
                 }
@@ -70,7 +73,7 @@ class ProfileUserDataModel {
     func addFriend(_ uid: String) {
         fbManager?.addFriend(uid)
     }
-
+    
     
     func resetFriendStorage() {
         self.store?.friends = [AppUser]()
