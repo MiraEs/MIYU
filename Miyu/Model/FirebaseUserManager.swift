@@ -371,7 +371,7 @@ extension FirebaseUserManager {
         
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
             if user != nil {
-                self.addToStorage(user!, profileImage, { (urlString) in
+                FirebaseHelper.addToStorage(user!, profileImage, { (urlString) in
                     if let uid = user?.uid {
                         self.addToDatabase(appUser, urlString, uid)
                     }
@@ -384,29 +384,28 @@ extension FirebaseUserManager {
     }
 
     
-    private func addToStorage(_ currentUser: User,
-                              _ profileImage: UIImage,
-                              _ handler: @escaping (String)->()) {
-        
-        let contentName = NSUUID().uuidString
-        let storageRef = Storage.storage().reference().child(FbChildPaths.users).child((currentUser.uid)).child("\(contentName)")
-        let uploadData = profileImage.toPngData()
-        
-        storageRef.putData(uploadData!, metadata: nil, completion: { (metadata, error) in
-            if error != nil {
-                print(error!)
-            }
-            
-            storageRef.downloadURL(completion: { (url, error) in
-                if error != nil {
-                    print(error!.localizedDescription)
-                } else if let urlString = url?.absoluteString {
-                    handler(urlString)
-                }
-            })
-        })
-        
-    }
+//    private func addToStorage(_ currentUser: User,
+//                              _ profileImage: UIImage,
+//                              _ handler: @escaping (String)->()) {
+//
+//        let contentName = NSUUID().uuidString
+//        let storageRef = Storage.storage().reference().child(FbChildPaths.users).child((currentUser.uid)).child("\(contentName)")
+//        let uploadData = profileImage.toPngData()
+//
+//        storageRef.putData(uploadData!, metadata: nil, completion: { (metadata, error) in
+//            if error != nil {
+//                print(error!)
+//            }
+//
+//            storageRef.downloadURL(completion: { (url, error) in
+//                if error != nil {
+//                    print(error!.localizedDescription)
+//                } else if let urlString = url?.absoluteString {
+//                    handler(urlString)
+//                }
+//            })
+//        })
+//    }
     
     private func addToDatabase(_ userInfo: AppUser, _ photoUrl: String, _ uid: String) {
         guard let userData = userInfo.dictionary else { return }
@@ -464,5 +463,30 @@ extension FirebaseUserManager {
         
         guard let post = try? JSONDecoder().decode(Post.self, from: data) else { return nil }
         return post
+    }
+}
+
+struct FirebaseHelper {
+    static func addToStorage(_ currentUser: User,
+                                       _ profileImage: UIImage,
+                                       _ handler: @escaping (String)->()) {
+        
+        let contentName = NSUUID().uuidString
+        let storageRef = Storage.storage().reference().child(FbChildPaths.users).child((currentUser.uid)).child("\(contentName)")
+        let uploadData = profileImage.toPngData()
+        
+        storageRef.putData(uploadData!, metadata: nil, completion: { (metadata, error) in
+            if error != nil {
+                print(error!)
+            }
+            
+            storageRef.downloadURL(completion: { (url, error) in
+                if error != nil {
+                    print(error!.localizedDescription)
+                } else if let urlString = url?.absoluteString {
+                    handler(urlString)
+                }
+            })
+        })
     }
 }

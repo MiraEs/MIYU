@@ -23,7 +23,7 @@ enum DatabaseRefs {
         let ref = Database.database().reference()
         switch self {
         case .parent:
-            return ref
+            return Database.database().reference()
         case .posts:
             return ref.child(FbChildPaths.posts)
         case .users:
@@ -97,41 +97,24 @@ class FirebaseSerivce {
         }, withCancel: nil)
     }
     
-    private func uploadToStorage(_ ref: FbChildPaths.rawValue,
-                         _ mediaContent: UIImageView,
-                         _ completionHandler: @escaping (String)->()) {
-        guard let uid = currentUser?.uid else { return }
-        let contentName = NSUUID().uuidString
-        let storage = Storage.storage().reference().child(ref).child(uid).child(contentName)
-        if let uploadData = Image.convertToPngData(with: mediaContent.image) {
-            storage.putData(uploadData)
-        }
-        storage.downloadURL { (url, error) in
-            if error != nil {
-                print(error!)
-            } else {
-                guard let urlString = url?.absoluteString else { return }
-                completionHandler(urlString)
-            }
-        }
-    }
-    
     func uploadPost(_ ref: DatabaseRefs,
                     _ child: FbChildPaths.rawValue,
                     _ mediaContent: UIImageView,
                     _ caption: String,
                     _ completionHandler: CompletionHandler) {
         let key = ref.value?.childByAutoId().key
-        guard let uid = currentUser?.uid else { return }
+        guard let user = currentUser,
+            let image = mediaContent.image else { return }
         
-        
-        uploadToStorage(child, mediaContent) { (urlString) in
-            let post = Post(caption: caption, data: urlString, uid: uid, key: key)
+        FirebaseHelper.addToStorage(user, image) { (urlString) in
+            let post = Post(caption: caption, data: urlString, uid: user.uid, key: key)
+            post.user = user
             let childUpdate = ["/posts/\(String(describing: key))":post,
-                               "/user-posts/\(uid)/\(String(describing: key))":post]
+                               "/user-posts/\(user.uid)/\(String(describing: key))":post]
             DatabaseRefs.parent.value?.updateChildValues(childUpdate)
             RealmService.shared.save(post)
         }
+
         completionHandler?()
     }
     

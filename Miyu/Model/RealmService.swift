@@ -13,12 +13,12 @@ class RealmService {
     private init() {}
     
     static let shared = RealmService()
-    var realm = try! Realm()
+    //var realm = try! Realm()
     
     func save<T: Object>(_ object: T) {
         do {
-            try realm.write {
-                realm.add(object)
+            try uiRealm.write {
+                uiRealm.add(object)
             }
         } catch {
             post(error)
@@ -27,7 +27,7 @@ class RealmService {
     
     func update<T: Object>(_ object: T, with dictionary: [String: Any?]) {
         do {
-            try realm.write {
+            try uiRealm.write {
                 for (key,value) in dictionary {
                     object.setValue(value, forKey: key)
                 }
@@ -39,8 +39,8 @@ class RealmService {
     
     func delete<T: Object>(_ object: T) {
         do {
-            try realm.write {
-                realm.delete(object)
+            try uiRealm.write {
+                uiRealm.delete(object)
             }
         } catch {
             post(error)

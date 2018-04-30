@@ -20,11 +20,59 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Miyu/Model/FirebaseService.swift"
-            timestampString = "546814877.358013"
+            timestampString = "546816973.806725"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "getData(_:_:_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Miyu.FirebaseSerivce.getData&lt;A where A: Swift.Decodable, A: Swift.Encodable&gt;(Miyu.DatabaseRefs, A.Type, (A, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Miyu"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mira/Developer/Miyu/Miyu/Model/FirebaseService.swift"
+                  timestampString = "546816973.913764"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "75">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__ObjC.DataSnapshot) -&gt; () in Miyu.FirebaseSerivce.getData&lt;A where A: Swift.Decodable, A: Swift.Encodable&gt;(Miyu.DatabaseRefs, A.Type, (A, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Miyu"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mira/Developer/Miyu/Miyu/Model/FirebaseService.swift"
+                  timestampString = "546816973.916586"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Miyu/Model/FirebaseService.swift"
+            timestampString = "546816973.80761"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "uploadPost(_:_:_:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -36,11 +84,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Miyu/Model/FirebaseService.swift"
-            timestampString = "546814878.3624769"
+            timestampString = "546816973.807947"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "uploadPost(_:_:_:_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Miyu/Model/FirebaseService.swift"
+            timestampString = "546817041.867322"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "uploadPost(_:_:_:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
