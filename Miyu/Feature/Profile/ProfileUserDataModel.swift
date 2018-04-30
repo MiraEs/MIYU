@@ -38,9 +38,7 @@ class ProfileUserDataModel {
         fbManager?.getUserData(validUid, { (user) in
             handler(user)
         })
-       
-        
-        
+  
     }
     
     func loadData(_ isDiffOrigin: Bool, _ uid: String?, _ completion: @escaping (_ user: AppUser)->Void) {

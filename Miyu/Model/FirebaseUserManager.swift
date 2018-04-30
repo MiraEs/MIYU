@@ -52,26 +52,26 @@ internal final class FirebaseUserManager {
     
     // MARK: GET USER DATA
     
-//    func getPosts(eventType: DataEventType, with handler: @escaping (DataSnapshot) -> Void) {
-//        postRef?.observe(eventType, with: handler)
-//    }
+    //    func getPosts(eventType: DataEventType, with handler: @escaping (DataSnapshot) -> Void) {
+    //        postRef?.observe(eventType, with: handler)
+    //    }
     
-//    func getUserPosts(uid: String, eventType: DataEventType, with handler: @escaping (Post) -> Void) {
-//        let userRef = userPostRef?.child(uid)
-//        userRef?.observeSingleEvent(of: .value) { (snapshot) in
-//            let enumerator = snapshot.children
-//            while let object = enumerator.nextObject() as? DataSnapshot {
-//                do {
-//                    let data = try JSONSerialization.data(withJSONObject: object.value!, options: [])
-//                    let post = try JSONDecoder().decode(Post.self, from: data)
-//                    let keyId = snapshot.key
-//                    handler(post)
-//                } catch {
-//                    print(error)
-//                }
-//            }
-//        }
-//    }
+    //    func getUserPosts(uid: String, eventType: DataEventType, with handler: @escaping (Post) -> Void) {
+    //        let userRef = userPostRef?.child(uid)
+    //        userRef?.observeSingleEvent(of: .value) { (snapshot) in
+    //            let enumerator = snapshot.children
+    //            while let object = enumerator.nextObject() as? DataSnapshot {
+    //                do {
+    //                    let data = try JSONSerialization.data(withJSONObject: object.value!, options: [])
+    //                    let post = try JSONDecoder().decode(Post.self, from: data)
+    //                    let keyId = snapshot.key
+    //                    handler(post)
+    //                } catch {
+    //                    print(error)
+    //                }
+    //            }
+    //        }
+    //    }
     
     func getUsers(eventType: DataEventType, uid: String, with handler: @escaping (DataSnapshot) -> Void) {
         ref?.child(FbChildPaths.users).child(uid).observe(eventType, with: handler)
@@ -99,9 +99,9 @@ internal final class FirebaseUserManager {
 extension FirebaseUserManager {
     // MARK: ADD NEW FRIENDS
     func addFriend(_ friendUid: String?) {
-    
+        
         guard let uid = currentUser?.uid,
-                let friendUid = friendUid else {
+            let friendUid = friendUid else {
                 return
         }
         let userRef = userFriendsRef?.child(uid)
@@ -147,42 +147,42 @@ extension FirebaseUserManager {
 extension FirebaseUserManager {
     // MARK: UPLOAD NEW POSTS
     ///1. New post uploaded to Database
-    private func uploadPost(_ contentUrl: String, _ caption: String?, _ event: Children) {
-        let key = ref.child(event.rawValue).childByAutoId().key
-        guard let uid = currentUser?.uid,
-            let caption = caption else {
-                return
-        }
-        
-        guard let post = Post(caption: caption, data: contentUrl, uid: uid, key: key).dictionary else { return }
-        let childUpdates: [String: Any] = ["/posts/\(key)" : post,
-                                           "/user-posts/\(uid)/\(key)/" : post]
-        
-        
-        ref.updateChildValues(childUpdates)
-    }
+//    private func uploadPost(_ contentUrl: String, _ caption: String?, _ event: Children) {
+//        let key = ref.child(event.rawValue).childByAutoId().key
+//        guard let uid = currentUser?.uid,
+//            let caption = caption else {
+//                return
+//        }
+//
+//        guard let post = Post(caption: caption, data: contentUrl, uid: uid, key: key).dictionary else { return }
+//        let childUpdates: [String: Any] = ["/posts/\(key)" : post,
+//                                           "/user-posts/\(uid)/\(key)/" : post]
+//
+//
+//        ref.updateChildValues(childUpdates)
+//    }
     
     //TODO: Fix to include video content as well
     //2. New post content uploaded to storage
-    func uploadContentToStorage(with content: UIImageView, to path: Children, _ caption: String, completionHandler: @escaping ()->Void) {
-        let contentName = NSUUID().uuidString
-        let storageRef = Storage.storage().reference().child(FbChildPaths.users).child((currentUser?.uid)!).child("\(contentName)")
-        
-        let uploadData = Image.convertToPngData(with: content.image!)
-        
-        storageRef.putData(uploadData!, metadata: nil, completion: { (metadata, error) in
-            if error != nil {
-                print(error!)
-            }
-            
-            if let urlString = metadata?.downloadURL()?.absoluteString {
-                if path == .posts {
-                    self.uploadPost(urlString, caption, .posts)
-                }
-                completionHandler()
-            }
-        })
-    }
+//    func uploadContentToStorage(with content: UIImageView, to path: Children, _ caption: String, completionHandler: @escaping ()->Void) {
+//        let contentName = NSUUID().uuidString
+//        let storageRef = Storage.storage().reference().child(FbChildPaths.users).child((currentUser?.uid)!).child("\(contentName)")
+//
+//        let uploadData = Image.convertToPngData(with: content.image!)
+//
+//        storageRef.putData(uploadData!, metadata: nil, completion: { (metadata, error) in
+//            if error != nil {
+//                print(error!)
+//            }
+//
+//            if let urlString = metadata?.downloadURL()?.absoluteString {
+//                if path == .posts {
+//                    self.uploadPost(urlString, caption, .posts)
+//                }
+//                completionHandler()
+//            }
+//        })
+//    }
     
 }
 
@@ -230,7 +230,7 @@ extension FirebaseUserManager {
     //MIRTEST//MIRTEST//MIRTEST//MIRTEST//MIRTEST//MIRTEST//MIRTEST//MIRTEST//MIRTEST******
     func updateUserActivity(_ key: String) {
         let ref = userActivity?.child(currentUser!.uid).child("\(UserActivityAction.rated)")
-
+        
         let value: [String: Any] = [key : true]
         ref?.updateChildValues(value)
     }
@@ -241,12 +241,12 @@ extension FirebaseUserManager {
         // value represents the rating of post
         /*
          - user-activity
-            -rated
-            -rated-by
-                - otherUid
-                    - YOURuid
-                        -post key
-                        -rating of post (number)
+         -rated
+         -rated-by
+         - otherUid
+         - YOURuid
+         -post key
+         -rating of post (number)
          */
         let value: [String: Any] = [currentUid :
             [
@@ -359,7 +359,7 @@ extension FirebaseUserManager {
 }
 
 extension FirebaseUserManager {
-     //MARK: BASIC LOGIN/REGISTRATION FLOW
+    //MARK: BASIC LOGIN/REGISTRATION FLOW
     func createUser(appUser: AppUser,
                     userCredentials: UserCredential,
                     profileImage: UIImage,
@@ -368,53 +368,28 @@ extension FirebaseUserManager {
             let password = userCredentials.password else {
                 return
         }
-
+        
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
             if user != nil {
-                self.addToStorage(appUser, user!, profileImage)
+                self.addToStorage(user!, profileImage, { (urlString) in
+                    if let uid = user?.uid {
+                        self.addToDatabase(appUser, urlString, uid)
+                    }
+                })
                 handler?()
             } else {
                 print(error?.localizedDescription ?? "Unknown error")
             }
         })
     }
+
     
-//    private func addToDatabase(_ userInfo: AppUser, _ currentUser: User, _ profileImage: UIImage) {
-//
-//        let contentName = NSUUID().uuidString
-//        let uid = currentUser.uid
-//        let storageRef = Storage.storage().reference().child(FbChildPaths.users).child(uid).child("\(contentName)")
-//        let storage = Storage.storage().reference().child(FbChildPaths.users).child(uid)
-//        let uploadData = profileImage.toPngData()
-//
-//        storageRef.putData(uploadData!, metadata: nil, completion: { (metadata, error) in
-//            if error != nil {
-//                print(error!)
-//            }
-//        })
-//
-//        storageRef.downloadURL { (url, error) in
-//            if error != nil {
-//                print(error!)
-//            }
-//            let urlString = url?.absoluteString
-//            userInfo.photoUrl = urlString
-//            let userData = userInfo.dictionary
-//            self.ref.child(FbChildPaths.users).child(currentUser.uid).setValue(["photoUrl" : urlString])
-//            self.ref.child(FbChildPaths.users).child(currentUser.uid).updateChildValues(userData!)
-//            self.ref.child(FbChildPaths.userRatings).child(currentUser.uid).setValue(userInfo.userRating)
-//
-//            RealmService.shared.save(userInfo)
-//        }
-//    }
-    
-    private func addToStorage(_ userInfo: AppUser,
-                               _ currentUser: User,
-                               _ profileImage: UIImage) {
+    private func addToStorage(_ currentUser: User,
+                              _ profileImage: UIImage,
+                              _ handler: @escaping (String)->()) {
         
         let contentName = NSUUID().uuidString
-        let storageRef = Storage.storage().reference().child(FbChildPaths.users).child((currentUser.uid)).child("\(contentName)_profile_image")
-        
+        let storageRef = Storage.storage().reference().child(FbChildPaths.users).child((currentUser.uid)).child("\(contentName)")
         let uploadData = profileImage.toPngData()
         
         storageRef.putData(uploadData!, metadata: nil, completion: { (metadata, error) in
@@ -422,27 +397,31 @@ extension FirebaseUserManager {
                 print(error!)
             }
             
-   
-            let userData = userInfo.dictionary
-            self.ref.child(FbChildPaths.users).child(currentUser.uid).updateChildValues(userData!)
-            self.ref.child(FbChildPaths.userRatings).child(currentUser.uid).setValue(userInfo.userRating)
+            storageRef.downloadURL(completion: { (url, error) in
+                if error != nil {
+                    print(error!.localizedDescription)
+                } else if let urlString = url?.absoluteString {
+                    handler(urlString)
+                }
+            })
         })
         
-        storageRef.downloadURL(completion: { (url, error) in
-            if error != nil {
-                print(error!)
-            }
-            
-            self.ref.child(FbChildPaths.users).child(currentUser.uid).setValue(["photoUrl" : url?.absoluteString])
-        })
     }
+    
+    private func addToDatabase(_ userInfo: AppUser, _ photoUrl: String, _ uid: String) {
+        guard let userData = userInfo.dictionary else { return }
+        self.ref.child(FbChildPaths.users).child(uid).updateChildValues(["photoUrl" : photoUrl])
+        self.ref.child(FbChildPaths.users).child(uid).updateChildValues(userData)
+        self.ref.child(FbChildPaths.userRatings).child(uid).setValue(userInfo.userRating)
+    }
+
     
     func login(user: UserCredential, handler: (()->())? = nil) {
         guard let email = user.email,
             let password = user.password else {
                 return
         }
-
+        
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if user != nil {
                 guard let uid = self.currentUser?.uid else { return }
@@ -458,9 +437,6 @@ extension FirebaseUserManager {
                 
                 handler?()
                 
-//                self.getUserData(uid, { (validUser) in
-//                    self.currentUserInfo = validUser
-//                })
             } else {
                 // TODO: create error alert class
                 print(error.debugDescription)

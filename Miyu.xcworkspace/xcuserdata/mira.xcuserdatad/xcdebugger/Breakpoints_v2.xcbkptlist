@@ -16,64 +16,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Miyu/Model/FirebaseUserManager.swift"
-            timestampString = "546809584.574203"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "420"
-            endingLineNumber = "420"
-            landmarkName = "addToStorage(_:_:_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Miyu.FirebaseUserManager.(addToDatabase in _1808F1DDB5CEFEF38C5AA5BDCBA0BE96)(Miyu.AppUser, __ObjC.User, __ObjC.UIImage) -&gt; ()"
-                  moduleName = "Miyu"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mira/Developer/Miyu/Miyu/Model/FirebaseUserManager.swift"
-                  timestampString = "546809138.0113471"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "418"
-                  endingLineNumber = "418"
-                  offsetFromSymbolStart = "1020">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__ObjC.StorageMetadata&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Miyu.FirebaseUserManager.(addToDatabase in _1808F1DDB5CEFEF38C5AA5BDCBA0BE96)(Miyu.AppUser, __ObjC.User, __ObjC.UIImage) -&gt; ()"
-                  moduleName = "Miyu"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mira/Developer/Miyu/Miyu/Model/FirebaseUserManager.swift"
-                  timestampString = "546809138.013905"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "419"
-                  endingLineNumber = "419"
-                  offsetFromSymbolStart = "34">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Miyu/Feature/Register/RegisterViewController.swift"
-            timestampString = "546809584.57489"
+            filePath = "Miyu/Model/FirebaseService.swift"
+            timestampString = "546814877.358013"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "finishButtonTapped(_:)"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "uploadPost(_:_:_:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -83,29 +35,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Miyu/Feature/RootViewController.swift"
-            timestampString = "546809524.2428989"
+            filePath = "Miyu/Model/FirebaseService.swift"
+            timestampString = "546814878.3624769"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "switchToMainScreen()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Miyu/Feature/RootViewController.swift"
-            timestampString = "546809530.156472"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "switchToMainScreen()"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "uploadPost(_:_:_:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
