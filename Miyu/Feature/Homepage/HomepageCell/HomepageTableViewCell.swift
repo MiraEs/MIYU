@@ -40,7 +40,7 @@ class HomepageTableViewCell: UITableViewCell {
     var uid: String?
     
     private weak var fbManager = FirebaseUserManager.manager
-
+    
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
@@ -85,7 +85,7 @@ class HomepageTableViewCell: UITableViewCell {
         imageAttachment.image = UIImage(named: imageName)
         imageAttachment.bounds = CGRect(x: 0, y: 1, width: (imageAttachment.image!.size.width)/2, height: (imageAttachment.image!.size.height)/2)
         
-       
+        
         let attachmentString = NSAttributedString(attachment: imageAttachment)
         let caption = NSMutableAttributedString(string: "\(cellCount) people have rated this.")
         caption.insert(attachmentString, at: 0)

@@ -29,6 +29,8 @@
 		49384772205201C600FFA15A /* Extensions+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49384771205201C600FFA15A /* Extensions+UIViewController.swift */; };
 		493847772054B2A800FFA15A /* ProfileMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493847762054B2A800FFA15A /* ProfileMenuBar.swift */; };
 		493847792055AF4B00FFA15A /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493847782055AF4B00FFA15A /* BaseCell.swift */; };
+		4938FFC12098EDF300461D76 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4938FFC02098EDF300461D76 /* SettingsViewController.storyboard */; };
+		4938FFC32098EFD500461D76 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4938FFC22098EFD500461D76 /* SettingsViewController.swift */; };
 		4949F1DC205F653C00AB6160 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4949F1DB205F653C00AB6160 /* DataStore.swift */; };
 		4957D3E4208D06AA00199A70 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957D3E3208D06AA00199A70 /* RealmService.swift */; };
 		4957D3E6208D0A0B00199A70 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957D3E5208D0A0B00199A70 /* FirebaseService.swift */; };
@@ -113,6 +115,8 @@
 		49384771205201C600FFA15A /* Extensions+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewController.swift"; sourceTree = "<group>"; };
 		493847762054B2A800FFA15A /* ProfileMenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuBar.swift; sourceTree = "<group>"; };
 		493847782055AF4B00FFA15A /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		4938FFC02098EDF300461D76 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
+		4938FFC22098EFD500461D76 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = /Users/mira/Developer/Miyu/Miyu/Feature/Settings/SettingsViewController.swift; sourceTree = "<absolute>"; };
 		4949F1DB205F653C00AB6160 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		4957D3E3208D06AA00199A70 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		4957D3E5208D0A0B00199A70 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
@@ -228,6 +232,15 @@
 				4937FAF620263C77006E991B /* RegisterViewController.storyboard */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		4938FFBF2098EDE200461D76 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				4938FFC22098EFD500461D76 /* SettingsViewController.swift */,
+				4938FFC02098EDF300461D76 /* SettingsViewController.storyboard */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		498B5CF52065C5A700FBD4AE /* Profile Container View */ = {
@@ -363,6 +376,7 @@
 				49DC302420227CB500E7F05F /* Profile */,
 				4937FAF52025758B006E991B /* Explore */,
 				4937FAF020257345006E991B /* Upload */,
+				4938FFBF2098EDE200461D76 /* Settings */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -589,6 +603,7 @@
 				4937FAEF2025733F006E991B /* UploadViewController.storyboard in Resources */,
 				49A6D831202104D300B994A2 /* HomepageTableViewCell.xib in Resources */,
 				4933BECB2023FD27004307E4 /* HomepageViewController.storyboard in Resources */,
+				4938FFC12098EDF300461D76 /* SettingsViewController.storyboard in Resources */,
 				4937FAFE20264A33006E991B /* GoogleService-Info.plist in Resources */,
 				49E1D9492075C3ED00B5B7FD /* Main.storyboard in Resources */,
 				49DC302820227D1000E7F05F /* ProfileTableViewCell.xib in Resources */,
@@ -718,6 +733,7 @@
 				49E4F577202E93B700D5C7B4 /* UploadViewModel.swift in Sources */,
 				49DC302720227D1000E7F05F /* ProfileTableViewCell.swift in Sources */,
 				498EC830205B203000EA6DAA /* ProfileUserDataModel.swift in Sources */,
+				4938FFC32098EFD500461D76 /* SettingsViewController.swift in Sources */,
 				498B5CF42065C59900FBD4AE /* ContentCollectionViewCell.swift in Sources */,
 				493847772054B2A800FFA15A /* ProfileMenuBar.swift in Sources */,
 				49108EBD2027D7200031314B /* AppUser.swift in Sources */,

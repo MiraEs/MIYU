@@ -72,15 +72,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VzV-1f-w6Q">
+                                <rect key="frame" x="184" y="70" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="openSettings:" destination="cn7-xV-1xf" eventType="touchUpInside" id="hlG-7y-baC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="PxE-bb-h4c" firstAttribute="trailing" secondItem="0Du-eo-mVx" secondAttribute="trailing" id="0cu-tt-vwU"/>
+                            <constraint firstItem="VzV-1f-w6Q" firstAttribute="bottom" secondItem="FxI-Gj-5WZ" secondAttribute="bottom" id="3Qn-Cq-Mmi"/>
                             <constraint firstItem="gYY-IN-Pyz" firstAttribute="top" secondItem="PxE-bb-h4c" secondAttribute="top" constant="10" id="5sx-hI-8rG"/>
                             <constraint firstItem="Ysu-1C-l4w" firstAttribute="leading" secondItem="gYY-IN-Pyz" secondAttribute="trailing" constant="8" id="7He-vI-AXM"/>
                             <constraint firstItem="gYY-IN-Pyz" firstAttribute="leading" secondItem="PxE-bb-h4c" secondAttribute="leading" constant="24" id="A9P-x1-hig"/>
                             <constraint firstItem="hKc-OQ-HNz" firstAttribute="top" secondItem="0Du-eo-mVx" secondAttribute="bottom" id="FR4-J1-ByV"/>
                             <constraint firstItem="FxI-Gj-5WZ" firstAttribute="leading" secondItem="Ysu-1C-l4w" secondAttribute="leading" id="GGb-ts-2fn"/>
+                            <constraint firstItem="VzV-1f-w6Q" firstAttribute="leading" secondItem="FxI-Gj-5WZ" secondAttribute="trailing" constant="8" id="Yry-3x-PgZ"/>
                             <constraint firstItem="ftQ-qX-Yab" firstAttribute="leading" secondItem="Ysu-1C-l4w" secondAttribute="leading" id="bc6-vx-ag8"/>
                             <constraint firstItem="0Du-eo-mVx" firstAttribute="leading" secondItem="PxE-bb-h4c" secondAttribute="leading" id="cOo-4B-gpI"/>
                             <constraint firstItem="ftQ-qX-Yab" firstAttribute="top" secondItem="FxI-Gj-5WZ" secondAttribute="bottom" id="eB9-g6-oEZ"/>
@@ -98,6 +107,7 @@
                         <outlet property="profileContentCollectionView" destination="hKc-OQ-HNz" id="6sh-3o-cy4"/>
                         <outlet property="profileImage" destination="gYY-IN-Pyz" id="mYO-s2-xOd"/>
                         <outlet property="profileMenuBar" destination="0Du-eo-mVx" id="R5j-RN-QSC"/>
+                        <outlet property="settingsButton" destination="VzV-1f-w6Q" id="8AJ-zg-bvW"/>
                         <outlet property="userAttribute" destination="ftQ-qX-Yab" id="3gY-G3-h3Z"/>
                         <outlet property="userName" destination="Ysu-1C-l4w" id="SU2-HR-fMA"/>
                         <outlet property="userRating" destination="FxI-Gj-5WZ" id="kbf-KZ-u5y"/>

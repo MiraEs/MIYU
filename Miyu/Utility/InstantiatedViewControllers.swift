@@ -9,13 +9,13 @@
 import UIKit
 
 enum PresentViewController: String {
-    case HomepageViewController, RegisterViewController, UploadViewController, ProfileViewController, RatedUserViewController, ActivityRatingViewController
+    case HomepageViewController, RegisterViewController, UploadViewController, ProfileViewController, RatedUserViewController, ActivityRatingViewController, SettingsViewController
 }
 
 /// AppStoryboard enum provides all VCs and instantiates each by storyboard ID.
 enum AppStoryboard: String {
     
-    case HomepageViewController, RegisterViewController, ProfileViewController, UploadViewController, LoginViewController, RatedUserViewController, ActivityRatingViewController
+    case HomepageViewController, RegisterViewController, ProfileViewController, UploadViewController, LoginViewController, RatedUserViewController, ActivityRatingViewController, SettingsViewController
     
     var instance: UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)
@@ -45,6 +45,10 @@ enum AppStoryboard: String {
 // MARK: INSTANTIATING STORYBOARDS
 
 class InstantiatedViewControllers {
+    
+    var settings: UIViewController? {
+        return SettingsViewController.instantiate(fromAppStoryboard: .SettingsViewController)
+    }
     
     var avc: UIViewController? {
         return ActivityRatingViewController.instantiate(fromAppStoryboard: .ActivityRatingViewController)
@@ -131,6 +135,9 @@ extension InstantiatedViewControllers {
         case .ActivityRatingViewController:
             guard let avc = self.avc else { return }
             presentingVC?.present(avc, animated: true, completion: nil)
+        case .SettingsViewController:
+            guard let settings = self.settings else { return }
+            presentingVC?.present(settings, animated: true, completion: nil)
         }
     }
 }

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/mira/Developer/Miyu/Miyu/Feature/Settings/SettingsViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:Miyu.xcodeproj">
    </FileRef>
    <FileRef

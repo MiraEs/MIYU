@@ -19,6 +19,7 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     private weak var viewModel: ProfileUserDataModel? {
         return ProfileUserDataModel(self)
     }
+    @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var profileImage: UIImageView! {
         didSet {
             viewModel?.designSetup(profileImage)
@@ -36,6 +37,11 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
             profileContentCollectionView.alwaysBounceHorizontal = false
             profileContentCollectionView.showsHorizontalScrollIndicator = false
         }
+    }
+    @IBAction func openSettings(_ sender: UIButton) {
+        print("open settings")
+        viewModel?.presentVC(vc: .SettingsViewController)
+        
     }
     
     override func viewDidLoad() {

@@ -19,54 +19,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Miyu/Feature/Homepage/HomepageViewController.swift"
-            timestampString = "546825245.210518"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Miyu.HomepageViewController.tableView(__ObjC.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __ObjC.UITableViewCell"
-                  moduleName = "Miyu"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mira/Developer/Miyu/Miyu/Feature/Homepage/HomepageViewController.swift"
-                  timestampString = "546887397.27513"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "143"
-                  endingLineNumber = "143"
-                  offsetFromSymbolStart = "6465">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Double) -&gt; () in Miyu.HomepageViewController.tableView(__ObjC.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __ObjC.UITableViewCell"
-                  moduleName = "Miyu"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mira/Developer/Miyu/Miyu/Feature/Homepage/HomepageViewController.swift"
-                  timestampString = "546887397.277118"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "143"
-                  endingLineNumber = "143"
-                  offsetFromSymbolStart = "118">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Miyu/Model/FirebaseUserManager.swift"
             timestampString = "546887605.776546"
             startingColumnNumber = "9223372036854775807"
@@ -84,7 +36,7 @@
                   moduleName = "Miyu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mira/Developer/Miyu/Miyu/Model/FirebaseUserManager.swift"
-                  timestampString = "546887414.376054"
+                  timestampString = "546904489.91687"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "59"
@@ -99,7 +51,7 @@
                   moduleName = "Miyu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mira/Developer/Miyu/Miyu/Model/FirebaseUserManager.swift"
-                  timestampString = "546887414.37871"
+                  timestampString = "546904489.919502"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "61"
@@ -107,6 +59,38 @@
                   offsetFromSymbolStart = "33">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Miyu/Feature/Settings/SettingsViewController.swift"
+            timestampString = "546904489.73464"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "activityRatingSwitch(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Miyu/Feature/Profile/ProfileViewController.swift"
+            timestampString = "546904489.734935"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

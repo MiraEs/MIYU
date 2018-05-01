@@ -45,6 +45,7 @@ internal final class HomepageViewController: BaseViewController {
         //fbManager?.getWhoRatedUsers()
     }
     
+    
     let picker = YPImagePicker()
     
     //mirtest
@@ -62,7 +63,7 @@ internal final class HomepageViewController: BaseViewController {
         //config.overlayView = myOverlayView
         YPImagePicker.setDefaultConfiguration(config)
     }
-    
+
     func activityBarButton() {
         let left = UIBarButtonItem(image: UIImage(named: "burger"), style: .plain, target: self, action: #selector(self.presentActivityViews))
         left.title = "20"
@@ -70,7 +71,6 @@ internal final class HomepageViewController: BaseViewController {
     }
     
     @objc func presentActivityViews() {
-        print("present recent ratings")
         viewModel?.presentVC(vc: .ActivityRatingViewController)
     }
     
@@ -143,7 +143,13 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
             cell.ratingView.didFinishTouchingCosmos = { [weak self] rating in
                 cell.ratingView.rating = rating
                 cell.ratingUpdate(rating, key, uid)
-                self?.viewModel?.showUserRated(user, rating)
+                
+                if let showRating = UserDefaults.standard.bool(forKey: AppSettings.activityRating.rawValue) as? Bool {
+                    if showRating {
+                        self?.viewModel?.showUserRated(user, rating)
+                    }
+                }
+                
                 self?.viewModel?.uploadToUserActivity(currentUid, uid, rating, currentCell.key!)
                 try! uiRealm.write {
                     currentCell.rating.value = rating

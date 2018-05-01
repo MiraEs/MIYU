@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import RealmSwift
 
-class ProfileUserDataModel {
+class ProfileUserDataModel: InstantiatedViewControllers {
     
     private weak var fbSerivce = FirebaseSerivce.shared
     private weak var fbManager = FirebaseUserManager.manager
@@ -19,6 +19,10 @@ class ProfileUserDataModel {
     
     init(_ presentingViewController: UIViewController) {
         self.presentingViewController = presentingViewController
+    }
+    
+    func presentVC(vc: PresentViewController) {
+        presentDestinationVC(from: self.presentingViewController, to: vc)
     }
     
     func setup(_ collectionView: UICollectionView) {
