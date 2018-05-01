@@ -34,14 +34,9 @@ class ProfileUserDataModel {
     
     private func loadUserData(_ uid: String?, _ handler: @escaping (_ user: AppUser)->Void) {
         guard let uid = uid else { return }
-//        fbManager?.getUserData(validUid, { (user) in
-//            handler(user)
-//        })
-        fbSerivce?.getData(.user(uid: uid), AppUser.self, { (user, key) in
-            user.keyUid = key
+        fbSerivce?.getData(.user(uid: uid), AppUser.self, { (user, _) in
             handler(user)
         })
-        
     }
     
     func loadData(_ isDiffOrigin: Bool, _ uid: String?, _ completion: @escaping (_ user: AppUser)->Void) {

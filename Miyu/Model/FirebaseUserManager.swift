@@ -9,9 +9,6 @@
 import Foundation
 import Firebase
 
-enum Children: String {
-    case posts, user
-}
 
 enum UserActivityAction: String {
     case rated = "rated"
@@ -101,7 +98,6 @@ extension FirebaseUserManager {
     
     
     func getFriends(_ handler: @escaping (_ user: AppUser)->Void) {
-        print("NEWORK CALL - FRIENDS")
         guard let uid = currentUser?.uid else { return }
         let userRef = userFriendsRef?.child(uid)
         
@@ -111,8 +107,8 @@ extension FirebaseUserManager {
                 do {
                     let data = try JSONSerialization.data(withJSONObject: object.value!, options: [])
                     let user = try JSONDecoder().decode(AppUser.self, from: data)
-                    print("USER'S UID >>>> \(object.key)")
                     user.keyUid = object.key
+                    RealmService.shared.update(user, with: ["keyUid":object.key])
                     handler(user)
                 } catch {
                     print(error)

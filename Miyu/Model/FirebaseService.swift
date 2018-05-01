@@ -66,7 +66,7 @@ class FirebaseSerivce {
     
     func getData<T: Codable>(_ ref: DatabaseRefs,
                              _ objectType: T.Type,
-                             _ completionHandler: @escaping (T, _ keyId: String)->Void) {
+                             _ completionHandler: @escaping (T, _ keyId: String?)->Void) {
         ref.value?.observeSingleEvent(of: .value, with: { (snapshot) in
             do {
                 if let value = snapshot.value {

@@ -49,4 +49,21 @@ internal final class HomepageViewModel: InstantiatedViewControllers {
             self.store?.userPosts = uiRealm.objects(Post.self).filter("uid == %@", uid)
         }
     }
+    
+    //MARK: USER ACTIVITY
+    
+    func uploadToUserActivity(_ currentUid: String,
+                              _ otherUid: String,
+                              _ rating: Double,
+                              _ postKey: String) {
+        
+        fbManager?.updateWhoRated(currentUid, otherUid, rating, postKey)
+    }
+    
+    func showUserRated(_ user: AppUser, _ rating: Double) {
+        let dvc = RatedUserViewController.instantiate(fromAppStoryboard: .RatedUserViewController)
+        dvc.userRated = user
+        dvc.rating = rating
+        presentingViewController?.present(dvc, animated: true, completion: nil)
+    }
 }

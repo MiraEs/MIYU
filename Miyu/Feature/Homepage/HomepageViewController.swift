@@ -109,13 +109,6 @@ internal final class HomepageViewController: BaseViewController {
             }
         }
     }
-    
-    private func showUserRated(_ user: AppUser, _ rating: Double) {
-        let dvc = RatedUserViewController.instantiate(fromAppStoryboard: .RatedUserViewController)
-        dvc.userRated = user
-        dvc.rating = rating
-        present(dvc, animated: true, completion: nil)
-    }
 }
 
 extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
@@ -147,30 +140,17 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         fetchPhoto(data, photoUrl, cell)
         
         if uid != currentUid {
-            cell.ratingView.didFinishTouchingCosmos = { rating in
+            cell.ratingView.didFinishTouchingCosmos = { [weak self] rating in
                 cell.ratingView.rating = rating
                 cell.ratingUpdate(rating, key, uid)
-                self.showUserRated(user, rating)
-                self.uploadToUserActivity(currentUid, uid, rating, currentCell.key!)
+                self?.viewModel?.showUserRated(user, rating)
+                self?.viewModel?.uploadToUserActivity(currentUid, uid, rating, currentCell.key!)
                 try! uiRealm.write {
                     currentCell.rating.value = rating
                 }
             }
         }
         return cell
-    }
-    
-    func uploadToUserActivity(_ currentUid: String,
-                              _ otherUid: String,
-                              _ rating: Double,
-                              _ postKey: String) {
-        /*
-         - user-activity
-            -currentUid
-                - otherUid
-                - otherUid
-         */
-        fbManager?.updateWhoRated(currentUid, otherUid, rating, postKey)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell,
