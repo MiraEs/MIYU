@@ -18,6 +18,7 @@ enum DatabaseRefs {
     case posts
     case users
     case user(uid: String)
+    case userActivity(uid: String)
     
     var value: DatabaseReference? {
         let ref = Database.database().reference()
@@ -30,6 +31,8 @@ enum DatabaseRefs {
             return ref.child(FbChildPaths.users)
         case .user(let uid):
             return ref.child(FbChildPaths.users).child(uid)
+        case .userActivity(let uid):
+            return ref.child("user-activity").child(uid).child("rated-by")
         }
     }
 }
@@ -73,6 +76,23 @@ class FirebaseSerivce {
                     let data = try JSONSerialization.data(withJSONObject: value, options: [])
                     let object = try JSONDecoder().decode(objectType, from: data)
                     completionHandler(object, snapshot.key)
+                }
+            } catch {
+                print(error)
+            }
+        })
+    }
+    
+    /// FIX THIS FUNCTION
+    /// THIS IS FOR USER-ACTIVITY, NO NEED FOR DATA PERSISTENCE..
+    func getDataWithQuery(_ ref: DatabaseRefs,
+                             _ query: Int,
+                             _ completionHandler: @escaping (T, _ keyId: String?)->Void) {
+        ref.value?.queryEqual(toValue: query).observeSingleEvent(of: .value, with: { (snapshot) in
+            do {
+                if let value = snapshot.value {
+                    let data = try JSONSerialization.data(withJSONObject: value, options: []) as? [String:Any]
+                    completionHandler(data)
                 }
             } catch {
                 print(error)

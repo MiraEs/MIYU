@@ -10,6 +10,8 @@ import UIKit
 
 class ActivityRatingViewController: UIViewController {
     
+    var fbManager = FirebaseUserManager.manager
+    var fbSerivce = FirebaseSerivce.shared
     var currentRating: Float = 4.234
     var arrRating = [Character]()
     var pickerData = [[String]]()
@@ -63,9 +65,17 @@ class ActivityRatingViewController: UIViewController {
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissView))
         tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
+        //view.addGestureRecognizer(tap)
     }
     
+    
+    //MARK: DATA FETCHING
+    func getUsers() {
+        guard let uid = fbManager.currentUser?.uid else { return }
+        
+    }
+    
+    //MARK: UTILITIES
     @objc func dismissView() {
         self.dismiss(animated: true, completion: nil)
     }
