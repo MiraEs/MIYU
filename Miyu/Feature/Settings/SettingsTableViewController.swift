@@ -1,5 +1,5 @@
 //
-//  SettingsViewController.swift
+//  SettingsTableViewController.swift
 //  Miyu
 //
 //  Created by Mira Estil on 5/1/18.

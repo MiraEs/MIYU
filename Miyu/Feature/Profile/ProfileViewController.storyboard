@@ -77,6 +77,7 @@
                                 <state key="normal" image="settings"/>
                                 <connections>
                                     <action selector="openSettings:" destination="cn7-xV-1xf" eventType="touchUpInside" id="hlG-7y-baC"/>
+                                    <segue destination="bsD-mY-GGn" kind="show" id="r53-aY-rA4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -116,6 +117,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L6X-N2-OAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="652" y="602.24887556221893"/>
+        </scene>
+        <!--SettingsTableViewController-->
+        <scene sceneID="dKO-1p-rsX">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SettingsTableViewController" storyboardName="SettingsTableViewController" id="bsD-mY-GGn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G6Y-5c-nJr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1271" y="483"/>
         </scene>
     </scenes>
     <resources>
