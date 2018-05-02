@@ -1,8 +1,9 @@
 //
 //  SettingsViewController.swift
-//  
+//  Miyu
 //
 //  Created by Mira Estil on 5/1/18.
+//  Copyright © 2018 ME. All rights reserved.
 //
 
 import UIKit
@@ -11,7 +12,9 @@ enum AppSettings: String {
     case activityRating
 }
 
-class SettingsViewController: BaseViewController {
+class SettingsTableViewController: UITableViewController {
+ 
+    private weak var fbManager = FirebaseUserManager.manager
     
     @IBOutlet weak var activityRatingSwitch: UISwitch!
     
@@ -26,10 +29,16 @@ class SettingsViewController: BaseViewController {
         activityRatingSwitch.setOn(result, animated: true)
     }
     
+    
+    @IBAction func signOut(_ sender: UIButton) {
+        fbManager?.signOut {
+            AppDelegate.shared.rootViewController.switchToLogout()
+        }
+    }
     @objc func dismissView() {
         self.dismiss(animated: true, completion: nil)
     }
-
+    
     @IBAction func activityRatingSwitch(_ sender: UISwitch) {
         print(sender.isOn)
         activityRatingSwitch.setOn(sender.isOn, animated: true)
@@ -37,3 +46,10 @@ class SettingsViewController: BaseViewController {
         
     }
 }
+
+
+
+
+
+
+

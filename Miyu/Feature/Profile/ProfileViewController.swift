@@ -40,7 +40,9 @@ class ProfileViewController: BaseViewController, CustomTabViewDelegate {
     }
     @IBAction func openSettings(_ sender: UIButton) {
         print("open settings")
-        viewModel?.presentVC(vc: .SettingsViewController)
+        //viewModel?.presentVC(vc: .SettingsViewController)
+        //let dvc = SettingsTableViewController.instantiate(fromAppStoryboard: .SettingsTableViewController)
+       //self.present(dvc, animated: true, completion: nil)
         
     }
     

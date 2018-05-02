@@ -72,9 +72,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VzV-1f-w6Q">
-                                <rect key="frame" x="184" y="70" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VzV-1f-w6Q">
+                                <rect key="frame" x="184" y="75.5" width="25" height="25"/>
+                                <state key="normal" image="settings"/>
                                 <connections>
                                     <action selector="openSettings:" destination="cn7-xV-1xf" eventType="touchUpInside" id="hlG-7y-baC"/>
                                 </connections>
@@ -120,5 +120,6 @@
     </scenes>
     <resources>
         <image name="random_1" width="376" height="564"/>
+        <image name="settings" width="25" height="25"/>
     </resources>
 </document>

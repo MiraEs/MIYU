@@ -9,13 +9,13 @@
 import UIKit
 
 enum PresentViewController: String {
-    case HomepageViewController, RegisterViewController, UploadViewController, ProfileViewController, RatedUserViewController, ActivityRatingViewController, SettingsViewController
+    case HomepageViewController, RegisterViewController, UploadViewController, ProfileViewController, RatedUserViewController, ActivityRatingViewController
 }
 
 /// AppStoryboard enum provides all VCs and instantiates each by storyboard ID.
 enum AppStoryboard: String {
     
-    case HomepageViewController, RegisterViewController, ProfileViewController, UploadViewController, LoginViewController, RatedUserViewController, ActivityRatingViewController, SettingsViewController
+    case HomepageViewController, RegisterViewController, ProfileViewController, UploadViewController, LoginViewController, RatedUserViewController, ActivityRatingViewController
     
     var instance: UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)
@@ -45,10 +45,6 @@ enum AppStoryboard: String {
 // MARK: INSTANTIATING STORYBOARDS
 
 class InstantiatedViewControllers {
-    
-    var settings: UIViewController? {
-        return SettingsViewController.instantiate(fromAppStoryboard: .SettingsViewController)
-    }
     
     var avc: UIViewController? {
         return ActivityRatingViewController.instantiate(fromAppStoryboard: .ActivityRatingViewController)
@@ -98,11 +94,11 @@ class InstantiatedViewControllers {
             let uploadVC = uploadVC else {
                 return tabBar
         }
-    
+        
         tabBar.setViewControllers([homeVC, dummyVc, profileVC].map({UINavigationController(rootViewController: $0)}), animated: true)
-        tabBar.tabBar.items?[0].image = UIImage(named: "burger")
-        tabBar.tabBar.items?[1].image = UIImage(named: "camera")
-        tabBar.tabBar.items?[2].image = UIImage(named: "burger")
+        tabBar.tabBar.items?[0].image = UIImage(named: "home")
+        tabBar.tabBar.items?[1].image = UIImage(named: "uploadbar")
+        tabBar.tabBar.items?[2].image = UIImage(named: "profile")
         return tabBar
     }
     
@@ -135,9 +131,6 @@ extension InstantiatedViewControllers {
         case .ActivityRatingViewController:
             guard let avc = self.avc else { return }
             presentingVC?.present(avc, animated: true, completion: nil)
-        case .SettingsViewController:
-            guard let settings = self.settings else { return }
-            presentingVC?.present(settings, animated: true, completion: nil)
         }
     }
 }

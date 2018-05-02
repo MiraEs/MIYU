@@ -28,12 +28,6 @@ internal final class HomepageViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    @IBAction func singOutButtonTapped(_ sender: Any) {
-        fbManager?.signOut {
-            AppDelegate.shared.rootViewController.switchToLogout()
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,9 +59,9 @@ internal final class HomepageViewController: BaseViewController {
     }
 
     func activityBarButton() {
-        let left = UIBarButtonItem(image: UIImage(named: "burger"), style: .plain, target: self, action: #selector(self.presentActivityViews))
-        left.title = "20"
-        self.navigationItem.setLeftBarButton(left, animated: true)
+        let right = UIBarButtonItem(image: UIImage(named: "burger"), style: .plain, target: self, action: #selector(self.presentActivityViews))
+        right.title = "20"
+        self.navigationItem.setRightBarButton(right, animated: true)
     }
     
     @objc func presentActivityViews() {
