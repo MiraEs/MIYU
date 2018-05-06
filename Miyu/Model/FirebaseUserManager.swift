@@ -6,7 +6,7 @@
 //  Copyright © 2018 ME. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Firebase
 
 
@@ -302,11 +302,10 @@ extension FirebaseUserManager {
         }
         
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
-            if user != nil {
-                FirebaseHelper.addToStorage(user!, profileImage, { (urlString) in
-                    if let uid = user?.uid {
-                        self.addToDatabase(appUser, urlString, uid)
-                    }
+            if let user = user?.user {
+                FirebaseHelper.addToStorage(user, profileImage, { (urlString) in
+                    let uid = user.uid
+                    self.addToDatabase(appUser, urlString, uid)
                 })
                 handler?()
             } else {

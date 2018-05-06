@@ -47,7 +47,7 @@ internal final class HomepageViewModel: InstantiatedViewControllers {
     func filterUserPostData() {
         if let uid = fbManager?.currentUser?.uid {
             self.store?.userPosts = uiRealm.objects(Post.self).filter("uid == %@", uid)
-        }
+        } 
     }
     
     //MARK: USER ACTIVITY
@@ -65,5 +65,31 @@ internal final class HomepageViewModel: InstantiatedViewControllers {
         dvc.userRated = user
         dvc.rating = rating
         presentingViewController?.present(dvc, animated: true, completion: nil)
+    }
+    
+    
+    func getRatedNotifications() {
+        guard let uid = fbManager?.currentUser?.uid else { return }
+        fbService?.getDataWithQuery(.userActivity(uid: uid), { (data, userUid) in
+            guard let dataDict = data,
+                let postID = dataDict["postID"] as? String,
+                let postRating = dataDict["postRatingFromUser"] as? Int else { return }
+            self.checkUser(uid, { (user) in
+                if let user = user {
+                    let ratedData: [String:Any] = [
+                        "postID": postID,
+                        "postRating": postRating,
+                        "user": user]
+                    self.store?.ratedByUsers.append(ratedData)
+                }
+            })
+        })
+    }
+    
+    private func checkUser(_ uid: String, _ completion: @escaping (AppUser?)->()) {
+        fbService?.getData(.user(uid: uid), AppUser.self, { (user, keyId) in
+            user.uid = keyId
+            completion(user)
+        })
     }
 }

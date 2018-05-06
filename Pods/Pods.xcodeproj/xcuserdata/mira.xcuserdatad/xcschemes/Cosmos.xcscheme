@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4FDC533A4360A68ABDCE852F04B30927'
-               BlueprintName = 'Cosmos'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Cosmos.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "64A5B0D84D8579CF3E24DF2C12D99B08"
+               BuildableName = "Cosmos.framework"
+               BlueprintName = "Cosmos"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

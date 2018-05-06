@@ -64,6 +64,8 @@
 		49B44C332070678E00A4A069 /* ContentFriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B44C312070678E00A4A069 /* ContentFriendTableViewCell.xib */; };
 		49B44C362070689600A4A069 /* ContentFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B44C352070689600A4A069 /* ContentFriendCell.swift */; };
 		49BFABE520603EED0097A464 /* DataStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BFABE420603EED0097A464 /* DataStoreManager.swift */; };
+		49C3ABA620C0FC8400EB139B /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C3ABA420C0FC8300EB139B /* ActivityTableViewCell.swift */; };
+		49C3ABA720C0FC8400EB139B /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49C3ABA520C0FC8300EB139B /* ActivityTableViewCell.xib */; };
 		49C8F821207576A4003ACE54 /* Extension+HomepageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8F820207576A4003ACE54 /* Extension+HomepageVC.swift */; };
 		49C8F8252075AFA0003ACE54 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8F8242075AFA0003ACE54 /* SplashViewController.swift */; };
 		49DC302320227CA600E7F05F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC302220227CA600E7F05F /* ProfileViewController.swift */; };
@@ -156,6 +158,8 @@
 		49B44C312070678E00A4A069 /* ContentFriendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentFriendTableViewCell.xib; sourceTree = "<group>"; };
 		49B44C352070689600A4A069 /* ContentFriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentFriendCell.swift; sourceTree = "<group>"; };
 		49BFABE420603EED0097A464 /* DataStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreManager.swift; sourceTree = "<group>"; };
+		49C3ABA420C0FC8300EB139B /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		49C3ABA520C0FC8300EB139B /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityTableViewCell.xib; sourceTree = "<group>"; };
 		49C8F820207576A4003ACE54 /* Extension+HomepageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+HomepageVC.swift"; sourceTree = "<group>"; };
 		49C8F8242075AFA0003ACE54 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		49DC302220227CA600E7F05F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -470,6 +474,8 @@
 			children = (
 				49E1D94A2075E79400B5B7FD /* ActivityRatingViewController.storyboard */,
 				49E1D94C2075E79F00B5B7FD /* ActivityRatingViewController.swift */,
+				49C3ABA420C0FC8300EB139B /* ActivityTableViewCell.swift */,
+				49C3ABA520C0FC8300EB139B /* ActivityTableViewCell.xib */,
 				491199FE2087FCEC0063356C /* RatedUserViewController.storyboard */,
 				49119A002087FCF60063356C /* RatedUserViewController.swift */,
 			);
@@ -605,6 +611,7 @@
 				4933BECB2023FD27004307E4 /* HomepageViewController.storyboard in Resources */,
 				4938FFC12098EDF300461D76 /* SettingsTableViewController.storyboard in Resources */,
 				4937FAFE20264A33006E991B /* GoogleService-Info.plist in Resources */,
+				49C3ABA720C0FC8400EB139B /* ActivityTableViewCell.xib in Resources */,
 				49E1D9492075C3ED00B5B7FD /* Main.storyboard in Resources */,
 				49DC302820227D1000E7F05F /* ProfileTableViewCell.xib in Resources */,
 				4933BEC92023FA35004307E4 /* ProfileViewController.storyboard in Resources */,
@@ -675,7 +682,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Miyu/Pods-Miyu-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
@@ -687,7 +694,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
@@ -745,6 +752,7 @@
 				4938476E2050769900FFA15A /* BaseTableViewCell.swift in Sources */,
 				49A6D83620210C1400B994A2 /* BaseViewController.swift in Sources */,
 				495AB3A1202942FC00D4D721 /* Extensions.swift in Sources */,
+				49C3ABA620C0FC8400EB139B /* ActivityTableViewCell.swift in Sources */,
 				49BFABE520603EED0097A464 /* DataStoreManager.swift in Sources */,
 				495E9B97202B6BEE007F23B8 /* InstantiatedViewControllers.swift in Sources */,
 				49DC302320227CA600E7F05F /* ProfileViewController.swift in Sources */,

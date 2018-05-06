@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '22B32FF282D787F3A9BE651A4EADA296'
-               BlueprintName = 'YPImagePicker'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'YPImagePicker.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "ECFCCD761FCC3CAE609800B9A93A9AF0"
+               BuildableName = "YPImagePicker.framework"
+               BlueprintName = "YPImagePicker"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

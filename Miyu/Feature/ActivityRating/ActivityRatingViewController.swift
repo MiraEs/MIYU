@@ -12,6 +12,7 @@ class ActivityRatingViewController: UIViewController {
     
     var fbManager = FirebaseUserManager.manager
     var fbSerivce = FirebaseSerivce.shared
+    private weak var store = DataStore.sharedInstance
     var currentRating: Float = 4.234
     var arrRating = [Character]()
     var pickerData = [[String]]()
@@ -31,7 +32,6 @@ class ActivityRatingViewController: UIViewController {
     @IBOutlet weak var tenthsPickerView: UIPickerView! {
         didSet {
             tenthsPickerView.isUserInteractionEnabled = true
-            
         }
     }
     @IBOutlet weak var pickerView: UIPickerView! {
@@ -50,7 +50,7 @@ class ActivityRatingViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
-        tableView.register(RatingCellView.self, forCellReuseIdentifier: cellId2)
+        tableView.register(UINib(nibName: "ActivityTableViewCell", bundle: nil),forCellReuseIdentifier: cellId2)
        
         
         if pickerData.isEmpty {
@@ -65,15 +65,9 @@ class ActivityRatingViewController: UIViewController {
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissView))
         tap.cancelsTouchesInView = false
-        //view.addGestureRecognizer(tap)
+        view.addGestureRecognizer(tap)
     }
     
-    
-    //MARK: DATA FETCHING
-    func getUsers() {
-        guard let uid = fbManager.currentUser?.uid else { return }
-        
-    }
     
     //MARK: UTILITIES
     @objc func dismissView() {
@@ -123,39 +117,31 @@ extension ActivityRatingViewController: UIPickerViewDataSource, UIPickerViewDele
 
 extension ActivityRatingViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        if let count = store?.ratedByUsers.count {
+            return count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellId2, for: indexPath) as! RatingCellView
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-            return cell
+//        if indexPath.row == 0 {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: cellId2, for: indexPath) as! ActivityRatingCellView
+//            return cell
+//        } else {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+//
+//            return celln
+//        }
+        guard let users = store?.ratedByUsers else { return UITableViewCell() }
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId2, for: indexPath) as! ActivityTableViewCell
+        if let user = users[indexPath.row]["user"] as? AppUser {
+            cell.nameLabel.text = user.email
         }
+        return cell
     }
 }
 
-/// custom cells
 
-class RatingCellView: BaseTableCell {
-    let label: UILabel = {
-        let lb = UILabel()
-        lb.text = "YOU'VE JUST BEEN RATED"
-        return lb
-    }()
-    
-    override func setupViews() {
-        super.setupViews()
-        addSubview(label)
-        addConstraints(format: "H:[v0(50)]", views: label)
-        addConstraints(format: "V:[v0(50)]", views: label)
-        
-        addConstraint(NSLayoutConstraint(item: label, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
-        addConstraint(NSLayoutConstraint(item: label, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
-    }
-}
 
 

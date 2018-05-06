@@ -30,6 +30,6 @@ internal final class DataStore {
     var currentUser: AppUser?
     var userPosts: Results<Post>!
     var friends = [AppUser]()
-    var ratedByUsers = [AppUser]()
+    var ratedByUsers = [[String:Any]]()
 }
 

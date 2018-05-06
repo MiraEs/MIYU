@@ -37,6 +37,7 @@ internal final class HomepageViewController: BaseViewController {
         setup()
         setupCustomPicker()
         //fbManager?.getWhoRatedUsers()
+        viewModel?.getRatedNotifications()
     }
     
     
@@ -138,11 +139,11 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.ratingView.rating = rating
                 cell.ratingUpdate(rating, key, uid)
                 
-                if let showRating = UserDefaults.standard.bool(forKey: AppSettings.activityRating.rawValue) as? Bool {
-                    if showRating {
+//                if let showRating = UserDefaults.standard.bool(forKey: AppSettings.activityRating.rawValue) as? Bool {
+//                    if showRating {
                         self?.viewModel?.showUserRated(user, rating)
-                    }
-                }
+//                    }
+                //}
                 
                 self?.viewModel?.uploadToUserActivity(currentUid, uid, rating, currentCell.key!)
                 try! uiRealm.write {

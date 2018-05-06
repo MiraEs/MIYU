@@ -32,7 +32,7 @@ enum DatabaseRefs {
         case .user(let uid):
             return ref.child(FbChildPaths.users).child(uid)
         case .userActivity(let uid):
-            return ref.child("user-activity").child(uid).child("rated-by")
+            return ref.child("user-activity").child(uid).child("ratedBy")
         }
     }
 }
@@ -86,16 +86,14 @@ class FirebaseSerivce {
     /// FIX THIS FUNCTION
     /// THIS IS FOR USER-ACTIVITY, NO NEED FOR DATA PERSISTENCE..
     func getDataWithQuery(_ ref: DatabaseRefs,
-                             _ query: Int,
-                             _ completionHandler: @escaping (T, _ keyId: String?)->Void) {
-        ref.value?.queryEqual(toValue: query).observeSingleEvent(of: .value, with: { (snapshot) in
-            do {
-                if let value = snapshot.value {
-                    let data = try JSONSerialization.data(withJSONObject: value, options: []) as? [String:Any]
-                    completionHandler(data)
-                }
-            } catch {
-                print(error)
+                          _ completionHandler: @escaping ([String:Any]?, String)->Void) {
+        ref.value?.observeSingleEvent(of: .value, with: { (snapshot) in
+
+            for case let child as DataSnapshot in snapshot.children.allObjects {
+                
+                let dictValue = child.value as? [String:Any]
+                let uid = child.key
+                completionHandler(dictValue, uid)
             }
         })
     }
@@ -133,11 +131,11 @@ class FirebaseSerivce {
             
             guard let validPost = post.dictionary else { return}
             let childUpdate: [String:Any] = ["/posts/\(key)":validPost,
-                               "/user-posts/\(user.uid)/\(key)":validPost]
+                                             "/user-posts/\(user.uid)/\(key)":validPost]
             DatabaseRefs.parent.value?.updateChildValues(childUpdate)
             RealmService.shared.save(post)
         }
-
+        
         completionHandler?()
     }
     
